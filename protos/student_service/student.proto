@@ -1,0 +1,185 @@
+syntax = "proto3";
+
+package student_service;
+
+service StudentService {
+    rpc StudentCreate(Student) returns (StudentResp);
+    rpc StudentGet(ByIdReq) returns (StudentResp);
+    rpc StudentSignUp(Token) returns (StudentResp);
+    rpc StudentList(ListReq) returns (StudentListResp);
+    rpc StudentGroupList(ListIdReq) returns (StudentListResp);
+    rpc StudentLogin(LoginStudentReq) returns (StudentLoginResp);
+    rpc StudentUpdate(Student) returns (StudentResp);
+    rpc StudentDelete(ByIdReq) returns (EmptyRes);
+
+    rpc LeadCreate(Lead) returns (LeadResp);
+    rpc LeadGet(ByIdReq) returns (LeadResp);
+    rpc LeadList(ListReq) returns (LeadListResp);
+    rpc LeadActive(EmptyRes) returns (RespList);
+    rpc LeadUpdate(Lead) returns (LeadResp);
+    rpc LeadDelete(ByIdReq) returns (EmptyRes);
+    
+    rpc StudentActive(EmptyRes) returns (RespList);
+    rpc StudentDeleteList(EmptyRes) returns (RespList);
+    rpc StudentTopList(EmptyRes) returns (RespList);
+    rpc StudentProfit(EmptyRes) returns (ProfitRespList);
+
+    rpc StudentPhoneCreate(SPhone) returns (SPhone);
+    rpc StudentPhoneGet(ByIdReq) returns (SPhone);
+
+    rpc LeadPhoneCreate(LPhone) returns (LPhone);
+    rpc LeadPhoneGet(ByIdReq) returns (LPhone);
+}
+
+message EmptyRes{}
+
+message Student{
+    string id = 1;
+    string full_name = 2;
+    string username = 3;
+    string password = 4;
+    string email = 5;
+    string birthday = 6;
+    string gender = 7;
+    repeated string phones = 8;
+    string passport_series = 9;
+    string passport_image1 = 10;
+    string passport_image2 = 11;
+    string address = 12;
+    string group_id = 13;
+}
+
+message SPhone{
+    string id = 1;
+    string whose = 2;
+    string phone = 3;
+    string student_id = 4;
+    string created_at = 5;
+    string updated_at = 6;
+}
+
+message LPhone{
+    string id = 1;
+    string whose = 2;
+    string phone = 3;
+    string lead_id = 4;
+    string created_at = 5;
+    string updated_at = 6;
+}
+
+message LeadPhone{
+    string lead_id = 1;
+    string phone_id = 2;
+}
+
+message StudentResp{
+    string id = 1;
+    string full_name = 2;
+    string username = 3;
+    string password = 4;
+    string email = 5;
+    string birthday = 6;
+    string gender = 7;
+    repeated SPhone phones = 8;
+    string passport_series = 9;
+    string passport_image1 = 10;
+    string passport_image2 = 11;
+    string address = 12;
+    string group_id = 13;
+    string created_at = 14;
+    string updated_at = 15;
+}
+
+
+message Lead{
+    string id = 1;
+    string full_name = 2;
+    repeated string phones = 3;
+    string birthday = 4;
+    string status = 5;
+    string gender = 6;
+    string address = 7; 
+    string source = 8;
+    string comment = 9;
+    string user_id = 10;
+    string direction_id = 11;
+}
+
+message LeadResp{
+    string id = 1;
+    string full_name = 2;
+    repeated LPhone phones = 3;
+    string birthday = 4;
+    string status = 5;
+    string gender = 6;
+    string address = 7; 
+    string source = 8;
+    string comment = 9;
+    string user_id = 10;
+    string direction_id = 11;
+    string created_at = 12;
+    string updated_at = 13;
+}
+
+message ListIdReq {
+    int64 page = 1;
+    int64 limit = 2;
+    string id = 3;
+}
+
+message LoginStudentReq {
+    string username = 1;
+    string password = 2;
+}
+
+message StudentListResp {
+    repeated StudentResp students = 1;
+    int64 count = 2;
+}
+
+message StudentLoginResp {
+    bool ok = 1;
+    string token = 2;
+    string whoami = 3;
+}
+
+message LeadListResp {
+    repeated LeadResp leads = 1;
+    int64 count = 2;
+}
+
+message ListReq {
+    int64 page = 1;
+    int64 limit = 2;
+}    
+
+message Token{
+    string token = 1;
+}    
+
+message ByIdReq {
+    string id = 1;
+}
+
+message Resp{
+    int64 count = 1;
+};
+
+message RespList{
+    repeated Resp count = 1;
+};
+
+message ProfitResp{
+    string name = 1;
+    float count = 2;
+};
+
+message ProfitRespList{
+    float count = 1;
+    repeated ProfitResp direction = 2;
+};
+
+message StudentPhone{
+    string student_id = 1;
+    string phone_id = 2;
+}

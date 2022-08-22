@@ -1,0 +1,5 @@
+make --dry-run --always-make --keep-going --print-directory
+make: Entering directory '/home/b/Golang/crm_system/apigateway/apigateway'
+CGO_ENABLED=0 GOOS=linux go build -mod='' -a -installsuffix cgo -o /home/b/Golang/crm_system/apigateway/apigateway/bin/crm ./cmd/main.go
+make: Leaving directory '/home/b/Golang/crm_system/apigateway/apigateway'
+ 

@@ -1,0 +1,104 @@
+syntax = "proto3";
+
+package finance_service;
+
+service FinanceService {
+    rpc PaymentCreate(Payment) returns (Payment);
+    rpc PaymentGet(ByIdReq) returns (Payment);
+    rpc PaymentList(ListReq) returns (PaymentListResp);
+    rpc PaymentSearchList(SearchReq) returns (SearchListResp);
+    rpc PaymentUpdate(Payment) returns (Payment);
+    rpc PaymentDelete(ByIdReq) returns (EmptyRes);
+    rpc Profit(EmptyRes) returns (ProfitRespList);
+    rpc PaymentSearch(PaymentSearchReq) returns (PaymentSearchResp);
+    
+    rpc SpendingCreate(Spending) returns (Spending);
+    rpc SpendingGet(ByIdReq) returns (Spending);
+    rpc SpendingList(ListReq) returns (SpendingListResp);
+    rpc SpendingUpdate(Spending) returns (Spending);
+    rpc SpendingDelete(ByIdReq) returns (EmptyRes);
+}
+
+message EmptyRes{}
+
+message Spending{
+    string id = 1;
+    string spending_type = 2;
+    string to_whom = 3;
+    string amount = 4;
+    string comment = 5;
+    string pysys_id = 6;
+    string created_at = 7;
+    string updated_at = 8;
+}
+message Payment{
+    string id = 1;
+    string amount = 2;
+    string type = 3;
+    string pysys_id = 4;
+    string student_id = 5;
+    string direction_id = 6;
+    string group_id = 7;
+    string created_at = 8;
+    string updated_at = 9;
+}
+message PaymentListResp {
+    repeated Payment payments = 1;
+    int64 count = 2;
+}
+
+message SpendingListResp {
+    repeated Spending spendings = 1;
+    int64 count = 2;
+}
+message Searching{
+    string name = 1;
+    float amount = 2;
+    float paid = 3;
+    float debt = 4;
+    float sum = 5;
+}
+message PaymentSearchResp {
+    float sum = 1;
+    repeated Searching searching = 2;
+}
+message ProfitResp{
+    string name = 1;
+    float count = 2;
+};
+
+message ProfitRespList{
+    float count = 1;
+    repeated ProfitResp direction = 2;
+};
+message ByIdReq {
+    string id = 1;
+}
+
+message ListReq {
+    int64 page = 1;
+    int64 limit = 2;
+}
+message PaymentSearchReq {
+    string dan = 1;
+    string gacha = 2;
+    string id = 3;
+}
+
+message SearchReq {
+    string dan = 1;
+    string gacha = 2;
+}
+
+message Search{
+    string id = 1;
+    string fullname = 2;
+    string created_at = 3;
+    string name = 4;
+    string amount = 5;
+}
+
+message SearchListResp{
+    repeated Search search = 1;
+    string sum = 2;
+}

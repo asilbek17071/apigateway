@@ -1,0 +1,146 @@
+syntax = "proto3";
+
+package course_service;
+
+service CourseService {
+    rpc GroupCreate(Group) returns (GroupResp);
+    rpc GroupGet(ByIdReq) returns (GroupResp);
+    rpc GroupList(ListReq) returns (GroupListsResp);
+    rpc GroupWithList(ListWithReq) returns (GroupListResp);
+    rpc GroupRoomList(ListIdReq) returns (GroupListsResp);
+    rpc GroupAttendanceList(ByIdReq) returns (Resp);
+    rpc GroupUpdate(Group) returns (GroupResp);
+    rpc GroupDelete(ByIdReq) returns (EmptyRes);
+
+    rpc AttendanceCreate(Attendance) returns (Attendance);
+    rpc AttendanceGet(ByIdReq) returns (Attendance);
+    rpc AttendanceList(ListReq) returns (AttendanceListResp);
+    rpc AttendanceUpdate(Attendance) returns (Attendance);
+    rpc AttendanceDelete(ByIdReq) returns (EmptyRes);
+
+    rpc BallCreate(Ball) returns (Ball);
+    rpc BallGet(ByIdReq) returns (Ball);
+    rpc BallUpdate(Ball) returns (Ball);
+    rpc BallList(ListReq) returns (BallListResp);
+    rpc BallDelete(ByIdReq) returns (EmptyRes);
+}
+message EmptyRes{}
+
+message Group{
+    string id = 1;
+    string name = 2;
+    string date_of_begin = 3;
+    string date_of_close = 4;
+    string with_days = 5;
+    string begin_time = 6;
+    string close_time = 7;
+    string lesson = 8;
+    string comment = 9;
+    string active = 10;
+    string direction_id = 11;
+    string teacher_id = 12;
+    repeated string asistent_id = 13;
+    string branch_id = 14;
+    string room_id = 15;
+    string created_at = 16;
+    string updated_at = 17;
+}
+
+message GroupResp{
+    string id = 1;
+    string name = 2;
+    string date_of_begin = 3;
+    string date_of_close = 4;
+    string with_days = 5;
+    string begin_time = 6;
+    string close_time = 7;
+    string lesson = 8;
+    string comment = 9;
+    string active = 10;
+    By direction = 11;
+    Byt teacher = 12;
+    repeated Byt assistent = 13;
+    By branch = 14;
+    By room = 15;
+    string count_student = 16;
+    string created_at = 17;
+    string updated_at = 18;
+}
+
+message Ball {
+    string id = 1;
+    string attendance_id =2;
+    int32  ball = 3;
+    string created_at = 4;
+    string updated_at = 5;
+}
+
+message BallListResp{
+    repeated Ball balls = 1;
+}
+
+message Attendance{
+    string id = 1;
+    string participate = 2;
+    string comment = 3;
+    string student_id = 4;
+    string created_at = 5;
+    string updated_at = 6;
+}
+
+message AttendanceListResp {
+    repeated Attendance attendances = 1;
+    int64 count = 2;
+}
+
+message Assistent{
+    string group_id = 1;
+    string teacher_id = 2;
+}
+
+message By {
+    string id = 1;
+    string name = 2;
+}
+
+message Byt {
+    string id = 1;
+    string name = 2;
+    string phone = 3;
+    string permission = 4;
+}
+
+message GroupListResp {
+    repeated Group groups = 1;
+    int64 count = 2;
+}
+
+message GroupListsResp {
+    repeated GroupResp groups = 1;
+    int64 count = 2;
+}
+
+message ByIdReq {
+    string id = 1;
+}
+
+message ListReq {
+    int64 page = 1;
+    int64 limit = 2;
+}
+
+message Resp{
+    int64 count = 1;
+};
+
+message ListIdReq {
+    int64 page = 1;
+    int64 limit = 2;
+    string id = 3;
+}
+
+message ListWithReq {
+    int64 page = 1;
+    int64 limit = 2;
+    int64 day = 3;
+}

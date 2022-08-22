@@ -1,0 +1,92 @@
+syntax = "proto3";
+
+package teacher_service;
+
+service TeacherService {
+    rpc TeacherCreate(Teacher) returns (Teacher);
+    rpc TeacherGet(ByIdReq) returns (Teacher);
+    rpc TeacherSignUp(Token) returns (Teacher);
+    rpc TeacherList(ListReq) returns (TeacherListResp);
+    rpc TeacherLogin(LoginReq) returns (TeacherLoginResp);
+    rpc TeacherUpdate(Teacher) returns (Teacher);
+    rpc TeacherDelete(ByIdReq) returns (EmptyRes);
+
+    rpc TeacherSalaryCreate(TeacherSalary) returns (TeacherSalary);
+    rpc TeacherSalaryGet(ByIdReq) returns (TeacherSalary);
+    rpc TeacherSalaryList(SalaryReq) returns (TeacherSalaryListResp);
+    rpc TeacherSalaryUpdate(TeacherSalary) returns (TeacherSalary);
+    rpc TeacherSalaryDelete(ByIdReq) returns (EmptyRes);
+}
+
+message EmptyRes{}
+
+message Teacher{
+    string id = 1;
+    string full_name = 2;
+    string password = 3;
+    string email = 4;
+    string birthday = 5;
+    string gender = 6;
+    string phone1 = 7;
+    string phone2 = 8;
+    string permission = 9;
+    string working_day = 10;
+    string address = 11;
+    string passport_series = 12;
+    string passport_image1 = 13;
+    string passport_image2 = 14;
+    string image = 15;
+    string branch_id = 16;
+    string direction_id = 17;
+    string created_at = 18;
+    string updated_at = 19;
+}
+
+message TeacherSalary {
+    string id = 1;
+    string amount = 2;
+    string teacher_id = 3;
+    string group_id = 4;
+    string created_at = 5;
+    string updated_at = 6;
+}
+
+
+message TeacherSalaryListResp {
+    repeated TeacherSalary salary = 1;
+    int64 count = 2;
+}
+
+
+message TeacherLoginResp {
+    bool ok = 1;
+    string token = 2;
+    string whoami = 3;
+}
+
+message TeacherListResp {
+    repeated Teacher teachers = 1;
+    int64 count = 2;
+}
+
+message LoginReq {
+    string email = 1;
+    string password = 2;
+}
+
+message ListReq {
+    int64 page = 1;
+    int64 limit = 2;
+}
+
+message SalaryReq{
+    string id = 1;
+}
+
+message Token{
+    string token = 1;
+}
+
+message ByIdReq {
+    string id = 1;
+}

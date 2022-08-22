@@ -1,0 +1,179 @@
+syntax = "proto3";
+
+package system_service;
+
+service SystemService {
+    rpc DirectionCreate(Direction) returns (Direction);
+    rpc DirectionGet(ByIdReq) returns (Direction);
+    rpc DirectionList(ListReq) returns (DirectionListResp);
+    rpc DirectionUpdate(Direction) returns (Direction);
+    rpc DirectionDelete(ByIdReq) returns (EmptyRes);   
+
+    rpc BranchCreate(Branch) returns (BranchResp);
+    rpc BranchGet(ByIdReq) returns (BranchResp);
+    rpc BranchList(ListReq) returns (BranchListResp);
+    rpc BranchUpdate(Branch) returns (BranchResp);
+    rpc BranchDelete(ByIdReq) returns (EmptyRes); 
+    rpc BranchWithRooms(ByIdReq) returns (BranchWithRoom);
+
+    rpc RoomCreate(Room) returns (Room);
+    rpc RoomGet(ByIdReq) returns (Room);
+    rpc RoomList(ListReq) returns (RoomListResp);
+    rpc RoomUpdate(Room) returns (Room);
+    rpc RoomDelete(ByIdReq) returns (EmptyRes);
+
+    rpc PySysCreate(PySys) returns (PySys);
+    rpc PySysGet(ByIdReq) returns (PySys);
+    rpc PySysList(ListReq) returns (PySysListResp);
+    rpc PySysUpdate(PySys) returns (PySys);
+    rpc PySysDelete(ByIdReq) returns (EmptyRes);
+
+    rpc SaleCreate(Sale) returns (Sale);
+    rpc SaleGet(ByIdReq) returns (Sale);
+    rpc SaleUpdate(Sale) returns (Sale);
+    rpc SaleList(ListReq) returns (SaleListResp);
+    rpc SaleDelete(ByIdReq) returns (EmptyRes);
+
+    rpc DefMsgCreate(DefMsg) returns (DefMsg);
+    rpc DefMsgGet(ByIdReq) returns (DefMsg);
+    rpc DefMsgUpdate(DefMsg) returns (DefMsg);
+    rpc DefMsgList(ListReq) returns (DefMsgListResp);
+    rpc DefMsgDelete(ByIdReq) returns (EmptyRes);
+
+    rpc TaskCreate(Task) returns (Task);
+    rpc TaskGet(ByIdReq) returns (Task);
+    rpc TaskUpdate(Task) returns (Task);
+    rpc TaskList(ListReq) returns (TaskListResp);
+    rpc TaskDelete(ByIdReq) returns (EmptyRes);
+}
+
+message EmptyRes{}
+
+message ListReq {
+    int64 page = 1;
+    int64 limit = 2;
+}    
+
+message Task{
+    string id = 1;
+    string user_id = 2;
+    string title = 3;
+    string comment = 4;
+    string with_date = 5;
+    string created_at = 6;
+    string updated_at = 7;
+}
+
+message TaskListResp {
+    repeated Task tasks = 1;
+    int64 count = 2;
+}
+
+message Sale{
+    string id = 1;
+    string name = 2;
+    string amount = 3;
+    string comment = 4;
+    string created_at = 5;
+    string updated_at = 6;
+}
+
+message SaleListResp{
+    repeated Sale sales = 1;
+    int64 count = 2;
+}
+
+message Direction{
+    string id = 1;
+    string name = 2;
+    string active = 3;
+    string duration = 4;
+    string month_amount = 5;
+    string full_amount = 6;
+    string created_at = 7;
+    string updated_at = 8;
+}
+
+message Branch{
+    string id = 1;
+    string name = 2;
+    string created_at = 3;
+    string updated_at = 4;
+}
+
+message BranchResp{
+    string id = 1;
+    string name = 2;
+    Resp groups = 3;
+    Resp users = 4;
+    Resp students = 5;
+    string created_at = 6;
+    string updated_at = 7;
+}
+
+message Room{
+    string id = 1;
+    string name = 2;
+    string branch_id = 3;
+    string created_at = 4;
+    string updated_at = 5;
+}
+
+message PySys{
+    string id = 1;
+    string name = 2;
+    string created_at = 3;
+    string updated_at = 4;
+}
+
+message DefMsg {
+    string id = 1;
+    string title = 2;
+    string comment = 3;
+    string created_at = 4;
+    string updated_at = 5;
+}
+
+message DefMsgListResp {
+    repeated DefMsg defmsgs = 1;
+    int64 count = 2;
+}
+
+message WithRoom{
+    string id = 1;
+    string name = 2;
+    int64 count = 3;
+}
+
+message BranchWithRoom{
+    repeated WithRoom branch_with_room = 1;
+    int64 count = 2;
+}
+
+message DirectionListResp {
+    repeated Direction directions = 1;
+    int64 count = 2;
+}
+
+message BranchListResp {
+    repeated BranchResp branchs = 1;
+    int64 count = 2;
+}
+
+message RoomListResp {
+    repeated Room rooms = 1;
+    int64 count = 2;
+}
+
+message PySysListResp {
+    repeated PySys pySyss = 1;
+    int64 count = 2;
+}
+
+message Resp{
+    int64 count = 1;
+};
+
+message ByIdReq {
+    string id = 1;
+}
