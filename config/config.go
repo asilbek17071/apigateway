@@ -48,30 +48,30 @@ func Load() Config {
 
 	// api-gateway idfs
 	c.LogLevel = cast.ToString(getOrReturnDefault("LOG_LEVEL", "debug"))
-	c.HTTPPort = cast.ToString(getOrReturnDefault("HTTP_PORT", ":8080"))
+	c.HTTPPort = cast.ToString(getOrReturnDefault("HTTP_PORT", ":80"))
 
 	// system-service idfs
-	c.SystemServiceHost = cast.ToString(getOrReturnDefault("SYSTEM_SERVICE_HOST", "127.0.0.0"))
+	c.SystemServiceHost = cast.ToString(getOrReturnDefault("SYSTEM_SERVICE_HOST", "46.101.101.23"))
 	c.SystemServicePort = cast.ToInt(getOrReturnDefault("SYSTEM_SERVICE_PORT", 50050))
 
 	// user-service idfs
-	c.UserServiceHost = cast.ToString(getOrReturnDefault("USER_SERVICE_HOST", "127.0.0.0"))
+	c.UserServiceHost = cast.ToString(getOrReturnDefault("USER_SERVICE_HOST", "46.101.101.23"))
 	c.UserServicePort = cast.ToInt(getOrReturnDefault("USER_SERVICE_PORT", 50051))
 
 	// teacher-service idfs
-	c.TeacherServiceHost = cast.ToString(getOrReturnDefault("TEACHER_SERVICE_HOST", "127.0.0.0"))
+	c.TeacherServiceHost = cast.ToString(getOrReturnDefault("TEACHER_SERVICE_HOST", "46.101.101.23"))
 	c.TeacherServicePort = cast.ToInt(getOrReturnDefault("TEACHER_SERVICE_PORT", 50052))
 
 	// student-service idfs
-	c.StudentServiceHost = cast.ToString(getOrReturnDefault("STUDENT_SERVICE_HOST", "127.0.0.0"))
+	c.StudentServiceHost = cast.ToString(getOrReturnDefault("STUDENT_SERVICE_HOST", "46.101.101.23"))
 	c.StudentServicePort = cast.ToInt(getOrReturnDefault("STUDENT_SERVICE_PORT", 50053))
 
 	// user-service idfs
-	c.CourseServiceHost = cast.ToString(getOrReturnDefault("COURSE_SERVICE_HOST", "127.0.0.1"))
+	c.CourseServiceHost = cast.ToString(getOrReturnDefault("COURSE_SERVICE_HOST", "46.101.101.23"))
 	c.CourseServicePort = cast.ToInt(getOrReturnDefault("COURSE_SERVICE_PORT", 50005))
 
 	// finance-service idfs
-	c.FinanceServiceHost = cast.ToString(getOrReturnDefault("FINANCE_SERVICE_HOST", "127.0.0.0"))
+	c.FinanceServiceHost = cast.ToString(getOrReturnDefault("FINANCE_SERVICE_HOST", "46.101.101.23"))
 	c.FinanceServicePort = cast.ToInt(getOrReturnDefault("FINANCE_SERVICE_PORT", 50055))
 
 	c.CtxTimeout = cast.ToInt(getOrReturnDefault("CTX_TIMEOUT", 7))

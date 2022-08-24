@@ -103,8 +103,39 @@ func (h *handlerV1) UserGet(c *gin.Context) {
 }
 
 // UserGet ...
-// @Router /signup/user/{token} [get]
+// @Router /user/byid/{id} [get]
 // @Summary UserGet
+// @Description This API for getting user UserList
+// @Tags user
+// @Accept  json
+// @Produce  json
+// @Param id path string true "ID"
+// @Success 200 {object} models.UserResp
+// @Failure 400 {object} models.StandardErrorModel
+// @Failure 500 {object} models.StandardErrorModel
+func (h *handlerV1) UserByName(c *gin.Context) {
+	var jspbMarshal protojson.MarshalOptions
+	jspbMarshal.UseProtoNames = true
+
+	ctx, cancel := context.WithTimeout(context.Background(), time.Second*time.Duration(h.cfg.CtxTimeout))
+	defer cancel()
+
+	response, err := h.serviceManager.UserService().UserByName(
+		ctx, &pb.EmptyRes{})
+	if err != nil {
+		c.JSON(http.StatusInternalServerError, gin.H{
+			"error": err.Error(),
+		})
+		h.log.Error("failed to get user", l.Error(err))
+		return
+	}
+
+	c.JSON(http.StatusOK, response)
+}
+
+// UserSignUp ...
+// @Router /signup/user/{token} [get]
+// @Summary UserSignUp
 // @Description This API for getting user UserList
 // @Tags user
 // @Accept  json

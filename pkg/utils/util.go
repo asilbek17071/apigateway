@@ -3,33 +3,39 @@ package utils
 import (
 	"strconv"
 	"strings"
+
+	"github.com/jinzhu/now"
 )
 
 type QueryParams struct {
-	Filters  map[string]string
-	Page     int64
-	Limit    int64
-	Day      int64
-	Ordering []string
-	Search   string
-	Id       string
-	From     string
-	To       string
-	Token    string
+	Filters      map[string]string
+	Page         int64
+	Limit        int64
+	Day          int64
+	Ordering     []string
+	Search       string
+	Id           string
+	Permission   string
+	SpendingType string
+	From         string
+	To           string
+	Token        string
 }
 
 func ParseQueryParams(queryParams map[string][]string) (*QueryParams, []string) {
 	params := QueryParams{
-		Filters:  make(map[string]string),
-		Day:      1,
-		Page:     1,
-		Limit:    10,
-		Ordering: []string{},
-		Search:   " ",
-		Id:       " ",
-		From:     " ",
-		To:       " ",
-		Token:    " ",
+		Filters:      make(map[string]string),
+		Day:          1,
+		Page:         1,
+		Limit:        10,
+		Ordering:     []string{},
+		Search:       " ",
+		Id:           " ",
+		Permission:   " ",
+		From:         now.BeginningOfYear().String(),
+		SpendingType: "",
+		To:           now.EndOfYear().String(),
+		Token:        " ",
 	}
 	var errStr []string
 	var err error
@@ -73,6 +79,16 @@ func ParseQueryParams(queryParams map[string][]string) (*QueryParams, []string) 
 
 		if key == "from" {
 			params.From = value[0]
+			continue
+		}
+
+		if key == "permission" {
+			params.Permission = value[0]
+			continue
+		}
+
+		if key == "spending_type" {
+			params.SpendingType = value[0]
 			continue
 		}
 

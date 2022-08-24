@@ -17,9 +17,27 @@ service UserService {
     rpc UserSalaryUpdate(UserSalary) returns (UserSalary);
     rpc UserSalaryDelete(ByIdReq) returns (EmptyRes);
 
+    rpc PersonalCreate(Personal) returns (Personal);
+    rpc PersonalGet(ByIdReq) returns (Personal);
+    rpc PersonalList(ListReq) returns (PersonalListResp);
+    rpc PersonalUpdate(Personal) returns (Personal);
+    rpc PersonalDelete(ByIdReq) returns (EmptyRes);
+
+    rpc Personals(EmptyRes) returns (ByResp);
+    rpc UserByName(EmptyRes) returns (NameResp);
 }    
 
 message EmptyRes{}
+
+message Name{
+    string id = 1;
+    string name = 2;
+}
+
+message NameResp{
+    repeated Name admins = 1;
+}
+
 
 message User{
     string id = 1;
@@ -46,14 +64,34 @@ message UserSalary {
     string id = 1;
     string amount = 2;
     string user_id = 3;
-    string created_at = 5;
-    string updated_at = 6;
+    string date_of_begin = 4;
+    string comment = 5;
+    string created_at = 6;
+    string updated_at = 7;
 }
+
+
+message Personal {
+    string id = 1;
+    string full_name = 2;
+    string position = 3;
+    string working_day = 4;
+    string phone = 5;
+    string created_at = 6;
+    string updated_at = 7;
+}
+
 
 message UserSalaryListResp {
     repeated UserSalary salary = 1;
     int64 count = 2;
 }
+
+message PersonalListResp {
+    repeated Personal personal = 1;
+    int64 count = 2;
+}
+
 
 message UserLoginResp {
     bool ok = 1;
@@ -88,3 +126,10 @@ message ByIdReq {
     string id = 1;
 }
 
+message By{
+    string name = 1;
+}
+
+message ByResp{
+    repeated By personals = 1;
+}

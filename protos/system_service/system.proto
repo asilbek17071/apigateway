@@ -45,6 +45,18 @@ service SystemService {
     rpc TaskUpdate(Task) returns (Task);
     rpc TaskList(ListReq) returns (TaskListResp);
     rpc TaskDelete(ByIdReq) returns (EmptyRes);
+
+    rpc SpendingTypeCreate(SpendingType) returns (SpendingType);
+    rpc SpendingTypeGet(ByIdReq) returns (SpendingType);
+    rpc SpendingTypeUpdate(SpendingType) returns (SpendingType);
+    rpc SpendingTypeList(ListReq) returns (SpendingListResp);
+    rpc SpendingTypeDelete(ByIdReq) returns (EmptyRes);
+
+    rpc SalaryTypeCreate(SalaryType) returns (SalaryType);
+    rpc SalaryTypeGet(ByIdReq) returns (SalaryType);
+    rpc SalaryTypeUpdate(SalaryType) returns (SalaryType);
+    rpc SalaryTypeList(ListReq) returns (SalaryListResp);
+    rpc SalaryTypeDelete(ByIdReq) returns (EmptyRes);
 }
 
 message EmptyRes{}
@@ -176,4 +188,28 @@ message Resp{
 
 message ByIdReq {
     string id = 1;
+}
+
+message SpendingType{
+    string id = 1;
+    string name = 2;
+    string created_at = 3;
+    string updated_at = 4;
+}
+
+message SpendingListResp{
+    repeated SpendingType spending_type = 1;
+    int64 count = 2;
+}
+
+message SalaryType{
+    string id = 1;
+    string name = 2;
+    string created_at = 3;
+    string updated_at = 4;
+}
+
+message SalaryListResp{
+    repeated SalaryType salary_type = 1;
+    int64 count = 2;
 }

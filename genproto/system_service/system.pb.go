@@ -1397,6 +1397,258 @@ func (m *ByIdReq) GetId() string {
 	return ""
 }
 
+type SpendingType struct {
+	Id                   string   `protobuf:"bytes,1,opt,name=id,proto3" json:"id"`
+	Name                 string   `protobuf:"bytes,2,opt,name=name,proto3" json:"name"`
+	CreatedAt            string   `protobuf:"bytes,3,opt,name=created_at,json=createdAt,proto3" json:"created_at"`
+	UpdatedAt            string   `protobuf:"bytes,4,opt,name=updated_at,json=updatedAt,proto3" json:"updated_at"`
+	XXX_NoUnkeyedLiteral struct{} `json:"-"`
+	XXX_unrecognized     []byte   `json:"-"`
+	XXX_sizecache        int32    `json:"-"`
+}
+
+func (m *SpendingType) Reset()         { *m = SpendingType{} }
+func (m *SpendingType) String() string { return proto.CompactTextString(m) }
+func (*SpendingType) ProtoMessage()    {}
+func (*SpendingType) Descriptor() ([]byte, []int) {
+	return fileDescriptor_86a7260ebdc12f47, []int{21}
+}
+func (m *SpendingType) XXX_Unmarshal(b []byte) error {
+	return m.Unmarshal(b)
+}
+func (m *SpendingType) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
+	if deterministic {
+		return xxx_messageInfo_SpendingType.Marshal(b, m, deterministic)
+	} else {
+		b = b[:cap(b)]
+		n, err := m.MarshalToSizedBuffer(b)
+		if err != nil {
+			return nil, err
+		}
+		return b[:n], nil
+	}
+}
+func (m *SpendingType) XXX_Merge(src proto.Message) {
+	xxx_messageInfo_SpendingType.Merge(m, src)
+}
+func (m *SpendingType) XXX_Size() int {
+	return m.Size()
+}
+func (m *SpendingType) XXX_DiscardUnknown() {
+	xxx_messageInfo_SpendingType.DiscardUnknown(m)
+}
+
+var xxx_messageInfo_SpendingType proto.InternalMessageInfo
+
+func (m *SpendingType) GetId() string {
+	if m != nil {
+		return m.Id
+	}
+	return ""
+}
+
+func (m *SpendingType) GetName() string {
+	if m != nil {
+		return m.Name
+	}
+	return ""
+}
+
+func (m *SpendingType) GetCreatedAt() string {
+	if m != nil {
+		return m.CreatedAt
+	}
+	return ""
+}
+
+func (m *SpendingType) GetUpdatedAt() string {
+	if m != nil {
+		return m.UpdatedAt
+	}
+	return ""
+}
+
+type SpendingListResp struct {
+	SpendingType         []*SpendingType `protobuf:"bytes,1,rep,name=spending_type,json=spendingType,proto3" json:"spending_type"`
+	Count                int64           `protobuf:"varint,2,opt,name=count,proto3" json:"count"`
+	XXX_NoUnkeyedLiteral struct{}        `json:"-"`
+	XXX_unrecognized     []byte          `json:"-"`
+	XXX_sizecache        int32           `json:"-"`
+}
+
+func (m *SpendingListResp) Reset()         { *m = SpendingListResp{} }
+func (m *SpendingListResp) String() string { return proto.CompactTextString(m) }
+func (*SpendingListResp) ProtoMessage()    {}
+func (*SpendingListResp) Descriptor() ([]byte, []int) {
+	return fileDescriptor_86a7260ebdc12f47, []int{22}
+}
+func (m *SpendingListResp) XXX_Unmarshal(b []byte) error {
+	return m.Unmarshal(b)
+}
+func (m *SpendingListResp) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
+	if deterministic {
+		return xxx_messageInfo_SpendingListResp.Marshal(b, m, deterministic)
+	} else {
+		b = b[:cap(b)]
+		n, err := m.MarshalToSizedBuffer(b)
+		if err != nil {
+			return nil, err
+		}
+		return b[:n], nil
+	}
+}
+func (m *SpendingListResp) XXX_Merge(src proto.Message) {
+	xxx_messageInfo_SpendingListResp.Merge(m, src)
+}
+func (m *SpendingListResp) XXX_Size() int {
+	return m.Size()
+}
+func (m *SpendingListResp) XXX_DiscardUnknown() {
+	xxx_messageInfo_SpendingListResp.DiscardUnknown(m)
+}
+
+var xxx_messageInfo_SpendingListResp proto.InternalMessageInfo
+
+func (m *SpendingListResp) GetSpendingType() []*SpendingType {
+	if m != nil {
+		return m.SpendingType
+	}
+	return nil
+}
+
+func (m *SpendingListResp) GetCount() int64 {
+	if m != nil {
+		return m.Count
+	}
+	return 0
+}
+
+type SalaryType struct {
+	Id                   string   `protobuf:"bytes,1,opt,name=id,proto3" json:"id"`
+	Name                 string   `protobuf:"bytes,2,opt,name=name,proto3" json:"name"`
+	CreatedAt            string   `protobuf:"bytes,3,opt,name=created_at,json=createdAt,proto3" json:"created_at"`
+	UpdatedAt            string   `protobuf:"bytes,4,opt,name=updated_at,json=updatedAt,proto3" json:"updated_at"`
+	XXX_NoUnkeyedLiteral struct{} `json:"-"`
+	XXX_unrecognized     []byte   `json:"-"`
+	XXX_sizecache        int32    `json:"-"`
+}
+
+func (m *SalaryType) Reset()         { *m = SalaryType{} }
+func (m *SalaryType) String() string { return proto.CompactTextString(m) }
+func (*SalaryType) ProtoMessage()    {}
+func (*SalaryType) Descriptor() ([]byte, []int) {
+	return fileDescriptor_86a7260ebdc12f47, []int{23}
+}
+func (m *SalaryType) XXX_Unmarshal(b []byte) error {
+	return m.Unmarshal(b)
+}
+func (m *SalaryType) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
+	if deterministic {
+		return xxx_messageInfo_SalaryType.Marshal(b, m, deterministic)
+	} else {
+		b = b[:cap(b)]
+		n, err := m.MarshalToSizedBuffer(b)
+		if err != nil {
+			return nil, err
+		}
+		return b[:n], nil
+	}
+}
+func (m *SalaryType) XXX_Merge(src proto.Message) {
+	xxx_messageInfo_SalaryType.Merge(m, src)
+}
+func (m *SalaryType) XXX_Size() int {
+	return m.Size()
+}
+func (m *SalaryType) XXX_DiscardUnknown() {
+	xxx_messageInfo_SalaryType.DiscardUnknown(m)
+}
+
+var xxx_messageInfo_SalaryType proto.InternalMessageInfo
+
+func (m *SalaryType) GetId() string {
+	if m != nil {
+		return m.Id
+	}
+	return ""
+}
+
+func (m *SalaryType) GetName() string {
+	if m != nil {
+		return m.Name
+	}
+	return ""
+}
+
+func (m *SalaryType) GetCreatedAt() string {
+	if m != nil {
+		return m.CreatedAt
+	}
+	return ""
+}
+
+func (m *SalaryType) GetUpdatedAt() string {
+	if m != nil {
+		return m.UpdatedAt
+	}
+	return ""
+}
+
+type SalaryListResp struct {
+	SalaryType           []*SalaryType `protobuf:"bytes,1,rep,name=salary_type,json=salaryType,proto3" json:"salary_type"`
+	Count                int64         `protobuf:"varint,2,opt,name=count,proto3" json:"count"`
+	XXX_NoUnkeyedLiteral struct{}      `json:"-"`
+	XXX_unrecognized     []byte        `json:"-"`
+	XXX_sizecache        int32         `json:"-"`
+}
+
+func (m *SalaryListResp) Reset()         { *m = SalaryListResp{} }
+func (m *SalaryListResp) String() string { return proto.CompactTextString(m) }
+func (*SalaryListResp) ProtoMessage()    {}
+func (*SalaryListResp) Descriptor() ([]byte, []int) {
+	return fileDescriptor_86a7260ebdc12f47, []int{24}
+}
+func (m *SalaryListResp) XXX_Unmarshal(b []byte) error {
+	return m.Unmarshal(b)
+}
+func (m *SalaryListResp) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
+	if deterministic {
+		return xxx_messageInfo_SalaryListResp.Marshal(b, m, deterministic)
+	} else {
+		b = b[:cap(b)]
+		n, err := m.MarshalToSizedBuffer(b)
+		if err != nil {
+			return nil, err
+		}
+		return b[:n], nil
+	}
+}
+func (m *SalaryListResp) XXX_Merge(src proto.Message) {
+	xxx_messageInfo_SalaryListResp.Merge(m, src)
+}
+func (m *SalaryListResp) XXX_Size() int {
+	return m.Size()
+}
+func (m *SalaryListResp) XXX_DiscardUnknown() {
+	xxx_messageInfo_SalaryListResp.DiscardUnknown(m)
+}
+
+var xxx_messageInfo_SalaryListResp proto.InternalMessageInfo
+
+func (m *SalaryListResp) GetSalaryType() []*SalaryType {
+	if m != nil {
+		return m.SalaryType
+	}
+	return nil
+}
+
+func (m *SalaryListResp) GetCount() int64 {
+	if m != nil {
+		return m.Count
+	}
+	return 0
+}
+
 func init() {
 	proto.RegisterType((*EmptyRes)(nil), "system_service.EmptyRes")
 	proto.RegisterType((*ListReq)(nil), "system_service.ListReq")
@@ -1419,82 +1671,97 @@ func init() {
 	proto.RegisterType((*PySysListResp)(nil), "system_service.PySysListResp")
 	proto.RegisterType((*Resp)(nil), "system_service.Resp")
 	proto.RegisterType((*ByIdReq)(nil), "system_service.ByIdReq")
+	proto.RegisterType((*SpendingType)(nil), "system_service.SpendingType")
+	proto.RegisterType((*SpendingListResp)(nil), "system_service.SpendingListResp")
+	proto.RegisterType((*SalaryType)(nil), "system_service.SalaryType")
+	proto.RegisterType((*SalaryListResp)(nil), "system_service.SalaryListResp")
 }
 
 func init() { proto.RegisterFile("system.proto", fileDescriptor_86a7260ebdc12f47) }
 
 var fileDescriptor_86a7260ebdc12f47 = []byte{
-	// 1111 bytes of a gzipped FileDescriptorProto
-	0x1f, 0x8b, 0x08, 0x00, 0x00, 0x00, 0x00, 0x00, 0x02, 0xff, 0xbc, 0x58, 0xcd, 0x6e, 0xdb, 0x46,
-	0x10, 0x2e, 0x2d, 0x89, 0x3f, 0x63, 0xd9, 0x49, 0x17, 0xa9, 0xc3, 0x30, 0x89, 0x9a, 0xe8, 0x14,
-	0x14, 0xad, 0x11, 0x24, 0x3d, 0xb8, 0x3f, 0xa8, 0x23, 0x45, 0x46, 0xe0, 0xfe, 0x00, 0x06, 0x9d,
-	0xa2, 0x3d, 0x14, 0x10, 0x68, 0x71, 0x6d, 0x33, 0x11, 0x45, 0x95, 0xbb, 0x4a, 0xa1, 0x07, 0x68,
-	0x9f, 0xa1, 0xe8, 0x6b, 0xf4, 0xd6, 0x27, 0xe8, 0xb1, 0x8f, 0x50, 0xb8, 0xe8, 0x4b, 0xf4, 0x54,
-	0xec, 0x6f, 0x44, 0x8a, 0xcb, 0x4a, 0x0a, 0xd0, 0x13, 0xb9, 0xb3, 0x33, 0xdf, 0xcc, 0x7c, 0x33,
-	0x3b, 0x5a, 0x0a, 0xda, 0x64, 0x4e, 0x28, 0x4e, 0xf7, 0xa7, 0x79, 0x46, 0x33, 0xb4, 0x2b, 0x56,
-	0x43, 0x82, 0xf3, 0x57, 0xc9, 0x08, 0x77, 0x01, 0xdc, 0xa3, 0x74, 0x4a, 0xe7, 0x21, 0x26, 0xdd,
-	0xc7, 0xe0, 0x7c, 0x99, 0x10, 0x1a, 0xe2, 0xef, 0x11, 0x82, 0xe6, 0x34, 0xba, 0xc0, 0xbe, 0x75,
-	0xcf, 0x7a, 0xd0, 0x08, 0xf9, 0x3b, 0xba, 0x01, 0xad, 0x71, 0x92, 0x26, 0xd4, 0xdf, 0xe2, 0x42,
-	0xb1, 0xe8, 0xfe, 0x66, 0x41, 0xf3, 0x79, 0x44, 0x5e, 0xa2, 0x5d, 0xd8, 0x4a, 0x62, 0x6e, 0xe0,
-	0x85, 0x5b, 0x49, 0x8c, 0x6e, 0x82, 0x33, 0x23, 0x38, 0x1f, 0x26, 0x31, 0x37, 0xf0, 0x42, 0x9b,
-	0x2d, 0x8f, 0x63, 0x86, 0x43, 0x13, 0x3a, 0xc6, 0x7e, 0x83, 0x8b, 0xc5, 0x02, 0xf9, 0xe0, 0x8c,
-	0xb2, 0x34, 0xc5, 0x13, 0xea, 0x37, 0xb9, 0x5c, 0x2d, 0xd1, 0x6d, 0xf0, 0x7e, 0x48, 0xe8, 0xe5,
-	0x30, 0x8e, 0x28, 0xf6, 0x5b, 0x7c, 0xcf, 0x65, 0x82, 0x41, 0x44, 0x31, 0xba, 0x0b, 0x30, 0xca,
-	0x71, 0x44, 0x71, 0x3c, 0x8c, 0xa8, 0x6f, 0xf3, 0x5d, 0x4f, 0x4a, 0x7a, 0x94, 0x6d, 0xcf, 0xa6,
-	0xb1, 0xda, 0x76, 0xc4, 0xb6, 0x94, 0xf4, 0x68, 0xf7, 0x04, 0xda, 0x2c, 0x76, 0x91, 0x35, 0x99,
-	0xa2, 0xf7, 0xa0, 0x45, 0x23, 0xf2, 0x92, 0xf8, 0xd6, 0xbd, 0xc6, 0x83, 0xed, 0x47, 0x37, 0xf6,
-	0x8b, 0x6c, 0xed, 0x33, 0xe5, 0x50, 0xa8, 0xb0, 0x34, 0x46, 0xd9, 0x6c, 0xa2, 0xe9, 0xe0, 0x8b,
-	0xee, 0x2f, 0x16, 0x34, 0x4f, 0xa3, 0x31, 0x5e, 0xa2, 0x03, 0x41, 0x73, 0x12, 0xa5, 0x58, 0x72,
-	0xc1, 0xdf, 0xd1, 0x1e, 0xd8, 0x51, 0xca, 0x31, 0x04, 0x15, 0x72, 0x55, 0xc3, 0x45, 0x31, 0xdd,
-	0x56, 0x7d, 0xba, 0x76, 0x45, 0xba, 0x2c, 0xb6, 0xc5, 0x74, 0x49, 0x34, 0xc6, 0xc6, 0x74, 0x99,
-	0x72, 0x28, 0x54, 0x0c, 0xe9, 0xfe, 0x6d, 0x81, 0x37, 0x48, 0x72, 0x3c, 0xa2, 0x49, 0x36, 0x59,
-	0x39, 0xe7, 0x11, 0x4d, 0x5e, 0x61, 0x9d, 0x33, 0x5f, 0xa1, 0x00, 0xdc, 0x78, 0x96, 0x47, 0x0c,
-	0x47, 0x26, 0xad, 0xd7, 0xe8, 0x3e, 0xb4, 0xd3, 0x6c, 0x42, 0x2f, 0x87, 0x92, 0x2d, 0x91, 0xf7,
-	0x36, 0x97, 0xf5, 0x04, 0x65, 0xef, 0xc2, 0xf6, 0xf9, 0x6c, 0x3c, 0x56, 0x1a, 0x22, 0x75, 0x60,
-	0x22, 0xa9, 0x50, 0x64, 0xce, 0xa9, 0x67, 0xce, 0x2d, 0x33, 0xf7, 0x02, 0xec, 0x7e, 0x1e, 0x4d,
-	0x46, 0x97, 0x2b, 0xe5, 0x58, 0xf4, 0xd5, 0xa8, 0xf7, 0xd5, 0x2c, 0xfb, 0xfa, 0xc7, 0x02, 0x10,
-	0xce, 0x78, 0x91, 0x56, 0x71, 0xf8, 0x3e, 0xd8, 0x17, 0x79, 0x36, 0x9b, 0x12, 0xee, 0xac, 0xa2,
-	0x92, 0x0c, 0x29, 0x94, 0x3a, 0xac, 0xec, 0xec, 0x28, 0x12, 0xee, 0xda, 0xa4, 0x2c, 0x54, 0xd0,
-	0x43, 0x70, 0x09, 0x9d, 0xc5, 0x78, 0x42, 0x09, 0xa7, 0xdd, 0xa4, 0xae, 0xb5, 0xde, 0xf0, 0x44,
-	0xfe, 0x68, 0x41, 0x33, 0xcc, 0xb2, 0x74, 0xa5, 0xb4, 0x6f, 0x83, 0x77, 0xc6, 0x89, 0x62, 0x43,
-	0x46, 0xd0, 0xec, 0x0a, 0xc1, 0x71, 0x5c, 0x8a, 0xa3, 0x59, 0x1f, 0x47, 0xab, 0x1c, 0x47, 0x02,
-	0xad, 0x93, 0xf9, 0xe9, 0x9c, 0xfc, 0x0f, 0xf5, 0xfe, 0xc9, 0x02, 0x7b, 0x80, 0xcf, 0xbf, 0x22,
-	0x17, 0x4b, 0xce, 0xf4, 0xa8, 0xdc, 0x32, 0x8c, 0xca, 0x46, 0xdd, 0x78, 0x58, 0x37, 0xe7, 0x6f,
-	0x61, 0x57, 0xc4, 0xa1, 0x07, 0xc4, 0x43, 0x70, 0x62, 0x7c, 0x9e, 0x92, 0x0b, 0x35, 0x22, 0xf6,
-	0xca, 0xc5, 0x17, 0x06, 0xa1, 0x52, 0x33, 0x8c, 0x89, 0x01, 0xb8, 0xdf, 0x24, 0xf4, 0x72, 0xe5,
-	0xc2, 0x6a, 0x94, 0xc6, 0x22, 0xca, 0x0b, 0xd8, 0x15, 0xe7, 0x42, 0x63, 0xf5, 0xe1, 0xba, 0x6c,
-	0x00, 0xfe, 0x0b, 0x91, 0x67, 0x59, 0x2a, 0x03, 0xf5, 0xcb, 0x81, 0x2a, 0x9b, 0x70, 0xf7, 0xac,
-	0x88, 0x51, 0x1d, 0x71, 0x0c, 0x6f, 0xeb, 0xb9, 0xa6, 0xe9, 0xf8, 0x08, 0x20, 0x56, 0x42, 0xc5,
-	0xc8, 0xad, 0x25, 0x46, 0x94, 0x46, 0xb8, 0xa0, 0x6c, 0xf0, 0xf2, 0x9d, 0xca, 0x48, 0xbb, 0xf8,
-	0x10, 0x1c, 0x11, 0x9f, 0xc2, 0x0f, 0xca, 0xf8, 0xaf, 0x47, 0x43, 0xa8, 0x54, 0x0d, 0xe8, 0x27,
-	0xd0, 0x66, 0x19, 0x2e, 0x8e, 0x7b, 0xc6, 0x90, 0x71, 0xdc, 0x73, 0x7a, 0x84, 0x8a, 0x01, 0xf1,
-	0x39, 0xec, 0xf0, 0x53, 0xa1, 0x21, 0x3f, 0x00, 0x7b, 0xca, 0x04, 0x0a, 0xf3, 0x9d, 0x32, 0x26,
-	0x57, 0x0f, 0xa5, 0x92, 0x01, 0xf5, 0x0e, 0x34, 0x39, 0x98, 0xde, 0xb5, 0x16, 0x77, 0x6f, 0x81,
-	0xd3, 0x9f, 0x1f, 0xc7, 0xec, 0x56, 0x52, 0x6a, 0x9d, 0x47, 0xbf, 0x22, 0xd8, 0x39, 0xe5, 0xfe,
-	0x4e, 0x85, 0x3b, 0xf4, 0x0c, 0xae, 0x69, 0xfe, 0x9f, 0xf2, 0xbe, 0x47, 0xe6, 0x02, 0x05, 0xe6,
-	0x2d, 0xd4, 0x87, 0xb6, 0x5e, 0x3c, 0xc3, 0x14, 0xdd, 0x5c, 0x2a, 0x83, 0x88, 0xa9, 0x0e, 0xe3,
-	0x0b, 0xd8, 0x29, 0xf4, 0xd0, 0x32, 0x88, 0xbc, 0x6e, 0x05, 0xf7, 0x8d, 0x20, 0x9a, 0xe9, 0xc5,
-	0xcc, 0xbe, 0xe6, 0x47, 0x76, 0xc3, 0xcc, 0x06, 0x0b, 0x40, 0x03, 0x3c, 0xc6, 0x14, 0x9b, 0x93,
-	0x5b, 0x3a, 0x45, 0xea, 0xae, 0xc8, 0xf8, 0x11, 0x8d, 0x28, 0x59, 0xde, 0xab, 0x6e, 0xd3, 0xa0,
-	0xa6, 0x7d, 0xd1, 0x13, 0xf0, 0xc4, 0xaa, 0x96, 0xe0, 0x3a, 0x84, 0x23, 0xf5, 0x4b, 0x59, 0x4f,
-	0x6f, 0xa7, 0x1a, 0x42, 0x73, 0xab, 0x93, 0x91, 0xc4, 0x6e, 0x92, 0x4c, 0x4f, 0x61, 0x6c, 0xce,
-	0xe9, 0xe7, 0x70, 0xad, 0x38, 0xdf, 0x88, 0x19, 0xc5, 0x90, 0x92, 0x9e, 0x6a, 0x07, 0x00, 0xec,
-	0x29, 0xab, 0x53, 0x79, 0xd4, 0x83, 0x4a, 0x29, 0x3a, 0x00, 0x87, 0x3d, 0x6b, 0x6b, 0x52, 0x6d,
-	0xd9, 0x03, 0x57, 0xcd, 0x1b, 0x73, 0x2d, 0xee, 0x54, 0x99, 0xea, 0x4a, 0xc8, 0xb0, 0x65, 0x1d,
-	0xd6, 0x09, 0xfb, 0x50, 0x58, 0x6e, 0xce, 0xfe, 0x27, 0xb0, 0xcd, 0x87, 0x95, 0xa4, 0xac, 0x7a,
-	0x92, 0x05, 0xd5, 0x62, 0xf4, 0x31, 0xb8, 0xfc, 0xa5, 0x96, 0x35, 0x83, 0xed, 0x53, 0xf0, 0xf4,
-	0x50, 0x35, 0xf3, 0x76, 0xb7, 0xd2, 0x58, 0x13, 0xa7, 0xa2, 0x97, 0xcc, 0xad, 0x17, 0xfd, 0x13,
-	0x69, 0xbc, 0x39, 0x79, 0x07, 0x00, 0xec, 0x63, 0xc1, 0xd4, 0x6e, 0x6c, 0x2f, 0xa8, 0x94, 0xb2,
-	0x76, 0x63, 0xcf, 0xf5, 0xda, 0x4d, 0x5a, 0x72, 0x9f, 0xa6, 0x5e, 0xa9, 0xf1, 0xd9, 0x03, 0x57,
-	0x7d, 0x07, 0xad, 0xd1, 0xa8, 0x85, 0x4f, 0xa7, 0x43, 0xe1, 0x7c, 0x73, 0xc6, 0x3e, 0x83, 0xb6,
-	0xb8, 0x3b, 0x99, 0x06, 0xa8, 0xd8, 0x0d, 0x0c, 0x72, 0xf4, 0x29, 0x78, 0xe2, 0xad, 0x96, 0x39,
-	0x93, 0xb5, 0xf6, 0x6e, 0x9a, 0x78, 0xff, 0xe1, 0xfd, 0x08, 0xe0, 0xf5, 0x55, 0x71, 0x8d, 0xc1,
-	0x5b, 0xba, 0x5f, 0xf6, 0x54, 0x18, 0x6f, 0xd4, 0x79, 0xec, 0xab, 0xdc, 0xd4, 0x79, 0x6c, 0x2f,
-	0xa8, 0x94, 0xb2, 0xce, 0x63, 0xcf, 0xf5, 0x3a, 0x4f, 0x5a, 0x72, 0x9f, 0xa6, 0xce, 0xab, 0xf1,
-	0xd9, 0x03, 0x57, 0xfd, 0xe1, 0xb0, 0x46, 0xe7, 0x15, 0xfe, 0xa3, 0x38, 0x14, 0xce, 0x37, 0x66,
-	0xac, 0x7f, 0xfd, 0xf7, 0xab, 0x8e, 0xf5, 0xc7, 0x55, 0xc7, 0xfa, 0xf3, 0xaa, 0x63, 0xfd, 0xfc,
-	0x57, 0xe7, 0xad, 0x33, 0x9b, 0xff, 0x37, 0xf4, 0xf8, 0xdf, 0x00, 0x00, 0x00, 0xff, 0xff, 0x7b,
-	0xab, 0xf0, 0x09, 0x2b, 0x12, 0x00, 0x00,
+	// 1286 bytes of a gzipped FileDescriptorProto
+	0x1f, 0x8b, 0x08, 0x00, 0x00, 0x00, 0x00, 0x00, 0x02, 0xff, 0xbc, 0x58, 0xdd, 0x6e, 0x1b, 0xc5,
+	0x17, 0xff, 0x6f, 0xfc, 0x7d, 0xe2, 0xb8, 0xf9, 0x8f, 0x4a, 0xea, 0x6e, 0x53, 0x93, 0xfa, 0xaa,
+	0x42, 0x10, 0x55, 0x2d, 0x17, 0x81, 0x22, 0x52, 0xa7, 0x8e, 0x4a, 0x80, 0x4a, 0xd1, 0x3a, 0x08,
+	0x2e, 0x90, 0xac, 0x8d, 0x77, 0x92, 0x6c, 0x63, 0x7b, 0x17, 0xcf, 0xb8, 0xc8, 0x0f, 0x00, 0xcf,
+	0x80, 0x78, 0x03, 0x5e, 0x81, 0x27, 0xe0, 0x92, 0x47, 0x40, 0x41, 0xbc, 0x04, 0x57, 0x68, 0x3e,
+	0xbd, 0xbb, 0xde, 0x99, 0xc6, 0x8e, 0x94, 0x2b, 0x7b, 0xce, 0x9c, 0xf3, 0x3b, 0xe7, 0xfc, 0xe6,
+	0xcc, 0x99, 0x63, 0x43, 0x9d, 0xcc, 0x08, 0xc5, 0xa3, 0xdd, 0x78, 0x12, 0xd1, 0x08, 0x35, 0xc4,
+	0xaa, 0x4f, 0xf0, 0xe4, 0x6d, 0x38, 0xc0, 0x6d, 0x80, 0xea, 0xe1, 0x28, 0xa6, 0x33, 0x0f, 0x93,
+	0xf6, 0x33, 0xa8, 0x7c, 0x1d, 0x12, 0xea, 0xe1, 0x1f, 0x10, 0x82, 0x62, 0xec, 0x9f, 0xe3, 0xa6,
+	0xb3, 0xe3, 0x3c, 0x2e, 0x78, 0xfc, 0x3b, 0xba, 0x0b, 0xa5, 0x61, 0x38, 0x0a, 0x69, 0x73, 0x8d,
+	0x0b, 0xc5, 0xa2, 0xfd, 0xbb, 0x03, 0xc5, 0x13, 0x9f, 0x5c, 0xa2, 0x06, 0xac, 0x85, 0x01, 0x37,
+	0xa8, 0x79, 0x6b, 0x61, 0x80, 0xee, 0x41, 0x65, 0x4a, 0xf0, 0xa4, 0x1f, 0x06, 0xdc, 0xa0, 0xe6,
+	0x95, 0xd9, 0xf2, 0x28, 0x60, 0x38, 0x34, 0xa4, 0x43, 0xdc, 0x2c, 0x70, 0xb1, 0x58, 0xa0, 0x26,
+	0x54, 0x06, 0xd1, 0x68, 0x84, 0xc7, 0xb4, 0x59, 0xe4, 0x72, 0xb5, 0x44, 0x0f, 0xa0, 0xf6, 0x63,
+	0x48, 0x2f, 0xfa, 0x81, 0x4f, 0x71, 0xb3, 0xc4, 0xf7, 0xaa, 0x4c, 0xd0, 0xf5, 0x29, 0x46, 0x0f,
+	0x01, 0x06, 0x13, 0xec, 0x53, 0x1c, 0xf4, 0x7d, 0xda, 0x2c, 0xf3, 0xdd, 0x9a, 0x94, 0x74, 0x28,
+	0xdb, 0x9e, 0xc6, 0x81, 0xda, 0xae, 0x88, 0x6d, 0x29, 0xe9, 0xd0, 0xf6, 0x31, 0xd4, 0x59, 0xec,
+	0x22, 0x6b, 0x12, 0xa3, 0x0f, 0xa0, 0x44, 0x7d, 0x72, 0x49, 0x9a, 0xce, 0x4e, 0xe1, 0xf1, 0xfa,
+	0xd3, 0xbb, 0xbb, 0x69, 0xb6, 0x76, 0x99, 0xb2, 0x27, 0x54, 0x58, 0x1a, 0x83, 0x68, 0x3a, 0xd6,
+	0x74, 0xf0, 0x45, 0xfb, 0x57, 0x07, 0x8a, 0x3d, 0x7f, 0x88, 0x17, 0xe8, 0x40, 0x50, 0x1c, 0xfb,
+	0x23, 0x2c, 0xb9, 0xe0, 0xdf, 0xd1, 0x16, 0x94, 0xfd, 0x11, 0xc7, 0x10, 0x54, 0xc8, 0x95, 0x85,
+	0x8b, 0x74, 0xba, 0x25, 0x7b, 0xba, 0xe5, 0x9c, 0x74, 0x59, 0x6c, 0xc9, 0x74, 0x89, 0x3f, 0xc4,
+	0xc6, 0x74, 0x99, 0xb2, 0x27, 0x54, 0x0c, 0xe9, 0xfe, 0xe3, 0x40, 0xad, 0x1b, 0x4e, 0xf0, 0x80,
+	0x86, 0xd1, 0xf8, 0xda, 0x39, 0x0f, 0x68, 0xf8, 0x16, 0xeb, 0x9c, 0xf9, 0x0a, 0xb9, 0x50, 0x0d,
+	0xa6, 0x13, 0x9f, 0xe1, 0xc8, 0xa4, 0xf5, 0x1a, 0x3d, 0x82, 0xfa, 0x28, 0x1a, 0xd3, 0x8b, 0xbe,
+	0x64, 0x4b, 0xe4, 0xbd, 0xce, 0x65, 0x1d, 0x41, 0xd9, 0xfb, 0xb0, 0x7e, 0x36, 0x1d, 0x0e, 0x95,
+	0x86, 0x48, 0x1d, 0x98, 0x48, 0x2a, 0xa4, 0x99, 0xab, 0xd8, 0x99, 0xab, 0x66, 0x99, 0x7b, 0x03,
+	0xe5, 0x83, 0x89, 0x3f, 0x1e, 0x5c, 0x5c, 0x2b, 0xc7, 0xb4, 0xaf, 0x82, 0xdd, 0x57, 0x31, 0xeb,
+	0xeb, 0x5f, 0x07, 0x40, 0x38, 0xe3, 0x87, 0x74, 0x1d, 0x87, 0x1f, 0x42, 0xf9, 0x7c, 0x12, 0x4d,
+	0x63, 0xc2, 0x9d, 0xe5, 0x9c, 0x24, 0x43, 0xf2, 0xa4, 0x0e, 0x3b, 0x76, 0x76, 0x15, 0x09, 0x77,
+	0x6d, 0x52, 0x16, 0x2a, 0xe8, 0x09, 0x54, 0x09, 0x9d, 0x06, 0x78, 0x4c, 0x09, 0xa7, 0xdd, 0xa4,
+	0xae, 0xb5, 0x6e, 0x78, 0x23, 0x7f, 0x72, 0xa0, 0xe8, 0x45, 0xd1, 0xe8, 0x5a, 0x69, 0x3f, 0x80,
+	0xda, 0x29, 0x27, 0x8a, 0x35, 0x19, 0x41, 0x73, 0x55, 0x08, 0x8e, 0x82, 0x4c, 0x1c, 0x45, 0x7b,
+	0x1c, 0xa5, 0x6c, 0x1c, 0x21, 0x94, 0x8e, 0x67, 0xbd, 0x19, 0xb9, 0x85, 0xf3, 0xfe, 0xd9, 0x81,
+	0x72, 0x17, 0x9f, 0xbd, 0x26, 0xe7, 0x0b, 0xce, 0x74, 0xab, 0x5c, 0x33, 0xb4, 0xca, 0x82, 0xad,
+	0x3d, 0x2c, 0x9b, 0xf3, 0x77, 0xd0, 0x10, 0x71, 0xe8, 0x06, 0xf1, 0x04, 0x2a, 0x01, 0x3e, 0x1b,
+	0x91, 0x73, 0xd5, 0x22, 0xb6, 0xb2, 0x87, 0x2f, 0x0c, 0x3c, 0xa5, 0x66, 0x68, 0x13, 0x5d, 0xa8,
+	0x7e, 0x1b, 0xd2, 0x8b, 0x6b, 0x1f, 0xac, 0x46, 0x29, 0x24, 0x51, 0xde, 0x40, 0x43, 0xdc, 0x0b,
+	0x8d, 0x75, 0x00, 0x9b, 0xb2, 0x00, 0xf8, 0x0b, 0x31, 0x89, 0xa2, 0x91, 0x0c, 0xb4, 0x99, 0x0d,
+	0x54, 0xd9, 0x78, 0x8d, 0xd3, 0x34, 0x46, 0x7e, 0xc4, 0x01, 0xfc, 0x5f, 0xf7, 0x35, 0x4d, 0xc7,
+	0x27, 0x00, 0x81, 0x12, 0x2a, 0x46, 0xee, 0x2f, 0x30, 0xa2, 0x34, 0xbc, 0x84, 0xb2, 0xc1, 0xcb,
+	0xf7, 0x2a, 0x23, 0xed, 0xe2, 0x63, 0xa8, 0x88, 0xf8, 0x14, 0xbe, 0x9b, 0xc5, 0x9f, 0xb7, 0x06,
+	0x4f, 0xa9, 0x1a, 0xd0, 0x8f, 0xa1, 0xce, 0x32, 0x4c, 0xb6, 0x7b, 0xc6, 0x90, 0xb1, 0xdd, 0x73,
+	0x7a, 0x84, 0x8a, 0x01, 0xf1, 0x04, 0x36, 0xf8, 0xad, 0xd0, 0x90, 0x1f, 0x41, 0x39, 0x66, 0x02,
+	0x85, 0xf9, 0x5e, 0x16, 0x93, 0xab, 0x7b, 0x52, 0xc9, 0x80, 0xba, 0x0d, 0x45, 0x0e, 0xa6, 0x77,
+	0x9d, 0xe4, 0xee, 0x7d, 0xa8, 0x1c, 0xcc, 0x8e, 0x02, 0x36, 0x95, 0x64, 0x4a, 0xa7, 0x1d, 0x43,
+	0xbd, 0x17, 0xe3, 0x71, 0x10, 0x8e, 0xcf, 0x4f, 0x66, 0x31, 0xbe, 0x85, 0xbb, 0x7a, 0x09, 0x9b,
+	0xca, 0xa3, 0xe6, 0xa0, 0x03, 0x1b, 0x44, 0xca, 0xfa, 0x74, 0x16, 0x63, 0x49, 0xc5, 0xf6, 0xc2,
+	0x6b, 0x9a, 0x08, 0xd5, 0xab, 0x93, 0x64, 0xe0, 0xf9, 0xbc, 0x8c, 0x01, 0x7a, 0xfe, 0xd0, 0x9f,
+	0xcc, 0x6e, 0x29, 0xb9, 0x01, 0x34, 0x84, 0x3f, 0x9d, 0xda, 0x73, 0x58, 0x27, 0x5c, 0x92, 0x4c,
+	0xcc, 0xcd, 0x19, 0x13, 0x64, 0x90, 0x1e, 0x90, 0x79, 0xc0, 0xb9, 0x49, 0x3d, 0xfd, 0xad, 0x09,
+	0x1b, 0x3d, 0x6e, 0xdf, 0x13, 0xe6, 0xe8, 0x15, 0xdc, 0xd1, 0x77, 0xe6, 0x25, 0x8f, 0x15, 0x99,
+	0x2f, 0x95, 0x6b, 0xde, 0x42, 0x07, 0x50, 0xd7, 0x8b, 0x57, 0x98, 0xa2, 0x7b, 0x0b, 0x57, 0x47,
+	0xd4, 0x91, 0x0d, 0xe3, 0x2b, 0xd8, 0x48, 0xdd, 0xfb, 0x45, 0x10, 0x39, 0x22, 0xbb, 0x8f, 0x8c,
+	0x20, 0x9a, 0xbe, 0x64, 0x66, 0xdf, 0x70, 0x9a, 0x57, 0xcc, 0xac, 0x9b, 0x00, 0xea, 0xe2, 0x21,
+	0xa6, 0xd8, 0x9c, 0xdc, 0x42, 0xe7, 0x53, 0xf3, 0x3d, 0xe3, 0x47, 0x34, 0x0f, 0xc9, 0xf2, 0x56,
+	0x7e, 0x6b, 0x71, 0x2d, 0x2d, 0x07, 0xbd, 0x80, 0x9a, 0x58, 0x59, 0x09, 0xb6, 0x21, 0x1c, 0xaa,
+	0xe9, 0xc6, 0x4e, 0x6f, 0x2b, 0x1f, 0x42, 0x73, 0xab, 0x93, 0x91, 0xc4, 0xae, 0x92, 0x4c, 0x47,
+	0x61, 0xac, 0xce, 0xe9, 0x97, 0x70, 0x27, 0xfd, 0x26, 0x11, 0x33, 0x8a, 0x21, 0x25, 0xfd, 0x12,
+	0xed, 0x01, 0xb0, 0x4f, 0x79, 0x3a, 0xb9, 0xed, 0xd9, 0xcd, 0x95, 0xa2, 0x3d, 0xa8, 0xb0, 0x4f,
+	0xeb, 0x99, 0xe4, 0x5b, 0x76, 0xa0, 0xaa, 0xde, 0x08, 0xf3, 0x59, 0x6c, 0xe7, 0x99, 0xea, 0x93,
+	0x90, 0x61, 0xcb, 0x73, 0x58, 0x26, 0xec, 0x7d, 0x61, 0xb9, 0x3a, 0xfb, 0xcf, 0x61, 0x9d, 0x3f,
+	0x30, 0x92, 0xb2, 0xfc, 0xd7, 0xc7, 0xcd, 0x17, 0xa3, 0x4f, 0xa1, 0xca, 0xbf, 0x58, 0x59, 0x33,
+	0xd8, 0xbe, 0x84, 0x9a, 0x7e, 0x08, 0xcd, 0xbc, 0x3d, 0xcc, 0x35, 0x4e, 0x76, 0x57, 0x2e, 0x90,
+	0xcc, 0x2d, 0x17, 0xfd, 0x0b, 0x69, 0xbc, 0x3a, 0x79, 0x7b, 0xfc, 0x79, 0xc1, 0xa6, 0x72, 0x63,
+	0x7b, 0x6e, 0xae, 0x94, 0x95, 0x1b, 0xfb, 0x5c, 0xae, 0xdc, 0xa4, 0x25, 0xf7, 0x69, 0xaa, 0x15,
+	0x8b, 0xcf, 0x0e, 0x54, 0xd5, 0x6f, 0xd7, 0x25, 0x0a, 0x35, 0xf5, 0x73, 0x77, 0x5f, 0x38, 0x5f,
+	0x9d, 0xb1, 0xcf, 0xa1, 0x2e, 0xe6, 0x5d, 0x53, 0x03, 0x15, 0xbb, 0xae, 0x41, 0x8e, 0x3e, 0x83,
+	0x9a, 0xf8, 0x66, 0x65, 0xce, 0x64, 0xad, 0xbd, 0x9b, 0x3a, 0xde, 0x3b, 0xbc, 0x1f, 0x02, 0xcc,
+	0xc7, 0xfb, 0x25, 0x1a, 0x6f, 0xe6, 0x37, 0x41, 0x47, 0x85, 0x71, 0xa3, 0xca, 0x3b, 0xf1, 0xc9,
+	0xa5, 0xa9, 0xf2, 0xd8, 0x9e, 0x9b, 0x2b, 0x65, 0x95, 0xc7, 0x3e, 0x97, 0xab, 0x3c, 0x69, 0xc9,
+	0x7d, 0x9a, 0x2a, 0xcf, 0xe2, 0xb3, 0x03, 0x55, 0xf5, 0x27, 0xd1, 0x12, 0x95, 0x97, 0xfa, 0x5f,
+	0x69, 0x5f, 0x38, 0x5f, 0x9d, 0xb1, 0x63, 0x40, 0xc9, 0xf1, 0x51, 0x32, 0x67, 0x1d, 0x31, 0x5d,
+	0xeb, 0x2e, 0xfa, 0x02, 0xee, 0x24, 0xd7, 0x56, 0x46, 0xed, 0x48, 0x99, 0xd8, 0x24, 0xc3, 0x37,
+	0x89, 0xed, 0xf5, 0x7c, 0xca, 0x66, 0x6b, 0x3b, 0xf3, 0x3b, 0x26, 0xa8, 0xc4, 0x18, 0x96, 0x0a,
+	0xf0, 0x26, 0x8f, 0xfd, 0xe6, 0x7c, 0xd6, 0x95, 0x67, 0x60, 0x99, 0x86, 0x5d, 0xcb, 0x1e, 0xea,
+	0xc2, 0xc6, 0x7c, 0xb5, 0xdc, 0x30, 0x95, 0x40, 0x49, 0x45, 0x24, 0x99, 0x5f, 0x35, 0xa2, 0x23,
+	0x35, 0xfe, 0xbf, 0x9b, 0xf3, 0x56, 0x3e, 0x8c, 0x66, 0xfc, 0x30, 0x19, 0xd6, 0xca, 0x7c, 0x1f,
+	0x6c, 0xfe, 0x71, 0xd5, 0x72, 0xfe, 0xbc, 0x6a, 0x39, 0x7f, 0x5d, 0xb5, 0x9c, 0x5f, 0xfe, 0x6e,
+	0xfd, 0xef, 0xb4, 0xcc, 0xff, 0xc5, 0x7e, 0xf6, 0x5f, 0x00, 0x00, 0x00, 0xff, 0xff, 0xf2, 0x18,
+	0x54, 0x28, 0xd5, 0x16, 0x00, 0x00,
 }
 
 // Reference imports to suppress errors if they are not otherwise used.
@@ -1545,6 +1812,16 @@ type SystemServiceClient interface {
 	TaskUpdate(ctx context.Context, in *Task, opts ...grpc.CallOption) (*Task, error)
 	TaskList(ctx context.Context, in *ListReq, opts ...grpc.CallOption) (*TaskListResp, error)
 	TaskDelete(ctx context.Context, in *ByIdReq, opts ...grpc.CallOption) (*EmptyRes, error)
+	SpendingTypeCreate(ctx context.Context, in *SpendingType, opts ...grpc.CallOption) (*SpendingType, error)
+	SpendingTypeGet(ctx context.Context, in *ByIdReq, opts ...grpc.CallOption) (*SpendingType, error)
+	SpendingTypeUpdate(ctx context.Context, in *SpendingType, opts ...grpc.CallOption) (*SpendingType, error)
+	SpendingTypeList(ctx context.Context, in *ListReq, opts ...grpc.CallOption) (*SpendingListResp, error)
+	SpendingTypeDelete(ctx context.Context, in *ByIdReq, opts ...grpc.CallOption) (*EmptyRes, error)
+	SalaryTypeCreate(ctx context.Context, in *SalaryType, opts ...grpc.CallOption) (*SalaryType, error)
+	SalaryTypeGet(ctx context.Context, in *ByIdReq, opts ...grpc.CallOption) (*SalaryType, error)
+	SalaryTypeUpdate(ctx context.Context, in *SalaryType, opts ...grpc.CallOption) (*SalaryType, error)
+	SalaryTypeList(ctx context.Context, in *ListReq, opts ...grpc.CallOption) (*SalaryListResp, error)
+	SalaryTypeDelete(ctx context.Context, in *ByIdReq, opts ...grpc.CallOption) (*EmptyRes, error)
 }
 
 type systemServiceClient struct {
@@ -1879,6 +2156,96 @@ func (c *systemServiceClient) TaskDelete(ctx context.Context, in *ByIdReq, opts 
 	return out, nil
 }
 
+func (c *systemServiceClient) SpendingTypeCreate(ctx context.Context, in *SpendingType, opts ...grpc.CallOption) (*SpendingType, error) {
+	out := new(SpendingType)
+	err := c.cc.Invoke(ctx, "/system_service.SystemService/SpendingTypeCreate", in, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *systemServiceClient) SpendingTypeGet(ctx context.Context, in *ByIdReq, opts ...grpc.CallOption) (*SpendingType, error) {
+	out := new(SpendingType)
+	err := c.cc.Invoke(ctx, "/system_service.SystemService/SpendingTypeGet", in, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *systemServiceClient) SpendingTypeUpdate(ctx context.Context, in *SpendingType, opts ...grpc.CallOption) (*SpendingType, error) {
+	out := new(SpendingType)
+	err := c.cc.Invoke(ctx, "/system_service.SystemService/SpendingTypeUpdate", in, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *systemServiceClient) SpendingTypeList(ctx context.Context, in *ListReq, opts ...grpc.CallOption) (*SpendingListResp, error) {
+	out := new(SpendingListResp)
+	err := c.cc.Invoke(ctx, "/system_service.SystemService/SpendingTypeList", in, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *systemServiceClient) SpendingTypeDelete(ctx context.Context, in *ByIdReq, opts ...grpc.CallOption) (*EmptyRes, error) {
+	out := new(EmptyRes)
+	err := c.cc.Invoke(ctx, "/system_service.SystemService/SpendingTypeDelete", in, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *systemServiceClient) SalaryTypeCreate(ctx context.Context, in *SalaryType, opts ...grpc.CallOption) (*SalaryType, error) {
+	out := new(SalaryType)
+	err := c.cc.Invoke(ctx, "/system_service.SystemService/SalaryTypeCreate", in, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *systemServiceClient) SalaryTypeGet(ctx context.Context, in *ByIdReq, opts ...grpc.CallOption) (*SalaryType, error) {
+	out := new(SalaryType)
+	err := c.cc.Invoke(ctx, "/system_service.SystemService/SalaryTypeGet", in, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *systemServiceClient) SalaryTypeUpdate(ctx context.Context, in *SalaryType, opts ...grpc.CallOption) (*SalaryType, error) {
+	out := new(SalaryType)
+	err := c.cc.Invoke(ctx, "/system_service.SystemService/SalaryTypeUpdate", in, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *systemServiceClient) SalaryTypeList(ctx context.Context, in *ListReq, opts ...grpc.CallOption) (*SalaryListResp, error) {
+	out := new(SalaryListResp)
+	err := c.cc.Invoke(ctx, "/system_service.SystemService/SalaryTypeList", in, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *systemServiceClient) SalaryTypeDelete(ctx context.Context, in *ByIdReq, opts ...grpc.CallOption) (*EmptyRes, error) {
+	out := new(EmptyRes)
+	err := c.cc.Invoke(ctx, "/system_service.SystemService/SalaryTypeDelete", in, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
 // SystemServiceServer is the server API for SystemService service.
 type SystemServiceServer interface {
 	DirectionCreate(context.Context, *Direction) (*Direction, error)
@@ -1917,6 +2284,16 @@ type SystemServiceServer interface {
 	TaskUpdate(context.Context, *Task) (*Task, error)
 	TaskList(context.Context, *ListReq) (*TaskListResp, error)
 	TaskDelete(context.Context, *ByIdReq) (*EmptyRes, error)
+	SpendingTypeCreate(context.Context, *SpendingType) (*SpendingType, error)
+	SpendingTypeGet(context.Context, *ByIdReq) (*SpendingType, error)
+	SpendingTypeUpdate(context.Context, *SpendingType) (*SpendingType, error)
+	SpendingTypeList(context.Context, *ListReq) (*SpendingListResp, error)
+	SpendingTypeDelete(context.Context, *ByIdReq) (*EmptyRes, error)
+	SalaryTypeCreate(context.Context, *SalaryType) (*SalaryType, error)
+	SalaryTypeGet(context.Context, *ByIdReq) (*SalaryType, error)
+	SalaryTypeUpdate(context.Context, *SalaryType) (*SalaryType, error)
+	SalaryTypeList(context.Context, *ListReq) (*SalaryListResp, error)
+	SalaryTypeDelete(context.Context, *ByIdReq) (*EmptyRes, error)
 }
 
 // UnimplementedSystemServiceServer can be embedded to have forward compatible implementations.
@@ -2030,6 +2407,36 @@ func (*UnimplementedSystemServiceServer) TaskList(ctx context.Context, req *List
 }
 func (*UnimplementedSystemServiceServer) TaskDelete(ctx context.Context, req *ByIdReq) (*EmptyRes, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method TaskDelete not implemented")
+}
+func (*UnimplementedSystemServiceServer) SpendingTypeCreate(ctx context.Context, req *SpendingType) (*SpendingType, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method SpendingTypeCreate not implemented")
+}
+func (*UnimplementedSystemServiceServer) SpendingTypeGet(ctx context.Context, req *ByIdReq) (*SpendingType, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method SpendingTypeGet not implemented")
+}
+func (*UnimplementedSystemServiceServer) SpendingTypeUpdate(ctx context.Context, req *SpendingType) (*SpendingType, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method SpendingTypeUpdate not implemented")
+}
+func (*UnimplementedSystemServiceServer) SpendingTypeList(ctx context.Context, req *ListReq) (*SpendingListResp, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method SpendingTypeList not implemented")
+}
+func (*UnimplementedSystemServiceServer) SpendingTypeDelete(ctx context.Context, req *ByIdReq) (*EmptyRes, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method SpendingTypeDelete not implemented")
+}
+func (*UnimplementedSystemServiceServer) SalaryTypeCreate(ctx context.Context, req *SalaryType) (*SalaryType, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method SalaryTypeCreate not implemented")
+}
+func (*UnimplementedSystemServiceServer) SalaryTypeGet(ctx context.Context, req *ByIdReq) (*SalaryType, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method SalaryTypeGet not implemented")
+}
+func (*UnimplementedSystemServiceServer) SalaryTypeUpdate(ctx context.Context, req *SalaryType) (*SalaryType, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method SalaryTypeUpdate not implemented")
+}
+func (*UnimplementedSystemServiceServer) SalaryTypeList(ctx context.Context, req *ListReq) (*SalaryListResp, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method SalaryTypeList not implemented")
+}
+func (*UnimplementedSystemServiceServer) SalaryTypeDelete(ctx context.Context, req *ByIdReq) (*EmptyRes, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method SalaryTypeDelete not implemented")
 }
 
 func RegisterSystemServiceServer(s *grpc.Server, srv SystemServiceServer) {
@@ -2684,6 +3091,186 @@ func _SystemService_TaskDelete_Handler(srv interface{}, ctx context.Context, dec
 	return interceptor(ctx, in, info, handler)
 }
 
+func _SystemService_SpendingTypeCreate_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(SpendingType)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(SystemServiceServer).SpendingTypeCreate(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: "/system_service.SystemService/SpendingTypeCreate",
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(SystemServiceServer).SpendingTypeCreate(ctx, req.(*SpendingType))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _SystemService_SpendingTypeGet_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(ByIdReq)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(SystemServiceServer).SpendingTypeGet(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: "/system_service.SystemService/SpendingTypeGet",
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(SystemServiceServer).SpendingTypeGet(ctx, req.(*ByIdReq))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _SystemService_SpendingTypeUpdate_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(SpendingType)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(SystemServiceServer).SpendingTypeUpdate(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: "/system_service.SystemService/SpendingTypeUpdate",
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(SystemServiceServer).SpendingTypeUpdate(ctx, req.(*SpendingType))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _SystemService_SpendingTypeList_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(ListReq)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(SystemServiceServer).SpendingTypeList(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: "/system_service.SystemService/SpendingTypeList",
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(SystemServiceServer).SpendingTypeList(ctx, req.(*ListReq))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _SystemService_SpendingTypeDelete_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(ByIdReq)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(SystemServiceServer).SpendingTypeDelete(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: "/system_service.SystemService/SpendingTypeDelete",
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(SystemServiceServer).SpendingTypeDelete(ctx, req.(*ByIdReq))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _SystemService_SalaryTypeCreate_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(SalaryType)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(SystemServiceServer).SalaryTypeCreate(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: "/system_service.SystemService/SalaryTypeCreate",
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(SystemServiceServer).SalaryTypeCreate(ctx, req.(*SalaryType))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _SystemService_SalaryTypeGet_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(ByIdReq)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(SystemServiceServer).SalaryTypeGet(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: "/system_service.SystemService/SalaryTypeGet",
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(SystemServiceServer).SalaryTypeGet(ctx, req.(*ByIdReq))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _SystemService_SalaryTypeUpdate_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(SalaryType)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(SystemServiceServer).SalaryTypeUpdate(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: "/system_service.SystemService/SalaryTypeUpdate",
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(SystemServiceServer).SalaryTypeUpdate(ctx, req.(*SalaryType))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _SystemService_SalaryTypeList_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(ListReq)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(SystemServiceServer).SalaryTypeList(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: "/system_service.SystemService/SalaryTypeList",
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(SystemServiceServer).SalaryTypeList(ctx, req.(*ListReq))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _SystemService_SalaryTypeDelete_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(ByIdReq)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(SystemServiceServer).SalaryTypeDelete(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: "/system_service.SystemService/SalaryTypeDelete",
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(SystemServiceServer).SalaryTypeDelete(ctx, req.(*ByIdReq))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
 var _SystemService_serviceDesc = grpc.ServiceDesc{
 	ServiceName: "system_service.SystemService",
 	HandlerType: (*SystemServiceServer)(nil),
@@ -2831,6 +3418,46 @@ var _SystemService_serviceDesc = grpc.ServiceDesc{
 		{
 			MethodName: "TaskDelete",
 			Handler:    _SystemService_TaskDelete_Handler,
+		},
+		{
+			MethodName: "SpendingTypeCreate",
+			Handler:    _SystemService_SpendingTypeCreate_Handler,
+		},
+		{
+			MethodName: "SpendingTypeGet",
+			Handler:    _SystemService_SpendingTypeGet_Handler,
+		},
+		{
+			MethodName: "SpendingTypeUpdate",
+			Handler:    _SystemService_SpendingTypeUpdate_Handler,
+		},
+		{
+			MethodName: "SpendingTypeList",
+			Handler:    _SystemService_SpendingTypeList_Handler,
+		},
+		{
+			MethodName: "SpendingTypeDelete",
+			Handler:    _SystemService_SpendingTypeDelete_Handler,
+		},
+		{
+			MethodName: "SalaryTypeCreate",
+			Handler:    _SystemService_SalaryTypeCreate_Handler,
+		},
+		{
+			MethodName: "SalaryTypeGet",
+			Handler:    _SystemService_SalaryTypeGet_Handler,
+		},
+		{
+			MethodName: "SalaryTypeUpdate",
+			Handler:    _SystemService_SalaryTypeUpdate_Handler,
+		},
+		{
+			MethodName: "SalaryTypeList",
+			Handler:    _SystemService_SalaryTypeList_Handler,
+		},
+		{
+			MethodName: "SalaryTypeDelete",
+			Handler:    _SystemService_SalaryTypeDelete_Handler,
 		},
 	},
 	Streams:  []grpc.StreamDesc{},
@@ -3934,6 +4561,208 @@ func (m *ByIdReq) MarshalToSizedBuffer(dAtA []byte) (int, error) {
 	return len(dAtA) - i, nil
 }
 
+func (m *SpendingType) Marshal() (dAtA []byte, err error) {
+	size := m.Size()
+	dAtA = make([]byte, size)
+	n, err := m.MarshalToSizedBuffer(dAtA[:size])
+	if err != nil {
+		return nil, err
+	}
+	return dAtA[:n], nil
+}
+
+func (m *SpendingType) MarshalTo(dAtA []byte) (int, error) {
+	size := m.Size()
+	return m.MarshalToSizedBuffer(dAtA[:size])
+}
+
+func (m *SpendingType) MarshalToSizedBuffer(dAtA []byte) (int, error) {
+	i := len(dAtA)
+	_ = i
+	var l int
+	_ = l
+	if m.XXX_unrecognized != nil {
+		i -= len(m.XXX_unrecognized)
+		copy(dAtA[i:], m.XXX_unrecognized)
+	}
+	if len(m.UpdatedAt) > 0 {
+		i -= len(m.UpdatedAt)
+		copy(dAtA[i:], m.UpdatedAt)
+		i = encodeVarintSystem(dAtA, i, uint64(len(m.UpdatedAt)))
+		i--
+		dAtA[i] = 0x22
+	}
+	if len(m.CreatedAt) > 0 {
+		i -= len(m.CreatedAt)
+		copy(dAtA[i:], m.CreatedAt)
+		i = encodeVarintSystem(dAtA, i, uint64(len(m.CreatedAt)))
+		i--
+		dAtA[i] = 0x1a
+	}
+	if len(m.Name) > 0 {
+		i -= len(m.Name)
+		copy(dAtA[i:], m.Name)
+		i = encodeVarintSystem(dAtA, i, uint64(len(m.Name)))
+		i--
+		dAtA[i] = 0x12
+	}
+	if len(m.Id) > 0 {
+		i -= len(m.Id)
+		copy(dAtA[i:], m.Id)
+		i = encodeVarintSystem(dAtA, i, uint64(len(m.Id)))
+		i--
+		dAtA[i] = 0xa
+	}
+	return len(dAtA) - i, nil
+}
+
+func (m *SpendingListResp) Marshal() (dAtA []byte, err error) {
+	size := m.Size()
+	dAtA = make([]byte, size)
+	n, err := m.MarshalToSizedBuffer(dAtA[:size])
+	if err != nil {
+		return nil, err
+	}
+	return dAtA[:n], nil
+}
+
+func (m *SpendingListResp) MarshalTo(dAtA []byte) (int, error) {
+	size := m.Size()
+	return m.MarshalToSizedBuffer(dAtA[:size])
+}
+
+func (m *SpendingListResp) MarshalToSizedBuffer(dAtA []byte) (int, error) {
+	i := len(dAtA)
+	_ = i
+	var l int
+	_ = l
+	if m.XXX_unrecognized != nil {
+		i -= len(m.XXX_unrecognized)
+		copy(dAtA[i:], m.XXX_unrecognized)
+	}
+	if m.Count != 0 {
+		i = encodeVarintSystem(dAtA, i, uint64(m.Count))
+		i--
+		dAtA[i] = 0x10
+	}
+	if len(m.SpendingType) > 0 {
+		for iNdEx := len(m.SpendingType) - 1; iNdEx >= 0; iNdEx-- {
+			{
+				size, err := m.SpendingType[iNdEx].MarshalToSizedBuffer(dAtA[:i])
+				if err != nil {
+					return 0, err
+				}
+				i -= size
+				i = encodeVarintSystem(dAtA, i, uint64(size))
+			}
+			i--
+			dAtA[i] = 0xa
+		}
+	}
+	return len(dAtA) - i, nil
+}
+
+func (m *SalaryType) Marshal() (dAtA []byte, err error) {
+	size := m.Size()
+	dAtA = make([]byte, size)
+	n, err := m.MarshalToSizedBuffer(dAtA[:size])
+	if err != nil {
+		return nil, err
+	}
+	return dAtA[:n], nil
+}
+
+func (m *SalaryType) MarshalTo(dAtA []byte) (int, error) {
+	size := m.Size()
+	return m.MarshalToSizedBuffer(dAtA[:size])
+}
+
+func (m *SalaryType) MarshalToSizedBuffer(dAtA []byte) (int, error) {
+	i := len(dAtA)
+	_ = i
+	var l int
+	_ = l
+	if m.XXX_unrecognized != nil {
+		i -= len(m.XXX_unrecognized)
+		copy(dAtA[i:], m.XXX_unrecognized)
+	}
+	if len(m.UpdatedAt) > 0 {
+		i -= len(m.UpdatedAt)
+		copy(dAtA[i:], m.UpdatedAt)
+		i = encodeVarintSystem(dAtA, i, uint64(len(m.UpdatedAt)))
+		i--
+		dAtA[i] = 0x22
+	}
+	if len(m.CreatedAt) > 0 {
+		i -= len(m.CreatedAt)
+		copy(dAtA[i:], m.CreatedAt)
+		i = encodeVarintSystem(dAtA, i, uint64(len(m.CreatedAt)))
+		i--
+		dAtA[i] = 0x1a
+	}
+	if len(m.Name) > 0 {
+		i -= len(m.Name)
+		copy(dAtA[i:], m.Name)
+		i = encodeVarintSystem(dAtA, i, uint64(len(m.Name)))
+		i--
+		dAtA[i] = 0x12
+	}
+	if len(m.Id) > 0 {
+		i -= len(m.Id)
+		copy(dAtA[i:], m.Id)
+		i = encodeVarintSystem(dAtA, i, uint64(len(m.Id)))
+		i--
+		dAtA[i] = 0xa
+	}
+	return len(dAtA) - i, nil
+}
+
+func (m *SalaryListResp) Marshal() (dAtA []byte, err error) {
+	size := m.Size()
+	dAtA = make([]byte, size)
+	n, err := m.MarshalToSizedBuffer(dAtA[:size])
+	if err != nil {
+		return nil, err
+	}
+	return dAtA[:n], nil
+}
+
+func (m *SalaryListResp) MarshalTo(dAtA []byte) (int, error) {
+	size := m.Size()
+	return m.MarshalToSizedBuffer(dAtA[:size])
+}
+
+func (m *SalaryListResp) MarshalToSizedBuffer(dAtA []byte) (int, error) {
+	i := len(dAtA)
+	_ = i
+	var l int
+	_ = l
+	if m.XXX_unrecognized != nil {
+		i -= len(m.XXX_unrecognized)
+		copy(dAtA[i:], m.XXX_unrecognized)
+	}
+	if m.Count != 0 {
+		i = encodeVarintSystem(dAtA, i, uint64(m.Count))
+		i--
+		dAtA[i] = 0x10
+	}
+	if len(m.SalaryType) > 0 {
+		for iNdEx := len(m.SalaryType) - 1; iNdEx >= 0; iNdEx-- {
+			{
+				size, err := m.SalaryType[iNdEx].MarshalToSizedBuffer(dAtA[:i])
+				if err != nil {
+					return 0, err
+				}
+				i -= size
+				i = encodeVarintSystem(dAtA, i, uint64(size))
+			}
+			i--
+			dAtA[i] = 0xa
+		}
+	}
+	return len(dAtA) - i, nil
+}
+
 func encodeVarintSystem(dAtA []byte, offset int, v uint64) int {
 	offset -= sovSystem(v)
 	base := offset
@@ -4470,6 +5299,104 @@ func (m *ByIdReq) Size() (n int) {
 	l = len(m.Id)
 	if l > 0 {
 		n += 1 + l + sovSystem(uint64(l))
+	}
+	if m.XXX_unrecognized != nil {
+		n += len(m.XXX_unrecognized)
+	}
+	return n
+}
+
+func (m *SpendingType) Size() (n int) {
+	if m == nil {
+		return 0
+	}
+	var l int
+	_ = l
+	l = len(m.Id)
+	if l > 0 {
+		n += 1 + l + sovSystem(uint64(l))
+	}
+	l = len(m.Name)
+	if l > 0 {
+		n += 1 + l + sovSystem(uint64(l))
+	}
+	l = len(m.CreatedAt)
+	if l > 0 {
+		n += 1 + l + sovSystem(uint64(l))
+	}
+	l = len(m.UpdatedAt)
+	if l > 0 {
+		n += 1 + l + sovSystem(uint64(l))
+	}
+	if m.XXX_unrecognized != nil {
+		n += len(m.XXX_unrecognized)
+	}
+	return n
+}
+
+func (m *SpendingListResp) Size() (n int) {
+	if m == nil {
+		return 0
+	}
+	var l int
+	_ = l
+	if len(m.SpendingType) > 0 {
+		for _, e := range m.SpendingType {
+			l = e.Size()
+			n += 1 + l + sovSystem(uint64(l))
+		}
+	}
+	if m.Count != 0 {
+		n += 1 + sovSystem(uint64(m.Count))
+	}
+	if m.XXX_unrecognized != nil {
+		n += len(m.XXX_unrecognized)
+	}
+	return n
+}
+
+func (m *SalaryType) Size() (n int) {
+	if m == nil {
+		return 0
+	}
+	var l int
+	_ = l
+	l = len(m.Id)
+	if l > 0 {
+		n += 1 + l + sovSystem(uint64(l))
+	}
+	l = len(m.Name)
+	if l > 0 {
+		n += 1 + l + sovSystem(uint64(l))
+	}
+	l = len(m.CreatedAt)
+	if l > 0 {
+		n += 1 + l + sovSystem(uint64(l))
+	}
+	l = len(m.UpdatedAt)
+	if l > 0 {
+		n += 1 + l + sovSystem(uint64(l))
+	}
+	if m.XXX_unrecognized != nil {
+		n += len(m.XXX_unrecognized)
+	}
+	return n
+}
+
+func (m *SalaryListResp) Size() (n int) {
+	if m == nil {
+		return 0
+	}
+	var l int
+	_ = l
+	if len(m.SalaryType) > 0 {
+		for _, e := range m.SalaryType {
+			l = e.Size()
+			n += 1 + l + sovSystem(uint64(l))
+		}
+	}
+	if m.Count != 0 {
+		n += 1 + sovSystem(uint64(m.Count))
 	}
 	if m.XXX_unrecognized != nil {
 		n += len(m.XXX_unrecognized)
@@ -7612,6 +8539,572 @@ func (m *ByIdReq) Unmarshal(dAtA []byte) error {
 			}
 			m.Id = string(dAtA[iNdEx:postIndex])
 			iNdEx = postIndex
+		default:
+			iNdEx = preIndex
+			skippy, err := skipSystem(dAtA[iNdEx:])
+			if err != nil {
+				return err
+			}
+			if (skippy < 0) || (iNdEx+skippy) < 0 {
+				return ErrInvalidLengthSystem
+			}
+			if (iNdEx + skippy) > l {
+				return io.ErrUnexpectedEOF
+			}
+			m.XXX_unrecognized = append(m.XXX_unrecognized, dAtA[iNdEx:iNdEx+skippy]...)
+			iNdEx += skippy
+		}
+	}
+
+	if iNdEx > l {
+		return io.ErrUnexpectedEOF
+	}
+	return nil
+}
+func (m *SpendingType) Unmarshal(dAtA []byte) error {
+	l := len(dAtA)
+	iNdEx := 0
+	for iNdEx < l {
+		preIndex := iNdEx
+		var wire uint64
+		for shift := uint(0); ; shift += 7 {
+			if shift >= 64 {
+				return ErrIntOverflowSystem
+			}
+			if iNdEx >= l {
+				return io.ErrUnexpectedEOF
+			}
+			b := dAtA[iNdEx]
+			iNdEx++
+			wire |= uint64(b&0x7F) << shift
+			if b < 0x80 {
+				break
+			}
+		}
+		fieldNum := int32(wire >> 3)
+		wireType := int(wire & 0x7)
+		if wireType == 4 {
+			return fmt.Errorf("proto: SpendingType: wiretype end group for non-group")
+		}
+		if fieldNum <= 0 {
+			return fmt.Errorf("proto: SpendingType: illegal tag %d (wire type %d)", fieldNum, wire)
+		}
+		switch fieldNum {
+		case 1:
+			if wireType != 2 {
+				return fmt.Errorf("proto: wrong wireType = %d for field Id", wireType)
+			}
+			var stringLen uint64
+			for shift := uint(0); ; shift += 7 {
+				if shift >= 64 {
+					return ErrIntOverflowSystem
+				}
+				if iNdEx >= l {
+					return io.ErrUnexpectedEOF
+				}
+				b := dAtA[iNdEx]
+				iNdEx++
+				stringLen |= uint64(b&0x7F) << shift
+				if b < 0x80 {
+					break
+				}
+			}
+			intStringLen := int(stringLen)
+			if intStringLen < 0 {
+				return ErrInvalidLengthSystem
+			}
+			postIndex := iNdEx + intStringLen
+			if postIndex < 0 {
+				return ErrInvalidLengthSystem
+			}
+			if postIndex > l {
+				return io.ErrUnexpectedEOF
+			}
+			m.Id = string(dAtA[iNdEx:postIndex])
+			iNdEx = postIndex
+		case 2:
+			if wireType != 2 {
+				return fmt.Errorf("proto: wrong wireType = %d for field Name", wireType)
+			}
+			var stringLen uint64
+			for shift := uint(0); ; shift += 7 {
+				if shift >= 64 {
+					return ErrIntOverflowSystem
+				}
+				if iNdEx >= l {
+					return io.ErrUnexpectedEOF
+				}
+				b := dAtA[iNdEx]
+				iNdEx++
+				stringLen |= uint64(b&0x7F) << shift
+				if b < 0x80 {
+					break
+				}
+			}
+			intStringLen := int(stringLen)
+			if intStringLen < 0 {
+				return ErrInvalidLengthSystem
+			}
+			postIndex := iNdEx + intStringLen
+			if postIndex < 0 {
+				return ErrInvalidLengthSystem
+			}
+			if postIndex > l {
+				return io.ErrUnexpectedEOF
+			}
+			m.Name = string(dAtA[iNdEx:postIndex])
+			iNdEx = postIndex
+		case 3:
+			if wireType != 2 {
+				return fmt.Errorf("proto: wrong wireType = %d for field CreatedAt", wireType)
+			}
+			var stringLen uint64
+			for shift := uint(0); ; shift += 7 {
+				if shift >= 64 {
+					return ErrIntOverflowSystem
+				}
+				if iNdEx >= l {
+					return io.ErrUnexpectedEOF
+				}
+				b := dAtA[iNdEx]
+				iNdEx++
+				stringLen |= uint64(b&0x7F) << shift
+				if b < 0x80 {
+					break
+				}
+			}
+			intStringLen := int(stringLen)
+			if intStringLen < 0 {
+				return ErrInvalidLengthSystem
+			}
+			postIndex := iNdEx + intStringLen
+			if postIndex < 0 {
+				return ErrInvalidLengthSystem
+			}
+			if postIndex > l {
+				return io.ErrUnexpectedEOF
+			}
+			m.CreatedAt = string(dAtA[iNdEx:postIndex])
+			iNdEx = postIndex
+		case 4:
+			if wireType != 2 {
+				return fmt.Errorf("proto: wrong wireType = %d for field UpdatedAt", wireType)
+			}
+			var stringLen uint64
+			for shift := uint(0); ; shift += 7 {
+				if shift >= 64 {
+					return ErrIntOverflowSystem
+				}
+				if iNdEx >= l {
+					return io.ErrUnexpectedEOF
+				}
+				b := dAtA[iNdEx]
+				iNdEx++
+				stringLen |= uint64(b&0x7F) << shift
+				if b < 0x80 {
+					break
+				}
+			}
+			intStringLen := int(stringLen)
+			if intStringLen < 0 {
+				return ErrInvalidLengthSystem
+			}
+			postIndex := iNdEx + intStringLen
+			if postIndex < 0 {
+				return ErrInvalidLengthSystem
+			}
+			if postIndex > l {
+				return io.ErrUnexpectedEOF
+			}
+			m.UpdatedAt = string(dAtA[iNdEx:postIndex])
+			iNdEx = postIndex
+		default:
+			iNdEx = preIndex
+			skippy, err := skipSystem(dAtA[iNdEx:])
+			if err != nil {
+				return err
+			}
+			if (skippy < 0) || (iNdEx+skippy) < 0 {
+				return ErrInvalidLengthSystem
+			}
+			if (iNdEx + skippy) > l {
+				return io.ErrUnexpectedEOF
+			}
+			m.XXX_unrecognized = append(m.XXX_unrecognized, dAtA[iNdEx:iNdEx+skippy]...)
+			iNdEx += skippy
+		}
+	}
+
+	if iNdEx > l {
+		return io.ErrUnexpectedEOF
+	}
+	return nil
+}
+func (m *SpendingListResp) Unmarshal(dAtA []byte) error {
+	l := len(dAtA)
+	iNdEx := 0
+	for iNdEx < l {
+		preIndex := iNdEx
+		var wire uint64
+		for shift := uint(0); ; shift += 7 {
+			if shift >= 64 {
+				return ErrIntOverflowSystem
+			}
+			if iNdEx >= l {
+				return io.ErrUnexpectedEOF
+			}
+			b := dAtA[iNdEx]
+			iNdEx++
+			wire |= uint64(b&0x7F) << shift
+			if b < 0x80 {
+				break
+			}
+		}
+		fieldNum := int32(wire >> 3)
+		wireType := int(wire & 0x7)
+		if wireType == 4 {
+			return fmt.Errorf("proto: SpendingListResp: wiretype end group for non-group")
+		}
+		if fieldNum <= 0 {
+			return fmt.Errorf("proto: SpendingListResp: illegal tag %d (wire type %d)", fieldNum, wire)
+		}
+		switch fieldNum {
+		case 1:
+			if wireType != 2 {
+				return fmt.Errorf("proto: wrong wireType = %d for field SpendingType", wireType)
+			}
+			var msglen int
+			for shift := uint(0); ; shift += 7 {
+				if shift >= 64 {
+					return ErrIntOverflowSystem
+				}
+				if iNdEx >= l {
+					return io.ErrUnexpectedEOF
+				}
+				b := dAtA[iNdEx]
+				iNdEx++
+				msglen |= int(b&0x7F) << shift
+				if b < 0x80 {
+					break
+				}
+			}
+			if msglen < 0 {
+				return ErrInvalidLengthSystem
+			}
+			postIndex := iNdEx + msglen
+			if postIndex < 0 {
+				return ErrInvalidLengthSystem
+			}
+			if postIndex > l {
+				return io.ErrUnexpectedEOF
+			}
+			m.SpendingType = append(m.SpendingType, &SpendingType{})
+			if err := m.SpendingType[len(m.SpendingType)-1].Unmarshal(dAtA[iNdEx:postIndex]); err != nil {
+				return err
+			}
+			iNdEx = postIndex
+		case 2:
+			if wireType != 0 {
+				return fmt.Errorf("proto: wrong wireType = %d for field Count", wireType)
+			}
+			m.Count = 0
+			for shift := uint(0); ; shift += 7 {
+				if shift >= 64 {
+					return ErrIntOverflowSystem
+				}
+				if iNdEx >= l {
+					return io.ErrUnexpectedEOF
+				}
+				b := dAtA[iNdEx]
+				iNdEx++
+				m.Count |= int64(b&0x7F) << shift
+				if b < 0x80 {
+					break
+				}
+			}
+		default:
+			iNdEx = preIndex
+			skippy, err := skipSystem(dAtA[iNdEx:])
+			if err != nil {
+				return err
+			}
+			if (skippy < 0) || (iNdEx+skippy) < 0 {
+				return ErrInvalidLengthSystem
+			}
+			if (iNdEx + skippy) > l {
+				return io.ErrUnexpectedEOF
+			}
+			m.XXX_unrecognized = append(m.XXX_unrecognized, dAtA[iNdEx:iNdEx+skippy]...)
+			iNdEx += skippy
+		}
+	}
+
+	if iNdEx > l {
+		return io.ErrUnexpectedEOF
+	}
+	return nil
+}
+func (m *SalaryType) Unmarshal(dAtA []byte) error {
+	l := len(dAtA)
+	iNdEx := 0
+	for iNdEx < l {
+		preIndex := iNdEx
+		var wire uint64
+		for shift := uint(0); ; shift += 7 {
+			if shift >= 64 {
+				return ErrIntOverflowSystem
+			}
+			if iNdEx >= l {
+				return io.ErrUnexpectedEOF
+			}
+			b := dAtA[iNdEx]
+			iNdEx++
+			wire |= uint64(b&0x7F) << shift
+			if b < 0x80 {
+				break
+			}
+		}
+		fieldNum := int32(wire >> 3)
+		wireType := int(wire & 0x7)
+		if wireType == 4 {
+			return fmt.Errorf("proto: SalaryType: wiretype end group for non-group")
+		}
+		if fieldNum <= 0 {
+			return fmt.Errorf("proto: SalaryType: illegal tag %d (wire type %d)", fieldNum, wire)
+		}
+		switch fieldNum {
+		case 1:
+			if wireType != 2 {
+				return fmt.Errorf("proto: wrong wireType = %d for field Id", wireType)
+			}
+			var stringLen uint64
+			for shift := uint(0); ; shift += 7 {
+				if shift >= 64 {
+					return ErrIntOverflowSystem
+				}
+				if iNdEx >= l {
+					return io.ErrUnexpectedEOF
+				}
+				b := dAtA[iNdEx]
+				iNdEx++
+				stringLen |= uint64(b&0x7F) << shift
+				if b < 0x80 {
+					break
+				}
+			}
+			intStringLen := int(stringLen)
+			if intStringLen < 0 {
+				return ErrInvalidLengthSystem
+			}
+			postIndex := iNdEx + intStringLen
+			if postIndex < 0 {
+				return ErrInvalidLengthSystem
+			}
+			if postIndex > l {
+				return io.ErrUnexpectedEOF
+			}
+			m.Id = string(dAtA[iNdEx:postIndex])
+			iNdEx = postIndex
+		case 2:
+			if wireType != 2 {
+				return fmt.Errorf("proto: wrong wireType = %d for field Name", wireType)
+			}
+			var stringLen uint64
+			for shift := uint(0); ; shift += 7 {
+				if shift >= 64 {
+					return ErrIntOverflowSystem
+				}
+				if iNdEx >= l {
+					return io.ErrUnexpectedEOF
+				}
+				b := dAtA[iNdEx]
+				iNdEx++
+				stringLen |= uint64(b&0x7F) << shift
+				if b < 0x80 {
+					break
+				}
+			}
+			intStringLen := int(stringLen)
+			if intStringLen < 0 {
+				return ErrInvalidLengthSystem
+			}
+			postIndex := iNdEx + intStringLen
+			if postIndex < 0 {
+				return ErrInvalidLengthSystem
+			}
+			if postIndex > l {
+				return io.ErrUnexpectedEOF
+			}
+			m.Name = string(dAtA[iNdEx:postIndex])
+			iNdEx = postIndex
+		case 3:
+			if wireType != 2 {
+				return fmt.Errorf("proto: wrong wireType = %d for field CreatedAt", wireType)
+			}
+			var stringLen uint64
+			for shift := uint(0); ; shift += 7 {
+				if shift >= 64 {
+					return ErrIntOverflowSystem
+				}
+				if iNdEx >= l {
+					return io.ErrUnexpectedEOF
+				}
+				b := dAtA[iNdEx]
+				iNdEx++
+				stringLen |= uint64(b&0x7F) << shift
+				if b < 0x80 {
+					break
+				}
+			}
+			intStringLen := int(stringLen)
+			if intStringLen < 0 {
+				return ErrInvalidLengthSystem
+			}
+			postIndex := iNdEx + intStringLen
+			if postIndex < 0 {
+				return ErrInvalidLengthSystem
+			}
+			if postIndex > l {
+				return io.ErrUnexpectedEOF
+			}
+			m.CreatedAt = string(dAtA[iNdEx:postIndex])
+			iNdEx = postIndex
+		case 4:
+			if wireType != 2 {
+				return fmt.Errorf("proto: wrong wireType = %d for field UpdatedAt", wireType)
+			}
+			var stringLen uint64
+			for shift := uint(0); ; shift += 7 {
+				if shift >= 64 {
+					return ErrIntOverflowSystem
+				}
+				if iNdEx >= l {
+					return io.ErrUnexpectedEOF
+				}
+				b := dAtA[iNdEx]
+				iNdEx++
+				stringLen |= uint64(b&0x7F) << shift
+				if b < 0x80 {
+					break
+				}
+			}
+			intStringLen := int(stringLen)
+			if intStringLen < 0 {
+				return ErrInvalidLengthSystem
+			}
+			postIndex := iNdEx + intStringLen
+			if postIndex < 0 {
+				return ErrInvalidLengthSystem
+			}
+			if postIndex > l {
+				return io.ErrUnexpectedEOF
+			}
+			m.UpdatedAt = string(dAtA[iNdEx:postIndex])
+			iNdEx = postIndex
+		default:
+			iNdEx = preIndex
+			skippy, err := skipSystem(dAtA[iNdEx:])
+			if err != nil {
+				return err
+			}
+			if (skippy < 0) || (iNdEx+skippy) < 0 {
+				return ErrInvalidLengthSystem
+			}
+			if (iNdEx + skippy) > l {
+				return io.ErrUnexpectedEOF
+			}
+			m.XXX_unrecognized = append(m.XXX_unrecognized, dAtA[iNdEx:iNdEx+skippy]...)
+			iNdEx += skippy
+		}
+	}
+
+	if iNdEx > l {
+		return io.ErrUnexpectedEOF
+	}
+	return nil
+}
+func (m *SalaryListResp) Unmarshal(dAtA []byte) error {
+	l := len(dAtA)
+	iNdEx := 0
+	for iNdEx < l {
+		preIndex := iNdEx
+		var wire uint64
+		for shift := uint(0); ; shift += 7 {
+			if shift >= 64 {
+				return ErrIntOverflowSystem
+			}
+			if iNdEx >= l {
+				return io.ErrUnexpectedEOF
+			}
+			b := dAtA[iNdEx]
+			iNdEx++
+			wire |= uint64(b&0x7F) << shift
+			if b < 0x80 {
+				break
+			}
+		}
+		fieldNum := int32(wire >> 3)
+		wireType := int(wire & 0x7)
+		if wireType == 4 {
+			return fmt.Errorf("proto: SalaryListResp: wiretype end group for non-group")
+		}
+		if fieldNum <= 0 {
+			return fmt.Errorf("proto: SalaryListResp: illegal tag %d (wire type %d)", fieldNum, wire)
+		}
+		switch fieldNum {
+		case 1:
+			if wireType != 2 {
+				return fmt.Errorf("proto: wrong wireType = %d for field SalaryType", wireType)
+			}
+			var msglen int
+			for shift := uint(0); ; shift += 7 {
+				if shift >= 64 {
+					return ErrIntOverflowSystem
+				}
+				if iNdEx >= l {
+					return io.ErrUnexpectedEOF
+				}
+				b := dAtA[iNdEx]
+				iNdEx++
+				msglen |= int(b&0x7F) << shift
+				if b < 0x80 {
+					break
+				}
+			}
+			if msglen < 0 {
+				return ErrInvalidLengthSystem
+			}
+			postIndex := iNdEx + msglen
+			if postIndex < 0 {
+				return ErrInvalidLengthSystem
+			}
+			if postIndex > l {
+				return io.ErrUnexpectedEOF
+			}
+			m.SalaryType = append(m.SalaryType, &SalaryType{})
+			if err := m.SalaryType[len(m.SalaryType)-1].Unmarshal(dAtA[iNdEx:postIndex]); err != nil {
+				return err
+			}
+			iNdEx = postIndex
+		case 2:
+			if wireType != 0 {
+				return fmt.Errorf("proto: wrong wireType = %d for field Count", wireType)
+			}
+			m.Count = 0
+			for shift := uint(0); ; shift += 7 {
+				if shift >= 64 {
+					return ErrIntOverflowSystem
+				}
+				if iNdEx >= l {
+					return io.ErrUnexpectedEOF
+				}
+				b := dAtA[iNdEx]
+				iNdEx++
+				m.Count |= int64(b&0x7F) << shift
+				if b < 0x80 {
+					break
+				}
+			}
 		default:
 			iNdEx = preIndex
 			skippy, err := skipSystem(dAtA[iNdEx:])

@@ -65,6 +65,155 @@ func (m *EmptyRes) XXX_DiscardUnknown() {
 
 var xxx_messageInfo_EmptyRes proto.InternalMessageInfo
 
+type TTT struct {
+	Permission           string   `protobuf:"bytes,1,opt,name=permission,proto3" json:"permission"`
+	XXX_NoUnkeyedLiteral struct{} `json:"-"`
+	XXX_unrecognized     []byte   `json:"-"`
+	XXX_sizecache        int32    `json:"-"`
+}
+
+func (m *TTT) Reset()         { *m = TTT{} }
+func (m *TTT) String() string { return proto.CompactTextString(m) }
+func (*TTT) ProtoMessage()    {}
+func (*TTT) Descriptor() ([]byte, []int) {
+	return fileDescriptor_6c4d93a072aeccf3, []int{1}
+}
+func (m *TTT) XXX_Unmarshal(b []byte) error {
+	return m.Unmarshal(b)
+}
+func (m *TTT) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
+	if deterministic {
+		return xxx_messageInfo_TTT.Marshal(b, m, deterministic)
+	} else {
+		b = b[:cap(b)]
+		n, err := m.MarshalToSizedBuffer(b)
+		if err != nil {
+			return nil, err
+		}
+		return b[:n], nil
+	}
+}
+func (m *TTT) XXX_Merge(src proto.Message) {
+	xxx_messageInfo_TTT.Merge(m, src)
+}
+func (m *TTT) XXX_Size() int {
+	return m.Size()
+}
+func (m *TTT) XXX_DiscardUnknown() {
+	xxx_messageInfo_TTT.DiscardUnknown(m)
+}
+
+var xxx_messageInfo_TTT proto.InternalMessageInfo
+
+func (m *TTT) GetPermission() string {
+	if m != nil {
+		return m.Permission
+	}
+	return ""
+}
+
+type Name struct {
+	Id                   string   `protobuf:"bytes,1,opt,name=id,proto3" json:"id"`
+	Name                 string   `protobuf:"bytes,2,opt,name=name,proto3" json:"name"`
+	XXX_NoUnkeyedLiteral struct{} `json:"-"`
+	XXX_unrecognized     []byte   `json:"-"`
+	XXX_sizecache        int32    `json:"-"`
+}
+
+func (m *Name) Reset()         { *m = Name{} }
+func (m *Name) String() string { return proto.CompactTextString(m) }
+func (*Name) ProtoMessage()    {}
+func (*Name) Descriptor() ([]byte, []int) {
+	return fileDescriptor_6c4d93a072aeccf3, []int{2}
+}
+func (m *Name) XXX_Unmarshal(b []byte) error {
+	return m.Unmarshal(b)
+}
+func (m *Name) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
+	if deterministic {
+		return xxx_messageInfo_Name.Marshal(b, m, deterministic)
+	} else {
+		b = b[:cap(b)]
+		n, err := m.MarshalToSizedBuffer(b)
+		if err != nil {
+			return nil, err
+		}
+		return b[:n], nil
+	}
+}
+func (m *Name) XXX_Merge(src proto.Message) {
+	xxx_messageInfo_Name.Merge(m, src)
+}
+func (m *Name) XXX_Size() int {
+	return m.Size()
+}
+func (m *Name) XXX_DiscardUnknown() {
+	xxx_messageInfo_Name.DiscardUnknown(m)
+}
+
+var xxx_messageInfo_Name proto.InternalMessageInfo
+
+func (m *Name) GetId() string {
+	if m != nil {
+		return m.Id
+	}
+	return ""
+}
+
+func (m *Name) GetName() string {
+	if m != nil {
+		return m.Name
+	}
+	return ""
+}
+
+type NameResp struct {
+	Teacher              []*Name  `protobuf:"bytes,1,rep,name=teacher,proto3" json:"teacher"`
+	XXX_NoUnkeyedLiteral struct{} `json:"-"`
+	XXX_unrecognized     []byte   `json:"-"`
+	XXX_sizecache        int32    `json:"-"`
+}
+
+func (m *NameResp) Reset()         { *m = NameResp{} }
+func (m *NameResp) String() string { return proto.CompactTextString(m) }
+func (*NameResp) ProtoMessage()    {}
+func (*NameResp) Descriptor() ([]byte, []int) {
+	return fileDescriptor_6c4d93a072aeccf3, []int{3}
+}
+func (m *NameResp) XXX_Unmarshal(b []byte) error {
+	return m.Unmarshal(b)
+}
+func (m *NameResp) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
+	if deterministic {
+		return xxx_messageInfo_NameResp.Marshal(b, m, deterministic)
+	} else {
+		b = b[:cap(b)]
+		n, err := m.MarshalToSizedBuffer(b)
+		if err != nil {
+			return nil, err
+		}
+		return b[:n], nil
+	}
+}
+func (m *NameResp) XXX_Merge(src proto.Message) {
+	xxx_messageInfo_NameResp.Merge(m, src)
+}
+func (m *NameResp) XXX_Size() int {
+	return m.Size()
+}
+func (m *NameResp) XXX_DiscardUnknown() {
+	xxx_messageInfo_NameResp.DiscardUnknown(m)
+}
+
+var xxx_messageInfo_NameResp proto.InternalMessageInfo
+
+func (m *NameResp) GetTeacher() []*Name {
+	if m != nil {
+		return m.Teacher
+	}
+	return nil
+}
+
 type Teacher struct {
 	Id                   string   `protobuf:"bytes,1,opt,name=id,proto3" json:"id"`
 	FullName             string   `protobuf:"bytes,2,opt,name=full_name,json=fullName,proto3" json:"full_name"`
@@ -94,7 +243,7 @@ func (m *Teacher) Reset()         { *m = Teacher{} }
 func (m *Teacher) String() string { return proto.CompactTextString(m) }
 func (*Teacher) ProtoMessage()    {}
 func (*Teacher) Descriptor() ([]byte, []int) {
-	return fileDescriptor_6c4d93a072aeccf3, []int{1}
+	return fileDescriptor_6c4d93a072aeccf3, []int{4}
 }
 func (m *Teacher) XXX_Unmarshal(b []byte) error {
 	return m.Unmarshal(b)
@@ -259,10 +408,11 @@ func (m *Teacher) GetUpdatedAt() string {
 type TeacherSalary struct {
 	Id                   string   `protobuf:"bytes,1,opt,name=id,proto3" json:"id"`
 	Amount               string   `protobuf:"bytes,2,opt,name=amount,proto3" json:"amount"`
-	TeacherId            string   `protobuf:"bytes,3,opt,name=teacher_id,json=teacherId,proto3" json:"teacher_id"`
-	GroupId              string   `protobuf:"bytes,4,opt,name=group_id,json=groupId,proto3" json:"group_id"`
-	CreatedAt            string   `protobuf:"bytes,5,opt,name=created_at,json=createdAt,proto3" json:"created_at"`
-	UpdatedAt            string   `protobuf:"bytes,6,opt,name=updated_at,json=updatedAt,proto3" json:"updated_at"`
+	Commnet              string   `protobuf:"bytes,3,opt,name=commnet,proto3" json:"commnet"`
+	DateOfBegin          string   `protobuf:"bytes,4,opt,name=date_of_begin,json=dateOfBegin,proto3" json:"date_of_begin"`
+	TeacherId            string   `protobuf:"bytes,5,opt,name=teacher_id,json=teacherId,proto3" json:"teacher_id"`
+	CreatedAt            string   `protobuf:"bytes,6,opt,name=created_at,json=createdAt,proto3" json:"created_at"`
+	UpdatedAt            string   `protobuf:"bytes,7,opt,name=updated_at,json=updatedAt,proto3" json:"updated_at"`
 	XXX_NoUnkeyedLiteral struct{} `json:"-"`
 	XXX_unrecognized     []byte   `json:"-"`
 	XXX_sizecache        int32    `json:"-"`
@@ -272,7 +422,7 @@ func (m *TeacherSalary) Reset()         { *m = TeacherSalary{} }
 func (m *TeacherSalary) String() string { return proto.CompactTextString(m) }
 func (*TeacherSalary) ProtoMessage()    {}
 func (*TeacherSalary) Descriptor() ([]byte, []int) {
-	return fileDescriptor_6c4d93a072aeccf3, []int{2}
+	return fileDescriptor_6c4d93a072aeccf3, []int{5}
 }
 func (m *TeacherSalary) XXX_Unmarshal(b []byte) error {
 	return m.Unmarshal(b)
@@ -315,16 +465,23 @@ func (m *TeacherSalary) GetAmount() string {
 	return ""
 }
 
-func (m *TeacherSalary) GetTeacherId() string {
+func (m *TeacherSalary) GetCommnet() string {
 	if m != nil {
-		return m.TeacherId
+		return m.Commnet
 	}
 	return ""
 }
 
-func (m *TeacherSalary) GetGroupId() string {
+func (m *TeacherSalary) GetDateOfBegin() string {
 	if m != nil {
-		return m.GroupId
+		return m.DateOfBegin
+	}
+	return ""
+}
+
+func (m *TeacherSalary) GetTeacherId() string {
+	if m != nil {
+		return m.TeacherId
 	}
 	return ""
 }
@@ -355,7 +512,7 @@ func (m *TeacherSalaryListResp) Reset()         { *m = TeacherSalaryListResp{} }
 func (m *TeacherSalaryListResp) String() string { return proto.CompactTextString(m) }
 func (*TeacherSalaryListResp) ProtoMessage()    {}
 func (*TeacherSalaryListResp) Descriptor() ([]byte, []int) {
-	return fileDescriptor_6c4d93a072aeccf3, []int{3}
+	return fileDescriptor_6c4d93a072aeccf3, []int{6}
 }
 func (m *TeacherSalaryListResp) XXX_Unmarshal(b []byte) error {
 	return m.Unmarshal(b)
@@ -411,7 +568,7 @@ func (m *TeacherLoginResp) Reset()         { *m = TeacherLoginResp{} }
 func (m *TeacherLoginResp) String() string { return proto.CompactTextString(m) }
 func (*TeacherLoginResp) ProtoMessage()    {}
 func (*TeacherLoginResp) Descriptor() ([]byte, []int) {
-	return fileDescriptor_6c4d93a072aeccf3, []int{4}
+	return fileDescriptor_6c4d93a072aeccf3, []int{7}
 }
 func (m *TeacherLoginResp) XXX_Unmarshal(b []byte) error {
 	return m.Unmarshal(b)
@@ -473,7 +630,7 @@ func (m *TeacherListResp) Reset()         { *m = TeacherListResp{} }
 func (m *TeacherListResp) String() string { return proto.CompactTextString(m) }
 func (*TeacherListResp) ProtoMessage()    {}
 func (*TeacherListResp) Descriptor() ([]byte, []int) {
-	return fileDescriptor_6c4d93a072aeccf3, []int{5}
+	return fileDescriptor_6c4d93a072aeccf3, []int{8}
 }
 func (m *TeacherListResp) XXX_Unmarshal(b []byte) error {
 	return m.Unmarshal(b)
@@ -528,7 +685,7 @@ func (m *LoginReq) Reset()         { *m = LoginReq{} }
 func (m *LoginReq) String() string { return proto.CompactTextString(m) }
 func (*LoginReq) ProtoMessage()    {}
 func (*LoginReq) Descriptor() ([]byte, []int) {
-	return fileDescriptor_6c4d93a072aeccf3, []int{6}
+	return fileDescriptor_6c4d93a072aeccf3, []int{9}
 }
 func (m *LoginReq) XXX_Unmarshal(b []byte) error {
 	return m.Unmarshal(b)
@@ -583,7 +740,7 @@ func (m *ListReq) Reset()         { *m = ListReq{} }
 func (m *ListReq) String() string { return proto.CompactTextString(m) }
 func (*ListReq) ProtoMessage()    {}
 func (*ListReq) Descriptor() ([]byte, []int) {
-	return fileDescriptor_6c4d93a072aeccf3, []int{7}
+	return fileDescriptor_6c4d93a072aeccf3, []int{10}
 }
 func (m *ListReq) XXX_Unmarshal(b []byte) error {
 	return m.Unmarshal(b)
@@ -637,7 +794,7 @@ func (m *SalaryReq) Reset()         { *m = SalaryReq{} }
 func (m *SalaryReq) String() string { return proto.CompactTextString(m) }
 func (*SalaryReq) ProtoMessage()    {}
 func (*SalaryReq) Descriptor() ([]byte, []int) {
-	return fileDescriptor_6c4d93a072aeccf3, []int{8}
+	return fileDescriptor_6c4d93a072aeccf3, []int{11}
 }
 func (m *SalaryReq) XXX_Unmarshal(b []byte) error {
 	return m.Unmarshal(b)
@@ -684,7 +841,7 @@ func (m *Token) Reset()         { *m = Token{} }
 func (m *Token) String() string { return proto.CompactTextString(m) }
 func (*Token) ProtoMessage()    {}
 func (*Token) Descriptor() ([]byte, []int) {
-	return fileDescriptor_6c4d93a072aeccf3, []int{9}
+	return fileDescriptor_6c4d93a072aeccf3, []int{12}
 }
 func (m *Token) XXX_Unmarshal(b []byte) error {
 	return m.Unmarshal(b)
@@ -731,7 +888,7 @@ func (m *ByIdReq) Reset()         { *m = ByIdReq{} }
 func (m *ByIdReq) String() string { return proto.CompactTextString(m) }
 func (*ByIdReq) ProtoMessage()    {}
 func (*ByIdReq) Descriptor() ([]byte, []int) {
-	return fileDescriptor_6c4d93a072aeccf3, []int{10}
+	return fileDescriptor_6c4d93a072aeccf3, []int{13}
 }
 func (m *ByIdReq) XXX_Unmarshal(b []byte) error {
 	return m.Unmarshal(b)
@@ -769,6 +926,9 @@ func (m *ByIdReq) GetId() string {
 
 func init() {
 	proto.RegisterType((*EmptyRes)(nil), "teacher_service.EmptyRes")
+	proto.RegisterType((*TTT)(nil), "teacher_service.TTT")
+	proto.RegisterType((*Name)(nil), "teacher_service.Name")
+	proto.RegisterType((*NameResp)(nil), "teacher_service.NameResp")
 	proto.RegisterType((*Teacher)(nil), "teacher_service.Teacher")
 	proto.RegisterType((*TeacherSalary)(nil), "teacher_service.TeacherSalary")
 	proto.RegisterType((*TeacherSalaryListResp)(nil), "teacher_service.TeacherSalaryListResp")
@@ -784,57 +944,62 @@ func init() {
 func init() { proto.RegisterFile("teacher.proto", fileDescriptor_6c4d93a072aeccf3) }
 
 var fileDescriptor_6c4d93a072aeccf3 = []byte{
-	// 791 bytes of a gzipped FileDescriptorProto
-	0x1f, 0x8b, 0x08, 0x00, 0x00, 0x00, 0x00, 0x00, 0x02, 0xff, 0xa4, 0x56, 0xcb, 0x6e, 0x1a, 0x49,
-	0x14, 0x9d, 0xc6, 0x06, 0x9a, 0x8b, 0x0d, 0x76, 0x79, 0xc6, 0x2a, 0x63, 0x99, 0xb1, 0x7b, 0x31,
-	0xe3, 0x95, 0x25, 0xe3, 0x28, 0xab, 0x2c, 0xe2, 0x47, 0x14, 0x11, 0xa1, 0x28, 0xc2, 0xb6, 0xb2,
-	0x8a, 0x50, 0x99, 0xaa, 0x40, 0x09, 0xba, 0xab, 0x5d, 0xdd, 0xc4, 0xe2, 0x4f, 0xb2, 0xcb, 0x27,
-	0x64, 0x97, 0x6f, 0xc8, 0x32, 0x9f, 0x10, 0x39, 0x3f, 0x12, 0xd5, 0xa3, 0xdb, 0x40, 0x03, 0x96,
-	0xe2, 0x1d, 0xf7, 0xdc, 0x5b, 0x87, 0x53, 0xa7, 0xce, 0xb5, 0x81, 0xf5, 0x98, 0x91, 0x6e, 0x9f,
-	0xc9, 0xa3, 0x50, 0x8a, 0x58, 0xa0, 0xaa, 0x2d, 0x3b, 0x11, 0x93, 0x9f, 0x78, 0x97, 0x79, 0x00,
-	0xee, 0x2b, 0x3f, 0x8c, 0xc7, 0x6d, 0x16, 0x79, 0xdf, 0x56, 0xa1, 0x78, 0x65, 0xfa, 0xa8, 0x02,
-	0x39, 0x4e, 0xb1, 0xb3, 0xef, 0x1c, 0x96, 0xda, 0x39, 0x4e, 0xd1, 0x2e, 0x94, 0x3e, 0x8e, 0x86,
-	0xc3, 0x4e, 0x40, 0x7c, 0x86, 0x73, 0x1a, 0x76, 0x15, 0xf0, 0x96, 0xf8, 0x0c, 0xd5, 0xc0, 0x0d,
-	0x49, 0x14, 0xdd, 0x09, 0x49, 0xf1, 0x8a, 0xe9, 0x25, 0x35, 0xfa, 0x1b, 0xf2, 0xcc, 0x27, 0x7c,
-	0x88, 0x57, 0x75, 0xc3, 0x14, 0xea, 0xc4, 0x0d, 0x97, 0x71, 0x9f, 0x92, 0x31, 0xce, 0x9b, 0x13,
-	0x49, 0x8d, 0xb6, 0xa1, 0xd0, 0x63, 0x01, 0x65, 0x12, 0x17, 0x74, 0xc7, 0x56, 0x0a, 0x0f, 0xfb,
-	0x22, 0x60, 0xc7, 0xb8, 0x68, 0x70, 0x53, 0xa5, 0x78, 0x03, 0xbb, 0x13, 0x78, 0x03, 0xd5, 0x01,
-	0x42, 0x26, 0x7d, 0x1e, 0x45, 0x5c, 0x04, 0xb8, 0xa4, 0x7b, 0x13, 0x08, 0xfa, 0x17, 0xca, 0x77,
-	0x42, 0x0e, 0x78, 0xd0, 0xeb, 0x28, 0x19, 0x60, 0x06, 0x2c, 0x74, 0x41, 0xc6, 0x08, 0x43, 0x91,
-	0x50, 0x2a, 0x59, 0x14, 0xe1, 0xb2, 0x6e, 0x26, 0x25, 0xfa, 0x1f, 0xaa, 0xea, 0x82, 0xa1, 0x90,
-	0xb1, 0x72, 0x92, 0xb3, 0x08, 0xaf, 0xe9, 0x89, 0x4a, 0x02, 0x5f, 0x6a, 0x74, 0x6a, 0x90, 0xfb,
-	0xa4, 0xc7, 0x8e, 0xf1, 0xfa, 0xf4, 0x60, 0x53, 0xa3, 0xd9, 0xc1, 0x06, 0xae, 0xcc, 0x19, 0x6c,
-	0x28, 0x3f, 0x75, 0x1f, 0x57, 0x8d, 0x9f, 0xba, 0x50, 0xcf, 0x73, 0x23, 0x49, 0xd0, 0xed, 0x77,
-	0x38, 0xc5, 0x1b, 0xd6, 0x50, 0x0d, 0x34, 0x29, 0x3a, 0x80, 0x35, 0xca, 0x25, 0xeb, 0xc6, 0x5c,
-	0x04, 0xaa, 0xbf, 0xa9, 0xfb, 0xe5, 0x14, 0x6b, 0x52, 0xb4, 0x07, 0xd0, 0x95, 0x8c, 0xc4, 0x8c,
-	0x76, 0x48, 0x8c, 0x91, 0x1e, 0x28, 0x59, 0xe4, 0x34, 0x56, 0xed, 0x51, 0x48, 0x93, 0xf6, 0x96,
-	0x69, 0x5b, 0xe4, 0x34, 0xf6, 0xbe, 0x3a, 0xb0, 0x6e, 0x83, 0x73, 0x49, 0x86, 0x44, 0x8e, 0x33,
-	0xf1, 0xd9, 0x86, 0x02, 0xf1, 0xc5, 0x28, 0x88, 0x6d, 0x76, 0x6c, 0xa5, 0x88, 0x93, 0x44, 0xf2,
-	0x24, 0x3b, 0x25, 0x8b, 0x34, 0x29, 0xda, 0x01, 0xb7, 0x27, 0xc5, 0x28, 0x54, 0x4d, 0x93, 0x9f,
-	0xa2, 0xae, 0x33, 0x8a, 0xf3, 0xcb, 0x15, 0x17, 0x66, 0x15, 0x33, 0xf8, 0x67, 0x4a, 0x70, 0x8b,
-	0x47, 0x71, 0x9b, 0x45, 0x21, 0x7a, 0x0e, 0x85, 0x48, 0x23, 0xd8, 0xd9, 0x5f, 0x39, 0x2c, 0x37,
-	0xea, 0x47, 0x33, 0x1b, 0x73, 0x34, 0x75, 0xae, 0x6d, 0xa7, 0xd5, 0xb3, 0x74, 0xd3, 0xfb, 0xad,
-	0xb4, 0x4d, 0xe1, 0xbd, 0x83, 0x0d, 0x3b, 0xde, 0x12, 0x3d, 0x1e, 0xe8, 0x6f, 0xa8, 0x40, 0x4e,
-	0x0c, 0xb4, 0x35, 0x6e, 0x3b, 0x27, 0x06, 0xea, 0x64, 0x2c, 0x06, 0x2c, 0xb0, 0xce, 0x98, 0x42,
-	0x19, 0x76, 0xd7, 0x17, 0xc4, 0xe7, 0xd6, 0x14, 0x5b, 0x79, 0x1f, 0xa0, 0x9a, 0x30, 0x26, 0x92,
-	0x9f, 0x81, 0x6b, 0x35, 0x46, 0x56, 0x34, 0x5e, 0x24, 0xba, 0x9d, 0x4e, 0x2e, 0x10, 0xfc, 0x02,
-	0x5c, 0xab, 0xf4, 0xf6, 0x61, 0x73, 0x9d, 0x99, 0xcd, 0x4d, 0x77, 0x3d, 0x37, 0xbd, 0xeb, 0xde,
-	0x09, 0x14, 0x8d, 0xaa, 0x5b, 0x84, 0x60, 0x35, 0x54, 0x29, 0x75, 0x34, 0xbb, 0xfe, 0xac, 0x08,
-	0x87, 0xdc, 0xe7, 0xe9, 0x57, 0xea, 0xc2, 0xdb, 0x85, 0x92, 0xf5, 0x92, 0xdd, 0xce, 0xe6, 0xc6,
-	0xdb, 0x83, 0xfc, 0x95, 0xf6, 0x23, 0x75, 0xc9, 0x99, 0x70, 0xc9, 0xdb, 0x81, 0xe2, 0xd9, 0xb8,
-	0x49, 0xe7, 0x9c, 0x6c, 0x7c, 0x29, 0x42, 0x25, 0x79, 0x2a, 0x63, 0x02, 0x3a, 0x4f, 0x53, 0x7a,
-	0xae, 0x73, 0x82, 0x16, 0xfa, 0x54, 0x5b, 0xd8, 0x41, 0x2f, 0x01, 0xec, 0xc7, 0xd7, 0x2c, 0x9e,
-	0xc3, 0x60, 0xf5, 0x2c, 0x61, 0x38, 0x7d, 0x58, 0x16, 0xde, 0x0b, 0xae, 0x43, 0xb4, 0x9d, 0x1d,
-	0x55, 0xb7, 0x5b, 0x42, 0xd1, 0x84, 0xf2, 0x44, 0x0a, 0xe6, 0xa8, 0xb0, 0xcf, 0x50, 0xdb, 0x5f,
-	0x44, 0x91, 0xa6, 0xa7, 0x05, 0x6b, 0x93, 0x11, 0x45, 0x3b, 0x59, 0x2e, 0x1b, 0x88, 0xda, 0xc1,
-	0x42, 0xb2, 0x34, 0xdc, 0x0f, 0x16, 0x5f, 0xeb, 0x5d, 0xfb, 0x23, 0x8b, 0x2f, 0x52, 0x92, 0x0b,
-	0x36, 0x64, 0x73, 0x49, 0x12, 0x97, 0xb3, 0x6a, 0x93, 0xff, 0x66, 0xe8, 0x1a, 0xb6, 0xa6, 0x56,
-	0xd5, 0xbe, 0xf9, 0x23, 0x0b, 0x5d, 0x7b, 0xa4, 0x8f, 0x5a, 0xe9, 0x4a, 0x1b, 0x60, 0x79, 0x0a,
-	0x1e, 0x63, 0x7b, 0x0f, 0x9b, 0x99, 0xbf, 0x43, 0xa8, 0x96, 0x39, 0x94, 0x2e, 0x48, 0xed, 0xbf,
-	0xe5, 0x84, 0xe9, 0xb3, 0xce, 0xde, 0xde, 0x3e, 0xc7, 0x53, 0x6f, 0xff, 0x66, 0x86, 0xf6, 0x09,
-	0x0f, 0x74, 0xb6, 0xf1, 0xfd, 0xbe, 0xee, 0xfc, 0xb8, 0xaf, 0x3b, 0x3f, 0xef, 0xeb, 0xce, 0xe7,
-	0x5f, 0xf5, 0xbf, 0x6e, 0x0a, 0xfa, 0x47, 0xca, 0xc9, 0xef, 0x00, 0x00, 0x00, 0xff, 0xff, 0xc9,
-	0x5b, 0x1e, 0x8f, 0xb5, 0x08, 0x00, 0x00,
+	// 871 bytes of a gzipped FileDescriptorProto
+	0x1f, 0x8b, 0x08, 0x00, 0x00, 0x00, 0x00, 0x00, 0x02, 0xff, 0xa4, 0x56, 0xdd, 0x6e, 0xda, 0x4a,
+	0x10, 0x3e, 0x06, 0x82, 0xcd, 0x10, 0x20, 0xd9, 0xfc, 0x68, 0x43, 0x14, 0x4e, 0x62, 0xe9, 0x9c,
+	0x13, 0x9d, 0x8b, 0x1c, 0x85, 0x1c, 0xf5, 0xa6, 0xbd, 0x48, 0x48, 0xaa, 0x8a, 0x0a, 0xb5, 0x15,
+	0x21, 0xea, 0x55, 0x85, 0x16, 0xbc, 0x81, 0x15, 0xd8, 0xeb, 0xd8, 0x4e, 0x23, 0xde, 0xa4, 0x4f,
+	0xd2, 0x67, 0xe8, 0x65, 0xd5, 0x27, 0x68, 0xd3, 0x17, 0xa9, 0x76, 0xbd, 0x76, 0xc0, 0x06, 0x22,
+	0x35, 0x77, 0x9e, 0x6f, 0x66, 0x67, 0x67, 0xbe, 0xf9, 0x66, 0x01, 0x4a, 0x01, 0x25, 0xfd, 0x21,
+	0xf5, 0x8e, 0x5c, 0x8f, 0x07, 0x1c, 0x55, 0x94, 0xd9, 0xf5, 0xa9, 0xf7, 0x91, 0xf5, 0xa9, 0x09,
+	0x60, 0xbc, 0xb4, 0xdd, 0x60, 0xd2, 0xa6, 0xbe, 0xf9, 0x17, 0x64, 0x3b, 0x9d, 0x0e, 0xaa, 0x01,
+	0xb8, 0xd4, 0xb3, 0x99, 0xef, 0x33, 0xee, 0x60, 0x6d, 0x5f, 0x3b, 0x2c, 0xb4, 0xa7, 0x10, 0xf3,
+	0x5f, 0xc8, 0xbd, 0x21, 0x36, 0x45, 0x65, 0xc8, 0x30, 0x4b, 0xf9, 0x33, 0xcc, 0x42, 0x08, 0x72,
+	0x0e, 0xb1, 0x29, 0xce, 0x48, 0x44, 0x7e, 0x9b, 0xcf, 0xc1, 0x10, 0xb1, 0x6d, 0xea, 0xbb, 0xe8,
+	0x3f, 0xd0, 0xd5, 0xed, 0x58, 0xdb, 0xcf, 0x1e, 0x16, 0xeb, 0x5b, 0x47, 0x89, 0x6a, 0x8e, 0x64,
+	0x6c, 0x14, 0x65, 0x7e, 0xce, 0x81, 0xde, 0x09, 0xbf, 0x53, 0x97, 0xed, 0x42, 0xe1, 0xfa, 0x76,
+	0x3c, 0xee, 0x4e, 0xdd, 0x68, 0x08, 0x40, 0x56, 0x56, 0x05, 0xc3, 0x25, 0xbe, 0x7f, 0xc7, 0x3d,
+	0x0b, 0x67, 0x43, 0x5f, 0x64, 0xa3, 0x4d, 0x58, 0xa1, 0x36, 0x61, 0x63, 0x9c, 0x93, 0x8e, 0xd0,
+	0x10, 0x27, 0x7a, 0xcc, 0x0b, 0x86, 0x16, 0x99, 0xe0, 0x95, 0xf0, 0x44, 0x64, 0xa3, 0x6d, 0xc8,
+	0x0f, 0xa8, 0x63, 0x51, 0x0f, 0xe7, 0xa5, 0x47, 0x59, 0x02, 0x77, 0x87, 0xdc, 0xa1, 0xc7, 0x58,
+	0x0f, 0xf1, 0xd0, 0x8a, 0xf1, 0x3a, 0x36, 0xa6, 0xf0, 0x7a, 0x82, 0xd7, 0x42, 0x92, 0x57, 0xf4,
+	0x27, 0x14, 0xef, 0xb8, 0x37, 0x62, 0xce, 0xa0, 0x2b, 0xca, 0x80, 0x30, 0x40, 0x41, 0x17, 0x64,
+	0x82, 0x30, 0xe8, 0xc4, 0xb2, 0x3c, 0xea, 0xfb, 0xb8, 0x28, 0x9d, 0x91, 0x89, 0xfe, 0x81, 0x8a,
+	0x68, 0xd0, 0xe5, 0x5e, 0x20, 0xb8, 0x64, 0xd4, 0xc7, 0xab, 0x32, 0xa2, 0x1c, 0xc1, 0x97, 0x12,
+	0x9d, 0x09, 0x64, 0x36, 0x19, 0xd0, 0x63, 0x5c, 0x9a, 0x0d, 0x6c, 0x4a, 0x34, 0x1d, 0x58, 0xc7,
+	0xe5, 0x39, 0x81, 0x75, 0xc1, 0xa7, 0xf4, 0xe3, 0x4a, 0xc8, 0xa7, 0x34, 0xc4, 0x78, 0x7a, 0x1e,
+	0x71, 0xfa, 0xc3, 0x2e, 0xb3, 0xf0, 0x9a, 0x22, 0x54, 0x02, 0x4d, 0x0b, 0x1d, 0xc0, 0xaa, 0xc5,
+	0x3c, 0xda, 0x0f, 0x18, 0x77, 0x84, 0x7f, 0x5d, 0xfa, 0x8b, 0x31, 0xd6, 0xb4, 0xd0, 0x1e, 0x40,
+	0xdf, 0xa3, 0x24, 0xa0, 0x56, 0x97, 0x04, 0x18, 0xc9, 0x80, 0x82, 0x42, 0xce, 0x02, 0xe1, 0xbe,
+	0x75, 0xad, 0xc8, 0xbd, 0x11, 0xba, 0x15, 0x72, 0x16, 0x98, 0xdf, 0x34, 0x28, 0x29, 0xe1, 0x5c,
+	0x92, 0x31, 0xf1, 0x26, 0x29, 0xf9, 0x6c, 0x43, 0x9e, 0xd8, 0xfc, 0xd6, 0x09, 0x94, 0x76, 0x94,
+	0x25, 0x28, 0xee, 0x73, 0xdb, 0x76, 0x68, 0xa0, 0x84, 0x13, 0x99, 0xc8, 0x84, 0x92, 0x48, 0xdf,
+	0xe5, 0xd7, 0xdd, 0x1e, 0x1d, 0x30, 0x47, 0xe9, 0xa7, 0x28, 0xc0, 0xb7, 0xd7, 0x0d, 0x01, 0x89,
+	0xb2, 0x22, 0x45, 0x33, 0x4b, 0xe9, 0xa8, 0xa0, 0x90, 0x54, 0x53, 0xf9, 0xe5, 0x4d, 0xe9, 0xc9,
+	0xa6, 0x28, 0x6c, 0xcd, 0xf4, 0xd4, 0x62, 0x7e, 0x20, 0xf7, 0xea, 0x19, 0xe4, 0x7d, 0x89, 0xa8,
+	0xb5, 0xaa, 0xa5, 0xd6, 0x6a, 0xe6, 0x5c, 0x5b, 0x45, 0x8b, 0xc9, 0xf5, 0x63, 0x0a, 0xb2, 0xed,
+	0xd0, 0x30, 0xdf, 0xc1, 0x9a, 0x0a, 0x6f, 0xf1, 0x01, 0x73, 0xe4, 0x0d, 0x65, 0xc8, 0xf0, 0x91,
+	0x64, 0xcf, 0x68, 0x67, 0xf8, 0x48, 0x9c, 0x0c, 0xf8, 0x88, 0x3a, 0x8a, 0xbc, 0xd0, 0x10, 0x9c,
+	0xde, 0x0d, 0x39, 0xb1, 0x99, 0xa2, 0x4e, 0x59, 0xe6, 0x07, 0xa8, 0x44, 0x19, 0xa3, 0x92, 0xff,
+	0x07, 0x43, 0xd5, 0xe8, 0xab, 0xa2, 0xf1, 0xa2, 0xa2, 0xdb, 0x71, 0xe4, 0x82, 0x82, 0x5f, 0x80,
+	0xa1, 0x2a, 0xbd, 0x79, 0x58, 0x6e, 0x2d, 0xb1, 0xdc, 0xf1, 0x73, 0x90, 0x99, 0x7d, 0x0e, 0xcc,
+	0x13, 0xd0, 0xc3, 0xaa, 0x6e, 0xc4, 0xfb, 0xe5, 0x0a, 0x21, 0x6b, 0x32, 0xbb, 0xfc, 0x16, 0x09,
+	0xc7, 0xcc, 0x66, 0xf1, 0x95, 0xd2, 0x30, 0x77, 0xa1, 0xa0, 0xb8, 0xa4, 0x37, 0x49, 0x69, 0x99,
+	0x7b, 0xb0, 0xd2, 0x91, 0x7c, 0xc4, 0x2c, 0x69, 0x53, 0x2c, 0x99, 0x3b, 0xa0, 0x37, 0x26, 0x4d,
+	0x6b, 0xce, 0xc9, 0xfa, 0x0f, 0x1d, 0xca, 0xd1, 0xa8, 0x42, 0x12, 0xd0, 0x79, 0x2c, 0xe4, 0x73,
+	0xa9, 0x13, 0xb4, 0x90, 0xa7, 0xea, 0x42, 0x0f, 0x3a, 0x05, 0x50, 0x9f, 0xaf, 0x68, 0x30, 0x27,
+	0x83, 0xaa, 0x67, 0x49, 0x86, 0xb3, 0x87, 0x7d, 0x62, 0x03, 0xe7, 0xca, 0x45, 0xdb, 0xe9, 0x50,
+	0xd1, 0xdd, 0x92, 0x14, 0x4d, 0x28, 0x4e, 0xa9, 0x60, 0x4e, 0x15, 0x6a, 0x0c, 0xd5, 0xfd, 0x45,
+	0x29, 0x62, 0xf5, 0xb4, 0x60, 0x75, 0x5a, 0xa2, 0x68, 0x27, 0x9d, 0x4b, 0x09, 0xa2, 0x7a, 0xb0,
+	0x30, 0x59, 0x2c, 0xee, 0x07, 0x8a, 0xaf, 0xe4, 0xae, 0xfd, 0x16, 0xc5, 0x17, 0x71, 0x92, 0x0b,
+	0x3a, 0xa6, 0x73, 0x93, 0x44, 0x2c, 0xa7, 0xab, 0x8d, 0x7e, 0x80, 0xd1, 0x15, 0x6c, 0xcc, 0xac,
+	0xaa, 0x9a, 0xf9, 0x23, 0x0b, 0x5d, 0x7d, 0xc4, 0x8f, 0x5a, 0xf1, 0x4a, 0x87, 0xc0, 0x72, 0x15,
+	0x3c, 0x96, 0xed, 0x3d, 0xac, 0xa7, 0xde, 0x21, 0x54, 0x4d, 0x1d, 0x8a, 0x17, 0xa4, 0xfa, 0xf7,
+	0xf2, 0x84, 0xf1, 0x58, 0x93, 0xdd, 0xab, 0x71, 0x3c, 0xb5, 0xfb, 0xd7, 0x89, 0xb4, 0x4f, 0x19,
+	0xd0, 0x69, 0x3c, 0xe6, 0xc6, 0x44, 0xfe, 0xd3, 0xd8, 0x4c, 0x5f, 0xde, 0xe9, 0xcc, 0xc9, 0x10,
+	0xfd, 0x09, 0x6a, 0xac, 0x7d, 0xb9, 0xaf, 0x69, 0x5f, 0xef, 0x6b, 0xda, 0xf7, 0xfb, 0x9a, 0xf6,
+	0xe9, 0x67, 0xed, 0x8f, 0x5e, 0x5e, 0xfe, 0x33, 0x3b, 0xf9, 0x15, 0x00, 0x00, 0xff, 0xff, 0x62,
+	0xb5, 0x49, 0x62, 0xaa, 0x09, 0x00, 0x00,
 }
 
 // Reference imports to suppress errors if they are not otherwise used.
@@ -861,6 +1026,7 @@ type TeacherServiceClient interface {
 	TeacherSalaryList(ctx context.Context, in *SalaryReq, opts ...grpc.CallOption) (*TeacherSalaryListResp, error)
 	TeacherSalaryUpdate(ctx context.Context, in *TeacherSalary, opts ...grpc.CallOption) (*TeacherSalary, error)
 	TeacherSalaryDelete(ctx context.Context, in *ByIdReq, opts ...grpc.CallOption) (*EmptyRes, error)
+	TeacherByName(ctx context.Context, in *TTT, opts ...grpc.CallOption) (*NameResp, error)
 }
 
 type teacherServiceClient struct {
@@ -979,6 +1145,15 @@ func (c *teacherServiceClient) TeacherSalaryDelete(ctx context.Context, in *ById
 	return out, nil
 }
 
+func (c *teacherServiceClient) TeacherByName(ctx context.Context, in *TTT, opts ...grpc.CallOption) (*NameResp, error) {
+	out := new(NameResp)
+	err := c.cc.Invoke(ctx, "/teacher_service.TeacherService/TeacherByName", in, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
 // TeacherServiceServer is the server API for TeacherService service.
 type TeacherServiceServer interface {
 	TeacherCreate(context.Context, *Teacher) (*Teacher, error)
@@ -993,6 +1168,7 @@ type TeacherServiceServer interface {
 	TeacherSalaryList(context.Context, *SalaryReq) (*TeacherSalaryListResp, error)
 	TeacherSalaryUpdate(context.Context, *TeacherSalary) (*TeacherSalary, error)
 	TeacherSalaryDelete(context.Context, *ByIdReq) (*EmptyRes, error)
+	TeacherByName(context.Context, *TTT) (*NameResp, error)
 }
 
 // UnimplementedTeacherServiceServer can be embedded to have forward compatible implementations.
@@ -1034,6 +1210,9 @@ func (*UnimplementedTeacherServiceServer) TeacherSalaryUpdate(ctx context.Contex
 }
 func (*UnimplementedTeacherServiceServer) TeacherSalaryDelete(ctx context.Context, req *ByIdReq) (*EmptyRes, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method TeacherSalaryDelete not implemented")
+}
+func (*UnimplementedTeacherServiceServer) TeacherByName(ctx context.Context, req *TTT) (*NameResp, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method TeacherByName not implemented")
 }
 
 func RegisterTeacherServiceServer(s *grpc.Server, srv TeacherServiceServer) {
@@ -1256,6 +1435,24 @@ func _TeacherService_TeacherSalaryDelete_Handler(srv interface{}, ctx context.Co
 	return interceptor(ctx, in, info, handler)
 }
 
+func _TeacherService_TeacherByName_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(TTT)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(TeacherServiceServer).TeacherByName(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: "/teacher_service.TeacherService/TeacherByName",
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(TeacherServiceServer).TeacherByName(ctx, req.(*TTT))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
 var _TeacherService_serviceDesc = grpc.ServiceDesc{
 	ServiceName: "teacher_service.TeacherService",
 	HandlerType: (*TeacherServiceServer)(nil),
@@ -1308,6 +1505,10 @@ var _TeacherService_serviceDesc = grpc.ServiceDesc{
 			MethodName: "TeacherSalaryDelete",
 			Handler:    _TeacherService_TeacherSalaryDelete_Handler,
 		},
+		{
+			MethodName: "TeacherByName",
+			Handler:    _TeacherService_TeacherByName_Handler,
+		},
 	},
 	Streams:  []grpc.StreamDesc{},
 	Metadata: "teacher.proto",
@@ -1336,6 +1537,122 @@ func (m *EmptyRes) MarshalToSizedBuffer(dAtA []byte) (int, error) {
 	if m.XXX_unrecognized != nil {
 		i -= len(m.XXX_unrecognized)
 		copy(dAtA[i:], m.XXX_unrecognized)
+	}
+	return len(dAtA) - i, nil
+}
+
+func (m *TTT) Marshal() (dAtA []byte, err error) {
+	size := m.Size()
+	dAtA = make([]byte, size)
+	n, err := m.MarshalToSizedBuffer(dAtA[:size])
+	if err != nil {
+		return nil, err
+	}
+	return dAtA[:n], nil
+}
+
+func (m *TTT) MarshalTo(dAtA []byte) (int, error) {
+	size := m.Size()
+	return m.MarshalToSizedBuffer(dAtA[:size])
+}
+
+func (m *TTT) MarshalToSizedBuffer(dAtA []byte) (int, error) {
+	i := len(dAtA)
+	_ = i
+	var l int
+	_ = l
+	if m.XXX_unrecognized != nil {
+		i -= len(m.XXX_unrecognized)
+		copy(dAtA[i:], m.XXX_unrecognized)
+	}
+	if len(m.Permission) > 0 {
+		i -= len(m.Permission)
+		copy(dAtA[i:], m.Permission)
+		i = encodeVarintTeacher(dAtA, i, uint64(len(m.Permission)))
+		i--
+		dAtA[i] = 0xa
+	}
+	return len(dAtA) - i, nil
+}
+
+func (m *Name) Marshal() (dAtA []byte, err error) {
+	size := m.Size()
+	dAtA = make([]byte, size)
+	n, err := m.MarshalToSizedBuffer(dAtA[:size])
+	if err != nil {
+		return nil, err
+	}
+	return dAtA[:n], nil
+}
+
+func (m *Name) MarshalTo(dAtA []byte) (int, error) {
+	size := m.Size()
+	return m.MarshalToSizedBuffer(dAtA[:size])
+}
+
+func (m *Name) MarshalToSizedBuffer(dAtA []byte) (int, error) {
+	i := len(dAtA)
+	_ = i
+	var l int
+	_ = l
+	if m.XXX_unrecognized != nil {
+		i -= len(m.XXX_unrecognized)
+		copy(dAtA[i:], m.XXX_unrecognized)
+	}
+	if len(m.Name) > 0 {
+		i -= len(m.Name)
+		copy(dAtA[i:], m.Name)
+		i = encodeVarintTeacher(dAtA, i, uint64(len(m.Name)))
+		i--
+		dAtA[i] = 0x12
+	}
+	if len(m.Id) > 0 {
+		i -= len(m.Id)
+		copy(dAtA[i:], m.Id)
+		i = encodeVarintTeacher(dAtA, i, uint64(len(m.Id)))
+		i--
+		dAtA[i] = 0xa
+	}
+	return len(dAtA) - i, nil
+}
+
+func (m *NameResp) Marshal() (dAtA []byte, err error) {
+	size := m.Size()
+	dAtA = make([]byte, size)
+	n, err := m.MarshalToSizedBuffer(dAtA[:size])
+	if err != nil {
+		return nil, err
+	}
+	return dAtA[:n], nil
+}
+
+func (m *NameResp) MarshalTo(dAtA []byte) (int, error) {
+	size := m.Size()
+	return m.MarshalToSizedBuffer(dAtA[:size])
+}
+
+func (m *NameResp) MarshalToSizedBuffer(dAtA []byte) (int, error) {
+	i := len(dAtA)
+	_ = i
+	var l int
+	_ = l
+	if m.XXX_unrecognized != nil {
+		i -= len(m.XXX_unrecognized)
+		copy(dAtA[i:], m.XXX_unrecognized)
+	}
+	if len(m.Teacher) > 0 {
+		for iNdEx := len(m.Teacher) - 1; iNdEx >= 0; iNdEx-- {
+			{
+				size, err := m.Teacher[iNdEx].MarshalToSizedBuffer(dAtA[:i])
+				if err != nil {
+					return 0, err
+				}
+				i -= size
+				i = encodeVarintTeacher(dAtA, i, uint64(size))
+			}
+			i--
+			dAtA[i] = 0xa
+		}
 	}
 	return len(dAtA) - i, nil
 }
@@ -1537,26 +1854,33 @@ func (m *TeacherSalary) MarshalToSizedBuffer(dAtA []byte) (int, error) {
 		copy(dAtA[i:], m.UpdatedAt)
 		i = encodeVarintTeacher(dAtA, i, uint64(len(m.UpdatedAt)))
 		i--
-		dAtA[i] = 0x32
+		dAtA[i] = 0x3a
 	}
 	if len(m.CreatedAt) > 0 {
 		i -= len(m.CreatedAt)
 		copy(dAtA[i:], m.CreatedAt)
 		i = encodeVarintTeacher(dAtA, i, uint64(len(m.CreatedAt)))
 		i--
-		dAtA[i] = 0x2a
-	}
-	if len(m.GroupId) > 0 {
-		i -= len(m.GroupId)
-		copy(dAtA[i:], m.GroupId)
-		i = encodeVarintTeacher(dAtA, i, uint64(len(m.GroupId)))
-		i--
-		dAtA[i] = 0x22
+		dAtA[i] = 0x32
 	}
 	if len(m.TeacherId) > 0 {
 		i -= len(m.TeacherId)
 		copy(dAtA[i:], m.TeacherId)
 		i = encodeVarintTeacher(dAtA, i, uint64(len(m.TeacherId)))
+		i--
+		dAtA[i] = 0x2a
+	}
+	if len(m.DateOfBegin) > 0 {
+		i -= len(m.DateOfBegin)
+		copy(dAtA[i:], m.DateOfBegin)
+		i = encodeVarintTeacher(dAtA, i, uint64(len(m.DateOfBegin)))
+		i--
+		dAtA[i] = 0x22
+	}
+	if len(m.Commnet) > 0 {
+		i -= len(m.Commnet)
+		copy(dAtA[i:], m.Commnet)
+		i = encodeVarintTeacher(dAtA, i, uint64(len(m.Commnet)))
 		i--
 		dAtA[i] = 0x1a
 	}
@@ -1923,6 +2247,60 @@ func (m *EmptyRes) Size() (n int) {
 	return n
 }
 
+func (m *TTT) Size() (n int) {
+	if m == nil {
+		return 0
+	}
+	var l int
+	_ = l
+	l = len(m.Permission)
+	if l > 0 {
+		n += 1 + l + sovTeacher(uint64(l))
+	}
+	if m.XXX_unrecognized != nil {
+		n += len(m.XXX_unrecognized)
+	}
+	return n
+}
+
+func (m *Name) Size() (n int) {
+	if m == nil {
+		return 0
+	}
+	var l int
+	_ = l
+	l = len(m.Id)
+	if l > 0 {
+		n += 1 + l + sovTeacher(uint64(l))
+	}
+	l = len(m.Name)
+	if l > 0 {
+		n += 1 + l + sovTeacher(uint64(l))
+	}
+	if m.XXX_unrecognized != nil {
+		n += len(m.XXX_unrecognized)
+	}
+	return n
+}
+
+func (m *NameResp) Size() (n int) {
+	if m == nil {
+		return 0
+	}
+	var l int
+	_ = l
+	if len(m.Teacher) > 0 {
+		for _, e := range m.Teacher {
+			l = e.Size()
+			n += 1 + l + sovTeacher(uint64(l))
+		}
+	}
+	if m.XXX_unrecognized != nil {
+		n += len(m.XXX_unrecognized)
+	}
+	return n
+}
+
 func (m *Teacher) Size() (n int) {
 	if m == nil {
 		return 0
@@ -2025,11 +2403,15 @@ func (m *TeacherSalary) Size() (n int) {
 	if l > 0 {
 		n += 1 + l + sovTeacher(uint64(l))
 	}
-	l = len(m.TeacherId)
+	l = len(m.Commnet)
 	if l > 0 {
 		n += 1 + l + sovTeacher(uint64(l))
 	}
-	l = len(m.GroupId)
+	l = len(m.DateOfBegin)
+	if l > 0 {
+		n += 1 + l + sovTeacher(uint64(l))
+	}
+	l = len(m.TeacherId)
 	if l > 0 {
 		n += 1 + l + sovTeacher(uint64(l))
 	}
@@ -2233,6 +2615,289 @@ func (m *EmptyRes) Unmarshal(dAtA []byte) error {
 			return fmt.Errorf("proto: EmptyRes: illegal tag %d (wire type %d)", fieldNum, wire)
 		}
 		switch fieldNum {
+		default:
+			iNdEx = preIndex
+			skippy, err := skipTeacher(dAtA[iNdEx:])
+			if err != nil {
+				return err
+			}
+			if (skippy < 0) || (iNdEx+skippy) < 0 {
+				return ErrInvalidLengthTeacher
+			}
+			if (iNdEx + skippy) > l {
+				return io.ErrUnexpectedEOF
+			}
+			m.XXX_unrecognized = append(m.XXX_unrecognized, dAtA[iNdEx:iNdEx+skippy]...)
+			iNdEx += skippy
+		}
+	}
+
+	if iNdEx > l {
+		return io.ErrUnexpectedEOF
+	}
+	return nil
+}
+func (m *TTT) Unmarshal(dAtA []byte) error {
+	l := len(dAtA)
+	iNdEx := 0
+	for iNdEx < l {
+		preIndex := iNdEx
+		var wire uint64
+		for shift := uint(0); ; shift += 7 {
+			if shift >= 64 {
+				return ErrIntOverflowTeacher
+			}
+			if iNdEx >= l {
+				return io.ErrUnexpectedEOF
+			}
+			b := dAtA[iNdEx]
+			iNdEx++
+			wire |= uint64(b&0x7F) << shift
+			if b < 0x80 {
+				break
+			}
+		}
+		fieldNum := int32(wire >> 3)
+		wireType := int(wire & 0x7)
+		if wireType == 4 {
+			return fmt.Errorf("proto: TTT: wiretype end group for non-group")
+		}
+		if fieldNum <= 0 {
+			return fmt.Errorf("proto: TTT: illegal tag %d (wire type %d)", fieldNum, wire)
+		}
+		switch fieldNum {
+		case 1:
+			if wireType != 2 {
+				return fmt.Errorf("proto: wrong wireType = %d for field Permission", wireType)
+			}
+			var stringLen uint64
+			for shift := uint(0); ; shift += 7 {
+				if shift >= 64 {
+					return ErrIntOverflowTeacher
+				}
+				if iNdEx >= l {
+					return io.ErrUnexpectedEOF
+				}
+				b := dAtA[iNdEx]
+				iNdEx++
+				stringLen |= uint64(b&0x7F) << shift
+				if b < 0x80 {
+					break
+				}
+			}
+			intStringLen := int(stringLen)
+			if intStringLen < 0 {
+				return ErrInvalidLengthTeacher
+			}
+			postIndex := iNdEx + intStringLen
+			if postIndex < 0 {
+				return ErrInvalidLengthTeacher
+			}
+			if postIndex > l {
+				return io.ErrUnexpectedEOF
+			}
+			m.Permission = string(dAtA[iNdEx:postIndex])
+			iNdEx = postIndex
+		default:
+			iNdEx = preIndex
+			skippy, err := skipTeacher(dAtA[iNdEx:])
+			if err != nil {
+				return err
+			}
+			if (skippy < 0) || (iNdEx+skippy) < 0 {
+				return ErrInvalidLengthTeacher
+			}
+			if (iNdEx + skippy) > l {
+				return io.ErrUnexpectedEOF
+			}
+			m.XXX_unrecognized = append(m.XXX_unrecognized, dAtA[iNdEx:iNdEx+skippy]...)
+			iNdEx += skippy
+		}
+	}
+
+	if iNdEx > l {
+		return io.ErrUnexpectedEOF
+	}
+	return nil
+}
+func (m *Name) Unmarshal(dAtA []byte) error {
+	l := len(dAtA)
+	iNdEx := 0
+	for iNdEx < l {
+		preIndex := iNdEx
+		var wire uint64
+		for shift := uint(0); ; shift += 7 {
+			if shift >= 64 {
+				return ErrIntOverflowTeacher
+			}
+			if iNdEx >= l {
+				return io.ErrUnexpectedEOF
+			}
+			b := dAtA[iNdEx]
+			iNdEx++
+			wire |= uint64(b&0x7F) << shift
+			if b < 0x80 {
+				break
+			}
+		}
+		fieldNum := int32(wire >> 3)
+		wireType := int(wire & 0x7)
+		if wireType == 4 {
+			return fmt.Errorf("proto: Name: wiretype end group for non-group")
+		}
+		if fieldNum <= 0 {
+			return fmt.Errorf("proto: Name: illegal tag %d (wire type %d)", fieldNum, wire)
+		}
+		switch fieldNum {
+		case 1:
+			if wireType != 2 {
+				return fmt.Errorf("proto: wrong wireType = %d for field Id", wireType)
+			}
+			var stringLen uint64
+			for shift := uint(0); ; shift += 7 {
+				if shift >= 64 {
+					return ErrIntOverflowTeacher
+				}
+				if iNdEx >= l {
+					return io.ErrUnexpectedEOF
+				}
+				b := dAtA[iNdEx]
+				iNdEx++
+				stringLen |= uint64(b&0x7F) << shift
+				if b < 0x80 {
+					break
+				}
+			}
+			intStringLen := int(stringLen)
+			if intStringLen < 0 {
+				return ErrInvalidLengthTeacher
+			}
+			postIndex := iNdEx + intStringLen
+			if postIndex < 0 {
+				return ErrInvalidLengthTeacher
+			}
+			if postIndex > l {
+				return io.ErrUnexpectedEOF
+			}
+			m.Id = string(dAtA[iNdEx:postIndex])
+			iNdEx = postIndex
+		case 2:
+			if wireType != 2 {
+				return fmt.Errorf("proto: wrong wireType = %d for field Name", wireType)
+			}
+			var stringLen uint64
+			for shift := uint(0); ; shift += 7 {
+				if shift >= 64 {
+					return ErrIntOverflowTeacher
+				}
+				if iNdEx >= l {
+					return io.ErrUnexpectedEOF
+				}
+				b := dAtA[iNdEx]
+				iNdEx++
+				stringLen |= uint64(b&0x7F) << shift
+				if b < 0x80 {
+					break
+				}
+			}
+			intStringLen := int(stringLen)
+			if intStringLen < 0 {
+				return ErrInvalidLengthTeacher
+			}
+			postIndex := iNdEx + intStringLen
+			if postIndex < 0 {
+				return ErrInvalidLengthTeacher
+			}
+			if postIndex > l {
+				return io.ErrUnexpectedEOF
+			}
+			m.Name = string(dAtA[iNdEx:postIndex])
+			iNdEx = postIndex
+		default:
+			iNdEx = preIndex
+			skippy, err := skipTeacher(dAtA[iNdEx:])
+			if err != nil {
+				return err
+			}
+			if (skippy < 0) || (iNdEx+skippy) < 0 {
+				return ErrInvalidLengthTeacher
+			}
+			if (iNdEx + skippy) > l {
+				return io.ErrUnexpectedEOF
+			}
+			m.XXX_unrecognized = append(m.XXX_unrecognized, dAtA[iNdEx:iNdEx+skippy]...)
+			iNdEx += skippy
+		}
+	}
+
+	if iNdEx > l {
+		return io.ErrUnexpectedEOF
+	}
+	return nil
+}
+func (m *NameResp) Unmarshal(dAtA []byte) error {
+	l := len(dAtA)
+	iNdEx := 0
+	for iNdEx < l {
+		preIndex := iNdEx
+		var wire uint64
+		for shift := uint(0); ; shift += 7 {
+			if shift >= 64 {
+				return ErrIntOverflowTeacher
+			}
+			if iNdEx >= l {
+				return io.ErrUnexpectedEOF
+			}
+			b := dAtA[iNdEx]
+			iNdEx++
+			wire |= uint64(b&0x7F) << shift
+			if b < 0x80 {
+				break
+			}
+		}
+		fieldNum := int32(wire >> 3)
+		wireType := int(wire & 0x7)
+		if wireType == 4 {
+			return fmt.Errorf("proto: NameResp: wiretype end group for non-group")
+		}
+		if fieldNum <= 0 {
+			return fmt.Errorf("proto: NameResp: illegal tag %d (wire type %d)", fieldNum, wire)
+		}
+		switch fieldNum {
+		case 1:
+			if wireType != 2 {
+				return fmt.Errorf("proto: wrong wireType = %d for field Teacher", wireType)
+			}
+			var msglen int
+			for shift := uint(0); ; shift += 7 {
+				if shift >= 64 {
+					return ErrIntOverflowTeacher
+				}
+				if iNdEx >= l {
+					return io.ErrUnexpectedEOF
+				}
+				b := dAtA[iNdEx]
+				iNdEx++
+				msglen |= int(b&0x7F) << shift
+				if b < 0x80 {
+					break
+				}
+			}
+			if msglen < 0 {
+				return ErrInvalidLengthTeacher
+			}
+			postIndex := iNdEx + msglen
+			if postIndex < 0 {
+				return ErrInvalidLengthTeacher
+			}
+			if postIndex > l {
+				return io.ErrUnexpectedEOF
+			}
+			m.Teacher = append(m.Teacher, &Name{})
+			if err := m.Teacher[len(m.Teacher)-1].Unmarshal(dAtA[iNdEx:postIndex]); err != nil {
+				return err
+			}
+			iNdEx = postIndex
 		default:
 			iNdEx = preIndex
 			skippy, err := skipTeacher(dAtA[iNdEx:])
@@ -3009,6 +3674,70 @@ func (m *TeacherSalary) Unmarshal(dAtA []byte) error {
 			iNdEx = postIndex
 		case 3:
 			if wireType != 2 {
+				return fmt.Errorf("proto: wrong wireType = %d for field Commnet", wireType)
+			}
+			var stringLen uint64
+			for shift := uint(0); ; shift += 7 {
+				if shift >= 64 {
+					return ErrIntOverflowTeacher
+				}
+				if iNdEx >= l {
+					return io.ErrUnexpectedEOF
+				}
+				b := dAtA[iNdEx]
+				iNdEx++
+				stringLen |= uint64(b&0x7F) << shift
+				if b < 0x80 {
+					break
+				}
+			}
+			intStringLen := int(stringLen)
+			if intStringLen < 0 {
+				return ErrInvalidLengthTeacher
+			}
+			postIndex := iNdEx + intStringLen
+			if postIndex < 0 {
+				return ErrInvalidLengthTeacher
+			}
+			if postIndex > l {
+				return io.ErrUnexpectedEOF
+			}
+			m.Commnet = string(dAtA[iNdEx:postIndex])
+			iNdEx = postIndex
+		case 4:
+			if wireType != 2 {
+				return fmt.Errorf("proto: wrong wireType = %d for field DateOfBegin", wireType)
+			}
+			var stringLen uint64
+			for shift := uint(0); ; shift += 7 {
+				if shift >= 64 {
+					return ErrIntOverflowTeacher
+				}
+				if iNdEx >= l {
+					return io.ErrUnexpectedEOF
+				}
+				b := dAtA[iNdEx]
+				iNdEx++
+				stringLen |= uint64(b&0x7F) << shift
+				if b < 0x80 {
+					break
+				}
+			}
+			intStringLen := int(stringLen)
+			if intStringLen < 0 {
+				return ErrInvalidLengthTeacher
+			}
+			postIndex := iNdEx + intStringLen
+			if postIndex < 0 {
+				return ErrInvalidLengthTeacher
+			}
+			if postIndex > l {
+				return io.ErrUnexpectedEOF
+			}
+			m.DateOfBegin = string(dAtA[iNdEx:postIndex])
+			iNdEx = postIndex
+		case 5:
+			if wireType != 2 {
 				return fmt.Errorf("proto: wrong wireType = %d for field TeacherId", wireType)
 			}
 			var stringLen uint64
@@ -3039,39 +3768,7 @@ func (m *TeacherSalary) Unmarshal(dAtA []byte) error {
 			}
 			m.TeacherId = string(dAtA[iNdEx:postIndex])
 			iNdEx = postIndex
-		case 4:
-			if wireType != 2 {
-				return fmt.Errorf("proto: wrong wireType = %d for field GroupId", wireType)
-			}
-			var stringLen uint64
-			for shift := uint(0); ; shift += 7 {
-				if shift >= 64 {
-					return ErrIntOverflowTeacher
-				}
-				if iNdEx >= l {
-					return io.ErrUnexpectedEOF
-				}
-				b := dAtA[iNdEx]
-				iNdEx++
-				stringLen |= uint64(b&0x7F) << shift
-				if b < 0x80 {
-					break
-				}
-			}
-			intStringLen := int(stringLen)
-			if intStringLen < 0 {
-				return ErrInvalidLengthTeacher
-			}
-			postIndex := iNdEx + intStringLen
-			if postIndex < 0 {
-				return ErrInvalidLengthTeacher
-			}
-			if postIndex > l {
-				return io.ErrUnexpectedEOF
-			}
-			m.GroupId = string(dAtA[iNdEx:postIndex])
-			iNdEx = postIndex
-		case 5:
+		case 6:
 			if wireType != 2 {
 				return fmt.Errorf("proto: wrong wireType = %d for field CreatedAt", wireType)
 			}
@@ -3103,7 +3800,7 @@ func (m *TeacherSalary) Unmarshal(dAtA []byte) error {
 			}
 			m.CreatedAt = string(dAtA[iNdEx:postIndex])
 			iNdEx = postIndex
-		case 6:
+		case 7:
 			if wireType != 2 {
 				return fmt.Errorf("proto: wrong wireType = %d for field UpdatedAt", wireType)
 			}

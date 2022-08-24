@@ -1,10 +1,11 @@
 package v1
 
 import (
-	l "github.com/asilbek17071/apigateway/pkg/logger"
 	"context"
 	"net/http"
 	"time"
+
+	l "github.com/asilbek17071/apigateway/pkg/logger"
 
 	pbf "github.com/asilbek17071/apigateway/genproto/finance_service"
 	pb "github.com/asilbek17071/apigateway/genproto/student_service"
@@ -101,7 +102,7 @@ func (h *handlerV1) StudentDeleteList(c *gin.Context) {
 }
 
 // StudentProfit ...
-// @Router /dashboard/studentprofit/ [get]
+// @Router /dashboard/student_profit/ [get]
 // @Summary StudentProfit
 // @Description This API for getting list of studentProfit
 // @Tags dashboard

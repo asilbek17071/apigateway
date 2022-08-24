@@ -5,7 +5,7 @@ import (
 	"net/http"
 	"time"
 
-	pb "github.com/asilbek17071/apigateway/genproto/finance_service"
+	pb "github.com/asilbek17071/apigateway/genproto/system_service"
 	l "github.com/asilbek17071/apigateway/pkg/logger"
 	"github.com/asilbek17071/apigateway/pkg/utils"
 
@@ -13,20 +13,20 @@ import (
 	"google.golang.org/protobuf/encoding/protojson"
 )
 
-// SpendingCreate ...
-// @Summary SpendingCreate
-// @Router /spending/create/ [post]
-// @Description This API for creating a new spending
-// @Tags spending
+// BallCreate ...
+// @Summary BallCreate
+// @Router /ball/create/ [post]
+// @Description This API for creating a new ball
+// @Tags ball
 // @Accept  json
 // @Produce  json
-// @Param Spending request body models.Spending true "spendingCreateRequest"
-// @Success 200 {object} models.SpendingResp
+// @Param Ball request body models.Ball true "ballCreateRequest"
+// @Success 200 {object} models.BallResp
 // @Failure 400 {object} models.StandardErrorModel
 // @Failure 500 {object} models.StandardErrorModel
-func (h *handlerV1) SpendingCreate(c *gin.Context) {
+func (h *handlerV1) SalaryTypeCreate(c *gin.Context) {
 	var (
-		body        pb.Spending
+		body        pb.SalaryType
 		jspbMarshal protojson.MarshalOptions
 	)
 
@@ -45,30 +45,30 @@ func (h *handlerV1) SpendingCreate(c *gin.Context) {
 	ctx, cancel := context.WithTimeout(context.Background(), time.Second*time.Duration(h.cfg.CtxTimeout))
 	defer cancel()
 
-	response, err := h.serviceManager.FinanceService().SpendingCreate(ctx, &body)
+	response, err := h.serviceManager.SystemService().SalaryTypeCreate(ctx, &body)
 	if err != nil {
 		c.JSON(http.StatusInternalServerError, gin.H{
 			"error": err.Error(),
 		})
-		h.log.Error("failed to create spending", l.Error(err))
+		h.log.Error("failed to create ball", l.Error(err))
 		return
 	}
 
 	c.JSON(http.StatusCreated, response)
 }
 
-// SpendingGet ...
-// @Router /spending/byid/{id} [get]
-// @Summary SpendingGet
-// @Description This API for getting spending SpendingList
-// @Tags spending
+// BallGet ...
+// @Router /ball/byid/{id} [get]
+// @Summary BallGet
+// @Description This API for getting ball BallList
+// @Tags ball
 // @Accept  json
 // @Produce  json
 // @Param id path string true "ID"
-// @Success 200 {object} models.SpendingResp
+// @Success 200 {object} models.BallResp
 // @Failure 400 {object} models.StandardErrorModel
 // @Failure 500 {object} models.StandardErrorModel
-func (h *handlerV1) SpendingGet(c *gin.Context) {
+func (h *handlerV1) SalaryTypeGet(c *gin.Context) {
 	queryParams := c.Request.URL.Query()
 
 	params, errStr := utils.ParseQueryParams(queryParams)
@@ -86,7 +86,7 @@ func (h *handlerV1) SpendingGet(c *gin.Context) {
 	ctx, cancel := context.WithTimeout(context.Background(), time.Second*time.Duration(h.cfg.CtxTimeout))
 	defer cancel()
 
-	response, err := h.serviceManager.FinanceService().SpendingGet(
+	response, err := h.serviceManager.SystemService().SalaryTypeGet(
 		ctx, &pb.ByIdReq{
 			Id: params.Id,
 		})
@@ -94,26 +94,26 @@ func (h *handlerV1) SpendingGet(c *gin.Context) {
 		c.JSON(http.StatusInternalServerError, gin.H{
 			"error": err.Error(),
 		})
-		h.log.Error("failed to get spending", l.Error(err))
+		h.log.Error("failed to get ball", l.Error(err))
 		return
 	}
 
 	c.JSON(http.StatusOK, response)
 }
 
-// SpendingList ...
-// @Router /spending/list/ [get]
-// @Summary SpendingList
-// @Description This API for getting list of spendings
-// @Tags spending
+// BallList ...
+// @Router /ball/list/ [get]
+// @Summary BallList
+// @Description This API for getting list of balls
+// @Tags ball
 // @Accept  json
 // @Produce  json
 // @Param page query string false "Page"
 // @Param limit query string false "Limit"
-// @Success 200 {object} models.SpendingsList
+// @Success 200 {object} models.BallsList
 // @Failure 400 {object} models.StandardErrorModel
 // @Failure 500 {object} models.StandardErrorModel
-func (h *handlerV1) SpendingList(c *gin.Context) {
+func (h *handlerV1) SalaryTypeList(c *gin.Context) {
 	queryParams := c.Request.URL.Query()
 
 	params, errStr := utils.ParseQueryParams(queryParams)
@@ -131,38 +131,35 @@ func (h *handlerV1) SpendingList(c *gin.Context) {
 	ctx, cancel := context.WithTimeout(context.Background(), time.Second*time.Duration(h.cfg.CtxTimeout))
 	defer cancel()
 
-	response, err := h.serviceManager.FinanceService().SpendingList(
-		ctx, &pb.SpendingListReq{
-			SpendingType: params.SpendingType,
-			Limit:        params.Limit,
-			Page:         params.Page,
-			Dan:          params.From,
-			Gacha:        params.To,
+	response, err := h.serviceManager.SystemService().SalaryTypeList(
+		ctx, &pb.ListReq{
+			Limit: params.Limit,
+			Page:  params.Page,
 		})
 	if err != nil {
 		c.JSON(http.StatusInternalServerError, gin.H{
 			"error": err.Error(),
 		})
-		h.log.Error("failed to list spendings", l.Error(err))
+		h.log.Error("failed to list balls", l.Error(err))
 		return
 	}
 
 	c.JSON(http.StatusOK, response)
 }
 
-// SpendingUpdate ...
-// @Router /spending/update/{id} [put]
-// @Summary SpendingUpdate
-// @Description This API for updating spending
-// @Tags spending
+// BallUpdate ...
+// @Router /ball/update/{id} [put]
+// @Summary BallUpdate
+// @Description This API for updating ball
+// @Tags ball
 // @Accept  json
 // @Produce  json
 // @Param id path string true "ID"
-// @Param Spending request body models.SpendingUpdate true "spendingUpdateRequest"
-// @Success 200 {object} models.SpendingResp
+// @Param Ball request body models.BallUpdate true "ballUpdateRequest"
+// @Success 200 {object} models.BallResp
 // @Failure 400 {object} models.StandardErrorModel
 // @Failure 500 {object} models.StandardErrorModel
-func (h *handlerV1) SpendingUpdate(c *gin.Context) {
+func (h *handlerV1) SalaryTypeUpdate(c *gin.Context) {
 	queryParams := c.Request.URL.Query()
 
 	params, errStr := utils.ParseQueryParams(queryParams)
@@ -173,9 +170,8 @@ func (h *handlerV1) SpendingUpdate(c *gin.Context) {
 		h.log.Error("failed to parse query params json" + errStr[0])
 		return
 	}
-
 	var (
-		body        pb.Spending
+		body        pb.SalaryType
 		jspbMarshal protojson.MarshalOptions
 	)
 	jspbMarshal.UseProtoNames = true
@@ -194,30 +190,30 @@ func (h *handlerV1) SpendingUpdate(c *gin.Context) {
 	ctx, cancel := context.WithTimeout(context.Background(), time.Second*time.Duration(h.cfg.CtxTimeout))
 	defer cancel()
 
-	response, err := h.serviceManager.FinanceService().SpendingUpdate(ctx, &body)
+	response, err := h.serviceManager.SystemService().SalaryTypeUpdate(ctx, &body)
 	if err != nil {
 		c.JSON(http.StatusInternalServerError, gin.H{
 			"error": err.Error(),
 		})
-		h.log.Error("failed to update spending", l.Error(err))
+		h.log.Error("failed to update ball", l.Error(err))
 		return
 	}
 
 	c.JSON(http.StatusOK, response)
 }
 
-// SpendingDelete ...
-// @Router /spending/delete/{id} [delete]
-// @Summary SpendingDelete
-// @Description This API for deleting spending
-// @Tags spending
+// BallDelete ...
+// @Router /ball/delete/{id} [delete]
+// @Summary BallDelete
+// @Description This API for deleting ball
+// @Tags ball
 // @Accept  json
 // @Produce  json
 // @Param id path string true "ID"
 // @Success 200 {object} models.Empty
 // @Failure 400 {object} models.StandardErrorModel
 // @Failure 500 {object} models.StandardErrorModel
-func (h *handlerV1) SpendingDelete(c *gin.Context) {
+func (h *handlerV1) SalaryTypeDelete(c *gin.Context) {
 	queryParams := c.Request.URL.Query()
 
 	params, errStr := utils.ParseQueryParams(queryParams)
@@ -235,7 +231,7 @@ func (h *handlerV1) SpendingDelete(c *gin.Context) {
 	ctx, cancel := context.WithTimeout(context.Background(), time.Second*time.Duration(h.cfg.CtxTimeout))
 	defer cancel()
 
-	response, err := h.serviceManager.FinanceService().SpendingDelete(
+	response, err := h.serviceManager.SystemService().SalaryTypeDelete(
 		ctx, &pb.ByIdReq{
 			Id: params.Id,
 		})
@@ -243,7 +239,7 @@ func (h *handlerV1) SpendingDelete(c *gin.Context) {
 		c.JSON(http.StatusInternalServerError, gin.H{
 			"error": err.Error(),
 		})
-		h.log.Error("failed to delete spending", l.Error(err))
+		h.log.Error("failed to delete ball", l.Error(err))
 		return
 	}
 

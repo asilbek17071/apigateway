@@ -16,9 +16,24 @@ service TeacherService {
     rpc TeacherSalaryList(SalaryReq) returns (TeacherSalaryListResp);
     rpc TeacherSalaryUpdate(TeacherSalary) returns (TeacherSalary);
     rpc TeacherSalaryDelete(ByIdReq) returns (EmptyRes);
+
+    rpc TeacherByName (TTT) returns (NameResp);
 }
 
 message EmptyRes{}
+
+message TTT{
+    string permission = 1;
+}
+
+message Name{
+    string id = 1;
+    string name = 2;
+}
+
+message NameResp{
+    repeated Name teacher = 1;
+}
 
 message Teacher{
     string id = 1;
@@ -45,10 +60,11 @@ message Teacher{
 message TeacherSalary {
     string id = 1;
     string amount = 2;
-    string teacher_id = 3;
-    string group_id = 4;
-    string created_at = 5;
-    string updated_at = 6;
+    string commnet = 3;
+    string date_of_begin = 4;
+    string teacher_id = 5;
+    string created_at = 6;
+    string updated_at = 7;
 }
 
 

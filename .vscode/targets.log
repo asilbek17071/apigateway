@@ -1,4 +1,6 @@
 make all --print-data-base --no-builtin-variables --no-builtin-rules --question
+make: *** No rule to make target 'all'.  Stop.
+
 # GNU Make 4.3
 # Built for x86_64-pc-linux-gnu
 # Copyright (C) 1988-2020 Free Software Foundation, Inc.
@@ -6,7 +8,7 @@ make all --print-data-base --no-builtin-variables --no-builtin-rules --question
 # This is free software: you are free to change and redistribute it.
 # There is NO WARRANTY, to the extent permitted by law.
 
-# Make data base, printed on Tue Aug 23 00:54:16 2022
+# Make data base, printed on Wed Aug 24 16:31:19 2022
 
 # Variables
 
@@ -101,13 +103,13 @@ MAKEFILE_LIST := Makefile
 # automatic
 @F = $(notdir $@)
 # environment
-VSCODE_PID = 326133
+VSCODE_PID = 4381
 # environment
 XDG_SESSION_TYPE = x11
 # automatic
 ?D = $(patsubst %/,%,$(dir $?))
 # environment
-SESSION_MANAGER = local/i:@/tmp/.ICE-unix/2238,unix/i:/tmp/.ICE-unix/2238
+SESSION_MANAGER = local/i:@/tmp/.ICE-unix/2208,unix/i:/tmp/.ICE-unix/2208
 # automatic
 *F = $(notdir $*)
 # environment
@@ -139,11 +141,11 @@ APP_CMD_DIR = ./cmd
 # default
 MAKE = $(MAKE_COMMAND)
 # environment
-PATH = /home/b/go/bin:/usr/local/go/bin:/usr/local/go/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin:/snap/bin://home/b/go/bin:/usr/local/go/bin
+PATH = /home/b/go/bin:/usr/local/go/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin:/snap/bin://home/b/go/bin:/usr/local/go/bin
 # default
 MAKEFILES := 
 # environment
-VSCODE_GIT_IPC_HANDLE = /run/user/1000/vscode-git-2f4ca2151a.sock
+VSCODE_GIT_IPC_HANDLE = /run/user/1000/vscode-git-6c533781a3.sock
 # environment
 VSCODE_GIT_ASKPASS_NODE = /usr/share/code/code
 # environment
@@ -155,7 +157,7 @@ LC_TIME = uz_UZ.UTF-8
 # environment
 VSCODE_GIT_ASKPASS_MAIN = /usr/share/code/resources/app/extensions/git/dist/askpass-main.js
 # environment
-INVOCATION_ID = 46ea8c22318a46ce956aa4893a6ddee2
+INVOCATION_ID = 3a5aeb892675495f93d593a238d0ac53
 # environment
 USERNAME = b
 # environment
@@ -187,7 +189,7 @@ GIO_LAUNCHED_DESKTOP_FILE = /usr/share/applications/code.desktop
 # makefile
 .DEFAULT_GOAL := build
 # environment
-SYSTEMD_EXEC_PID = 2257
+SYSTEMD_EXEC_PID = 2227
 # environment
 DISPLAY = :1
 # environment
@@ -197,11 +199,11 @@ GTK_MODULES = gail:atk-bridge
 # default
 MAKE_VERSION := 4.3
 # environment
-MANAGERPID = 1745
+MANAGERPID = 1717
 # environment
 LC_MEASUREMENT = uz_UZ.UTF-8
 # environment
-GIO_LAUNCHED_DESKTOP_FILE_PID = 326133
+GIO_LAUNCHED_DESKTOP_FILE_PID = 4381
 # environment
 _ = /usr/bin/code
 # environment
@@ -213,7 +215,7 @@ GPG_AGENT_INFO = /run/user/1000/gnupg/S.gpg-agent:0:1
 # environment
 COLORTERM = truecolor
 # environment
-JOURNAL_STREAM = 8:33270
+JOURNAL_STREAM = 8:36029
 # environment
 GOMODCACHE = /home/b/go/pkg/mod
 # environment
@@ -261,9 +263,9 @@ LC_IDENTIFICATION = uz_UZ.UTF-8
 
 # Directories
 
-# . (device 66309, inode 1062402): 18 files, no impossibilities.
+# . (device 66309, inode 1062402): 20 files, no impossibilities.
 
-# 18 files, no impossibilities in 1 directories.
+# 20 files, no impossibilities in 1 directories.
 
 # Implicit Rules
 
@@ -288,10 +290,8 @@ proto:
 # Not a target:
 Makefile:
 #  Implicit rule search has been done.
- 
-make: *** No rule to make target 'all'.  Stop.
-
 #  Last modified 2022-08-21 19:40:23.90600145
+ 
 #  File has been updated.
 #  Successfully updated.
 
@@ -329,12 +329,12 @@ build:
 
 # No general ('VPATH' variable) search path.
 
-# strcache buffers: 1 (0) / strings = 27 / storage = 205 B / avg = 7 B
-# current buf: size = 8162 B / used = 205 B / count = 27 / avg = 7 B
+# strcache buffers: 1 (0) / strings = 29 / storage = 223 B / avg = 7 B
+# current buf: size = 8162 B / used = 223 B / count = 29 / avg = 7 B
 
-# strcache performance: lookups = 36 / hit rate = 25%
+# strcache performance: lookups = 38 / hit rate = 23%
 # hash-table stats:
-# Load=27/8192=0%, Rehash=0, Collisions=0/36=0%
-# Finished Make data base on Tue Aug 23 00:54:16 2022
+# Load=29/8192=0%, Rehash=0, Collisions=0/38=0%
+# Finished Make data base on Wed Aug 24 16:31:19 2022
 
  

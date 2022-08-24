@@ -14,7 +14,7 @@ service FinanceService {
     
     rpc SpendingCreate(Spending) returns (Spending);
     rpc SpendingGet(ByIdReq) returns (Spending);
-    rpc SpendingList(ListReq) returns (SpendingListResp);
+    rpc SpendingList(SpendingListReq) returns (SpendingListResp);
     rpc SpendingUpdate(Spending) returns (Spending);
     rpc SpendingDelete(ByIdReq) returns (EmptyRes);
 }
@@ -23,14 +23,33 @@ message EmptyRes{}
 
 message Spending{
     string id = 1;
-    string spending_type = 2;
-    string to_whom = 3;
-    string amount = 4;
-    string comment = 5;
-    string pysys_id = 6;
-    string created_at = 7;
-    string updated_at = 8;
+    string amount = 2;
+    string comment = 3;
+    string status = 4;
+    string pysys_id = 5;
+    string branch_id = 6;
+    string spending_type_id = 7;
+    string created_at = 8;
+    string updated_at = 9;
 }
+
+message By{
+    string id = 1;
+    string name = 2;
+}
+
+message SpendingResp{
+    string id = 1;
+    string amount = 2;
+    string comment = 3;
+    string status = 4;
+    By pysys = 5;
+    By spending_type = 6;
+    By branch = 7;
+    string created_at = 8;
+    string updated_at = 9;
+}
+
 message Payment{
     string id = 1;
     string amount = 2;
@@ -48,7 +67,7 @@ message PaymentListResp {
 }
 
 message SpendingListResp {
-    repeated Spending spendings = 1;
+    repeated SpendingResp spendings = 1;
     int64 count = 2;
 }
 message Searching{
@@ -79,6 +98,22 @@ message ListReq {
     int64 page = 1;
     int64 limit = 2;
 }
+
+message SpendingListReq {
+    string spending_type = 1;
+    int64 page = 2;
+    int64 limit = 3;
+    string dan = 4;
+    string gacha = 5;
+}
+
+message SpendingListRequest {
+    int64 page = 1;
+    int64 limit = 2;
+    string dan = 3;
+    string gacha = 4;
+}
+
 message PaymentSearchReq {
     string dan = 1;
     string gacha = 2;
