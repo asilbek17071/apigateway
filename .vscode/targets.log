@@ -1,4 +1,6 @@
 make all --print-data-base --no-builtin-variables --no-builtin-rules --question
+make: *** No rule to make target 'all'.  Stop.
+
 # GNU Make 4.3
 # Built for x86_64-pc-linux-gnu
 # Copyright (C) 1988-2020 Free Software Foundation, Inc.
@@ -6,7 +8,7 @@ make all --print-data-base --no-builtin-variables --no-builtin-rules --question
 # This is free software: you are free to change and redistribute it.
 # There is NO WARRANTY, to the extent permitted by law.
 
-# Make data base, printed on Tue Aug 30 17:08:34 2022
+# Make data base, printed on Tue Aug 30 19:46:45 2022
 
 # Variables
 
@@ -57,7 +59,7 @@ PWD = /home/b/Golang/crm_system/apigateway/apigateway
 # environment
 XDG_DATA_DIRS = /usr/share/ubuntu:/usr/share/gnome:/usr/local/share/:/usr/share/:/var/lib/snapd/desktop
 # environment
-OLDPWD = /home/b/Golang/crm_system/apigateway
+OLDPWD = /home/b/Golang/crm_system
 # automatic
 ^D = $(patsubst %/,%,$(dir $^))
 # automatic
@@ -101,7 +103,7 @@ MAKEFILE_LIST := Makefile
 # automatic
 @F = $(notdir $@)
 # environment
-VSCODE_PID = 7767
+VSCODE_PID = 88228
 # environment
 XDG_SESSION_TYPE = x11
 # automatic
@@ -201,7 +203,7 @@ MANAGERPID = 2120
 # environment
 LC_MEASUREMENT = uz_UZ.UTF-8
 # environment
-GIO_LAUNCHED_DESKTOP_FILE_PID = 7767
+GIO_LAUNCHED_DESKTOP_FILE_PID = 88228
 # environment
 _ = /usr/bin/code
 # environment
@@ -277,8 +279,6 @@ lint:
 #  File has not been updated.
 #  recipe to execute (from 'Makefile', line 12):
  
-make: *** No rule to make target 'all'.  Stop.
-
 	golangci-lint -c .golangci.yaml run --build-tags "musl" ./...
 
 proto:
@@ -343,6 +343,6 @@ build:
 # strcache performance: lookups = 39 / hit rate = 23%
 # hash-table stats:
 # Load=30/8192=0%, Rehash=0, Collisions=0/39=0%
-# Finished Make data base on Tue Aug 30 17:08:35 2022
+# Finished Make data base on Tue Aug 30 19:46:45 2022
 
  

@@ -48,7 +48,7 @@ func Load() Config {
 
 	// api-gateway idfs
 	c.LogLevel = cast.ToString(getOrReturnDefault("LOG_LEVEL", "debug"))
-	c.HTTPPort = cast.ToString(getOrReturnDefault("HTTP_PORT", ":80"))
+	c.HTTPPort = cast.ToString(getOrReturnDefault("HTTP_PORT", ":8080"))
 
 	// system-service idfs
 	c.SystemServiceHost = cast.ToString(getOrReturnDefault("SYSTEM_SERVICE_HOST", "46.101.101.23"))
