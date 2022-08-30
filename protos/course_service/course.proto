@@ -8,23 +8,69 @@ service CourseService {
     rpc GroupList(ListReq) returns (GroupListsResp);
     rpc GroupWithList(ListWithReq) returns (GroupListResp);
     rpc GroupRoomList(ListIdReq) returns (GroupListsResp);
-    rpc GroupAttendanceList(ByIdReq) returns (Resp);
+    rpc GroupAttendanceList(ByIdReq) returns (ByResp);
     rpc GroupUpdate(Group) returns (GroupResp);
     rpc GroupDelete(ByIdReq) returns (EmptyRes);
 
     rpc AttendanceCreate(Attendance) returns (Attendance);
     rpc AttendanceGet(ByIdReq) returns (Attendance);
-    rpc AttendanceList(ListReq) returns (AttendanceListResp);
+    rpc AttendanceList(GetParticipate) returns (ParticipateListResp);
     rpc AttendanceUpdate(Attendance) returns (Attendance);
     rpc AttendanceDelete(ByIdReq) returns (EmptyRes);
-
-    rpc BallCreate(Ball) returns (Ball);
-    rpc BallGet(ByIdReq) returns (Ball);
-    rpc BallUpdate(Ball) returns (Ball);
-    rpc BallList(ListReq) returns (BallListResp);
-    rpc BallDelete(ByIdReq) returns (EmptyRes);
+    
+    rpc BalCreate(Bal) returns (Bal);
+    rpc BalUpdate(Bal) returns (Bal);
+    rpc BalList(GetBall) returns (BalListResp);
+    rpc BalDelete(ByIdReq) returns (EmptyRes);
 }
 message EmptyRes{}
+
+message GetBall{
+    string group_id = 2;
+}
+
+message GetParticipate{
+    string group_id = 2;
+}
+
+message Bal {
+    string id = 1;
+    int32  ball = 2;
+    string with_date = 3;
+    string group_id = 4;
+    string student_id = 5;
+    string created_at = 6;
+    string updated_at = 7;
+}
+
+message WithDate{
+    string with_date = 1;
+    string ball = 2;
+}
+
+message WithDateParticipate{
+    string with_date = 1;
+    bool participate = 2;
+    string comment = 3;
+}
+
+message BalStudent{
+    By student_id = 1;
+    repeated WithDate student_all_bals = 2;
+}
+
+message ParticipateStudent{
+    By student_id = 1;
+    repeated WithDateParticipate student_all_participate = 2;
+}
+
+message BalListResp{
+    repeated BalStudent group_bals= 1;
+}
+
+message ParticipateListResp{
+    repeated ParticipateStudent group_participate= 1;
+}
 
 message Group{
     string id = 1;
@@ -67,25 +113,17 @@ message GroupResp{
     string updated_at = 18;
 }
 
-message Ball {
-    string id = 1;
-    string attendance_id =2;
-    int32  ball = 3;
-    string created_at = 4;
-    string updated_at = 5;
-}
 
-message BallListResp{
-    repeated Ball balls = 1;
-}
 
 message Attendance{
     string id = 1;
-    string participate = 2;
-    string comment = 3;
-    string student_id = 4;
-    string created_at = 5;
-    string updated_at = 6;
+    string comment = 2;
+    string participate = 3;
+    string with_date = 4;
+    string group_id = 5;
+    string student_id = 6;
+    string created_at = 7;
+    string updated_at = 8;
 }
 
 message AttendanceListResp {
@@ -103,6 +141,11 @@ message By {
     string name = 2;
 }
 
+message ByResp{
+    string name = 1;
+    repeated By student = 2;
+}
+
 message Byt {
     string id = 1;
     string name = 2;
@@ -111,7 +154,7 @@ message Byt {
 }
 
 message GroupListResp {
-    repeated Group groups = 1;
+    repeated GroupResp groups = 1;
     int64 count = 2;
 }
 

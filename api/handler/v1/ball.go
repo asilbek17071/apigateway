@@ -26,7 +26,7 @@ import (
 // @Failure 500 {object} models.StandardErrorModel
 func (h *handlerV1) BallCreate(c *gin.Context) {
 	var (
-		body        pb.Ball
+		body        pb.Bal
 		jspbMarshal protojson.MarshalOptions
 	)
 
@@ -45,7 +45,7 @@ func (h *handlerV1) BallCreate(c *gin.Context) {
 	ctx, cancel := context.WithTimeout(context.Background(), time.Second*time.Duration(h.cfg.CtxTimeout))
 	defer cancel()
 
-	response, err := h.serviceManager.CourseService().BallCreate(ctx, &body)
+	response, err := h.serviceManager.CourseService().BalCreate(ctx, &body)
 	if err != nil {
 		c.JSON(http.StatusInternalServerError, gin.H{
 			"error": err.Error(),
@@ -57,50 +57,6 @@ func (h *handlerV1) BallCreate(c *gin.Context) {
 	c.JSON(http.StatusCreated, response)
 }
 
-// BallGet ...
-// @Router /ball/byid/{id} [get]
-// @Summary BallGet
-// @Description This API for getting ball BallList
-// @Tags ball
-// @Accept  json
-// @Produce  json
-// @Param id path string true "ID"
-// @Success 200 {object} models.BallResp
-// @Failure 400 {object} models.StandardErrorModel
-// @Failure 500 {object} models.StandardErrorModel
-func (h *handlerV1) BallGet(c *gin.Context) {
-	queryParams := c.Request.URL.Query()
-
-	params, errStr := utils.ParseQueryParams(queryParams)
-	if errStr != nil {
-		c.JSON(http.StatusBadRequest, gin.H{
-			"error": errStr[0],
-		})
-		h.log.Error("failed to parse query params json" + errStr[0])
-		return
-	}
-
-	var jspbMarshal protojson.MarshalOptions
-	jspbMarshal.UseProtoNames = true
-
-	ctx, cancel := context.WithTimeout(context.Background(), time.Second*time.Duration(h.cfg.CtxTimeout))
-	defer cancel()
-
-	response, err := h.serviceManager.CourseService().BallGet(
-		ctx, &pb.ByIdReq{
-			Id: params.Id,
-		})
-	if err != nil {
-		c.JSON(http.StatusInternalServerError, gin.H{
-			"error": err.Error(),
-		})
-		h.log.Error("failed to get ball", l.Error(err))
-		return
-	}
-
-	c.JSON(http.StatusOK, response)
-}
-
 // BallList ...
 // @Router /ball/list/ [get]
 // @Summary BallList
@@ -108,8 +64,7 @@ func (h *handlerV1) BallGet(c *gin.Context) {
 // @Tags ball
 // @Accept  json
 // @Produce  json
-// @Param page query string false "Page"
-// @Param limit query string false "Limit"
+// @Param id query string false "ID"
 // @Success 200 {object} models.BallsList
 // @Failure 400 {object} models.StandardErrorModel
 // @Failure 500 {object} models.StandardErrorModel
@@ -131,10 +86,9 @@ func (h *handlerV1) BallList(c *gin.Context) {
 	ctx, cancel := context.WithTimeout(context.Background(), time.Second*time.Duration(h.cfg.CtxTimeout))
 	defer cancel()
 
-	response, err := h.serviceManager.CourseService().BallList(
-		ctx, &pb.ListReq{
-			Limit: params.Limit,
-			Page:  params.Page,
+	response, err := h.serviceManager.CourseService().BalList(
+		ctx, &pb.GetBall{
+			GroupId: params.Id,
 		})
 	if err != nil {
 		c.JSON(http.StatusInternalServerError, gin.H{
@@ -171,7 +125,7 @@ func (h *handlerV1) BallUpdate(c *gin.Context) {
 		return
 	}
 	var (
-		body        pb.Ball
+		body        pb.Bal
 		jspbMarshal protojson.MarshalOptions
 	)
 	jspbMarshal.UseProtoNames = true
@@ -190,7 +144,7 @@ func (h *handlerV1) BallUpdate(c *gin.Context) {
 	ctx, cancel := context.WithTimeout(context.Background(), time.Second*time.Duration(h.cfg.CtxTimeout))
 	defer cancel()
 
-	response, err := h.serviceManager.CourseService().BallUpdate(ctx, &body)
+	response, err := h.serviceManager.CourseService().BalUpdate(ctx, &body)
 	if err != nil {
 		c.JSON(http.StatusInternalServerError, gin.H{
 			"error": err.Error(),
@@ -231,7 +185,7 @@ func (h *handlerV1) BallDelete(c *gin.Context) {
 	ctx, cancel := context.WithTimeout(context.Background(), time.Second*time.Duration(h.cfg.CtxTimeout))
 	defer cancel()
 
-	response, err := h.serviceManager.CourseService().BallDelete(
+	response, err := h.serviceManager.CourseService().BalDelete(
 		ctx, &pb.ByIdReq{
 			Id: params.Id,
 		})

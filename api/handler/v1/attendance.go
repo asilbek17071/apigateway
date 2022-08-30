@@ -108,8 +108,7 @@ func (h *handlerV1) AttendanceGet(c *gin.Context) {
 // @Tags attendance
 // @Accept  json
 // @Produce  json
-// @Param page query string false "Page"
-// @Param limit query string false "Limit"
+// @Param id query string false "ID"
 // @Success 200 {object} models.AttendancesList
 // @Failure 400 {object} models.StandardErrorModel
 // @Failure 500 {object} models.StandardErrorModel
@@ -132,9 +131,8 @@ func (h *handlerV1) AttendanceList(c *gin.Context) {
 	defer cancel()
 
 	response, err := h.serviceManager.CourseService().AttendanceList(
-		ctx, &pb.ListReq{
-			Limit: params.Limit,
-			Page:  params.Page,
+		ctx, &pb.GetParticipate{
+			GroupId: params.Id,
 		})
 	if err != nil {
 		c.JSON(http.StatusInternalServerError, gin.H{

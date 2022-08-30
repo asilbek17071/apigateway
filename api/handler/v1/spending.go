@@ -108,8 +108,11 @@ func (h *handlerV1) SpendingGet(c *gin.Context) {
 // @Tags spending
 // @Accept  json
 // @Produce  json
-// @Param page query string false "Page"
+// @Param spending_type query string false "SpendingType"
 // @Param limit query string false "Limit"
+// @Param page query string false "Page"
+// @Param from query string false "From"
+// @Param to query string false "To"
 // @Success 200 {object} models.SpendingsList
 // @Failure 400 {object} models.StandardErrorModel
 // @Failure 500 {object} models.StandardErrorModel

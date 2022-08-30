@@ -72,6 +72,13 @@ func New(option Option) *gin.Engine {
 	planner.PUT("/direction/update/", handlerV1.DirectionUpdate)
 	planner.DELETE("/direction/delete/", handlerV1.DirectionDelete)
 
+	planner.POST("/personal/create/", handlerV1.PersonalCreate)
+	planner.GET("/personal/byid/", handlerV1.PersonalGet)
+	planner.GET("/personal/list/", handlerV1.PersonalList)
+	planner.GET("/personals/", handlerV1.Personals)
+	planner.PUT("/personal/update/", handlerV1.PersonalUpdate)
+	planner.DELETE("/personal/delete/", handlerV1.PersonalDelete)
+
 	planner.POST("/type/spending/create/", handlerV1.SpendingTypeCreate)
 	planner.GET("/type/spending/byid/", handlerV1.SpendingTypeGet)
 	planner.GET("/type/spending/list/", handlerV1.SpendingTypeList)
@@ -171,7 +178,6 @@ func New(option Option) *gin.Engine {
 	planner.DELETE("/defmsg/delete/", handlerV1.DefMsgDelete)
 
 	planner.POST("/ball/create/", handlerV1.BallCreate)
-	planner.GET("/ball/byid/", handlerV1.BallGet)
 	planner.GET("/ball/list/", handlerV1.BallList)
 	planner.PUT("/ball/update/", handlerV1.BallUpdate)
 	planner.DELETE("/ball/delete/", handlerV1.BallDelete)

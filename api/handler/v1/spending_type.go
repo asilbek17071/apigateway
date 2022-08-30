@@ -13,15 +13,15 @@ import (
 	"google.golang.org/protobuf/encoding/protojson"
 )
 
-// BallCreate ...
-// @Summary BallCreate
-// @Router /ball/create/ [post]
-// @Description This API for creating a new ball
-// @Tags ball
+// SpendingTypeCreate ...
+// @Summary SpendingTypeCreate
+// @Router /type/spending/create/ [post]
+// @Description This API for creating a new spending_type
+// @Tags spending_type
 // @Accept  json
 // @Produce  json
-// @Param Ball request body models.Ball true "ballCreateRequest"
-// @Success 200 {object} models.BallResp
+// @Param SpendingType request body models.SpendingType true "spendingCreateRequest"
+// @Success 200 {object} models.SpendingTypeResp
 // @Failure 400 {object} models.StandardErrorModel
 // @Failure 500 {object} models.StandardErrorModel
 func (h *handlerV1) SpendingTypeCreate(c *gin.Context) {
@@ -57,15 +57,15 @@ func (h *handlerV1) SpendingTypeCreate(c *gin.Context) {
 	c.JSON(http.StatusCreated, response)
 }
 
-// BallGet ...
-// @Router /ball/byid/{id} [get]
-// @Summary BallGet
-// @Description This API for getting ball BallList
-// @Tags ball
+// SpendingTypeGet ...
+// @Router /type/spending/byid/{id} [get]
+// @Summary SpendingTypeGet
+// @Description This API for getting spending_type SpendingTypeList
+// @Tags spending_type
 // @Accept  json
 // @Produce  json
 // @Param id path string true "ID"
-// @Success 200 {object} models.BallResp
+// @Success 200 {object} models.SpendingTypeResp
 // @Failure 400 {object} models.StandardErrorModel
 // @Failure 500 {object} models.StandardErrorModel
 func (h *handlerV1) SpendingTypeGet(c *gin.Context) {
@@ -101,16 +101,16 @@ func (h *handlerV1) SpendingTypeGet(c *gin.Context) {
 	c.JSON(http.StatusOK, response)
 }
 
-// BallList ...
-// @Router /ball/list/ [get]
-// @Summary BallList
-// @Description This API for getting list of balls
-// @Tags ball
+// SpendingTypeList ...
+// @Router /type/spending/list/ [get]
+// @Summary SpendingTypeList
+// @Description This API for getting list of spending_types
+// @Tags spending_type
 // @Accept  json
 // @Produce  json
 // @Param page query string false "Page"
 // @Param limit query string false "Limit"
-// @Success 200 {object} models.BallsList
+// @Success 200 {object} models.SpendingTypesList
 // @Failure 400 {object} models.StandardErrorModel
 // @Failure 500 {object} models.StandardErrorModel
 func (h *handlerV1) SpendingTypeList(c *gin.Context) {
@@ -147,16 +147,16 @@ func (h *handlerV1) SpendingTypeList(c *gin.Context) {
 	c.JSON(http.StatusOK, response)
 }
 
-// BallUpdate ...
-// @Router /ball/update/{id} [put]
-// @Summary BallUpdate
-// @Description This API for updating ball
-// @Tags ball
+// SpendingTypeUpdate ...
+// @Router /type/spending/update/{id} [put]
+// @Summary SpendingTypeUpdate
+// @Description This API for updating spending_type
+// @Tags spending_type
 // @Accept  json
 // @Produce  json
 // @Param id path string true "ID"
-// @Param Ball request body models.BallUpdate true "ballUpdateRequest"
-// @Success 200 {object} models.BallResp
+// @Param SpendingType request body models.SpendingTypeUpdate true "spendingTypeRequest"
+// @Success 200 {object} models.SpendingTypeResp
 // @Failure 400 {object} models.StandardErrorModel
 // @Failure 500 {object} models.StandardErrorModel
 func (h *handlerV1) SpendingTypeUpdate(c *gin.Context) {
@@ -202,11 +202,11 @@ func (h *handlerV1) SpendingTypeUpdate(c *gin.Context) {
 	c.JSON(http.StatusOK, response)
 }
 
-// BallDelete ...
-// @Router /ball/delete/{id} [delete]
-// @Summary BallDelete
-// @Description This API for deleting ball
-// @Tags ball
+// SpendingTypeDelete ...
+// @Router /type/spending/delete/{id} [delete]
+// @Summary SpendingTypeDelete
+// @Description This API for deleting spending_type
+// @Tags spending_type
 // @Accept  json
 // @Produce  json
 // @Param id path string true "ID"

@@ -65,6 +65,517 @@ func (m *EmptyRes) XXX_DiscardUnknown() {
 
 var xxx_messageInfo_EmptyRes proto.InternalMessageInfo
 
+type GetBall struct {
+	GroupId              string   `protobuf:"bytes,2,opt,name=group_id,json=groupId,proto3" json:"group_id"`
+	XXX_NoUnkeyedLiteral struct{} `json:"-"`
+	XXX_unrecognized     []byte   `json:"-"`
+	XXX_sizecache        int32    `json:"-"`
+}
+
+func (m *GetBall) Reset()         { *m = GetBall{} }
+func (m *GetBall) String() string { return proto.CompactTextString(m) }
+func (*GetBall) ProtoMessage()    {}
+func (*GetBall) Descriptor() ([]byte, []int) {
+	return fileDescriptor_ad75674299e1bb1e, []int{1}
+}
+func (m *GetBall) XXX_Unmarshal(b []byte) error {
+	return m.Unmarshal(b)
+}
+func (m *GetBall) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
+	if deterministic {
+		return xxx_messageInfo_GetBall.Marshal(b, m, deterministic)
+	} else {
+		b = b[:cap(b)]
+		n, err := m.MarshalToSizedBuffer(b)
+		if err != nil {
+			return nil, err
+		}
+		return b[:n], nil
+	}
+}
+func (m *GetBall) XXX_Merge(src proto.Message) {
+	xxx_messageInfo_GetBall.Merge(m, src)
+}
+func (m *GetBall) XXX_Size() int {
+	return m.Size()
+}
+func (m *GetBall) XXX_DiscardUnknown() {
+	xxx_messageInfo_GetBall.DiscardUnknown(m)
+}
+
+var xxx_messageInfo_GetBall proto.InternalMessageInfo
+
+func (m *GetBall) GetGroupId() string {
+	if m != nil {
+		return m.GroupId
+	}
+	return ""
+}
+
+type GetParticipate struct {
+	GroupId              string   `protobuf:"bytes,2,opt,name=group_id,json=groupId,proto3" json:"group_id"`
+	XXX_NoUnkeyedLiteral struct{} `json:"-"`
+	XXX_unrecognized     []byte   `json:"-"`
+	XXX_sizecache        int32    `json:"-"`
+}
+
+func (m *GetParticipate) Reset()         { *m = GetParticipate{} }
+func (m *GetParticipate) String() string { return proto.CompactTextString(m) }
+func (*GetParticipate) ProtoMessage()    {}
+func (*GetParticipate) Descriptor() ([]byte, []int) {
+	return fileDescriptor_ad75674299e1bb1e, []int{2}
+}
+func (m *GetParticipate) XXX_Unmarshal(b []byte) error {
+	return m.Unmarshal(b)
+}
+func (m *GetParticipate) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
+	if deterministic {
+		return xxx_messageInfo_GetParticipate.Marshal(b, m, deterministic)
+	} else {
+		b = b[:cap(b)]
+		n, err := m.MarshalToSizedBuffer(b)
+		if err != nil {
+			return nil, err
+		}
+		return b[:n], nil
+	}
+}
+func (m *GetParticipate) XXX_Merge(src proto.Message) {
+	xxx_messageInfo_GetParticipate.Merge(m, src)
+}
+func (m *GetParticipate) XXX_Size() int {
+	return m.Size()
+}
+func (m *GetParticipate) XXX_DiscardUnknown() {
+	xxx_messageInfo_GetParticipate.DiscardUnknown(m)
+}
+
+var xxx_messageInfo_GetParticipate proto.InternalMessageInfo
+
+func (m *GetParticipate) GetGroupId() string {
+	if m != nil {
+		return m.GroupId
+	}
+	return ""
+}
+
+type Bal struct {
+	Id                   string   `protobuf:"bytes,1,opt,name=id,proto3" json:"id"`
+	Ball                 int32    `protobuf:"varint,2,opt,name=ball,proto3" json:"ball"`
+	WithDate             string   `protobuf:"bytes,3,opt,name=with_date,json=withDate,proto3" json:"with_date"`
+	GroupId              string   `protobuf:"bytes,4,opt,name=group_id,json=groupId,proto3" json:"group_id"`
+	StudentId            string   `protobuf:"bytes,5,opt,name=student_id,json=studentId,proto3" json:"student_id"`
+	CreatedAt            string   `protobuf:"bytes,6,opt,name=created_at,json=createdAt,proto3" json:"created_at"`
+	UpdatedAt            string   `protobuf:"bytes,7,opt,name=updated_at,json=updatedAt,proto3" json:"updated_at"`
+	XXX_NoUnkeyedLiteral struct{} `json:"-"`
+	XXX_unrecognized     []byte   `json:"-"`
+	XXX_sizecache        int32    `json:"-"`
+}
+
+func (m *Bal) Reset()         { *m = Bal{} }
+func (m *Bal) String() string { return proto.CompactTextString(m) }
+func (*Bal) ProtoMessage()    {}
+func (*Bal) Descriptor() ([]byte, []int) {
+	return fileDescriptor_ad75674299e1bb1e, []int{3}
+}
+func (m *Bal) XXX_Unmarshal(b []byte) error {
+	return m.Unmarshal(b)
+}
+func (m *Bal) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
+	if deterministic {
+		return xxx_messageInfo_Bal.Marshal(b, m, deterministic)
+	} else {
+		b = b[:cap(b)]
+		n, err := m.MarshalToSizedBuffer(b)
+		if err != nil {
+			return nil, err
+		}
+		return b[:n], nil
+	}
+}
+func (m *Bal) XXX_Merge(src proto.Message) {
+	xxx_messageInfo_Bal.Merge(m, src)
+}
+func (m *Bal) XXX_Size() int {
+	return m.Size()
+}
+func (m *Bal) XXX_DiscardUnknown() {
+	xxx_messageInfo_Bal.DiscardUnknown(m)
+}
+
+var xxx_messageInfo_Bal proto.InternalMessageInfo
+
+func (m *Bal) GetId() string {
+	if m != nil {
+		return m.Id
+	}
+	return ""
+}
+
+func (m *Bal) GetBall() int32 {
+	if m != nil {
+		return m.Ball
+	}
+	return 0
+}
+
+func (m *Bal) GetWithDate() string {
+	if m != nil {
+		return m.WithDate
+	}
+	return ""
+}
+
+func (m *Bal) GetGroupId() string {
+	if m != nil {
+		return m.GroupId
+	}
+	return ""
+}
+
+func (m *Bal) GetStudentId() string {
+	if m != nil {
+		return m.StudentId
+	}
+	return ""
+}
+
+func (m *Bal) GetCreatedAt() string {
+	if m != nil {
+		return m.CreatedAt
+	}
+	return ""
+}
+
+func (m *Bal) GetUpdatedAt() string {
+	if m != nil {
+		return m.UpdatedAt
+	}
+	return ""
+}
+
+type WithDate struct {
+	WithDate             string   `protobuf:"bytes,1,opt,name=with_date,json=withDate,proto3" json:"with_date"`
+	Ball                 string   `protobuf:"bytes,2,opt,name=ball,proto3" json:"ball"`
+	XXX_NoUnkeyedLiteral struct{} `json:"-"`
+	XXX_unrecognized     []byte   `json:"-"`
+	XXX_sizecache        int32    `json:"-"`
+}
+
+func (m *WithDate) Reset()         { *m = WithDate{} }
+func (m *WithDate) String() string { return proto.CompactTextString(m) }
+func (*WithDate) ProtoMessage()    {}
+func (*WithDate) Descriptor() ([]byte, []int) {
+	return fileDescriptor_ad75674299e1bb1e, []int{4}
+}
+func (m *WithDate) XXX_Unmarshal(b []byte) error {
+	return m.Unmarshal(b)
+}
+func (m *WithDate) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
+	if deterministic {
+		return xxx_messageInfo_WithDate.Marshal(b, m, deterministic)
+	} else {
+		b = b[:cap(b)]
+		n, err := m.MarshalToSizedBuffer(b)
+		if err != nil {
+			return nil, err
+		}
+		return b[:n], nil
+	}
+}
+func (m *WithDate) XXX_Merge(src proto.Message) {
+	xxx_messageInfo_WithDate.Merge(m, src)
+}
+func (m *WithDate) XXX_Size() int {
+	return m.Size()
+}
+func (m *WithDate) XXX_DiscardUnknown() {
+	xxx_messageInfo_WithDate.DiscardUnknown(m)
+}
+
+var xxx_messageInfo_WithDate proto.InternalMessageInfo
+
+func (m *WithDate) GetWithDate() string {
+	if m != nil {
+		return m.WithDate
+	}
+	return ""
+}
+
+func (m *WithDate) GetBall() string {
+	if m != nil {
+		return m.Ball
+	}
+	return ""
+}
+
+type WithDateParticipate struct {
+	WithDate             string   `protobuf:"bytes,1,opt,name=with_date,json=withDate,proto3" json:"with_date"`
+	Participate          bool     `protobuf:"varint,2,opt,name=participate,proto3" json:"participate"`
+	Comment              string   `protobuf:"bytes,3,opt,name=comment,proto3" json:"comment"`
+	XXX_NoUnkeyedLiteral struct{} `json:"-"`
+	XXX_unrecognized     []byte   `json:"-"`
+	XXX_sizecache        int32    `json:"-"`
+}
+
+func (m *WithDateParticipate) Reset()         { *m = WithDateParticipate{} }
+func (m *WithDateParticipate) String() string { return proto.CompactTextString(m) }
+func (*WithDateParticipate) ProtoMessage()    {}
+func (*WithDateParticipate) Descriptor() ([]byte, []int) {
+	return fileDescriptor_ad75674299e1bb1e, []int{5}
+}
+func (m *WithDateParticipate) XXX_Unmarshal(b []byte) error {
+	return m.Unmarshal(b)
+}
+func (m *WithDateParticipate) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
+	if deterministic {
+		return xxx_messageInfo_WithDateParticipate.Marshal(b, m, deterministic)
+	} else {
+		b = b[:cap(b)]
+		n, err := m.MarshalToSizedBuffer(b)
+		if err != nil {
+			return nil, err
+		}
+		return b[:n], nil
+	}
+}
+func (m *WithDateParticipate) XXX_Merge(src proto.Message) {
+	xxx_messageInfo_WithDateParticipate.Merge(m, src)
+}
+func (m *WithDateParticipate) XXX_Size() int {
+	return m.Size()
+}
+func (m *WithDateParticipate) XXX_DiscardUnknown() {
+	xxx_messageInfo_WithDateParticipate.DiscardUnknown(m)
+}
+
+var xxx_messageInfo_WithDateParticipate proto.InternalMessageInfo
+
+func (m *WithDateParticipate) GetWithDate() string {
+	if m != nil {
+		return m.WithDate
+	}
+	return ""
+}
+
+func (m *WithDateParticipate) GetParticipate() bool {
+	if m != nil {
+		return m.Participate
+	}
+	return false
+}
+
+func (m *WithDateParticipate) GetComment() string {
+	if m != nil {
+		return m.Comment
+	}
+	return ""
+}
+
+type BalStudent struct {
+	StudentId            *By         `protobuf:"bytes,1,opt,name=student_id,json=studentId,proto3" json:"student_id"`
+	StudentAllBals       []*WithDate `protobuf:"bytes,2,rep,name=student_all_bals,json=studentAllBals,proto3" json:"student_all_bals"`
+	XXX_NoUnkeyedLiteral struct{}    `json:"-"`
+	XXX_unrecognized     []byte      `json:"-"`
+	XXX_sizecache        int32       `json:"-"`
+}
+
+func (m *BalStudent) Reset()         { *m = BalStudent{} }
+func (m *BalStudent) String() string { return proto.CompactTextString(m) }
+func (*BalStudent) ProtoMessage()    {}
+func (*BalStudent) Descriptor() ([]byte, []int) {
+	return fileDescriptor_ad75674299e1bb1e, []int{6}
+}
+func (m *BalStudent) XXX_Unmarshal(b []byte) error {
+	return m.Unmarshal(b)
+}
+func (m *BalStudent) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
+	if deterministic {
+		return xxx_messageInfo_BalStudent.Marshal(b, m, deterministic)
+	} else {
+		b = b[:cap(b)]
+		n, err := m.MarshalToSizedBuffer(b)
+		if err != nil {
+			return nil, err
+		}
+		return b[:n], nil
+	}
+}
+func (m *BalStudent) XXX_Merge(src proto.Message) {
+	xxx_messageInfo_BalStudent.Merge(m, src)
+}
+func (m *BalStudent) XXX_Size() int {
+	return m.Size()
+}
+func (m *BalStudent) XXX_DiscardUnknown() {
+	xxx_messageInfo_BalStudent.DiscardUnknown(m)
+}
+
+var xxx_messageInfo_BalStudent proto.InternalMessageInfo
+
+func (m *BalStudent) GetStudentId() *By {
+	if m != nil {
+		return m.StudentId
+	}
+	return nil
+}
+
+func (m *BalStudent) GetStudentAllBals() []*WithDate {
+	if m != nil {
+		return m.StudentAllBals
+	}
+	return nil
+}
+
+type ParticipateStudent struct {
+	StudentId             *By                    `protobuf:"bytes,1,opt,name=student_id,json=studentId,proto3" json:"student_id"`
+	StudentAllParticipate []*WithDateParticipate `protobuf:"bytes,2,rep,name=student_all_participate,json=studentAllParticipate,proto3" json:"student_all_participate"`
+	XXX_NoUnkeyedLiteral  struct{}               `json:"-"`
+	XXX_unrecognized      []byte                 `json:"-"`
+	XXX_sizecache         int32                  `json:"-"`
+}
+
+func (m *ParticipateStudent) Reset()         { *m = ParticipateStudent{} }
+func (m *ParticipateStudent) String() string { return proto.CompactTextString(m) }
+func (*ParticipateStudent) ProtoMessage()    {}
+func (*ParticipateStudent) Descriptor() ([]byte, []int) {
+	return fileDescriptor_ad75674299e1bb1e, []int{7}
+}
+func (m *ParticipateStudent) XXX_Unmarshal(b []byte) error {
+	return m.Unmarshal(b)
+}
+func (m *ParticipateStudent) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
+	if deterministic {
+		return xxx_messageInfo_ParticipateStudent.Marshal(b, m, deterministic)
+	} else {
+		b = b[:cap(b)]
+		n, err := m.MarshalToSizedBuffer(b)
+		if err != nil {
+			return nil, err
+		}
+		return b[:n], nil
+	}
+}
+func (m *ParticipateStudent) XXX_Merge(src proto.Message) {
+	xxx_messageInfo_ParticipateStudent.Merge(m, src)
+}
+func (m *ParticipateStudent) XXX_Size() int {
+	return m.Size()
+}
+func (m *ParticipateStudent) XXX_DiscardUnknown() {
+	xxx_messageInfo_ParticipateStudent.DiscardUnknown(m)
+}
+
+var xxx_messageInfo_ParticipateStudent proto.InternalMessageInfo
+
+func (m *ParticipateStudent) GetStudentId() *By {
+	if m != nil {
+		return m.StudentId
+	}
+	return nil
+}
+
+func (m *ParticipateStudent) GetStudentAllParticipate() []*WithDateParticipate {
+	if m != nil {
+		return m.StudentAllParticipate
+	}
+	return nil
+}
+
+type BalListResp struct {
+	GroupBals            []*BalStudent `protobuf:"bytes,1,rep,name=group_bals,json=groupBals,proto3" json:"group_bals"`
+	XXX_NoUnkeyedLiteral struct{}      `json:"-"`
+	XXX_unrecognized     []byte        `json:"-"`
+	XXX_sizecache        int32         `json:"-"`
+}
+
+func (m *BalListResp) Reset()         { *m = BalListResp{} }
+func (m *BalListResp) String() string { return proto.CompactTextString(m) }
+func (*BalListResp) ProtoMessage()    {}
+func (*BalListResp) Descriptor() ([]byte, []int) {
+	return fileDescriptor_ad75674299e1bb1e, []int{8}
+}
+func (m *BalListResp) XXX_Unmarshal(b []byte) error {
+	return m.Unmarshal(b)
+}
+func (m *BalListResp) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
+	if deterministic {
+		return xxx_messageInfo_BalListResp.Marshal(b, m, deterministic)
+	} else {
+		b = b[:cap(b)]
+		n, err := m.MarshalToSizedBuffer(b)
+		if err != nil {
+			return nil, err
+		}
+		return b[:n], nil
+	}
+}
+func (m *BalListResp) XXX_Merge(src proto.Message) {
+	xxx_messageInfo_BalListResp.Merge(m, src)
+}
+func (m *BalListResp) XXX_Size() int {
+	return m.Size()
+}
+func (m *BalListResp) XXX_DiscardUnknown() {
+	xxx_messageInfo_BalListResp.DiscardUnknown(m)
+}
+
+var xxx_messageInfo_BalListResp proto.InternalMessageInfo
+
+func (m *BalListResp) GetGroupBals() []*BalStudent {
+	if m != nil {
+		return m.GroupBals
+	}
+	return nil
+}
+
+type ParticipateListResp struct {
+	GroupParticipate     []*ParticipateStudent `protobuf:"bytes,1,rep,name=group_participate,json=groupParticipate,proto3" json:"group_participate"`
+	XXX_NoUnkeyedLiteral struct{}              `json:"-"`
+	XXX_unrecognized     []byte                `json:"-"`
+	XXX_sizecache        int32                 `json:"-"`
+}
+
+func (m *ParticipateListResp) Reset()         { *m = ParticipateListResp{} }
+func (m *ParticipateListResp) String() string { return proto.CompactTextString(m) }
+func (*ParticipateListResp) ProtoMessage()    {}
+func (*ParticipateListResp) Descriptor() ([]byte, []int) {
+	return fileDescriptor_ad75674299e1bb1e, []int{9}
+}
+func (m *ParticipateListResp) XXX_Unmarshal(b []byte) error {
+	return m.Unmarshal(b)
+}
+func (m *ParticipateListResp) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
+	if deterministic {
+		return xxx_messageInfo_ParticipateListResp.Marshal(b, m, deterministic)
+	} else {
+		b = b[:cap(b)]
+		n, err := m.MarshalToSizedBuffer(b)
+		if err != nil {
+			return nil, err
+		}
+		return b[:n], nil
+	}
+}
+func (m *ParticipateListResp) XXX_Merge(src proto.Message) {
+	xxx_messageInfo_ParticipateListResp.Merge(m, src)
+}
+func (m *ParticipateListResp) XXX_Size() int {
+	return m.Size()
+}
+func (m *ParticipateListResp) XXX_DiscardUnknown() {
+	xxx_messageInfo_ParticipateListResp.DiscardUnknown(m)
+}
+
+var xxx_messageInfo_ParticipateListResp proto.InternalMessageInfo
+
+func (m *ParticipateListResp) GetGroupParticipate() []*ParticipateStudent {
+	if m != nil {
+		return m.GroupParticipate
+	}
+	return nil
+}
+
 type Group struct {
 	Id                   string   `protobuf:"bytes,1,opt,name=id,proto3" json:"id"`
 	Name                 string   `protobuf:"bytes,2,opt,name=name,proto3" json:"name"`
@@ -92,7 +603,7 @@ func (m *Group) Reset()         { *m = Group{} }
 func (m *Group) String() string { return proto.CompactTextString(m) }
 func (*Group) ProtoMessage()    {}
 func (*Group) Descriptor() ([]byte, []int) {
-	return fileDescriptor_ad75674299e1bb1e, []int{1}
+	return fileDescriptor_ad75674299e1bb1e, []int{10}
 }
 func (m *Group) XXX_Unmarshal(b []byte) error {
 	return m.Unmarshal(b)
@@ -268,7 +779,7 @@ func (m *GroupResp) Reset()         { *m = GroupResp{} }
 func (m *GroupResp) String() string { return proto.CompactTextString(m) }
 func (*GroupResp) ProtoMessage()    {}
 func (*GroupResp) Descriptor() ([]byte, []int) {
-	return fileDescriptor_ad75674299e1bb1e, []int{2}
+	return fileDescriptor_ad75674299e1bb1e, []int{11}
 }
 func (m *GroupResp) XXX_Unmarshal(b []byte) error {
 	return m.Unmarshal(b)
@@ -423,139 +934,15 @@ func (m *GroupResp) GetUpdatedAt() string {
 	return ""
 }
 
-type Ball struct {
-	Id                   string   `protobuf:"bytes,1,opt,name=id,proto3" json:"id"`
-	AttendanceId         string   `protobuf:"bytes,2,opt,name=attendance_id,json=attendanceId,proto3" json:"attendance_id"`
-	Ball                 int32    `protobuf:"varint,3,opt,name=ball,proto3" json:"ball"`
-	CreatedAt            string   `protobuf:"bytes,4,opt,name=created_at,json=createdAt,proto3" json:"created_at"`
-	UpdatedAt            string   `protobuf:"bytes,5,opt,name=updated_at,json=updatedAt,proto3" json:"updated_at"`
-	XXX_NoUnkeyedLiteral struct{} `json:"-"`
-	XXX_unrecognized     []byte   `json:"-"`
-	XXX_sizecache        int32    `json:"-"`
-}
-
-func (m *Ball) Reset()         { *m = Ball{} }
-func (m *Ball) String() string { return proto.CompactTextString(m) }
-func (*Ball) ProtoMessage()    {}
-func (*Ball) Descriptor() ([]byte, []int) {
-	return fileDescriptor_ad75674299e1bb1e, []int{3}
-}
-func (m *Ball) XXX_Unmarshal(b []byte) error {
-	return m.Unmarshal(b)
-}
-func (m *Ball) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
-	if deterministic {
-		return xxx_messageInfo_Ball.Marshal(b, m, deterministic)
-	} else {
-		b = b[:cap(b)]
-		n, err := m.MarshalToSizedBuffer(b)
-		if err != nil {
-			return nil, err
-		}
-		return b[:n], nil
-	}
-}
-func (m *Ball) XXX_Merge(src proto.Message) {
-	xxx_messageInfo_Ball.Merge(m, src)
-}
-func (m *Ball) XXX_Size() int {
-	return m.Size()
-}
-func (m *Ball) XXX_DiscardUnknown() {
-	xxx_messageInfo_Ball.DiscardUnknown(m)
-}
-
-var xxx_messageInfo_Ball proto.InternalMessageInfo
-
-func (m *Ball) GetId() string {
-	if m != nil {
-		return m.Id
-	}
-	return ""
-}
-
-func (m *Ball) GetAttendanceId() string {
-	if m != nil {
-		return m.AttendanceId
-	}
-	return ""
-}
-
-func (m *Ball) GetBall() int32 {
-	if m != nil {
-		return m.Ball
-	}
-	return 0
-}
-
-func (m *Ball) GetCreatedAt() string {
-	if m != nil {
-		return m.CreatedAt
-	}
-	return ""
-}
-
-func (m *Ball) GetUpdatedAt() string {
-	if m != nil {
-		return m.UpdatedAt
-	}
-	return ""
-}
-
-type BallListResp struct {
-	Balls                []*Ball  `protobuf:"bytes,1,rep,name=balls,proto3" json:"balls"`
-	XXX_NoUnkeyedLiteral struct{} `json:"-"`
-	XXX_unrecognized     []byte   `json:"-"`
-	XXX_sizecache        int32    `json:"-"`
-}
-
-func (m *BallListResp) Reset()         { *m = BallListResp{} }
-func (m *BallListResp) String() string { return proto.CompactTextString(m) }
-func (*BallListResp) ProtoMessage()    {}
-func (*BallListResp) Descriptor() ([]byte, []int) {
-	return fileDescriptor_ad75674299e1bb1e, []int{4}
-}
-func (m *BallListResp) XXX_Unmarshal(b []byte) error {
-	return m.Unmarshal(b)
-}
-func (m *BallListResp) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
-	if deterministic {
-		return xxx_messageInfo_BallListResp.Marshal(b, m, deterministic)
-	} else {
-		b = b[:cap(b)]
-		n, err := m.MarshalToSizedBuffer(b)
-		if err != nil {
-			return nil, err
-		}
-		return b[:n], nil
-	}
-}
-func (m *BallListResp) XXX_Merge(src proto.Message) {
-	xxx_messageInfo_BallListResp.Merge(m, src)
-}
-func (m *BallListResp) XXX_Size() int {
-	return m.Size()
-}
-func (m *BallListResp) XXX_DiscardUnknown() {
-	xxx_messageInfo_BallListResp.DiscardUnknown(m)
-}
-
-var xxx_messageInfo_BallListResp proto.InternalMessageInfo
-
-func (m *BallListResp) GetBalls() []*Ball {
-	if m != nil {
-		return m.Balls
-	}
-	return nil
-}
-
 type Attendance struct {
 	Id                   string   `protobuf:"bytes,1,opt,name=id,proto3" json:"id"`
-	Participate          string   `protobuf:"bytes,2,opt,name=participate,proto3" json:"participate"`
-	Comment              string   `protobuf:"bytes,3,opt,name=comment,proto3" json:"comment"`
-	StudentId            string   `protobuf:"bytes,4,opt,name=student_id,json=studentId,proto3" json:"student_id"`
-	CreatedAt            string   `protobuf:"bytes,5,opt,name=created_at,json=createdAt,proto3" json:"created_at"`
-	UpdatedAt            string   `protobuf:"bytes,6,opt,name=updated_at,json=updatedAt,proto3" json:"updated_at"`
+	Comment              string   `protobuf:"bytes,2,opt,name=comment,proto3" json:"comment"`
+	Participate          string   `protobuf:"bytes,3,opt,name=participate,proto3" json:"participate"`
+	WithDate             string   `protobuf:"bytes,4,opt,name=with_date,json=withDate,proto3" json:"with_date"`
+	GroupId              string   `protobuf:"bytes,5,opt,name=group_id,json=groupId,proto3" json:"group_id"`
+	StudentId            string   `protobuf:"bytes,6,opt,name=student_id,json=studentId,proto3" json:"student_id"`
+	CreatedAt            string   `protobuf:"bytes,7,opt,name=created_at,json=createdAt,proto3" json:"created_at"`
+	UpdatedAt            string   `protobuf:"bytes,8,opt,name=updated_at,json=updatedAt,proto3" json:"updated_at"`
 	XXX_NoUnkeyedLiteral struct{} `json:"-"`
 	XXX_unrecognized     []byte   `json:"-"`
 	XXX_sizecache        int32    `json:"-"`
@@ -565,7 +952,7 @@ func (m *Attendance) Reset()         { *m = Attendance{} }
 func (m *Attendance) String() string { return proto.CompactTextString(m) }
 func (*Attendance) ProtoMessage()    {}
 func (*Attendance) Descriptor() ([]byte, []int) {
-	return fileDescriptor_ad75674299e1bb1e, []int{5}
+	return fileDescriptor_ad75674299e1bb1e, []int{12}
 }
 func (m *Attendance) XXX_Unmarshal(b []byte) error {
 	return m.Unmarshal(b)
@@ -601,6 +988,13 @@ func (m *Attendance) GetId() string {
 	return ""
 }
 
+func (m *Attendance) GetComment() string {
+	if m != nil {
+		return m.Comment
+	}
+	return ""
+}
+
 func (m *Attendance) GetParticipate() string {
 	if m != nil {
 		return m.Participate
@@ -608,9 +1002,16 @@ func (m *Attendance) GetParticipate() string {
 	return ""
 }
 
-func (m *Attendance) GetComment() string {
+func (m *Attendance) GetWithDate() string {
 	if m != nil {
-		return m.Comment
+		return m.WithDate
+	}
+	return ""
+}
+
+func (m *Attendance) GetGroupId() string {
+	if m != nil {
+		return m.GroupId
 	}
 	return ""
 }
@@ -648,7 +1049,7 @@ func (m *AttendanceListResp) Reset()         { *m = AttendanceListResp{} }
 func (m *AttendanceListResp) String() string { return proto.CompactTextString(m) }
 func (*AttendanceListResp) ProtoMessage()    {}
 func (*AttendanceListResp) Descriptor() ([]byte, []int) {
-	return fileDescriptor_ad75674299e1bb1e, []int{6}
+	return fileDescriptor_ad75674299e1bb1e, []int{13}
 }
 func (m *AttendanceListResp) XXX_Unmarshal(b []byte) error {
 	return m.Unmarshal(b)
@@ -703,7 +1104,7 @@ func (m *Assistent) Reset()         { *m = Assistent{} }
 func (m *Assistent) String() string { return proto.CompactTextString(m) }
 func (*Assistent) ProtoMessage()    {}
 func (*Assistent) Descriptor() ([]byte, []int) {
-	return fileDescriptor_ad75674299e1bb1e, []int{7}
+	return fileDescriptor_ad75674299e1bb1e, []int{14}
 }
 func (m *Assistent) XXX_Unmarshal(b []byte) error {
 	return m.Unmarshal(b)
@@ -758,7 +1159,7 @@ func (m *By) Reset()         { *m = By{} }
 func (m *By) String() string { return proto.CompactTextString(m) }
 func (*By) ProtoMessage()    {}
 func (*By) Descriptor() ([]byte, []int) {
-	return fileDescriptor_ad75674299e1bb1e, []int{8}
+	return fileDescriptor_ad75674299e1bb1e, []int{15}
 }
 func (m *By) XXX_Unmarshal(b []byte) error {
 	return m.Unmarshal(b)
@@ -801,6 +1202,61 @@ func (m *By) GetName() string {
 	return ""
 }
 
+type ByResp struct {
+	Name                 string   `protobuf:"bytes,1,opt,name=name,proto3" json:"name"`
+	Student              []*By    `protobuf:"bytes,2,rep,name=student,proto3" json:"student"`
+	XXX_NoUnkeyedLiteral struct{} `json:"-"`
+	XXX_unrecognized     []byte   `json:"-"`
+	XXX_sizecache        int32    `json:"-"`
+}
+
+func (m *ByResp) Reset()         { *m = ByResp{} }
+func (m *ByResp) String() string { return proto.CompactTextString(m) }
+func (*ByResp) ProtoMessage()    {}
+func (*ByResp) Descriptor() ([]byte, []int) {
+	return fileDescriptor_ad75674299e1bb1e, []int{16}
+}
+func (m *ByResp) XXX_Unmarshal(b []byte) error {
+	return m.Unmarshal(b)
+}
+func (m *ByResp) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
+	if deterministic {
+		return xxx_messageInfo_ByResp.Marshal(b, m, deterministic)
+	} else {
+		b = b[:cap(b)]
+		n, err := m.MarshalToSizedBuffer(b)
+		if err != nil {
+			return nil, err
+		}
+		return b[:n], nil
+	}
+}
+func (m *ByResp) XXX_Merge(src proto.Message) {
+	xxx_messageInfo_ByResp.Merge(m, src)
+}
+func (m *ByResp) XXX_Size() int {
+	return m.Size()
+}
+func (m *ByResp) XXX_DiscardUnknown() {
+	xxx_messageInfo_ByResp.DiscardUnknown(m)
+}
+
+var xxx_messageInfo_ByResp proto.InternalMessageInfo
+
+func (m *ByResp) GetName() string {
+	if m != nil {
+		return m.Name
+	}
+	return ""
+}
+
+func (m *ByResp) GetStudent() []*By {
+	if m != nil {
+		return m.Student
+	}
+	return nil
+}
+
 type Byt struct {
 	Id                   string   `protobuf:"bytes,1,opt,name=id,proto3" json:"id"`
 	Name                 string   `protobuf:"bytes,2,opt,name=name,proto3" json:"name"`
@@ -815,7 +1271,7 @@ func (m *Byt) Reset()         { *m = Byt{} }
 func (m *Byt) String() string { return proto.CompactTextString(m) }
 func (*Byt) ProtoMessage()    {}
 func (*Byt) Descriptor() ([]byte, []int) {
-	return fileDescriptor_ad75674299e1bb1e, []int{9}
+	return fileDescriptor_ad75674299e1bb1e, []int{17}
 }
 func (m *Byt) XXX_Unmarshal(b []byte) error {
 	return m.Unmarshal(b)
@@ -873,18 +1329,18 @@ func (m *Byt) GetPermission() string {
 }
 
 type GroupListResp struct {
-	Groups               []*Group `protobuf:"bytes,1,rep,name=groups,proto3" json:"groups"`
-	Count                int64    `protobuf:"varint,2,opt,name=count,proto3" json:"count"`
-	XXX_NoUnkeyedLiteral struct{} `json:"-"`
-	XXX_unrecognized     []byte   `json:"-"`
-	XXX_sizecache        int32    `json:"-"`
+	Groups               []*GroupResp `protobuf:"bytes,1,rep,name=groups,proto3" json:"groups"`
+	Count                int64        `protobuf:"varint,2,opt,name=count,proto3" json:"count"`
+	XXX_NoUnkeyedLiteral struct{}     `json:"-"`
+	XXX_unrecognized     []byte       `json:"-"`
+	XXX_sizecache        int32        `json:"-"`
 }
 
 func (m *GroupListResp) Reset()         { *m = GroupListResp{} }
 func (m *GroupListResp) String() string { return proto.CompactTextString(m) }
 func (*GroupListResp) ProtoMessage()    {}
 func (*GroupListResp) Descriptor() ([]byte, []int) {
-	return fileDescriptor_ad75674299e1bb1e, []int{10}
+	return fileDescriptor_ad75674299e1bb1e, []int{18}
 }
 func (m *GroupListResp) XXX_Unmarshal(b []byte) error {
 	return m.Unmarshal(b)
@@ -913,7 +1369,7 @@ func (m *GroupListResp) XXX_DiscardUnknown() {
 
 var xxx_messageInfo_GroupListResp proto.InternalMessageInfo
 
-func (m *GroupListResp) GetGroups() []*Group {
+func (m *GroupListResp) GetGroups() []*GroupResp {
 	if m != nil {
 		return m.Groups
 	}
@@ -939,7 +1395,7 @@ func (m *GroupListsResp) Reset()         { *m = GroupListsResp{} }
 func (m *GroupListsResp) String() string { return proto.CompactTextString(m) }
 func (*GroupListsResp) ProtoMessage()    {}
 func (*GroupListsResp) Descriptor() ([]byte, []int) {
-	return fileDescriptor_ad75674299e1bb1e, []int{11}
+	return fileDescriptor_ad75674299e1bb1e, []int{19}
 }
 func (m *GroupListsResp) XXX_Unmarshal(b []byte) error {
 	return m.Unmarshal(b)
@@ -993,7 +1449,7 @@ func (m *ByIdReq) Reset()         { *m = ByIdReq{} }
 func (m *ByIdReq) String() string { return proto.CompactTextString(m) }
 func (*ByIdReq) ProtoMessage()    {}
 func (*ByIdReq) Descriptor() ([]byte, []int) {
-	return fileDescriptor_ad75674299e1bb1e, []int{12}
+	return fileDescriptor_ad75674299e1bb1e, []int{20}
 }
 func (m *ByIdReq) XXX_Unmarshal(b []byte) error {
 	return m.Unmarshal(b)
@@ -1041,7 +1497,7 @@ func (m *ListReq) Reset()         { *m = ListReq{} }
 func (m *ListReq) String() string { return proto.CompactTextString(m) }
 func (*ListReq) ProtoMessage()    {}
 func (*ListReq) Descriptor() ([]byte, []int) {
-	return fileDescriptor_ad75674299e1bb1e, []int{13}
+	return fileDescriptor_ad75674299e1bb1e, []int{21}
 }
 func (m *ListReq) XXX_Unmarshal(b []byte) error {
 	return m.Unmarshal(b)
@@ -1095,7 +1551,7 @@ func (m *Resp) Reset()         { *m = Resp{} }
 func (m *Resp) String() string { return proto.CompactTextString(m) }
 func (*Resp) ProtoMessage()    {}
 func (*Resp) Descriptor() ([]byte, []int) {
-	return fileDescriptor_ad75674299e1bb1e, []int{14}
+	return fileDescriptor_ad75674299e1bb1e, []int{22}
 }
 func (m *Resp) XXX_Unmarshal(b []byte) error {
 	return m.Unmarshal(b)
@@ -1144,7 +1600,7 @@ func (m *ListIdReq) Reset()         { *m = ListIdReq{} }
 func (m *ListIdReq) String() string { return proto.CompactTextString(m) }
 func (*ListIdReq) ProtoMessage()    {}
 func (*ListIdReq) Descriptor() ([]byte, []int) {
-	return fileDescriptor_ad75674299e1bb1e, []int{15}
+	return fileDescriptor_ad75674299e1bb1e, []int{23}
 }
 func (m *ListIdReq) XXX_Unmarshal(b []byte) error {
 	return m.Unmarshal(b)
@@ -1207,7 +1663,7 @@ func (m *ListWithReq) Reset()         { *m = ListWithReq{} }
 func (m *ListWithReq) String() string { return proto.CompactTextString(m) }
 func (*ListWithReq) ProtoMessage()    {}
 func (*ListWithReq) Descriptor() ([]byte, []int) {
-	return fileDescriptor_ad75674299e1bb1e, []int{16}
+	return fileDescriptor_ad75674299e1bb1e, []int{24}
 }
 func (m *ListWithReq) XXX_Unmarshal(b []byte) error {
 	return m.Unmarshal(b)
@@ -1259,14 +1715,22 @@ func (m *ListWithReq) GetDay() int64 {
 
 func init() {
 	proto.RegisterType((*EmptyRes)(nil), "course_service.EmptyRes")
+	proto.RegisterType((*GetBall)(nil), "course_service.GetBall")
+	proto.RegisterType((*GetParticipate)(nil), "course_service.GetParticipate")
+	proto.RegisterType((*Bal)(nil), "course_service.Bal")
+	proto.RegisterType((*WithDate)(nil), "course_service.WithDate")
+	proto.RegisterType((*WithDateParticipate)(nil), "course_service.WithDateParticipate")
+	proto.RegisterType((*BalStudent)(nil), "course_service.BalStudent")
+	proto.RegisterType((*ParticipateStudent)(nil), "course_service.ParticipateStudent")
+	proto.RegisterType((*BalListResp)(nil), "course_service.BalListResp")
+	proto.RegisterType((*ParticipateListResp)(nil), "course_service.ParticipateListResp")
 	proto.RegisterType((*Group)(nil), "course_service.Group")
 	proto.RegisterType((*GroupResp)(nil), "course_service.GroupResp")
-	proto.RegisterType((*Ball)(nil), "course_service.Ball")
-	proto.RegisterType((*BallListResp)(nil), "course_service.BallListResp")
 	proto.RegisterType((*Attendance)(nil), "course_service.Attendance")
 	proto.RegisterType((*AttendanceListResp)(nil), "course_service.AttendanceListResp")
 	proto.RegisterType((*Assistent)(nil), "course_service.Assistent")
 	proto.RegisterType((*By)(nil), "course_service.By")
+	proto.RegisterType((*ByResp)(nil), "course_service.ByResp")
 	proto.RegisterType((*Byt)(nil), "course_service.Byt")
 	proto.RegisterType((*GroupListResp)(nil), "course_service.GroupListResp")
 	proto.RegisterType((*GroupListsResp)(nil), "course_service.GroupListsResp")
@@ -1280,73 +1744,86 @@ func init() {
 func init() { proto.RegisterFile("course.proto", fileDescriptor_ad75674299e1bb1e) }
 
 var fileDescriptor_ad75674299e1bb1e = []byte{
-	// 1056 bytes of a gzipped FileDescriptorProto
-	0x1f, 0x8b, 0x08, 0x00, 0x00, 0x00, 0x00, 0x00, 0x02, 0xff, 0xec, 0x57, 0xcd, 0x6e, 0xdb, 0x46,
-	0x10, 0xae, 0x4c, 0xfd, 0x71, 0xf4, 0x53, 0x67, 0xe3, 0x36, 0xb4, 0x12, 0xab, 0x2e, 0x03, 0x14,
-	0x46, 0x80, 0x18, 0x8d, 0x73, 0x09, 0x8a, 0xa2, 0xa9, 0x64, 0x19, 0x81, 0xd2, 0x16, 0x05, 0x98,
-	0x14, 0x45, 0x4f, 0xc4, 0x9a, 0xdc, 0x58, 0x04, 0xf8, 0xa3, 0x70, 0x57, 0x29, 0xf4, 0x10, 0xbd,
-	0xf7, 0x45, 0xfa, 0x0e, 0x3d, 0xf6, 0x09, 0x8a, 0xc2, 0x3d, 0xf4, 0xd8, 0x57, 0x28, 0x76, 0x76,
-	0x49, 0xc9, 0x24, 0x25, 0x3b, 0x3e, 0xf7, 0x64, 0xce, 0xcf, 0x7e, 0x3b, 0xf3, 0xcd, 0xc7, 0xa1,
-	0x0c, 0x5d, 0x2f, 0x59, 0xa4, 0x9c, 0x1d, 0xcf, 0xd3, 0x44, 0x24, 0xa4, 0xaf, 0x2c, 0x97, 0xb3,
-	0xf4, 0x5d, 0xe0, 0x31, 0x1b, 0xa0, 0x7d, 0x16, 0xcd, 0xc5, 0xd2, 0x61, 0xdc, 0xfe, 0xd7, 0x80,
-	0xc6, 0x8b, 0x34, 0x59, 0xcc, 0x49, 0x1f, 0x76, 0x02, 0xdf, 0xaa, 0x1d, 0xd6, 0x8e, 0x4c, 0x67,
-	0x27, 0xf0, 0x09, 0x81, 0x7a, 0x4c, 0x23, 0x66, 0xed, 0xa0, 0x07, 0x9f, 0x89, 0x0d, 0x3d, 0x9f,
-	0x0a, 0xe6, 0x26, 0x6f, 0xdc, 0x73, 0x76, 0x11, 0xc4, 0x96, 0x81, 0xc1, 0x8e, 0x74, 0x7e, 0xff,
-	0x66, 0x2c, 0x5d, 0xeb, 0x39, 0x5e, 0x98, 0x70, 0x66, 0xd5, 0xd7, 0x73, 0x4e, 0xa5, 0x8b, 0xdc,
-	0x07, 0xf3, 0xe7, 0x40, 0xcc, 0x5c, 0x9f, 0x2e, 0xb9, 0xd5, 0xc0, 0x78, 0x5b, 0x3a, 0x26, 0x74,
-	0xc9, 0xc9, 0x01, 0x00, 0x82, 0xbb, 0x22, 0x88, 0x98, 0xd5, 0xc4, 0xa8, 0x89, 0x9e, 0xd7, 0x41,
-	0xc4, 0x64, 0x18, 0x71, 0x55, 0xb8, 0xa5, 0xc2, 0xe8, 0xc1, 0xf0, 0xc7, 0xd0, 0x0c, 0x19, 0xe7,
-	0x49, 0x6c, 0xb5, 0x31, 0xa4, 0x2d, 0x62, 0x41, 0xcb, 0x4b, 0xa2, 0x88, 0xc5, 0xc2, 0x32, 0x31,
-	0x90, 0x99, 0xf2, 0x04, 0xf5, 0x44, 0xf0, 0x8e, 0x59, 0xa0, 0x4e, 0x28, 0x8b, 0x7c, 0x0a, 0x5d,
-	0x3f, 0x48, 0x99, 0x27, 0x82, 0x24, 0x76, 0x03, 0xdf, 0xea, 0xe8, 0x3e, 0x32, 0xdf, 0xd4, 0x97,
-	0xb5, 0x08, 0x46, 0xbd, 0x19, 0x4b, 0x65, 0x42, 0x57, 0xd5, 0xa2, 0x3d, 0x53, 0x9f, 0x7c, 0x02,
-	0x1d, 0xca, 0x03, 0x2e, 0x58, 0x2c, 0x64, 0xbc, 0x77, 0x68, 0x1c, 0x99, 0x0e, 0x64, 0xae, 0xa9,
-	0x2f, 0x79, 0x38, 0x4f, 0x69, 0xec, 0xcd, 0x64, 0xb8, 0xaf, 0x78, 0x50, 0x8e, 0xa9, 0x4f, 0xee,
-	0x41, 0x2b, 0x4d, 0x92, 0x48, 0x86, 0x3e, 0x54, 0x85, 0x49, 0x53, 0xdd, 0xea, 0xa5, 0x8c, 0x0a,
-	0xe6, 0xbb, 0x54, 0x58, 0xbb, 0x9a, 0x01, 0xe5, 0x19, 0x09, 0x19, 0x5e, 0xcc, 0xfd, 0x2c, 0x7c,
-	0x47, 0x85, 0xb5, 0x67, 0x24, 0xec, 0x7f, 0xea, 0x60, 0xe2, 0xc4, 0x1d, 0xc6, 0xff, 0x9f, 0x7a,
-	0x69, 0xea, 0x9f, 0x83, 0x99, 0x4f, 0x18, 0x47, 0xde, 0x39, 0x21, 0xc7, 0x57, 0x5f, 0xa0, 0xe3,
-	0xf1, 0xd2, 0x59, 0x25, 0x91, 0xc7, 0xd0, 0xd2, 0x23, 0x47, 0x05, 0x74, 0x4e, 0xee, 0x96, 0xf3,
-	0x85, 0x93, 0xe5, 0x90, 0x27, 0x60, 0x52, 0xae, 0x25, 0x80, 0x92, 0xd8, 0x70, 0x60, 0x95, 0x45,
-	0x1e, 0x41, 0x53, 0xa9, 0x02, 0x35, 0x52, 0x5d, 0x90, 0xce, 0x20, 0x9f, 0x41, 0x5d, 0xca, 0x04,
-	0x25, 0x53, 0x9d, 0x89, 0x71, 0xf2, 0x10, 0x7a, 0x5e, 0xb2, 0x88, 0x85, 0xcb, 0xc5, 0xc2, 0x97,
-	0xa5, 0x28, 0x1d, 0x75, 0xd1, 0xf9, 0x4a, 0xf9, 0x0a, 0x4a, 0xbb, 0xb3, 0x5d, 0x69, 0xa4, 0xa8,
-	0xb4, 0x5f, 0x6a, 0x50, 0x1f, 0xd3, 0x30, 0x2c, 0x89, 0xec, 0x21, 0xf4, 0xa8, 0x10, 0x2c, 0xf6,
-	0x69, 0xec, 0x31, 0xa9, 0x6f, 0xa5, 0xb6, 0xee, 0xca, 0x39, 0x45, 0x25, 0x9e, 0xd3, 0x30, 0x44,
-	0xb1, 0x35, 0x1c, 0x7c, 0x2e, 0xd4, 0x53, 0xdf, 0x5e, 0x4f, 0xa3, 0x58, 0xcf, 0x17, 0xd0, 0x95,
-	0xe5, 0x7c, 0x1b, 0x70, 0x81, 0xda, 0x7f, 0x04, 0x0d, 0x89, 0xca, 0xad, 0x1a, 0x4e, 0x61, 0xaf,
-	0xc4, 0x15, 0x0d, 0x43, 0x47, 0xa5, 0xd8, 0xbf, 0xd5, 0x00, 0x46, 0x79, 0x79, 0xa5, 0x8e, 0x0e,
-	0xa1, 0x33, 0xa7, 0xa9, 0x08, 0xbc, 0x60, 0x4e, 0x45, 0xf6, 0xf6, 0xac, 0xbb, 0xd6, 0x95, 0x68,
-	0x5c, 0x55, 0xe2, 0x01, 0x80, 0x9e, 0x81, 0xa4, 0x42, 0x37, 0xa5, 0x3d, 0xa5, 0xb7, 0xbd, 0xb1,
-	0xbd, 0xe7, 0x66, 0xb1, 0xe7, 0x19, 0x90, 0x55, 0xd9, 0x79, 0xe7, 0x5f, 0x42, 0x67, 0xc5, 0x75,
-	0xd6, 0xff, 0xa0, 0xd8, 0xff, 0xea, 0xa0, 0xb3, 0x9e, 0x4e, 0xf6, 0xa0, 0x81, 0x2a, 0xc1, 0x36,
-	0x0d, 0x47, 0x19, 0xf6, 0x19, 0x98, 0xa3, 0x5c, 0xb1, 0xfb, 0xd0, 0xbe, 0x90, 0x3b, 0xc6, 0xcd,
-	0x59, 0x6a, 0xa1, 0x5d, 0xda, 0x99, 0x3b, 0x85, 0x9d, 0x69, 0x1f, 0xc1, 0xce, 0x78, 0x79, 0x93,
-	0xb5, 0x64, 0xbb, 0x60, 0x8c, 0x97, 0xe2, 0x46, 0x1b, 0x6c, 0x0f, 0x1a, 0xf3, 0x59, 0x12, 0x33,
-	0x4d, 0xbd, 0x32, 0xc8, 0x10, 0x60, 0xce, 0xd2, 0x28, 0xe0, 0x5c, 0xbe, 0xeb, 0x8a, 0xf8, 0x35,
-	0x8f, 0xfd, 0x1a, 0x7a, 0xb8, 0x28, 0x73, 0xda, 0x1e, 0x43, 0x13, 0xbb, 0xc8, 0x18, 0xfb, 0xa8,
-	0xc8, 0x98, 0xda, 0xab, 0x3a, 0x69, 0x03, 0x4f, 0x3f, 0x41, 0x3f, 0x47, 0xe5, 0x08, 0xfb, 0xa4,
-	0x00, 0xbb, 0x5f, 0x0d, 0xcb, 0xf8, 0x75, 0xd0, 0xfb, 0xd0, 0x1a, 0x2f, 0xa7, 0xbe, 0xc3, 0xde,
-	0x16, 0x59, 0xb1, 0x9f, 0x42, 0x4b, 0xb5, 0xf1, 0x56, 0x12, 0x34, 0xa7, 0x17, 0x0c, 0x83, 0x86,
-	0x83, 0xcf, 0x12, 0x2f, 0x0c, 0xa2, 0x20, 0xc7, 0x43, 0xc3, 0x7e, 0x00, 0x75, 0x2c, 0x30, 0xbf,
-	0xad, 0x56, 0x18, 0xb8, 0x84, 0x54, 0xf7, 0xdd, 0x18, 0x54, 0x57, 0x66, 0xe4, 0x95, 0x4d, 0xa1,
-	0x23, 0x61, 0x7e, 0x0c, 0xc4, 0xec, 0xfd, 0x80, 0x76, 0xc1, 0xf0, 0xe9, 0x12, 0x91, 0x0c, 0x47,
-	0x3e, 0x9e, 0xfc, 0x69, 0x42, 0xef, 0x14, 0xa9, 0x7b, 0xa5, 0x98, 0x23, 0xcf, 0xa1, 0x83, 0xe4,
-	0x9d, 0xe2, 0xfb, 0x42, 0xaa, 0x07, 0x36, 0xd8, 0x4c, 0x38, 0xf9, 0x0a, 0xda, 0x68, 0xbc, 0x60,
-	0x82, 0xdc, 0x2b, 0x2f, 0x53, 0x6c, 0x7e, 0xdb, 0xf9, 0x89, 0xfe, 0xd8, 0xca, 0x16, 0xcb, 0x00,
-	0x7a, 0x24, 0x83, 0x61, 0x25, 0xc0, 0x4a, 0x21, 0xdf, 0x68, 0x25, 0x4a, 0x92, 0x10, 0xe9, 0x7e,
-	0x15, 0x92, 0xa6, 0x70, 0x70, 0xb0, 0x11, 0x0d, 0xc1, 0x5e, 0x6a, 0x30, 0x27, 0x49, 0x22, 0x04,
-	0xdb, 0xaf, 0x02, 0x53, 0x9d, 0x5d, 0x57, 0xd8, 0x04, 0xee, 0xa2, 0xe7, 0xea, 0x8e, 0xd9, 0xcc,
-	0x54, 0x69, 0xc7, 0x22, 0x4a, 0x36, 0xa5, 0x1f, 0x70, 0x6d, 0xdd, 0x62, 0x4a, 0x5f, 0x6b, 0x80,
-	0x09, 0x0b, 0x99, 0x60, 0x9b, 0xaf, 0xb7, 0x8a, 0x81, 0xec, 0x77, 0x30, 0x79, 0x09, 0xbb, 0xab,
-	0x1e, 0xb4, 0x5a, 0xb6, 0x2c, 0xc4, 0xc1, 0x96, 0x18, 0x99, 0x40, 0x6f, 0x65, 0x6d, 0x15, 0xce,
-	0x36, 0x94, 0xef, 0xa0, 0x7f, 0x1d, 0xab, 0x99, 0x7c, 0xec, 0xcd, 0x30, 0x6b, 0x53, 0x5f, 0x6b,
-	0x50, 0x13, 0x7d, 0xdb, 0x06, 0xcf, 0xd6, 0xb1, 0x6e, 0xcf, 0xf9, 0x33, 0x00, 0xf9, 0x89, 0xd5,
-	0x6c, 0x57, 0x7e, 0x7e, 0x07, 0x95, 0x5e, 0xf2, 0x0c, 0x5a, 0xf2, 0xef, 0x56, 0x6e, 0x37, 0x9d,
-	0xc4, 0x3b, 0x35, 0x01, 0xef, 0x73, 0xe7, 0x08, 0xda, 0xd9, 0xaf, 0x87, 0xcd, 0x93, 0x78, 0x50,
-	0x75, 0x34, 0x9f, 0xc1, 0x73, 0x75, 0xf9, 0xad, 0x19, 0x1b, 0xef, 0xfe, 0x7e, 0x39, 0xac, 0xfd,
-	0x71, 0x39, 0xac, 0xfd, 0x75, 0x39, 0xac, 0xfd, 0xfa, 0xf7, 0xf0, 0x83, 0xf3, 0x26, 0xfe, 0x8b,
-	0xf7, 0xf4, 0xbf, 0x00, 0x00, 0x00, 0xff, 0xff, 0x7b, 0xbc, 0x46, 0xd9, 0xf2, 0x0d, 0x00, 0x00,
+	// 1249 bytes of a gzipped FileDescriptorProto
+	0x1f, 0x8b, 0x08, 0x00, 0x00, 0x00, 0x00, 0x00, 0x02, 0xff, 0xec, 0x58, 0xdd, 0x6e, 0xe3, 0x44,
+	0x14, 0xc6, 0xf9, 0xf7, 0x49, 0x13, 0xb2, 0xd3, 0xfd, 0x49, 0xb3, 0x6c, 0x28, 0x2e, 0x42, 0x15,
+	0x3f, 0x15, 0xed, 0x8a, 0x0b, 0x04, 0xda, 0xa5, 0x6e, 0x4b, 0x49, 0x41, 0x5a, 0xe4, 0x65, 0x05,
+	0x88, 0x8b, 0x68, 0x6a, 0x4f, 0x5b, 0x4b, 0x8e, 0x9d, 0x8d, 0xa7, 0x8b, 0x72, 0xcd, 0x4b, 0xf0,
+	0x00, 0xf0, 0x1a, 0x5c, 0x73, 0xc9, 0x23, 0xa0, 0x72, 0xc1, 0x15, 0xe2, 0x15, 0xd0, 0x9c, 0x19,
+	0x3b, 0x13, 0xdb, 0x31, 0xa5, 0x70, 0xc9, 0x9d, 0xe7, 0x9c, 0x33, 0x9f, 0xcf, 0xf9, 0xce, 0x37,
+	0x67, 0xe2, 0xc0, 0x9a, 0x1b, 0x5d, 0xce, 0x62, 0xb6, 0x33, 0x9d, 0x45, 0x3c, 0x22, 0x5d, 0xb9,
+	0x1a, 0xc7, 0x6c, 0xf6, 0xc2, 0x77, 0x99, 0x05, 0xd0, 0x3a, 0x9a, 0x4c, 0xf9, 0xdc, 0x61, 0xb1,
+	0xf5, 0x3a, 0x34, 0x8f, 0x19, 0xb7, 0x69, 0x10, 0x90, 0x0d, 0x68, 0x9d, 0xcf, 0xa2, 0xcb, 0xe9,
+	0xd8, 0xf7, 0xfa, 0x95, 0x4d, 0x63, 0xdb, 0x74, 0x9a, 0xb8, 0x1e, 0x79, 0xd6, 0x5b, 0xd0, 0x3d,
+	0x66, 0xfc, 0x73, 0x3a, 0xe3, 0xbe, 0xeb, 0x4f, 0x29, 0x67, 0x65, 0xc1, 0x3f, 0x19, 0x50, 0xb5,
+	0x69, 0x40, 0xba, 0x50, 0xf1, 0xbd, 0xbe, 0x81, 0xce, 0x8a, 0xef, 0x11, 0x02, 0xb5, 0x53, 0x1a,
+	0x04, 0x18, 0x5e, 0x77, 0xf0, 0x99, 0xdc, 0x07, 0xf3, 0x5b, 0x9f, 0x5f, 0x8c, 0x3d, 0xca, 0x59,
+	0xbf, 0x8a, 0xa1, 0x2d, 0x61, 0x38, 0xcc, 0xbe, 0xa3, 0xb6, 0xf4, 0x0e, 0xf2, 0x00, 0x20, 0xe6,
+	0x97, 0x1e, 0x0b, 0xb9, 0x70, 0xd6, 0xd1, 0x69, 0x2a, 0x8b, 0x74, 0xbb, 0x33, 0x46, 0x39, 0xf3,
+	0xc6, 0x94, 0xf7, 0x1b, 0xd2, 0xad, 0x2c, 0xfb, 0x5c, 0xb8, 0x2f, 0xa7, 0x5e, 0xe2, 0x6e, 0x4a,
+	0xb7, 0xb2, 0xec, 0x73, 0xeb, 0x03, 0x68, 0x7d, 0x99, 0xe4, 0xb0, 0x94, 0xa0, 0x91, 0x49, 0x50,
+	0xaf, 0xc8, 0x94, 0x15, 0x59, 0x21, 0xac, 0x27, 0x9b, 0x75, 0xbe, 0x4a, 0x71, 0x36, 0xa1, 0x3d,
+	0x5d, 0xc4, 0x22, 0x5c, 0xcb, 0xd1, 0x4d, 0xa4, 0x0f, 0x4d, 0x37, 0x9a, 0x4c, 0x58, 0xc8, 0x15,
+	0x4b, 0xc9, 0xd2, 0xfa, 0xce, 0x00, 0xb0, 0x69, 0xf0, 0x54, 0xd6, 0x4e, 0x76, 0x97, 0x88, 0x11,
+	0x2f, 0x6a, 0xef, 0x91, 0x9d, 0x65, 0x01, 0xec, 0xd8, 0x73, 0x9d, 0x2c, 0x1b, 0x7a, 0xc9, 0x16,
+	0x1a, 0x04, 0xe3, 0x53, 0x1a, 0xc4, 0xfd, 0xca, 0x66, 0x75, 0xbb, 0xbd, 0xd7, 0xcf, 0x6e, 0x4c,
+	0x2a, 0x73, 0xba, 0x6a, 0xc7, 0x7e, 0x10, 0xd8, 0x34, 0x88, 0xad, 0x1f, 0x0c, 0x20, 0x5a, 0xb9,
+	0xff, 0x22, 0x9b, 0x6f, 0xe0, 0x9e, 0x9e, 0xcd, 0x32, 0x2f, 0x22, 0xa9, 0xad, 0x55, 0x49, 0x69,
+	0xef, 0x77, 0xee, 0x2c, 0xf2, 0xd3, 0xcc, 0xd6, 0x27, 0xd0, 0xb6, 0x69, 0xf0, 0x99, 0x1f, 0x73,
+	0x87, 0xc5, 0x53, 0xf2, 0x3e, 0x80, 0x14, 0x18, 0xd6, 0x6c, 0x20, 0xfc, 0x20, 0x97, 0x5e, 0x4a,
+	0xae, 0x63, 0x62, 0x34, 0x16, 0x7c, 0x06, 0xeb, 0x1a, 0x70, 0x8a, 0xf8, 0x04, 0x6e, 0x49, 0x44,
+	0x3d, 0x6f, 0x09, 0x6c, 0x65, 0x81, 0xf3, 0x7c, 0x39, 0x3d, 0xdc, 0xac, 0x67, 0xfc, 0x67, 0x15,
+	0xea, 0xc7, 0xc2, 0x58, 0x74, 0x9c, 0x42, 0x3a, 0x61, 0x89, 0xf8, 0xc4, 0x33, 0xb1, 0xa0, 0x23,
+	0x04, 0x36, 0x8e, 0xce, 0xc6, 0xa7, 0xec, 0xdc, 0x0f, 0x95, 0x58, 0xda, 0xc2, 0xf8, 0xe4, 0xcc,
+	0x16, 0x26, 0x3d, 0xc6, 0x0d, 0xa2, 0x98, 0xa9, 0xa3, 0xa5, 0x62, 0x0e, 0x84, 0x49, 0x53, 0xeb,
+	0x3c, 0x56, 0xa7, 0x4b, 0xa9, 0x75, 0x1e, 0x8b, 0xd3, 0x83, 0xe0, 0x63, 0xee, 0x4f, 0x58, 0x72,
+	0xb8, 0xd0, 0xf2, 0x85, 0x3f, 0x61, 0x78, 0xf6, 0x04, 0x88, 0x74, 0xab, 0xc3, 0x85, 0x16, 0x74,
+	0xdf, 0x85, 0x46, 0xc0, 0xe2, 0x38, 0x0a, 0xfb, 0x2d, 0x74, 0xa9, 0x95, 0xae, 0x70, 0x73, 0x49,
+	0xe1, 0x62, 0x07, 0x75, 0xb9, 0xff, 0x82, 0xf5, 0x41, 0xee, 0x90, 0x2b, 0xf2, 0x1a, 0xac, 0x79,
+	0xfe, 0x8c, 0xb9, 0xdc, 0x8f, 0x42, 0x21, 0xaf, 0xb6, 0xaa, 0x23, 0xb1, 0xc9, 0x39, 0xc0, 0x19,
+	0x75, 0x2f, 0xd8, 0x4c, 0x04, 0xac, 0xc9, 0x5c, 0x94, 0x65, 0xe4, 0x91, 0x57, 0xa1, 0x4d, 0x63,
+	0x3f, 0xe6, 0x4a, 0x9f, 0x9d, 0xcd, 0xea, 0xb6, 0xe9, 0x40, 0x62, 0x1a, 0x79, 0x82, 0x87, 0xd3,
+	0x19, 0x0d, 0xdd, 0x0b, 0xe1, 0xee, 0x4a, 0x1e, 0xa4, 0x61, 0xe4, 0x91, 0x7b, 0xd0, 0x9c, 0x45,
+	0xd1, 0x44, 0xb8, 0x5e, 0x96, 0x89, 0x89, 0x65, 0x6e, 0xfa, 0xf4, 0xca, 0xa7, 0xcf, 0xad, 0xec,
+	0xf4, 0xf9, 0xbd, 0x06, 0x26, 0x76, 0x1c, 0x05, 0xf5, 0x7f, 0xd7, 0x33, 0x5d, 0x7f, 0x17, 0xcc,
+	0xb4, 0xc3, 0xd8, 0xf2, 0x15, 0x13, 0x25, 0x0d, 0x22, 0xef, 0x40, 0x53, 0xb5, 0x1c, 0x15, 0xd0,
+	0xde, 0x5b, 0xcf, 0xc7, 0x73, 0x27, 0x89, 0x21, 0xbb, 0x60, 0xd2, 0x58, 0x49, 0x00, 0x25, 0xb1,
+	0x62, 0xc3, 0x22, 0x8a, 0xbc, 0x09, 0x0d, 0xa9, 0x0a, 0xd4, 0x48, 0x71, 0x42, 0x2a, 0x82, 0xbc,
+	0x01, 0x35, 0x21, 0x13, 0x94, 0x4c, 0x71, 0x24, 0xfa, 0xc9, 0x16, 0x74, 0xdc, 0xe8, 0x32, 0xe4,
+	0x63, 0x35, 0xc9, 0x94, 0x8e, 0xd6, 0xd0, 0x98, 0xcc, 0xd7, 0x65, 0xa5, 0xdd, 0x2a, 0x57, 0x1a,
+	0xc9, 0x2a, 0xed, 0x0f, 0x03, 0x60, 0x9f, 0x73, 0x16, 0x7a, 0x34, 0x74, 0x59, 0x4e, 0x6a, 0x5a,
+	0x6f, 0x2a, 0xcb, 0xbd, 0xc9, 0xdc, 0x57, 0x4a, 0x6e, 0xd3, 0x55, 0xd7, 0x5d, 0xad, 0xe4, 0x5e,
+	0xaf, 0x97, 0xdd, 0xeb, 0x8d, 0xf2, 0x7b, 0xbd, 0x59, 0x5e, 0x6f, 0x2b, 0x5b, 0xef, 0x05, 0x90,
+	0x45, 0xb9, 0xe9, 0xc8, 0xfe, 0x10, 0xda, 0x34, 0xb5, 0xae, 0xbc, 0x05, 0x16, 0x1b, 0x1d, 0x3d,
+	0x9c, 0xdc, 0x86, 0x3a, 0x76, 0x04, 0x29, 0xaa, 0x3a, 0x72, 0x61, 0x1d, 0x81, 0xb9, 0x9f, 0xaa,
+	0x43, 0x2f, 0xd7, 0xc8, 0x95, 0xab, 0xcd, 0xa7, 0x4a, 0x66, 0x3e, 0x59, 0xdb, 0x50, 0xb1, 0xe7,
+	0xd7, 0x19, 0x01, 0xd6, 0x09, 0x34, 0xec, 0x39, 0x96, 0x93, 0x78, 0x0d, 0x6d, 0x40, 0xbc, 0x0d,
+	0xcd, 0x44, 0x45, 0xf2, 0x0e, 0x2d, 0x92, 0x5d, 0x12, 0x62, 0x8d, 0xa1, 0x6a, 0xcf, 0xf9, 0xb5,
+	0x26, 0xcf, 0x6d, 0xa8, 0x4f, 0x2f, 0xa2, 0x30, 0x91, 0x80, 0x5c, 0x90, 0x21, 0xc0, 0x94, 0xcd,
+	0x26, 0x7e, 0x1c, 0x8b, 0x33, 0x2a, 0xbb, 0xaf, 0x59, 0xac, 0xaf, 0xa0, 0x83, 0x03, 0x2e, 0x6d,
+	0xc1, 0x2e, 0x34, 0x90, 0x91, 0x84, 0xfd, 0x8d, 0x6c, 0x7a, 0xe9, 0x3c, 0x74, 0x54, 0xe0, 0x0a,
+	0xde, 0xbf, 0x86, 0x6e, 0x8a, 0x1c, 0xff, 0xb7, 0xd0, 0x1b, 0xd0, 0xb4, 0xe7, 0x23, 0xcf, 0x61,
+	0xcf, 0xb3, 0xcc, 0x58, 0x0f, 0xa1, 0x29, 0x4b, 0x79, 0x2e, 0x48, 0x9a, 0xd2, 0x73, 0xc9, 0x7e,
+	0xd5, 0xc1, 0x67, 0x81, 0x17, 0xf8, 0x13, 0x3f, 0xc5, 0xc3, 0x85, 0xf5, 0x0a, 0xd4, 0x30, 0xc1,
+	0xf4, 0x6d, 0x46, 0x46, 0x40, 0x02, 0x52, 0xbe, 0xef, 0xda, 0xa0, 0x2a, 0xb3, 0x6a, 0x9a, 0xd9,
+	0x08, 0xda, 0x02, 0x46, 0xfc, 0x42, 0xfa, 0x67, 0x40, 0x3d, 0xa8, 0x7a, 0x74, 0x8e, 0x48, 0x55,
+	0x47, 0x3c, 0xee, 0xfd, 0x68, 0x42, 0xe7, 0x00, 0xa9, 0x7b, 0x2a, 0x99, 0x23, 0x8f, 0xa1, 0x8d,
+	0xe4, 0x1d, 0xe0, 0xf9, 0x23, 0x77, 0x0a, 0x99, 0x1d, 0xac, 0x26, 0x9c, 0x3c, 0x82, 0x16, 0x2e,
+	0x8e, 0x19, 0x27, 0xf7, 0xf2, 0x8a, 0xc4, 0xe2, 0xcb, 0xf6, 0x1f, 0xaa, 0x8b, 0x52, 0x94, 0x98,
+	0x07, 0x50, 0x2d, 0x19, 0x0c, 0x0b, 0x01, 0x16, 0x0a, 0xf9, 0x54, 0xa9, 0x51, 0x90, 0x84, 0x48,
+	0xf7, 0x8b, 0x90, 0x14, 0x85, 0x83, 0x07, 0x2b, 0xd1, 0x10, 0xec, 0x44, 0x81, 0x39, 0x51, 0x34,
+	0x41, 0xb0, 0x8d, 0x22, 0x30, 0x59, 0xd9, 0xdf, 0x25, 0xf6, 0x31, 0xac, 0xa3, 0x65, 0x79, 0x66,
+	0xad, 0x66, 0xea, 0x6e, 0xc1, 0xa1, 0x16, 0x38, 0x49, 0x9f, 0x9e, 0xe1, 0x20, 0xbc, 0x41, 0x9f,
+	0x3e, 0x52, 0x00, 0x87, 0x2c, 0x60, 0x9c, 0xad, 0x4e, 0x20, 0xf7, 0xb9, 0x90, 0x7c, 0x65, 0x92,
+	0x13, 0xe8, 0x2d, 0xaa, 0x50, 0x7a, 0x29, 0x19, 0xb1, 0x83, 0x12, 0x1f, 0x39, 0x84, 0xce, 0x62,
+	0x55, 0x2a, 0x9d, 0x32, 0x94, 0x67, 0xd0, 0xcd, 0xf0, 0x9a, 0x6f, 0xc7, 0xd2, 0x17, 0xef, 0x60,
+	0xab, 0xe4, 0xf7, 0xbb, 0xd6, 0x7f, 0xad, 0x50, 0x45, 0xf8, 0x4d, 0x0b, 0x3d, 0xd2, 0xb1, 0x6e,
+	0xce, 0xfd, 0x7b, 0x60, 0xda, 0x34, 0x50, 0xa4, 0xaf, 0x17, 0x7c, 0xdd, 0x0c, 0x8a, 0x8c, 0x6a,
+	0x9b, 0x2a, 0xe1, 0xfa, 0xdb, 0x1e, 0x43, 0x53, 0x7d, 0x61, 0xe5, 0x73, 0x55, 0x7f, 0x34, 0x0c,
+	0xee, 0x17, 0x6c, 0x4c, 0x19, 0x7c, 0x84, 0xef, 0xbd, 0x71, 0xb9, 0x76, 0xef, 0xe7, 0xab, 0xa1,
+	0xf1, 0xcb, 0xd5, 0xd0, 0xf8, 0xf5, 0x6a, 0x68, 0x7c, 0xff, 0xdb, 0xf0, 0xa5, 0xd3, 0x06, 0xfe,
+	0x0b, 0xf2, 0xf0, 0xaf, 0x00, 0x00, 0x00, 0xff, 0xff, 0xa5, 0xa6, 0x08, 0xcb, 0x15, 0x11, 0x00,
+	0x00,
 }
 
 // Reference imports to suppress errors if they are not otherwise used.
@@ -1366,19 +1843,18 @@ type CourseServiceClient interface {
 	GroupList(ctx context.Context, in *ListReq, opts ...grpc.CallOption) (*GroupListsResp, error)
 	GroupWithList(ctx context.Context, in *ListWithReq, opts ...grpc.CallOption) (*GroupListResp, error)
 	GroupRoomList(ctx context.Context, in *ListIdReq, opts ...grpc.CallOption) (*GroupListsResp, error)
-	GroupAttendanceList(ctx context.Context, in *ByIdReq, opts ...grpc.CallOption) (*Resp, error)
+	GroupAttendanceList(ctx context.Context, in *ByIdReq, opts ...grpc.CallOption) (*ByResp, error)
 	GroupUpdate(ctx context.Context, in *Group, opts ...grpc.CallOption) (*GroupResp, error)
 	GroupDelete(ctx context.Context, in *ByIdReq, opts ...grpc.CallOption) (*EmptyRes, error)
 	AttendanceCreate(ctx context.Context, in *Attendance, opts ...grpc.CallOption) (*Attendance, error)
 	AttendanceGet(ctx context.Context, in *ByIdReq, opts ...grpc.CallOption) (*Attendance, error)
-	AttendanceList(ctx context.Context, in *ListReq, opts ...grpc.CallOption) (*AttendanceListResp, error)
+	AttendanceList(ctx context.Context, in *GetParticipate, opts ...grpc.CallOption) (*ParticipateListResp, error)
 	AttendanceUpdate(ctx context.Context, in *Attendance, opts ...grpc.CallOption) (*Attendance, error)
 	AttendanceDelete(ctx context.Context, in *ByIdReq, opts ...grpc.CallOption) (*EmptyRes, error)
-	BallCreate(ctx context.Context, in *Ball, opts ...grpc.CallOption) (*Ball, error)
-	BallGet(ctx context.Context, in *ByIdReq, opts ...grpc.CallOption) (*Ball, error)
-	BallUpdate(ctx context.Context, in *Ball, opts ...grpc.CallOption) (*Ball, error)
-	BallList(ctx context.Context, in *ListReq, opts ...grpc.CallOption) (*BallListResp, error)
-	BallDelete(ctx context.Context, in *ByIdReq, opts ...grpc.CallOption) (*EmptyRes, error)
+	BalCreate(ctx context.Context, in *Bal, opts ...grpc.CallOption) (*Bal, error)
+	BalUpdate(ctx context.Context, in *Bal, opts ...grpc.CallOption) (*Bal, error)
+	BalList(ctx context.Context, in *GetBall, opts ...grpc.CallOption) (*BalListResp, error)
+	BalDelete(ctx context.Context, in *ByIdReq, opts ...grpc.CallOption) (*EmptyRes, error)
 }
 
 type courseServiceClient struct {
@@ -1434,8 +1910,8 @@ func (c *courseServiceClient) GroupRoomList(ctx context.Context, in *ListIdReq, 
 	return out, nil
 }
 
-func (c *courseServiceClient) GroupAttendanceList(ctx context.Context, in *ByIdReq, opts ...grpc.CallOption) (*Resp, error) {
-	out := new(Resp)
+func (c *courseServiceClient) GroupAttendanceList(ctx context.Context, in *ByIdReq, opts ...grpc.CallOption) (*ByResp, error) {
+	out := new(ByResp)
 	err := c.cc.Invoke(ctx, "/course_service.CourseService/GroupAttendanceList", in, out, opts...)
 	if err != nil {
 		return nil, err
@@ -1479,8 +1955,8 @@ func (c *courseServiceClient) AttendanceGet(ctx context.Context, in *ByIdReq, op
 	return out, nil
 }
 
-func (c *courseServiceClient) AttendanceList(ctx context.Context, in *ListReq, opts ...grpc.CallOption) (*AttendanceListResp, error) {
-	out := new(AttendanceListResp)
+func (c *courseServiceClient) AttendanceList(ctx context.Context, in *GetParticipate, opts ...grpc.CallOption) (*ParticipateListResp, error) {
+	out := new(ParticipateListResp)
 	err := c.cc.Invoke(ctx, "/course_service.CourseService/AttendanceList", in, out, opts...)
 	if err != nil {
 		return nil, err
@@ -1506,45 +1982,36 @@ func (c *courseServiceClient) AttendanceDelete(ctx context.Context, in *ByIdReq,
 	return out, nil
 }
 
-func (c *courseServiceClient) BallCreate(ctx context.Context, in *Ball, opts ...grpc.CallOption) (*Ball, error) {
-	out := new(Ball)
-	err := c.cc.Invoke(ctx, "/course_service.CourseService/BallCreate", in, out, opts...)
+func (c *courseServiceClient) BalCreate(ctx context.Context, in *Bal, opts ...grpc.CallOption) (*Bal, error) {
+	out := new(Bal)
+	err := c.cc.Invoke(ctx, "/course_service.CourseService/BalCreate", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
 	return out, nil
 }
 
-func (c *courseServiceClient) BallGet(ctx context.Context, in *ByIdReq, opts ...grpc.CallOption) (*Ball, error) {
-	out := new(Ball)
-	err := c.cc.Invoke(ctx, "/course_service.CourseService/BallGet", in, out, opts...)
+func (c *courseServiceClient) BalUpdate(ctx context.Context, in *Bal, opts ...grpc.CallOption) (*Bal, error) {
+	out := new(Bal)
+	err := c.cc.Invoke(ctx, "/course_service.CourseService/BalUpdate", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
 	return out, nil
 }
 
-func (c *courseServiceClient) BallUpdate(ctx context.Context, in *Ball, opts ...grpc.CallOption) (*Ball, error) {
-	out := new(Ball)
-	err := c.cc.Invoke(ctx, "/course_service.CourseService/BallUpdate", in, out, opts...)
+func (c *courseServiceClient) BalList(ctx context.Context, in *GetBall, opts ...grpc.CallOption) (*BalListResp, error) {
+	out := new(BalListResp)
+	err := c.cc.Invoke(ctx, "/course_service.CourseService/BalList", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
 	return out, nil
 }
 
-func (c *courseServiceClient) BallList(ctx context.Context, in *ListReq, opts ...grpc.CallOption) (*BallListResp, error) {
-	out := new(BallListResp)
-	err := c.cc.Invoke(ctx, "/course_service.CourseService/BallList", in, out, opts...)
-	if err != nil {
-		return nil, err
-	}
-	return out, nil
-}
-
-func (c *courseServiceClient) BallDelete(ctx context.Context, in *ByIdReq, opts ...grpc.CallOption) (*EmptyRes, error) {
+func (c *courseServiceClient) BalDelete(ctx context.Context, in *ByIdReq, opts ...grpc.CallOption) (*EmptyRes, error) {
 	out := new(EmptyRes)
-	err := c.cc.Invoke(ctx, "/course_service.CourseService/BallDelete", in, out, opts...)
+	err := c.cc.Invoke(ctx, "/course_service.CourseService/BalDelete", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
@@ -1558,19 +2025,18 @@ type CourseServiceServer interface {
 	GroupList(context.Context, *ListReq) (*GroupListsResp, error)
 	GroupWithList(context.Context, *ListWithReq) (*GroupListResp, error)
 	GroupRoomList(context.Context, *ListIdReq) (*GroupListsResp, error)
-	GroupAttendanceList(context.Context, *ByIdReq) (*Resp, error)
+	GroupAttendanceList(context.Context, *ByIdReq) (*ByResp, error)
 	GroupUpdate(context.Context, *Group) (*GroupResp, error)
 	GroupDelete(context.Context, *ByIdReq) (*EmptyRes, error)
 	AttendanceCreate(context.Context, *Attendance) (*Attendance, error)
 	AttendanceGet(context.Context, *ByIdReq) (*Attendance, error)
-	AttendanceList(context.Context, *ListReq) (*AttendanceListResp, error)
+	AttendanceList(context.Context, *GetParticipate) (*ParticipateListResp, error)
 	AttendanceUpdate(context.Context, *Attendance) (*Attendance, error)
 	AttendanceDelete(context.Context, *ByIdReq) (*EmptyRes, error)
-	BallCreate(context.Context, *Ball) (*Ball, error)
-	BallGet(context.Context, *ByIdReq) (*Ball, error)
-	BallUpdate(context.Context, *Ball) (*Ball, error)
-	BallList(context.Context, *ListReq) (*BallListResp, error)
-	BallDelete(context.Context, *ByIdReq) (*EmptyRes, error)
+	BalCreate(context.Context, *Bal) (*Bal, error)
+	BalUpdate(context.Context, *Bal) (*Bal, error)
+	BalList(context.Context, *GetBall) (*BalListResp, error)
+	BalDelete(context.Context, *ByIdReq) (*EmptyRes, error)
 }
 
 // UnimplementedCourseServiceServer can be embedded to have forward compatible implementations.
@@ -1592,7 +2058,7 @@ func (*UnimplementedCourseServiceServer) GroupWithList(ctx context.Context, req 
 func (*UnimplementedCourseServiceServer) GroupRoomList(ctx context.Context, req *ListIdReq) (*GroupListsResp, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method GroupRoomList not implemented")
 }
-func (*UnimplementedCourseServiceServer) GroupAttendanceList(ctx context.Context, req *ByIdReq) (*Resp, error) {
+func (*UnimplementedCourseServiceServer) GroupAttendanceList(ctx context.Context, req *ByIdReq) (*ByResp, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method GroupAttendanceList not implemented")
 }
 func (*UnimplementedCourseServiceServer) GroupUpdate(ctx context.Context, req *Group) (*GroupResp, error) {
@@ -1607,7 +2073,7 @@ func (*UnimplementedCourseServiceServer) AttendanceCreate(ctx context.Context, r
 func (*UnimplementedCourseServiceServer) AttendanceGet(ctx context.Context, req *ByIdReq) (*Attendance, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method AttendanceGet not implemented")
 }
-func (*UnimplementedCourseServiceServer) AttendanceList(ctx context.Context, req *ListReq) (*AttendanceListResp, error) {
+func (*UnimplementedCourseServiceServer) AttendanceList(ctx context.Context, req *GetParticipate) (*ParticipateListResp, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method AttendanceList not implemented")
 }
 func (*UnimplementedCourseServiceServer) AttendanceUpdate(ctx context.Context, req *Attendance) (*Attendance, error) {
@@ -1616,20 +2082,17 @@ func (*UnimplementedCourseServiceServer) AttendanceUpdate(ctx context.Context, r
 func (*UnimplementedCourseServiceServer) AttendanceDelete(ctx context.Context, req *ByIdReq) (*EmptyRes, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method AttendanceDelete not implemented")
 }
-func (*UnimplementedCourseServiceServer) BallCreate(ctx context.Context, req *Ball) (*Ball, error) {
-	return nil, status.Errorf(codes.Unimplemented, "method BallCreate not implemented")
+func (*UnimplementedCourseServiceServer) BalCreate(ctx context.Context, req *Bal) (*Bal, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method BalCreate not implemented")
 }
-func (*UnimplementedCourseServiceServer) BallGet(ctx context.Context, req *ByIdReq) (*Ball, error) {
-	return nil, status.Errorf(codes.Unimplemented, "method BallGet not implemented")
+func (*UnimplementedCourseServiceServer) BalUpdate(ctx context.Context, req *Bal) (*Bal, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method BalUpdate not implemented")
 }
-func (*UnimplementedCourseServiceServer) BallUpdate(ctx context.Context, req *Ball) (*Ball, error) {
-	return nil, status.Errorf(codes.Unimplemented, "method BallUpdate not implemented")
+func (*UnimplementedCourseServiceServer) BalList(ctx context.Context, req *GetBall) (*BalListResp, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method BalList not implemented")
 }
-func (*UnimplementedCourseServiceServer) BallList(ctx context.Context, req *ListReq) (*BallListResp, error) {
-	return nil, status.Errorf(codes.Unimplemented, "method BallList not implemented")
-}
-func (*UnimplementedCourseServiceServer) BallDelete(ctx context.Context, req *ByIdReq) (*EmptyRes, error) {
-	return nil, status.Errorf(codes.Unimplemented, "method BallDelete not implemented")
+func (*UnimplementedCourseServiceServer) BalDelete(ctx context.Context, req *ByIdReq) (*EmptyRes, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method BalDelete not implemented")
 }
 
 func RegisterCourseServiceServer(s *grpc.Server, srv CourseServiceServer) {
@@ -1817,7 +2280,7 @@ func _CourseService_AttendanceGet_Handler(srv interface{}, ctx context.Context, 
 }
 
 func _CourseService_AttendanceList_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
-	in := new(ListReq)
+	in := new(GetParticipate)
 	if err := dec(in); err != nil {
 		return nil, err
 	}
@@ -1829,7 +2292,7 @@ func _CourseService_AttendanceList_Handler(srv interface{}, ctx context.Context,
 		FullMethod: "/course_service.CourseService/AttendanceList",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(CourseServiceServer).AttendanceList(ctx, req.(*ListReq))
+		return srv.(CourseServiceServer).AttendanceList(ctx, req.(*GetParticipate))
 	}
 	return interceptor(ctx, in, info, handler)
 }
@@ -1870,92 +2333,74 @@ func _CourseService_AttendanceDelete_Handler(srv interface{}, ctx context.Contex
 	return interceptor(ctx, in, info, handler)
 }
 
-func _CourseService_BallCreate_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
-	in := new(Ball)
+func _CourseService_BalCreate_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(Bal)
 	if err := dec(in); err != nil {
 		return nil, err
 	}
 	if interceptor == nil {
-		return srv.(CourseServiceServer).BallCreate(ctx, in)
+		return srv.(CourseServiceServer).BalCreate(ctx, in)
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/course_service.CourseService/BallCreate",
+		FullMethod: "/course_service.CourseService/BalCreate",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(CourseServiceServer).BallCreate(ctx, req.(*Ball))
+		return srv.(CourseServiceServer).BalCreate(ctx, req.(*Bal))
 	}
 	return interceptor(ctx, in, info, handler)
 }
 
-func _CourseService_BallGet_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+func _CourseService_BalUpdate_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(Bal)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(CourseServiceServer).BalUpdate(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: "/course_service.CourseService/BalUpdate",
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(CourseServiceServer).BalUpdate(ctx, req.(*Bal))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _CourseService_BalList_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(GetBall)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(CourseServiceServer).BalList(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: "/course_service.CourseService/BalList",
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(CourseServiceServer).BalList(ctx, req.(*GetBall))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _CourseService_BalDelete_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
 	in := new(ByIdReq)
 	if err := dec(in); err != nil {
 		return nil, err
 	}
 	if interceptor == nil {
-		return srv.(CourseServiceServer).BallGet(ctx, in)
+		return srv.(CourseServiceServer).BalDelete(ctx, in)
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/course_service.CourseService/BallGet",
+		FullMethod: "/course_service.CourseService/BalDelete",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(CourseServiceServer).BallGet(ctx, req.(*ByIdReq))
-	}
-	return interceptor(ctx, in, info, handler)
-}
-
-func _CourseService_BallUpdate_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
-	in := new(Ball)
-	if err := dec(in); err != nil {
-		return nil, err
-	}
-	if interceptor == nil {
-		return srv.(CourseServiceServer).BallUpdate(ctx, in)
-	}
-	info := &grpc.UnaryServerInfo{
-		Server:     srv,
-		FullMethod: "/course_service.CourseService/BallUpdate",
-	}
-	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(CourseServiceServer).BallUpdate(ctx, req.(*Ball))
-	}
-	return interceptor(ctx, in, info, handler)
-}
-
-func _CourseService_BallList_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
-	in := new(ListReq)
-	if err := dec(in); err != nil {
-		return nil, err
-	}
-	if interceptor == nil {
-		return srv.(CourseServiceServer).BallList(ctx, in)
-	}
-	info := &grpc.UnaryServerInfo{
-		Server:     srv,
-		FullMethod: "/course_service.CourseService/BallList",
-	}
-	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(CourseServiceServer).BallList(ctx, req.(*ListReq))
-	}
-	return interceptor(ctx, in, info, handler)
-}
-
-func _CourseService_BallDelete_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
-	in := new(ByIdReq)
-	if err := dec(in); err != nil {
-		return nil, err
-	}
-	if interceptor == nil {
-		return srv.(CourseServiceServer).BallDelete(ctx, in)
-	}
-	info := &grpc.UnaryServerInfo{
-		Server:     srv,
-		FullMethod: "/course_service.CourseService/BallDelete",
-	}
-	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(CourseServiceServer).BallDelete(ctx, req.(*ByIdReq))
+		return srv.(CourseServiceServer).BalDelete(ctx, req.(*ByIdReq))
 	}
 	return interceptor(ctx, in, info, handler)
 }
@@ -2017,24 +2462,20 @@ var _CourseService_serviceDesc = grpc.ServiceDesc{
 			Handler:    _CourseService_AttendanceDelete_Handler,
 		},
 		{
-			MethodName: "BallCreate",
-			Handler:    _CourseService_BallCreate_Handler,
+			MethodName: "BalCreate",
+			Handler:    _CourseService_BalCreate_Handler,
 		},
 		{
-			MethodName: "BallGet",
-			Handler:    _CourseService_BallGet_Handler,
+			MethodName: "BalUpdate",
+			Handler:    _CourseService_BalUpdate_Handler,
 		},
 		{
-			MethodName: "BallUpdate",
-			Handler:    _CourseService_BallUpdate_Handler,
+			MethodName: "BalList",
+			Handler:    _CourseService_BalList_Handler,
 		},
 		{
-			MethodName: "BallList",
-			Handler:    _CourseService_BallList_Handler,
-		},
-		{
-			MethodName: "BallDelete",
-			Handler:    _CourseService_BallDelete_Handler,
+			MethodName: "BalDelete",
+			Handler:    _CourseService_BalDelete_Handler,
 		},
 	},
 	Streams:  []grpc.StreamDesc{},
@@ -2064,6 +2505,428 @@ func (m *EmptyRes) MarshalToSizedBuffer(dAtA []byte) (int, error) {
 	if m.XXX_unrecognized != nil {
 		i -= len(m.XXX_unrecognized)
 		copy(dAtA[i:], m.XXX_unrecognized)
+	}
+	return len(dAtA) - i, nil
+}
+
+func (m *GetBall) Marshal() (dAtA []byte, err error) {
+	size := m.Size()
+	dAtA = make([]byte, size)
+	n, err := m.MarshalToSizedBuffer(dAtA[:size])
+	if err != nil {
+		return nil, err
+	}
+	return dAtA[:n], nil
+}
+
+func (m *GetBall) MarshalTo(dAtA []byte) (int, error) {
+	size := m.Size()
+	return m.MarshalToSizedBuffer(dAtA[:size])
+}
+
+func (m *GetBall) MarshalToSizedBuffer(dAtA []byte) (int, error) {
+	i := len(dAtA)
+	_ = i
+	var l int
+	_ = l
+	if m.XXX_unrecognized != nil {
+		i -= len(m.XXX_unrecognized)
+		copy(dAtA[i:], m.XXX_unrecognized)
+	}
+	if len(m.GroupId) > 0 {
+		i -= len(m.GroupId)
+		copy(dAtA[i:], m.GroupId)
+		i = encodeVarintCourse(dAtA, i, uint64(len(m.GroupId)))
+		i--
+		dAtA[i] = 0x12
+	}
+	return len(dAtA) - i, nil
+}
+
+func (m *GetParticipate) Marshal() (dAtA []byte, err error) {
+	size := m.Size()
+	dAtA = make([]byte, size)
+	n, err := m.MarshalToSizedBuffer(dAtA[:size])
+	if err != nil {
+		return nil, err
+	}
+	return dAtA[:n], nil
+}
+
+func (m *GetParticipate) MarshalTo(dAtA []byte) (int, error) {
+	size := m.Size()
+	return m.MarshalToSizedBuffer(dAtA[:size])
+}
+
+func (m *GetParticipate) MarshalToSizedBuffer(dAtA []byte) (int, error) {
+	i := len(dAtA)
+	_ = i
+	var l int
+	_ = l
+	if m.XXX_unrecognized != nil {
+		i -= len(m.XXX_unrecognized)
+		copy(dAtA[i:], m.XXX_unrecognized)
+	}
+	if len(m.GroupId) > 0 {
+		i -= len(m.GroupId)
+		copy(dAtA[i:], m.GroupId)
+		i = encodeVarintCourse(dAtA, i, uint64(len(m.GroupId)))
+		i--
+		dAtA[i] = 0x12
+	}
+	return len(dAtA) - i, nil
+}
+
+func (m *Bal) Marshal() (dAtA []byte, err error) {
+	size := m.Size()
+	dAtA = make([]byte, size)
+	n, err := m.MarshalToSizedBuffer(dAtA[:size])
+	if err != nil {
+		return nil, err
+	}
+	return dAtA[:n], nil
+}
+
+func (m *Bal) MarshalTo(dAtA []byte) (int, error) {
+	size := m.Size()
+	return m.MarshalToSizedBuffer(dAtA[:size])
+}
+
+func (m *Bal) MarshalToSizedBuffer(dAtA []byte) (int, error) {
+	i := len(dAtA)
+	_ = i
+	var l int
+	_ = l
+	if m.XXX_unrecognized != nil {
+		i -= len(m.XXX_unrecognized)
+		copy(dAtA[i:], m.XXX_unrecognized)
+	}
+	if len(m.UpdatedAt) > 0 {
+		i -= len(m.UpdatedAt)
+		copy(dAtA[i:], m.UpdatedAt)
+		i = encodeVarintCourse(dAtA, i, uint64(len(m.UpdatedAt)))
+		i--
+		dAtA[i] = 0x3a
+	}
+	if len(m.CreatedAt) > 0 {
+		i -= len(m.CreatedAt)
+		copy(dAtA[i:], m.CreatedAt)
+		i = encodeVarintCourse(dAtA, i, uint64(len(m.CreatedAt)))
+		i--
+		dAtA[i] = 0x32
+	}
+	if len(m.StudentId) > 0 {
+		i -= len(m.StudentId)
+		copy(dAtA[i:], m.StudentId)
+		i = encodeVarintCourse(dAtA, i, uint64(len(m.StudentId)))
+		i--
+		dAtA[i] = 0x2a
+	}
+	if len(m.GroupId) > 0 {
+		i -= len(m.GroupId)
+		copy(dAtA[i:], m.GroupId)
+		i = encodeVarintCourse(dAtA, i, uint64(len(m.GroupId)))
+		i--
+		dAtA[i] = 0x22
+	}
+	if len(m.WithDate) > 0 {
+		i -= len(m.WithDate)
+		copy(dAtA[i:], m.WithDate)
+		i = encodeVarintCourse(dAtA, i, uint64(len(m.WithDate)))
+		i--
+		dAtA[i] = 0x1a
+	}
+	if m.Ball != 0 {
+		i = encodeVarintCourse(dAtA, i, uint64(m.Ball))
+		i--
+		dAtA[i] = 0x10
+	}
+	if len(m.Id) > 0 {
+		i -= len(m.Id)
+		copy(dAtA[i:], m.Id)
+		i = encodeVarintCourse(dAtA, i, uint64(len(m.Id)))
+		i--
+		dAtA[i] = 0xa
+	}
+	return len(dAtA) - i, nil
+}
+
+func (m *WithDate) Marshal() (dAtA []byte, err error) {
+	size := m.Size()
+	dAtA = make([]byte, size)
+	n, err := m.MarshalToSizedBuffer(dAtA[:size])
+	if err != nil {
+		return nil, err
+	}
+	return dAtA[:n], nil
+}
+
+func (m *WithDate) MarshalTo(dAtA []byte) (int, error) {
+	size := m.Size()
+	return m.MarshalToSizedBuffer(dAtA[:size])
+}
+
+func (m *WithDate) MarshalToSizedBuffer(dAtA []byte) (int, error) {
+	i := len(dAtA)
+	_ = i
+	var l int
+	_ = l
+	if m.XXX_unrecognized != nil {
+		i -= len(m.XXX_unrecognized)
+		copy(dAtA[i:], m.XXX_unrecognized)
+	}
+	if len(m.Ball) > 0 {
+		i -= len(m.Ball)
+		copy(dAtA[i:], m.Ball)
+		i = encodeVarintCourse(dAtA, i, uint64(len(m.Ball)))
+		i--
+		dAtA[i] = 0x12
+	}
+	if len(m.WithDate) > 0 {
+		i -= len(m.WithDate)
+		copy(dAtA[i:], m.WithDate)
+		i = encodeVarintCourse(dAtA, i, uint64(len(m.WithDate)))
+		i--
+		dAtA[i] = 0xa
+	}
+	return len(dAtA) - i, nil
+}
+
+func (m *WithDateParticipate) Marshal() (dAtA []byte, err error) {
+	size := m.Size()
+	dAtA = make([]byte, size)
+	n, err := m.MarshalToSizedBuffer(dAtA[:size])
+	if err != nil {
+		return nil, err
+	}
+	return dAtA[:n], nil
+}
+
+func (m *WithDateParticipate) MarshalTo(dAtA []byte) (int, error) {
+	size := m.Size()
+	return m.MarshalToSizedBuffer(dAtA[:size])
+}
+
+func (m *WithDateParticipate) MarshalToSizedBuffer(dAtA []byte) (int, error) {
+	i := len(dAtA)
+	_ = i
+	var l int
+	_ = l
+	if m.XXX_unrecognized != nil {
+		i -= len(m.XXX_unrecognized)
+		copy(dAtA[i:], m.XXX_unrecognized)
+	}
+	if len(m.Comment) > 0 {
+		i -= len(m.Comment)
+		copy(dAtA[i:], m.Comment)
+		i = encodeVarintCourse(dAtA, i, uint64(len(m.Comment)))
+		i--
+		dAtA[i] = 0x1a
+	}
+	if m.Participate {
+		i--
+		if m.Participate {
+			dAtA[i] = 1
+		} else {
+			dAtA[i] = 0
+		}
+		i--
+		dAtA[i] = 0x10
+	}
+	if len(m.WithDate) > 0 {
+		i -= len(m.WithDate)
+		copy(dAtA[i:], m.WithDate)
+		i = encodeVarintCourse(dAtA, i, uint64(len(m.WithDate)))
+		i--
+		dAtA[i] = 0xa
+	}
+	return len(dAtA) - i, nil
+}
+
+func (m *BalStudent) Marshal() (dAtA []byte, err error) {
+	size := m.Size()
+	dAtA = make([]byte, size)
+	n, err := m.MarshalToSizedBuffer(dAtA[:size])
+	if err != nil {
+		return nil, err
+	}
+	return dAtA[:n], nil
+}
+
+func (m *BalStudent) MarshalTo(dAtA []byte) (int, error) {
+	size := m.Size()
+	return m.MarshalToSizedBuffer(dAtA[:size])
+}
+
+func (m *BalStudent) MarshalToSizedBuffer(dAtA []byte) (int, error) {
+	i := len(dAtA)
+	_ = i
+	var l int
+	_ = l
+	if m.XXX_unrecognized != nil {
+		i -= len(m.XXX_unrecognized)
+		copy(dAtA[i:], m.XXX_unrecognized)
+	}
+	if len(m.StudentAllBals) > 0 {
+		for iNdEx := len(m.StudentAllBals) - 1; iNdEx >= 0; iNdEx-- {
+			{
+				size, err := m.StudentAllBals[iNdEx].MarshalToSizedBuffer(dAtA[:i])
+				if err != nil {
+					return 0, err
+				}
+				i -= size
+				i = encodeVarintCourse(dAtA, i, uint64(size))
+			}
+			i--
+			dAtA[i] = 0x12
+		}
+	}
+	if m.StudentId != nil {
+		{
+			size, err := m.StudentId.MarshalToSizedBuffer(dAtA[:i])
+			if err != nil {
+				return 0, err
+			}
+			i -= size
+			i = encodeVarintCourse(dAtA, i, uint64(size))
+		}
+		i--
+		dAtA[i] = 0xa
+	}
+	return len(dAtA) - i, nil
+}
+
+func (m *ParticipateStudent) Marshal() (dAtA []byte, err error) {
+	size := m.Size()
+	dAtA = make([]byte, size)
+	n, err := m.MarshalToSizedBuffer(dAtA[:size])
+	if err != nil {
+		return nil, err
+	}
+	return dAtA[:n], nil
+}
+
+func (m *ParticipateStudent) MarshalTo(dAtA []byte) (int, error) {
+	size := m.Size()
+	return m.MarshalToSizedBuffer(dAtA[:size])
+}
+
+func (m *ParticipateStudent) MarshalToSizedBuffer(dAtA []byte) (int, error) {
+	i := len(dAtA)
+	_ = i
+	var l int
+	_ = l
+	if m.XXX_unrecognized != nil {
+		i -= len(m.XXX_unrecognized)
+		copy(dAtA[i:], m.XXX_unrecognized)
+	}
+	if len(m.StudentAllParticipate) > 0 {
+		for iNdEx := len(m.StudentAllParticipate) - 1; iNdEx >= 0; iNdEx-- {
+			{
+				size, err := m.StudentAllParticipate[iNdEx].MarshalToSizedBuffer(dAtA[:i])
+				if err != nil {
+					return 0, err
+				}
+				i -= size
+				i = encodeVarintCourse(dAtA, i, uint64(size))
+			}
+			i--
+			dAtA[i] = 0x12
+		}
+	}
+	if m.StudentId != nil {
+		{
+			size, err := m.StudentId.MarshalToSizedBuffer(dAtA[:i])
+			if err != nil {
+				return 0, err
+			}
+			i -= size
+			i = encodeVarintCourse(dAtA, i, uint64(size))
+		}
+		i--
+		dAtA[i] = 0xa
+	}
+	return len(dAtA) - i, nil
+}
+
+func (m *BalListResp) Marshal() (dAtA []byte, err error) {
+	size := m.Size()
+	dAtA = make([]byte, size)
+	n, err := m.MarshalToSizedBuffer(dAtA[:size])
+	if err != nil {
+		return nil, err
+	}
+	return dAtA[:n], nil
+}
+
+func (m *BalListResp) MarshalTo(dAtA []byte) (int, error) {
+	size := m.Size()
+	return m.MarshalToSizedBuffer(dAtA[:size])
+}
+
+func (m *BalListResp) MarshalToSizedBuffer(dAtA []byte) (int, error) {
+	i := len(dAtA)
+	_ = i
+	var l int
+	_ = l
+	if m.XXX_unrecognized != nil {
+		i -= len(m.XXX_unrecognized)
+		copy(dAtA[i:], m.XXX_unrecognized)
+	}
+	if len(m.GroupBals) > 0 {
+		for iNdEx := len(m.GroupBals) - 1; iNdEx >= 0; iNdEx-- {
+			{
+				size, err := m.GroupBals[iNdEx].MarshalToSizedBuffer(dAtA[:i])
+				if err != nil {
+					return 0, err
+				}
+				i -= size
+				i = encodeVarintCourse(dAtA, i, uint64(size))
+			}
+			i--
+			dAtA[i] = 0xa
+		}
+	}
+	return len(dAtA) - i, nil
+}
+
+func (m *ParticipateListResp) Marshal() (dAtA []byte, err error) {
+	size := m.Size()
+	dAtA = make([]byte, size)
+	n, err := m.MarshalToSizedBuffer(dAtA[:size])
+	if err != nil {
+		return nil, err
+	}
+	return dAtA[:n], nil
+}
+
+func (m *ParticipateListResp) MarshalTo(dAtA []byte) (int, error) {
+	size := m.Size()
+	return m.MarshalToSizedBuffer(dAtA[:size])
+}
+
+func (m *ParticipateListResp) MarshalToSizedBuffer(dAtA []byte) (int, error) {
+	i := len(dAtA)
+	_ = i
+	var l int
+	_ = l
+	if m.XXX_unrecognized != nil {
+		i -= len(m.XXX_unrecognized)
+		copy(dAtA[i:], m.XXX_unrecognized)
+	}
+	if len(m.GroupParticipate) > 0 {
+		for iNdEx := len(m.GroupParticipate) - 1; iNdEx >= 0; iNdEx-- {
+			{
+				size, err := m.GroupParticipate[iNdEx].MarshalToSizedBuffer(dAtA[:i])
+				if err != nil {
+					return 0, err
+				}
+				i -= size
+				i = encodeVarintCourse(dAtA, i, uint64(size))
+			}
+			i--
+			dAtA[i] = 0xa
+		}
 	}
 	return len(dAtA) - i, nil
 }
@@ -2406,107 +3269,6 @@ func (m *GroupResp) MarshalToSizedBuffer(dAtA []byte) (int, error) {
 	return len(dAtA) - i, nil
 }
 
-func (m *Ball) Marshal() (dAtA []byte, err error) {
-	size := m.Size()
-	dAtA = make([]byte, size)
-	n, err := m.MarshalToSizedBuffer(dAtA[:size])
-	if err != nil {
-		return nil, err
-	}
-	return dAtA[:n], nil
-}
-
-func (m *Ball) MarshalTo(dAtA []byte) (int, error) {
-	size := m.Size()
-	return m.MarshalToSizedBuffer(dAtA[:size])
-}
-
-func (m *Ball) MarshalToSizedBuffer(dAtA []byte) (int, error) {
-	i := len(dAtA)
-	_ = i
-	var l int
-	_ = l
-	if m.XXX_unrecognized != nil {
-		i -= len(m.XXX_unrecognized)
-		copy(dAtA[i:], m.XXX_unrecognized)
-	}
-	if len(m.UpdatedAt) > 0 {
-		i -= len(m.UpdatedAt)
-		copy(dAtA[i:], m.UpdatedAt)
-		i = encodeVarintCourse(dAtA, i, uint64(len(m.UpdatedAt)))
-		i--
-		dAtA[i] = 0x2a
-	}
-	if len(m.CreatedAt) > 0 {
-		i -= len(m.CreatedAt)
-		copy(dAtA[i:], m.CreatedAt)
-		i = encodeVarintCourse(dAtA, i, uint64(len(m.CreatedAt)))
-		i--
-		dAtA[i] = 0x22
-	}
-	if m.Ball != 0 {
-		i = encodeVarintCourse(dAtA, i, uint64(m.Ball))
-		i--
-		dAtA[i] = 0x18
-	}
-	if len(m.AttendanceId) > 0 {
-		i -= len(m.AttendanceId)
-		copy(dAtA[i:], m.AttendanceId)
-		i = encodeVarintCourse(dAtA, i, uint64(len(m.AttendanceId)))
-		i--
-		dAtA[i] = 0x12
-	}
-	if len(m.Id) > 0 {
-		i -= len(m.Id)
-		copy(dAtA[i:], m.Id)
-		i = encodeVarintCourse(dAtA, i, uint64(len(m.Id)))
-		i--
-		dAtA[i] = 0xa
-	}
-	return len(dAtA) - i, nil
-}
-
-func (m *BallListResp) Marshal() (dAtA []byte, err error) {
-	size := m.Size()
-	dAtA = make([]byte, size)
-	n, err := m.MarshalToSizedBuffer(dAtA[:size])
-	if err != nil {
-		return nil, err
-	}
-	return dAtA[:n], nil
-}
-
-func (m *BallListResp) MarshalTo(dAtA []byte) (int, error) {
-	size := m.Size()
-	return m.MarshalToSizedBuffer(dAtA[:size])
-}
-
-func (m *BallListResp) MarshalToSizedBuffer(dAtA []byte) (int, error) {
-	i := len(dAtA)
-	_ = i
-	var l int
-	_ = l
-	if m.XXX_unrecognized != nil {
-		i -= len(m.XXX_unrecognized)
-		copy(dAtA[i:], m.XXX_unrecognized)
-	}
-	if len(m.Balls) > 0 {
-		for iNdEx := len(m.Balls) - 1; iNdEx >= 0; iNdEx-- {
-			{
-				size, err := m.Balls[iNdEx].MarshalToSizedBuffer(dAtA[:i])
-				if err != nil {
-					return 0, err
-				}
-				i -= size
-				i = encodeVarintCourse(dAtA, i, uint64(size))
-			}
-			i--
-			dAtA[i] = 0xa
-		}
-	}
-	return len(dAtA) - i, nil
-}
-
 func (m *Attendance) Marshal() (dAtA []byte, err error) {
 	size := m.Size()
 	dAtA = make([]byte, size)
@@ -2536,33 +3298,47 @@ func (m *Attendance) MarshalToSizedBuffer(dAtA []byte) (int, error) {
 		copy(dAtA[i:], m.UpdatedAt)
 		i = encodeVarintCourse(dAtA, i, uint64(len(m.UpdatedAt)))
 		i--
-		dAtA[i] = 0x32
+		dAtA[i] = 0x42
 	}
 	if len(m.CreatedAt) > 0 {
 		i -= len(m.CreatedAt)
 		copy(dAtA[i:], m.CreatedAt)
 		i = encodeVarintCourse(dAtA, i, uint64(len(m.CreatedAt)))
 		i--
-		dAtA[i] = 0x2a
+		dAtA[i] = 0x3a
 	}
 	if len(m.StudentId) > 0 {
 		i -= len(m.StudentId)
 		copy(dAtA[i:], m.StudentId)
 		i = encodeVarintCourse(dAtA, i, uint64(len(m.StudentId)))
 		i--
-		dAtA[i] = 0x22
+		dAtA[i] = 0x32
 	}
-	if len(m.Comment) > 0 {
-		i -= len(m.Comment)
-		copy(dAtA[i:], m.Comment)
-		i = encodeVarintCourse(dAtA, i, uint64(len(m.Comment)))
+	if len(m.GroupId) > 0 {
+		i -= len(m.GroupId)
+		copy(dAtA[i:], m.GroupId)
+		i = encodeVarintCourse(dAtA, i, uint64(len(m.GroupId)))
 		i--
-		dAtA[i] = 0x1a
+		dAtA[i] = 0x2a
+	}
+	if len(m.WithDate) > 0 {
+		i -= len(m.WithDate)
+		copy(dAtA[i:], m.WithDate)
+		i = encodeVarintCourse(dAtA, i, uint64(len(m.WithDate)))
+		i--
+		dAtA[i] = 0x22
 	}
 	if len(m.Participate) > 0 {
 		i -= len(m.Participate)
 		copy(dAtA[i:], m.Participate)
 		i = encodeVarintCourse(dAtA, i, uint64(len(m.Participate)))
+		i--
+		dAtA[i] = 0x1a
+	}
+	if len(m.Comment) > 0 {
+		i -= len(m.Comment)
+		copy(dAtA[i:], m.Comment)
+		i = encodeVarintCourse(dAtA, i, uint64(len(m.Comment)))
 		i--
 		dAtA[i] = 0x12
 	}
@@ -2698,6 +3474,54 @@ func (m *By) MarshalToSizedBuffer(dAtA []byte) (int, error) {
 		i -= len(m.Id)
 		copy(dAtA[i:], m.Id)
 		i = encodeVarintCourse(dAtA, i, uint64(len(m.Id)))
+		i--
+		dAtA[i] = 0xa
+	}
+	return len(dAtA) - i, nil
+}
+
+func (m *ByResp) Marshal() (dAtA []byte, err error) {
+	size := m.Size()
+	dAtA = make([]byte, size)
+	n, err := m.MarshalToSizedBuffer(dAtA[:size])
+	if err != nil {
+		return nil, err
+	}
+	return dAtA[:n], nil
+}
+
+func (m *ByResp) MarshalTo(dAtA []byte) (int, error) {
+	size := m.Size()
+	return m.MarshalToSizedBuffer(dAtA[:size])
+}
+
+func (m *ByResp) MarshalToSizedBuffer(dAtA []byte) (int, error) {
+	i := len(dAtA)
+	_ = i
+	var l int
+	_ = l
+	if m.XXX_unrecognized != nil {
+		i -= len(m.XXX_unrecognized)
+		copy(dAtA[i:], m.XXX_unrecognized)
+	}
+	if len(m.Student) > 0 {
+		for iNdEx := len(m.Student) - 1; iNdEx >= 0; iNdEx-- {
+			{
+				size, err := m.Student[iNdEx].MarshalToSizedBuffer(dAtA[:i])
+				if err != nil {
+					return 0, err
+				}
+				i -= size
+				i = encodeVarintCourse(dAtA, i, uint64(size))
+			}
+			i--
+			dAtA[i] = 0x12
+		}
+	}
+	if len(m.Name) > 0 {
+		i -= len(m.Name)
+		copy(dAtA[i:], m.Name)
+		i = encodeVarintCourse(dAtA, i, uint64(len(m.Name)))
 		i--
 		dAtA[i] = 0xa
 	}
@@ -3063,6 +3887,200 @@ func (m *EmptyRes) Size() (n int) {
 	return n
 }
 
+func (m *GetBall) Size() (n int) {
+	if m == nil {
+		return 0
+	}
+	var l int
+	_ = l
+	l = len(m.GroupId)
+	if l > 0 {
+		n += 1 + l + sovCourse(uint64(l))
+	}
+	if m.XXX_unrecognized != nil {
+		n += len(m.XXX_unrecognized)
+	}
+	return n
+}
+
+func (m *GetParticipate) Size() (n int) {
+	if m == nil {
+		return 0
+	}
+	var l int
+	_ = l
+	l = len(m.GroupId)
+	if l > 0 {
+		n += 1 + l + sovCourse(uint64(l))
+	}
+	if m.XXX_unrecognized != nil {
+		n += len(m.XXX_unrecognized)
+	}
+	return n
+}
+
+func (m *Bal) Size() (n int) {
+	if m == nil {
+		return 0
+	}
+	var l int
+	_ = l
+	l = len(m.Id)
+	if l > 0 {
+		n += 1 + l + sovCourse(uint64(l))
+	}
+	if m.Ball != 0 {
+		n += 1 + sovCourse(uint64(m.Ball))
+	}
+	l = len(m.WithDate)
+	if l > 0 {
+		n += 1 + l + sovCourse(uint64(l))
+	}
+	l = len(m.GroupId)
+	if l > 0 {
+		n += 1 + l + sovCourse(uint64(l))
+	}
+	l = len(m.StudentId)
+	if l > 0 {
+		n += 1 + l + sovCourse(uint64(l))
+	}
+	l = len(m.CreatedAt)
+	if l > 0 {
+		n += 1 + l + sovCourse(uint64(l))
+	}
+	l = len(m.UpdatedAt)
+	if l > 0 {
+		n += 1 + l + sovCourse(uint64(l))
+	}
+	if m.XXX_unrecognized != nil {
+		n += len(m.XXX_unrecognized)
+	}
+	return n
+}
+
+func (m *WithDate) Size() (n int) {
+	if m == nil {
+		return 0
+	}
+	var l int
+	_ = l
+	l = len(m.WithDate)
+	if l > 0 {
+		n += 1 + l + sovCourse(uint64(l))
+	}
+	l = len(m.Ball)
+	if l > 0 {
+		n += 1 + l + sovCourse(uint64(l))
+	}
+	if m.XXX_unrecognized != nil {
+		n += len(m.XXX_unrecognized)
+	}
+	return n
+}
+
+func (m *WithDateParticipate) Size() (n int) {
+	if m == nil {
+		return 0
+	}
+	var l int
+	_ = l
+	l = len(m.WithDate)
+	if l > 0 {
+		n += 1 + l + sovCourse(uint64(l))
+	}
+	if m.Participate {
+		n += 2
+	}
+	l = len(m.Comment)
+	if l > 0 {
+		n += 1 + l + sovCourse(uint64(l))
+	}
+	if m.XXX_unrecognized != nil {
+		n += len(m.XXX_unrecognized)
+	}
+	return n
+}
+
+func (m *BalStudent) Size() (n int) {
+	if m == nil {
+		return 0
+	}
+	var l int
+	_ = l
+	if m.StudentId != nil {
+		l = m.StudentId.Size()
+		n += 1 + l + sovCourse(uint64(l))
+	}
+	if len(m.StudentAllBals) > 0 {
+		for _, e := range m.StudentAllBals {
+			l = e.Size()
+			n += 1 + l + sovCourse(uint64(l))
+		}
+	}
+	if m.XXX_unrecognized != nil {
+		n += len(m.XXX_unrecognized)
+	}
+	return n
+}
+
+func (m *ParticipateStudent) Size() (n int) {
+	if m == nil {
+		return 0
+	}
+	var l int
+	_ = l
+	if m.StudentId != nil {
+		l = m.StudentId.Size()
+		n += 1 + l + sovCourse(uint64(l))
+	}
+	if len(m.StudentAllParticipate) > 0 {
+		for _, e := range m.StudentAllParticipate {
+			l = e.Size()
+			n += 1 + l + sovCourse(uint64(l))
+		}
+	}
+	if m.XXX_unrecognized != nil {
+		n += len(m.XXX_unrecognized)
+	}
+	return n
+}
+
+func (m *BalListResp) Size() (n int) {
+	if m == nil {
+		return 0
+	}
+	var l int
+	_ = l
+	if len(m.GroupBals) > 0 {
+		for _, e := range m.GroupBals {
+			l = e.Size()
+			n += 1 + l + sovCourse(uint64(l))
+		}
+	}
+	if m.XXX_unrecognized != nil {
+		n += len(m.XXX_unrecognized)
+	}
+	return n
+}
+
+func (m *ParticipateListResp) Size() (n int) {
+	if m == nil {
+		return 0
+	}
+	var l int
+	_ = l
+	if len(m.GroupParticipate) > 0 {
+		for _, e := range m.GroupParticipate {
+			l = e.Size()
+			n += 1 + l + sovCourse(uint64(l))
+		}
+	}
+	if m.XXX_unrecognized != nil {
+		n += len(m.XXX_unrecognized)
+	}
+	return n
+}
+
 func (m *Group) Size() (n int) {
 	if m == nil {
 		return 0
@@ -3231,55 +4249,6 @@ func (m *GroupResp) Size() (n int) {
 	return n
 }
 
-func (m *Ball) Size() (n int) {
-	if m == nil {
-		return 0
-	}
-	var l int
-	_ = l
-	l = len(m.Id)
-	if l > 0 {
-		n += 1 + l + sovCourse(uint64(l))
-	}
-	l = len(m.AttendanceId)
-	if l > 0 {
-		n += 1 + l + sovCourse(uint64(l))
-	}
-	if m.Ball != 0 {
-		n += 1 + sovCourse(uint64(m.Ball))
-	}
-	l = len(m.CreatedAt)
-	if l > 0 {
-		n += 1 + l + sovCourse(uint64(l))
-	}
-	l = len(m.UpdatedAt)
-	if l > 0 {
-		n += 1 + l + sovCourse(uint64(l))
-	}
-	if m.XXX_unrecognized != nil {
-		n += len(m.XXX_unrecognized)
-	}
-	return n
-}
-
-func (m *BallListResp) Size() (n int) {
-	if m == nil {
-		return 0
-	}
-	var l int
-	_ = l
-	if len(m.Balls) > 0 {
-		for _, e := range m.Balls {
-			l = e.Size()
-			n += 1 + l + sovCourse(uint64(l))
-		}
-	}
-	if m.XXX_unrecognized != nil {
-		n += len(m.XXX_unrecognized)
-	}
-	return n
-}
-
 func (m *Attendance) Size() (n int) {
 	if m == nil {
 		return 0
@@ -3290,11 +4259,19 @@ func (m *Attendance) Size() (n int) {
 	if l > 0 {
 		n += 1 + l + sovCourse(uint64(l))
 	}
+	l = len(m.Comment)
+	if l > 0 {
+		n += 1 + l + sovCourse(uint64(l))
+	}
 	l = len(m.Participate)
 	if l > 0 {
 		n += 1 + l + sovCourse(uint64(l))
 	}
-	l = len(m.Comment)
+	l = len(m.WithDate)
+	if l > 0 {
+		n += 1 + l + sovCourse(uint64(l))
+	}
+	l = len(m.GroupId)
 	if l > 0 {
 		n += 1 + l + sovCourse(uint64(l))
 	}
@@ -3370,6 +4347,28 @@ func (m *By) Size() (n int) {
 	l = len(m.Name)
 	if l > 0 {
 		n += 1 + l + sovCourse(uint64(l))
+	}
+	if m.XXX_unrecognized != nil {
+		n += len(m.XXX_unrecognized)
+	}
+	return n
+}
+
+func (m *ByResp) Size() (n int) {
+	if m == nil {
+		return 0
+	}
+	var l int
+	_ = l
+	l = len(m.Name)
+	if l > 0 {
+		n += 1 + l + sovCourse(uint64(l))
+	}
+	if len(m.Student) > 0 {
+		for _, e := range m.Student {
+			l = e.Size()
+			n += 1 + l + sovCourse(uint64(l))
+		}
 	}
 	if m.XXX_unrecognized != nil {
 		n += len(m.XXX_unrecognized)
@@ -3574,6 +4573,1096 @@ func (m *EmptyRes) Unmarshal(dAtA []byte) error {
 			return fmt.Errorf("proto: EmptyRes: illegal tag %d (wire type %d)", fieldNum, wire)
 		}
 		switch fieldNum {
+		default:
+			iNdEx = preIndex
+			skippy, err := skipCourse(dAtA[iNdEx:])
+			if err != nil {
+				return err
+			}
+			if (skippy < 0) || (iNdEx+skippy) < 0 {
+				return ErrInvalidLengthCourse
+			}
+			if (iNdEx + skippy) > l {
+				return io.ErrUnexpectedEOF
+			}
+			m.XXX_unrecognized = append(m.XXX_unrecognized, dAtA[iNdEx:iNdEx+skippy]...)
+			iNdEx += skippy
+		}
+	}
+
+	if iNdEx > l {
+		return io.ErrUnexpectedEOF
+	}
+	return nil
+}
+func (m *GetBall) Unmarshal(dAtA []byte) error {
+	l := len(dAtA)
+	iNdEx := 0
+	for iNdEx < l {
+		preIndex := iNdEx
+		var wire uint64
+		for shift := uint(0); ; shift += 7 {
+			if shift >= 64 {
+				return ErrIntOverflowCourse
+			}
+			if iNdEx >= l {
+				return io.ErrUnexpectedEOF
+			}
+			b := dAtA[iNdEx]
+			iNdEx++
+			wire |= uint64(b&0x7F) << shift
+			if b < 0x80 {
+				break
+			}
+		}
+		fieldNum := int32(wire >> 3)
+		wireType := int(wire & 0x7)
+		if wireType == 4 {
+			return fmt.Errorf("proto: GetBall: wiretype end group for non-group")
+		}
+		if fieldNum <= 0 {
+			return fmt.Errorf("proto: GetBall: illegal tag %d (wire type %d)", fieldNum, wire)
+		}
+		switch fieldNum {
+		case 2:
+			if wireType != 2 {
+				return fmt.Errorf("proto: wrong wireType = %d for field GroupId", wireType)
+			}
+			var stringLen uint64
+			for shift := uint(0); ; shift += 7 {
+				if shift >= 64 {
+					return ErrIntOverflowCourse
+				}
+				if iNdEx >= l {
+					return io.ErrUnexpectedEOF
+				}
+				b := dAtA[iNdEx]
+				iNdEx++
+				stringLen |= uint64(b&0x7F) << shift
+				if b < 0x80 {
+					break
+				}
+			}
+			intStringLen := int(stringLen)
+			if intStringLen < 0 {
+				return ErrInvalidLengthCourse
+			}
+			postIndex := iNdEx + intStringLen
+			if postIndex < 0 {
+				return ErrInvalidLengthCourse
+			}
+			if postIndex > l {
+				return io.ErrUnexpectedEOF
+			}
+			m.GroupId = string(dAtA[iNdEx:postIndex])
+			iNdEx = postIndex
+		default:
+			iNdEx = preIndex
+			skippy, err := skipCourse(dAtA[iNdEx:])
+			if err != nil {
+				return err
+			}
+			if (skippy < 0) || (iNdEx+skippy) < 0 {
+				return ErrInvalidLengthCourse
+			}
+			if (iNdEx + skippy) > l {
+				return io.ErrUnexpectedEOF
+			}
+			m.XXX_unrecognized = append(m.XXX_unrecognized, dAtA[iNdEx:iNdEx+skippy]...)
+			iNdEx += skippy
+		}
+	}
+
+	if iNdEx > l {
+		return io.ErrUnexpectedEOF
+	}
+	return nil
+}
+func (m *GetParticipate) Unmarshal(dAtA []byte) error {
+	l := len(dAtA)
+	iNdEx := 0
+	for iNdEx < l {
+		preIndex := iNdEx
+		var wire uint64
+		for shift := uint(0); ; shift += 7 {
+			if shift >= 64 {
+				return ErrIntOverflowCourse
+			}
+			if iNdEx >= l {
+				return io.ErrUnexpectedEOF
+			}
+			b := dAtA[iNdEx]
+			iNdEx++
+			wire |= uint64(b&0x7F) << shift
+			if b < 0x80 {
+				break
+			}
+		}
+		fieldNum := int32(wire >> 3)
+		wireType := int(wire & 0x7)
+		if wireType == 4 {
+			return fmt.Errorf("proto: GetParticipate: wiretype end group for non-group")
+		}
+		if fieldNum <= 0 {
+			return fmt.Errorf("proto: GetParticipate: illegal tag %d (wire type %d)", fieldNum, wire)
+		}
+		switch fieldNum {
+		case 2:
+			if wireType != 2 {
+				return fmt.Errorf("proto: wrong wireType = %d for field GroupId", wireType)
+			}
+			var stringLen uint64
+			for shift := uint(0); ; shift += 7 {
+				if shift >= 64 {
+					return ErrIntOverflowCourse
+				}
+				if iNdEx >= l {
+					return io.ErrUnexpectedEOF
+				}
+				b := dAtA[iNdEx]
+				iNdEx++
+				stringLen |= uint64(b&0x7F) << shift
+				if b < 0x80 {
+					break
+				}
+			}
+			intStringLen := int(stringLen)
+			if intStringLen < 0 {
+				return ErrInvalidLengthCourse
+			}
+			postIndex := iNdEx + intStringLen
+			if postIndex < 0 {
+				return ErrInvalidLengthCourse
+			}
+			if postIndex > l {
+				return io.ErrUnexpectedEOF
+			}
+			m.GroupId = string(dAtA[iNdEx:postIndex])
+			iNdEx = postIndex
+		default:
+			iNdEx = preIndex
+			skippy, err := skipCourse(dAtA[iNdEx:])
+			if err != nil {
+				return err
+			}
+			if (skippy < 0) || (iNdEx+skippy) < 0 {
+				return ErrInvalidLengthCourse
+			}
+			if (iNdEx + skippy) > l {
+				return io.ErrUnexpectedEOF
+			}
+			m.XXX_unrecognized = append(m.XXX_unrecognized, dAtA[iNdEx:iNdEx+skippy]...)
+			iNdEx += skippy
+		}
+	}
+
+	if iNdEx > l {
+		return io.ErrUnexpectedEOF
+	}
+	return nil
+}
+func (m *Bal) Unmarshal(dAtA []byte) error {
+	l := len(dAtA)
+	iNdEx := 0
+	for iNdEx < l {
+		preIndex := iNdEx
+		var wire uint64
+		for shift := uint(0); ; shift += 7 {
+			if shift >= 64 {
+				return ErrIntOverflowCourse
+			}
+			if iNdEx >= l {
+				return io.ErrUnexpectedEOF
+			}
+			b := dAtA[iNdEx]
+			iNdEx++
+			wire |= uint64(b&0x7F) << shift
+			if b < 0x80 {
+				break
+			}
+		}
+		fieldNum := int32(wire >> 3)
+		wireType := int(wire & 0x7)
+		if wireType == 4 {
+			return fmt.Errorf("proto: Bal: wiretype end group for non-group")
+		}
+		if fieldNum <= 0 {
+			return fmt.Errorf("proto: Bal: illegal tag %d (wire type %d)", fieldNum, wire)
+		}
+		switch fieldNum {
+		case 1:
+			if wireType != 2 {
+				return fmt.Errorf("proto: wrong wireType = %d for field Id", wireType)
+			}
+			var stringLen uint64
+			for shift := uint(0); ; shift += 7 {
+				if shift >= 64 {
+					return ErrIntOverflowCourse
+				}
+				if iNdEx >= l {
+					return io.ErrUnexpectedEOF
+				}
+				b := dAtA[iNdEx]
+				iNdEx++
+				stringLen |= uint64(b&0x7F) << shift
+				if b < 0x80 {
+					break
+				}
+			}
+			intStringLen := int(stringLen)
+			if intStringLen < 0 {
+				return ErrInvalidLengthCourse
+			}
+			postIndex := iNdEx + intStringLen
+			if postIndex < 0 {
+				return ErrInvalidLengthCourse
+			}
+			if postIndex > l {
+				return io.ErrUnexpectedEOF
+			}
+			m.Id = string(dAtA[iNdEx:postIndex])
+			iNdEx = postIndex
+		case 2:
+			if wireType != 0 {
+				return fmt.Errorf("proto: wrong wireType = %d for field Ball", wireType)
+			}
+			m.Ball = 0
+			for shift := uint(0); ; shift += 7 {
+				if shift >= 64 {
+					return ErrIntOverflowCourse
+				}
+				if iNdEx >= l {
+					return io.ErrUnexpectedEOF
+				}
+				b := dAtA[iNdEx]
+				iNdEx++
+				m.Ball |= int32(b&0x7F) << shift
+				if b < 0x80 {
+					break
+				}
+			}
+		case 3:
+			if wireType != 2 {
+				return fmt.Errorf("proto: wrong wireType = %d for field WithDate", wireType)
+			}
+			var stringLen uint64
+			for shift := uint(0); ; shift += 7 {
+				if shift >= 64 {
+					return ErrIntOverflowCourse
+				}
+				if iNdEx >= l {
+					return io.ErrUnexpectedEOF
+				}
+				b := dAtA[iNdEx]
+				iNdEx++
+				stringLen |= uint64(b&0x7F) << shift
+				if b < 0x80 {
+					break
+				}
+			}
+			intStringLen := int(stringLen)
+			if intStringLen < 0 {
+				return ErrInvalidLengthCourse
+			}
+			postIndex := iNdEx + intStringLen
+			if postIndex < 0 {
+				return ErrInvalidLengthCourse
+			}
+			if postIndex > l {
+				return io.ErrUnexpectedEOF
+			}
+			m.WithDate = string(dAtA[iNdEx:postIndex])
+			iNdEx = postIndex
+		case 4:
+			if wireType != 2 {
+				return fmt.Errorf("proto: wrong wireType = %d for field GroupId", wireType)
+			}
+			var stringLen uint64
+			for shift := uint(0); ; shift += 7 {
+				if shift >= 64 {
+					return ErrIntOverflowCourse
+				}
+				if iNdEx >= l {
+					return io.ErrUnexpectedEOF
+				}
+				b := dAtA[iNdEx]
+				iNdEx++
+				stringLen |= uint64(b&0x7F) << shift
+				if b < 0x80 {
+					break
+				}
+			}
+			intStringLen := int(stringLen)
+			if intStringLen < 0 {
+				return ErrInvalidLengthCourse
+			}
+			postIndex := iNdEx + intStringLen
+			if postIndex < 0 {
+				return ErrInvalidLengthCourse
+			}
+			if postIndex > l {
+				return io.ErrUnexpectedEOF
+			}
+			m.GroupId = string(dAtA[iNdEx:postIndex])
+			iNdEx = postIndex
+		case 5:
+			if wireType != 2 {
+				return fmt.Errorf("proto: wrong wireType = %d for field StudentId", wireType)
+			}
+			var stringLen uint64
+			for shift := uint(0); ; shift += 7 {
+				if shift >= 64 {
+					return ErrIntOverflowCourse
+				}
+				if iNdEx >= l {
+					return io.ErrUnexpectedEOF
+				}
+				b := dAtA[iNdEx]
+				iNdEx++
+				stringLen |= uint64(b&0x7F) << shift
+				if b < 0x80 {
+					break
+				}
+			}
+			intStringLen := int(stringLen)
+			if intStringLen < 0 {
+				return ErrInvalidLengthCourse
+			}
+			postIndex := iNdEx + intStringLen
+			if postIndex < 0 {
+				return ErrInvalidLengthCourse
+			}
+			if postIndex > l {
+				return io.ErrUnexpectedEOF
+			}
+			m.StudentId = string(dAtA[iNdEx:postIndex])
+			iNdEx = postIndex
+		case 6:
+			if wireType != 2 {
+				return fmt.Errorf("proto: wrong wireType = %d for field CreatedAt", wireType)
+			}
+			var stringLen uint64
+			for shift := uint(0); ; shift += 7 {
+				if shift >= 64 {
+					return ErrIntOverflowCourse
+				}
+				if iNdEx >= l {
+					return io.ErrUnexpectedEOF
+				}
+				b := dAtA[iNdEx]
+				iNdEx++
+				stringLen |= uint64(b&0x7F) << shift
+				if b < 0x80 {
+					break
+				}
+			}
+			intStringLen := int(stringLen)
+			if intStringLen < 0 {
+				return ErrInvalidLengthCourse
+			}
+			postIndex := iNdEx + intStringLen
+			if postIndex < 0 {
+				return ErrInvalidLengthCourse
+			}
+			if postIndex > l {
+				return io.ErrUnexpectedEOF
+			}
+			m.CreatedAt = string(dAtA[iNdEx:postIndex])
+			iNdEx = postIndex
+		case 7:
+			if wireType != 2 {
+				return fmt.Errorf("proto: wrong wireType = %d for field UpdatedAt", wireType)
+			}
+			var stringLen uint64
+			for shift := uint(0); ; shift += 7 {
+				if shift >= 64 {
+					return ErrIntOverflowCourse
+				}
+				if iNdEx >= l {
+					return io.ErrUnexpectedEOF
+				}
+				b := dAtA[iNdEx]
+				iNdEx++
+				stringLen |= uint64(b&0x7F) << shift
+				if b < 0x80 {
+					break
+				}
+			}
+			intStringLen := int(stringLen)
+			if intStringLen < 0 {
+				return ErrInvalidLengthCourse
+			}
+			postIndex := iNdEx + intStringLen
+			if postIndex < 0 {
+				return ErrInvalidLengthCourse
+			}
+			if postIndex > l {
+				return io.ErrUnexpectedEOF
+			}
+			m.UpdatedAt = string(dAtA[iNdEx:postIndex])
+			iNdEx = postIndex
+		default:
+			iNdEx = preIndex
+			skippy, err := skipCourse(dAtA[iNdEx:])
+			if err != nil {
+				return err
+			}
+			if (skippy < 0) || (iNdEx+skippy) < 0 {
+				return ErrInvalidLengthCourse
+			}
+			if (iNdEx + skippy) > l {
+				return io.ErrUnexpectedEOF
+			}
+			m.XXX_unrecognized = append(m.XXX_unrecognized, dAtA[iNdEx:iNdEx+skippy]...)
+			iNdEx += skippy
+		}
+	}
+
+	if iNdEx > l {
+		return io.ErrUnexpectedEOF
+	}
+	return nil
+}
+func (m *WithDate) Unmarshal(dAtA []byte) error {
+	l := len(dAtA)
+	iNdEx := 0
+	for iNdEx < l {
+		preIndex := iNdEx
+		var wire uint64
+		for shift := uint(0); ; shift += 7 {
+			if shift >= 64 {
+				return ErrIntOverflowCourse
+			}
+			if iNdEx >= l {
+				return io.ErrUnexpectedEOF
+			}
+			b := dAtA[iNdEx]
+			iNdEx++
+			wire |= uint64(b&0x7F) << shift
+			if b < 0x80 {
+				break
+			}
+		}
+		fieldNum := int32(wire >> 3)
+		wireType := int(wire & 0x7)
+		if wireType == 4 {
+			return fmt.Errorf("proto: WithDate: wiretype end group for non-group")
+		}
+		if fieldNum <= 0 {
+			return fmt.Errorf("proto: WithDate: illegal tag %d (wire type %d)", fieldNum, wire)
+		}
+		switch fieldNum {
+		case 1:
+			if wireType != 2 {
+				return fmt.Errorf("proto: wrong wireType = %d for field WithDate", wireType)
+			}
+			var stringLen uint64
+			for shift := uint(0); ; shift += 7 {
+				if shift >= 64 {
+					return ErrIntOverflowCourse
+				}
+				if iNdEx >= l {
+					return io.ErrUnexpectedEOF
+				}
+				b := dAtA[iNdEx]
+				iNdEx++
+				stringLen |= uint64(b&0x7F) << shift
+				if b < 0x80 {
+					break
+				}
+			}
+			intStringLen := int(stringLen)
+			if intStringLen < 0 {
+				return ErrInvalidLengthCourse
+			}
+			postIndex := iNdEx + intStringLen
+			if postIndex < 0 {
+				return ErrInvalidLengthCourse
+			}
+			if postIndex > l {
+				return io.ErrUnexpectedEOF
+			}
+			m.WithDate = string(dAtA[iNdEx:postIndex])
+			iNdEx = postIndex
+		case 2:
+			if wireType != 2 {
+				return fmt.Errorf("proto: wrong wireType = %d for field Ball", wireType)
+			}
+			var stringLen uint64
+			for shift := uint(0); ; shift += 7 {
+				if shift >= 64 {
+					return ErrIntOverflowCourse
+				}
+				if iNdEx >= l {
+					return io.ErrUnexpectedEOF
+				}
+				b := dAtA[iNdEx]
+				iNdEx++
+				stringLen |= uint64(b&0x7F) << shift
+				if b < 0x80 {
+					break
+				}
+			}
+			intStringLen := int(stringLen)
+			if intStringLen < 0 {
+				return ErrInvalidLengthCourse
+			}
+			postIndex := iNdEx + intStringLen
+			if postIndex < 0 {
+				return ErrInvalidLengthCourse
+			}
+			if postIndex > l {
+				return io.ErrUnexpectedEOF
+			}
+			m.Ball = string(dAtA[iNdEx:postIndex])
+			iNdEx = postIndex
+		default:
+			iNdEx = preIndex
+			skippy, err := skipCourse(dAtA[iNdEx:])
+			if err != nil {
+				return err
+			}
+			if (skippy < 0) || (iNdEx+skippy) < 0 {
+				return ErrInvalidLengthCourse
+			}
+			if (iNdEx + skippy) > l {
+				return io.ErrUnexpectedEOF
+			}
+			m.XXX_unrecognized = append(m.XXX_unrecognized, dAtA[iNdEx:iNdEx+skippy]...)
+			iNdEx += skippy
+		}
+	}
+
+	if iNdEx > l {
+		return io.ErrUnexpectedEOF
+	}
+	return nil
+}
+func (m *WithDateParticipate) Unmarshal(dAtA []byte) error {
+	l := len(dAtA)
+	iNdEx := 0
+	for iNdEx < l {
+		preIndex := iNdEx
+		var wire uint64
+		for shift := uint(0); ; shift += 7 {
+			if shift >= 64 {
+				return ErrIntOverflowCourse
+			}
+			if iNdEx >= l {
+				return io.ErrUnexpectedEOF
+			}
+			b := dAtA[iNdEx]
+			iNdEx++
+			wire |= uint64(b&0x7F) << shift
+			if b < 0x80 {
+				break
+			}
+		}
+		fieldNum := int32(wire >> 3)
+		wireType := int(wire & 0x7)
+		if wireType == 4 {
+			return fmt.Errorf("proto: WithDateParticipate: wiretype end group for non-group")
+		}
+		if fieldNum <= 0 {
+			return fmt.Errorf("proto: WithDateParticipate: illegal tag %d (wire type %d)", fieldNum, wire)
+		}
+		switch fieldNum {
+		case 1:
+			if wireType != 2 {
+				return fmt.Errorf("proto: wrong wireType = %d for field WithDate", wireType)
+			}
+			var stringLen uint64
+			for shift := uint(0); ; shift += 7 {
+				if shift >= 64 {
+					return ErrIntOverflowCourse
+				}
+				if iNdEx >= l {
+					return io.ErrUnexpectedEOF
+				}
+				b := dAtA[iNdEx]
+				iNdEx++
+				stringLen |= uint64(b&0x7F) << shift
+				if b < 0x80 {
+					break
+				}
+			}
+			intStringLen := int(stringLen)
+			if intStringLen < 0 {
+				return ErrInvalidLengthCourse
+			}
+			postIndex := iNdEx + intStringLen
+			if postIndex < 0 {
+				return ErrInvalidLengthCourse
+			}
+			if postIndex > l {
+				return io.ErrUnexpectedEOF
+			}
+			m.WithDate = string(dAtA[iNdEx:postIndex])
+			iNdEx = postIndex
+		case 2:
+			if wireType != 0 {
+				return fmt.Errorf("proto: wrong wireType = %d for field Participate", wireType)
+			}
+			var v int
+			for shift := uint(0); ; shift += 7 {
+				if shift >= 64 {
+					return ErrIntOverflowCourse
+				}
+				if iNdEx >= l {
+					return io.ErrUnexpectedEOF
+				}
+				b := dAtA[iNdEx]
+				iNdEx++
+				v |= int(b&0x7F) << shift
+				if b < 0x80 {
+					break
+				}
+			}
+			m.Participate = bool(v != 0)
+		case 3:
+			if wireType != 2 {
+				return fmt.Errorf("proto: wrong wireType = %d for field Comment", wireType)
+			}
+			var stringLen uint64
+			for shift := uint(0); ; shift += 7 {
+				if shift >= 64 {
+					return ErrIntOverflowCourse
+				}
+				if iNdEx >= l {
+					return io.ErrUnexpectedEOF
+				}
+				b := dAtA[iNdEx]
+				iNdEx++
+				stringLen |= uint64(b&0x7F) << shift
+				if b < 0x80 {
+					break
+				}
+			}
+			intStringLen := int(stringLen)
+			if intStringLen < 0 {
+				return ErrInvalidLengthCourse
+			}
+			postIndex := iNdEx + intStringLen
+			if postIndex < 0 {
+				return ErrInvalidLengthCourse
+			}
+			if postIndex > l {
+				return io.ErrUnexpectedEOF
+			}
+			m.Comment = string(dAtA[iNdEx:postIndex])
+			iNdEx = postIndex
+		default:
+			iNdEx = preIndex
+			skippy, err := skipCourse(dAtA[iNdEx:])
+			if err != nil {
+				return err
+			}
+			if (skippy < 0) || (iNdEx+skippy) < 0 {
+				return ErrInvalidLengthCourse
+			}
+			if (iNdEx + skippy) > l {
+				return io.ErrUnexpectedEOF
+			}
+			m.XXX_unrecognized = append(m.XXX_unrecognized, dAtA[iNdEx:iNdEx+skippy]...)
+			iNdEx += skippy
+		}
+	}
+
+	if iNdEx > l {
+		return io.ErrUnexpectedEOF
+	}
+	return nil
+}
+func (m *BalStudent) Unmarshal(dAtA []byte) error {
+	l := len(dAtA)
+	iNdEx := 0
+	for iNdEx < l {
+		preIndex := iNdEx
+		var wire uint64
+		for shift := uint(0); ; shift += 7 {
+			if shift >= 64 {
+				return ErrIntOverflowCourse
+			}
+			if iNdEx >= l {
+				return io.ErrUnexpectedEOF
+			}
+			b := dAtA[iNdEx]
+			iNdEx++
+			wire |= uint64(b&0x7F) << shift
+			if b < 0x80 {
+				break
+			}
+		}
+		fieldNum := int32(wire >> 3)
+		wireType := int(wire & 0x7)
+		if wireType == 4 {
+			return fmt.Errorf("proto: BalStudent: wiretype end group for non-group")
+		}
+		if fieldNum <= 0 {
+			return fmt.Errorf("proto: BalStudent: illegal tag %d (wire type %d)", fieldNum, wire)
+		}
+		switch fieldNum {
+		case 1:
+			if wireType != 2 {
+				return fmt.Errorf("proto: wrong wireType = %d for field StudentId", wireType)
+			}
+			var msglen int
+			for shift := uint(0); ; shift += 7 {
+				if shift >= 64 {
+					return ErrIntOverflowCourse
+				}
+				if iNdEx >= l {
+					return io.ErrUnexpectedEOF
+				}
+				b := dAtA[iNdEx]
+				iNdEx++
+				msglen |= int(b&0x7F) << shift
+				if b < 0x80 {
+					break
+				}
+			}
+			if msglen < 0 {
+				return ErrInvalidLengthCourse
+			}
+			postIndex := iNdEx + msglen
+			if postIndex < 0 {
+				return ErrInvalidLengthCourse
+			}
+			if postIndex > l {
+				return io.ErrUnexpectedEOF
+			}
+			if m.StudentId == nil {
+				m.StudentId = &By{}
+			}
+			if err := m.StudentId.Unmarshal(dAtA[iNdEx:postIndex]); err != nil {
+				return err
+			}
+			iNdEx = postIndex
+		case 2:
+			if wireType != 2 {
+				return fmt.Errorf("proto: wrong wireType = %d for field StudentAllBals", wireType)
+			}
+			var msglen int
+			for shift := uint(0); ; shift += 7 {
+				if shift >= 64 {
+					return ErrIntOverflowCourse
+				}
+				if iNdEx >= l {
+					return io.ErrUnexpectedEOF
+				}
+				b := dAtA[iNdEx]
+				iNdEx++
+				msglen |= int(b&0x7F) << shift
+				if b < 0x80 {
+					break
+				}
+			}
+			if msglen < 0 {
+				return ErrInvalidLengthCourse
+			}
+			postIndex := iNdEx + msglen
+			if postIndex < 0 {
+				return ErrInvalidLengthCourse
+			}
+			if postIndex > l {
+				return io.ErrUnexpectedEOF
+			}
+			m.StudentAllBals = append(m.StudentAllBals, &WithDate{})
+			if err := m.StudentAllBals[len(m.StudentAllBals)-1].Unmarshal(dAtA[iNdEx:postIndex]); err != nil {
+				return err
+			}
+			iNdEx = postIndex
+		default:
+			iNdEx = preIndex
+			skippy, err := skipCourse(dAtA[iNdEx:])
+			if err != nil {
+				return err
+			}
+			if (skippy < 0) || (iNdEx+skippy) < 0 {
+				return ErrInvalidLengthCourse
+			}
+			if (iNdEx + skippy) > l {
+				return io.ErrUnexpectedEOF
+			}
+			m.XXX_unrecognized = append(m.XXX_unrecognized, dAtA[iNdEx:iNdEx+skippy]...)
+			iNdEx += skippy
+		}
+	}
+
+	if iNdEx > l {
+		return io.ErrUnexpectedEOF
+	}
+	return nil
+}
+func (m *ParticipateStudent) Unmarshal(dAtA []byte) error {
+	l := len(dAtA)
+	iNdEx := 0
+	for iNdEx < l {
+		preIndex := iNdEx
+		var wire uint64
+		for shift := uint(0); ; shift += 7 {
+			if shift >= 64 {
+				return ErrIntOverflowCourse
+			}
+			if iNdEx >= l {
+				return io.ErrUnexpectedEOF
+			}
+			b := dAtA[iNdEx]
+			iNdEx++
+			wire |= uint64(b&0x7F) << shift
+			if b < 0x80 {
+				break
+			}
+		}
+		fieldNum := int32(wire >> 3)
+		wireType := int(wire & 0x7)
+		if wireType == 4 {
+			return fmt.Errorf("proto: ParticipateStudent: wiretype end group for non-group")
+		}
+		if fieldNum <= 0 {
+			return fmt.Errorf("proto: ParticipateStudent: illegal tag %d (wire type %d)", fieldNum, wire)
+		}
+		switch fieldNum {
+		case 1:
+			if wireType != 2 {
+				return fmt.Errorf("proto: wrong wireType = %d for field StudentId", wireType)
+			}
+			var msglen int
+			for shift := uint(0); ; shift += 7 {
+				if shift >= 64 {
+					return ErrIntOverflowCourse
+				}
+				if iNdEx >= l {
+					return io.ErrUnexpectedEOF
+				}
+				b := dAtA[iNdEx]
+				iNdEx++
+				msglen |= int(b&0x7F) << shift
+				if b < 0x80 {
+					break
+				}
+			}
+			if msglen < 0 {
+				return ErrInvalidLengthCourse
+			}
+			postIndex := iNdEx + msglen
+			if postIndex < 0 {
+				return ErrInvalidLengthCourse
+			}
+			if postIndex > l {
+				return io.ErrUnexpectedEOF
+			}
+			if m.StudentId == nil {
+				m.StudentId = &By{}
+			}
+			if err := m.StudentId.Unmarshal(dAtA[iNdEx:postIndex]); err != nil {
+				return err
+			}
+			iNdEx = postIndex
+		case 2:
+			if wireType != 2 {
+				return fmt.Errorf("proto: wrong wireType = %d for field StudentAllParticipate", wireType)
+			}
+			var msglen int
+			for shift := uint(0); ; shift += 7 {
+				if shift >= 64 {
+					return ErrIntOverflowCourse
+				}
+				if iNdEx >= l {
+					return io.ErrUnexpectedEOF
+				}
+				b := dAtA[iNdEx]
+				iNdEx++
+				msglen |= int(b&0x7F) << shift
+				if b < 0x80 {
+					break
+				}
+			}
+			if msglen < 0 {
+				return ErrInvalidLengthCourse
+			}
+			postIndex := iNdEx + msglen
+			if postIndex < 0 {
+				return ErrInvalidLengthCourse
+			}
+			if postIndex > l {
+				return io.ErrUnexpectedEOF
+			}
+			m.StudentAllParticipate = append(m.StudentAllParticipate, &WithDateParticipate{})
+			if err := m.StudentAllParticipate[len(m.StudentAllParticipate)-1].Unmarshal(dAtA[iNdEx:postIndex]); err != nil {
+				return err
+			}
+			iNdEx = postIndex
+		default:
+			iNdEx = preIndex
+			skippy, err := skipCourse(dAtA[iNdEx:])
+			if err != nil {
+				return err
+			}
+			if (skippy < 0) || (iNdEx+skippy) < 0 {
+				return ErrInvalidLengthCourse
+			}
+			if (iNdEx + skippy) > l {
+				return io.ErrUnexpectedEOF
+			}
+			m.XXX_unrecognized = append(m.XXX_unrecognized, dAtA[iNdEx:iNdEx+skippy]...)
+			iNdEx += skippy
+		}
+	}
+
+	if iNdEx > l {
+		return io.ErrUnexpectedEOF
+	}
+	return nil
+}
+func (m *BalListResp) Unmarshal(dAtA []byte) error {
+	l := len(dAtA)
+	iNdEx := 0
+	for iNdEx < l {
+		preIndex := iNdEx
+		var wire uint64
+		for shift := uint(0); ; shift += 7 {
+			if shift >= 64 {
+				return ErrIntOverflowCourse
+			}
+			if iNdEx >= l {
+				return io.ErrUnexpectedEOF
+			}
+			b := dAtA[iNdEx]
+			iNdEx++
+			wire |= uint64(b&0x7F) << shift
+			if b < 0x80 {
+				break
+			}
+		}
+		fieldNum := int32(wire >> 3)
+		wireType := int(wire & 0x7)
+		if wireType == 4 {
+			return fmt.Errorf("proto: BalListResp: wiretype end group for non-group")
+		}
+		if fieldNum <= 0 {
+			return fmt.Errorf("proto: BalListResp: illegal tag %d (wire type %d)", fieldNum, wire)
+		}
+		switch fieldNum {
+		case 1:
+			if wireType != 2 {
+				return fmt.Errorf("proto: wrong wireType = %d for field GroupBals", wireType)
+			}
+			var msglen int
+			for shift := uint(0); ; shift += 7 {
+				if shift >= 64 {
+					return ErrIntOverflowCourse
+				}
+				if iNdEx >= l {
+					return io.ErrUnexpectedEOF
+				}
+				b := dAtA[iNdEx]
+				iNdEx++
+				msglen |= int(b&0x7F) << shift
+				if b < 0x80 {
+					break
+				}
+			}
+			if msglen < 0 {
+				return ErrInvalidLengthCourse
+			}
+			postIndex := iNdEx + msglen
+			if postIndex < 0 {
+				return ErrInvalidLengthCourse
+			}
+			if postIndex > l {
+				return io.ErrUnexpectedEOF
+			}
+			m.GroupBals = append(m.GroupBals, &BalStudent{})
+			if err := m.GroupBals[len(m.GroupBals)-1].Unmarshal(dAtA[iNdEx:postIndex]); err != nil {
+				return err
+			}
+			iNdEx = postIndex
+		default:
+			iNdEx = preIndex
+			skippy, err := skipCourse(dAtA[iNdEx:])
+			if err != nil {
+				return err
+			}
+			if (skippy < 0) || (iNdEx+skippy) < 0 {
+				return ErrInvalidLengthCourse
+			}
+			if (iNdEx + skippy) > l {
+				return io.ErrUnexpectedEOF
+			}
+			m.XXX_unrecognized = append(m.XXX_unrecognized, dAtA[iNdEx:iNdEx+skippy]...)
+			iNdEx += skippy
+		}
+	}
+
+	if iNdEx > l {
+		return io.ErrUnexpectedEOF
+	}
+	return nil
+}
+func (m *ParticipateListResp) Unmarshal(dAtA []byte) error {
+	l := len(dAtA)
+	iNdEx := 0
+	for iNdEx < l {
+		preIndex := iNdEx
+		var wire uint64
+		for shift := uint(0); ; shift += 7 {
+			if shift >= 64 {
+				return ErrIntOverflowCourse
+			}
+			if iNdEx >= l {
+				return io.ErrUnexpectedEOF
+			}
+			b := dAtA[iNdEx]
+			iNdEx++
+			wire |= uint64(b&0x7F) << shift
+			if b < 0x80 {
+				break
+			}
+		}
+		fieldNum := int32(wire >> 3)
+		wireType := int(wire & 0x7)
+		if wireType == 4 {
+			return fmt.Errorf("proto: ParticipateListResp: wiretype end group for non-group")
+		}
+		if fieldNum <= 0 {
+			return fmt.Errorf("proto: ParticipateListResp: illegal tag %d (wire type %d)", fieldNum, wire)
+		}
+		switch fieldNum {
+		case 1:
+			if wireType != 2 {
+				return fmt.Errorf("proto: wrong wireType = %d for field GroupParticipate", wireType)
+			}
+			var msglen int
+			for shift := uint(0); ; shift += 7 {
+				if shift >= 64 {
+					return ErrIntOverflowCourse
+				}
+				if iNdEx >= l {
+					return io.ErrUnexpectedEOF
+				}
+				b := dAtA[iNdEx]
+				iNdEx++
+				msglen |= int(b&0x7F) << shift
+				if b < 0x80 {
+					break
+				}
+			}
+			if msglen < 0 {
+				return ErrInvalidLengthCourse
+			}
+			postIndex := iNdEx + msglen
+			if postIndex < 0 {
+				return ErrInvalidLengthCourse
+			}
+			if postIndex > l {
+				return io.ErrUnexpectedEOF
+			}
+			m.GroupParticipate = append(m.GroupParticipate, &ParticipateStudent{})
+			if err := m.GroupParticipate[len(m.GroupParticipate)-1].Unmarshal(dAtA[iNdEx:postIndex]); err != nil {
+				return err
+			}
+			iNdEx = postIndex
 		default:
 			iNdEx = preIndex
 			skippy, err := skipCourse(dAtA[iNdEx:])
@@ -4836,289 +6925,6 @@ func (m *GroupResp) Unmarshal(dAtA []byte) error {
 	}
 	return nil
 }
-func (m *Ball) Unmarshal(dAtA []byte) error {
-	l := len(dAtA)
-	iNdEx := 0
-	for iNdEx < l {
-		preIndex := iNdEx
-		var wire uint64
-		for shift := uint(0); ; shift += 7 {
-			if shift >= 64 {
-				return ErrIntOverflowCourse
-			}
-			if iNdEx >= l {
-				return io.ErrUnexpectedEOF
-			}
-			b := dAtA[iNdEx]
-			iNdEx++
-			wire |= uint64(b&0x7F) << shift
-			if b < 0x80 {
-				break
-			}
-		}
-		fieldNum := int32(wire >> 3)
-		wireType := int(wire & 0x7)
-		if wireType == 4 {
-			return fmt.Errorf("proto: Ball: wiretype end group for non-group")
-		}
-		if fieldNum <= 0 {
-			return fmt.Errorf("proto: Ball: illegal tag %d (wire type %d)", fieldNum, wire)
-		}
-		switch fieldNum {
-		case 1:
-			if wireType != 2 {
-				return fmt.Errorf("proto: wrong wireType = %d for field Id", wireType)
-			}
-			var stringLen uint64
-			for shift := uint(0); ; shift += 7 {
-				if shift >= 64 {
-					return ErrIntOverflowCourse
-				}
-				if iNdEx >= l {
-					return io.ErrUnexpectedEOF
-				}
-				b := dAtA[iNdEx]
-				iNdEx++
-				stringLen |= uint64(b&0x7F) << shift
-				if b < 0x80 {
-					break
-				}
-			}
-			intStringLen := int(stringLen)
-			if intStringLen < 0 {
-				return ErrInvalidLengthCourse
-			}
-			postIndex := iNdEx + intStringLen
-			if postIndex < 0 {
-				return ErrInvalidLengthCourse
-			}
-			if postIndex > l {
-				return io.ErrUnexpectedEOF
-			}
-			m.Id = string(dAtA[iNdEx:postIndex])
-			iNdEx = postIndex
-		case 2:
-			if wireType != 2 {
-				return fmt.Errorf("proto: wrong wireType = %d for field AttendanceId", wireType)
-			}
-			var stringLen uint64
-			for shift := uint(0); ; shift += 7 {
-				if shift >= 64 {
-					return ErrIntOverflowCourse
-				}
-				if iNdEx >= l {
-					return io.ErrUnexpectedEOF
-				}
-				b := dAtA[iNdEx]
-				iNdEx++
-				stringLen |= uint64(b&0x7F) << shift
-				if b < 0x80 {
-					break
-				}
-			}
-			intStringLen := int(stringLen)
-			if intStringLen < 0 {
-				return ErrInvalidLengthCourse
-			}
-			postIndex := iNdEx + intStringLen
-			if postIndex < 0 {
-				return ErrInvalidLengthCourse
-			}
-			if postIndex > l {
-				return io.ErrUnexpectedEOF
-			}
-			m.AttendanceId = string(dAtA[iNdEx:postIndex])
-			iNdEx = postIndex
-		case 3:
-			if wireType != 0 {
-				return fmt.Errorf("proto: wrong wireType = %d for field Ball", wireType)
-			}
-			m.Ball = 0
-			for shift := uint(0); ; shift += 7 {
-				if shift >= 64 {
-					return ErrIntOverflowCourse
-				}
-				if iNdEx >= l {
-					return io.ErrUnexpectedEOF
-				}
-				b := dAtA[iNdEx]
-				iNdEx++
-				m.Ball |= int32(b&0x7F) << shift
-				if b < 0x80 {
-					break
-				}
-			}
-		case 4:
-			if wireType != 2 {
-				return fmt.Errorf("proto: wrong wireType = %d for field CreatedAt", wireType)
-			}
-			var stringLen uint64
-			for shift := uint(0); ; shift += 7 {
-				if shift >= 64 {
-					return ErrIntOverflowCourse
-				}
-				if iNdEx >= l {
-					return io.ErrUnexpectedEOF
-				}
-				b := dAtA[iNdEx]
-				iNdEx++
-				stringLen |= uint64(b&0x7F) << shift
-				if b < 0x80 {
-					break
-				}
-			}
-			intStringLen := int(stringLen)
-			if intStringLen < 0 {
-				return ErrInvalidLengthCourse
-			}
-			postIndex := iNdEx + intStringLen
-			if postIndex < 0 {
-				return ErrInvalidLengthCourse
-			}
-			if postIndex > l {
-				return io.ErrUnexpectedEOF
-			}
-			m.CreatedAt = string(dAtA[iNdEx:postIndex])
-			iNdEx = postIndex
-		case 5:
-			if wireType != 2 {
-				return fmt.Errorf("proto: wrong wireType = %d for field UpdatedAt", wireType)
-			}
-			var stringLen uint64
-			for shift := uint(0); ; shift += 7 {
-				if shift >= 64 {
-					return ErrIntOverflowCourse
-				}
-				if iNdEx >= l {
-					return io.ErrUnexpectedEOF
-				}
-				b := dAtA[iNdEx]
-				iNdEx++
-				stringLen |= uint64(b&0x7F) << shift
-				if b < 0x80 {
-					break
-				}
-			}
-			intStringLen := int(stringLen)
-			if intStringLen < 0 {
-				return ErrInvalidLengthCourse
-			}
-			postIndex := iNdEx + intStringLen
-			if postIndex < 0 {
-				return ErrInvalidLengthCourse
-			}
-			if postIndex > l {
-				return io.ErrUnexpectedEOF
-			}
-			m.UpdatedAt = string(dAtA[iNdEx:postIndex])
-			iNdEx = postIndex
-		default:
-			iNdEx = preIndex
-			skippy, err := skipCourse(dAtA[iNdEx:])
-			if err != nil {
-				return err
-			}
-			if (skippy < 0) || (iNdEx+skippy) < 0 {
-				return ErrInvalidLengthCourse
-			}
-			if (iNdEx + skippy) > l {
-				return io.ErrUnexpectedEOF
-			}
-			m.XXX_unrecognized = append(m.XXX_unrecognized, dAtA[iNdEx:iNdEx+skippy]...)
-			iNdEx += skippy
-		}
-	}
-
-	if iNdEx > l {
-		return io.ErrUnexpectedEOF
-	}
-	return nil
-}
-func (m *BallListResp) Unmarshal(dAtA []byte) error {
-	l := len(dAtA)
-	iNdEx := 0
-	for iNdEx < l {
-		preIndex := iNdEx
-		var wire uint64
-		for shift := uint(0); ; shift += 7 {
-			if shift >= 64 {
-				return ErrIntOverflowCourse
-			}
-			if iNdEx >= l {
-				return io.ErrUnexpectedEOF
-			}
-			b := dAtA[iNdEx]
-			iNdEx++
-			wire |= uint64(b&0x7F) << shift
-			if b < 0x80 {
-				break
-			}
-		}
-		fieldNum := int32(wire >> 3)
-		wireType := int(wire & 0x7)
-		if wireType == 4 {
-			return fmt.Errorf("proto: BallListResp: wiretype end group for non-group")
-		}
-		if fieldNum <= 0 {
-			return fmt.Errorf("proto: BallListResp: illegal tag %d (wire type %d)", fieldNum, wire)
-		}
-		switch fieldNum {
-		case 1:
-			if wireType != 2 {
-				return fmt.Errorf("proto: wrong wireType = %d for field Balls", wireType)
-			}
-			var msglen int
-			for shift := uint(0); ; shift += 7 {
-				if shift >= 64 {
-					return ErrIntOverflowCourse
-				}
-				if iNdEx >= l {
-					return io.ErrUnexpectedEOF
-				}
-				b := dAtA[iNdEx]
-				iNdEx++
-				msglen |= int(b&0x7F) << shift
-				if b < 0x80 {
-					break
-				}
-			}
-			if msglen < 0 {
-				return ErrInvalidLengthCourse
-			}
-			postIndex := iNdEx + msglen
-			if postIndex < 0 {
-				return ErrInvalidLengthCourse
-			}
-			if postIndex > l {
-				return io.ErrUnexpectedEOF
-			}
-			m.Balls = append(m.Balls, &Ball{})
-			if err := m.Balls[len(m.Balls)-1].Unmarshal(dAtA[iNdEx:postIndex]); err != nil {
-				return err
-			}
-			iNdEx = postIndex
-		default:
-			iNdEx = preIndex
-			skippy, err := skipCourse(dAtA[iNdEx:])
-			if err != nil {
-				return err
-			}
-			if (skippy < 0) || (iNdEx+skippy) < 0 {
-				return ErrInvalidLengthCourse
-			}
-			if (iNdEx + skippy) > l {
-				return io.ErrUnexpectedEOF
-			}
-			m.XXX_unrecognized = append(m.XXX_unrecognized, dAtA[iNdEx:iNdEx+skippy]...)
-			iNdEx += skippy
-		}
-	}
-
-	if iNdEx > l {
-		return io.ErrUnexpectedEOF
-	}
-	return nil
-}
 func (m *Attendance) Unmarshal(dAtA []byte) error {
 	l := len(dAtA)
 	iNdEx := 0
@@ -5182,38 +6988,6 @@ func (m *Attendance) Unmarshal(dAtA []byte) error {
 			iNdEx = postIndex
 		case 2:
 			if wireType != 2 {
-				return fmt.Errorf("proto: wrong wireType = %d for field Participate", wireType)
-			}
-			var stringLen uint64
-			for shift := uint(0); ; shift += 7 {
-				if shift >= 64 {
-					return ErrIntOverflowCourse
-				}
-				if iNdEx >= l {
-					return io.ErrUnexpectedEOF
-				}
-				b := dAtA[iNdEx]
-				iNdEx++
-				stringLen |= uint64(b&0x7F) << shift
-				if b < 0x80 {
-					break
-				}
-			}
-			intStringLen := int(stringLen)
-			if intStringLen < 0 {
-				return ErrInvalidLengthCourse
-			}
-			postIndex := iNdEx + intStringLen
-			if postIndex < 0 {
-				return ErrInvalidLengthCourse
-			}
-			if postIndex > l {
-				return io.ErrUnexpectedEOF
-			}
-			m.Participate = string(dAtA[iNdEx:postIndex])
-			iNdEx = postIndex
-		case 3:
-			if wireType != 2 {
 				return fmt.Errorf("proto: wrong wireType = %d for field Comment", wireType)
 			}
 			var stringLen uint64
@@ -5244,7 +7018,103 @@ func (m *Attendance) Unmarshal(dAtA []byte) error {
 			}
 			m.Comment = string(dAtA[iNdEx:postIndex])
 			iNdEx = postIndex
+		case 3:
+			if wireType != 2 {
+				return fmt.Errorf("proto: wrong wireType = %d for field Participate", wireType)
+			}
+			var stringLen uint64
+			for shift := uint(0); ; shift += 7 {
+				if shift >= 64 {
+					return ErrIntOverflowCourse
+				}
+				if iNdEx >= l {
+					return io.ErrUnexpectedEOF
+				}
+				b := dAtA[iNdEx]
+				iNdEx++
+				stringLen |= uint64(b&0x7F) << shift
+				if b < 0x80 {
+					break
+				}
+			}
+			intStringLen := int(stringLen)
+			if intStringLen < 0 {
+				return ErrInvalidLengthCourse
+			}
+			postIndex := iNdEx + intStringLen
+			if postIndex < 0 {
+				return ErrInvalidLengthCourse
+			}
+			if postIndex > l {
+				return io.ErrUnexpectedEOF
+			}
+			m.Participate = string(dAtA[iNdEx:postIndex])
+			iNdEx = postIndex
 		case 4:
+			if wireType != 2 {
+				return fmt.Errorf("proto: wrong wireType = %d for field WithDate", wireType)
+			}
+			var stringLen uint64
+			for shift := uint(0); ; shift += 7 {
+				if shift >= 64 {
+					return ErrIntOverflowCourse
+				}
+				if iNdEx >= l {
+					return io.ErrUnexpectedEOF
+				}
+				b := dAtA[iNdEx]
+				iNdEx++
+				stringLen |= uint64(b&0x7F) << shift
+				if b < 0x80 {
+					break
+				}
+			}
+			intStringLen := int(stringLen)
+			if intStringLen < 0 {
+				return ErrInvalidLengthCourse
+			}
+			postIndex := iNdEx + intStringLen
+			if postIndex < 0 {
+				return ErrInvalidLengthCourse
+			}
+			if postIndex > l {
+				return io.ErrUnexpectedEOF
+			}
+			m.WithDate = string(dAtA[iNdEx:postIndex])
+			iNdEx = postIndex
+		case 5:
+			if wireType != 2 {
+				return fmt.Errorf("proto: wrong wireType = %d for field GroupId", wireType)
+			}
+			var stringLen uint64
+			for shift := uint(0); ; shift += 7 {
+				if shift >= 64 {
+					return ErrIntOverflowCourse
+				}
+				if iNdEx >= l {
+					return io.ErrUnexpectedEOF
+				}
+				b := dAtA[iNdEx]
+				iNdEx++
+				stringLen |= uint64(b&0x7F) << shift
+				if b < 0x80 {
+					break
+				}
+			}
+			intStringLen := int(stringLen)
+			if intStringLen < 0 {
+				return ErrInvalidLengthCourse
+			}
+			postIndex := iNdEx + intStringLen
+			if postIndex < 0 {
+				return ErrInvalidLengthCourse
+			}
+			if postIndex > l {
+				return io.ErrUnexpectedEOF
+			}
+			m.GroupId = string(dAtA[iNdEx:postIndex])
+			iNdEx = postIndex
+		case 6:
 			if wireType != 2 {
 				return fmt.Errorf("proto: wrong wireType = %d for field StudentId", wireType)
 			}
@@ -5276,7 +7146,7 @@ func (m *Attendance) Unmarshal(dAtA []byte) error {
 			}
 			m.StudentId = string(dAtA[iNdEx:postIndex])
 			iNdEx = postIndex
-		case 5:
+		case 7:
 			if wireType != 2 {
 				return fmt.Errorf("proto: wrong wireType = %d for field CreatedAt", wireType)
 			}
@@ -5308,7 +7178,7 @@ func (m *Attendance) Unmarshal(dAtA []byte) error {
 			}
 			m.CreatedAt = string(dAtA[iNdEx:postIndex])
 			iNdEx = postIndex
-		case 6:
+		case 8:
 			if wireType != 2 {
 				return fmt.Errorf("proto: wrong wireType = %d for field UpdatedAt", wireType)
 			}
@@ -5696,6 +7566,123 @@ func (m *By) Unmarshal(dAtA []byte) error {
 	}
 	return nil
 }
+func (m *ByResp) Unmarshal(dAtA []byte) error {
+	l := len(dAtA)
+	iNdEx := 0
+	for iNdEx < l {
+		preIndex := iNdEx
+		var wire uint64
+		for shift := uint(0); ; shift += 7 {
+			if shift >= 64 {
+				return ErrIntOverflowCourse
+			}
+			if iNdEx >= l {
+				return io.ErrUnexpectedEOF
+			}
+			b := dAtA[iNdEx]
+			iNdEx++
+			wire |= uint64(b&0x7F) << shift
+			if b < 0x80 {
+				break
+			}
+		}
+		fieldNum := int32(wire >> 3)
+		wireType := int(wire & 0x7)
+		if wireType == 4 {
+			return fmt.Errorf("proto: ByResp: wiretype end group for non-group")
+		}
+		if fieldNum <= 0 {
+			return fmt.Errorf("proto: ByResp: illegal tag %d (wire type %d)", fieldNum, wire)
+		}
+		switch fieldNum {
+		case 1:
+			if wireType != 2 {
+				return fmt.Errorf("proto: wrong wireType = %d for field Name", wireType)
+			}
+			var stringLen uint64
+			for shift := uint(0); ; shift += 7 {
+				if shift >= 64 {
+					return ErrIntOverflowCourse
+				}
+				if iNdEx >= l {
+					return io.ErrUnexpectedEOF
+				}
+				b := dAtA[iNdEx]
+				iNdEx++
+				stringLen |= uint64(b&0x7F) << shift
+				if b < 0x80 {
+					break
+				}
+			}
+			intStringLen := int(stringLen)
+			if intStringLen < 0 {
+				return ErrInvalidLengthCourse
+			}
+			postIndex := iNdEx + intStringLen
+			if postIndex < 0 {
+				return ErrInvalidLengthCourse
+			}
+			if postIndex > l {
+				return io.ErrUnexpectedEOF
+			}
+			m.Name = string(dAtA[iNdEx:postIndex])
+			iNdEx = postIndex
+		case 2:
+			if wireType != 2 {
+				return fmt.Errorf("proto: wrong wireType = %d for field Student", wireType)
+			}
+			var msglen int
+			for shift := uint(0); ; shift += 7 {
+				if shift >= 64 {
+					return ErrIntOverflowCourse
+				}
+				if iNdEx >= l {
+					return io.ErrUnexpectedEOF
+				}
+				b := dAtA[iNdEx]
+				iNdEx++
+				msglen |= int(b&0x7F) << shift
+				if b < 0x80 {
+					break
+				}
+			}
+			if msglen < 0 {
+				return ErrInvalidLengthCourse
+			}
+			postIndex := iNdEx + msglen
+			if postIndex < 0 {
+				return ErrInvalidLengthCourse
+			}
+			if postIndex > l {
+				return io.ErrUnexpectedEOF
+			}
+			m.Student = append(m.Student, &By{})
+			if err := m.Student[len(m.Student)-1].Unmarshal(dAtA[iNdEx:postIndex]); err != nil {
+				return err
+			}
+			iNdEx = postIndex
+		default:
+			iNdEx = preIndex
+			skippy, err := skipCourse(dAtA[iNdEx:])
+			if err != nil {
+				return err
+			}
+			if (skippy < 0) || (iNdEx+skippy) < 0 {
+				return ErrInvalidLengthCourse
+			}
+			if (iNdEx + skippy) > l {
+				return io.ErrUnexpectedEOF
+			}
+			m.XXX_unrecognized = append(m.XXX_unrecognized, dAtA[iNdEx:iNdEx+skippy]...)
+			iNdEx += skippy
+		}
+	}
+
+	if iNdEx > l {
+		return io.ErrUnexpectedEOF
+	}
+	return nil
+}
 func (m *Byt) Unmarshal(dAtA []byte) error {
 	l := len(dAtA)
 	iNdEx := 0
@@ -5933,7 +7920,7 @@ func (m *GroupListResp) Unmarshal(dAtA []byte) error {
 			if postIndex > l {
 				return io.ErrUnexpectedEOF
 			}
-			m.Groups = append(m.Groups, &Group{})
+			m.Groups = append(m.Groups, &GroupResp{})
 			if err := m.Groups[len(m.Groups)-1].Unmarshal(dAtA[iNdEx:postIndex]); err != nil {
 				return err
 			}

@@ -13,15 +13,15 @@ import (
 	"google.golang.org/protobuf/encoding/protojson"
 )
 
-// BallCreate ...
-// @Summary BallCreate
-// @Router /ball/create/ [post]
-// @Description This API for creating a new ball
-// @Tags ball
+// SalaryTypeCreate ...
+// @Summary SalaryTypeCreate
+// @Router /type/salary/create/ [post]
+// @Description This API for creating a new salary_type
+// @Tags salary_type
 // @Accept  json
 // @Produce  json
-// @Param Ball request body models.Ball true "ballCreateRequest"
-// @Success 200 {object} models.BallResp
+// @Param SalaryType request body models.SalaryType true "salaryCreateRequest"
+// @Success 200 {object} models.SalaryTypeResp
 // @Failure 400 {object} models.StandardErrorModel
 // @Failure 500 {object} models.StandardErrorModel
 func (h *handlerV1) SalaryTypeCreate(c *gin.Context) {
@@ -57,15 +57,15 @@ func (h *handlerV1) SalaryTypeCreate(c *gin.Context) {
 	c.JSON(http.StatusCreated, response)
 }
 
-// BallGet ...
-// @Router /ball/byid/{id} [get]
-// @Summary BallGet
-// @Description This API for getting ball BallList
-// @Tags ball
+// SalaryTypeGet ...
+// @Router /type/salary/byid/{id} [get]
+// @Summary SalaryTypeGet
+// @Description This API for getting salary_type SalaryList
+// @Tags salary_type
 // @Accept  json
 // @Produce  json
 // @Param id path string true "ID"
-// @Success 200 {object} models.BallResp
+// @Success 200 {object} models.SalaryTypeResp
 // @Failure 400 {object} models.StandardErrorModel
 // @Failure 500 {object} models.StandardErrorModel
 func (h *handlerV1) SalaryTypeGet(c *gin.Context) {
@@ -101,16 +101,16 @@ func (h *handlerV1) SalaryTypeGet(c *gin.Context) {
 	c.JSON(http.StatusOK, response)
 }
 
-// BallList ...
-// @Router /ball/list/ [get]
-// @Summary BallList
-// @Description This API for getting list of balls
-// @Tags ball
+// SalaryTypeList ...
+// @Router /type/salary/list/ [get]
+// @Summary SalaryTypeList
+// @Description This API for getting list of salary_types
+// @Tags salary_type
 // @Accept  json
 // @Produce  json
 // @Param page query string false "Page"
 // @Param limit query string false "Limit"
-// @Success 200 {object} models.BallsList
+// @Success 200 {object} models.SalaryTypesList
 // @Failure 400 {object} models.StandardErrorModel
 // @Failure 500 {object} models.StandardErrorModel
 func (h *handlerV1) SalaryTypeList(c *gin.Context) {
@@ -147,16 +147,16 @@ func (h *handlerV1) SalaryTypeList(c *gin.Context) {
 	c.JSON(http.StatusOK, response)
 }
 
-// BallUpdate ...
-// @Router /ball/update/{id} [put]
-// @Summary BallUpdate
-// @Description This API for updating ball
-// @Tags ball
+// SalaryTypeUpdate ...
+// @Router /type/salary/update/{id} [put]
+// @Summary SalaryTypeUpdate
+// @Description This API for updating salary_type
+// @Tags salary_type
 // @Accept  json
 // @Produce  json
 // @Param id path string true "ID"
-// @Param Ball request body models.BallUpdate true "ballUpdateRequest"
-// @Success 200 {object} models.BallResp
+// @Param SalaryType request body models.SalaryTypeUpdate true "salaryUpdateRequest"
+// @Success 200 {object} models.SalaryTypeResp
 // @Failure 400 {object} models.StandardErrorModel
 // @Failure 500 {object} models.StandardErrorModel
 func (h *handlerV1) SalaryTypeUpdate(c *gin.Context) {
@@ -202,11 +202,11 @@ func (h *handlerV1) SalaryTypeUpdate(c *gin.Context) {
 	c.JSON(http.StatusOK, response)
 }
 
-// BallDelete ...
-// @Router /ball/delete/{id} [delete]
-// @Summary BallDelete
-// @Description This API for deleting ball
-// @Tags ball
+// SalaryTypeDelete ...
+// @Router /type/salary/delete/{id} [delete]
+// @Summary SalaryTypeDelete
+// @Description This API for deleting salary_type
+// @Tags salary_type
 // @Accept  json
 // @Produce  json
 // @Param id path string true "ID"

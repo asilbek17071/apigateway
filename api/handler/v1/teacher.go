@@ -103,7 +103,7 @@ func (h *handlerV1) TeacherGet(c *gin.Context) {
 }
 
 // TeacherGet ...
-// @Router /teacher/byid/{id} [get]
+// @Router /teacher/byname/{id} [get]
 // @Summary TeacherGet
 // @Description This API for getting teacher TeacherList
 // @Tags teacher

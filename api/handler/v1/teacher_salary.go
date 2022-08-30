@@ -108,8 +108,7 @@ func (h *handlerV1) TeacherSalaryGet(c *gin.Context) {
 // @Tags teacher_salary
 // @Accept  json
 // @Produce  json
-// @Param page query string false "Page"
-// @Param limit query string false "Limit"
+// @Param id query string false "ID"
 // @Success 200 {object} models.TeachersSalaryList
 // @Failure 400 {object} models.StandardErrorModel
 // @Failure 500 {object} models.StandardErrorModel

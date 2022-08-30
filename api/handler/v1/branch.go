@@ -253,7 +253,7 @@ func (h *handlerV1) BranchDelete(c *gin.Context) {
 // @Tags branch
 // @Accept  json
 // @Produce  json
-// @Id page query string false "Id"
+// @Id page query string false "ID"
 // @Success 200 {object} models.WithRooms
 // @Failure 400 {object} models.StandardErrorModel
 // @Failure 500 {object} models.StandardErrorModel

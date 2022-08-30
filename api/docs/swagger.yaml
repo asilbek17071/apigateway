@@ -1,0 +1,5276 @@
+definitions:
+  models.Attendance:
+    properties:
+      comment:
+        type: string
+      group_id:
+        type: string
+      participate:
+        type: boolean
+      student_id:
+        type: string
+      with_date:
+        type: string
+    type: object
+  models.AttendanceResp:
+    properties:
+      attendance_id:
+        type: string
+      comment:
+        type: string
+      created_at:
+        type: string
+      group_id:
+        type: string
+      participate:
+        type: boolean
+      student_id:
+        type: string
+      updated_at:
+        type: string
+      with_date:
+        type: string
+    type: object
+  models.AttendanceUpdate:
+    properties:
+      comment:
+        type: string
+      group_id:
+        type: string
+      participate:
+        type: boolean
+      student_id:
+        type: string
+      with_date:
+        type: string
+    type: object
+  models.AttendancesList:
+    properties:
+      attendances:
+        items:
+          $ref: '#/definitions/models.AttendanceResp'
+        type: array
+      count:
+        type: integer
+    type: object
+  models.Ball:
+    properties:
+      ball:
+        type: string
+      group_id:
+        type: string
+      student_id:
+        type: string
+      with_date:
+        type: string
+    type: object
+  models.BallResp:
+    properties:
+      ball:
+        type: string
+      ball_id:
+        type: string
+      created_at:
+        type: string
+      group_id:
+        type: string
+      student_id:
+        type: string
+      updated_at:
+        type: string
+      with_date:
+        type: string
+    type: object
+  models.BallUpdate:
+    properties:
+      ball:
+        type: string
+      group_id:
+        type: string
+      student_id:
+        type: string
+      with_date:
+        type: string
+    type: object
+  models.BallsList:
+    properties:
+      balls:
+        items:
+          $ref: '#/definitions/models.BallResp'
+        type: array
+      count:
+        type: integer
+    type: object
+  models.Branch:
+    properties:
+      name:
+        type: string
+    type: object
+  models.BranchResp:
+    properties:
+      branch_id:
+        type: string
+      created_at:
+        type: string
+      name:
+        type: string
+      updated_at:
+        type: string
+    type: object
+  models.BranchUpdate:
+    properties:
+      name:
+        type: string
+    type: object
+  models.BranchsList:
+    properties:
+      branchs:
+        items:
+          $ref: '#/definitions/models.BranchResp'
+        type: array
+      count:
+        type: integer
+    type: object
+  models.By:
+    properties:
+      name:
+        type: string
+    type: object
+  models.DefMsg:
+    properties:
+      comment:
+        type: string
+      title:
+        type: string
+    type: object
+  models.DefMsgResp:
+    properties:
+      comment:
+        type: string
+      created_at:
+        type: string
+      defmsg_id:
+        type: string
+      title:
+        type: string
+      updated_at:
+        type: string
+    type: object
+  models.DefMsgUpdate:
+    properties:
+      comment:
+        type: string
+      title:
+        type: string
+    type: object
+  models.DefMsgsList:
+    properties:
+      count:
+        type: integer
+      defmsgs:
+        items:
+          $ref: '#/definitions/models.DefMsgResp'
+        type: array
+    type: object
+  models.Direction:
+    properties:
+      active:
+        type: string
+      duration:
+        type: string
+      full_amount:
+        type: string
+      month_amount:
+        type: string
+      name:
+        type: string
+    type: object
+  models.DirectionResp:
+    properties:
+      active:
+        type: string
+      created_at:
+        type: string
+      direction_id:
+        type: string
+      duration:
+        type: string
+      full_amount:
+        type: string
+      month_amount:
+        type: string
+      name:
+        type: string
+      updated_at:
+        type: string
+    type: object
+  models.DirectionUpdate:
+    properties:
+      active:
+        type: string
+      duration:
+        type: string
+      full_amount:
+        type: string
+      month_amount:
+        type: string
+      name:
+        type: string
+    type: object
+  models.DirectionsList:
+    properties:
+      count:
+        type: integer
+      directions:
+        items:
+          $ref: '#/definitions/models.DirectionResp'
+        type: array
+    type: object
+  models.Empty:
+    type: object
+  models.Error:
+    properties:
+      message:
+        type: string
+    type: object
+  models.Group:
+    properties:
+      active:
+        type: boolean
+      begin_time:
+        type: string
+      branch_id:
+        type: string
+      close_time:
+        type: string
+      comment:
+        type: string
+      date_of_begin:
+        type: string
+      date_of_close:
+        type: string
+      direction_id:
+        type: string
+      lesson:
+        type: integer
+      name:
+        type: string
+      room_id:
+        type: string
+      teacher_id:
+        type: string
+      with_days:
+        items:
+          type: integer
+        type: array
+    type: object
+  models.GroupResp:
+    properties:
+      active:
+        type: boolean
+      begin_time:
+        type: string
+      branch_id:
+        type: string
+      close_time:
+        type: string
+      comment:
+        type: string
+      created_at:
+        type: string
+      date_of_begin:
+        type: string
+      date_of_close:
+        type: string
+      direction_id:
+        type: string
+      group_id:
+        type: string
+      lesson:
+        type: integer
+      name:
+        type: string
+      room_id:
+        type: string
+      teacher_id:
+        type: string
+      updated_at:
+        type: string
+      with_days:
+        items:
+          type: integer
+        type: array
+    type: object
+  models.GroupUpdate:
+    properties:
+      active:
+        type: boolean
+      begin_time:
+        type: string
+      branch_id:
+        type: string
+      close_time:
+        type: string
+      comment:
+        type: string
+      date_of_begin:
+        type: string
+      date_of_close:
+        type: string
+      direction_id:
+        type: string
+      lesson:
+        type: integer
+      name:
+        type: string
+      room_id:
+        type: string
+      teacher_id:
+        type: string
+      with_days:
+        items:
+          type: integer
+        type: array
+    type: object
+  models.GroupsList:
+    properties:
+      count:
+        type: integer
+      groups:
+        items:
+          $ref: '#/definitions/models.GroupResp'
+        type: array
+    type: object
+  models.LPhon:
+    properties:
+      lead_id:
+        type: string
+      phone:
+        type: string
+      whose:
+        type: string
+    type: object
+  models.LPhone:
+    properties:
+      created_at:
+        type: string
+      id:
+        type: string
+      lead_id:
+        type: string
+      phone:
+        type: string
+      updated_at:
+        type: string
+      whose:
+        type: string
+    type: object
+  models.Lead:
+    properties:
+      address:
+        type: string
+      birthday:
+        type: string
+      comment:
+        type: string
+      direction_id:
+        type: string
+      full_name:
+        type: string
+      gender:
+        type: string
+      source:
+        type: string
+      status:
+        type: string
+      user_id:
+        type: string
+    type: object
+  models.LeadResp:
+    properties:
+      address:
+        type: string
+      birthday:
+        type: string
+      comment:
+        type: string
+      created_at:
+        type: string
+      direction_id:
+        type: string
+      full_name:
+        type: string
+      gender:
+        type: string
+      lead_id:
+        type: string
+      source:
+        type: string
+      status:
+        type: string
+      updated_at:
+        type: string
+      user_id:
+        type: string
+    type: object
+  models.LeadUpdate:
+    properties:
+      address:
+        type: string
+      birthday:
+        type: string
+      comment:
+        type: string
+      direction_id:
+        type: string
+      full_name:
+        type: string
+      gender:
+        type: string
+      source:
+        type: string
+      status:
+        type: string
+      user_id:
+        type: string
+    type: object
+  models.LeadsList:
+    properties:
+      count:
+        type: integer
+      leads:
+        items:
+          $ref: '#/definitions/models.LeadResp'
+        type: array
+    type: object
+  models.Login:
+    properties:
+      email:
+        type: string
+      password:
+        type: string
+    type: object
+  models.LoginStudentReq:
+    properties:
+      password:
+        type: string
+      username:
+        type: string
+    type: object
+  models.Payment:
+    properties:
+      amount:
+        type: string
+      direction_id:
+        type: string
+      group_id:
+        type: string
+      pysys_id:
+        type: string
+      student_id:
+        type: string
+      type:
+        type: string
+    type: object
+  models.PaymentResp:
+    properties:
+      amount:
+        type: string
+      created_at:
+        type: string
+      direction_id:
+        type: string
+      group_id:
+        type: string
+      payment_id:
+        type: string
+      pysys_id:
+        type: string
+      student_id:
+        type: string
+      type:
+        type: string
+      updated_at:
+        type: string
+    type: object
+  models.PaymentUpdate:
+    properties:
+      amount:
+        type: string
+      direction_id:
+        type: string
+      group_id:
+        type: string
+      pysys_id:
+        type: string
+      student_id:
+        type: string
+      type:
+        type: string
+    type: object
+  models.PaymentsList:
+    properties:
+      count:
+        type: integer
+      payments:
+        items:
+          $ref: '#/definitions/models.PaymentResp'
+        type: array
+    type: object
+  models.Personal:
+    properties:
+      full_name:
+        type: string
+      phone:
+        type: string
+      position:
+        type: string
+      working_day:
+        type: string
+    type: object
+  models.PersonalResp:
+    properties:
+      created_at:
+        type: string
+      full_name:
+        type: string
+      personal_id:
+        type: string
+      phone:
+        type: string
+      position:
+        type: string
+      updated_at:
+        type: string
+      working_day:
+        type: string
+    type: object
+  models.PersonalUpdate:
+    properties:
+      full_name:
+        type: string
+      phone:
+        type: string
+      position:
+        type: string
+      working_day:
+        type: string
+    type: object
+  models.Personals:
+    properties:
+      personals:
+        items:
+          $ref: '#/definitions/models.By'
+        type: array
+    type: object
+  models.PersonalsList:
+    properties:
+      count:
+        type: integer
+      personals:
+        items:
+          $ref: '#/definitions/models.PersonalResp'
+        type: array
+    type: object
+  models.ProfitResp:
+    properties:
+      count:
+        type: string
+      name:
+        type: string
+    type: object
+  models.ProfitRespList:
+    properties:
+      count:
+        type: string
+      profit:
+        items:
+          $ref: '#/definitions/models.ProfitResp'
+        type: array
+    type: object
+  models.PySys:
+    properties:
+      name:
+        type: string
+    type: object
+  models.PySysResp:
+    properties:
+      created_at:
+        type: string
+      name:
+        type: string
+      pysys_id:
+        type: string
+      updated_at:
+        type: string
+    type: object
+  models.PySysUpdate:
+    properties:
+      name:
+        type: string
+    type: object
+  models.PySyssList:
+    properties:
+      count:
+        type: integer
+      payment_systems:
+        items:
+          $ref: '#/definitions/models.PySysResp'
+        type: array
+    type: object
+  models.Resp:
+    properties:
+      count:
+        type: string
+    type: object
+  models.RespList:
+    properties:
+      resp:
+        items:
+          $ref: '#/definitions/models.Resp'
+        type: array
+    type: object
+  models.Room:
+    properties:
+      branch_id:
+        type: string
+      name:
+        type: string
+    type: object
+  models.RoomResp:
+    properties:
+      branch_id:
+        type: string
+      created_at:
+        type: string
+      name:
+        type: string
+      room_id:
+        type: string
+      updated_at:
+        type: string
+    type: object
+  models.RoomUpdate:
+    properties:
+      branch_id:
+        type: string
+      name:
+        type: string
+    type: object
+  models.RoomsList:
+    properties:
+      count:
+        type: integer
+      rooms:
+        items:
+          $ref: '#/definitions/models.RoomResp'
+        type: array
+    type: object
+  models.SPhon:
+    properties:
+      phone:
+        type: string
+      student_id:
+        type: string
+      whose:
+        type: string
+    type: object
+  models.SPhone:
+    properties:
+      created_at:
+        type: string
+      id:
+        type: string
+      phone:
+        type: string
+      student_id:
+        type: string
+      updated_at:
+        type: string
+      whose:
+        type: string
+    type: object
+  models.SalaryType:
+    properties:
+      name:
+        type: string
+    type: object
+  models.SalaryTypeResp:
+    properties:
+      created_at:
+        type: string
+      name:
+        type: string
+      salary_type_id:
+        type: string
+      updated_at:
+        type: string
+    type: object
+  models.SalaryTypeUpdate:
+    properties:
+      name:
+        type: string
+    type: object
+  models.SalaryTypesList:
+    properties:
+      count:
+        type: integer
+      salary_tayps:
+        items:
+          $ref: '#/definitions/models.SalaryTypeResp'
+        type: array
+    type: object
+  models.Sale:
+    properties:
+      amount:
+        type: string
+      comment:
+        type: string
+      name:
+        type: string
+    type: object
+  models.SaleResp:
+    properties:
+      amount:
+        type: string
+      comment:
+        type: string
+      created_at:
+        type: string
+      name:
+        type: string
+      sale_id:
+        type: string
+      updated_at:
+        type: string
+    type: object
+  models.SaleUpdate:
+    properties:
+      amount:
+        type: string
+      comment:
+        type: string
+      name:
+        type: string
+    type: object
+  models.SalesList:
+    properties:
+      count:
+        type: integer
+      sales:
+        items:
+          $ref: '#/definitions/models.SaleResp'
+        type: array
+    type: object
+  models.Spending:
+    properties:
+      amount:
+        type: string
+      branch_id:
+        type: string
+      comment:
+        type: string
+      pysys_id:
+        type: string
+      s_type_id:
+        type: string
+      status:
+        type: string
+    type: object
+  models.SpendingResp:
+    properties:
+      amount:
+        type: string
+      branch_id:
+        type: string
+      comment:
+        type: string
+      created_at:
+        type: string
+      pysys_id:
+        type: string
+      s_type_id:
+        type: string
+      spending_id:
+        type: string
+      status:
+        type: string
+      updated_at:
+        type: string
+    type: object
+  models.SpendingType:
+    properties:
+      name:
+        type: string
+    type: object
+  models.SpendingTypeResp:
+    properties:
+      created_at:
+        type: string
+      name:
+        type: string
+      s_type_id:
+        type: string
+      updated_at:
+        type: string
+    type: object
+  models.SpendingTypeUpdate:
+    properties:
+      name:
+        type: string
+    type: object
+  models.SpendingTypesList:
+    properties:
+      count:
+        type: integer
+      spending_tayps:
+        items:
+          $ref: '#/definitions/models.SpendingTypeResp'
+        type: array
+    type: object
+  models.SpendingUpdate:
+    properties:
+      amount:
+        type: string
+      branch_id:
+        type: string
+      comment:
+        type: string
+      pysys_id:
+        type: string
+      s_type_id:
+        type: string
+      status:
+        type: string
+    type: object
+  models.SpendingsList:
+    properties:
+      count:
+        type: integer
+      spendings:
+        items:
+          $ref: '#/definitions/models.SpendingResp'
+        type: array
+    type: object
+  models.StandardErrorModel:
+    properties:
+      error:
+        $ref: '#/definitions/models.Error'
+    type: object
+  models.Student:
+    properties:
+      address:
+        type: string
+      birthday:
+        type: string
+      email:
+        type: string
+      full_name:
+        type: string
+      gender:
+        type: string
+      group_id:
+        type: string
+      passport_image1:
+        type: string
+      passport_image2:
+        type: string
+      passport_series:
+        type: string
+      password:
+        type: string
+      username:
+        type: string
+    type: object
+  models.StudentResp:
+    properties:
+      address:
+        type: string
+      birthday:
+        type: string
+      created_at:
+        type: string
+      email:
+        type: string
+      full_name:
+        type: string
+      gender:
+        type: string
+      group_id:
+        type: string
+      passport_image1:
+        type: string
+      passport_image2:
+        type: string
+      passport_series:
+        type: string
+      password:
+        type: string
+      student_id:
+        type: string
+      updated_at:
+        type: string
+      username:
+        type: string
+    type: object
+  models.StudentUpdate:
+    properties:
+      address:
+        type: string
+      birthday:
+        type: string
+      email:
+        type: string
+      full_name:
+        type: string
+      gender:
+        type: string
+      group_id:
+        type: string
+      passport_image1:
+        type: string
+      passport_image2:
+        type: string
+      passport_series:
+        type: string
+      password:
+        type: string
+      username:
+        type: string
+    type: object
+  models.StudentsList:
+    properties:
+      count:
+        type: integer
+      students:
+        items:
+          $ref: '#/definitions/models.StudentResp'
+        type: array
+    type: object
+  models.Task:
+    properties:
+      comment:
+        type: string
+      title:
+        type: string
+      user_id:
+        type: string
+      with_date:
+        type: string
+    type: object
+  models.TaskResp:
+    properties:
+      comment:
+        type: string
+      created_at:
+        type: string
+      task_id:
+        type: string
+      title:
+        type: string
+      updated_at:
+        type: string
+      user_id:
+        type: string
+      with_date:
+        type: string
+    type: object
+  models.TaskUpdate:
+    properties:
+      comment:
+        type: string
+      title:
+        type: string
+      user_id:
+        type: string
+      with_date:
+        type: string
+    type: object
+  models.TasksList:
+    properties:
+      count:
+        type: integer
+      tasks:
+        items:
+          $ref: '#/definitions/models.TaskResp'
+        type: array
+    type: object
+  models.Teacher:
+    properties:
+      address:
+        type: string
+      birthday:
+        type: string
+      branch_id:
+        type: string
+      direction_id:
+        type: string
+      email:
+        type: string
+      full_name:
+        type: string
+      gender:
+        type: string
+      image:
+        type: string
+      passport_image1:
+        type: string
+      passport_image2:
+        type: string
+      passport_series:
+        type: string
+      password:
+        type: string
+      permission:
+        type: string
+      phone1:
+        type: string
+      phone2:
+        type: string
+      working_day:
+        type: string
+    type: object
+  models.TeacherResp:
+    properties:
+      address:
+        type: string
+      birthday:
+        type: string
+      branch_id:
+        type: string
+      created_at:
+        type: string
+      direction_id:
+        type: string
+      email:
+        type: string
+      full_name:
+        type: string
+      gender:
+        type: string
+      image:
+        type: string
+      passport_image1:
+        type: string
+      passport_image2:
+        type: string
+      passport_series:
+        type: string
+      password:
+        type: string
+      permission:
+        type: string
+      phone1:
+        type: string
+      phone2:
+        type: string
+      teacher_id:
+        type: string
+      updated_at:
+        type: string
+      working_day:
+        type: string
+    type: object
+  models.TeacherSalary:
+    properties:
+      amount:
+        type: string
+      comment:
+        type: string
+      date_of_begin:
+        type: string
+      teacher_id:
+        type: string
+    type: object
+  models.TeacherSalaryResp:
+    properties:
+      amount:
+        type: string
+      comment:
+        type: string
+      created_at:
+        type: string
+      date_of_begin:
+        type: string
+      salary_id:
+        type: string
+      teacher_id:
+        type: string
+      updated_at:
+        type: string
+    type: object
+  models.TeacherSalaryUpdate:
+    properties:
+      amount:
+        type: string
+      comment:
+        type: string
+      date_of_begin:
+        type: string
+      teacher_id:
+        type: string
+    type: object
+  models.TeacherUpdate:
+    properties:
+      address:
+        type: string
+      birthday:
+        type: string
+      branch_id:
+        type: string
+      direction_id:
+        type: string
+      email:
+        type: string
+      full_name:
+        type: string
+      gender:
+        type: string
+      image:
+        type: string
+      passport_image1:
+        type: string
+      passport_image2:
+        type: string
+      passport_series:
+        type: string
+      password:
+        type: string
+      permission:
+        type: string
+      phone1:
+        type: string
+      phone2:
+        type: string
+      working_day:
+        type: string
+    type: object
+  models.TeachersList:
+    properties:
+      count:
+        type: integer
+      teachers:
+        items:
+          $ref: '#/definitions/models.TeacherResp'
+        type: array
+    type: object
+  models.TeachersSalaryList:
+    properties:
+      count:
+        type: integer
+      teachers:
+        items:
+          $ref: '#/definitions/models.TeacherSalaryResp'
+        type: array
+    type: object
+  models.User:
+    properties:
+      address:
+        type: string
+      birthday:
+        type: string
+      branch_id:
+        type: string
+      email:
+        type: string
+      full_name:
+        type: string
+      gender:
+        type: string
+      image:
+        type: string
+      passport_image1:
+        type: string
+      passport_image2:
+        type: string
+      passport_series:
+        type: string
+      permission:
+        type: string
+      phone1:
+        type: string
+      phone2:
+        type: string
+      working_day:
+        type: string
+    type: object
+  models.UserResp:
+    properties:
+      address:
+        type: string
+      birthday:
+        type: string
+      branch_id:
+        type: string
+      created_at:
+        type: string
+      email:
+        type: string
+      full_name:
+        type: string
+      gender:
+        type: string
+      image:
+        type: string
+      passport_image1:
+        type: string
+      passport_image2:
+        type: string
+      passport_series:
+        type: string
+      permission:
+        type: string
+      phone1:
+        type: string
+      phone2:
+        type: string
+      updated_at:
+        type: string
+      user_id:
+        type: string
+      working_day:
+        type: string
+    type: object
+  models.UserSalary:
+    properties:
+      amount:
+        type: string
+      comment:
+        type: string
+      date_of_begin:
+        type: string
+      user_id:
+        type: string
+    type: object
+  models.UserSalaryResp:
+    properties:
+      amount:
+        type: string
+      comment:
+        type: string
+      created_at:
+        type: string
+      date_of_begin:
+        type: string
+      salary_id:
+        type: string
+      updated_at:
+        type: string
+      user_id:
+        type: string
+    type: object
+  models.UserSalaryUpdate:
+    properties:
+      amount:
+        type: string
+      comment:
+        type: string
+      date_of_begin:
+        type: string
+      user_id:
+        type: string
+    type: object
+  models.UserUpdate:
+    properties:
+      address:
+        type: string
+      birthday:
+        type: string
+      branch_id:
+        type: string
+      email:
+        type: string
+      full_name:
+        type: string
+      gender:
+        type: string
+      image:
+        type: string
+      passport_image1:
+        type: string
+      passport_image2:
+        type: string
+      passport_series:
+        type: string
+      permission:
+        type: string
+      phone1:
+        type: string
+      phone2:
+        type: string
+      working_day:
+        type: string
+    type: object
+  models.UsersList:
+    properties:
+      count:
+        type: integer
+      users:
+        items:
+          $ref: '#/definitions/models.UserResp'
+        type: array
+    type: object
+  models.UsersSalaryList:
+    properties:
+      count:
+        type: integer
+      users:
+        items:
+          $ref: '#/definitions/models.UserSalaryResp'
+        type: array
+    type: object
+  models.WithRoom:
+    properties:
+      count:
+        type: string
+      id:
+        type: string
+      name:
+        type: string
+    type: object
+  models.WithRooms:
+    properties:
+      branch_with_room:
+        items:
+          $ref: '#/definitions/models.WithRoom'
+        type: array
+      count:
+        type: integer
+    type: object
+info:
+  contact: {}
+paths:
+  /attendance/byid/{id}:
+    get:
+      consumes:
+      - application/json
+      description: This API for getting attendance AttendanceList
+      parameters:
+      - description: ID
+        in: path
+        name: id
+        required: true
+        type: string
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/models.AttendanceResp'
+        "400":
+          description: Bad Request
+          schema:
+            $ref: '#/definitions/models.StandardErrorModel'
+        "500":
+          description: Internal Server Error
+          schema:
+            $ref: '#/definitions/models.StandardErrorModel'
+      summary: AttendanceGet
+      tags:
+      - attendance
+  /attendance/create/:
+    post:
+      consumes:
+      - application/json
+      description: This API for creating a new attendance
+      parameters:
+      - description: attendanceCreateRequest
+        in: body
+        name: request
+        required: true
+        schema:
+          $ref: '#/definitions/models.Attendance'
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/models.AttendanceResp'
+        "400":
+          description: Bad Request
+          schema:
+            $ref: '#/definitions/models.StandardErrorModel'
+        "500":
+          description: Internal Server Error
+          schema:
+            $ref: '#/definitions/models.StandardErrorModel'
+      summary: AttendanceCreate
+      tags:
+      - attendance
+  /attendance/delete/{id}:
+    delete:
+      consumes:
+      - application/json
+      description: This API for deleting attendance
+      parameters:
+      - description: ID
+        in: path
+        name: id
+        required: true
+        type: string
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/models.Empty'
+        "400":
+          description: Bad Request
+          schema:
+            $ref: '#/definitions/models.StandardErrorModel'
+        "500":
+          description: Internal Server Error
+          schema:
+            $ref: '#/definitions/models.StandardErrorModel'
+      summary: AttendanceDelete
+      tags:
+      - attendance
+  /attendance/list/:
+    get:
+      consumes:
+      - application/json
+      description: This API for getting list of attendances
+      parameters:
+      - description: ID
+        in: query
+        name: id
+        type: string
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/models.AttendancesList'
+        "400":
+          description: Bad Request
+          schema:
+            $ref: '#/definitions/models.StandardErrorModel'
+        "500":
+          description: Internal Server Error
+          schema:
+            $ref: '#/definitions/models.StandardErrorModel'
+      summary: AttendanceList
+      tags:
+      - attendance
+  /attendance/update/{id}:
+    put:
+      consumes:
+      - application/json
+      description: This API for updating attendance
+      parameters:
+      - description: ID
+        in: path
+        name: id
+        required: true
+        type: string
+      - description: attendanceUpdateRequest
+        in: body
+        name: request
+        required: true
+        schema:
+          $ref: '#/definitions/models.AttendanceUpdate'
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/models.AttendanceResp'
+        "400":
+          description: Bad Request
+          schema:
+            $ref: '#/definitions/models.StandardErrorModel'
+        "500":
+          description: Internal Server Error
+          schema:
+            $ref: '#/definitions/models.StandardErrorModel'
+      summary: AttendanceUpdate
+      tags:
+      - attendance
+  /ball/create/:
+    post:
+      consumes:
+      - application/json
+      description: This API for creating a new ball
+      parameters:
+      - description: ballCreateRequest
+        in: body
+        name: request
+        required: true
+        schema:
+          $ref: '#/definitions/models.Ball'
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/models.BallResp'
+        "400":
+          description: Bad Request
+          schema:
+            $ref: '#/definitions/models.StandardErrorModel'
+        "500":
+          description: Internal Server Error
+          schema:
+            $ref: '#/definitions/models.StandardErrorModel'
+      summary: BallCreate
+      tags:
+      - ball
+  /ball/delete/{id}:
+    delete:
+      consumes:
+      - application/json
+      description: This API for deleting ball
+      parameters:
+      - description: ID
+        in: path
+        name: id
+        required: true
+        type: string
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/models.Empty'
+        "400":
+          description: Bad Request
+          schema:
+            $ref: '#/definitions/models.StandardErrorModel'
+        "500":
+          description: Internal Server Error
+          schema:
+            $ref: '#/definitions/models.StandardErrorModel'
+      summary: BallDelete
+      tags:
+      - ball
+  /ball/list/:
+    get:
+      consumes:
+      - application/json
+      description: This API for getting list of balls
+      parameters:
+      - description: ID
+        in: query
+        name: id
+        type: string
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/models.BallsList'
+        "400":
+          description: Bad Request
+          schema:
+            $ref: '#/definitions/models.StandardErrorModel'
+        "500":
+          description: Internal Server Error
+          schema:
+            $ref: '#/definitions/models.StandardErrorModel'
+      summary: BallList
+      tags:
+      - ball
+  /ball/update/{id}:
+    put:
+      consumes:
+      - application/json
+      description: This API for updating ball
+      parameters:
+      - description: ID
+        in: path
+        name: id
+        required: true
+        type: string
+      - description: ballUpdateRequest
+        in: body
+        name: request
+        required: true
+        schema:
+          $ref: '#/definitions/models.BallUpdate'
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/models.BallResp'
+        "400":
+          description: Bad Request
+          schema:
+            $ref: '#/definitions/models.StandardErrorModel'
+        "500":
+          description: Internal Server Error
+          schema:
+            $ref: '#/definitions/models.StandardErrorModel'
+      summary: BallUpdate
+      tags:
+      - ball
+  /branch/byid/{id}:
+    get:
+      consumes:
+      - application/json
+      description: This API for getting branch BranchList
+      parameters:
+      - description: ID
+        in: path
+        name: id
+        required: true
+        type: string
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/models.BranchResp'
+        "400":
+          description: Bad Request
+          schema:
+            $ref: '#/definitions/models.StandardErrorModel'
+        "500":
+          description: Internal Server Error
+          schema:
+            $ref: '#/definitions/models.StandardErrorModel'
+      summary: BranchGet
+      tags:
+      - branch
+  /branch/create/:
+    post:
+      consumes:
+      - application/json
+      description: This API for creating a new branch
+      parameters:
+      - description: branchCreateRequest
+        in: body
+        name: request
+        required: true
+        schema:
+          $ref: '#/definitions/models.Branch'
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/models.BranchResp'
+        "400":
+          description: Bad Request
+          schema:
+            $ref: '#/definitions/models.StandardErrorModel'
+        "500":
+          description: Internal Server Error
+          schema:
+            $ref: '#/definitions/models.StandardErrorModel'
+      summary: BranchCreate
+      tags:
+      - branch
+  /branch/delete/{id}:
+    delete:
+      consumes:
+      - application/json
+      description: This API for deleting branch
+      parameters:
+      - description: ID
+        in: path
+        name: id
+        required: true
+        type: string
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/models.Empty'
+        "400":
+          description: Bad Request
+          schema:
+            $ref: '#/definitions/models.StandardErrorModel'
+        "500":
+          description: Internal Server Error
+          schema:
+            $ref: '#/definitions/models.StandardErrorModel'
+      summary: BranchDelete
+      tags:
+      - branch
+  /branch/list/:
+    get:
+      consumes:
+      - application/json
+      description: This API for getting list of branchs
+      parameters:
+      - description: Page
+        in: query
+        name: page
+        type: string
+      - description: Limit
+        in: query
+        name: limit
+        type: string
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/models.BranchsList'
+        "400":
+          description: Bad Request
+          schema:
+            $ref: '#/definitions/models.StandardErrorModel'
+        "500":
+          description: Internal Server Error
+          schema:
+            $ref: '#/definitions/models.StandardErrorModel'
+      summary: BranchList
+      tags:
+      - branch
+  /branch/update/{id}:
+    put:
+      consumes:
+      - application/json
+      description: This API for updating branch
+      parameters:
+      - description: ID
+        in: path
+        name: id
+        required: true
+        type: string
+      - description: branchUpdateRequest
+        in: body
+        name: request
+        required: true
+        schema:
+          $ref: '#/definitions/models.BranchUpdate'
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/models.BranchResp'
+        "400":
+          description: Bad Request
+          schema:
+            $ref: '#/definitions/models.StandardErrorModel'
+        "500":
+          description: Internal Server Error
+          schema:
+            $ref: '#/definitions/models.StandardErrorModel'
+      summary: BranchUpdate
+      tags:
+      - branch
+  /branch/withroom/:
+    get:
+      consumes:
+      - application/json
+      description: This API for getting list of branchs
+      operationId: page query string false "ID"
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/models.WithRooms'
+        "400":
+          description: Bad Request
+          schema:
+            $ref: '#/definitions/models.StandardErrorModel'
+        "500":
+          description: Internal Server Error
+          schema:
+            $ref: '#/definitions/models.StandardErrorModel'
+      summary: BranchWithRooms
+      tags:
+      - branch
+  /dashboard/deletelist/:
+    get:
+      consumes:
+      - application/json
+      description: This API for getting list of studentDeleteList
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/models.RespList'
+        "400":
+          description: Bad Request
+          schema:
+            $ref: '#/definitions/models.StandardErrorModel'
+        "500":
+          description: Internal Server Error
+          schema:
+            $ref: '#/definitions/models.StandardErrorModel'
+      summary: StudentDeleteList
+      tags:
+      - dashboard
+  /dashboard/lead/:
+    get:
+      consumes:
+      - application/json
+      description: This API for getting list of leadactive
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/models.RespList'
+        "400":
+          description: Bad Request
+          schema:
+            $ref: '#/definitions/models.StandardErrorModel'
+        "500":
+          description: Internal Server Error
+          schema:
+            $ref: '#/definitions/models.StandardErrorModel'
+      summary: LeadActive
+      tags:
+      - dashboard
+  /dashboard/profit/:
+    get:
+      consumes:
+      - application/json
+      description: This API for getting list of profit
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/models.ProfitRespList'
+        "400":
+          description: Bad Request
+          schema:
+            $ref: '#/definitions/models.StandardErrorModel'
+        "500":
+          description: Internal Server Error
+          schema:
+            $ref: '#/definitions/models.StandardErrorModel'
+      summary: Profit
+      tags:
+      - dashboard
+  /dashboard/student/:
+    get:
+      consumes:
+      - application/json
+      description: This API for getting list of studentActive
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/models.RespList'
+        "400":
+          description: Bad Request
+          schema:
+            $ref: '#/definitions/models.StandardErrorModel'
+        "500":
+          description: Internal Server Error
+          schema:
+            $ref: '#/definitions/models.StandardErrorModel'
+      summary: StudentActive
+      tags:
+      - dashboard
+  /dashboard/student_profit/:
+    get:
+      consumes:
+      - application/json
+      description: This API for getting list of studentProfit
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/models.ProfitRespList'
+        "400":
+          description: Bad Request
+          schema:
+            $ref: '#/definitions/models.StandardErrorModel'
+        "500":
+          description: Internal Server Error
+          schema:
+            $ref: '#/definitions/models.StandardErrorModel'
+      summary: StudentProfit
+      tags:
+      - dashboard
+  /dashboard/toplist/:
+    get:
+      consumes:
+      - application/json
+      description: This API for getting list of studentTopList
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/models.RespList'
+        "400":
+          description: Bad Request
+          schema:
+            $ref: '#/definitions/models.StandardErrorModel'
+        "500":
+          description: Internal Server Error
+          schema:
+            $ref: '#/definitions/models.StandardErrorModel'
+      summary: StudentTopList
+      tags:
+      - dashboard
+  /defmsg/byid/{id}:
+    get:
+      consumes:
+      - application/json
+      description: This API for getting defmsg DefMsgList
+      parameters:
+      - description: ID
+        in: path
+        name: id
+        required: true
+        type: string
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/models.DefMsgResp'
+        "400":
+          description: Bad Request
+          schema:
+            $ref: '#/definitions/models.StandardErrorModel'
+        "500":
+          description: Internal Server Error
+          schema:
+            $ref: '#/definitions/models.StandardErrorModel'
+      summary: DefMsgGet
+      tags:
+      - defmsg
+  /defmsg/create/:
+    post:
+      consumes:
+      - application/json
+      description: This API for creating a new defmsg
+      parameters:
+      - description: defmsgCreateRequest
+        in: body
+        name: request
+        required: true
+        schema:
+          $ref: '#/definitions/models.DefMsg'
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/models.DefMsgResp'
+        "400":
+          description: Bad Request
+          schema:
+            $ref: '#/definitions/models.StandardErrorModel'
+        "500":
+          description: Internal Server Error
+          schema:
+            $ref: '#/definitions/models.StandardErrorModel'
+      summary: DefMsgCreate
+      tags:
+      - defmsg
+  /defmsg/delete/{id}:
+    delete:
+      consumes:
+      - application/json
+      description: This API for deleting defmsg
+      parameters:
+      - description: ID
+        in: path
+        name: id
+        required: true
+        type: string
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/models.Empty'
+        "400":
+          description: Bad Request
+          schema:
+            $ref: '#/definitions/models.StandardErrorModel'
+        "500":
+          description: Internal Server Error
+          schema:
+            $ref: '#/definitions/models.StandardErrorModel'
+      summary: DefMsgDelete
+      tags:
+      - defmsg
+  /defmsg/list/:
+    get:
+      consumes:
+      - application/json
+      description: This API for getting list of defmsgs
+      parameters:
+      - description: Page
+        in: query
+        name: page
+        type: string
+      - description: Limit
+        in: query
+        name: limit
+        type: string
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/models.DefMsgsList'
+        "400":
+          description: Bad Request
+          schema:
+            $ref: '#/definitions/models.StandardErrorModel'
+        "500":
+          description: Internal Server Error
+          schema:
+            $ref: '#/definitions/models.StandardErrorModel'
+      summary: DefMsgList
+      tags:
+      - defmsg
+  /defmsg/update/{id}:
+    put:
+      consumes:
+      - application/json
+      description: This API for updating defmsg
+      parameters:
+      - description: ID
+        in: path
+        name: id
+        required: true
+        type: string
+      - description: defmsgUpdateRequest
+        in: body
+        name: request
+        required: true
+        schema:
+          $ref: '#/definitions/models.DefMsgUpdate'
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/models.DefMsgResp'
+        "400":
+          description: Bad Request
+          schema:
+            $ref: '#/definitions/models.StandardErrorModel'
+        "500":
+          description: Internal Server Error
+          schema:
+            $ref: '#/definitions/models.StandardErrorModel'
+      summary: DefMsgUpdate
+      tags:
+      - defmsg
+  /direction/byid/{id}:
+    get:
+      consumes:
+      - application/json
+      description: This API for getting direction DirectionList
+      parameters:
+      - description: ID
+        in: path
+        name: id
+        required: true
+        type: string
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/models.DirectionResp'
+        "400":
+          description: Bad Request
+          schema:
+            $ref: '#/definitions/models.StandardErrorModel'
+        "500":
+          description: Internal Server Error
+          schema:
+            $ref: '#/definitions/models.StandardErrorModel'
+      summary: DirectionGet
+      tags:
+      - direction
+  /direction/create/:
+    post:
+      consumes:
+      - application/json
+      description: This API for creating a new direction
+      parameters:
+      - description: directionCreateRequest
+        in: body
+        name: request
+        required: true
+        schema:
+          $ref: '#/definitions/models.Direction'
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/models.DirectionResp'
+        "400":
+          description: Bad Request
+          schema:
+            $ref: '#/definitions/models.StandardErrorModel'
+        "500":
+          description: Internal Server Error
+          schema:
+            $ref: '#/definitions/models.StandardErrorModel'
+      summary: DirectionCreate
+      tags:
+      - direction
+  /direction/delete/{id}:
+    delete:
+      consumes:
+      - application/json
+      description: This API for deleting direction
+      parameters:
+      - description: ID
+        in: path
+        name: id
+        required: true
+        type: string
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/models.Empty'
+        "400":
+          description: Bad Request
+          schema:
+            $ref: '#/definitions/models.StandardErrorModel'
+        "500":
+          description: Internal Server Error
+          schema:
+            $ref: '#/definitions/models.StandardErrorModel'
+      summary: DirectionDelete
+      tags:
+      - direction
+  /direction/list/:
+    get:
+      consumes:
+      - application/json
+      description: This API for getting list of directions
+      parameters:
+      - description: Page
+        in: query
+        name: page
+        type: string
+      - description: Limit
+        in: query
+        name: limit
+        type: string
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/models.DirectionsList'
+        "400":
+          description: Bad Request
+          schema:
+            $ref: '#/definitions/models.StandardErrorModel'
+        "500":
+          description: Internal Server Error
+          schema:
+            $ref: '#/definitions/models.StandardErrorModel'
+      summary: DirectionList
+      tags:
+      - direction
+  /direction/update/{id}:
+    put:
+      consumes:
+      - application/json
+      description: This API for updating direction
+      parameters:
+      - description: ID
+        in: path
+        name: id
+        required: true
+        type: string
+      - description: directionUpdateRequest
+        in: body
+        name: request
+        required: true
+        schema:
+          $ref: '#/definitions/models.DirectionUpdate'
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/models.DirectionResp'
+        "400":
+          description: Bad Request
+          schema:
+            $ref: '#/definitions/models.StandardErrorModel'
+        "500":
+          description: Internal Server Error
+          schema:
+            $ref: '#/definitions/models.StandardErrorModel'
+      summary: DirectionUpdate
+      tags:
+      - direction
+  /group/attendancelist/{id}:
+    get:
+      consumes:
+      - application/json
+      description: This API for getting list of groups
+      parameters:
+      - description: ID
+        in: path
+        name: id
+        required: true
+        type: string
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/models.GroupsList'
+        "400":
+          description: Bad Request
+          schema:
+            $ref: '#/definitions/models.StandardErrorModel'
+        "500":
+          description: Internal Server Error
+          schema:
+            $ref: '#/definitions/models.StandardErrorModel'
+      summary: GroupAttendanceList
+      tags:
+      - group
+  /group/byid/{id}:
+    get:
+      consumes:
+      - application/json
+      description: This API for getting group GroupList
+      parameters:
+      - description: ID
+        in: path
+        name: id
+        required: true
+        type: string
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/models.GroupResp'
+        "400":
+          description: Bad Request
+          schema:
+            $ref: '#/definitions/models.StandardErrorModel'
+        "500":
+          description: Internal Server Error
+          schema:
+            $ref: '#/definitions/models.StandardErrorModel'
+      summary: GroupGet
+      tags:
+      - group
+  /group/create/:
+    post:
+      consumes:
+      - application/json
+      description: This API for creating a new group
+      parameters:
+      - description: groupCreateRequest
+        in: body
+        name: request
+        required: true
+        schema:
+          $ref: '#/definitions/models.Group'
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/models.GroupResp'
+        "400":
+          description: Bad Request
+          schema:
+            $ref: '#/definitions/models.StandardErrorModel'
+        "500":
+          description: Internal Server Error
+          schema:
+            $ref: '#/definitions/models.StandardErrorModel'
+      summary: GroupCreate
+      tags:
+      - group
+  /group/delete/{id}:
+    delete:
+      consumes:
+      - application/json
+      description: This API for deleting group
+      parameters:
+      - description: ID
+        in: path
+        name: id
+        required: true
+        type: string
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/models.Empty'
+        "400":
+          description: Bad Request
+          schema:
+            $ref: '#/definitions/models.StandardErrorModel'
+        "500":
+          description: Internal Server Error
+          schema:
+            $ref: '#/definitions/models.StandardErrorModel'
+      summary: GroupDelete
+      tags:
+      - group
+  /group/list/:
+    get:
+      consumes:
+      - application/json
+      description: This API for getting list of groups
+      parameters:
+      - description: Page
+        in: query
+        name: page
+        type: string
+      - description: Limit
+        in: query
+        name: limit
+        type: string
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/models.GroupsList'
+        "400":
+          description: Bad Request
+          schema:
+            $ref: '#/definitions/models.StandardErrorModel'
+        "500":
+          description: Internal Server Error
+          schema:
+            $ref: '#/definitions/models.StandardErrorModel'
+      summary: GroupList
+      tags:
+      - group
+  /group/roomlist/:
+    get:
+      consumes:
+      - application/json
+      description: This API for getting list of groups
+      parameters:
+      - description: Page
+        in: query
+        name: page
+        type: string
+      - description: Limit
+        in: query
+        name: limit
+        type: string
+      - description: Id
+        in: query
+        name: id
+        type: string
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/models.GroupsList'
+        "400":
+          description: Bad Request
+          schema:
+            $ref: '#/definitions/models.StandardErrorModel'
+        "500":
+          description: Internal Server Error
+          schema:
+            $ref: '#/definitions/models.StandardErrorModel'
+      summary: GroupRoomList
+      tags:
+      - group
+  /group/update/{id}:
+    put:
+      consumes:
+      - application/json
+      description: This API for updating group
+      parameters:
+      - description: ID
+        in: path
+        name: id
+        required: true
+        type: string
+      - description: groupUpdateRequest
+        in: body
+        name: request
+        required: true
+        schema:
+          $ref: '#/definitions/models.GroupUpdate'
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/models.GroupResp'
+        "400":
+          description: Bad Request
+          schema:
+            $ref: '#/definitions/models.StandardErrorModel'
+        "500":
+          description: Internal Server Error
+          schema:
+            $ref: '#/definitions/models.StandardErrorModel'
+      summary: GroupUpdate
+      tags:
+      - group
+  /group/withlist/:
+    get:
+      consumes:
+      - application/json
+      description: This API for getting list of groups
+      parameters:
+      - description: Page
+        in: query
+        name: page
+        type: string
+      - description: Limit
+        in: query
+        name: limit
+        type: string
+      - description: Day
+        in: query
+        name: day
+        type: integer
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/models.GroupsList'
+        "400":
+          description: Bad Request
+          schema:
+            $ref: '#/definitions/models.StandardErrorModel'
+        "500":
+          description: Internal Server Error
+          schema:
+            $ref: '#/definitions/models.StandardErrorModel'
+      summary: GroupWithList
+      tags:
+      - group
+  /lead/byid/{id}:
+    get:
+      consumes:
+      - application/json
+      description: This API for getting lead LeadList
+      parameters:
+      - description: ID
+        in: path
+        name: id
+        required: true
+        type: string
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/models.LeadResp'
+        "400":
+          description: Bad Request
+          schema:
+            $ref: '#/definitions/models.StandardErrorModel'
+        "500":
+          description: Internal Server Error
+          schema:
+            $ref: '#/definitions/models.StandardErrorModel'
+      summary: LeadGet
+      tags:
+      - lead
+  /lead/create/:
+    post:
+      consumes:
+      - application/json
+      description: This API for creating a new lead
+      parameters:
+      - description: leadCreateRequest
+        in: body
+        name: request
+        required: true
+        schema:
+          $ref: '#/definitions/models.Lead'
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/models.LeadResp'
+        "400":
+          description: Bad Request
+          schema:
+            $ref: '#/definitions/models.StandardErrorModel'
+        "500":
+          description: Internal Server Error
+          schema:
+            $ref: '#/definitions/models.StandardErrorModel'
+      summary: LeadCreate
+      tags:
+      - lead
+  /lead/delete/{id}:
+    delete:
+      consumes:
+      - application/json
+      description: This API for deleting lead
+      parameters:
+      - description: ID
+        in: path
+        name: id
+        required: true
+        type: string
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/models.Empty'
+        "400":
+          description: Bad Request
+          schema:
+            $ref: '#/definitions/models.StandardErrorModel'
+        "500":
+          description: Internal Server Error
+          schema:
+            $ref: '#/definitions/models.StandardErrorModel'
+      summary: LeadDelete
+      tags:
+      - lead
+  /lead/list/:
+    get:
+      consumes:
+      - application/json
+      description: This API for getting list of leads
+      parameters:
+      - description: Page
+        in: query
+        name: page
+        type: string
+      - description: Limit
+        in: query
+        name: limit
+        type: string
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/models.LeadsList'
+        "400":
+          description: Bad Request
+          schema:
+            $ref: '#/definitions/models.StandardErrorModel'
+        "500":
+          description: Internal Server Error
+          schema:
+            $ref: '#/definitions/models.StandardErrorModel'
+      summary: LeadList
+      tags:
+      - lead
+  /lead/listphone/{id}:
+    get:
+      consumes:
+      - application/json
+      description: This API for getting lead LeadPhoneList
+      parameters:
+      - description: ID
+        in: path
+        name: id
+        required: true
+        type: string
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/models.LPhone'
+        "400":
+          description: Bad Request
+          schema:
+            $ref: '#/definitions/models.StandardErrorModel'
+        "500":
+          description: Internal Server Error
+          schema:
+            $ref: '#/definitions/models.StandardErrorModel'
+      summary: LeadPhoneGet
+      tags:
+      - lead
+  /lead/phonecreate/:
+    post:
+      consumes:
+      - application/json
+      description: This API for creating a new lead
+      parameters:
+      - description: leadCreateRequest
+        in: body
+        name: request
+        required: true
+        schema:
+          $ref: '#/definitions/models.LPhon'
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/models.LPhone'
+        "400":
+          description: Bad Request
+          schema:
+            $ref: '#/definitions/models.StandardErrorModel'
+        "500":
+          description: Internal Server Error
+          schema:
+            $ref: '#/definitions/models.StandardErrorModel'
+      summary: LeadPhoneCreate
+      tags:
+      - lead
+  /lead/update/{id}:
+    put:
+      consumes:
+      - application/json
+      description: This API for updating lead
+      parameters:
+      - description: ID
+        in: path
+        name: id
+        required: true
+        type: string
+      - description: leadUpdateRequest
+        in: body
+        name: request
+        required: true
+        schema:
+          $ref: '#/definitions/models.LeadUpdate'
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/models.LeadResp'
+        "400":
+          description: Bad Request
+          schema:
+            $ref: '#/definitions/models.StandardErrorModel'
+        "500":
+          description: Internal Server Error
+          schema:
+            $ref: '#/definitions/models.StandardErrorModel'
+      summary: LeadUpdate
+      tags:
+      - lead
+  /payment/byid/{id}:
+    get:
+      consumes:
+      - application/json
+      description: This API for getting payment PaymentList
+      parameters:
+      - description: ID
+        in: path
+        name: id
+        required: true
+        type: string
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/models.PaymentResp'
+        "400":
+          description: Bad Request
+          schema:
+            $ref: '#/definitions/models.StandardErrorModel'
+        "500":
+          description: Internal Server Error
+          schema:
+            $ref: '#/definitions/models.StandardErrorModel'
+      summary: PaymentGet
+      tags:
+      - payment
+  /payment/create/:
+    post:
+      consumes:
+      - application/json
+      description: This API for creating a new payment
+      parameters:
+      - description: paymentCreateRequest
+        in: body
+        name: request
+        required: true
+        schema:
+          $ref: '#/definitions/models.Payment'
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/models.PaymentResp'
+        "400":
+          description: Bad Request
+          schema:
+            $ref: '#/definitions/models.StandardErrorModel'
+        "500":
+          description: Internal Server Error
+          schema:
+            $ref: '#/definitions/models.StandardErrorModel'
+      summary: PaymentCreate
+      tags:
+      - payment
+  /payment/delete/{id}:
+    delete:
+      consumes:
+      - application/json
+      description: This API for deleting payment
+      parameters:
+      - description: ID
+        in: path
+        name: id
+        required: true
+        type: string
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/models.Empty'
+        "400":
+          description: Bad Request
+          schema:
+            $ref: '#/definitions/models.StandardErrorModel'
+        "500":
+          description: Internal Server Error
+          schema:
+            $ref: '#/definitions/models.StandardErrorModel'
+      summary: PaymentDelete
+      tags:
+      - payment
+  /payment/list/:
+    get:
+      consumes:
+      - application/json
+      description: This API for getting list of payments
+      parameters:
+      - description: Page
+        in: query
+        name: page
+        type: string
+      - description: Limit
+        in: query
+        name: limit
+        type: string
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/models.PaymentsList'
+        "400":
+          description: Bad Request
+          schema:
+            $ref: '#/definitions/models.StandardErrorModel'
+        "500":
+          description: Internal Server Error
+          schema:
+            $ref: '#/definitions/models.StandardErrorModel'
+      summary: PaymentList
+      tags:
+      - payment
+  /payment/searchlist/:
+    get:
+      consumes:
+      - application/json
+      description: This API for getting list of payments
+      parameters:
+      - description: From
+        in: query
+        name: id
+        type: string
+      - description: From
+        in: query
+        name: from
+        type: string
+      - description: To
+        in: query
+        name: to
+        type: string
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/models.PaymentsList'
+        "400":
+          description: Bad Request
+          schema:
+            $ref: '#/definitions/models.StandardErrorModel'
+        "500":
+          description: Internal Server Error
+          schema:
+            $ref: '#/definitions/models.StandardErrorModel'
+      summary: PaymentSearchList
+      tags:
+      - payment
+  /payment/update/{id}:
+    put:
+      consumes:
+      - application/json
+      description: This API for updating payment
+      parameters:
+      - description: ID
+        in: path
+        name: id
+        required: true
+        type: string
+      - description: paymentUpdateRequest
+        in: body
+        name: request
+        required: true
+        schema:
+          $ref: '#/definitions/models.PaymentUpdate'
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/models.PaymentResp'
+        "400":
+          description: Bad Request
+          schema:
+            $ref: '#/definitions/models.StandardErrorModel'
+        "500":
+          description: Internal Server Error
+          schema:
+            $ref: '#/definitions/models.StandardErrorModel'
+      summary: PaymentUpdate
+      tags:
+      - payment
+  /payment_system/create/:
+    post:
+      consumes:
+      - application/json
+      description: This API for creating a new payment_system
+      parameters:
+      - description: payment_systemCreateRequest
+        in: body
+        name: request
+        required: true
+        schema:
+          $ref: '#/definitions/models.PySys'
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/models.PySysResp'
+        "400":
+          description: Bad Request
+          schema:
+            $ref: '#/definitions/models.StandardErrorModel'
+        "500":
+          description: Internal Server Error
+          schema:
+            $ref: '#/definitions/models.StandardErrorModel'
+      summary: PySysCreate
+      tags:
+      - payment_system
+  /payment_system/delete/{id}:
+    delete:
+      consumes:
+      - application/json
+      description: This API for deleting payment_system
+      parameters:
+      - description: ID
+        in: path
+        name: id
+        required: true
+        type: string
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/models.Empty'
+        "400":
+          description: Bad Request
+          schema:
+            $ref: '#/definitions/models.StandardErrorModel'
+        "500":
+          description: Internal Server Error
+          schema:
+            $ref: '#/definitions/models.StandardErrorModel'
+      summary: PySysDelete
+      tags:
+      - payment_system
+  /payment_system/list/:
+    get:
+      consumes:
+      - application/json
+      description: This API for getting list of payment_systems
+      parameters:
+      - description: Page
+        in: query
+        name: page
+        type: string
+      - description: Limit
+        in: query
+        name: limit
+        type: string
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/models.PySyssList'
+        "400":
+          description: Bad Request
+          schema:
+            $ref: '#/definitions/models.StandardErrorModel'
+        "500":
+          description: Internal Server Error
+          schema:
+            $ref: '#/definitions/models.StandardErrorModel'
+      summary: PySysList
+      tags:
+      - payment_system
+  /payment_system/list/{id}:
+    get:
+      consumes:
+      - application/json
+      description: This API for getting payment_system PySysList
+      parameters:
+      - description: ID
+        in: path
+        name: id
+        required: true
+        type: string
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/models.PySysResp'
+        "400":
+          description: Bad Request
+          schema:
+            $ref: '#/definitions/models.StandardErrorModel'
+        "500":
+          description: Internal Server Error
+          schema:
+            $ref: '#/definitions/models.StandardErrorModel'
+      summary: PySysGet
+      tags:
+      - payment_system
+  /payment_system/update/:
+    put:
+      consumes:
+      - application/json
+      description: This API for updating payment_system
+      parameters:
+      - description: ID
+        in: path
+        name: id
+        required: true
+        type: string
+      - description: payment_systemUpdateRequest
+        in: body
+        name: request
+        required: true
+        schema:
+          $ref: '#/definitions/models.PySysUpdate'
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/models.PySysResp'
+        "400":
+          description: Bad Request
+          schema:
+            $ref: '#/definitions/models.StandardErrorModel'
+        "500":
+          description: Internal Server Error
+          schema:
+            $ref: '#/definitions/models.StandardErrorModel'
+      summary: PySysUpdate
+      tags:
+      - payment_system
+  /personal/byid/{id}:
+    get:
+      consumes:
+      - application/json
+      description: This API for getting personal PersonalList
+      parameters:
+      - description: ID
+        in: path
+        name: id
+        required: true
+        type: string
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/models.PersonalResp'
+        "400":
+          description: Bad Request
+          schema:
+            $ref: '#/definitions/models.StandardErrorModel'
+        "500":
+          description: Internal Server Error
+          schema:
+            $ref: '#/definitions/models.StandardErrorModel'
+      summary: PersonalGet
+      tags:
+      - personal
+  /personal/create/:
+    post:
+      consumes:
+      - application/json
+      description: This API for creating a new personal
+      parameters:
+      - description: personalCreateRequest
+        in: body
+        name: request
+        required: true
+        schema:
+          $ref: '#/definitions/models.Personal'
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/models.PersonalResp'
+        "400":
+          description: Bad Request
+          schema:
+            $ref: '#/definitions/models.StandardErrorModel'
+        "500":
+          description: Internal Server Error
+          schema:
+            $ref: '#/definitions/models.StandardErrorModel'
+      summary: PersonalCreate
+      tags:
+      - personal
+  /personal/delete/{id}:
+    delete:
+      consumes:
+      - application/json
+      description: This API for deleting personal
+      parameters:
+      - description: ID
+        in: path
+        name: id
+        required: true
+        type: string
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/models.Empty'
+        "400":
+          description: Bad Request
+          schema:
+            $ref: '#/definitions/models.StandardErrorModel'
+        "500":
+          description: Internal Server Error
+          schema:
+            $ref: '#/definitions/models.StandardErrorModel'
+      summary: PersonalDelete
+      tags:
+      - personal
+  /personal/list/:
+    get:
+      consumes:
+      - application/json
+      description: This API for getting list of personals
+      parameters:
+      - description: Page
+        in: query
+        name: page
+        type: string
+      - description: Limit
+        in: query
+        name: limit
+        type: string
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/models.PersonalsList'
+        "400":
+          description: Bad Request
+          schema:
+            $ref: '#/definitions/models.StandardErrorModel'
+        "500":
+          description: Internal Server Error
+          schema:
+            $ref: '#/definitions/models.StandardErrorModel'
+      summary: PersonalList
+      tags:
+      - personal
+  /personal/update/{id}:
+    put:
+      consumes:
+      - application/json
+      description: This API for updating personal
+      parameters:
+      - description: ID
+        in: path
+        name: id
+        required: true
+        type: string
+      - description: personalUpdateRequest
+        in: body
+        name: request
+        required: true
+        schema:
+          $ref: '#/definitions/models.PersonalUpdate'
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/models.PersonalResp'
+        "400":
+          description: Bad Request
+          schema:
+            $ref: '#/definitions/models.StandardErrorModel'
+        "500":
+          description: Internal Server Error
+          schema:
+            $ref: '#/definitions/models.StandardErrorModel'
+      summary: PersonalUpdate
+      tags:
+      - personal
+  /personals/:
+    get:
+      consumes:
+      - application/json
+      description: This API for getting list of personals
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/models.Personals'
+        "400":
+          description: Bad Request
+          schema:
+            $ref: '#/definitions/models.StandardErrorModel'
+        "500":
+          description: Internal Server Error
+          schema:
+            $ref: '#/definitions/models.StandardErrorModel'
+      summary: Personals
+      tags:
+      - personals
+  /room/byid/{id}:
+    get:
+      consumes:
+      - application/json
+      description: This API for getting room RoomList
+      parameters:
+      - description: ID
+        in: path
+        name: id
+        required: true
+        type: string
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/models.RoomResp'
+        "400":
+          description: Bad Request
+          schema:
+            $ref: '#/definitions/models.StandardErrorModel'
+        "500":
+          description: Internal Server Error
+          schema:
+            $ref: '#/definitions/models.StandardErrorModel'
+      summary: RoomGet
+      tags:
+      - room
+  /room/create/:
+    post:
+      consumes:
+      - application/json
+      description: This API for creating a new room
+      parameters:
+      - description: roomCreateRequest
+        in: body
+        name: request
+        required: true
+        schema:
+          $ref: '#/definitions/models.Room'
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/models.RoomResp'
+        "400":
+          description: Bad Request
+          schema:
+            $ref: '#/definitions/models.StandardErrorModel'
+        "500":
+          description: Internal Server Error
+          schema:
+            $ref: '#/definitions/models.StandardErrorModel'
+      summary: RoomCreate
+      tags:
+      - room
+  /room/delete/{id}:
+    delete:
+      consumes:
+      - application/json
+      description: This API for deleting room
+      parameters:
+      - description: ID
+        in: path
+        name: id
+        required: true
+        type: string
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/models.Empty'
+        "400":
+          description: Bad Request
+          schema:
+            $ref: '#/definitions/models.StandardErrorModel'
+        "500":
+          description: Internal Server Error
+          schema:
+            $ref: '#/definitions/models.StandardErrorModel'
+      summary: RoomDelete
+      tags:
+      - room
+  /room/list/:
+    get:
+      consumes:
+      - application/json
+      description: This API for getting list of rooms
+      parameters:
+      - description: Page
+        in: query
+        name: page
+        type: string
+      - description: Limit
+        in: query
+        name: limit
+        type: string
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/models.RoomsList'
+        "400":
+          description: Bad Request
+          schema:
+            $ref: '#/definitions/models.StandardErrorModel'
+        "500":
+          description: Internal Server Error
+          schema:
+            $ref: '#/definitions/models.StandardErrorModel'
+      summary: RoomList
+      tags:
+      - room
+  /room/update/{id}:
+    put:
+      consumes:
+      - application/json
+      description: This API for updating room
+      parameters:
+      - description: ID
+        in: path
+        name: id
+        required: true
+        type: string
+      - description: roomUpdateRequest
+        in: body
+        name: request
+        required: true
+        schema:
+          $ref: '#/definitions/models.RoomUpdate'
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/models.RoomResp'
+        "400":
+          description: Bad Request
+          schema:
+            $ref: '#/definitions/models.StandardErrorModel'
+        "500":
+          description: Internal Server Error
+          schema:
+            $ref: '#/definitions/models.StandardErrorModel'
+      summary: RoomUpdate
+      tags:
+      - room
+  /salary/admin/byid/{id}:
+    get:
+      consumes:
+      - application/json
+      description: This API for getting userSalary UserSalaryList
+      parameters:
+      - description: ID
+        in: path
+        name: id
+        required: true
+        type: string
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/models.UserSalaryResp'
+        "400":
+          description: Bad Request
+          schema:
+            $ref: '#/definitions/models.StandardErrorModel'
+        "500":
+          description: Internal Server Error
+          schema:
+            $ref: '#/definitions/models.StandardErrorModel'
+      summary: UserSalaryGet
+      tags:
+      - userSalary
+  /salary/admin/create:
+    post:
+      consumes:
+      - application/json
+      description: This API for creating a new userSalary
+      parameters:
+      - description: userSalaryCreateRequest
+        in: body
+        name: request
+        required: true
+        schema:
+          $ref: '#/definitions/models.UserSalary'
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/models.UserSalaryResp'
+        "400":
+          description: Bad Request
+          schema:
+            $ref: '#/definitions/models.StandardErrorModel'
+        "500":
+          description: Internal Server Error
+          schema:
+            $ref: '#/definitions/models.StandardErrorModel'
+      summary: UserSalaryCreate
+      tags:
+      - userSalary
+  /salary/admin/delete/:id:
+    delete:
+      consumes:
+      - application/json
+      description: This API for deleting userSalary
+      parameters:
+      - description: ID
+        in: path
+        name: id
+        required: true
+        type: string
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/models.Empty'
+        "400":
+          description: Bad Request
+          schema:
+            $ref: '#/definitions/models.StandardErrorModel'
+        "500":
+          description: Internal Server Error
+          schema:
+            $ref: '#/definitions/models.StandardErrorModel'
+      summary: UserSalaryDelete
+      tags:
+      - userSalary
+  /salary/admin/list:
+    get:
+      consumes:
+      - application/json
+      description: This API for getting list of usersSalary
+      parameters:
+      - description: ID
+        in: query
+        name: id
+        type: string
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/models.UsersSalaryList'
+        "400":
+          description: Bad Request
+          schema:
+            $ref: '#/definitions/models.StandardErrorModel'
+        "500":
+          description: Internal Server Error
+          schema:
+            $ref: '#/definitions/models.StandardErrorModel'
+      summary: UserSalaryList
+      tags:
+      - userSalary
+  /salary/admin/update/{id}:
+    put:
+      consumes:
+      - application/json
+      description: This API for updating userSalary
+      parameters:
+      - description: ID
+        in: path
+        name: id
+        required: true
+        type: string
+      - description: userSalaryUpdateRequest
+        in: body
+        name: request
+        required: true
+        schema:
+          $ref: '#/definitions/models.UserSalaryUpdate'
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/models.UserSalaryResp'
+        "400":
+          description: Bad Request
+          schema:
+            $ref: '#/definitions/models.StandardErrorModel'
+        "500":
+          description: Internal Server Error
+          schema:
+            $ref: '#/definitions/models.StandardErrorModel'
+      summary: UserSalaryUpdate
+      tags:
+      - userSalary
+  /salary/teacher/byid/{id}:
+    get:
+      consumes:
+      - application/json
+      description: This API for getting teacher_salary TeacherSalaryList
+      parameters:
+      - description: ID
+        in: path
+        name: id
+        required: true
+        type: string
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/models.TeacherSalaryResp'
+        "400":
+          description: Bad Request
+          schema:
+            $ref: '#/definitions/models.StandardErrorModel'
+        "500":
+          description: Internal Server Error
+          schema:
+            $ref: '#/definitions/models.StandardErrorModel'
+      summary: TeacherSalaryGet
+      tags:
+      - teacher_salary
+  /salary/teacher/create/:
+    post:
+      consumes:
+      - application/json
+      description: This API for creating a new teacher_salary
+      parameters:
+      - description: teacher_salaryCreateRequest
+        in: body
+        name: request
+        required: true
+        schema:
+          $ref: '#/definitions/models.TeacherSalary'
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/models.TeacherSalaryResp'
+        "400":
+          description: Bad Request
+          schema:
+            $ref: '#/definitions/models.StandardErrorModel'
+        "500":
+          description: Internal Server Error
+          schema:
+            $ref: '#/definitions/models.StandardErrorModel'
+      summary: TeacherSalaryCreate
+      tags:
+      - teacher_salary
+  /salary/teacher/delete/{id}:
+    delete:
+      consumes:
+      - application/json
+      description: This API for deleting teacher_salary
+      parameters:
+      - description: ID
+        in: path
+        name: id
+        required: true
+        type: string
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/models.Empty'
+        "400":
+          description: Bad Request
+          schema:
+            $ref: '#/definitions/models.StandardErrorModel'
+        "500":
+          description: Internal Server Error
+          schema:
+            $ref: '#/definitions/models.StandardErrorModel'
+      summary: TeacherSalaryDelete
+      tags:
+      - teacher_salary
+  /salary/teacher/list/:
+    get:
+      consumes:
+      - application/json
+      description: This API for getting list of teacher_salarys
+      parameters:
+      - description: ID
+        in: query
+        name: id
+        type: string
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/models.TeachersSalaryList'
+        "400":
+          description: Bad Request
+          schema:
+            $ref: '#/definitions/models.StandardErrorModel'
+        "500":
+          description: Internal Server Error
+          schema:
+            $ref: '#/definitions/models.StandardErrorModel'
+      summary: TeacherSalaryList
+      tags:
+      - teacher_salary
+  /salary/teacher/update/{id}:
+    put:
+      consumes:
+      - application/json
+      description: This API for updating teacher_salary
+      parameters:
+      - description: ID
+        in: path
+        name: id
+        required: true
+        type: string
+      - description: teacher_salaryUpdateRequest
+        in: body
+        name: request
+        required: true
+        schema:
+          $ref: '#/definitions/models.TeacherSalaryUpdate'
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/models.TeacherSalaryResp'
+        "400":
+          description: Bad Request
+          schema:
+            $ref: '#/definitions/models.StandardErrorModel'
+        "500":
+          description: Internal Server Error
+          schema:
+            $ref: '#/definitions/models.StandardErrorModel'
+      summary: TeacherSalaryUpdate
+      tags:
+      - teacher_salary
+  /sale/byid/{id}:
+    get:
+      consumes:
+      - application/json
+      description: This API for getting sale SaleList
+      parameters:
+      - description: ID
+        in: path
+        name: id
+        required: true
+        type: string
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/models.SaleResp'
+        "400":
+          description: Bad Request
+          schema:
+            $ref: '#/definitions/models.StandardErrorModel'
+        "500":
+          description: Internal Server Error
+          schema:
+            $ref: '#/definitions/models.StandardErrorModel'
+      summary: SaleGet
+      tags:
+      - sale
+  /sale/create/:
+    post:
+      consumes:
+      - application/json
+      description: This API for creating a new sale
+      parameters:
+      - description: saleCreateRequest
+        in: body
+        name: request
+        required: true
+        schema:
+          $ref: '#/definitions/models.Sale'
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/models.SaleResp'
+        "400":
+          description: Bad Request
+          schema:
+            $ref: '#/definitions/models.StandardErrorModel'
+        "500":
+          description: Internal Server Error
+          schema:
+            $ref: '#/definitions/models.StandardErrorModel'
+      summary: SaleCreate
+      tags:
+      - sale
+  /sale/delete/{id}:
+    delete:
+      consumes:
+      - application/json
+      description: This API for deleting sale
+      parameters:
+      - description: ID
+        in: path
+        name: id
+        required: true
+        type: string
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/models.Empty'
+        "400":
+          description: Bad Request
+          schema:
+            $ref: '#/definitions/models.StandardErrorModel'
+        "500":
+          description: Internal Server Error
+          schema:
+            $ref: '#/definitions/models.StandardErrorModel'
+      summary: SaleDelete
+      tags:
+      - sale
+  /sale/list/:
+    get:
+      consumes:
+      - application/json
+      description: This API for getting list of sales
+      parameters:
+      - description: Page
+        in: query
+        name: page
+        type: string
+      - description: Limit
+        in: query
+        name: limit
+        type: string
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/models.SalesList'
+        "400":
+          description: Bad Request
+          schema:
+            $ref: '#/definitions/models.StandardErrorModel'
+        "500":
+          description: Internal Server Error
+          schema:
+            $ref: '#/definitions/models.StandardErrorModel'
+      summary: SaleList
+      tags:
+      - sale
+  /sale/update/{id}:
+    put:
+      consumes:
+      - application/json
+      description: This API for updating sale
+      parameters:
+      - description: ID
+        in: path
+        name: id
+        required: true
+        type: string
+      - description: saleUpdateRequest
+        in: body
+        name: request
+        required: true
+        schema:
+          $ref: '#/definitions/models.SaleUpdate'
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/models.SaleResp'
+        "400":
+          description: Bad Request
+          schema:
+            $ref: '#/definitions/models.StandardErrorModel'
+        "500":
+          description: Internal Server Error
+          schema:
+            $ref: '#/definitions/models.StandardErrorModel'
+      summary: SaleUpdate
+      tags:
+      - sale
+  /signup/student/{token}:
+    get:
+      consumes:
+      - application/json
+      description: This API for getting student StudentList
+      parameters:
+      - description: TOKEN
+        in: path
+        name: token
+        required: true
+        type: string
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/models.StudentResp'
+        "400":
+          description: Bad Request
+          schema:
+            $ref: '#/definitions/models.StandardErrorModel'
+        "500":
+          description: Internal Server Error
+          schema:
+            $ref: '#/definitions/models.StandardErrorModel'
+      summary: StudentGet
+      tags:
+      - student
+  /signup/teacher/{token}:
+    get:
+      consumes:
+      - application/json
+      description: This API for getting teacher TeacherList
+      parameters:
+      - description: TOEKN
+        in: path
+        name: token
+        required: true
+        type: string
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/models.TeacherResp'
+        "400":
+          description: Bad Request
+          schema:
+            $ref: '#/definitions/models.StandardErrorModel'
+        "500":
+          description: Internal Server Error
+          schema:
+            $ref: '#/definitions/models.StandardErrorModel'
+      summary: TeacherGet
+      tags:
+      - teacher
+  /signup/user/{token}:
+    get:
+      consumes:
+      - application/json
+      description: This API for getting user UserList
+      parameters:
+      - description: TOKEN
+        in: path
+        name: token
+        required: true
+        type: string
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/models.UserResp'
+        "400":
+          description: Bad Request
+          schema:
+            $ref: '#/definitions/models.StandardErrorModel'
+        "500":
+          description: Internal Server Error
+          schema:
+            $ref: '#/definitions/models.StandardErrorModel'
+      summary: UserSignUp
+      tags:
+      - user
+  /spending/byid/{id}:
+    get:
+      consumes:
+      - application/json
+      description: This API for getting spending SpendingList
+      parameters:
+      - description: ID
+        in: path
+        name: id
+        required: true
+        type: string
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/models.SpendingResp'
+        "400":
+          description: Bad Request
+          schema:
+            $ref: '#/definitions/models.StandardErrorModel'
+        "500":
+          description: Internal Server Error
+          schema:
+            $ref: '#/definitions/models.StandardErrorModel'
+      summary: SpendingGet
+      tags:
+      - spending
+  /spending/create/:
+    post:
+      consumes:
+      - application/json
+      description: This API for creating a new spending
+      parameters:
+      - description: spendingCreateRequest
+        in: body
+        name: request
+        required: true
+        schema:
+          $ref: '#/definitions/models.Spending'
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/models.SpendingResp'
+        "400":
+          description: Bad Request
+          schema:
+            $ref: '#/definitions/models.StandardErrorModel'
+        "500":
+          description: Internal Server Error
+          schema:
+            $ref: '#/definitions/models.StandardErrorModel'
+      summary: SpendingCreate
+      tags:
+      - spending
+  /spending/delete/{id}:
+    delete:
+      consumes:
+      - application/json
+      description: This API for deleting spending
+      parameters:
+      - description: ID
+        in: path
+        name: id
+        required: true
+        type: string
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/models.Empty'
+        "400":
+          description: Bad Request
+          schema:
+            $ref: '#/definitions/models.StandardErrorModel'
+        "500":
+          description: Internal Server Error
+          schema:
+            $ref: '#/definitions/models.StandardErrorModel'
+      summary: SpendingDelete
+      tags:
+      - spending
+  /spending/list/:
+    get:
+      consumes:
+      - application/json
+      description: This API for getting list of spendings
+      parameters:
+      - description: SpendingType
+        in: query
+        name: spending_type
+        type: string
+      - description: Limit
+        in: query
+        name: limit
+        type: string
+      - description: Page
+        in: query
+        name: page
+        type: string
+      - description: From
+        in: query
+        name: from
+        type: string
+      - description: To
+        in: query
+        name: to
+        type: string
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/models.SpendingsList'
+        "400":
+          description: Bad Request
+          schema:
+            $ref: '#/definitions/models.StandardErrorModel'
+        "500":
+          description: Internal Server Error
+          schema:
+            $ref: '#/definitions/models.StandardErrorModel'
+      summary: SpendingList
+      tags:
+      - spending
+  /spending/update/{id}:
+    put:
+      consumes:
+      - application/json
+      description: This API for updating spending
+      parameters:
+      - description: ID
+        in: path
+        name: id
+        required: true
+        type: string
+      - description: spendingUpdateRequest
+        in: body
+        name: request
+        required: true
+        schema:
+          $ref: '#/definitions/models.SpendingUpdate'
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/models.SpendingResp'
+        "400":
+          description: Bad Request
+          schema:
+            $ref: '#/definitions/models.StandardErrorModel'
+        "500":
+          description: Internal Server Error
+          schema:
+            $ref: '#/definitions/models.StandardErrorModel'
+      summary: SpendingUpdate
+      tags:
+      - spending
+  /student/byid/{id}:
+    get:
+      consumes:
+      - application/json
+      description: This API for getting student StudentList
+      parameters:
+      - description: ID
+        in: path
+        name: id
+        required: true
+        type: string
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/models.StudentResp'
+        "400":
+          description: Bad Request
+          schema:
+            $ref: '#/definitions/models.StandardErrorModel'
+        "500":
+          description: Internal Server Error
+          schema:
+            $ref: '#/definitions/models.StandardErrorModel'
+      summary: StudentGet
+      tags:
+      - student
+  /student/create/:
+    post:
+      consumes:
+      - application/json
+      description: This API for creating a new student
+      parameters:
+      - description: studentCreateRequest
+        in: body
+        name: request
+        required: true
+        schema:
+          $ref: '#/definitions/models.Student'
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/models.StudentResp'
+        "400":
+          description: Bad Request
+          schema:
+            $ref: '#/definitions/models.StandardErrorModel'
+        "500":
+          description: Internal Server Error
+          schema:
+            $ref: '#/definitions/models.StandardErrorModel'
+      summary: StudentCreate
+      tags:
+      - student
+  /student/delete/{id}:
+    delete:
+      consumes:
+      - application/json
+      description: This API for deleting student
+      parameters:
+      - description: ID
+        in: path
+        name: id
+        required: true
+        type: string
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/models.Empty'
+        "400":
+          description: Bad Request
+          schema:
+            $ref: '#/definitions/models.StandardErrorModel'
+        "500":
+          description: Internal Server Error
+          schema:
+            $ref: '#/definitions/models.StandardErrorModel'
+      summary: StudentDelete
+      tags:
+      - student
+  /student/grouplist/:
+    get:
+      consumes:
+      - application/json
+      description: This API for getting list of students
+      parameters:
+      - description: Page
+        in: query
+        name: page
+        type: string
+      - description: Limit
+        in: query
+        name: limit
+        type: string
+      - description: Id
+        in: query
+        name: id
+        type: string
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/models.StudentsList'
+        "400":
+          description: Bad Request
+          schema:
+            $ref: '#/definitions/models.StandardErrorModel'
+        "500":
+          description: Internal Server Error
+          schema:
+            $ref: '#/definitions/models.StandardErrorModel'
+      summary: StudentGroupList
+      tags:
+      - student
+  /student/list/:
+    get:
+      consumes:
+      - application/json
+      description: This API for getting list of students
+      parameters:
+      - description: Page
+        in: query
+        name: page
+        type: string
+      - description: Limit
+        in: query
+        name: limit
+        type: string
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/models.StudentsList'
+        "400":
+          description: Bad Request
+          schema:
+            $ref: '#/definitions/models.StandardErrorModel'
+        "500":
+          description: Internal Server Error
+          schema:
+            $ref: '#/definitions/models.StandardErrorModel'
+      summary: StudentList
+      tags:
+      - student
+  /student/listphone/{id}:
+    get:
+      consumes:
+      - application/json
+      description: This API for getting student StudentPhoneList
+      parameters:
+      - description: ID
+        in: path
+        name: id
+        required: true
+        type: string
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/models.SPhone'
+        "400":
+          description: Bad Request
+          schema:
+            $ref: '#/definitions/models.StandardErrorModel'
+        "500":
+          description: Internal Server Error
+          schema:
+            $ref: '#/definitions/models.StandardErrorModel'
+      summary: StudentPhoneGet
+      tags:
+      - student
+  /student/login/:
+    post:
+      consumes:
+      - application/json
+      description: This API for getting list of students
+      parameters:
+      - description: studentCreateRequest
+        in: body
+        name: request
+        required: true
+        schema:
+          $ref: '#/definitions/models.LoginStudentReq'
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/models.StudentsList'
+        "400":
+          description: Bad Request
+          schema:
+            $ref: '#/definitions/models.StandardErrorModel'
+        "500":
+          description: Internal Server Error
+          schema:
+            $ref: '#/definitions/models.StandardErrorModel'
+      summary: StudentLogin
+      tags:
+      - student
+  /student/phonecreate/:
+    post:
+      consumes:
+      - application/json
+      description: This API for creating a new student
+      parameters:
+      - description: studentCreateRequest
+        in: body
+        name: request
+        required: true
+        schema:
+          $ref: '#/definitions/models.SPhon'
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/models.SPhone'
+        "400":
+          description: Bad Request
+          schema:
+            $ref: '#/definitions/models.StandardErrorModel'
+        "500":
+          description: Internal Server Error
+          schema:
+            $ref: '#/definitions/models.StandardErrorModel'
+      summary: StudentPhoneCreate
+      tags:
+      - student
+  /student/update/{id}:
+    put:
+      consumes:
+      - application/json
+      description: This API for updating student
+      parameters:
+      - description: ID
+        in: path
+        name: id
+        required: true
+        type: string
+      - description: studentUpdateRequest
+        in: body
+        name: request
+        required: true
+        schema:
+          $ref: '#/definitions/models.StudentUpdate'
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/models.StudentResp'
+        "400":
+          description: Bad Request
+          schema:
+            $ref: '#/definitions/models.StandardErrorModel'
+        "500":
+          description: Internal Server Error
+          schema:
+            $ref: '#/definitions/models.StandardErrorModel'
+      summary: StudentUpdate
+      tags:
+      - student
+  /task/byid/{id}:
+    get:
+      consumes:
+      - application/json
+      description: This API for getting task TaskList
+      parameters:
+      - description: ID
+        in: path
+        name: id
+        required: true
+        type: string
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/models.TaskResp'
+        "400":
+          description: Bad Request
+          schema:
+            $ref: '#/definitions/models.StandardErrorModel'
+        "500":
+          description: Internal Server Error
+          schema:
+            $ref: '#/definitions/models.StandardErrorModel'
+      summary: TaskGet
+      tags:
+      - task
+  /task/create/:
+    post:
+      consumes:
+      - application/json
+      description: This API for creating a new task
+      parameters:
+      - description: taskCreateRequest
+        in: body
+        name: request
+        required: true
+        schema:
+          $ref: '#/definitions/models.Task'
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/models.TaskResp'
+        "400":
+          description: Bad Request
+          schema:
+            $ref: '#/definitions/models.StandardErrorModel'
+        "500":
+          description: Internal Server Error
+          schema:
+            $ref: '#/definitions/models.StandardErrorModel'
+      summary: TaskCreate
+      tags:
+      - task
+  /task/delete/{id}:
+    delete:
+      consumes:
+      - application/json
+      description: This API for deleting task
+      parameters:
+      - description: ID
+        in: path
+        name: id
+        required: true
+        type: string
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/models.Empty'
+        "400":
+          description: Bad Request
+          schema:
+            $ref: '#/definitions/models.StandardErrorModel'
+        "500":
+          description: Internal Server Error
+          schema:
+            $ref: '#/definitions/models.StandardErrorModel'
+      summary: TaskDelete
+      tags:
+      - task
+  /task/list/:
+    get:
+      consumes:
+      - application/json
+      description: This API for getting list of tasks
+      parameters:
+      - description: Page
+        in: query
+        name: page
+        type: string
+      - description: Limit
+        in: query
+        name: limit
+        type: string
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/models.TasksList'
+        "400":
+          description: Bad Request
+          schema:
+            $ref: '#/definitions/models.StandardErrorModel'
+        "500":
+          description: Internal Server Error
+          schema:
+            $ref: '#/definitions/models.StandardErrorModel'
+      summary: TaskList
+      tags:
+      - task
+  /task/update/{id}:
+    put:
+      consumes:
+      - application/json
+      description: This API for updating task
+      parameters:
+      - description: ID
+        in: path
+        name: id
+        required: true
+        type: string
+      - description: taskUpdateRequest
+        in: body
+        name: request
+        required: true
+        schema:
+          $ref: '#/definitions/models.TaskUpdate'
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/models.TaskResp'
+        "400":
+          description: Bad Request
+          schema:
+            $ref: '#/definitions/models.StandardErrorModel'
+        "500":
+          description: Internal Server Error
+          schema:
+            $ref: '#/definitions/models.StandardErrorModel'
+      summary: TaskUpdate
+      tags:
+      - task
+  /teacher/byid/{id}:
+    get:
+      consumes:
+      - application/json
+      description: This API for getting teacher TeacherList
+      parameters:
+      - description: ID
+        in: path
+        name: id
+        required: true
+        type: string
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/models.TeacherResp'
+        "400":
+          description: Bad Request
+          schema:
+            $ref: '#/definitions/models.StandardErrorModel'
+        "500":
+          description: Internal Server Error
+          schema:
+            $ref: '#/definitions/models.StandardErrorModel'
+      summary: TeacherGet
+      tags:
+      - teacher
+  /teacher/byname/{id}:
+    get:
+      consumes:
+      - application/json
+      description: This API for getting teacher TeacherList
+      parameters:
+      - description: ID
+        in: path
+        name: id
+        required: true
+        type: string
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/models.TeacherResp'
+        "400":
+          description: Bad Request
+          schema:
+            $ref: '#/definitions/models.StandardErrorModel'
+        "500":
+          description: Internal Server Error
+          schema:
+            $ref: '#/definitions/models.StandardErrorModel'
+      summary: TeacherGet
+      tags:
+      - teacher
+  /teacher/create/:
+    post:
+      consumes:
+      - application/json
+      description: This API for creating a new teacher
+      parameters:
+      - description: teacherCreateRequest
+        in: body
+        name: request
+        required: true
+        schema:
+          $ref: '#/definitions/models.Teacher'
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/models.TeacherResp'
+        "400":
+          description: Bad Request
+          schema:
+            $ref: '#/definitions/models.StandardErrorModel'
+        "500":
+          description: Internal Server Error
+          schema:
+            $ref: '#/definitions/models.StandardErrorModel'
+      summary: TeacherCreate
+      tags:
+      - teacher
+  /teacher/delete/{id}:
+    delete:
+      consumes:
+      - application/json
+      description: This API for deleting teacher
+      parameters:
+      - description: ID
+        in: path
+        name: id
+        required: true
+        type: string
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/models.Empty'
+        "400":
+          description: Bad Request
+          schema:
+            $ref: '#/definitions/models.StandardErrorModel'
+        "500":
+          description: Internal Server Error
+          schema:
+            $ref: '#/definitions/models.StandardErrorModel'
+      summary: TeacherDelete
+      tags:
+      - teacher
+  /teacher/list/:
+    get:
+      consumes:
+      - application/json
+      description: This API for getting list of teachers
+      parameters:
+      - description: Page
+        in: query
+        name: page
+        type: string
+      - description: Limit
+        in: query
+        name: limit
+        type: string
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/models.TeachersList'
+        "400":
+          description: Bad Request
+          schema:
+            $ref: '#/definitions/models.StandardErrorModel'
+        "500":
+          description: Internal Server Error
+          schema:
+            $ref: '#/definitions/models.StandardErrorModel'
+      summary: TeacherList
+      tags:
+      - teacher
+  /teacher/login/:
+    post:
+      consumes:
+      - application/json
+      description: This API for getting list of teachers
+      parameters:
+      - description: teacherCreateRequest
+        in: body
+        name: request
+        required: true
+        schema:
+          $ref: '#/definitions/models.Login'
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/models.TeachersList'
+        "400":
+          description: Bad Request
+          schema:
+            $ref: '#/definitions/models.StandardErrorModel'
+        "500":
+          description: Internal Server Error
+          schema:
+            $ref: '#/definitions/models.StandardErrorModel'
+      summary: TeacherLogin
+      tags:
+      - teacher
+  /teacher/update/{id}:
+    put:
+      consumes:
+      - application/json
+      description: This API for updating teacher
+      parameters:
+      - description: ID
+        in: path
+        name: id
+        required: true
+        type: string
+      - description: teacherUpdateRequest
+        in: body
+        name: request
+        required: true
+        schema:
+          $ref: '#/definitions/models.TeacherUpdate'
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/models.TeacherResp'
+        "400":
+          description: Bad Request
+          schema:
+            $ref: '#/definitions/models.StandardErrorModel'
+        "500":
+          description: Internal Server Error
+          schema:
+            $ref: '#/definitions/models.StandardErrorModel'
+      summary: TeacherUpdate
+      tags:
+      - teacher
+  /type/salary/byid/{id}:
+    get:
+      consumes:
+      - application/json
+      description: This API for getting salary_type SalaryList
+      parameters:
+      - description: ID
+        in: path
+        name: id
+        required: true
+        type: string
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/models.SalaryTypeResp'
+        "400":
+          description: Bad Request
+          schema:
+            $ref: '#/definitions/models.StandardErrorModel'
+        "500":
+          description: Internal Server Error
+          schema:
+            $ref: '#/definitions/models.StandardErrorModel'
+      summary: SalaryTypeGet
+      tags:
+      - salary_type
+  /type/salary/create/:
+    post:
+      consumes:
+      - application/json
+      description: This API for creating a new salary_type
+      parameters:
+      - description: salaryCreateRequest
+        in: body
+        name: request
+        required: true
+        schema:
+          $ref: '#/definitions/models.SalaryType'
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/models.SalaryTypeResp'
+        "400":
+          description: Bad Request
+          schema:
+            $ref: '#/definitions/models.StandardErrorModel'
+        "500":
+          description: Internal Server Error
+          schema:
+            $ref: '#/definitions/models.StandardErrorModel'
+      summary: SalaryTypeCreate
+      tags:
+      - salary_type
+  /type/salary/delete/{id}:
+    delete:
+      consumes:
+      - application/json
+      description: This API for deleting salary_type
+      parameters:
+      - description: ID
+        in: path
+        name: id
+        required: true
+        type: string
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/models.Empty'
+        "400":
+          description: Bad Request
+          schema:
+            $ref: '#/definitions/models.StandardErrorModel'
+        "500":
+          description: Internal Server Error
+          schema:
+            $ref: '#/definitions/models.StandardErrorModel'
+      summary: SalaryTypeDelete
+      tags:
+      - salary_type
+  /type/salary/list/:
+    get:
+      consumes:
+      - application/json
+      description: This API for getting list of salary_types
+      parameters:
+      - description: Page
+        in: query
+        name: page
+        type: string
+      - description: Limit
+        in: query
+        name: limit
+        type: string
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/models.SalaryTypesList'
+        "400":
+          description: Bad Request
+          schema:
+            $ref: '#/definitions/models.StandardErrorModel'
+        "500":
+          description: Internal Server Error
+          schema:
+            $ref: '#/definitions/models.StandardErrorModel'
+      summary: SalaryTypeList
+      tags:
+      - salary_type
+  /type/salary/update/{id}:
+    put:
+      consumes:
+      - application/json
+      description: This API for updating salary_type
+      parameters:
+      - description: ID
+        in: path
+        name: id
+        required: true
+        type: string
+      - description: salaryUpdateRequest
+        in: body
+        name: request
+        required: true
+        schema:
+          $ref: '#/definitions/models.SalaryTypeUpdate'
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/models.SalaryTypeResp'
+        "400":
+          description: Bad Request
+          schema:
+            $ref: '#/definitions/models.StandardErrorModel'
+        "500":
+          description: Internal Server Error
+          schema:
+            $ref: '#/definitions/models.StandardErrorModel'
+      summary: SalaryTypeUpdate
+      tags:
+      - salary_type
+  /type/spending/byid/{id}:
+    get:
+      consumes:
+      - application/json
+      description: This API for getting spending_type SpendingTypeList
+      parameters:
+      - description: ID
+        in: path
+        name: id
+        required: true
+        type: string
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/models.SpendingTypeResp'
+        "400":
+          description: Bad Request
+          schema:
+            $ref: '#/definitions/models.StandardErrorModel'
+        "500":
+          description: Internal Server Error
+          schema:
+            $ref: '#/definitions/models.StandardErrorModel'
+      summary: SpendingTypeGet
+      tags:
+      - spending_type
+  /type/spending/create/:
+    post:
+      consumes:
+      - application/json
+      description: This API for creating a new spending_type
+      parameters:
+      - description: spendingCreateRequest
+        in: body
+        name: request
+        required: true
+        schema:
+          $ref: '#/definitions/models.SpendingType'
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/models.SpendingTypeResp'
+        "400":
+          description: Bad Request
+          schema:
+            $ref: '#/definitions/models.StandardErrorModel'
+        "500":
+          description: Internal Server Error
+          schema:
+            $ref: '#/definitions/models.StandardErrorModel'
+      summary: SpendingTypeCreate
+      tags:
+      - spending_type
+  /type/spending/delete/{id}:
+    delete:
+      consumes:
+      - application/json
+      description: This API for deleting spending_type
+      parameters:
+      - description: ID
+        in: path
+        name: id
+        required: true
+        type: string
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/models.Empty'
+        "400":
+          description: Bad Request
+          schema:
+            $ref: '#/definitions/models.StandardErrorModel'
+        "500":
+          description: Internal Server Error
+          schema:
+            $ref: '#/definitions/models.StandardErrorModel'
+      summary: SpendingTypeDelete
+      tags:
+      - spending_type
+  /type/spending/list/:
+    get:
+      consumes:
+      - application/json
+      description: This API for getting list of spending_types
+      parameters:
+      - description: Page
+        in: query
+        name: page
+        type: string
+      - description: Limit
+        in: query
+        name: limit
+        type: string
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/models.SpendingTypesList'
+        "400":
+          description: Bad Request
+          schema:
+            $ref: '#/definitions/models.StandardErrorModel'
+        "500":
+          description: Internal Server Error
+          schema:
+            $ref: '#/definitions/models.StandardErrorModel'
+      summary: SpendingTypeList
+      tags:
+      - spending_type
+  /type/spending/update/{id}:
+    put:
+      consumes:
+      - application/json
+      description: This API for updating spending_type
+      parameters:
+      - description: ID
+        in: path
+        name: id
+        required: true
+        type: string
+      - description: spendingTypeRequest
+        in: body
+        name: request
+        required: true
+        schema:
+          $ref: '#/definitions/models.SpendingTypeUpdate'
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/models.SpendingTypeResp'
+        "400":
+          description: Bad Request
+          schema:
+            $ref: '#/definitions/models.StandardErrorModel'
+        "500":
+          description: Internal Server Error
+          schema:
+            $ref: '#/definitions/models.StandardErrorModel'
+      summary: SpendingTypeUpdate
+      tags:
+      - spending_type
+  /user/byid/{id}:
+    get:
+      consumes:
+      - application/json
+      description: This API for getting user UserList
+      parameters:
+      - description: ID
+        in: path
+        name: id
+        required: true
+        type: string
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/models.UserResp'
+        "400":
+          description: Bad Request
+          schema:
+            $ref: '#/definitions/models.StandardErrorModel'
+        "500":
+          description: Internal Server Error
+          schema:
+            $ref: '#/definitions/models.StandardErrorModel'
+      summary: UserGet
+      tags:
+      - user
+  /user/byname/{id}:
+    get:
+      consumes:
+      - application/json
+      description: This API for getting user UserList
+      parameters:
+      - description: ID
+        in: path
+        name: id
+        required: true
+        type: string
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/models.UserResp'
+        "400":
+          description: Bad Request
+          schema:
+            $ref: '#/definitions/models.StandardErrorModel'
+        "500":
+          description: Internal Server Error
+          schema:
+            $ref: '#/definitions/models.StandardErrorModel'
+      summary: UserGet
+      tags:
+      - user
+  /user/create/:
+    post:
+      consumes:
+      - application/json
+      description: This API for creating a new user
+      parameters:
+      - description: userCreateRequest
+        in: body
+        name: request
+        required: true
+        schema:
+          $ref: '#/definitions/models.User'
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/models.UserResp'
+        "400":
+          description: Bad Request
+          schema:
+            $ref: '#/definitions/models.StandardErrorModel'
+        "500":
+          description: Internal Server Error
+          schema:
+            $ref: '#/definitions/models.StandardErrorModel'
+      summary: UserCreate
+      tags:
+      - user
+  /user/delete/{id}:
+    delete:
+      consumes:
+      - application/json
+      description: This API for deleting user
+      parameters:
+      - description: ID
+        in: path
+        name: id
+        required: true
+        type: string
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/models.Empty'
+        "400":
+          description: Bad Request
+          schema:
+            $ref: '#/definitions/models.StandardErrorModel'
+        "500":
+          description: Internal Server Error
+          schema:
+            $ref: '#/definitions/models.StandardErrorModel'
+      summary: UserDelete
+      tags:
+      - user
+  /user/list/:
+    get:
+      consumes:
+      - application/json
+      description: This API for getting list of users
+      parameters:
+      - description: Page
+        in: query
+        name: page
+        type: string
+      - description: Limit
+        in: query
+        name: limit
+        type: string
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/models.UsersList'
+        "400":
+          description: Bad Request
+          schema:
+            $ref: '#/definitions/models.StandardErrorModel'
+        "500":
+          description: Internal Server Error
+          schema:
+            $ref: '#/definitions/models.StandardErrorModel'
+      summary: UserList
+      tags:
+      - user
+  /user/login/:
+    post:
+      consumes:
+      - application/json
+      description: This API for getting list of users
+      parameters:
+      - description: userCreateRequest
+        in: body
+        name: request
+        required: true
+        schema:
+          $ref: '#/definitions/models.Login'
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/models.UsersList'
+        "400":
+          description: Bad Request
+          schema:
+            $ref: '#/definitions/models.StandardErrorModel'
+        "500":
+          description: Internal Server Error
+          schema:
+            $ref: '#/definitions/models.StandardErrorModel'
+      summary: UserLogin
+      tags:
+      - user
+  /user/update/{id}:
+    put:
+      consumes:
+      - application/json
+      description: This API for updating user
+      parameters:
+      - description: ID
+        in: path
+        name: id
+        required: true
+        type: string
+      - description: userUpdateRequest
+        in: body
+        name: request
+        required: true
+        schema:
+          $ref: '#/definitions/models.UserUpdate'
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/models.UserResp'
+        "400":
+          description: Bad Request
+          schema:
+            $ref: '#/definitions/models.StandardErrorModel'
+        "500":
+          description: Internal Server Error
+          schema:
+            $ref: '#/definitions/models.StandardErrorModel'
+      summary: UserUpdate
+      tags:
+      - user
+swagger: "2.0"

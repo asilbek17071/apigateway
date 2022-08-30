@@ -103,7 +103,7 @@ func (h *handlerV1) UserGet(c *gin.Context) {
 }
 
 // UserGet ...
-// @Router /user/byid/{id} [get]
+// @Router /user/byname/{id} [get]
 // @Summary UserGet
 // @Description This API for getting user UserList
 // @Tags user

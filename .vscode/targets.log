@@ -1,6 +1,4 @@
 make all --print-data-base --no-builtin-variables --no-builtin-rules --question
-make: *** No rule to make target 'all'.  Stop.
-
 # GNU Make 4.3
 # Built for x86_64-pc-linux-gnu
 # Copyright (C) 1988-2020 Free Software Foundation, Inc.
@@ -8,7 +6,7 @@ make: *** No rule to make target 'all'.  Stop.
 # This is free software: you are free to change and redistribute it.
 # There is NO WARRANTY, to the extent permitted by law.
 
-# Make data base, printed on Wed Aug 24 16:31:19 2022
+# Make data base, printed on Tue Aug 30 17:08:34 2022
 
 # Variables
 
@@ -34,8 +32,8 @@ VSCODE_CWD = /home/b/Golang/crm_system/apigateway/apigateway
 GO_PATH = /home/b/go
 # environment
 WINDOWPATH = 2
-# makefile (from 'Makefile', line 4)
-APP = crm
+# makefile (from 'Makefile', line 2)
+APP = apigateway
 # environment
 LC_ADDRESS = uz_UZ.UTF-8
 # default
@@ -79,7 +77,7 @@ MAKEFLAGS = pqrR
 # makefile
 CURDIR := /home/b/Golang/crm_system/apigateway/apigateway
 # environment
-APPLICATION_INSIGHTS_NO_DIAGNOSTIC_CHANNEL = true
+APPLICATION_INSIGHTS_NO_DIAGNOSTIC_CHANNEL = 1
 # environment
 LESSOPEN = | /usr/bin/lesspipe %s
 # automatic
@@ -103,13 +101,13 @@ MAKEFILE_LIST := Makefile
 # automatic
 @F = $(notdir $@)
 # environment
-VSCODE_PID = 4381
+VSCODE_PID = 7767
 # environment
 XDG_SESSION_TYPE = x11
 # automatic
 ?D = $(patsubst %/,%,$(dir $?))
 # environment
-SESSION_MANAGER = local/i:@/tmp/.ICE-unix/2208,unix/i:/tmp/.ICE-unix/2208
+SESSION_MANAGER = local/i:@/tmp/.ICE-unix/2731,unix/i:/tmp/.ICE-unix/2731
 # automatic
 *F = $(notdir $*)
 # environment
@@ -136,12 +134,12 @@ GJS_DEBUG_TOPICS = JS ERROR;JS LOG
 SHLVL = 1
 # environment
 MAKELEVEL := 0
-# makefile (from 'Makefile', line 5)
+# makefile (from 'Makefile', line 3)
 APP_CMD_DIR = ./cmd
 # default
 MAKE = $(MAKE_COMMAND)
 # environment
-PATH = /home/b/go/bin:/usr/local/go/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin:/snap/bin://home/b/go/bin:/usr/local/go/bin
+PATH = /home/b/go/bin:/usr/local/go/bin:/usr/local/go/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin:/snap/bin://home/b/go/bin:/usr/local/go/bin
 # default
 MAKEFILES := 
 # environment
@@ -157,7 +155,7 @@ LC_TIME = uz_UZ.UTF-8
 # environment
 VSCODE_GIT_ASKPASS_MAIN = /usr/share/code/resources/app/extensions/git/dist/askpass-main.js
 # environment
-INVOCATION_ID = 3a5aeb892675495f93d593a238d0ac53
+INVOCATION_ID = b9b35581fe734b50ad2056b13b2eab7d
 # environment
 USERNAME = b
 # environment
@@ -182,14 +180,14 @@ ORIGINAL_XDG_CURRENT_DESKTOP = Unity
 GNUMAKEFLAGS := 
 # environment
 LOGNAME = b
-# makefile (from 'Makefile', line 3)
+# makefile (from 'Makefile', line 1)
 CURRENT_DIR = $(shell pwd)
 # environment
 GIO_LAUNCHED_DESKTOP_FILE = /usr/share/applications/code.desktop
 # makefile
 .DEFAULT_GOAL := build
 # environment
-SYSTEMD_EXEC_PID = 2227
+SYSTEMD_EXEC_PID = 2750
 # environment
 DISPLAY = :1
 # environment
@@ -199,11 +197,11 @@ GTK_MODULES = gail:atk-bridge
 # default
 MAKE_VERSION := 4.3
 # environment
-MANAGERPID = 1717
+MANAGERPID = 2120
 # environment
 LC_MEASUREMENT = uz_UZ.UTF-8
 # environment
-GIO_LAUNCHED_DESKTOP_FILE_PID = 4381
+GIO_LAUNCHED_DESKTOP_FILE_PID = 7767
 # environment
 _ = /usr/bin/code
 # environment
@@ -215,7 +213,7 @@ GPG_AGENT_INFO = /run/user/1000/gnupg/S.gpg-agent:0:1
 # environment
 COLORTERM = truecolor
 # environment
-JOURNAL_STREAM = 8:36029
+JOURNAL_STREAM = 8:35387
 # environment
 GOMODCACHE = /home/b/go/pkg/mod
 # environment
@@ -277,23 +275,39 @@ lint:
 #  Implicit rule search has not been done.
 #  Modification time never checked.
 #  File has not been updated.
-#  recipe to execute (from 'Makefile', line 14):
+#  recipe to execute (from 'Makefile', line 12):
+ 
+make: *** No rule to make target 'all'.  Stop.
+
 	golangci-lint -c .golangci.yaml run --build-tags "musl" ./...
 
 proto:
 #  Implicit rule search has not been done.
 #  Modification time never checked.
 #  File has not been updated.
-#  recipe to execute (from 'Makefile', line 11):
+#  recipe to execute (from 'Makefile', line 9):
 	./scripts/gen-proto.sh	${CURRENT_DIR}
 
 # Not a target:
 Makefile:
 #  Implicit rule search has been done.
-#  Last modified 2022-08-21 19:40:23.90600145
- 
+#  Last modified 2022-08-25 13:06:29.19752003
 #  File has been updated.
 #  Successfully updated.
+
+swag-gen:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+#  recipe to execute (from 'Makefile', line 15):
+	swag init -g api/router.go -o api/docs
+
+pull-submodule:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+#  recipe to execute (from 'Makefile', line 18):
+	 git submodule update --init --recursive --remote
 
 # Not a target:
 .DEFAULT:
@@ -309,32 +323,26 @@ all:
 #  File has not been updated.
 
 build:
-#  Phony target (prerequisite of .PHONY).
-#  Implicit rule search has not been done.
-#  File does not exist.
-#  File has not been updated.
-#  recipe to execute (from 'Makefile', line 8):
-	CGO_ENABLED=0 GOOS=linux go build -mod='' -a -installsuffix cgo -o ${CURRENT_DIR}/bin/${APP} ${APP_CMD_DIR}/main.go
-
-.PHONY: build
 #  Implicit rule search has not been done.
 #  Modification time never checked.
 #  File has not been updated.
+#  recipe to execute (from 'Makefile', line 6):
+	CGO_ENABLED=0 GOOS=darwin go build -mod=vendor -a -installsuffix cgo -o ${CURRENT_DIR}/bin/${APP} ${APP_CMD_DIR}/main.go
 
 # files hash-table stats:
-# Load=8/1024=1%, Rehash=0, Collisions=0/20=0%
+# Load=9/1024=1%, Rehash=0, Collisions=0/19=0%
 # VPATH Search Paths
 
 # No 'vpath' search paths.
 
 # No general ('VPATH' variable) search path.
 
-# strcache buffers: 1 (0) / strings = 29 / storage = 223 B / avg = 7 B
-# current buf: size = 8162 B / used = 223 B / count = 29 / avg = 7 B
+# strcache buffers: 1 (0) / strings = 30 / storage = 240 B / avg = 8 B
+# current buf: size = 8162 B / used = 240 B / count = 30 / avg = 8 B
 
-# strcache performance: lookups = 38 / hit rate = 23%
+# strcache performance: lookups = 39 / hit rate = 23%
 # hash-table stats:
-# Load=29/8192=0%, Rehash=0, Collisions=0/38=0%
-# Finished Make data base on Wed Aug 24 16:31:19 2022
+# Load=30/8192=0%, Rehash=0, Collisions=0/39=0%
+# Finished Make data base on Tue Aug 30 17:08:35 2022
 
  
