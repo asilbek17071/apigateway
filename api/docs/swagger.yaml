@@ -457,6 +457,32 @@ definitions:
       username:
         type: string
     type: object
+  models.Participate:
+    properties:
+      begin_time:
+        type: string
+      close_time:
+        type: string
+      count:
+        items:
+          $ref: '#/definitions/models.ParticipateCount'
+        type: array
+      group_id:
+        type: string
+      group_name:
+        type: string
+      teacher_id:
+        type: string
+      teacher_name:
+        type: string
+      with_days:
+        type: string
+    type: object
+  models.ParticipateCount:
+    properties:
+      count:
+        type: string
+    type: object
   models.Payment:
     properties:
       amount:
@@ -1454,6 +1480,30 @@ paths:
           schema:
             $ref: '#/definitions/models.StandardErrorModel'
       summary: AttendanceList
+      tags:
+      - attendance
+  /attendance/list/participate/:
+    get:
+      consumes:
+      - application/json
+      description: Bugungi kundagi yo'qlama qilinib bo'linganlarini ko'rish, birinchi
+        count nechta kelganligi, ikkinchisi esa asli nechta kelishi kereligi
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/models.Participate'
+        "400":
+          description: Bad Request
+          schema:
+            $ref: '#/definitions/models.StandardErrorModel'
+        "500":
+          description: Internal Server Error
+          schema:
+            $ref: '#/definitions/models.StandardErrorModel'
+      summary: ParticipateResp
       tags:
       - attendance
   /attendance/update/{id}:

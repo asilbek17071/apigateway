@@ -145,6 +145,36 @@ func (h *handlerV1) AttendanceList(c *gin.Context) {
 	c.JSON(http.StatusOK, response)
 }
 
+// ParticipateResp ...
+// @Router /attendance/list/participate/ [get]
+// @Summary ParticipateResp
+// @Description Bugungi kundagi yo'qlama qilinib bo'linganlarini ko'rish, birinchi count nechta kelganligi, ikkinchisi esa asli nechta kelishi kereligi
+// @Tags attendance
+// @Accept  json
+// @Produce  json
+// @Success 200 {object} models.Participate
+// @Failure 400 {object} models.StandardErrorModel
+// @Failure 500 {object} models.StandardErrorModel
+func (h *handlerV1) ParticipateResp(c *gin.Context) {
+	var jspbMarshal protojson.MarshalOptions
+	jspbMarshal.UseProtoNames = true
+
+	ctx, cancel := context.WithTimeout(context.Background(), time.Second*time.Duration(h.cfg.CtxTimeout))
+	defer cancel()
+
+	response, err := h.serviceManager.CourseService().ParticipateResp(
+		ctx, &pb.EmptyRes{})
+	if err != nil {
+		c.JSON(http.StatusInternalServerError, gin.H{
+			"error": err.Error(),
+		})
+		h.log.Error("failed to list attendances", l.Error(err))
+		return
+	}
+
+	c.JSON(http.StatusOK, response)
+}
+
 // AttendanceUpdate ...
 // @Router /attendance/update/{id} [put]
 // @Summary AttendanceUpdate

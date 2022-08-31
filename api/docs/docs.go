@@ -193,6 +193,41 @@ const docTemplate = `{
                 }
             }
         },
+        "/attendance/list/participate/": {
+            "get": {
+                "description": "Bugungi kundagi yo'qlama qilinib bo'linganlarini ko'rish, birinchi count nechta kelganligi, ikkinchisi esa asli nechta kelishi kereligi",
+                "consumes": [
+                    "application/json"
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "tags": [
+                    "attendance"
+                ],
+                "summary": "ParticipateResp",
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "schema": {
+                            "$ref": "#/definitions/models.Participate"
+                        }
+                    },
+                    "400": {
+                        "description": "Bad Request",
+                        "schema": {
+                            "$ref": "#/definitions/models.StandardErrorModel"
+                        }
+                    },
+                    "500": {
+                        "description": "Internal Server Error",
+                        "schema": {
+                            "$ref": "#/definitions/models.StandardErrorModel"
+                        }
+                    }
+                }
+            }
+        },
         "/attendance/update/{id}": {
             "put": {
                 "description": "This API for updating attendance",
@@ -6707,6 +6742,46 @@ const docTemplate = `{
                     "type": "string"
                 },
                 "username": {
+                    "type": "string"
+                }
+            }
+        },
+        "models.Participate": {
+            "type": "object",
+            "properties": {
+                "begin_time": {
+                    "type": "string"
+                },
+                "close_time": {
+                    "type": "string"
+                },
+                "count": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/definitions/models.ParticipateCount"
+                    }
+                },
+                "group_id": {
+                    "type": "string"
+                },
+                "group_name": {
+                    "type": "string"
+                },
+                "teacher_id": {
+                    "type": "string"
+                },
+                "teacher_name": {
+                    "type": "string"
+                },
+                "with_days": {
+                    "type": "string"
+                }
+            }
+        },
+        "models.ParticipateCount": {
+            "type": "object",
+            "properties": {
+                "count": {
                     "type": "string"
                 }
             }

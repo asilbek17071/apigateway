@@ -31,3 +31,18 @@ type AttendancesList struct {
 	Attendances []AttendanceResp `json:"attendances"`
 	Count       int64            `json:"count"`
 }
+
+type ParticipateCount struct {
+	Count string `json:"count"`
+}
+
+type Participate struct {
+	GroupId          string             `json:"group_id"`
+	GroupName        string             `json:"group_name"`
+	TeacherId        string             `json:"teacher_id"`
+	TeacherName      string             `json:"teacher_name"`
+	WithDays         string             `json:"with_days"`
+	BeginTime        string             `json:"begin_time"`
+	CloseTime        string             `json:"close_time"`
+	ParticipateCount []ParticipateCount `json:"count"`
+}
