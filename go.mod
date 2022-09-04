@@ -5,7 +5,6 @@ go 1.19
 require (
 	github.com/gin-gonic/gin v1.8.1
 	github.com/golang/protobuf v1.5.2
-	github.com/jinzhu/now v1.1.5
 	github.com/spf13/cast v1.5.0
 	github.com/swaggo/swag v1.8.5
 	go.uber.org/zap v1.22.0

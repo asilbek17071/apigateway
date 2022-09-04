@@ -3,8 +3,6 @@ package utils
 import (
 	"strconv"
 	"strings"
-
-	"github.com/jinzhu/now"
 )
 
 type QueryParams struct {
@@ -32,9 +30,9 @@ func ParseQueryParams(queryParams map[string][]string) (*QueryParams, []string) 
 		Search:       " ",
 		Id:           " ",
 		Permission:   " ",
-		From:         now.BeginningOfYear().String(),
+		From:         " ",
 		SpendingType: "",
-		To:           now.EndOfYear().String(),
+		To:           " ",
 		Token:        " ",
 	}
 	var errStr []string

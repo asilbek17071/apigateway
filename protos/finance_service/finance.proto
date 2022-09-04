@@ -11,6 +11,9 @@ service FinanceService {
     rpc PaymentDelete(ByIdReq) returns (EmptyRes);
     rpc Profit(EmptyRes) returns (ProfitRespList);
     rpc PaymentSearch(PaymentSearchReq) returns (PaymentSearchResp);
+
+    rpc SalaryFinanceCreate (EmptyReq) returns (Empty);
+    rpc SalaryFinanceGet (Request) returns (ResponseList);
     
     rpc SpendingCreate(Spending) returns (Spending);
     rpc SpendingGet(ByIdReq) returns (Spending);
@@ -20,6 +23,42 @@ service FinanceService {
 }
 
 message EmptyRes{}
+
+message EmptyReq{
+    string id = 1;
+    string category = 2;
+    string personal_id = 3;
+    string salary_type_id = 4;
+    string amount = 5;
+    string comment = 6;
+}
+
+
+message Empty{
+    bool status = 1;
+}
+
+message Request {
+    string date = 1;
+}
+
+message Response{
+    string id = 1;
+    string name = 2;
+    string permission = 3;
+    string salary_month = 4;
+    string given = 5;
+    string debt = 6;
+    string surcharge = 7;
+    string prepaid_expense = 8;
+    string comment = 9;
+    string status = 10;
+}
+
+message ResponseList {
+    repeated Response salary = 1;
+    int64 count = 2;
+}
 
 message Spending{
     string id = 1;

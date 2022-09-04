@@ -275,3 +275,47 @@ func (h *handlerV1) Personals(c *gin.Context) {
 
 	c.JSON(http.StatusOK, response)
 }
+
+// Position ...
+// @Router /personal/position/ [get]
+// @Summary Position
+// @Description This API for getting list of position
+// @Tags position
+// @Accept  json
+// @Produce  json
+// @Param permission query string false "Permission"
+// @Success 200 {object} models.PersonalsList
+// @Failure 400 {object} models.StandardErrorModel
+// @Failure 500 {object} models.StandardErrorModel
+func (h *handlerV1) Position(c *gin.Context) {
+	queryParams := c.Request.URL.Query()
+
+	params, errStr := utils.ParseQueryParams(queryParams)
+	if errStr != nil {
+		c.JSON(http.StatusBadRequest, gin.H{
+			"error": errStr[0],
+		})
+		h.log.Error("failed to parse query params json" + errStr[0])
+		return
+	}
+
+	var jspbMarshal protojson.MarshalOptions
+	jspbMarshal.UseProtoNames = true
+
+	ctx, cancel := context.WithTimeout(context.Background(), time.Second*time.Duration(h.cfg.CtxTimeout))
+	defer cancel()
+
+	response, err := h.serviceManager.UserService().Position(
+		ctx, &pb.By{
+			Name: params.Permission,
+		})
+	if err != nil {
+		c.JSON(http.StatusInternalServerError, gin.H{
+			"error": err.Error(),
+		})
+		h.log.Error("failed to list personals", l.Error(err))
+		return
+	}
+
+	c.JSON(http.StatusOK, response)
+}

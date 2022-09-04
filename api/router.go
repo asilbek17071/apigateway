@@ -74,6 +74,7 @@ func New(option Option) *gin.Engine {
 
 	planner.POST("/personal/create/", handlerV1.PersonalCreate)
 	planner.GET("/personal/byid/", handlerV1.PersonalGet)
+	planner.GET("/personal/position/", handlerV1.Position)
 	planner.GET("/personal/list/", handlerV1.PersonalList)
 	planner.GET("/personals/", handlerV1.Personals)
 	planner.PUT("/personal/update/", handlerV1.PersonalUpdate)
@@ -124,6 +125,9 @@ func New(option Option) *gin.Engine {
 	planner.GET("/room/list/", handlerV1.RoomList)
 	planner.PUT("/room/update/", handlerV1.RoomUpdate)
 	planner.DELETE("/room/delete/", handlerV1.RoomDelete)
+
+	planner.POST("/finance/salary/create/", handlerV1.SalaryFinanceCreate)
+	planner.GET("/finance/salary/", handlerV1.SalaryFinanceGet)
 
 	planner.POST("/payment_system/create/", handlerV1.PySysCreate)
 	planner.GET("/payment_system/byid/", handlerV1.PySysGet)
