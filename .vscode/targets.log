@@ -1,4 +1,6 @@
 make all --print-data-base --no-builtin-variables --no-builtin-rules --question
+make: *** No rule to make target 'all'.  Stop.
+
 # GNU Make 4.3
 # Built for x86_64-pc-linux-gnu
 # Copyright (C) 1988-2020 Free Software Foundation, Inc.
@@ -6,7 +8,7 @@ make all --print-data-base --no-builtin-variables --no-builtin-rules --question
 # This is free software: you are free to change and redistribute it.
 # There is NO WARRANTY, to the extent permitted by law.
 
-# Make data base, printed on Mon Sep  5 01:00:39 2022
+# Make data base, printed on Mon Sep  5 03:14:45 2022
 
 # Variables
 
@@ -93,7 +95,7 @@ MAKEFILE_LIST := Makefile
 # automatic
 @F = $(notdir $@)
 # environment
-VSCODE_PID = 216421
+VSCODE_PID = 246352
 # environment
 XDG_SESSION_TYPE = x11
 # automatic
@@ -123,7 +125,7 @@ XMODIFIERS = @im=ibus
 # environment
 SHLVL = 1
 # environment
-GNOME_TERMINAL_SCREEN = /org/gnome/Terminal/screen/51d41090_8e5d_4741_96d2_f158f8e2263c
+GNOME_TERMINAL_SCREEN = /org/gnome/Terminal/screen/10f29741_d141_41e7_a7e3_5b0459bebd4c
 # environment
 MAKELEVEL := 0
 # makefile (from 'Makefile', line 3)
@@ -298,12 +300,10 @@ build:
 #  Modification time never checked.
 #  File has not been updated.
 #  recipe to execute (from 'Makefile', line 6):
+ 
 	CGO_ENABLED=0 GOOS=darwin go build -mod=vendor -a -installsuffix cgo -o ${CURRENT_DIR}/bin/${APP} ${APP_CMD_DIR}/main.go
 
 # files hash-table stats:
- 
-make: *** No rule to make target 'all'.  Stop.
-
 # Load=9/1024=1%, Rehash=0, Collisions=0/19=0%
 # VPATH Search Paths
 
@@ -317,6 +317,6 @@ make: *** No rule to make target 'all'.  Stop.
 # strcache performance: lookups = 39 / hit rate = 23%
 # hash-table stats:
 # Load=30/8192=0%, Rehash=0, Collisions=0/39=0%
-# Finished Make data base on Mon Sep  5 01:00:39 2022
+# Finished Make data base on Mon Sep  5 03:14:45 2022
 
  

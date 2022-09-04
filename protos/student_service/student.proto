@@ -72,6 +72,11 @@ message LeadPhone{
     string phone_id = 2;
 }
 
+message By {
+    string id = 1;
+    string name = 2;
+}
+
 message StudentResp{
     string id = 1;
     string full_name = 2;
@@ -85,7 +90,7 @@ message StudentResp{
     string passport_image1 = 10;
     string passport_image2 = 11;
     string address = 12;
-    string group_id = 13;
+    By group_id = 13;
     string created_at = 14;
     string updated_at = 15;
 }
@@ -115,8 +120,8 @@ message LeadResp{
     string address = 7; 
     string source = 8;
     string comment = 9;
-    string user_id = 10;
-    string direction_id = 11;
+    By user_id = 10;
+    By direction_id = 11;
     string created_at = 12;
     string updated_at = 13;
 }
