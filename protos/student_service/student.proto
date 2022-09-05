@@ -47,6 +47,8 @@ message Student{
     string passport_image2 = 11;
     string address = 12;
     string group_id = 13;
+    string status = 14;
+    string comment = 15;
 }
 
 message SPhone{
@@ -91,8 +93,10 @@ message StudentResp{
     string passport_image2 = 11;
     string address = 12;
     By group_id = 13;
-    string created_at = 14;
-    string updated_at = 15;
+    string status = 14;
+    string comment = 15;
+    string created_at = 16;
+    string updated_at = 17;
 }
 
 
