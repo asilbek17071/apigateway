@@ -13,20 +13,20 @@ import (
 	"google.golang.org/protobuf/encoding/protojson"
 )
 
-// UserSalaryCreate ...
-// @Summary UserSalaryCreate
-// @Router /salary/admin/create [post]
-// @Description This API for creating a new userSalary
-// @Tags userSalary
+// PersonalSalaryCreate ...
+// @Summary PersonalSalaryCreate
+// @Router /salary/personal/create [post]
+// @Description This API for creating a new personalSalary
+// @Tags personalSalary
 // @Accept  json
 // @Produce  json
-// @Param UserSalary request body models.UserSalary true "userSalaryCreateRequest"
-// @Success 200 {object} models.UserSalaryResp
+// @Param PersonalSalary request body models.PersonalSalary true "personalSalaryCreateRequest"
+// @Success 200 {object} models.PersonalSalaryResp
 // @Failure 400 {object} models.StandardErrorModel
 // @Failure 500 {object} models.StandardErrorModel
-func (h *handlerV1) UserSalaryCreate(c *gin.Context) {
+func (h *handlerV1) PersonalSalaryCreate(c *gin.Context) {
 	var (
-		body        pb.UserSalary
+		body        pb.PersonalSalary
 		jspbMarshal protojson.MarshalOptions
 	)
 
@@ -45,30 +45,30 @@ func (h *handlerV1) UserSalaryCreate(c *gin.Context) {
 	ctx, cancel := context.WithTimeout(context.Background(), time.Second*time.Duration(h.cfg.CtxTimeout))
 	defer cancel()
 
-	response, err := h.serviceManager.UserService().UserSalaryCreate(ctx, &body)
+	response, err := h.serviceManager.UserService().PersonalSalaryCreate(ctx, &body)
 	if err != nil {
 		c.JSON(http.StatusInternalServerError, gin.H{
 			"error": err.Error(),
 		})
-		h.log.Error("failed to create user_salary", l.Error(err))
+		h.log.Error("failed to create personal_salary", l.Error(err))
 		return
 	}
 
 	c.JSON(http.StatusCreated, response)
 }
 
-// UserSalaryGet ...
-// @Router /salary/admin/byid/{id} [get]
-// @Summary UserSalaryGet
-// @Description This API for getting userSalary UserSalaryList
-// @Tags userSalary
+// PersonalSalaryGet ...
+// @Router /salary/personal/byid/{id} [get]
+// @Summary PersonalSalaryGet
+// @Description This API for getting personalSalary PersonalSalaryList
+// @Tags personalSalary
 // @Accept  json
 // @Produce  json
 // @Param id path string true "ID"
-// @Success 200 {object} models.UserSalaryResp
+// @Success 200 {object} models.PersonalSalaryResp
 // @Failure 400 {object} models.StandardErrorModel
 // @Failure 500 {object} models.StandardErrorModel
-func (h *handlerV1) UserSalaryGet(c *gin.Context) {
+func (h *handlerV1) PersonalSalaryGet(c *gin.Context) {
 	queryParams := c.Request.URL.Query()
 
 	params, errStr := utils.ParseQueryParams(queryParams)
@@ -86,7 +86,7 @@ func (h *handlerV1) UserSalaryGet(c *gin.Context) {
 	ctx, cancel := context.WithTimeout(context.Background(), time.Second*time.Duration(h.cfg.CtxTimeout))
 	defer cancel()
 
-	response, err := h.serviceManager.UserService().UserSalaryGet(
+	response, err := h.serviceManager.UserService().PersonalSalaryGet(
 		ctx, &pb.ByIdReq{
 			Id: params.Id,
 		})
@@ -94,25 +94,25 @@ func (h *handlerV1) UserSalaryGet(c *gin.Context) {
 		c.JSON(http.StatusInternalServerError, gin.H{
 			"error": err.Error(),
 		})
-		h.log.Error("failed to get user_salary", l.Error(err))
+		h.log.Error("failed to get personal_salary", l.Error(err))
 		return
 	}
 
 	c.JSON(http.StatusOK, response)
 }
 
-// UserSalaryList ...
-// @Router /salary/admin/list [get]
-// @Summary UserSalaryList
-// @Description This API for getting list of usersSalary
-// @Tags userSalary
+// PersonalSalaryList ...
+// @Router /salary/personal/list [get]
+// @Summary PersonalSalaryList
+// @Description This API for getting list of personalsSalary
+// @Tags personalSalary
 // @Accept  json
 // @Produce  json
 // @Param id query string false "ID"
-// @Success 200 {object} models.UsersSalaryList
+// @Success 200 {object} models.PersonalsSalaryList
 // @Failure 400 {object} models.StandardErrorModel
 // @Failure 500 {object} models.StandardErrorModel
-func (h *handlerV1) UserSalaryList(c *gin.Context) {
+func (h *handlerV1) PersonalSalaryList(c *gin.Context) {
 	queryParams := c.Request.URL.Query()
 
 	params, errStr := utils.ParseQueryParams(queryParams)
@@ -130,7 +130,7 @@ func (h *handlerV1) UserSalaryList(c *gin.Context) {
 	ctx, cancel := context.WithTimeout(context.Background(), time.Second*time.Duration(h.cfg.CtxTimeout))
 	defer cancel()
 
-	response, err := h.serviceManager.UserService().UserSalaryList(
+	response, err := h.serviceManager.UserService().PersonalSalaryList(
 		ctx, &pb.SalaryReq{
 			Id: params.Id,
 		})
@@ -138,26 +138,26 @@ func (h *handlerV1) UserSalaryList(c *gin.Context) {
 		c.JSON(http.StatusInternalServerError, gin.H{
 			"error": err.Error(),
 		})
-		h.log.Error("failed to list user_salarys", l.Error(err))
+		h.log.Error("failed to list personal_salarys", l.Error(err))
 		return
 	}
 
 	c.JSON(http.StatusOK, response)
 }
 
-// UserSalaryUpdate ...
-// @Router /salary/admin/update/{id} [put]
-// @Summary UserSalaryUpdate
-// @Description This API for updating userSalary
-// @Tags userSalary
+// PersonalSalaryUpdate ...
+// @Router /salary/personal/update/{id} [put]
+// @Summary PersonalSalaryUpdate
+// @Description This API for updating personalSalary
+// @Tags personalSalary
 // @Accept  json
 // @Produce  json
 // @Param id path string true "ID"
-// @Param UserSalary request body models.UserSalaryUpdate true "userSalaryUpdateRequest"
-// @Success 200 {object} models.UserSalaryResp
+// @Param PersonalSalary request body models.PersonalSalaryUpdate true "personalSalaryUpdateRequest"
+// @Success 200 {object} models.PersonalSalaryResp
 // @Failure 400 {object} models.StandardErrorModel
 // @Failure 500 {object} models.StandardErrorModel
-func (h *handlerV1) UserSalaryUpdate(c *gin.Context) {
+func (h *handlerV1) PersonalSalaryUpdate(c *gin.Context) {
 	queryParams := c.Request.URL.Query()
 
 	params, errStr := utils.ParseQueryParams(queryParams)
@@ -170,7 +170,7 @@ func (h *handlerV1) UserSalaryUpdate(c *gin.Context) {
 	}
 
 	var (
-		body        pb.UserSalary
+		body        pb.PersonalSalary
 		jspbMarshal protojson.MarshalOptions
 	)
 	jspbMarshal.UseProtoNames = true
@@ -189,30 +189,30 @@ func (h *handlerV1) UserSalaryUpdate(c *gin.Context) {
 	ctx, cancel := context.WithTimeout(context.Background(), time.Second*time.Duration(h.cfg.CtxTimeout))
 	defer cancel()
 
-	response, err := h.serviceManager.UserService().UserSalaryUpdate(ctx, &body)
+	response, err := h.serviceManager.UserService().PersonalSalaryUpdate(ctx, &body)
 	if err != nil {
 		c.JSON(http.StatusInternalServerError, gin.H{
 			"error": err.Error(),
 		})
-		h.log.Error("failed to update user_salary", l.Error(err))
+		h.log.Error("failed to update personal_salary", l.Error(err))
 		return
 	}
 
 	c.JSON(http.StatusOK, response)
 }
 
-// UserSalaryDelete ...
-// @Router /salary/admin/delete/:id [delete]
-// @Summary UserSalaryDelete
-// @Description This API for deleting userSalary
-// @Tags userSalary
+// PersonalSalaryDelete ...
+// @Router /salary/personal/delete/:id [delete]
+// @Summary PersonalSalaryDelete
+// @Description This API for deleting personalSalary
+// @Tags personalSalary
 // @Accept  json
 // @Produce  json
 // @Param id path string true "ID"
 // @Success 200 {object} models.Empty
 // @Failure 400 {object} models.StandardErrorModel
 // @Failure 500 {object} models.StandardErrorModel
-func (h *handlerV1) UserSalaryDelete(c *gin.Context) {
+func (h *handlerV1) PersonalSalaryDelete(c *gin.Context) {
 	queryParams := c.Request.URL.Query()
 
 	params, errStr := utils.ParseQueryParams(queryParams)
@@ -230,7 +230,7 @@ func (h *handlerV1) UserSalaryDelete(c *gin.Context) {
 	ctx, cancel := context.WithTimeout(context.Background(), time.Second*time.Duration(h.cfg.CtxTimeout))
 	defer cancel()
 
-	response, err := h.serviceManager.UserService().UserSalaryDelete(
+	response, err := h.serviceManager.UserService().PersonalSalaryDelete(
 		ctx, &pb.ByIdReq{
 			Id: params.Id,
 		})
@@ -238,7 +238,7 @@ func (h *handlerV1) UserSalaryDelete(c *gin.Context) {
 		c.JSON(http.StatusInternalServerError, gin.H{
 			"error": err.Error(),
 		})
-		h.log.Error("failed to delete user_salary", l.Error(err))
+		h.log.Error("failed to delete personal_salary", l.Error(err))
 		return
 	}
 

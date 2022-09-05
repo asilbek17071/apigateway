@@ -47,12 +47,11 @@ message Response{
     string name = 2;
     string permission = 3;
     string salary_month = 4;
-    string given = 5;
-    string debt = 6;
-    string surcharge = 7;
-    string prepaid_expense = 8;
+    repeated Tesh given = 5;
+    float debt = 6;
+    float surcharge = 7;
+    float prepaid_expense = 8;
     string comment = 9;
-    string status = 10;
 }
 
 message ResponseList {
@@ -175,4 +174,11 @@ message Search{
 message SearchListResp{
     repeated Search search = 1;
     string sum = 2;
+}
+
+message Tesh{
+    string given = 1;
+    string date = 2;
+    string comment = 3;
+    string status = 4;
 }

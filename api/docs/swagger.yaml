@@ -233,6 +233,54 @@ definitions:
       message:
         type: string
     type: object
+  models.FinResp:
+    properties:
+      status:
+        type: boolean
+    type: object
+  models.Finance:
+    properties:
+      amount:
+        type: string
+      category:
+        type: string
+      comment:
+        type: string
+      personal_id:
+        type: string
+      salary_type_id:
+        type: string
+    type: object
+  models.FinanceResp:
+    properties:
+      comment:
+        type: string
+      debt:
+        type: string
+      given:
+        type: string
+      name:
+        type: string
+      permission:
+        type: string
+      prepaid_expense:
+        type: string
+      salary_month:
+        type: string
+      status:
+        type: string
+      surcharge:
+        type: string
+    type: object
+  models.FinanceRespList:
+    properties:
+      count:
+        type: integer
+      salary_personal:
+        items:
+          $ref: '#/definitions/models.FinanceResp'
+        type: array
+    type: object
   models.Group:
     properties:
       active:
@@ -571,6 +619,45 @@ definitions:
       working_day:
         type: string
     type: object
+  models.PersonalSalary:
+    properties:
+      amount:
+        type: string
+      comment:
+        type: string
+      date_of_begin:
+        type: string
+      personal_id:
+        type: string
+    type: object
+  models.PersonalSalaryResp:
+    properties:
+      amount:
+        type: string
+      comment:
+        type: string
+      created_at:
+        type: string
+      date_of_begin:
+        type: string
+      personal_id:
+        type: string
+      salary_id:
+        type: string
+      updated_at:
+        type: string
+    type: object
+  models.PersonalSalaryUpdate:
+    properties:
+      amount:
+        type: string
+      comment:
+        type: string
+      date_of_begin:
+        type: string
+      personal_id:
+        type: string
+    type: object
   models.PersonalUpdate:
     properties:
       full_name:
@@ -596,6 +683,15 @@ definitions:
       personals:
         items:
           $ref: '#/definitions/models.PersonalResp'
+        type: array
+    type: object
+  models.PersonalsSalaryList:
+    properties:
+      count:
+        type: integer
+      personals:
+        items:
+          $ref: '#/definitions/models.PersonalSalaryResp'
         type: array
     type: object
   models.ProfitResp:
@@ -2290,6 +2386,65 @@ paths:
       summary: DirectionUpdate
       tags:
       - direction
+  /finance/salary/:
+    get:
+      consumes:
+      - application/json
+      description: This API for getting finance SalaryFinanceList
+      parameters:
+      - description: From
+        in: path
+        name: from
+        required: true
+        type: string
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/models.FinanceRespList'
+        "400":
+          description: Bad Request
+          schema:
+            $ref: '#/definitions/models.StandardErrorModel'
+        "500":
+          description: Internal Server Error
+          schema:
+            $ref: '#/definitions/models.StandardErrorModel'
+      summary: SalaryFinanceGet
+      tags:
+      - finance
+  /finance/salary/create/:
+    post:
+      consumes:
+      - application/json
+      description: This API for creating a new finance
+      parameters:
+      - description: financeCreateRequest
+        in: body
+        name: request
+        required: true
+        schema:
+          $ref: '#/definitions/models.Finance'
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/models.FinResp'
+        "400":
+          description: Bad Request
+          schema:
+            $ref: '#/definitions/models.StandardErrorModel'
+        "500":
+          description: Internal Server Error
+          schema:
+            $ref: '#/definitions/models.StandardErrorModel'
+      summary: SalaryFinanceCreate
+      tags:
+      - finance
   /group/attendancelist/{id}:
     get:
       consumes:
@@ -3226,6 +3381,34 @@ paths:
       summary: PersonalList
       tags:
       - personal
+  /personal/position/:
+    get:
+      consumes:
+      - application/json
+      description: This API for getting list of position
+      parameters:
+      - description: Permission
+        in: query
+        name: permission
+        type: string
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/models.PersonalsList'
+        "400":
+          description: Bad Request
+          schema:
+            $ref: '#/definitions/models.StandardErrorModel'
+        "500":
+          description: Internal Server Error
+          schema:
+            $ref: '#/definitions/models.StandardErrorModel'
+      summary: Position
+      tags:
+      - position
   /personal/update/{id}:
     put:
       consumes:
@@ -3590,6 +3773,157 @@ paths:
       summary: UserSalaryUpdate
       tags:
       - userSalary
+  /salary/personal/byid/{id}:
+    get:
+      consumes:
+      - application/json
+      description: This API for getting personalSalary PersonalSalaryList
+      parameters:
+      - description: ID
+        in: path
+        name: id
+        required: true
+        type: string
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/models.PersonalSalaryResp'
+        "400":
+          description: Bad Request
+          schema:
+            $ref: '#/definitions/models.StandardErrorModel'
+        "500":
+          description: Internal Server Error
+          schema:
+            $ref: '#/definitions/models.StandardErrorModel'
+      summary: PersonalSalaryGet
+      tags:
+      - personalSalary
+  /salary/personal/create:
+    post:
+      consumes:
+      - application/json
+      description: This API for creating a new personalSalary
+      parameters:
+      - description: personalSalaryCreateRequest
+        in: body
+        name: request
+        required: true
+        schema:
+          $ref: '#/definitions/models.PersonalSalary'
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/models.PersonalSalaryResp'
+        "400":
+          description: Bad Request
+          schema:
+            $ref: '#/definitions/models.StandardErrorModel'
+        "500":
+          description: Internal Server Error
+          schema:
+            $ref: '#/definitions/models.StandardErrorModel'
+      summary: PersonalSalaryCreate
+      tags:
+      - personalSalary
+  /salary/personal/delete/:id:
+    delete:
+      consumes:
+      - application/json
+      description: This API for deleting personalSalary
+      parameters:
+      - description: ID
+        in: path
+        name: id
+        required: true
+        type: string
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/models.Empty'
+        "400":
+          description: Bad Request
+          schema:
+            $ref: '#/definitions/models.StandardErrorModel'
+        "500":
+          description: Internal Server Error
+          schema:
+            $ref: '#/definitions/models.StandardErrorModel'
+      summary: PersonalSalaryDelete
+      tags:
+      - personalSalary
+  /salary/personal/list:
+    get:
+      consumes:
+      - application/json
+      description: This API for getting list of personalsSalary
+      parameters:
+      - description: ID
+        in: query
+        name: id
+        type: string
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/models.PersonalsSalaryList'
+        "400":
+          description: Bad Request
+          schema:
+            $ref: '#/definitions/models.StandardErrorModel'
+        "500":
+          description: Internal Server Error
+          schema:
+            $ref: '#/definitions/models.StandardErrorModel'
+      summary: PersonalSalaryList
+      tags:
+      - personalSalary
+  /salary/personal/update/{id}:
+    put:
+      consumes:
+      - application/json
+      description: This API for updating personalSalary
+      parameters:
+      - description: ID
+        in: path
+        name: id
+        required: true
+        type: string
+      - description: personalSalaryUpdateRequest
+        in: body
+        name: request
+        required: true
+        schema:
+          $ref: '#/definitions/models.PersonalSalaryUpdate'
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/models.PersonalSalaryResp'
+        "400":
+          description: Bad Request
+          schema:
+            $ref: '#/definitions/models.StandardErrorModel'
+        "500":
+          description: Internal Server Error
+          schema:
+            $ref: '#/definitions/models.StandardErrorModel'
+      summary: PersonalSalaryUpdate
+      tags:
+      - personalSalary
   /salary/teacher/byid/{id}:
     get:
       consumes:

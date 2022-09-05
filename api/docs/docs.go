@@ -1421,6 +1421,96 @@ const docTemplate = `{
                 }
             }
         },
+        "/finance/salary/": {
+            "get": {
+                "description": "This API for getting finance SalaryFinanceList",
+                "consumes": [
+                    "application/json"
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "tags": [
+                    "finance"
+                ],
+                "summary": "SalaryFinanceGet",
+                "parameters": [
+                    {
+                        "type": "string",
+                        "description": "From",
+                        "name": "from",
+                        "in": "path",
+                        "required": true
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "schema": {
+                            "$ref": "#/definitions/models.FinanceRespList"
+                        }
+                    },
+                    "400": {
+                        "description": "Bad Request",
+                        "schema": {
+                            "$ref": "#/definitions/models.StandardErrorModel"
+                        }
+                    },
+                    "500": {
+                        "description": "Internal Server Error",
+                        "schema": {
+                            "$ref": "#/definitions/models.StandardErrorModel"
+                        }
+                    }
+                }
+            }
+        },
+        "/finance/salary/create/": {
+            "post": {
+                "description": "This API for creating a new finance",
+                "consumes": [
+                    "application/json"
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "tags": [
+                    "finance"
+                ],
+                "summary": "SalaryFinanceCreate",
+                "parameters": [
+                    {
+                        "description": "financeCreateRequest",
+                        "name": "request",
+                        "in": "body",
+                        "required": true,
+                        "schema": {
+                            "$ref": "#/definitions/models.Finance"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "schema": {
+                            "$ref": "#/definitions/models.FinResp"
+                        }
+                    },
+                    "400": {
+                        "description": "Bad Request",
+                        "schema": {
+                            "$ref": "#/definitions/models.StandardErrorModel"
+                        }
+                    },
+                    "500": {
+                        "description": "Internal Server Error",
+                        "schema": {
+                            "$ref": "#/definitions/models.StandardErrorModel"
+                        }
+                    }
+                }
+            }
+        },
         "/group/attendancelist/{id}": {
             "get": {
                 "description": "This API for getting list of groups",
@@ -2847,6 +2937,49 @@ const docTemplate = `{
                 }
             }
         },
+        "/personal/position/": {
+            "get": {
+                "description": "This API for getting list of position",
+                "consumes": [
+                    "application/json"
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "tags": [
+                    "position"
+                ],
+                "summary": "Position",
+                "parameters": [
+                    {
+                        "type": "string",
+                        "description": "Permission",
+                        "name": "permission",
+                        "in": "query"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "schema": {
+                            "$ref": "#/definitions/models.PersonalsList"
+                        }
+                    },
+                    "400": {
+                        "description": "Bad Request",
+                        "schema": {
+                            "$ref": "#/definitions/models.StandardErrorModel"
+                        }
+                    },
+                    "500": {
+                        "description": "Internal Server Error",
+                        "schema": {
+                            "$ref": "#/definitions/models.StandardErrorModel"
+                        }
+                    }
+                }
+            }
+        },
         "/personal/update/{id}": {
             "put": {
                 "description": "This API for updating personal",
@@ -3384,6 +3517,236 @@ const docTemplate = `{
                         "description": "OK",
                         "schema": {
                             "$ref": "#/definitions/models.UserSalaryResp"
+                        }
+                    },
+                    "400": {
+                        "description": "Bad Request",
+                        "schema": {
+                            "$ref": "#/definitions/models.StandardErrorModel"
+                        }
+                    },
+                    "500": {
+                        "description": "Internal Server Error",
+                        "schema": {
+                            "$ref": "#/definitions/models.StandardErrorModel"
+                        }
+                    }
+                }
+            }
+        },
+        "/salary/personal/byid/{id}": {
+            "get": {
+                "description": "This API for getting personalSalary PersonalSalaryList",
+                "consumes": [
+                    "application/json"
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "tags": [
+                    "personalSalary"
+                ],
+                "summary": "PersonalSalaryGet",
+                "parameters": [
+                    {
+                        "type": "string",
+                        "description": "ID",
+                        "name": "id",
+                        "in": "path",
+                        "required": true
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "schema": {
+                            "$ref": "#/definitions/models.PersonalSalaryResp"
+                        }
+                    },
+                    "400": {
+                        "description": "Bad Request",
+                        "schema": {
+                            "$ref": "#/definitions/models.StandardErrorModel"
+                        }
+                    },
+                    "500": {
+                        "description": "Internal Server Error",
+                        "schema": {
+                            "$ref": "#/definitions/models.StandardErrorModel"
+                        }
+                    }
+                }
+            }
+        },
+        "/salary/personal/create": {
+            "post": {
+                "description": "This API for creating a new personalSalary",
+                "consumes": [
+                    "application/json"
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "tags": [
+                    "personalSalary"
+                ],
+                "summary": "PersonalSalaryCreate",
+                "parameters": [
+                    {
+                        "description": "personalSalaryCreateRequest",
+                        "name": "request",
+                        "in": "body",
+                        "required": true,
+                        "schema": {
+                            "$ref": "#/definitions/models.PersonalSalary"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "schema": {
+                            "$ref": "#/definitions/models.PersonalSalaryResp"
+                        }
+                    },
+                    "400": {
+                        "description": "Bad Request",
+                        "schema": {
+                            "$ref": "#/definitions/models.StandardErrorModel"
+                        }
+                    },
+                    "500": {
+                        "description": "Internal Server Error",
+                        "schema": {
+                            "$ref": "#/definitions/models.StandardErrorModel"
+                        }
+                    }
+                }
+            }
+        },
+        "/salary/personal/delete/:id": {
+            "delete": {
+                "description": "This API for deleting personalSalary",
+                "consumes": [
+                    "application/json"
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "tags": [
+                    "personalSalary"
+                ],
+                "summary": "PersonalSalaryDelete",
+                "parameters": [
+                    {
+                        "type": "string",
+                        "description": "ID",
+                        "name": "id",
+                        "in": "path",
+                        "required": true
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "schema": {
+                            "$ref": "#/definitions/models.Empty"
+                        }
+                    },
+                    "400": {
+                        "description": "Bad Request",
+                        "schema": {
+                            "$ref": "#/definitions/models.StandardErrorModel"
+                        }
+                    },
+                    "500": {
+                        "description": "Internal Server Error",
+                        "schema": {
+                            "$ref": "#/definitions/models.StandardErrorModel"
+                        }
+                    }
+                }
+            }
+        },
+        "/salary/personal/list": {
+            "get": {
+                "description": "This API for getting list of personalsSalary",
+                "consumes": [
+                    "application/json"
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "tags": [
+                    "personalSalary"
+                ],
+                "summary": "PersonalSalaryList",
+                "parameters": [
+                    {
+                        "type": "string",
+                        "description": "ID",
+                        "name": "id",
+                        "in": "query"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "schema": {
+                            "$ref": "#/definitions/models.PersonalsSalaryList"
+                        }
+                    },
+                    "400": {
+                        "description": "Bad Request",
+                        "schema": {
+                            "$ref": "#/definitions/models.StandardErrorModel"
+                        }
+                    },
+                    "500": {
+                        "description": "Internal Server Error",
+                        "schema": {
+                            "$ref": "#/definitions/models.StandardErrorModel"
+                        }
+                    }
+                }
+            }
+        },
+        "/salary/personal/update/{id}": {
+            "put": {
+                "description": "This API for updating personalSalary",
+                "consumes": [
+                    "application/json"
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "tags": [
+                    "personalSalary"
+                ],
+                "summary": "PersonalSalaryUpdate",
+                "parameters": [
+                    {
+                        "type": "string",
+                        "description": "ID",
+                        "name": "id",
+                        "in": "path",
+                        "required": true
+                    },
+                    {
+                        "description": "personalSalaryUpdateRequest",
+                        "name": "request",
+                        "in": "body",
+                        "required": true,
+                        "schema": {
+                            "$ref": "#/definitions/models.PersonalSalaryUpdate"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "schema": {
+                            "$ref": "#/definitions/models.PersonalSalaryResp"
                         }
                     },
                     "400": {
@@ -6404,6 +6767,80 @@ const docTemplate = `{
                 }
             }
         },
+        "models.FinResp": {
+            "type": "object",
+            "properties": {
+                "status": {
+                    "type": "boolean"
+                }
+            }
+        },
+        "models.Finance": {
+            "type": "object",
+            "properties": {
+                "amount": {
+                    "type": "string"
+                },
+                "category": {
+                    "type": "string"
+                },
+                "comment": {
+                    "type": "string"
+                },
+                "personal_id": {
+                    "type": "string"
+                },
+                "salary_type_id": {
+                    "type": "string"
+                }
+            }
+        },
+        "models.FinanceResp": {
+            "type": "object",
+            "properties": {
+                "comment": {
+                    "type": "string"
+                },
+                "debt": {
+                    "type": "string"
+                },
+                "given": {
+                    "type": "string"
+                },
+                "name": {
+                    "type": "string"
+                },
+                "permission": {
+                    "type": "string"
+                },
+                "prepaid_expense": {
+                    "type": "string"
+                },
+                "salary_month": {
+                    "type": "string"
+                },
+                "status": {
+                    "type": "string"
+                },
+                "surcharge": {
+                    "type": "string"
+                }
+            }
+        },
+        "models.FinanceRespList": {
+            "type": "object",
+            "properties": {
+                "count": {
+                    "type": "integer"
+                },
+                "salary_personal": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/definitions/models.FinanceResp"
+                    }
+                }
+            }
+        },
         "models.Group": {
             "type": "object",
             "properties": {
@@ -6921,6 +7358,66 @@ const docTemplate = `{
                 }
             }
         },
+        "models.PersonalSalary": {
+            "type": "object",
+            "properties": {
+                "amount": {
+                    "type": "string"
+                },
+                "comment": {
+                    "type": "string"
+                },
+                "date_of_begin": {
+                    "type": "string"
+                },
+                "personal_id": {
+                    "type": "string"
+                }
+            }
+        },
+        "models.PersonalSalaryResp": {
+            "type": "object",
+            "properties": {
+                "amount": {
+                    "type": "string"
+                },
+                "comment": {
+                    "type": "string"
+                },
+                "created_at": {
+                    "type": "string"
+                },
+                "date_of_begin": {
+                    "type": "string"
+                },
+                "personal_id": {
+                    "type": "string"
+                },
+                "salary_id": {
+                    "type": "string"
+                },
+                "updated_at": {
+                    "type": "string"
+                }
+            }
+        },
+        "models.PersonalSalaryUpdate": {
+            "type": "object",
+            "properties": {
+                "amount": {
+                    "type": "string"
+                },
+                "comment": {
+                    "type": "string"
+                },
+                "date_of_begin": {
+                    "type": "string"
+                },
+                "personal_id": {
+                    "type": "string"
+                }
+            }
+        },
         "models.PersonalUpdate": {
             "type": "object",
             "properties": {
@@ -6959,6 +7456,20 @@ const docTemplate = `{
                     "type": "array",
                     "items": {
                         "$ref": "#/definitions/models.PersonalResp"
+                    }
+                }
+            }
+        },
+        "models.PersonalsSalaryList": {
+            "type": "object",
+            "properties": {
+                "count": {
+                    "type": "integer"
+                },
+                "personals": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/definitions/models.PersonalSalaryResp"
                     }
                 }
             }
