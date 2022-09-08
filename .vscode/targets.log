@@ -8,7 +8,7 @@ make: *** No rule to make target 'all'.  Stop.
 # This is free software: you are free to change and redistribute it.
 # There is NO WARRANTY, to the extent permitted by law.
 
-# Make data base, printed on Mon Sep  5 13:22:33 2022
+# Make data base, printed on Thu Sep  8 14:19:34 2022
 
 # Variables
 
@@ -93,13 +93,13 @@ MAKEFILE_LIST := Makefile
 # automatic
 @F = $(notdir $@)
 # environment
-VSCODE_PID = 389424
+VSCODE_PID = 4580
 # environment
 XDG_SESSION_TYPE = x11
 # automatic
 ?D = $(patsubst %/,%,$(dir $?))
 # environment
-SESSION_MANAGER = local/i:@/tmp/.ICE-unix/2615,unix/i:/tmp/.ICE-unix/2615
+SESSION_MANAGER = local/i:@/tmp/.ICE-unix/2679,unix/i:/tmp/.ICE-unix/2679
 # automatic
 *F = $(notdir $*)
 # environment
@@ -141,7 +141,7 @@ LC_MONETARY = uz_UZ.UTF-8
 # environment
 LC_TIME = uz_UZ.UTF-8
 # environment
-INVOCATION_ID = 495a43d01f5842b2aafaebfa5b5f8617
+INVOCATION_ID = 3468c3292a974856a2fbf97dec528a20
 # environment
 USERNAME = b
 # environment
@@ -167,7 +167,7 @@ GIO_LAUNCHED_DESKTOP_FILE = /usr/share/applications/code.desktop
 # makefile
 .DEFAULT_GOAL := build
 # environment
-SYSTEMD_EXEC_PID = 2634
+SYSTEMD_EXEC_PID = 2698
 # environment
 DISPLAY = :1
 # environment
@@ -177,11 +177,11 @@ GTK_MODULES = gail:atk-bridge
 # default
 MAKE_VERSION := 4.3
 # environment
-MANAGERPID = 2124
+MANAGERPID = 2187
 # environment
 LC_MEASUREMENT = uz_UZ.UTF-8
 # environment
-GIO_LAUNCHED_DESKTOP_FILE_PID = 389424
+GIO_LAUNCHED_DESKTOP_FILE_PID = 4580
 # environment
 _ = /usr/share/code/code
 # environment
@@ -191,7 +191,7 @@ XDG_RUNTIME_DIR = /run/user/1000
 # environment
 GPG_AGENT_INFO = /run/user/1000/gnupg/S.gpg-agent:0:1
 # environment
-JOURNAL_STREAM = 8:36194
+JOURNAL_STREAM = 8:35530
 # environment
 GOMODCACHE = /home/b/go/pkg/mod
 # environment
@@ -281,6 +281,7 @@ pull-submodule:
 #  Implicit rule search has not been done.
 #  Modification time never checked.
 #  File has not been updated.
+ 
 
 # Not a target:
 all:
@@ -310,6 +311,6 @@ build:
 # strcache performance: lookups = 39 / hit rate = 23%
 # hash-table stats:
 # Load=30/8192=0%, Rehash=0, Collisions=0/39=0%
-# Finished Make data base on Mon Sep  5 13:22:33 2022
+# Finished Make data base on Thu Sep  8 14:19:34 2022
 
  

@@ -199,6 +199,7 @@ func (h *handlerV1) TeacherSignUp(c *gin.Context) {
 // @Produce  json
 // @Param page query string false "Page"
 // @Param limit query string false "Limit"
+// @Param permission query string false "PERMISSION"
 // @Success 200 {object} models.TeachersList
 // @Failure 400 {object} models.StandardErrorModel
 // @Failure 500 {object} models.StandardErrorModel
@@ -222,8 +223,9 @@ func (h *handlerV1) TeacherList(c *gin.Context) {
 
 	response, err := h.serviceManager.TeacherService().TeacherList(
 		ctx, &pb.ListReq{
-			Limit: params.Limit,
-			Page:  params.Page,
+			Limit:      params.Limit,
+			Page:       params.Page,
+			Permission: params.Permission,
 		})
 	if err != nil {
 		c.JSON(http.StatusInternalServerError, gin.H{
