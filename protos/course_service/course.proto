@@ -11,6 +11,7 @@ service CourseService {
     rpc GroupAttendanceList(ByIdReq) returns (ByResp);
     rpc GroupUpdate(Group) returns (GroupResp);
     rpc GroupDelete(ByIdReq) returns (EmptyRes);
+    rpc TeacherGroup(ListIdReq) returns (GroupListsResp);
 
     rpc AttendanceCreate(Attendance) returns (Attendance);
     rpc AttendanceGet(ByIdReq) returns (Attendance);

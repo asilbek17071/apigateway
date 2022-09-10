@@ -151,6 +151,57 @@ func (h *handlerV1) GroupList(c *gin.Context) {
 	c.JSON(http.StatusOK, response)
 }
 
+// GroupList ...
+// @Router /group/byteacherid/list/ [get]
+// @Summary GroupList
+// @Description This API for getting list of groups
+// @Tags group
+// @Accept  json
+// @Produce  json
+// @Param id query string false "ID"
+// @Param page query string false "Page"
+// @Param limit query string false "Limit"
+// @Success 200 {object} models.GroupsList
+// @Failure 400 {object} models.StandardErrorModel
+// @Failure 500 {object} models.StandardErrorModel
+func (h *handlerV1) TeacherGroup(c *gin.Context) {
+	queryParams := c.Request.URL.Query()
+
+	params, errStr := utils.ParseQueryParams(queryParams)
+	if errStr != nil {
+		c.JSON(http.StatusBadRequest, gin.H{
+			"error": errStr[0],
+		})
+		h.log.Error("failed to parse query params json" + errStr[0])
+		return
+	}
+
+	var jspbMarshal protojson.MarshalOptions
+	jspbMarshal.UseProtoNames = true
+
+	ctx, cancel := context.WithTimeout(context.Background(), time.Second*time.Duration(h.cfg.CtxTimeout))
+	defer cancel()
+
+	response, err := h.serviceManager.CourseService().TeacherGroup(
+		ctx, &pb.ListIdReq{
+			Id:    params.Id,
+			Limit: params.Limit,
+			Page:  params.Page,
+		})
+
+	fmt.Println(response)
+
+	if err != nil {
+		c.JSON(http.StatusInternalServerError, gin.H{
+			"error": err.Error(),
+		})
+		h.log.Error("failed to list groups", l.Error(err))
+		return
+	}
+
+	c.JSON(http.StatusOK, response)
+}
+
 // GroupUpdate ...
 // @Router /group/update/{id} [put]
 // @Summary GroupUpdate

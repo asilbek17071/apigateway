@@ -107,6 +107,7 @@ func New(option Option) *gin.Engine {
 	planner.POST("/group/create/", handlerV1.GroupCreate)
 	planner.GET("/group/byid/", handlerV1.GroupGet)
 	planner.GET("/group/list/", handlerV1.GroupList)
+	planner.GET("/group/byteacherid/list/", handlerV1.TeacherGroup)
 	planner.GET("/group/withlist/", handlerV1.GroupWithList)
 	planner.GET("/group/roomlist/", handlerV1.GroupRoomList)
 	planner.GET("/group/attendancelist/", handlerV1.GroupAttendanceList)
