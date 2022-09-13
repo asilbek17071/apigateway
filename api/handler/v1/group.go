@@ -134,8 +134,10 @@ func (h *handlerV1) GroupList(c *gin.Context) {
 
 	response, err := h.serviceManager.CourseService().GroupList(
 		ctx, &pb.ListReq{
-			Limit: params.Limit,
-			Page:  params.Page,
+			Teacher:   params.Teacher,
+			Direction: params.Direction,
+			Student:   params.Student,
+			Active:    params.Active,
 		})
 
 	fmt.Println(response)

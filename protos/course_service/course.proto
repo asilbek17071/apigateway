@@ -185,8 +185,10 @@ message ByIdReq {
 }
 
 message ListReq {
-    int64 page = 1;
-    int64 limit = 2;
+    string teacher = 1;
+    string direction = 2;
+    string student = 3;
+    bool active = 6;
 }
 
 message Resp{
