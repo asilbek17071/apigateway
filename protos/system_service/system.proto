@@ -6,6 +6,7 @@ service SystemService {
     rpc DirectionCreate(Direction) returns (Direction);
     rpc DirectionGet(ByIdReq) returns (Direction);
     rpc DirectionList(ListReq) returns (DirectionListResp);
+    rpc DirectionGroupList(ListReq) returns (DirectionDRListResp);
     rpc DirectionUpdate(Direction) returns (Direction);
     rpc DirectionDelete(ByIdReq) returns (EmptyRes);   
 
@@ -164,6 +165,26 @@ message BranchWithRoom{
 
 message DirectionListResp {
     repeated Direction directions = 1;
+    int64 count = 2;
+}
+
+message By {
+    string id = 1;
+    string name = 2;
+}
+
+message DirectionResp{
+    string id = 1;
+    string name = 2;
+    int64 count_group = 3;
+    string duration = 4;
+    repeated By group = 5;
+    string created_at = 6;
+}
+
+
+message DirectionDRListResp {
+    repeated DirectionResp directions = 1;
     int64 count = 2;
 }
 

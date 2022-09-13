@@ -147,6 +147,52 @@ func (h *handlerV1) DirectionList(c *gin.Context) {
 	c.JSON(http.StatusOK, response)
 }
 
+// DirectionList ...
+// @Router /direction/group/list/ [get]
+// @Summary DirectionList
+// @Description This API for getting list of directions
+// @Tags direction
+// @Accept  json
+// @Produce  json
+// @Param page query string false "Page"
+// @Param limit query string false "Limit"
+// @Success 200 {object} models.DirectionsList
+// @Failure 400 {object} models.StandardErrorModel
+// @Failure 500 {object} models.StandardErrorModel
+func (h *handlerV1) DirectionGroupList(c *gin.Context) {
+	queryParams := c.Request.URL.Query()
+
+	params, errStr := utils.ParseQueryParams(queryParams)
+	if errStr != nil {
+		c.JSON(http.StatusBadRequest, gin.H{
+			"error": errStr[0],
+		})
+		h.log.Error("failed to parse query params json" + errStr[0])
+		return
+	}
+
+	var jspbMarshal protojson.MarshalOptions
+	jspbMarshal.UseProtoNames = true
+
+	ctx, cancel := context.WithTimeout(context.Background(), time.Second*time.Duration(h.cfg.CtxTimeout))
+	defer cancel()
+
+	response, err := h.serviceManager.SystemService().DirectionGroupList(
+		ctx, &pb.ListReq{
+			Limit: params.Limit,
+			Page:  params.Page,
+		})
+	if err != nil {
+		c.JSON(http.StatusInternalServerError, gin.H{
+			"error": err.Error(),
+		})
+		h.log.Error("failed to list directions", l.Error(err))
+		return
+	}
+
+	c.JSON(http.StatusOK, response)
+}
+
 // DirectionUpdate ...
 // @Router /direction/update/{id} [put]
 // @Summary DirectionUpdate

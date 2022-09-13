@@ -2503,6 +2503,42 @@ paths:
       summary: GroupGet
       tags:
       - group
+  /group/byteacherid/list/:
+    get:
+      consumes:
+      - application/json
+      description: This API for getting list of groups
+      parameters:
+      - description: ID
+        in: query
+        name: id
+        type: string
+      - description: Page
+        in: query
+        name: page
+        type: string
+      - description: Limit
+        in: query
+        name: limit
+        type: string
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/models.GroupsList'
+        "400":
+          description: Bad Request
+          schema:
+            $ref: '#/definitions/models.StandardErrorModel'
+        "500":
+          description: Internal Server Error
+          schema:
+            $ref: '#/definitions/models.StandardErrorModel'
+      summary: GroupList
+      tags:
+      - group
   /group/create/:
     post:
       consumes:
@@ -5049,6 +5085,10 @@ paths:
       - description: Limit
         in: query
         name: limit
+        type: string
+      - description: PERMISSION
+        in: query
+        name: permission
         type: string
       produces:
       - application/json

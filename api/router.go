@@ -69,6 +69,7 @@ func New(option Option) *gin.Engine {
 	planner.POST("/direction/create/", handlerV1.DirectionCreate)
 	planner.GET("/direction/byid/", handlerV1.DirectionGet)
 	planner.GET("/direction/list/", handlerV1.DirectionList)
+	planner.GET("/direction/group/list/", handlerV1.DirectionGroupList)
 	planner.PUT("/direction/update/", handlerV1.DirectionUpdate)
 	planner.DELETE("/direction/delete/", handlerV1.DirectionDelete)
 

@@ -8,6 +8,7 @@ type User struct {
 	Phone1         string `json:"phone1"`
 	Phone2         string `json:"phone2"`
 	Permission     string `json:"permission"`
+	Password       string `json:"password"`
 	WorkingDay     string `json:"working_day"`
 	Address        string `json:"address"`
 	PassportSeries string `json:"passport_series"`
@@ -26,6 +27,7 @@ type UserResp struct {
 	Phone1         string `json:"phone1"`
 	Phone2         string `json:"phone2"`
 	Permission     string `json:"permission"`
+	Password       string `json:"password"`
 	WorkingDay     string `json:"working_day"`
 	Address        string `json:"address"`
 	PassportSeries string `json:"passport_series"`
@@ -49,6 +51,7 @@ type UserUpdate struct {
 	Gender         string `json:"gender"`
 	Phone1         string `json:"phone1"`
 	Phone2         string `json:"phone2"`
+	Password       string `json:"password"`
 	Permission     string `json:"permission"`
 	WorkingDay     string `json:"working_day"`
 	Address        string `json:"address"`
