@@ -10,7 +10,7 @@ service FinanceService {
     rpc PaymentUpdate(Payment) returns (Payment);
     rpc PaymentDelete(ByIdReq) returns (EmptyRes);
     rpc Profit(EmptyRes) returns (ProfitRespList);
-    rpc PaymentSearch(PaymentSearchReq) returns (PaymentSearchResp);
+    // rpc PaymentSearch(PaymentSearchReq) returns (PaymentSearchResp);
 
     rpc SalaryFinanceCreate (EmptyReq) returns (Empty);
     rpc SalaryFinanceGet (Request) returns (ResponseList);
@@ -76,6 +76,13 @@ message By{
     string name = 2;
 }
 
+message ByP{
+    string id = 1;
+    string name = 2;
+    string teacher_id = 3;
+    string teacher_name = 4;
+}
+
 message SpendingResp{
     string id = 1;
     string amount = 2;
@@ -92,15 +99,29 @@ message Payment{
     string id = 1;
     string amount = 2;
     string type = 3;
-    string pysys_id = 4;
-    string student_id = 5;
-    string direction_id = 6;
-    string group_id = 7;
-    string created_at = 8;
-    string updated_at = 9;
+    string duration = 4;
+    string pysys_id = 5;
+    string student_id = 6;
+    string direction_id = 7;
+    string group_id = 8;
+    string created_at = 9;
+    string updated_at = 10;
+}
+
+message PaymentResp{
+    string id = 1;
+    string amount = 2;
+    string type = 3;
+    string duration = 4;
+    By pysys_id = 5;
+    By student_id = 6;
+    By direction_id = 7;
+    ByP group_id = 8;
+    string created_at = 9;
+    string updated_at = 10;
 }
 message PaymentListResp {
-    repeated Payment payments = 1;
+    repeated PaymentResp payments = 1;
     int64 count = 2;
 }
 
@@ -165,10 +186,13 @@ message SearchReq {
 
 message Search{
     string id = 1;
-    string fullname = 2;
-    string created_at = 3;
-    string name = 4;
+    string name = 2;
+    string teacher_name = 3;
+    int64 countStudent = 4;
     string amount = 5;
+    string paid = 6;
+    string debt = 7;
+    string total_amount = 8;
 }
 
 message SearchListResp{
@@ -181,4 +205,8 @@ message Tesh{
     string date = 2;
     string comment = 3;
     string status = 4;
+}
+
+message Count{
+    int64 count = 1;
 }

@@ -155,7 +155,7 @@ func New(option Option) *gin.Engine {
 	planner.POST("/payment/create/", handlerV1.PaymentCreate)
 	planner.GET("/payment/byid/", handlerV1.PaymentGet)
 	planner.GET("/payment/list/", handlerV1.PaymentList)
-	planner.GET("/payment/search/", handlerV1.PaymentSearch)
+	// planner.GET("/payment/search/", handlerV1.PaymentSearch)
 	planner.GET("/payment/searchlist/", handlerV1.PaymentSearchList)
 	planner.PUT("/payment/update/", handlerV1.PaymentUpdate)
 	planner.DELETE("/payment/delete/", handlerV1.PaymentUpdate)
