@@ -127,7 +127,7 @@ message PaymentListResp {
 
 message SpendingListResp {
     repeated SpendingResp spendings = 1;
-    int64 count = 2;
+    string count = 2;
 }
 message Searching{
     string name = 1;
