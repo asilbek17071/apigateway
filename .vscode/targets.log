@@ -8,7 +8,7 @@ make: *** No rule to make target 'all'.  Stop.
 # This is free software: you are free to change and redistribute it.
 # There is NO WARRANTY, to the extent permitted by law.
 
-# Make data base, printed on Sun Sep 11 15:07:40 2022
+# Make data base, printed on Thu Sep 15 13:08:12 2022
 
 # Variables
 
@@ -93,13 +93,13 @@ MAKEFILE_LIST := Makefile
 # automatic
 @F = $(notdir $@)
 # environment
-VSCODE_PID = 7882
+VSCODE_PID = 5867
 # environment
 XDG_SESSION_TYPE = x11
 # automatic
 ?D = $(patsubst %/,%,$(dir $?))
 # environment
-SESSION_MANAGER = local/i:@/tmp/.ICE-unix/2513,unix/i:/tmp/.ICE-unix/2513
+SESSION_MANAGER = local/i:@/tmp/.ICE-unix/2646,unix/i:/tmp/.ICE-unix/2646
 # automatic
 *F = $(notdir $*)
 # environment
@@ -141,7 +141,7 @@ LC_MONETARY = uz_UZ.UTF-8
 # environment
 LC_TIME = uz_UZ.UTF-8
 # environment
-INVOCATION_ID = 4742bca21d1d42468bc4487d4842531f
+INVOCATION_ID = 61f7a65a0cc34b2896cdd39ccaa490a3
 # environment
 USERNAME = b
 # environment
@@ -167,7 +167,7 @@ GIO_LAUNCHED_DESKTOP_FILE = /usr/share/applications/code.desktop
 # makefile
 .DEFAULT_GOAL := build
 # environment
-SYSTEMD_EXEC_PID = 2532
+SYSTEMD_EXEC_PID = 2666
 # environment
 DISPLAY = :1
 # environment
@@ -177,11 +177,11 @@ GTK_MODULES = gail:atk-bridge
 # default
 MAKE_VERSION := 4.3
 # environment
-MANAGERPID = 2024
+MANAGERPID = 2201
 # environment
 LC_MEASUREMENT = uz_UZ.UTF-8
 # environment
-GIO_LAUNCHED_DESKTOP_FILE_PID = 7882
+GIO_LAUNCHED_DESKTOP_FILE_PID = 5867
 # environment
 _ = /usr/share/code/code
 # environment
@@ -191,7 +191,7 @@ XDG_RUNTIME_DIR = /run/user/1000
 # environment
 GPG_AGENT_INFO = /run/user/1000/gnupg/S.gpg-agent:0:1
 # environment
-JOURNAL_STREAM = 8:36036
+JOURNAL_STREAM = 8:33468
 # environment
 GOMODCACHE = /home/b/go/pkg/mod
 # environment
@@ -282,7 +282,6 @@ pull-submodule:
 #  Modification time never checked.
 #  File has not been updated.
 
- 
 # Not a target:
 all:
 #  Command line target.
@@ -298,6 +297,7 @@ build:
 	CGO_ENABLED=0 GOOS=darwin go build -mod=vendor -a -installsuffix cgo -o ${CURRENT_DIR}/bin/${APP} ${APP_CMD_DIR}/main.go
 
 # files hash-table stats:
+ 
 # Load=9/1024=1%, Rehash=0, Collisions=0/19=0%
 # VPATH Search Paths
 
@@ -311,6 +311,6 @@ build:
 # strcache performance: lookups = 39 / hit rate = 23%
 # hash-table stats:
 # Load=30/8192=0%, Rehash=0, Collisions=0/39=0%
-# Finished Make data base on Sun Sep 11 15:07:40 2022
+# Finished Make data base on Thu Sep 15 13:08:12 2022
 
  

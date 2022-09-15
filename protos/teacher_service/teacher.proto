@@ -51,8 +51,8 @@ message Teacher{
     string passport_image1 = 13;
     string passport_image2 = 14;
     string image = 15;
-    string branch_id = 16;
-    string direction_id = 17;
+    Name branch_id = 16;
+    Name direction_id = 17;
     string created_at = 18;
     string updated_at = 19;
 }
