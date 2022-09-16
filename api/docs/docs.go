@@ -1319,6 +1319,55 @@ const docTemplate = `{
                 }
             }
         },
+        "/direction/group/list/": {
+            "get": {
+                "description": "This API for getting list of directions",
+                "consumes": [
+                    "application/json"
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "tags": [
+                    "direction"
+                ],
+                "summary": "DirectionList",
+                "parameters": [
+                    {
+                        "type": "string",
+                        "description": "Page",
+                        "name": "page",
+                        "in": "query"
+                    },
+                    {
+                        "type": "string",
+                        "description": "Limit",
+                        "name": "limit",
+                        "in": "query"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "schema": {
+                            "$ref": "#/definitions/models.DirectionsList"
+                        }
+                    },
+                    "400": {
+                        "description": "Bad Request",
+                        "schema": {
+                            "$ref": "#/definitions/models.StandardErrorModel"
+                        }
+                    },
+                    "500": {
+                        "description": "Internal Server Error",
+                        "schema": {
+                            "$ref": "#/definitions/models.StandardErrorModel"
+                        }
+                    }
+                }
+            }
+        },
         "/direction/list/": {
             "get": {
                 "description": "This API for getting list of directions",
@@ -7632,6 +7681,9 @@ const docTemplate = `{
                 "branch_id": {
                     "type": "string"
                 },
+                "count_people": {
+                    "type": "string"
+                },
                 "name": {
                     "type": "string"
                 }
@@ -7641,6 +7693,9 @@ const docTemplate = `{
             "type": "object",
             "properties": {
                 "branch_id": {
+                    "type": "string"
+                },
+                "count_people": {
                     "type": "string"
                 },
                 "created_at": {
@@ -7661,6 +7716,9 @@ const docTemplate = `{
             "type": "object",
             "properties": {
                 "branch_id": {
+                    "type": "string"
+                },
+                "count_people": {
                     "type": "string"
                 },
                 "name": {
@@ -8478,6 +8536,9 @@ const docTemplate = `{
                 "passport_series": {
                     "type": "string"
                 },
+                "password": {
+                    "type": "string"
+                },
                 "permission": {
                     "type": "string"
                 },
@@ -8526,6 +8587,9 @@ const docTemplate = `{
                     "type": "string"
                 },
                 "passport_series": {
+                    "type": "string"
+                },
+                "password": {
                     "type": "string"
                 },
                 "permission": {
@@ -8639,6 +8703,9 @@ const docTemplate = `{
                     "type": "string"
                 },
                 "passport_series": {
+                    "type": "string"
+                },
+                "password": {
                     "type": "string"
                 },
                 "permission": {
