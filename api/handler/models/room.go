@@ -1,21 +1,24 @@
 package models
 
 type Room struct {
-	Name     string `json:"name"`
-	BranchId string `json:"branch_id"`
+	Name        string `json:"name"`
+	CountPeople string `json:"count_people"`
+	BranchId    string `json:"branch_id"`
 }
 
 type RoomResp struct {
-	RoomId    string `json:"room_id"`
-	Name      string `json:"name"`
-	BranchId  string `json:"branch_id"`
-	CreatedAt string `json:"created_at"`
-	UpdatedAt string `json:"updated_at"`
+	RoomId      string `json:"room_id"`
+	Name        string `json:"name"`
+	CountPeople string `json:"count_people"`
+	BranchId    string `json:"branch_id"`
+	CreatedAt   string `json:"created_at"`
+	UpdatedAt   string `json:"updated_at"`
 }
 
 type RoomUpdate struct {
-	Name     string `json:"name"`
-	BranchId string `json:"branch_id"`
+	Name        string `json:"name"`
+	CountPeople string `json:"count_people"`
+	BranchId    string `json:"branch_id"`
 }
 
 type RoomsList struct {
