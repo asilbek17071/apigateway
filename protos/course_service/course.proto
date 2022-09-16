@@ -188,7 +188,7 @@ message ListReq {
     string teacher = 1;
     string direction = 2;
     string student = 3;
-    bool active = 6;
+    string active = 6;
 }
 
 message Resp{

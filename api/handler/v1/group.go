@@ -132,6 +132,8 @@ func (h *handlerV1) GroupList(c *gin.Context) {
 	ctx, cancel := context.WithTimeout(context.Background(), time.Second*time.Duration(h.cfg.CtxTimeout))
 	defer cancel()
 
+	fmt.Println(params.Active)
+
 	response, err := h.serviceManager.CourseService().GroupList(
 		ctx, &pb.ListReq{
 			Teacher:   params.Teacher,

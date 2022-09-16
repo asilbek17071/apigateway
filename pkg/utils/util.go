@@ -20,7 +20,7 @@ type QueryParams struct {
 	Teacher      string
 	Direction    string
 	Student      string
-	Active       bool
+	Active       string
 	Token        string
 }
 
@@ -38,7 +38,7 @@ func ParseQueryParams(queryParams map[string][]string) (*QueryParams, []string) 
 		Teacher:      "",
 		Direction:    "all",
 		Student:      "all",
-		Active:       true,
+		Active:       "true",
 		SpendingType: "",
 		To:           " ",
 		Token:        " ",
@@ -104,7 +104,7 @@ func ParseQueryParams(queryParams map[string][]string) (*QueryParams, []string) 
 		}
 
 		if key == "active" {
-			params.Active = true
+			params.Active = value[0]
 			continue
 		}
 
