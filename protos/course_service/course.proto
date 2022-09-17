@@ -13,19 +13,22 @@ service CourseService {
     rpc GroupDelete(ByIdReq) returns (EmptyRes);
     rpc TeacherGroup(ListIdReq) returns (GroupListsResp);
 
-    rpc AttendanceCreate(Attendance) returns (Attendance);
-    rpc AttendanceGet(ByIdReq) returns (Attendance);
+    rpc AttendanceCreate(AttendanceCreates) returns (Req);
     rpc AttendanceList(GetParticipate) returns (ParticipateListResp);
     rpc ParticipateResp(EmptyRes) returns (Participates);
-    rpc AttendanceUpdate(Attendance) returns (Attendance);
+    rpc AttendanceUpdate(Attendance) returns (Req);
     rpc AttendanceDelete(ByIdReq) returns (EmptyRes);
     
-    rpc BalCreate(Bal) returns (Bal);
+    rpc BalCreate(BallCreate) returns (Req);
     rpc BalUpdate(Bal) returns (Bal);
     rpc BalList(GetBall) returns (BalListResp);
     rpc BalDelete(ByIdReq) returns (EmptyRes);
 }
 message EmptyRes{}
+
+message Req{
+    bool status = 1;
+}
 
 message GetBall{
     string group_id = 2;
@@ -45,6 +48,10 @@ message Bal {
     string updated_at = 7;
 }
 
+message BallCreate {
+    repeated Bal bal = 1;
+}
+
 message WithDate{
     string with_date = 1;
     string ball = 2;
@@ -57,12 +64,12 @@ message WithDateParticipate{
 }
 
 message BalStudent{
-    By student_id = 1;
+    ByN student_id = 1;
     repeated WithDate student_all_bals = 2;
 }
 
 message ParticipateStudent{
-    By student_id = 1;
+    ByN student_id = 1;
     repeated WithDateParticipate student_all_participate = 2;
 }
 
@@ -143,6 +150,10 @@ message Attendance{
     string updated_at = 8;
 }
 
+message AttendanceCreates{
+    repeated Attendance attendance = 1;
+}
+
 message AttendanceListResp {
     repeated Attendance attendances = 1;
     int64 count = 2;
@@ -158,9 +169,15 @@ message By {
     string name = 2;
 }
 
+message ByN {
+    string id = 1;
+    string name = 2;
+    string phone = 3;
+}
+
 message ByResp{
     string name = 1;
-    repeated By student = 2;
+    repeated ByN student = 2;
 }
 
 message Byt {

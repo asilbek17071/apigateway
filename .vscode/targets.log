@@ -1,4 +1,6 @@
 make all --print-data-base --no-builtin-variables --no-builtin-rules --question
+make: *** No rule to make target 'all'.  Stop.
+
 # GNU Make 4.3
 # Built for x86_64-pc-linux-gnu
 # Copyright (C) 1988-2020 Free Software Foundation, Inc.
@@ -6,7 +8,7 @@ make all --print-data-base --no-builtin-variables --no-builtin-rules --question
 # This is free software: you are free to change and redistribute it.
 # There is NO WARRANTY, to the extent permitted by law.
 
-# Make data base, printed on Sat Sep 17 14:34:29 2022
+# Make data base, printed on Sat Sep 17 16:04:18 2022
 
 # Variables
 
@@ -14,8 +16,6 @@ make all --print-data-base --no-builtin-variables --no-builtin-rules --question
 GDK_BACKEND = x11
 # environment
 LC_ALL = C
-# environment
-NO_AT_BRIDGE = 1
 # environment
 GNOME_SHELL_SESSION_MODE = ubuntu
 # environment
@@ -93,13 +93,13 @@ MAKEFILE_LIST := Makefile
 # automatic
 @F = $(notdir $@)
 # environment
-VSCODE_PID = 3626
+VSCODE_PID = 4087
 # environment
 XDG_SESSION_TYPE = x11
 # automatic
 ?D = $(patsubst %/,%,$(dir $?))
 # environment
-SESSION_MANAGER = local/i:@/tmp/.ICE-unix/2660,unix/i:/tmp/.ICE-unix/2660
+SESSION_MANAGER = local/i:@/tmp/.ICE-unix/2713,unix/i:/tmp/.ICE-unix/2713
 # automatic
 *F = $(notdir $*)
 # environment
@@ -141,7 +141,7 @@ LC_MONETARY = uz_UZ.UTF-8
 # environment
 LC_TIME = uz_UZ.UTF-8
 # environment
-INVOCATION_ID = 125c37bd7b024d7ebda9f4f007f83cec
+INVOCATION_ID = f9d4a50b7d994523ba76a5a799e3366f
 # environment
 USERNAME = b
 # environment
@@ -167,7 +167,7 @@ GIO_LAUNCHED_DESKTOP_FILE = /usr/share/applications/code.desktop
 # makefile
 .DEFAULT_GOAL := build
 # environment
-SYSTEMD_EXEC_PID = 2680
+SYSTEMD_EXEC_PID = 2732
 # environment
 DISPLAY = :1
 # environment
@@ -177,11 +177,11 @@ GTK_MODULES = gail:atk-bridge
 # default
 MAKE_VERSION := 4.3
 # environment
-MANAGERPID = 2218
+MANAGERPID = 2268
 # environment
 LC_MEASUREMENT = uz_UZ.UTF-8
 # environment
-GIO_LAUNCHED_DESKTOP_FILE_PID = 3626
+GIO_LAUNCHED_DESKTOP_FILE_PID = 4087
 # environment
 _ = /usr/share/code/code
 # environment
@@ -191,7 +191,7 @@ XDG_RUNTIME_DIR = /run/user/1000
 # environment
 GPG_AGENT_INFO = /run/user/1000/gnupg/S.gpg-agent:0:1
 # environment
-JOURNAL_STREAM = 8:38088
+JOURNAL_STREAM = 8:40016
 # environment
 GOMODCACHE = /home/b/go/pkg/mod
 # environment
@@ -223,7 +223,7 @@ GDMSESSION = ubuntu
 # environment
 LC_IDENTIFICATION = uz_UZ.UTF-8
 # variable set hash-table stats:
-# Load=106/1024=10%, Rehash=0, Collisions=3/136=2%
+# Load=105/1024=10%, Rehash=0, Collisions=3/135=2%
 
 # Pattern-specific Variable Values
 
@@ -294,10 +294,8 @@ build:
 #  Modification time never checked.
 #  File has not been updated.
 #  recipe to execute (from 'Makefile', line 6):
-	CGO_ENABLED=0 GOOS=darwin go build -mod=vendor -a -installsuffix cgo -o ${CURRENT_DIR}/bin/${APP} ${APP_CMD_DIR}/main.go
  
-make: *** No rule to make target 'all'.  Stop.
-
+	CGO_ENABLED=0 GOOS=darwin go build -mod=vendor -a -installsuffix cgo -o ${CURRENT_DIR}/bin/${APP} ${APP_CMD_DIR}/main.go
 
 # files hash-table stats:
 # Load=9/1024=1%, Rehash=0, Collisions=0/19=0%
@@ -313,6 +311,6 @@ make: *** No rule to make target 'all'.  Stop.
 # strcache performance: lookups = 39 / hit rate = 23%
 # hash-table stats:
 # Load=30/8192=0%, Rehash=0, Collisions=0/39=0%
-# Finished Make data base on Sat Sep 17 14:34:29 2022
+# Finished Make data base on Sat Sep 17 16:04:18 2022
 
  

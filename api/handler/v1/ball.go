@@ -26,7 +26,7 @@ import (
 // @Failure 500 {object} models.StandardErrorModel
 func (h *handlerV1) BallCreate(c *gin.Context) {
 	var (
-		body        pb.Bal
+		body        pb.BallCreate
 		jspbMarshal protojson.MarshalOptions
 	)
 

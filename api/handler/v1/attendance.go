@@ -26,7 +26,7 @@ import (
 // @Failure 500 {object} models.StandardErrorModel
 func (h *handlerV1) AttendanceCreate(c *gin.Context) {
 	var (
-		body        pb.Attendance
+		body        pb.AttendanceCreates
 		jspbMarshal protojson.MarshalOptions
 	)
 
@@ -55,50 +55,6 @@ func (h *handlerV1) AttendanceCreate(c *gin.Context) {
 	}
 
 	c.JSON(http.StatusCreated, response)
-}
-
-// AttendanceGet ...
-// @Router /attendance/byid/{id} [get]
-// @Summary AttendanceGet
-// @Description This API for getting attendance AttendanceList
-// @Tags attendance
-// @Accept  json
-// @Produce  json
-// @Param id path string true "ID"
-// @Success 200 {object} models.AttendanceResp
-// @Failure 400 {object} models.StandardErrorModel
-// @Failure 500 {object} models.StandardErrorModel
-func (h *handlerV1) AttendanceGet(c *gin.Context) {
-	queryParams := c.Request.URL.Query()
-
-	params, errStr := utils.ParseQueryParams(queryParams)
-	if errStr != nil {
-		c.JSON(http.StatusBadRequest, gin.H{
-			"error": errStr[0],
-		})
-		h.log.Error("failed to parse query params json" + errStr[0])
-		return
-	}
-
-	var jspbMarshal protojson.MarshalOptions
-	jspbMarshal.UseProtoNames = true
-
-	ctx, cancel := context.WithTimeout(context.Background(), time.Second*time.Duration(h.cfg.CtxTimeout))
-	defer cancel()
-
-	response, err := h.serviceManager.CourseService().AttendanceGet(
-		ctx, &pb.ByIdReq{
-			Id: params.Id,
-		})
-	if err != nil {
-		c.JSON(http.StatusInternalServerError, gin.H{
-			"error": err.Error(),
-		})
-		h.log.Error("failed to get attendance", l.Error(err))
-		return
-	}
-
-	c.JSON(http.StatusOK, response)
 }
 
 // AttendanceList ...

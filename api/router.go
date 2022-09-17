@@ -138,7 +138,6 @@ func New(option Option) *gin.Engine {
 	planner.DELETE("/payment_system/delete/", handlerV1.PySysDelete)
 
 	planner.POST("/attendance/create/", handlerV1.AttendanceCreate)
-	planner.GET("/attendance/byid/", handlerV1.AttendanceGet)
 	planner.GET("/attendance/list/", handlerV1.AttendanceList)
 	planner.GET("/attendance/list/participate/", handlerV1.ParticipateResp)
 	planner.PUT("/attendance/update/", handlerV1.AttendanceUpdate)
