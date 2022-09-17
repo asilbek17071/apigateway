@@ -127,7 +127,7 @@ message BranchResp{
 message Room{
     string id = 1;
     string name = 2;
-    string count_pople = 3;
+    string count_people = 3;
     string branch_id = 4;
     string created_at = 5;
     string updated_at = 6;
