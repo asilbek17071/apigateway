@@ -1279,6 +1279,12 @@
                 "parameters": [
                     {
                         "type": "string",
+                        "description": "Active",
+                        "name": "active",
+                        "in": "query"
+                    },
+                    {
+                        "type": "string",
                         "description": "Page",
                         "name": "page",
                         "in": "query"
@@ -1326,6 +1332,12 @@
                 ],
                 "summary": "DirectionList",
                 "parameters": [
+                    {
+                        "type": "string",
+                        "description": "Active",
+                        "name": "active",
+                        "in": "query"
+                    },
                     {
                         "type": "string",
                         "description": "Page",

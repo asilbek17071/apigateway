@@ -7,6 +7,10 @@ import (
 	"github.com/asilbek17071/apigateway/pkg/logger"
 	"github.com/asilbek17071/apigateway/services"
 
+	_ "github.com/asilbek17071/apigateway/api/docs" // swag
+	swaggerFiles "github.com/swaggo/files"
+	ginSwagger "github.com/swaggo/gin-swagger"
+
 	"github.com/gin-gonic/gin"
 )
 
@@ -192,6 +196,9 @@ func New(option Option) *gin.Engine {
 	planner.GET("/ball/list/", handlerV1.BallList)
 	planner.PUT("/ball/update/", handlerV1.BallUpdate)
 	planner.DELETE("/ball/delete/", handlerV1.BallDelete)
+
+	url := ginSwagger.URL("swagger/doc.json") // The url pointing to API definition
+	router.GET("/swagger/*any", ginSwagger.WrapHandler(swaggerFiles.Handler, url))
 
 	return router
 }

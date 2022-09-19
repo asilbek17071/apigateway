@@ -1291,6 +1291,12 @@ const docTemplate = `{
                 "parameters": [
                     {
                         "type": "string",
+                        "description": "Active",
+                        "name": "active",
+                        "in": "query"
+                    },
+                    {
+                        "type": "string",
                         "description": "Page",
                         "name": "page",
                         "in": "query"
@@ -1338,6 +1344,12 @@ const docTemplate = `{
                 ],
                 "summary": "DirectionList",
                 "parameters": [
+                    {
+                        "type": "string",
+                        "description": "Active",
+                        "name": "active",
+                        "in": "query"
+                    },
                     {
                         "type": "string",
                         "description": "Page",

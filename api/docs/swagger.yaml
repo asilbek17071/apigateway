@@ -2334,6 +2334,10 @@ paths:
       - application/json
       description: This API for getting list of directions
       parameters:
+      - description: Active
+        in: query
+        name: active
+        type: string
       - description: Page
         in: query
         name: page
@@ -2366,6 +2370,10 @@ paths:
       - application/json
       description: This API for getting list of directions
       parameters:
+      - description: Active
+        in: query
+        name: active
+        type: string
       - description: Page
         in: query
         name: page
