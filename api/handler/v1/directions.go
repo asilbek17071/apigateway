@@ -108,6 +108,7 @@ func (h *handlerV1) DirectionGet(c *gin.Context) {
 // @Tags direction
 // @Accept  json
 // @Produce  json
+// @Param active query string false "Active"
 // @Param page query string false "Page"
 // @Param limit query string false "Limit"
 // @Success 200 {object} models.DirectionsList
@@ -132,9 +133,10 @@ func (h *handlerV1) DirectionList(c *gin.Context) {
 	defer cancel()
 
 	response, err := h.serviceManager.SystemService().DirectionList(
-		ctx, &pb.ListReq{
-			Limit: params.Limit,
-			Page:  params.Page,
+		ctx, &pb.ListActiveReq{
+			Active: params.Active,
+			Limit:  params.Limit,
+			Page:   params.Page,
 		})
 	if err != nil {
 		c.JSON(http.StatusInternalServerError, gin.H{
@@ -154,6 +156,7 @@ func (h *handlerV1) DirectionList(c *gin.Context) {
 // @Tags direction
 // @Accept  json
 // @Produce  json
+// @Param active query string false "Active"
 // @Param page query string false "Page"
 // @Param limit query string false "Limit"
 // @Success 200 {object} models.DirectionsList
@@ -178,9 +181,10 @@ func (h *handlerV1) DirectionGroupList(c *gin.Context) {
 	defer cancel()
 
 	response, err := h.serviceManager.SystemService().DirectionGroupList(
-		ctx, &pb.ListReq{
-			Limit: params.Limit,
-			Page:  params.Page,
+		ctx, &pb.ListActiveReq{
+			Active: params.Active,
+			Limit:  params.Limit,
+			Page:   params.Page,
 		})
 	if err != nil {
 		c.JSON(http.StatusInternalServerError, gin.H{

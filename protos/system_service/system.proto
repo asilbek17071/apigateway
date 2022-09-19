@@ -5,8 +5,8 @@ package system_service;
 service SystemService {
     rpc DirectionCreate(Direction) returns (Direction);
     rpc DirectionGet(ByIdReq) returns (Direction);
-    rpc DirectionList(ListReq) returns (DirectionListResp);
-    rpc DirectionGroupList(ListReq) returns (DirectionDRListResp);
+    rpc DirectionList(ListActiveReq) returns (DirectionListResp);
+    rpc DirectionGroupList(ListActiveReq) returns (DirectionDRListResp);
     rpc DirectionUpdate(Direction) returns (Direction);
     rpc DirectionDelete(ByIdReq) returns (EmptyRes);   
 
@@ -65,6 +65,12 @@ message EmptyRes{}
 message ListReq {
     int64 page = 1;
     int64 limit = 2;
+}    
+
+message ListActiveReq {
+    int64 page = 1;
+    int64 limit = 2;
+    string active = 3;
 }    
 
 message Task{

@@ -153,6 +153,218 @@ func (m *EmptyReq) GetComment() string {
 	return ""
 }
 
+type Status struct {
+	Id                   string   `protobuf:"bytes,1,opt,name=id,proto3" json:"id"`
+	PersonalId           string   `protobuf:"bytes,2,opt,name=personal_id,json=personalId,proto3" json:"personal_id"`
+	Status               string   `protobuf:"bytes,3,opt,name=status,proto3" json:"status"`
+	XXX_NoUnkeyedLiteral struct{} `json:"-"`
+	XXX_unrecognized     []byte   `json:"-"`
+	XXX_sizecache        int32    `json:"-"`
+}
+
+func (m *Status) Reset()         { *m = Status{} }
+func (m *Status) String() string { return proto.CompactTextString(m) }
+func (*Status) ProtoMessage()    {}
+func (*Status) Descriptor() ([]byte, []int) {
+	return fileDescriptor_c04e2e1c1ba79a81, []int{2}
+}
+func (m *Status) XXX_Unmarshal(b []byte) error {
+	return m.Unmarshal(b)
+}
+func (m *Status) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
+	if deterministic {
+		return xxx_messageInfo_Status.Marshal(b, m, deterministic)
+	} else {
+		b = b[:cap(b)]
+		n, err := m.MarshalToSizedBuffer(b)
+		if err != nil {
+			return nil, err
+		}
+		return b[:n], nil
+	}
+}
+func (m *Status) XXX_Merge(src proto.Message) {
+	xxx_messageInfo_Status.Merge(m, src)
+}
+func (m *Status) XXX_Size() int {
+	return m.Size()
+}
+func (m *Status) XXX_DiscardUnknown() {
+	xxx_messageInfo_Status.DiscardUnknown(m)
+}
+
+var xxx_messageInfo_Status proto.InternalMessageInfo
+
+func (m *Status) GetId() string {
+	if m != nil {
+		return m.Id
+	}
+	return ""
+}
+
+func (m *Status) GetPersonalId() string {
+	if m != nil {
+		return m.PersonalId
+	}
+	return ""
+}
+
+func (m *Status) GetStatus() string {
+	if m != nil {
+		return m.Status
+	}
+	return ""
+}
+
+type StatusReq struct {
+	Status               []*Status `protobuf:"bytes,1,rep,name=status,proto3" json:"status"`
+	XXX_NoUnkeyedLiteral struct{}  `json:"-"`
+	XXX_unrecognized     []byte    `json:"-"`
+	XXX_sizecache        int32     `json:"-"`
+}
+
+func (m *StatusReq) Reset()         { *m = StatusReq{} }
+func (m *StatusReq) String() string { return proto.CompactTextString(m) }
+func (*StatusReq) ProtoMessage()    {}
+func (*StatusReq) Descriptor() ([]byte, []int) {
+	return fileDescriptor_c04e2e1c1ba79a81, []int{3}
+}
+func (m *StatusReq) XXX_Unmarshal(b []byte) error {
+	return m.Unmarshal(b)
+}
+func (m *StatusReq) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
+	if deterministic {
+		return xxx_messageInfo_StatusReq.Marshal(b, m, deterministic)
+	} else {
+		b = b[:cap(b)]
+		n, err := m.MarshalToSizedBuffer(b)
+		if err != nil {
+			return nil, err
+		}
+		return b[:n], nil
+	}
+}
+func (m *StatusReq) XXX_Merge(src proto.Message) {
+	xxx_messageInfo_StatusReq.Merge(m, src)
+}
+func (m *StatusReq) XXX_Size() int {
+	return m.Size()
+}
+func (m *StatusReq) XXX_DiscardUnknown() {
+	xxx_messageInfo_StatusReq.DiscardUnknown(m)
+}
+
+var xxx_messageInfo_StatusReq proto.InternalMessageInfo
+
+func (m *StatusReq) GetStatus() []*Status {
+	if m != nil {
+		return m.Status
+	}
+	return nil
+}
+
+type StatusSpending struct {
+	Id                   string   `protobuf:"bytes,1,opt,name=id,proto3" json:"id"`
+	Status               string   `protobuf:"bytes,2,opt,name=status,proto3" json:"status"`
+	XXX_NoUnkeyedLiteral struct{} `json:"-"`
+	XXX_unrecognized     []byte   `json:"-"`
+	XXX_sizecache        int32    `json:"-"`
+}
+
+func (m *StatusSpending) Reset()         { *m = StatusSpending{} }
+func (m *StatusSpending) String() string { return proto.CompactTextString(m) }
+func (*StatusSpending) ProtoMessage()    {}
+func (*StatusSpending) Descriptor() ([]byte, []int) {
+	return fileDescriptor_c04e2e1c1ba79a81, []int{4}
+}
+func (m *StatusSpending) XXX_Unmarshal(b []byte) error {
+	return m.Unmarshal(b)
+}
+func (m *StatusSpending) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
+	if deterministic {
+		return xxx_messageInfo_StatusSpending.Marshal(b, m, deterministic)
+	} else {
+		b = b[:cap(b)]
+		n, err := m.MarshalToSizedBuffer(b)
+		if err != nil {
+			return nil, err
+		}
+		return b[:n], nil
+	}
+}
+func (m *StatusSpending) XXX_Merge(src proto.Message) {
+	xxx_messageInfo_StatusSpending.Merge(m, src)
+}
+func (m *StatusSpending) XXX_Size() int {
+	return m.Size()
+}
+func (m *StatusSpending) XXX_DiscardUnknown() {
+	xxx_messageInfo_StatusSpending.DiscardUnknown(m)
+}
+
+var xxx_messageInfo_StatusSpending proto.InternalMessageInfo
+
+func (m *StatusSpending) GetId() string {
+	if m != nil {
+		return m.Id
+	}
+	return ""
+}
+
+func (m *StatusSpending) GetStatus() string {
+	if m != nil {
+		return m.Status
+	}
+	return ""
+}
+
+type StatusSpendingReq struct {
+	Status               []*StatusSpending `protobuf:"bytes,1,rep,name=status,proto3" json:"status"`
+	XXX_NoUnkeyedLiteral struct{}          `json:"-"`
+	XXX_unrecognized     []byte            `json:"-"`
+	XXX_sizecache        int32             `json:"-"`
+}
+
+func (m *StatusSpendingReq) Reset()         { *m = StatusSpendingReq{} }
+func (m *StatusSpendingReq) String() string { return proto.CompactTextString(m) }
+func (*StatusSpendingReq) ProtoMessage()    {}
+func (*StatusSpendingReq) Descriptor() ([]byte, []int) {
+	return fileDescriptor_c04e2e1c1ba79a81, []int{5}
+}
+func (m *StatusSpendingReq) XXX_Unmarshal(b []byte) error {
+	return m.Unmarshal(b)
+}
+func (m *StatusSpendingReq) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
+	if deterministic {
+		return xxx_messageInfo_StatusSpendingReq.Marshal(b, m, deterministic)
+	} else {
+		b = b[:cap(b)]
+		n, err := m.MarshalToSizedBuffer(b)
+		if err != nil {
+			return nil, err
+		}
+		return b[:n], nil
+	}
+}
+func (m *StatusSpendingReq) XXX_Merge(src proto.Message) {
+	xxx_messageInfo_StatusSpendingReq.Merge(m, src)
+}
+func (m *StatusSpendingReq) XXX_Size() int {
+	return m.Size()
+}
+func (m *StatusSpendingReq) XXX_DiscardUnknown() {
+	xxx_messageInfo_StatusSpendingReq.DiscardUnknown(m)
+}
+
+var xxx_messageInfo_StatusSpendingReq proto.InternalMessageInfo
+
+func (m *StatusSpendingReq) GetStatus() []*StatusSpending {
+	if m != nil {
+		return m.Status
+	}
+	return nil
+}
+
 type Empty struct {
 	Status               bool     `protobuf:"varint,1,opt,name=status,proto3" json:"status"`
 	XXX_NoUnkeyedLiteral struct{} `json:"-"`
@@ -164,7 +376,7 @@ func (m *Empty) Reset()         { *m = Empty{} }
 func (m *Empty) String() string { return proto.CompactTextString(m) }
 func (*Empty) ProtoMessage()    {}
 func (*Empty) Descriptor() ([]byte, []int) {
-	return fileDescriptor_c04e2e1c1ba79a81, []int{2}
+	return fileDescriptor_c04e2e1c1ba79a81, []int{6}
 }
 func (m *Empty) XXX_Unmarshal(b []byte) error {
 	return m.Unmarshal(b)
@@ -211,7 +423,7 @@ func (m *Request) Reset()         { *m = Request{} }
 func (m *Request) String() string { return proto.CompactTextString(m) }
 func (*Request) ProtoMessage()    {}
 func (*Request) Descriptor() ([]byte, []int) {
-	return fileDescriptor_c04e2e1c1ba79a81, []int{3}
+	return fileDescriptor_c04e2e1c1ba79a81, []int{7}
 }
 func (m *Request) XXX_Unmarshal(b []byte) error {
 	return m.Unmarshal(b)
@@ -253,10 +465,8 @@ type Response struct {
 	Permission           string   `protobuf:"bytes,3,opt,name=permission,proto3" json:"permission"`
 	SalaryMonth          string   `protobuf:"bytes,4,opt,name=salary_month,json=salaryMonth,proto3" json:"salary_month"`
 	Given                []*Tesh  `protobuf:"bytes,5,rep,name=given,proto3" json:"given"`
-	Debt                 float32  `protobuf:"fixed32,6,opt,name=debt,proto3" json:"debt"`
-	Surcharge            float32  `protobuf:"fixed32,7,opt,name=surcharge,proto3" json:"surcharge"`
-	PrepaidExpense       float32  `protobuf:"fixed32,8,opt,name=prepaid_expense,json=prepaidExpense,proto3" json:"prepaid_expense"`
-	Comment              string   `protobuf:"bytes,9,opt,name=comment,proto3" json:"comment"`
+	Debt                 float64  `protobuf:"fixed64,6,opt,name=debt,proto3" json:"debt"`
+	Comment              string   `protobuf:"bytes,7,opt,name=comment,proto3" json:"comment"`
 	XXX_NoUnkeyedLiteral struct{} `json:"-"`
 	XXX_unrecognized     []byte   `json:"-"`
 	XXX_sizecache        int32    `json:"-"`
@@ -266,7 +476,7 @@ func (m *Response) Reset()         { *m = Response{} }
 func (m *Response) String() string { return proto.CompactTextString(m) }
 func (*Response) ProtoMessage()    {}
 func (*Response) Descriptor() ([]byte, []int) {
-	return fileDescriptor_c04e2e1c1ba79a81, []int{4}
+	return fileDescriptor_c04e2e1c1ba79a81, []int{8}
 }
 func (m *Response) XXX_Unmarshal(b []byte) error {
 	return m.Unmarshal(b)
@@ -330,23 +540,9 @@ func (m *Response) GetGiven() []*Tesh {
 	return nil
 }
 
-func (m *Response) GetDebt() float32 {
+func (m *Response) GetDebt() float64 {
 	if m != nil {
 		return m.Debt
-	}
-	return 0
-}
-
-func (m *Response) GetSurcharge() float32 {
-	if m != nil {
-		return m.Surcharge
-	}
-	return 0
-}
-
-func (m *Response) GetPrepaidExpense() float32 {
-	if m != nil {
-		return m.PrepaidExpense
 	}
 	return 0
 }
@@ -370,7 +566,7 @@ func (m *ResponseList) Reset()         { *m = ResponseList{} }
 func (m *ResponseList) String() string { return proto.CompactTextString(m) }
 func (*ResponseList) ProtoMessage()    {}
 func (*ResponseList) Descriptor() ([]byte, []int) {
-	return fileDescriptor_c04e2e1c1ba79a81, []int{5}
+	return fileDescriptor_c04e2e1c1ba79a81, []int{9}
 }
 func (m *ResponseList) XXX_Unmarshal(b []byte) error {
 	return m.Unmarshal(b)
@@ -432,7 +628,7 @@ func (m *Spending) Reset()         { *m = Spending{} }
 func (m *Spending) String() string { return proto.CompactTextString(m) }
 func (*Spending) ProtoMessage()    {}
 func (*Spending) Descriptor() ([]byte, []int) {
-	return fileDescriptor_c04e2e1c1ba79a81, []int{6}
+	return fileDescriptor_c04e2e1c1ba79a81, []int{10}
 }
 func (m *Spending) XXX_Unmarshal(b []byte) error {
 	return m.Unmarshal(b)
@@ -536,7 +732,7 @@ func (m *By) Reset()         { *m = By{} }
 func (m *By) String() string { return proto.CompactTextString(m) }
 func (*By) ProtoMessage()    {}
 func (*By) Descriptor() ([]byte, []int) {
-	return fileDescriptor_c04e2e1c1ba79a81, []int{7}
+	return fileDescriptor_c04e2e1c1ba79a81, []int{11}
 }
 func (m *By) XXX_Unmarshal(b []byte) error {
 	return m.Unmarshal(b)
@@ -593,7 +789,7 @@ func (m *ByP) Reset()         { *m = ByP{} }
 func (m *ByP) String() string { return proto.CompactTextString(m) }
 func (*ByP) ProtoMessage()    {}
 func (*ByP) Descriptor() ([]byte, []int) {
-	return fileDescriptor_c04e2e1c1ba79a81, []int{8}
+	return fileDescriptor_c04e2e1c1ba79a81, []int{12}
 }
 func (m *ByP) XXX_Unmarshal(b []byte) error {
 	return m.Unmarshal(b)
@@ -669,7 +865,7 @@ func (m *SpendingResp) Reset()         { *m = SpendingResp{} }
 func (m *SpendingResp) String() string { return proto.CompactTextString(m) }
 func (*SpendingResp) ProtoMessage()    {}
 func (*SpendingResp) Descriptor() ([]byte, []int) {
-	return fileDescriptor_c04e2e1c1ba79a81, []int{9}
+	return fileDescriptor_c04e2e1c1ba79a81, []int{13}
 }
 func (m *SpendingResp) XXX_Unmarshal(b []byte) error {
 	return m.Unmarshal(b)
@@ -781,7 +977,7 @@ func (m *Payment) Reset()         { *m = Payment{} }
 func (m *Payment) String() string { return proto.CompactTextString(m) }
 func (*Payment) ProtoMessage()    {}
 func (*Payment) Descriptor() ([]byte, []int) {
-	return fileDescriptor_c04e2e1c1ba79a81, []int{10}
+	return fileDescriptor_c04e2e1c1ba79a81, []int{14}
 }
 func (m *Payment) XXX_Unmarshal(b []byte) error {
 	return m.Unmarshal(b)
@@ -900,7 +1096,7 @@ func (m *PaymentResp) Reset()         { *m = PaymentResp{} }
 func (m *PaymentResp) String() string { return proto.CompactTextString(m) }
 func (*PaymentResp) ProtoMessage()    {}
 func (*PaymentResp) Descriptor() ([]byte, []int) {
-	return fileDescriptor_c04e2e1c1ba79a81, []int{11}
+	return fileDescriptor_c04e2e1c1ba79a81, []int{15}
 }
 func (m *PaymentResp) XXX_Unmarshal(b []byte) error {
 	return m.Unmarshal(b)
@@ -1011,7 +1207,7 @@ func (m *PaymentListResp) Reset()         { *m = PaymentListResp{} }
 func (m *PaymentListResp) String() string { return proto.CompactTextString(m) }
 func (*PaymentListResp) ProtoMessage()    {}
 func (*PaymentListResp) Descriptor() ([]byte, []int) {
-	return fileDescriptor_c04e2e1c1ba79a81, []int{12}
+	return fileDescriptor_c04e2e1c1ba79a81, []int{16}
 }
 func (m *PaymentListResp) XXX_Unmarshal(b []byte) error {
 	return m.Unmarshal(b)
@@ -1066,7 +1262,7 @@ func (m *SpendingListResp) Reset()         { *m = SpendingListResp{} }
 func (m *SpendingListResp) String() string { return proto.CompactTextString(m) }
 func (*SpendingListResp) ProtoMessage()    {}
 func (*SpendingListResp) Descriptor() ([]byte, []int) {
-	return fileDescriptor_c04e2e1c1ba79a81, []int{13}
+	return fileDescriptor_c04e2e1c1ba79a81, []int{17}
 }
 func (m *SpendingListResp) XXX_Unmarshal(b []byte) error {
 	return m.Unmarshal(b)
@@ -1124,7 +1320,7 @@ func (m *Searching) Reset()         { *m = Searching{} }
 func (m *Searching) String() string { return proto.CompactTextString(m) }
 func (*Searching) ProtoMessage()    {}
 func (*Searching) Descriptor() ([]byte, []int) {
-	return fileDescriptor_c04e2e1c1ba79a81, []int{14}
+	return fileDescriptor_c04e2e1c1ba79a81, []int{18}
 }
 func (m *Searching) XXX_Unmarshal(b []byte) error {
 	return m.Unmarshal(b)
@@ -1200,7 +1396,7 @@ func (m *PaymentSearchResp) Reset()         { *m = PaymentSearchResp{} }
 func (m *PaymentSearchResp) String() string { return proto.CompactTextString(m) }
 func (*PaymentSearchResp) ProtoMessage()    {}
 func (*PaymentSearchResp) Descriptor() ([]byte, []int) {
-	return fileDescriptor_c04e2e1c1ba79a81, []int{15}
+	return fileDescriptor_c04e2e1c1ba79a81, []int{19}
 }
 func (m *PaymentSearchResp) XXX_Unmarshal(b []byte) error {
 	return m.Unmarshal(b)
@@ -1255,7 +1451,7 @@ func (m *ProfitResp) Reset()         { *m = ProfitResp{} }
 func (m *ProfitResp) String() string { return proto.CompactTextString(m) }
 func (*ProfitResp) ProtoMessage()    {}
 func (*ProfitResp) Descriptor() ([]byte, []int) {
-	return fileDescriptor_c04e2e1c1ba79a81, []int{16}
+	return fileDescriptor_c04e2e1c1ba79a81, []int{20}
 }
 func (m *ProfitResp) XXX_Unmarshal(b []byte) error {
 	return m.Unmarshal(b)
@@ -1310,7 +1506,7 @@ func (m *ProfitRespList) Reset()         { *m = ProfitRespList{} }
 func (m *ProfitRespList) String() string { return proto.CompactTextString(m) }
 func (*ProfitRespList) ProtoMessage()    {}
 func (*ProfitRespList) Descriptor() ([]byte, []int) {
-	return fileDescriptor_c04e2e1c1ba79a81, []int{17}
+	return fileDescriptor_c04e2e1c1ba79a81, []int{21}
 }
 func (m *ProfitRespList) XXX_Unmarshal(b []byte) error {
 	return m.Unmarshal(b)
@@ -1364,7 +1560,7 @@ func (m *ByIdReq) Reset()         { *m = ByIdReq{} }
 func (m *ByIdReq) String() string { return proto.CompactTextString(m) }
 func (*ByIdReq) ProtoMessage()    {}
 func (*ByIdReq) Descriptor() ([]byte, []int) {
-	return fileDescriptor_c04e2e1c1ba79a81, []int{18}
+	return fileDescriptor_c04e2e1c1ba79a81, []int{22}
 }
 func (m *ByIdReq) XXX_Unmarshal(b []byte) error {
 	return m.Unmarshal(b)
@@ -1412,7 +1608,7 @@ func (m *ListReq) Reset()         { *m = ListReq{} }
 func (m *ListReq) String() string { return proto.CompactTextString(m) }
 func (*ListReq) ProtoMessage()    {}
 func (*ListReq) Descriptor() ([]byte, []int) {
-	return fileDescriptor_c04e2e1c1ba79a81, []int{19}
+	return fileDescriptor_c04e2e1c1ba79a81, []int{23}
 }
 func (m *ListReq) XXX_Unmarshal(b []byte) error {
 	return m.Unmarshal(b)
@@ -1470,7 +1666,7 @@ func (m *SpendingListReq) Reset()         { *m = SpendingListReq{} }
 func (m *SpendingListReq) String() string { return proto.CompactTextString(m) }
 func (*SpendingListReq) ProtoMessage()    {}
 func (*SpendingListReq) Descriptor() ([]byte, []int) {
-	return fileDescriptor_c04e2e1c1ba79a81, []int{20}
+	return fileDescriptor_c04e2e1c1ba79a81, []int{24}
 }
 func (m *SpendingListReq) XXX_Unmarshal(b []byte) error {
 	return m.Unmarshal(b)
@@ -1548,7 +1744,7 @@ func (m *SpendingListRequest) Reset()         { *m = SpendingListRequest{} }
 func (m *SpendingListRequest) String() string { return proto.CompactTextString(m) }
 func (*SpendingListRequest) ProtoMessage()    {}
 func (*SpendingListRequest) Descriptor() ([]byte, []int) {
-	return fileDescriptor_c04e2e1c1ba79a81, []int{21}
+	return fileDescriptor_c04e2e1c1ba79a81, []int{25}
 }
 func (m *SpendingListRequest) XXX_Unmarshal(b []byte) error {
 	return m.Unmarshal(b)
@@ -1618,7 +1814,7 @@ func (m *PaymentSearchReq) Reset()         { *m = PaymentSearchReq{} }
 func (m *PaymentSearchReq) String() string { return proto.CompactTextString(m) }
 func (*PaymentSearchReq) ProtoMessage()    {}
 func (*PaymentSearchReq) Descriptor() ([]byte, []int) {
-	return fileDescriptor_c04e2e1c1ba79a81, []int{22}
+	return fileDescriptor_c04e2e1c1ba79a81, []int{26}
 }
 func (m *PaymentSearchReq) XXX_Unmarshal(b []byte) error {
 	return m.Unmarshal(b)
@@ -1680,7 +1876,7 @@ func (m *SearchReq) Reset()         { *m = SearchReq{} }
 func (m *SearchReq) String() string { return proto.CompactTextString(m) }
 func (*SearchReq) ProtoMessage()    {}
 func (*SearchReq) Descriptor() ([]byte, []int) {
-	return fileDescriptor_c04e2e1c1ba79a81, []int{23}
+	return fileDescriptor_c04e2e1c1ba79a81, []int{27}
 }
 func (m *SearchReq) XXX_Unmarshal(b []byte) error {
 	return m.Unmarshal(b)
@@ -1741,7 +1937,7 @@ func (m *Search) Reset()         { *m = Search{} }
 func (m *Search) String() string { return proto.CompactTextString(m) }
 func (*Search) ProtoMessage()    {}
 func (*Search) Descriptor() ([]byte, []int) {
-	return fileDescriptor_c04e2e1c1ba79a81, []int{24}
+	return fileDescriptor_c04e2e1c1ba79a81, []int{28}
 }
 func (m *Search) XXX_Unmarshal(b []byte) error {
 	return m.Unmarshal(b)
@@ -1838,7 +2034,7 @@ func (m *SearchListResp) Reset()         { *m = SearchListResp{} }
 func (m *SearchListResp) String() string { return proto.CompactTextString(m) }
 func (*SearchListResp) ProtoMessage()    {}
 func (*SearchListResp) Descriptor() ([]byte, []int) {
-	return fileDescriptor_c04e2e1c1ba79a81, []int{25}
+	return fileDescriptor_c04e2e1c1ba79a81, []int{29}
 }
 func (m *SearchListResp) XXX_Unmarshal(b []byte) error {
 	return m.Unmarshal(b)
@@ -1882,10 +2078,11 @@ func (m *SearchListResp) GetSum() string {
 }
 
 type Tesh struct {
-	Given                string   `protobuf:"bytes,1,opt,name=given,proto3" json:"given"`
-	Date                 string   `protobuf:"bytes,2,opt,name=date,proto3" json:"date"`
-	Comment              string   `protobuf:"bytes,3,opt,name=comment,proto3" json:"comment"`
-	Status               string   `protobuf:"bytes,4,opt,name=status,proto3" json:"status"`
+	Id                   string   `protobuf:"bytes,1,opt,name=id,proto3" json:"id"`
+	Given                string   `protobuf:"bytes,2,opt,name=given,proto3" json:"given"`
+	Date                 string   `protobuf:"bytes,3,opt,name=date,proto3" json:"date"`
+	Comment              string   `protobuf:"bytes,4,opt,name=comment,proto3" json:"comment"`
+	Status               string   `protobuf:"bytes,5,opt,name=status,proto3" json:"status"`
 	XXX_NoUnkeyedLiteral struct{} `json:"-"`
 	XXX_unrecognized     []byte   `json:"-"`
 	XXX_sizecache        int32    `json:"-"`
@@ -1895,7 +2092,7 @@ func (m *Tesh) Reset()         { *m = Tesh{} }
 func (m *Tesh) String() string { return proto.CompactTextString(m) }
 func (*Tesh) ProtoMessage()    {}
 func (*Tesh) Descriptor() ([]byte, []int) {
-	return fileDescriptor_c04e2e1c1ba79a81, []int{26}
+	return fileDescriptor_c04e2e1c1ba79a81, []int{30}
 }
 func (m *Tesh) XXX_Unmarshal(b []byte) error {
 	return m.Unmarshal(b)
@@ -1923,6 +2120,13 @@ func (m *Tesh) XXX_DiscardUnknown() {
 }
 
 var xxx_messageInfo_Tesh proto.InternalMessageInfo
+
+func (m *Tesh) GetId() string {
+	if m != nil {
+		return m.Id
+	}
+	return ""
+}
 
 func (m *Tesh) GetGiven() string {
 	if m != nil {
@@ -1963,7 +2167,7 @@ func (m *Count) Reset()         { *m = Count{} }
 func (m *Count) String() string { return proto.CompactTextString(m) }
 func (*Count) ProtoMessage()    {}
 func (*Count) Descriptor() ([]byte, []int) {
-	return fileDescriptor_c04e2e1c1ba79a81, []int{27}
+	return fileDescriptor_c04e2e1c1ba79a81, []int{31}
 }
 func (m *Count) XXX_Unmarshal(b []byte) error {
 	return m.Unmarshal(b)
@@ -2002,6 +2206,10 @@ func (m *Count) GetCount() int64 {
 func init() {
 	proto.RegisterType((*EmptyRes)(nil), "finance_service.EmptyRes")
 	proto.RegisterType((*EmptyReq)(nil), "finance_service.EmptyReq")
+	proto.RegisterType((*Status)(nil), "finance_service.Status")
+	proto.RegisterType((*StatusReq)(nil), "finance_service.StatusReq")
+	proto.RegisterType((*StatusSpending)(nil), "finance_service.StatusSpending")
+	proto.RegisterType((*StatusSpendingReq)(nil), "finance_service.StatusSpendingReq")
 	proto.RegisterType((*Empty)(nil), "finance_service.Empty")
 	proto.RegisterType((*Request)(nil), "finance_service.Request")
 	proto.RegisterType((*Response)(nil), "finance_service.Response")
@@ -2033,92 +2241,97 @@ func init() {
 func init() { proto.RegisterFile("finance.proto", fileDescriptor_c04e2e1c1ba79a81) }
 
 var fileDescriptor_c04e2e1c1ba79a81 = []byte{
-	// 1359 bytes of a gzipped FileDescriptorProto
-	0x1f, 0x8b, 0x08, 0x00, 0x00, 0x00, 0x00, 0x00, 0x02, 0xff, 0xb4, 0x58, 0xcb, 0x8e, 0xdc, 0x44,
-	0x17, 0xfe, 0xed, 0xbe, 0xfa, 0xf4, 0xa4, 0x67, 0xfe, 0x4a, 0x08, 0x4e, 0x27, 0x3d, 0x99, 0x18,
-	0x24, 0x06, 0x45, 0x9a, 0x88, 0x89, 0x14, 0x05, 0xb1, 0x21, 0x93, 0x0b, 0x34, 0x37, 0x8d, 0xdc,
-	0x41, 0x2c, 0x5b, 0x35, 0x76, 0xa5, 0xdb, 0x62, 0xda, 0x76, 0xdb, 0xee, 0x08, 0xef, 0x59, 0xb0,
-	0x60, 0xc7, 0x02, 0xde, 0x82, 0x2d, 0x8f, 0xc0, 0x92, 0x15, 0x6b, 0x34, 0xbc, 0x00, 0x8f, 0x80,
-	0xea, 0x54, 0x95, 0x2f, 0x6d, 0x7b, 0x98, 0x49, 0x60, 0x57, 0x75, 0xea, 0xd4, 0xb9, 0x7c, 0xe7,
-	0xab, 0xe3, 0x2a, 0xc3, 0x95, 0x17, 0x9e, 0x4f, 0x7d, 0x87, 0x1d, 0x84, 0x51, 0x90, 0x04, 0x64,
-	0x5b, 0x4e, 0x67, 0x31, 0x8b, 0x5e, 0x7a, 0x0e, 0xb3, 0x00, 0xfa, 0x4f, 0x97, 0x61, 0x92, 0xda,
-	0x2c, 0xb6, 0x7e, 0xd6, 0xb2, 0xc9, 0x8a, 0x0c, 0x41, 0xf7, 0x5c, 0x53, 0xdb, 0xd3, 0xf6, 0x0d,
-	0x5b, 0xf7, 0x5c, 0x32, 0x82, 0xbe, 0x43, 0x13, 0x36, 0x0f, 0xa2, 0xd4, 0xd4, 0x51, 0x9a, 0xcd,
-	0xc9, 0x6d, 0x18, 0x84, 0x2c, 0x8a, 0x03, 0x9f, 0x9e, 0xce, 0x3c, 0xd7, 0x6c, 0xe1, 0x32, 0x28,
-	0xd1, 0xc4, 0x25, 0x6f, 0xc3, 0x30, 0xa6, 0xa7, 0x34, 0x4a, 0x67, 0x49, 0x1a, 0x32, 0xae, 0xd3,
-	0x46, 0x9d, 0x2d, 0x21, 0x7d, 0x9e, 0x86, 0x6c, 0xe2, 0x92, 0xeb, 0xd0, 0xa5, 0xcb, 0x60, 0xed,
-	0x27, 0x66, 0x07, 0x57, 0xe5, 0x8c, 0x98, 0xd0, 0x73, 0x82, 0xe5, 0x92, 0xf9, 0x89, 0xd9, 0xc5,
-	0x05, 0x35, 0xb5, 0x6e, 0x43, 0x07, 0x03, 0xe6, 0x5b, 0xe3, 0x84, 0x26, 0xeb, 0x18, 0x23, 0xee,
-	0xdb, 0x72, 0x66, 0x8d, 0xa1, 0x67, 0xb3, 0xd5, 0x9a, 0xc5, 0x09, 0x21, 0xd0, 0x76, 0x69, 0xc2,
-	0x64, 0x4a, 0x38, 0xb6, 0x7e, 0xd0, 0xa1, 0x6f, 0xb3, 0x38, 0x0c, 0xfc, 0x98, 0x55, 0x32, 0x26,
-	0xd0, 0xf6, 0xe9, 0x92, 0xc9, 0x6c, 0x71, 0x4c, 0x76, 0x81, 0xa7, 0xb5, 0xf4, 0xe2, 0xd8, 0x0b,
-	0xfc, 0x42, 0xa2, 0x52, 0x42, 0xee, 0x80, 0x4c, 0x69, 0xb6, 0x0c, 0xfc, 0x64, 0x21, 0xd3, 0x1c,
-	0x08, 0xd9, 0xe7, 0x5c, 0x44, 0xee, 0x42, 0x67, 0xee, 0xbd, 0x64, 0xbe, 0xd9, 0xd9, 0x6b, 0xed,
-	0x0f, 0x0e, 0xdf, 0x38, 0xd8, 0x28, 0xc9, 0xc1, 0x73, 0x16, 0x2f, 0x6c, 0xa1, 0x83, 0x41, 0xb3,
-	0x13, 0x91, 0xb7, 0x6e, 0xe3, 0x98, 0xdc, 0x02, 0x23, 0x5e, 0x47, 0xce, 0x82, 0x46, 0x73, 0x66,
-	0xf6, 0x70, 0x21, 0x17, 0x90, 0x77, 0x60, 0x3b, 0x8c, 0x58, 0x48, 0x3d, 0x77, 0xc6, 0xbe, 0x09,
-	0x99, 0x1f, 0x33, 0xb3, 0x8f, 0x3a, 0x43, 0x29, 0x7e, 0x2a, 0xa4, 0x45, 0x54, 0x8d, 0x32, 0xaa,
-	0x5f, 0xc1, 0x96, 0x02, 0xe5, 0x33, 0x2f, 0x4e, 0xc8, 0x7b, 0xd0, 0x15, 0x09, 0x98, 0x1a, 0x86,
-	0x7c, 0xa3, 0x12, 0xb2, 0x52, 0xb7, 0xa5, 0x22, 0xb9, 0x06, 0x1d, 0x07, 0x2b, 0xc9, 0xc1, 0x6b,
-	0xd9, 0x62, 0x62, 0x7d, 0xab, 0x43, 0x7f, 0x1a, 0x32, 0xdf, 0xf5, 0xfc, 0x79, 0x05, 0xee, 0xbc,
-	0xfa, 0x7a, 0x53, 0xf5, 0x5b, 0xa5, 0x38, 0x0b, 0x45, 0x17, 0x30, 0xcb, 0x19, 0xb9, 0x01, 0xfd,
-	0x30, 0x8d, 0xd3, 0x98, 0xf3, 0x4c, 0x30, 0xa9, 0x87, 0xf3, 0x89, 0x4b, 0x6e, 0x82, 0x71, 0x12,
-	0x51, 0xdf, 0x59, 0xf0, 0x35, 0x41, 0xa6, 0xbe, 0x10, 0x4c, 0x5c, 0xb2, 0x0f, 0x3b, 0xb1, 0x8c,
-	0x2e, 0xe3, 0x69, 0x0f, 0x75, 0x86, 0x4a, 0x2e, 0x99, 0x3a, 0x06, 0x70, 0x22, 0x46, 0x13, 0xe6,
-	0xce, 0x68, 0x82, 0xf8, 0x1a, 0xb6, 0x21, 0x25, 0x8f, 0x12, 0xbe, 0xbc, 0x0e, 0x5d, 0xb5, 0x2c,
-	0xd0, 0x35, 0xa4, 0xe4, 0x51, 0x62, 0xed, 0x83, 0x7e, 0x94, 0x5e, 0x84, 0x6e, 0xd6, 0xd7, 0xd0,
-	0x3a, 0x4a, 0x8f, 0x2f, 0xc4, 0xcc, 0x31, 0x40, 0xc2, 0xa8, 0xb3, 0x60, 0x51, 0x7e, 0x04, 0x0d,
-	0x29, 0x99, 0xb8, 0x9c, 0x98, 0x6a, 0x19, 0xb7, 0x4a, 0x62, 0x4a, 0xd9, 0x17, 0xdc, 0xd9, 0x2f,
-	0x3a, 0x6c, 0xa9, 0xea, 0xf0, 0x82, 0xfe, 0x87, 0x15, 0x7a, 0x17, 0x3a, 0x58, 0x11, 0x2c, 0xcf,
-	0xe0, 0xf0, 0x6a, 0x85, 0x50, 0x47, 0xa9, 0x2d, 0x34, 0xc8, 0x43, 0xb8, 0x52, 0x2a, 0x0a, 0x56,
-	0xad, 0x61, 0xcb, 0x56, 0xb1, 0x4c, 0xe4, 0x2e, 0x74, 0x45, 0x69, 0xb1, 0x88, 0x0d, 0x5b, 0xa4,
-	0xca, 0x6b, 0x56, 0xf4, 0x47, 0x1d, 0x7a, 0xc7, 0x34, 0xc5, 0x9c, 0x2f, 0x8a, 0x1a, 0x81, 0x36,
-	0xe6, 0x23, 0x20, 0xc3, 0x31, 0x6f, 0xb2, 0xee, 0x3a, 0xa2, 0x09, 0x6f, 0x2e, 0x02, 0xb1, 0x6c,
-	0x7e, 0x1e, 0xab, 0xc7, 0x00, 0x71, 0xb2, 0x76, 0x99, 0x9f, 0xe4, 0xb4, 0x36, 0xa4, 0x44, 0xd4,
-	0xde, 0xf5, 0x22, 0xe6, 0x70, 0x33, 0x39, 0xa7, 0x07, 0x99, 0x6c, 0xe2, 0x72, 0xe3, 0xf3, 0x28,
-	0x58, 0x87, 0x7c, 0x59, 0x24, 0xdf, 0xc3, 0x79, 0x85, 0xeb, 0xc6, 0xf9, 0xc8, 0xc0, 0x26, 0x32,
-	0x7f, 0xe9, 0x30, 0x90, 0xc8, 0x5c, 0x8a, 0x53, 0x97, 0x45, 0xe7, 0x60, 0x03, 0x9d, 0x86, 0x72,
-	0x67, 0x90, 0x1d, 0x56, 0x20, 0x6b, 0xd8, 0x51, 0xc0, 0xf1, 0x41, 0x0d, 0x8e, 0x0d, 0xbb, 0x4a,
-	0xe0, 0xde, 0xdb, 0x00, 0x77, 0x70, 0x78, 0xad, 0x66, 0xcf, 0xf1, 0xbf, 0x05, 0x39, 0x85, 0x6d,
-	0x89, 0x38, 0xef, 0xde, 0x88, 0xfa, 0x43, 0xe8, 0x87, 0x42, 0x14, 0xcb, 0x1e, 0x7e, 0xab, 0x12,
-	0x41, 0xa1, 0x4a, 0x76, 0xa6, 0xdd, 0xd0, 0xc8, 0x19, 0xec, 0xa8, 0x4e, 0x91, 0xf9, 0xf8, 0x00,
-	0x0c, 0x75, 0xfc, 0x94, 0x93, 0x71, 0xc5, 0x49, 0xb1, 0xbf, 0xd8, 0xb9, 0x7e, 0xd9, 0x8d, 0xa1,
-	0xdc, 0xac, 0xc0, 0x98, 0x32, 0x1a, 0x39, 0x0b, 0xfe, 0xbd, 0x50, 0x4d, 0x4f, 0x2b, 0x34, 0xbd,
-	0x32, 0x7b, 0xf4, 0x22, 0x7b, 0xf8, 0xa7, 0x0e, 0xd9, 0xa3, 0xdb, 0x38, 0xce, 0x3e, 0xa5, 0xed,
-	0xc2, 0xa7, 0x74, 0x07, 0x5a, 0xf1, 0x7a, 0x89, 0x84, 0xd1, 0x6d, 0x3e, 0xb4, 0x66, 0xf0, 0x7f,
-	0x09, 0x84, 0xf0, 0x8c, 0xa9, 0x49, 0x35, 0x2d, 0x53, 0x23, 0x0f, 0xc1, 0x88, 0x55, 0x64, 0xa6,
-	0x8e, 0xc9, 0x8e, 0xaa, 0xc9, 0x2a, 0x0d, 0x3b, 0x57, 0xb6, 0x1e, 0x00, 0x1c, 0x47, 0xc1, 0x0b,
-	0x4f, 0x80, 0x56, 0x97, 0x54, 0x09, 0x0b, 0x5d, 0x61, 0x41, 0x61, 0x98, 0xef, 0xc3, 0xcf, 0x72,
-	0xa6, 0xa7, 0x15, 0xf4, 0xc8, 0xfb, 0x60, 0x64, 0xdc, 0x93, 0x91, 0xdd, 0xac, 0xd6, 0x3a, 0xb3,
-	0x64, 0xe7, 0xda, 0xd6, 0x0d, 0xe8, 0x1d, 0xa5, 0x13, 0xb7, 0xe6, 0xf6, 0x67, 0xdd, 0x87, 0x9e,
-	0x28, 0xf4, 0x4a, 0x60, 0x3b, 0x17, 0x21, 0xb7, 0x6c, 0x1c, 0xf3, 0x50, 0x4e, 0xbd, 0xa5, 0x97,
-	0xb1, 0x04, 0x27, 0xd6, 0x77, 0x1a, 0x6c, 0x97, 0x69, 0xb2, 0x22, 0x6f, 0x6d, 0xb6, 0x73, 0x4d,
-	0x5e, 0x04, 0x8b, 0x9d, 0x5b, 0xb9, 0xd0, 0xeb, 0x5c, 0xb4, 0x0a, 0x2e, 0x78, 0x65, 0x5c, 0xaa,
-	0xba, 0x01, 0x1f, 0x72, 0xbd, 0x39, 0x75, 0x16, 0x54, 0xf6, 0x48, 0x31, 0xb1, 0xe6, 0x70, 0x75,
-	0x23, 0x12, 0x75, 0x27, 0xbc, 0x58, 0x2e, 0xca, 0x51, 0xab, 0xc6, 0x51, 0xbb, 0xe8, 0xe8, 0x13,
-	0xd8, 0xd9, 0xe0, 0xcf, 0x4a, 0xed, 0xd5, 0x6a, 0xf6, 0xea, 0x85, 0xbd, 0x12, 0xf4, 0x56, 0x01,
-	0x74, 0xe3, 0xd2, 0x46, 0xac, 0xdf, 0x35, 0xe8, 0x8a, 0x5d, 0x17, 0xba, 0x36, 0x6c, 0xde, 0x0b,
-	0x5a, 0x95, 0x7b, 0x01, 0xb1, 0x60, 0x0b, 0xa9, 0x35, 0x15, 0x8d, 0x10, 0xf3, 0x6d, 0xd9, 0x25,
-	0x59, 0xe3, 0xd5, 0x5d, 0x1d, 0x44, 0xf1, 0x4d, 0x2a, 0x1f, 0xc4, 0x9e, 0xbc, 0x88, 0xf3, 0x83,
-	0xc8, 0xc3, 0x08, 0x12, 0x7a, 0x3a, 0x93, 0x56, 0xfa, 0x32, 0x0c, 0x2e, 0x7b, 0x84, 0x22, 0x6b,
-	0x0a, 0x43, 0x91, 0x57, 0xd6, 0x71, 0xee, 0x41, 0x57, 0x9c, 0x2b, 0xd9, 0x6e, 0xde, 0x6c, 0x38,
-	0x81, 0xb6, 0x54, 0x53, 0xe7, 0x58, 0xe4, 0x8f, 0xc7, 0xfd, 0x04, 0xda, 0xfc, 0xba, 0x8d, 0x58,
-	0xe2, 0xa5, 0x5c, 0x93, 0x58, 0x66, 0xb7, 0x6f, 0xfe, 0x64, 0xd0, 0xf3, 0x27, 0xc3, 0xe5, 0x2f,
-	0x3b, 0xd6, 0x18, 0x3a, 0x8f, 0x11, 0x8c, 0xd2, 0x81, 0x55, 0xbd, 0xf4, 0xf0, 0xfb, 0x3e, 0x0c,
-	0x9f, 0x89, 0xb8, 0xa7, 0x22, 0x6c, 0xf2, 0x18, 0xae, 0x48, 0x12, 0x3d, 0xc6, 0xa6, 0x4f, 0xcc,
-	0xa6, 0x6e, 0x3d, 0x6a, 0x5c, 0x21, 0x1f, 0x02, 0xc8, 0xe1, 0x47, 0x2c, 0xa9, 0xb1, 0x20, 0x8f,
-	0xfa, 0x39, 0x16, 0x26, 0xd9, 0xa7, 0x1b, 0xfb, 0x4d, 0x55, 0x51, 0x1e, 0xa5, 0xd1, 0x5e, 0x93,
-	0x89, 0xac, 0x54, 0xc7, 0x1b, 0x6d, 0x15, 0x0d, 0x36, 0x75, 0x4c, 0x6e, 0xf2, 0x76, 0xc3, 0x5a,
-	0x66, 0x31, 0xc7, 0xe8, 0xcb, 0xd0, 0x7d, 0x55, 0x8c, 0x9e, 0x64, 0x46, 0x9e, 0xb0, 0x53, 0x56,
-	0x6b, 0x44, 0xc1, 0x54, 0x7d, 0xf4, 0xa8, 0x77, 0x33, 0x79, 0x02, 0x5d, 0xd1, 0x50, 0x49, 0xb3,
-	0x52, 0x4d, 0x42, 0x1b, 0xed, 0xfc, 0x63, 0xb8, 0x3a, 0xc5, 0xc7, 0x93, 0x24, 0x83, 0x2c, 0x7d,
-	0xa3, 0xc9, 0xd5, 0xe8, 0x7a, 0xfd, 0x12, 0xf9, 0x14, 0x76, 0x4a, 0x96, 0xea, 0xeb, 0x2f, 0x7b,
-	0xe0, 0x68, 0xdc, 0xf8, 0x9a, 0xc3, 0xb0, 0x9e, 0xc1, 0x50, 0x75, 0xce, 0xc6, 0x88, 0x94, 0xc2,
-	0xa8, 0x79, 0x89, 0x1c, 0xc1, 0x40, 0x8d, 0xcf, 0xe7, 0xe3, 0x39, 0x36, 0xa6, 0xf9, 0x03, 0x05,
-	0x63, 0xdb, 0x6b, 0x54, 0x55, 0xcc, 0xbc, 0xf3, 0x0f, 0x1a, 0x71, 0x58, 0x4c, 0x50, 0x32, 0xe9,
-	0xd5, 0x12, 0x7c, 0x9a, 0xdb, 0x79, 0x0d, 0x32, 0x1d, 0xed, 0xfc, 0x7a, 0xb6, 0xab, 0xfd, 0x76,
-	0xb6, 0xab, 0xfd, 0x71, 0xb6, 0xab, 0xfd, 0xf4, 0xe7, 0xee, 0xff, 0x4e, 0xba, 0xf8, 0xeb, 0xe6,
-	0xfe, 0xdf, 0x01, 0x00, 0x00, 0xff, 0xff, 0x98, 0x8e, 0x5c, 0x3a, 0xcb, 0x11, 0x00, 0x00,
+	// 1434 bytes of a gzipped FileDescriptorProto
+	0x1f, 0x8b, 0x08, 0x00, 0x00, 0x00, 0x00, 0x00, 0x02, 0xff, 0xb4, 0x58, 0xcb, 0x72, 0xdb, 0x54,
+	0x18, 0x46, 0x92, 0x6f, 0xfa, 0x9d, 0xba, 0xee, 0x49, 0x28, 0xae, 0x8b, 0x93, 0x54, 0xb0, 0x08,
+	0xd3, 0x99, 0x74, 0x48, 0x67, 0x4a, 0x18, 0x58, 0x10, 0xf7, 0x86, 0x4b, 0x61, 0x8c, 0x5c, 0x86,
+	0xa5, 0x47, 0xb1, 0x4e, 0x6d, 0x0d, 0xb1, 0x24, 0x4b, 0x72, 0x67, 0xb4, 0x67, 0xc1, 0x1b, 0xc0,
+	0x5b, 0xb0, 0x65, 0x78, 0x02, 0x16, 0x2c, 0x58, 0xb1, 0x66, 0xc2, 0x0b, 0xf0, 0x08, 0xcc, 0xb9,
+	0xe9, 0x7e, 0xdc, 0xa4, 0x81, 0xdd, 0x39, 0xff, 0xf9, 0xcf, 0x7f, 0xf9, 0xfe, 0xcb, 0xb9, 0xc0,
+	0xb5, 0x97, 0x8e, 0x6b, 0xb9, 0x33, 0x7c, 0xe8, 0x07, 0x5e, 0xe4, 0xa1, 0xeb, 0x7c, 0x3a, 0x0d,
+	0x71, 0xf0, 0xca, 0x99, 0x61, 0x03, 0xa0, 0xf5, 0x78, 0xe9, 0x47, 0xb1, 0x89, 0x43, 0xe3, 0x67,
+	0x25, 0x99, 0xac, 0x50, 0x07, 0x54, 0xc7, 0xee, 0x29, 0xfb, 0xca, 0x81, 0x6e, 0xaa, 0x8e, 0x8d,
+	0xfa, 0xd0, 0x9a, 0x59, 0x11, 0x9e, 0x7b, 0x41, 0xdc, 0x53, 0x29, 0x35, 0x99, 0xa3, 0x3d, 0x68,
+	0xfb, 0x38, 0x08, 0x3d, 0xd7, 0x3a, 0x9b, 0x3a, 0x76, 0x4f, 0xa3, 0xcb, 0x20, 0x48, 0x23, 0x1b,
+	0xbd, 0x0f, 0x9d, 0xd0, 0x3a, 0xb3, 0x82, 0x78, 0x1a, 0xc5, 0x3e, 0x26, 0x3c, 0x35, 0xca, 0xb3,
+	0xc5, 0xa8, 0x2f, 0x62, 0x1f, 0x8f, 0x6c, 0x74, 0x13, 0x1a, 0xd6, 0xd2, 0x5b, 0xbb, 0x51, 0xaf,
+	0x4e, 0x57, 0xf9, 0x0c, 0xf5, 0xa0, 0x39, 0xf3, 0x96, 0x4b, 0xec, 0x46, 0xbd, 0x06, 0x5d, 0x10,
+	0x53, 0xe3, 0x6b, 0x68, 0x4c, 0x22, 0x2b, 0x5a, 0x87, 0x25, 0x73, 0x0b, 0x26, 0xa9, 0x25, 0x93,
+	0x6e, 0x42, 0x23, 0xa4, 0x5b, 0xb9, 0xb9, 0x7c, 0x66, 0x7c, 0x0a, 0x3a, 0x13, 0x49, 0x40, 0xb8,
+	0x97, 0x30, 0x29, 0xfb, 0xda, 0x41, 0xfb, 0xe8, 0x9d, 0xc3, 0x02, 0x7e, 0x87, 0x9c, 0x57, 0xec,
+	0x3e, 0x86, 0x0e, 0xa3, 0x4c, 0x7c, 0xec, 0xda, 0x8e, 0x3b, 0x2f, 0x19, 0x96, 0xea, 0x55, 0x73,
+	0x7a, 0x9f, 0xc3, 0x8d, 0xfc, 0x4e, 0xa2, 0xff, 0xa3, 0x82, 0xfe, 0x3d, 0x89, 0xfe, 0x64, 0x8f,
+	0x90, 0xb6, 0x07, 0x75, 0x1a, 0xc9, 0x8c, 0x3a, 0x62, 0x42, 0x2b, 0x61, 0x18, 0x40, 0xd3, 0xc4,
+	0xab, 0x35, 0x0e, 0x23, 0x84, 0xa0, 0x66, 0x5b, 0x11, 0xe6, 0x36, 0xd2, 0xb1, 0xf1, 0xbb, 0x02,
+	0x2d, 0x13, 0x87, 0xbe, 0xe7, 0x86, 0xb8, 0xe4, 0x02, 0x82, 0x9a, 0x6b, 0x2d, 0x31, 0x77, 0x80,
+	0x8e, 0xd1, 0x2e, 0x10, 0x70, 0x97, 0x4e, 0x18, 0x3a, 0x9e, 0x9b, 0xc9, 0x00, 0x4e, 0x41, 0x77,
+	0x80, 0xc7, 0x7a, 0xba, 0xf4, 0xdc, 0x68, 0xc1, 0xe3, 0xdf, 0x66, 0xb4, 0x2f, 0x09, 0x09, 0xdd,
+	0x85, 0xfa, 0xdc, 0x79, 0x85, 0xdd, 0x5e, 0x9d, 0xfa, 0xfa, 0x76, 0xc9, 0xd7, 0x17, 0x38, 0x5c,
+	0x98, 0x8c, 0x87, 0x1a, 0x8d, 0x4f, 0x59, 0x42, 0x28, 0x26, 0x1d, 0x67, 0xf3, 0xa4, 0x99, 0xcf,
+	0x93, 0x6f, 0x61, 0x4b, 0x78, 0xf3, 0xdc, 0x09, 0x23, 0xf4, 0x21, 0x34, 0x98, 0x66, 0x8e, 0xeb,
+	0xad, 0x92, 0x2e, 0xc1, 0x6e, 0x72, 0x46, 0xb4, 0x03, 0xf5, 0x19, 0xcd, 0x4d, 0xe2, 0xb5, 0x66,
+	0xb2, 0x89, 0xf1, 0xbd, 0x0a, 0xad, 0x4d, 0xa1, 0xe6, 0xf9, 0xac, 0xca, 0xf2, 0x59, 0xcb, 0xd9,
+	0x99, 0x89, 0x56, 0x2d, 0x9b, 0x1c, 0xe8, 0x16, 0xb4, 0xfc, 0x38, 0x8c, 0x43, 0x92, 0xca, 0xac,
+	0x36, 0x9a, 0x74, 0x3e, 0xb2, 0xd1, 0x6d, 0xd0, 0x4f, 0x03, 0xcb, 0x9d, 0x2d, 0xc8, 0x1a, 0x2b,
+	0x8f, 0x16, 0x23, 0x8c, 0x6c, 0x74, 0x00, 0xdd, 0x90, 0x5b, 0x97, 0x54, 0x1e, 0x83, 0xa6, 0x23,
+	0xe8, 0xbc, 0xf6, 0x06, 0x00, 0xb3, 0x00, 0x5b, 0x11, 0xb6, 0xa7, 0x56, 0xd4, 0x6b, 0x51, 0x1e,
+	0x9d, 0x53, 0x4e, 0x22, 0xb2, 0xbc, 0xf6, 0x6d, 0xb1, 0xac, 0xb3, 0x65, 0x4e, 0x39, 0x89, 0x8c,
+	0x03, 0x50, 0x87, 0xf1, 0x45, 0xf2, 0xc4, 0xf8, 0x0e, 0xb4, 0x61, 0x3c, 0xbe, 0x50, 0x4a, 0x0d,
+	0x00, 0x22, 0x6c, 0xcd, 0x16, 0x38, 0x48, 0x9b, 0x8a, 0xce, 0x29, 0x23, 0x9b, 0x64, 0x94, 0x58,
+	0xa6, 0x5b, 0x79, 0x46, 0x71, 0xda, 0x57, 0x44, 0xd9, 0x2f, 0x2a, 0x6c, 0xa5, 0xe5, 0x14, 0xfa,
+	0xff, 0x63, 0x84, 0x3e, 0x80, 0x3a, 0x8d, 0x08, 0x0d, 0x4f, 0xfb, 0x68, 0xbb, 0x94, 0x50, 0xc3,
+	0xd8, 0x64, 0x1c, 0xe8, 0x18, 0xae, 0xe5, 0x82, 0x42, 0xa3, 0x26, 0xd9, 0xb2, 0x95, 0x0d, 0x13,
+	0xba, 0x0b, 0x0d, 0x16, 0x5a, 0x1a, 0x44, 0xc9, 0x16, 0xce, 0x72, 0xc5, 0x88, 0xfe, 0xa8, 0x42,
+	0x73, 0x6c, 0xc5, 0xd4, 0xe7, 0x8b, 0xa2, 0x86, 0xa0, 0x46, 0xfd, 0x61, 0x90, 0xd1, 0x31, 0x39,
+	0x36, 0xec, 0x75, 0x60, 0x45, 0xa4, 0x2b, 0x30, 0xc4, 0x92, 0xf9, 0xa6, 0xac, 0x1e, 0x00, 0x84,
+	0xd1, 0xda, 0xc6, 0x6e, 0x94, 0xa6, 0xb5, 0xce, 0x29, 0x2c, 0xf6, 0xb6, 0x13, 0xe0, 0x19, 0x11,
+	0x93, 0xe6, 0x74, 0x3b, 0xa1, 0x8d, 0x6c, 0x22, 0x7c, 0x1e, 0x78, 0x6b, 0x9f, 0x2c, 0x33, 0xe7,
+	0x9b, 0x74, 0x5e, 0xca, 0x75, 0x7d, 0x33, 0x32, 0x50, 0x44, 0xe6, 0x1f, 0x15, 0xda, 0x1c, 0x99,
+	0x4b, 0xe5, 0xd4, 0x65, 0xd1, 0x39, 0x2c, 0xa0, 0x23, 0x09, 0x77, 0x02, 0xd9, 0x51, 0x09, 0x32,
+	0xc9, 0x8e, 0x0c, 0x8e, 0x0f, 0x2a, 0x70, 0x94, 0xec, 0xca, 0x81, 0x7b, 0xaf, 0x00, 0x6e, 0xfb,
+	0x68, 0xa7, 0x62, 0xcf, 0xf8, 0xbf, 0x82, 0xdc, 0x82, 0xeb, 0x1c, 0x71, 0xd2, 0xbd, 0x29, 0xea,
+	0xc7, 0xd0, 0xf2, 0x19, 0x49, 0x9c, 0x8d, 0xef, 0x96, 0x2c, 0xc8, 0x44, 0xc9, 0x4c, 0xb8, 0x25,
+	0x8d, 0x1c, 0x43, 0x57, 0x74, 0x8a, 0x44, 0xc7, 0x27, 0xa0, 0x8b, 0xf2, 0x13, 0x4a, 0x06, 0xe5,
+	0x03, 0x38, 0xd3, 0x5f, 0xcc, 0x94, 0x3f, 0xaf, 0x46, 0x17, 0x6a, 0x56, 0xa0, 0x4f, 0xb0, 0x15,
+	0xcc, 0x16, 0xe4, 0xbc, 0x10, 0x4d, 0x4f, 0xc9, 0x34, 0xbd, 0x7c, 0xf6, 0xa8, 0xd9, 0xec, 0xf1,
+	0x2d, 0xde, 0x06, 0x55, 0x93, 0x8e, 0x93, 0x33, 0xb0, 0xc6, 0x68, 0xf4, 0x0c, 0xec, 0x82, 0x16,
+	0xae, 0x97, 0x34, 0x61, 0x54, 0x93, 0x0c, 0x8d, 0x29, 0xdc, 0xe0, 0x40, 0x30, 0xcd, 0xd4, 0x35,
+	0xce, 0xa6, 0x24, 0x6c, 0xe8, 0x18, 0xf4, 0x50, 0x58, 0xd6, 0x53, 0xa9, 0xb3, 0xfd, 0xb2, 0xb3,
+	0x82, 0xc3, 0x4c, 0x99, 0x8d, 0x07, 0x00, 0xe3, 0xc0, 0x7b, 0xe9, 0x30, 0xd0, 0xaa, 0x9c, 0xca,
+	0x61, 0xa1, 0x0a, 0x2c, 0x2c, 0xe8, 0xa4, 0xfb, 0xe8, 0xb1, 0x9c, 0xf0, 0x29, 0x19, 0x3e, 0xf4,
+	0x31, 0xe8, 0x49, 0xee, 0x71, 0xcb, 0x6e, 0x97, 0x63, 0x9d, 0x48, 0x32, 0x53, 0x6e, 0xe3, 0x16,
+	0x34, 0x87, 0xf1, 0xc8, 0xae, 0xb8, 0xcf, 0x1a, 0xf7, 0xa1, 0xc9, 0x02, 0xbd, 0x62, 0xd8, 0xce,
+	0x99, 0xc9, 0x9a, 0x49, 0xc7, 0xc4, 0x94, 0x33, 0x67, 0xe9, 0x24, 0x59, 0x42, 0x27, 0xc6, 0x0f,
+	0x0a, 0x5c, 0xcf, 0xa7, 0xc9, 0x0a, 0xbd, 0x57, 0x6c, 0xe7, 0x0a, 0xbf, 0xda, 0x66, 0x3b, 0xb7,
+	0x50, 0xa1, 0x56, 0xa9, 0xd0, 0x32, 0x2a, 0x48, 0x64, 0x6c, 0x4b, 0x74, 0x03, 0x32, 0x24, 0x7c,
+	0x73, 0x6b, 0xb6, 0xb0, 0x78, 0x8f, 0x64, 0x13, 0x63, 0x0e, 0xdb, 0x05, 0x4b, 0xc4, 0x65, 0xee,
+	0x62, 0xbe, 0x08, 0x45, 0x5a, 0x85, 0xa2, 0x5a, 0x56, 0xd1, 0x33, 0xe8, 0x16, 0xf2, 0x67, 0x25,
+	0xf6, 0x2a, 0x15, 0x7b, 0xd5, 0xcc, 0x5e, 0x0e, 0xba, 0x96, 0x01, 0x5d, 0xbf, 0xb4, 0x10, 0xe3,
+	0x4f, 0x05, 0x1a, 0x6c, 0xd7, 0x85, 0xae, 0x0d, 0xc5, 0x7b, 0x81, 0x56, 0xba, 0x17, 0x20, 0x03,
+	0xb6, 0x68, 0x6a, 0x4d, 0x58, 0x23, 0xa4, 0xfe, 0x6a, 0x66, 0x8e, 0x26, 0x7d, 0x8c, 0x88, 0x42,
+	0x64, 0x67, 0x52, 0xbe, 0x10, 0x9b, 0xfc, 0x06, 0x4d, 0x0a, 0x91, 0x98, 0xe1, 0x45, 0xd6, 0xd9,
+	0x94, 0x4b, 0x69, 0x71, 0x33, 0x08, 0xed, 0x84, 0x92, 0x8c, 0x09, 0x74, 0x98, 0x5f, 0x49, 0xc7,
+	0x21, 0xef, 0x0d, 0x4a, 0x91, 0xbf, 0x37, 0x18, 0x7c, 0x9c, 0x4d, 0xd4, 0x31, 0xf3, 0x9f, 0x96,
+	0x7b, 0x00, 0x35, 0x72, 0x4f, 0x2e, 0x41, 0xb5, 0x23, 0x6e, 0xd7, 0x02, 0xdb, 0xe4, 0x1a, 0x4d,
+	0xee, 0xfe, 0x5a, 0x7a, 0xf7, 0xcf, 0x5e, 0x7e, 0x6a, 0xb2, 0xcb, 0x4f, 0x3d, 0xf7, 0x76, 0x19,
+	0x40, 0xfd, 0x21, 0x05, 0x27, 0x57, 0xc0, 0xa2, 0xb7, 0x1e, 0xfd, 0x0a, 0xd0, 0x79, 0xc2, 0xfc,
+	0x98, 0x30, 0x37, 0xd0, 0x43, 0xb8, 0xc6, 0x93, 0xea, 0x21, 0x3d, 0x04, 0x50, 0x4f, 0xd6, 0xbd,
+	0xfb, 0xd2, 0x15, 0xf4, 0x19, 0x00, 0x1f, 0x3e, 0xc5, 0x51, 0x85, 0x04, 0x5e, 0xfa, 0x1b, 0x24,
+	0x8c, 0x92, 0xa3, 0x9c, 0xf6, 0x9f, 0x32, 0x23, 0x2f, 0xad, 0xfe, 0xbe, 0x4c, 0x44, 0x12, 0xba,
+	0x71, 0xa1, 0xcd, 0x52, 0x81, 0xb2, 0x0e, 0x4a, 0x44, 0xee, 0x49, 0xd6, 0x12, 0x89, 0x29, 0x46,
+	0xdf, 0xf8, 0xf6, 0x9b, 0x62, 0xf4, 0x28, 0x11, 0xf2, 0x08, 0x9f, 0xe1, 0x4a, 0x21, 0x02, 0xa6,
+	0xf2, 0x23, 0x48, 0xfc, 0x0c, 0xa0, 0x47, 0xd0, 0x60, 0x0d, 0x16, 0xc9, 0x99, 0x2a, 0x1c, 0x2a,
+	0xb4, 0xf7, 0xcf, 0x61, 0x7b, 0x42, 0x1f, 0x53, 0x3c, 0x19, 0x78, 0xe8, 0xa5, 0x22, 0x57, 0xfd,
+	0x9b, 0xd5, 0x4b, 0xe8, 0x0b, 0xe8, 0xe6, 0x24, 0x55, 0xc7, 0x9f, 0xf7, 0xc4, 0xfe, 0x40, 0xfa,
+	0xba, 0xa3, 0x66, 0x8d, 0x60, 0x9b, 0xbd, 0xa2, 0x5f, 0xb0, 0x16, 0xc1, 0x24, 0x57, 0xc5, 0x4e,
+	0xfc, 0x0b, 0x48, 0xed, 0x7a, 0x2a, 0x1e, 0xf1, 0x27, 0xf6, 0xd2, 0x71, 0xaf, 0x20, 0xe8, 0x19,
+	0xec, 0x30, 0xa6, 0x31, 0xff, 0xb1, 0xb8, 0x82, 0xac, 0x27, 0xd0, 0x11, 0x27, 0x85, 0x14, 0x71,
+	0xc1, 0xd0, 0x97, 0x2f, 0xa1, 0x21, 0xb4, 0xc5, 0x78, 0x73, 0xbd, 0x6d, 0x90, 0x31, 0x49, 0x1f,
+	0x64, 0x14, 0xfb, 0x7d, 0x29, 0xab, 0xa8, 0xbc, 0x3b, 0xaf, 0xe1, 0x08, 0xfd, 0xac, 0x83, 0xbc,
+	0x52, 0xde, 0xcc, 0xc1, 0xc7, 0xa9, 0x9c, 0xab, 0x14, 0xcb, 0xf3, 0xd2, 0x1f, 0x90, 0xf1, 0xba,
+	0x6f, 0x1b, 0x79, 0xf4, 0x86, 0xdd, 0xdf, 0xce, 0x77, 0x95, 0x3f, 0xce, 0x77, 0x95, 0xbf, 0xce,
+	0x77, 0x95, 0x9f, 0xfe, 0xde, 0x7d, 0xeb, 0xb4, 0x41, 0xbf, 0xf2, 0xee, 0xff, 0x1b, 0x00, 0x00,
+	0xff, 0xff, 0xf1, 0x59, 0xba, 0x7e, 0xdb, 0x13, 0x00, 0x00,
 }
 
 // Reference imports to suppress errors if they are not otherwise used.
@@ -2142,11 +2355,15 @@ type FinanceServiceClient interface {
 	Profit(ctx context.Context, in *EmptyRes, opts ...grpc.CallOption) (*ProfitRespList, error)
 	SalaryFinanceCreate(ctx context.Context, in *EmptyReq, opts ...grpc.CallOption) (*Empty, error)
 	SalaryFinanceGet(ctx context.Context, in *Request, opts ...grpc.CallOption) (*ResponseList, error)
+	StatusTeacherSalary(ctx context.Context, in *StatusReq, opts ...grpc.CallOption) (*Empty, error)
+	StatusAdminSalary(ctx context.Context, in *StatusReq, opts ...grpc.CallOption) (*Empty, error)
+	StatusPersonalSalary(ctx context.Context, in *StatusReq, opts ...grpc.CallOption) (*Empty, error)
 	SpendingCreate(ctx context.Context, in *Spending, opts ...grpc.CallOption) (*Spending, error)
 	SpendingGet(ctx context.Context, in *ByIdReq, opts ...grpc.CallOption) (*Spending, error)
 	SpendingList(ctx context.Context, in *SpendingListReq, opts ...grpc.CallOption) (*SpendingListResp, error)
 	SpendingUpdate(ctx context.Context, in *Spending, opts ...grpc.CallOption) (*Spending, error)
 	SpendingDelete(ctx context.Context, in *ByIdReq, opts ...grpc.CallOption) (*EmptyRes, error)
+	StatusSpending(ctx context.Context, in *StatusSpendingReq, opts ...grpc.CallOption) (*Empty, error)
 }
 
 type financeServiceClient struct {
@@ -2238,6 +2455,33 @@ func (c *financeServiceClient) SalaryFinanceGet(ctx context.Context, in *Request
 	return out, nil
 }
 
+func (c *financeServiceClient) StatusTeacherSalary(ctx context.Context, in *StatusReq, opts ...grpc.CallOption) (*Empty, error) {
+	out := new(Empty)
+	err := c.cc.Invoke(ctx, "/finance_service.FinanceService/StatusTeacherSalary", in, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *financeServiceClient) StatusAdminSalary(ctx context.Context, in *StatusReq, opts ...grpc.CallOption) (*Empty, error) {
+	out := new(Empty)
+	err := c.cc.Invoke(ctx, "/finance_service.FinanceService/StatusAdminSalary", in, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *financeServiceClient) StatusPersonalSalary(ctx context.Context, in *StatusReq, opts ...grpc.CallOption) (*Empty, error) {
+	out := new(Empty)
+	err := c.cc.Invoke(ctx, "/finance_service.FinanceService/StatusPersonalSalary", in, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
 func (c *financeServiceClient) SpendingCreate(ctx context.Context, in *Spending, opts ...grpc.CallOption) (*Spending, error) {
 	out := new(Spending)
 	err := c.cc.Invoke(ctx, "/finance_service.FinanceService/SpendingCreate", in, out, opts...)
@@ -2283,6 +2527,15 @@ func (c *financeServiceClient) SpendingDelete(ctx context.Context, in *ByIdReq, 
 	return out, nil
 }
 
+func (c *financeServiceClient) StatusSpending(ctx context.Context, in *StatusSpendingReq, opts ...grpc.CallOption) (*Empty, error) {
+	out := new(Empty)
+	err := c.cc.Invoke(ctx, "/finance_service.FinanceService/StatusSpending", in, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
 // FinanceServiceServer is the server API for FinanceService service.
 type FinanceServiceServer interface {
 	PaymentCreate(context.Context, *Payment) (*Payment, error)
@@ -2294,11 +2547,15 @@ type FinanceServiceServer interface {
 	Profit(context.Context, *EmptyRes) (*ProfitRespList, error)
 	SalaryFinanceCreate(context.Context, *EmptyReq) (*Empty, error)
 	SalaryFinanceGet(context.Context, *Request) (*ResponseList, error)
+	StatusTeacherSalary(context.Context, *StatusReq) (*Empty, error)
+	StatusAdminSalary(context.Context, *StatusReq) (*Empty, error)
+	StatusPersonalSalary(context.Context, *StatusReq) (*Empty, error)
 	SpendingCreate(context.Context, *Spending) (*Spending, error)
 	SpendingGet(context.Context, *ByIdReq) (*Spending, error)
 	SpendingList(context.Context, *SpendingListReq) (*SpendingListResp, error)
 	SpendingUpdate(context.Context, *Spending) (*Spending, error)
 	SpendingDelete(context.Context, *ByIdReq) (*EmptyRes, error)
+	StatusSpending(context.Context, *StatusSpendingReq) (*Empty, error)
 }
 
 // UnimplementedFinanceServiceServer can be embedded to have forward compatible implementations.
@@ -2332,6 +2589,15 @@ func (*UnimplementedFinanceServiceServer) SalaryFinanceCreate(ctx context.Contex
 func (*UnimplementedFinanceServiceServer) SalaryFinanceGet(ctx context.Context, req *Request) (*ResponseList, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method SalaryFinanceGet not implemented")
 }
+func (*UnimplementedFinanceServiceServer) StatusTeacherSalary(ctx context.Context, req *StatusReq) (*Empty, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method StatusTeacherSalary not implemented")
+}
+func (*UnimplementedFinanceServiceServer) StatusAdminSalary(ctx context.Context, req *StatusReq) (*Empty, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method StatusAdminSalary not implemented")
+}
+func (*UnimplementedFinanceServiceServer) StatusPersonalSalary(ctx context.Context, req *StatusReq) (*Empty, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method StatusPersonalSalary not implemented")
+}
 func (*UnimplementedFinanceServiceServer) SpendingCreate(ctx context.Context, req *Spending) (*Spending, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method SpendingCreate not implemented")
 }
@@ -2346,6 +2612,9 @@ func (*UnimplementedFinanceServiceServer) SpendingUpdate(ctx context.Context, re
 }
 func (*UnimplementedFinanceServiceServer) SpendingDelete(ctx context.Context, req *ByIdReq) (*EmptyRes, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method SpendingDelete not implemented")
+}
+func (*UnimplementedFinanceServiceServer) StatusSpending(ctx context.Context, req *StatusSpendingReq) (*Empty, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method StatusSpending not implemented")
 }
 
 func RegisterFinanceServiceServer(s *grpc.Server, srv FinanceServiceServer) {
@@ -2514,6 +2783,60 @@ func _FinanceService_SalaryFinanceGet_Handler(srv interface{}, ctx context.Conte
 	return interceptor(ctx, in, info, handler)
 }
 
+func _FinanceService_StatusTeacherSalary_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(StatusReq)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(FinanceServiceServer).StatusTeacherSalary(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: "/finance_service.FinanceService/StatusTeacherSalary",
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(FinanceServiceServer).StatusTeacherSalary(ctx, req.(*StatusReq))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _FinanceService_StatusAdminSalary_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(StatusReq)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(FinanceServiceServer).StatusAdminSalary(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: "/finance_service.FinanceService/StatusAdminSalary",
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(FinanceServiceServer).StatusAdminSalary(ctx, req.(*StatusReq))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _FinanceService_StatusPersonalSalary_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(StatusReq)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(FinanceServiceServer).StatusPersonalSalary(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: "/finance_service.FinanceService/StatusPersonalSalary",
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(FinanceServiceServer).StatusPersonalSalary(ctx, req.(*StatusReq))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
 func _FinanceService_SpendingCreate_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
 	in := new(Spending)
 	if err := dec(in); err != nil {
@@ -2604,6 +2927,24 @@ func _FinanceService_SpendingDelete_Handler(srv interface{}, ctx context.Context
 	return interceptor(ctx, in, info, handler)
 }
 
+func _FinanceService_StatusSpending_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(StatusSpendingReq)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(FinanceServiceServer).StatusSpending(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: "/finance_service.FinanceService/StatusSpending",
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(FinanceServiceServer).StatusSpending(ctx, req.(*StatusSpendingReq))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
 var _FinanceService_serviceDesc = grpc.ServiceDesc{
 	ServiceName: "finance_service.FinanceService",
 	HandlerType: (*FinanceServiceServer)(nil),
@@ -2645,6 +2986,18 @@ var _FinanceService_serviceDesc = grpc.ServiceDesc{
 			Handler:    _FinanceService_SalaryFinanceGet_Handler,
 		},
 		{
+			MethodName: "StatusTeacherSalary",
+			Handler:    _FinanceService_StatusTeacherSalary_Handler,
+		},
+		{
+			MethodName: "StatusAdminSalary",
+			Handler:    _FinanceService_StatusAdminSalary_Handler,
+		},
+		{
+			MethodName: "StatusPersonalSalary",
+			Handler:    _FinanceService_StatusPersonalSalary_Handler,
+		},
+		{
 			MethodName: "SpendingCreate",
 			Handler:    _FinanceService_SpendingCreate_Handler,
 		},
@@ -2663,6 +3016,10 @@ var _FinanceService_serviceDesc = grpc.ServiceDesc{
 		{
 			MethodName: "SpendingDelete",
 			Handler:    _FinanceService_SpendingDelete_Handler,
+		},
+		{
+			MethodName: "StatusSpending",
+			Handler:    _FinanceService_StatusSpending_Handler,
 		},
 	},
 	Streams:  []grpc.StreamDesc{},
@@ -2761,6 +3118,177 @@ func (m *EmptyReq) MarshalToSizedBuffer(dAtA []byte) (int, error) {
 		i = encodeVarintFinance(dAtA, i, uint64(len(m.Id)))
 		i--
 		dAtA[i] = 0xa
+	}
+	return len(dAtA) - i, nil
+}
+
+func (m *Status) Marshal() (dAtA []byte, err error) {
+	size := m.Size()
+	dAtA = make([]byte, size)
+	n, err := m.MarshalToSizedBuffer(dAtA[:size])
+	if err != nil {
+		return nil, err
+	}
+	return dAtA[:n], nil
+}
+
+func (m *Status) MarshalTo(dAtA []byte) (int, error) {
+	size := m.Size()
+	return m.MarshalToSizedBuffer(dAtA[:size])
+}
+
+func (m *Status) MarshalToSizedBuffer(dAtA []byte) (int, error) {
+	i := len(dAtA)
+	_ = i
+	var l int
+	_ = l
+	if m.XXX_unrecognized != nil {
+		i -= len(m.XXX_unrecognized)
+		copy(dAtA[i:], m.XXX_unrecognized)
+	}
+	if len(m.Status) > 0 {
+		i -= len(m.Status)
+		copy(dAtA[i:], m.Status)
+		i = encodeVarintFinance(dAtA, i, uint64(len(m.Status)))
+		i--
+		dAtA[i] = 0x1a
+	}
+	if len(m.PersonalId) > 0 {
+		i -= len(m.PersonalId)
+		copy(dAtA[i:], m.PersonalId)
+		i = encodeVarintFinance(dAtA, i, uint64(len(m.PersonalId)))
+		i--
+		dAtA[i] = 0x12
+	}
+	if len(m.Id) > 0 {
+		i -= len(m.Id)
+		copy(dAtA[i:], m.Id)
+		i = encodeVarintFinance(dAtA, i, uint64(len(m.Id)))
+		i--
+		dAtA[i] = 0xa
+	}
+	return len(dAtA) - i, nil
+}
+
+func (m *StatusReq) Marshal() (dAtA []byte, err error) {
+	size := m.Size()
+	dAtA = make([]byte, size)
+	n, err := m.MarshalToSizedBuffer(dAtA[:size])
+	if err != nil {
+		return nil, err
+	}
+	return dAtA[:n], nil
+}
+
+func (m *StatusReq) MarshalTo(dAtA []byte) (int, error) {
+	size := m.Size()
+	return m.MarshalToSizedBuffer(dAtA[:size])
+}
+
+func (m *StatusReq) MarshalToSizedBuffer(dAtA []byte) (int, error) {
+	i := len(dAtA)
+	_ = i
+	var l int
+	_ = l
+	if m.XXX_unrecognized != nil {
+		i -= len(m.XXX_unrecognized)
+		copy(dAtA[i:], m.XXX_unrecognized)
+	}
+	if len(m.Status) > 0 {
+		for iNdEx := len(m.Status) - 1; iNdEx >= 0; iNdEx-- {
+			{
+				size, err := m.Status[iNdEx].MarshalToSizedBuffer(dAtA[:i])
+				if err != nil {
+					return 0, err
+				}
+				i -= size
+				i = encodeVarintFinance(dAtA, i, uint64(size))
+			}
+			i--
+			dAtA[i] = 0xa
+		}
+	}
+	return len(dAtA) - i, nil
+}
+
+func (m *StatusSpending) Marshal() (dAtA []byte, err error) {
+	size := m.Size()
+	dAtA = make([]byte, size)
+	n, err := m.MarshalToSizedBuffer(dAtA[:size])
+	if err != nil {
+		return nil, err
+	}
+	return dAtA[:n], nil
+}
+
+func (m *StatusSpending) MarshalTo(dAtA []byte) (int, error) {
+	size := m.Size()
+	return m.MarshalToSizedBuffer(dAtA[:size])
+}
+
+func (m *StatusSpending) MarshalToSizedBuffer(dAtA []byte) (int, error) {
+	i := len(dAtA)
+	_ = i
+	var l int
+	_ = l
+	if m.XXX_unrecognized != nil {
+		i -= len(m.XXX_unrecognized)
+		copy(dAtA[i:], m.XXX_unrecognized)
+	}
+	if len(m.Status) > 0 {
+		i -= len(m.Status)
+		copy(dAtA[i:], m.Status)
+		i = encodeVarintFinance(dAtA, i, uint64(len(m.Status)))
+		i--
+		dAtA[i] = 0x12
+	}
+	if len(m.Id) > 0 {
+		i -= len(m.Id)
+		copy(dAtA[i:], m.Id)
+		i = encodeVarintFinance(dAtA, i, uint64(len(m.Id)))
+		i--
+		dAtA[i] = 0xa
+	}
+	return len(dAtA) - i, nil
+}
+
+func (m *StatusSpendingReq) Marshal() (dAtA []byte, err error) {
+	size := m.Size()
+	dAtA = make([]byte, size)
+	n, err := m.MarshalToSizedBuffer(dAtA[:size])
+	if err != nil {
+		return nil, err
+	}
+	return dAtA[:n], nil
+}
+
+func (m *StatusSpendingReq) MarshalTo(dAtA []byte) (int, error) {
+	size := m.Size()
+	return m.MarshalToSizedBuffer(dAtA[:size])
+}
+
+func (m *StatusSpendingReq) MarshalToSizedBuffer(dAtA []byte) (int, error) {
+	i := len(dAtA)
+	_ = i
+	var l int
+	_ = l
+	if m.XXX_unrecognized != nil {
+		i -= len(m.XXX_unrecognized)
+		copy(dAtA[i:], m.XXX_unrecognized)
+	}
+	if len(m.Status) > 0 {
+		for iNdEx := len(m.Status) - 1; iNdEx >= 0; iNdEx-- {
+			{
+				size, err := m.Status[iNdEx].MarshalToSizedBuffer(dAtA[:i])
+				if err != nil {
+					return 0, err
+				}
+				i -= size
+				i = encodeVarintFinance(dAtA, i, uint64(size))
+			}
+			i--
+			dAtA[i] = 0xa
+		}
 	}
 	return len(dAtA) - i, nil
 }
@@ -2865,25 +3393,13 @@ func (m *Response) MarshalToSizedBuffer(dAtA []byte) (int, error) {
 		copy(dAtA[i:], m.Comment)
 		i = encodeVarintFinance(dAtA, i, uint64(len(m.Comment)))
 		i--
-		dAtA[i] = 0x4a
-	}
-	if m.PrepaidExpense != 0 {
-		i -= 4
-		encoding_binary.LittleEndian.PutUint32(dAtA[i:], uint32(math.Float32bits(float32(m.PrepaidExpense))))
-		i--
-		dAtA[i] = 0x45
-	}
-	if m.Surcharge != 0 {
-		i -= 4
-		encoding_binary.LittleEndian.PutUint32(dAtA[i:], uint32(math.Float32bits(float32(m.Surcharge))))
-		i--
-		dAtA[i] = 0x3d
+		dAtA[i] = 0x3a
 	}
 	if m.Debt != 0 {
-		i -= 4
-		encoding_binary.LittleEndian.PutUint32(dAtA[i:], uint32(math.Float32bits(float32(m.Debt))))
+		i -= 8
+		encoding_binary.LittleEndian.PutUint64(dAtA[i:], uint64(math.Float64bits(float64(m.Debt))))
 		i--
-		dAtA[i] = 0x35
+		dAtA[i] = 0x31
 	}
 	if len(m.Given) > 0 {
 		for iNdEx := len(m.Given) - 1; iNdEx >= 0; iNdEx-- {
@@ -4194,26 +4710,33 @@ func (m *Tesh) MarshalToSizedBuffer(dAtA []byte) (int, error) {
 		copy(dAtA[i:], m.Status)
 		i = encodeVarintFinance(dAtA, i, uint64(len(m.Status)))
 		i--
-		dAtA[i] = 0x22
+		dAtA[i] = 0x2a
 	}
 	if len(m.Comment) > 0 {
 		i -= len(m.Comment)
 		copy(dAtA[i:], m.Comment)
 		i = encodeVarintFinance(dAtA, i, uint64(len(m.Comment)))
 		i--
-		dAtA[i] = 0x1a
+		dAtA[i] = 0x22
 	}
 	if len(m.Date) > 0 {
 		i -= len(m.Date)
 		copy(dAtA[i:], m.Date)
 		i = encodeVarintFinance(dAtA, i, uint64(len(m.Date)))
 		i--
-		dAtA[i] = 0x12
+		dAtA[i] = 0x1a
 	}
 	if len(m.Given) > 0 {
 		i -= len(m.Given)
 		copy(dAtA[i:], m.Given)
 		i = encodeVarintFinance(dAtA, i, uint64(len(m.Given)))
+		i--
+		dAtA[i] = 0x12
+	}
+	if len(m.Id) > 0 {
+		i -= len(m.Id)
+		copy(dAtA[i:], m.Id)
+		i = encodeVarintFinance(dAtA, i, uint64(len(m.Id)))
 		i--
 		dAtA[i] = 0xa
 	}
@@ -4311,6 +4834,86 @@ func (m *EmptyReq) Size() (n int) {
 	return n
 }
 
+func (m *Status) Size() (n int) {
+	if m == nil {
+		return 0
+	}
+	var l int
+	_ = l
+	l = len(m.Id)
+	if l > 0 {
+		n += 1 + l + sovFinance(uint64(l))
+	}
+	l = len(m.PersonalId)
+	if l > 0 {
+		n += 1 + l + sovFinance(uint64(l))
+	}
+	l = len(m.Status)
+	if l > 0 {
+		n += 1 + l + sovFinance(uint64(l))
+	}
+	if m.XXX_unrecognized != nil {
+		n += len(m.XXX_unrecognized)
+	}
+	return n
+}
+
+func (m *StatusReq) Size() (n int) {
+	if m == nil {
+		return 0
+	}
+	var l int
+	_ = l
+	if len(m.Status) > 0 {
+		for _, e := range m.Status {
+			l = e.Size()
+			n += 1 + l + sovFinance(uint64(l))
+		}
+	}
+	if m.XXX_unrecognized != nil {
+		n += len(m.XXX_unrecognized)
+	}
+	return n
+}
+
+func (m *StatusSpending) Size() (n int) {
+	if m == nil {
+		return 0
+	}
+	var l int
+	_ = l
+	l = len(m.Id)
+	if l > 0 {
+		n += 1 + l + sovFinance(uint64(l))
+	}
+	l = len(m.Status)
+	if l > 0 {
+		n += 1 + l + sovFinance(uint64(l))
+	}
+	if m.XXX_unrecognized != nil {
+		n += len(m.XXX_unrecognized)
+	}
+	return n
+}
+
+func (m *StatusSpendingReq) Size() (n int) {
+	if m == nil {
+		return 0
+	}
+	var l int
+	_ = l
+	if len(m.Status) > 0 {
+		for _, e := range m.Status {
+			l = e.Size()
+			n += 1 + l + sovFinance(uint64(l))
+		}
+	}
+	if m.XXX_unrecognized != nil {
+		n += len(m.XXX_unrecognized)
+	}
+	return n
+}
+
 func (m *Empty) Size() (n int) {
 	if m == nil {
 		return 0
@@ -4371,13 +4974,7 @@ func (m *Response) Size() (n int) {
 		}
 	}
 	if m.Debt != 0 {
-		n += 5
-	}
-	if m.Surcharge != 0 {
-		n += 5
-	}
-	if m.PrepaidExpense != 0 {
-		n += 5
+		n += 9
 	}
 	l = len(m.Comment)
 	if l > 0 {
@@ -4995,6 +5592,10 @@ func (m *Tesh) Size() (n int) {
 	}
 	var l int
 	_ = l
+	l = len(m.Id)
+	if l > 0 {
+		n += 1 + l + sovFinance(uint64(l))
+	}
 	l = len(m.Given)
 	if l > 0 {
 		n += 1 + l + sovFinance(uint64(l))
@@ -5309,6 +5910,438 @@ func (m *EmptyReq) Unmarshal(dAtA []byte) error {
 				return io.ErrUnexpectedEOF
 			}
 			m.Comment = string(dAtA[iNdEx:postIndex])
+			iNdEx = postIndex
+		default:
+			iNdEx = preIndex
+			skippy, err := skipFinance(dAtA[iNdEx:])
+			if err != nil {
+				return err
+			}
+			if (skippy < 0) || (iNdEx+skippy) < 0 {
+				return ErrInvalidLengthFinance
+			}
+			if (iNdEx + skippy) > l {
+				return io.ErrUnexpectedEOF
+			}
+			m.XXX_unrecognized = append(m.XXX_unrecognized, dAtA[iNdEx:iNdEx+skippy]...)
+			iNdEx += skippy
+		}
+	}
+
+	if iNdEx > l {
+		return io.ErrUnexpectedEOF
+	}
+	return nil
+}
+func (m *Status) Unmarshal(dAtA []byte) error {
+	l := len(dAtA)
+	iNdEx := 0
+	for iNdEx < l {
+		preIndex := iNdEx
+		var wire uint64
+		for shift := uint(0); ; shift += 7 {
+			if shift >= 64 {
+				return ErrIntOverflowFinance
+			}
+			if iNdEx >= l {
+				return io.ErrUnexpectedEOF
+			}
+			b := dAtA[iNdEx]
+			iNdEx++
+			wire |= uint64(b&0x7F) << shift
+			if b < 0x80 {
+				break
+			}
+		}
+		fieldNum := int32(wire >> 3)
+		wireType := int(wire & 0x7)
+		if wireType == 4 {
+			return fmt.Errorf("proto: Status: wiretype end group for non-group")
+		}
+		if fieldNum <= 0 {
+			return fmt.Errorf("proto: Status: illegal tag %d (wire type %d)", fieldNum, wire)
+		}
+		switch fieldNum {
+		case 1:
+			if wireType != 2 {
+				return fmt.Errorf("proto: wrong wireType = %d for field Id", wireType)
+			}
+			var stringLen uint64
+			for shift := uint(0); ; shift += 7 {
+				if shift >= 64 {
+					return ErrIntOverflowFinance
+				}
+				if iNdEx >= l {
+					return io.ErrUnexpectedEOF
+				}
+				b := dAtA[iNdEx]
+				iNdEx++
+				stringLen |= uint64(b&0x7F) << shift
+				if b < 0x80 {
+					break
+				}
+			}
+			intStringLen := int(stringLen)
+			if intStringLen < 0 {
+				return ErrInvalidLengthFinance
+			}
+			postIndex := iNdEx + intStringLen
+			if postIndex < 0 {
+				return ErrInvalidLengthFinance
+			}
+			if postIndex > l {
+				return io.ErrUnexpectedEOF
+			}
+			m.Id = string(dAtA[iNdEx:postIndex])
+			iNdEx = postIndex
+		case 2:
+			if wireType != 2 {
+				return fmt.Errorf("proto: wrong wireType = %d for field PersonalId", wireType)
+			}
+			var stringLen uint64
+			for shift := uint(0); ; shift += 7 {
+				if shift >= 64 {
+					return ErrIntOverflowFinance
+				}
+				if iNdEx >= l {
+					return io.ErrUnexpectedEOF
+				}
+				b := dAtA[iNdEx]
+				iNdEx++
+				stringLen |= uint64(b&0x7F) << shift
+				if b < 0x80 {
+					break
+				}
+			}
+			intStringLen := int(stringLen)
+			if intStringLen < 0 {
+				return ErrInvalidLengthFinance
+			}
+			postIndex := iNdEx + intStringLen
+			if postIndex < 0 {
+				return ErrInvalidLengthFinance
+			}
+			if postIndex > l {
+				return io.ErrUnexpectedEOF
+			}
+			m.PersonalId = string(dAtA[iNdEx:postIndex])
+			iNdEx = postIndex
+		case 3:
+			if wireType != 2 {
+				return fmt.Errorf("proto: wrong wireType = %d for field Status", wireType)
+			}
+			var stringLen uint64
+			for shift := uint(0); ; shift += 7 {
+				if shift >= 64 {
+					return ErrIntOverflowFinance
+				}
+				if iNdEx >= l {
+					return io.ErrUnexpectedEOF
+				}
+				b := dAtA[iNdEx]
+				iNdEx++
+				stringLen |= uint64(b&0x7F) << shift
+				if b < 0x80 {
+					break
+				}
+			}
+			intStringLen := int(stringLen)
+			if intStringLen < 0 {
+				return ErrInvalidLengthFinance
+			}
+			postIndex := iNdEx + intStringLen
+			if postIndex < 0 {
+				return ErrInvalidLengthFinance
+			}
+			if postIndex > l {
+				return io.ErrUnexpectedEOF
+			}
+			m.Status = string(dAtA[iNdEx:postIndex])
+			iNdEx = postIndex
+		default:
+			iNdEx = preIndex
+			skippy, err := skipFinance(dAtA[iNdEx:])
+			if err != nil {
+				return err
+			}
+			if (skippy < 0) || (iNdEx+skippy) < 0 {
+				return ErrInvalidLengthFinance
+			}
+			if (iNdEx + skippy) > l {
+				return io.ErrUnexpectedEOF
+			}
+			m.XXX_unrecognized = append(m.XXX_unrecognized, dAtA[iNdEx:iNdEx+skippy]...)
+			iNdEx += skippy
+		}
+	}
+
+	if iNdEx > l {
+		return io.ErrUnexpectedEOF
+	}
+	return nil
+}
+func (m *StatusReq) Unmarshal(dAtA []byte) error {
+	l := len(dAtA)
+	iNdEx := 0
+	for iNdEx < l {
+		preIndex := iNdEx
+		var wire uint64
+		for shift := uint(0); ; shift += 7 {
+			if shift >= 64 {
+				return ErrIntOverflowFinance
+			}
+			if iNdEx >= l {
+				return io.ErrUnexpectedEOF
+			}
+			b := dAtA[iNdEx]
+			iNdEx++
+			wire |= uint64(b&0x7F) << shift
+			if b < 0x80 {
+				break
+			}
+		}
+		fieldNum := int32(wire >> 3)
+		wireType := int(wire & 0x7)
+		if wireType == 4 {
+			return fmt.Errorf("proto: StatusReq: wiretype end group for non-group")
+		}
+		if fieldNum <= 0 {
+			return fmt.Errorf("proto: StatusReq: illegal tag %d (wire type %d)", fieldNum, wire)
+		}
+		switch fieldNum {
+		case 1:
+			if wireType != 2 {
+				return fmt.Errorf("proto: wrong wireType = %d for field Status", wireType)
+			}
+			var msglen int
+			for shift := uint(0); ; shift += 7 {
+				if shift >= 64 {
+					return ErrIntOverflowFinance
+				}
+				if iNdEx >= l {
+					return io.ErrUnexpectedEOF
+				}
+				b := dAtA[iNdEx]
+				iNdEx++
+				msglen |= int(b&0x7F) << shift
+				if b < 0x80 {
+					break
+				}
+			}
+			if msglen < 0 {
+				return ErrInvalidLengthFinance
+			}
+			postIndex := iNdEx + msglen
+			if postIndex < 0 {
+				return ErrInvalidLengthFinance
+			}
+			if postIndex > l {
+				return io.ErrUnexpectedEOF
+			}
+			m.Status = append(m.Status, &Status{})
+			if err := m.Status[len(m.Status)-1].Unmarshal(dAtA[iNdEx:postIndex]); err != nil {
+				return err
+			}
+			iNdEx = postIndex
+		default:
+			iNdEx = preIndex
+			skippy, err := skipFinance(dAtA[iNdEx:])
+			if err != nil {
+				return err
+			}
+			if (skippy < 0) || (iNdEx+skippy) < 0 {
+				return ErrInvalidLengthFinance
+			}
+			if (iNdEx + skippy) > l {
+				return io.ErrUnexpectedEOF
+			}
+			m.XXX_unrecognized = append(m.XXX_unrecognized, dAtA[iNdEx:iNdEx+skippy]...)
+			iNdEx += skippy
+		}
+	}
+
+	if iNdEx > l {
+		return io.ErrUnexpectedEOF
+	}
+	return nil
+}
+func (m *StatusSpending) Unmarshal(dAtA []byte) error {
+	l := len(dAtA)
+	iNdEx := 0
+	for iNdEx < l {
+		preIndex := iNdEx
+		var wire uint64
+		for shift := uint(0); ; shift += 7 {
+			if shift >= 64 {
+				return ErrIntOverflowFinance
+			}
+			if iNdEx >= l {
+				return io.ErrUnexpectedEOF
+			}
+			b := dAtA[iNdEx]
+			iNdEx++
+			wire |= uint64(b&0x7F) << shift
+			if b < 0x80 {
+				break
+			}
+		}
+		fieldNum := int32(wire >> 3)
+		wireType := int(wire & 0x7)
+		if wireType == 4 {
+			return fmt.Errorf("proto: StatusSpending: wiretype end group for non-group")
+		}
+		if fieldNum <= 0 {
+			return fmt.Errorf("proto: StatusSpending: illegal tag %d (wire type %d)", fieldNum, wire)
+		}
+		switch fieldNum {
+		case 1:
+			if wireType != 2 {
+				return fmt.Errorf("proto: wrong wireType = %d for field Id", wireType)
+			}
+			var stringLen uint64
+			for shift := uint(0); ; shift += 7 {
+				if shift >= 64 {
+					return ErrIntOverflowFinance
+				}
+				if iNdEx >= l {
+					return io.ErrUnexpectedEOF
+				}
+				b := dAtA[iNdEx]
+				iNdEx++
+				stringLen |= uint64(b&0x7F) << shift
+				if b < 0x80 {
+					break
+				}
+			}
+			intStringLen := int(stringLen)
+			if intStringLen < 0 {
+				return ErrInvalidLengthFinance
+			}
+			postIndex := iNdEx + intStringLen
+			if postIndex < 0 {
+				return ErrInvalidLengthFinance
+			}
+			if postIndex > l {
+				return io.ErrUnexpectedEOF
+			}
+			m.Id = string(dAtA[iNdEx:postIndex])
+			iNdEx = postIndex
+		case 2:
+			if wireType != 2 {
+				return fmt.Errorf("proto: wrong wireType = %d for field Status", wireType)
+			}
+			var stringLen uint64
+			for shift := uint(0); ; shift += 7 {
+				if shift >= 64 {
+					return ErrIntOverflowFinance
+				}
+				if iNdEx >= l {
+					return io.ErrUnexpectedEOF
+				}
+				b := dAtA[iNdEx]
+				iNdEx++
+				stringLen |= uint64(b&0x7F) << shift
+				if b < 0x80 {
+					break
+				}
+			}
+			intStringLen := int(stringLen)
+			if intStringLen < 0 {
+				return ErrInvalidLengthFinance
+			}
+			postIndex := iNdEx + intStringLen
+			if postIndex < 0 {
+				return ErrInvalidLengthFinance
+			}
+			if postIndex > l {
+				return io.ErrUnexpectedEOF
+			}
+			m.Status = string(dAtA[iNdEx:postIndex])
+			iNdEx = postIndex
+		default:
+			iNdEx = preIndex
+			skippy, err := skipFinance(dAtA[iNdEx:])
+			if err != nil {
+				return err
+			}
+			if (skippy < 0) || (iNdEx+skippy) < 0 {
+				return ErrInvalidLengthFinance
+			}
+			if (iNdEx + skippy) > l {
+				return io.ErrUnexpectedEOF
+			}
+			m.XXX_unrecognized = append(m.XXX_unrecognized, dAtA[iNdEx:iNdEx+skippy]...)
+			iNdEx += skippy
+		}
+	}
+
+	if iNdEx > l {
+		return io.ErrUnexpectedEOF
+	}
+	return nil
+}
+func (m *StatusSpendingReq) Unmarshal(dAtA []byte) error {
+	l := len(dAtA)
+	iNdEx := 0
+	for iNdEx < l {
+		preIndex := iNdEx
+		var wire uint64
+		for shift := uint(0); ; shift += 7 {
+			if shift >= 64 {
+				return ErrIntOverflowFinance
+			}
+			if iNdEx >= l {
+				return io.ErrUnexpectedEOF
+			}
+			b := dAtA[iNdEx]
+			iNdEx++
+			wire |= uint64(b&0x7F) << shift
+			if b < 0x80 {
+				break
+			}
+		}
+		fieldNum := int32(wire >> 3)
+		wireType := int(wire & 0x7)
+		if wireType == 4 {
+			return fmt.Errorf("proto: StatusSpendingReq: wiretype end group for non-group")
+		}
+		if fieldNum <= 0 {
+			return fmt.Errorf("proto: StatusSpendingReq: illegal tag %d (wire type %d)", fieldNum, wire)
+		}
+		switch fieldNum {
+		case 1:
+			if wireType != 2 {
+				return fmt.Errorf("proto: wrong wireType = %d for field Status", wireType)
+			}
+			var msglen int
+			for shift := uint(0); ; shift += 7 {
+				if shift >= 64 {
+					return ErrIntOverflowFinance
+				}
+				if iNdEx >= l {
+					return io.ErrUnexpectedEOF
+				}
+				b := dAtA[iNdEx]
+				iNdEx++
+				msglen |= int(b&0x7F) << shift
+				if b < 0x80 {
+					break
+				}
+			}
+			if msglen < 0 {
+				return ErrInvalidLengthFinance
+			}
+			postIndex := iNdEx + msglen
+			if postIndex < 0 {
+				return ErrInvalidLengthFinance
+			}
+			if postIndex > l {
+				return io.ErrUnexpectedEOF
+			}
+			m.Status = append(m.Status, &StatusSpending{})
+			if err := m.Status[len(m.Status)-1].Unmarshal(dAtA[iNdEx:postIndex]); err != nil {
+				return err
+			}
 			iNdEx = postIndex
 		default:
 			iNdEx = preIndex
@@ -5678,39 +6711,17 @@ func (m *Response) Unmarshal(dAtA []byte) error {
 			}
 			iNdEx = postIndex
 		case 6:
-			if wireType != 5 {
+			if wireType != 1 {
 				return fmt.Errorf("proto: wrong wireType = %d for field Debt", wireType)
 			}
-			var v uint32
-			if (iNdEx + 4) > l {
+			var v uint64
+			if (iNdEx + 8) > l {
 				return io.ErrUnexpectedEOF
 			}
-			v = uint32(encoding_binary.LittleEndian.Uint32(dAtA[iNdEx:]))
-			iNdEx += 4
-			m.Debt = float32(math.Float32frombits(v))
+			v = uint64(encoding_binary.LittleEndian.Uint64(dAtA[iNdEx:]))
+			iNdEx += 8
+			m.Debt = float64(math.Float64frombits(v))
 		case 7:
-			if wireType != 5 {
-				return fmt.Errorf("proto: wrong wireType = %d for field Surcharge", wireType)
-			}
-			var v uint32
-			if (iNdEx + 4) > l {
-				return io.ErrUnexpectedEOF
-			}
-			v = uint32(encoding_binary.LittleEndian.Uint32(dAtA[iNdEx:]))
-			iNdEx += 4
-			m.Surcharge = float32(math.Float32frombits(v))
-		case 8:
-			if wireType != 5 {
-				return fmt.Errorf("proto: wrong wireType = %d for field PrepaidExpense", wireType)
-			}
-			var v uint32
-			if (iNdEx + 4) > l {
-				return io.ErrUnexpectedEOF
-			}
-			v = uint32(encoding_binary.LittleEndian.Uint32(dAtA[iNdEx:]))
-			iNdEx += 4
-			m.PrepaidExpense = float32(math.Float32frombits(v))
-		case 9:
 			if wireType != 2 {
 				return fmt.Errorf("proto: wrong wireType = %d for field Comment", wireType)
 			}
@@ -9458,6 +10469,38 @@ func (m *Tesh) Unmarshal(dAtA []byte) error {
 		switch fieldNum {
 		case 1:
 			if wireType != 2 {
+				return fmt.Errorf("proto: wrong wireType = %d for field Id", wireType)
+			}
+			var stringLen uint64
+			for shift := uint(0); ; shift += 7 {
+				if shift >= 64 {
+					return ErrIntOverflowFinance
+				}
+				if iNdEx >= l {
+					return io.ErrUnexpectedEOF
+				}
+				b := dAtA[iNdEx]
+				iNdEx++
+				stringLen |= uint64(b&0x7F) << shift
+				if b < 0x80 {
+					break
+				}
+			}
+			intStringLen := int(stringLen)
+			if intStringLen < 0 {
+				return ErrInvalidLengthFinance
+			}
+			postIndex := iNdEx + intStringLen
+			if postIndex < 0 {
+				return ErrInvalidLengthFinance
+			}
+			if postIndex > l {
+				return io.ErrUnexpectedEOF
+			}
+			m.Id = string(dAtA[iNdEx:postIndex])
+			iNdEx = postIndex
+		case 2:
+			if wireType != 2 {
 				return fmt.Errorf("proto: wrong wireType = %d for field Given", wireType)
 			}
 			var stringLen uint64
@@ -9488,7 +10531,7 @@ func (m *Tesh) Unmarshal(dAtA []byte) error {
 			}
 			m.Given = string(dAtA[iNdEx:postIndex])
 			iNdEx = postIndex
-		case 2:
+		case 3:
 			if wireType != 2 {
 				return fmt.Errorf("proto: wrong wireType = %d for field Date", wireType)
 			}
@@ -9520,7 +10563,7 @@ func (m *Tesh) Unmarshal(dAtA []byte) error {
 			}
 			m.Date = string(dAtA[iNdEx:postIndex])
 			iNdEx = postIndex
-		case 3:
+		case 4:
 			if wireType != 2 {
 				return fmt.Errorf("proto: wrong wireType = %d for field Comment", wireType)
 			}
@@ -9552,7 +10595,7 @@ func (m *Tesh) Unmarshal(dAtA []byte) error {
 			}
 			m.Comment = string(dAtA[iNdEx:postIndex])
 			iNdEx = postIndex
-		case 4:
+		case 5:
 			if wireType != 2 {
 				return fmt.Errorf("proto: wrong wireType = %d for field Status", wireType)
 			}

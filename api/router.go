@@ -171,6 +171,11 @@ func New(option Option) *gin.Engine {
 	planner.PUT("/task/update/", handlerV1.TaskUpdate)
 	planner.DELETE("/task/delete/", handlerV1.TaskDelete)
 
+	planner.PUT("/status/admin_salary/", handlerV1.StatusAdminSalary)
+	planner.PUT("/status/teacher_salary/", handlerV1.StatusTeacherSalary)
+	planner.PUT("/status/personal_salary/", handlerV1.StatusPersonalSalary)
+	planner.PUT("/status/spending/", handlerV1.StatusSpending)
+
 	planner.POST("/sale/create/", handlerV1.SaleCreate)
 	planner.GET("/sale/byid/", handlerV1.SaleGet)
 	planner.GET("/sale/list/", handlerV1.SaleList)

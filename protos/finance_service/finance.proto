@@ -14,12 +14,17 @@ service FinanceService {
 
     rpc SalaryFinanceCreate (EmptyReq) returns (Empty);
     rpc SalaryFinanceGet (Request) returns (ResponseList);
+
+    rpc StatusTeacherSalary (StatusReq) returns (Empty);
+    rpc StatusAdminSalary (StatusReq) returns (Empty);
+    rpc StatusPersonalSalary (StatusReq) returns (Empty);
     
     rpc SpendingCreate(Spending) returns (Spending);
     rpc SpendingGet(ByIdReq) returns (Spending);
     rpc SpendingList(SpendingListReq) returns (SpendingListResp);
     rpc SpendingUpdate(Spending) returns (Spending);
     rpc SpendingDelete(ByIdReq) returns (EmptyRes);
+    rpc StatusSpending (StatusSpendingReq) returns (Empty);
 }
 
 message EmptyRes{}
@@ -33,6 +38,24 @@ message EmptyReq{
     string comment = 6;
 }
 
+message Status{
+    string id = 1;
+    string personal_id = 2;
+    string status = 3;
+}
+
+message StatusReq{
+    repeated Status status = 1;
+}
+
+message StatusSpending{
+    string id = 1;
+    string status = 2;
+}
+
+message StatusSpendingReq{
+    repeated StatusSpending status = 1;
+}
 
 message Empty{
     bool status = 1;
@@ -48,10 +71,8 @@ message Response{
     string permission = 3;
     string salary_month = 4;
     repeated Tesh given = 5;
-    float debt = 6;
-    float surcharge = 7;
-    float prepaid_expense = 8;
-    string comment = 9;
+    double debt = 6;
+    string comment = 7;
 }
 
 message ResponseList {
@@ -201,10 +222,11 @@ message SearchListResp{
 }
 
 message Tesh{
-    string given = 1;
-    string date = 2;
-    string comment = 3;
-    string status = 4;
+    string id = 1;
+    string given = 2;
+    string date = 3;
+    string comment = 4;
+    string status = 5;
 }
 
 message Count{

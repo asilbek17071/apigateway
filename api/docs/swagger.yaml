@@ -985,6 +985,32 @@ definitions:
       error:
         $ref: '#/definitions/models.Error'
     type: object
+  models.Status:
+    properties:
+      id:
+        type: string
+      personal_id:
+        type: string
+      status:
+        type: string
+    type: object
+  models.StatusReq:
+    properties:
+      status:
+        $ref: '#/definitions/models.Status'
+    type: object
+  models.StatusSpending:
+    properties:
+      id:
+        type: string
+      status:
+        type: string
+    type: object
+  models.StatusSpendingReq:
+    properties:
+      status:
+        $ref: '#/definitions/models.StatusSpending'
+    type: object
   models.Student:
     properties:
       address:
@@ -1474,35 +1500,6 @@ definitions:
 info:
   contact: {}
 paths:
-  /attendance/byid/{id}:
-    get:
-      consumes:
-      - application/json
-      description: This API for getting attendance AttendanceList
-      parameters:
-      - description: ID
-        in: path
-        name: id
-        required: true
-        type: string
-      produces:
-      - application/json
-      responses:
-        "200":
-          description: OK
-          schema:
-            $ref: '#/definitions/models.AttendanceResp'
-        "400":
-          description: Bad Request
-          schema:
-            $ref: '#/definitions/models.StandardErrorModel'
-        "500":
-          description: Internal Server Error
-          schema:
-            $ref: '#/definitions/models.StandardErrorModel'
-      summary: AttendanceGet
-      tags:
-      - attendance
   /attendance/create/:
     post:
       consumes:
@@ -4564,6 +4561,126 @@ paths:
       summary: SpendingUpdate
       tags:
       - spending
+  /status/admin_salary/:
+    put:
+      consumes:
+      - application/json
+      description: This API for updating status
+      parameters:
+      - description: statusUpdateRequest
+        in: body
+        name: request
+        required: true
+        schema:
+          $ref: '#/definitions/models.StatusReq'
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/models.FinResp'
+        "400":
+          description: Bad Request
+          schema:
+            $ref: '#/definitions/models.StandardErrorModel'
+        "500":
+          description: Internal Server Error
+          schema:
+            $ref: '#/definitions/models.StandardErrorModel'
+      summary: StatusAdminSalary
+      tags:
+      - status
+  /status/personal_salary/:
+    put:
+      consumes:
+      - application/json
+      description: This API for updating status
+      parameters:
+      - description: statusUpdateRequest
+        in: body
+        name: request
+        required: true
+        schema:
+          $ref: '#/definitions/models.StatusReq'
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/models.FinResp'
+        "400":
+          description: Bad Request
+          schema:
+            $ref: '#/definitions/models.StandardErrorModel'
+        "500":
+          description: Internal Server Error
+          schema:
+            $ref: '#/definitions/models.StandardErrorModel'
+      summary: StatusPersonalSalary
+      tags:
+      - status
+  /status/spending/:
+    put:
+      consumes:
+      - application/json
+      description: This API for updating status
+      parameters:
+      - description: statusUpdateRequest
+        in: body
+        name: request
+        required: true
+        schema:
+          $ref: '#/definitions/models.StatusSpendingReq'
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/models.FinResp'
+        "400":
+          description: Bad Request
+          schema:
+            $ref: '#/definitions/models.StandardErrorModel'
+        "500":
+          description: Internal Server Error
+          schema:
+            $ref: '#/definitions/models.StandardErrorModel'
+      summary: StatusSpending
+      tags:
+      - status
+  /status/teacher_salary/:
+    put:
+      consumes:
+      - application/json
+      description: This API for updating status
+      parameters:
+      - description: statusUpdateRequest
+        in: body
+        name: request
+        required: true
+        schema:
+          $ref: '#/definitions/models.StatusReq'
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/models.FinResp'
+        "400":
+          description: Bad Request
+          schema:
+            $ref: '#/definitions/models.StandardErrorModel'
+        "500":
+          description: Internal Server Error
+          schema:
+            $ref: '#/definitions/models.StandardErrorModel'
+      summary: StatusTeacherSalary
+      tags:
+      - status
   /student/byid/{id}:
     get:
       consumes:
