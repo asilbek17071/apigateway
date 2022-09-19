@@ -3475,6 +3475,7 @@ paths:
       - description: Permission
         in: query
         name: permission
+        required: true
         type: string
       produces:
       - application/json
@@ -5686,12 +5687,6 @@ paths:
       consumes:
       - application/json
       description: This API for getting user UserList
-      parameters:
-      - description: ID
-        in: path
-        name: id
-        required: true
-        type: string
       produces:
       - application/json
       responses:

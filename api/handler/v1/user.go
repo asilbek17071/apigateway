@@ -109,7 +109,6 @@ func (h *handlerV1) UserGet(c *gin.Context) {
 // @Tags user
 // @Accept  json
 // @Produce  json
-// @Param id path string true "ID"
 // @Success 200 {object} models.UserResp
 // @Failure 400 {object} models.StandardErrorModel
 // @Failure 500 {object} models.StandardErrorModel

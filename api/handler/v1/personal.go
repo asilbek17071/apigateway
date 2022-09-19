@@ -283,7 +283,7 @@ func (h *handlerV1) Personals(c *gin.Context) {
 // @Tags position
 // @Accept  json
 // @Produce  json
-// @Param permission query string false "Permission"
+// @Param permission query string true "Permission"
 // @Success 200 {object} models.PersonalsList
 // @Failure 400 {object} models.StandardErrorModel
 // @Failure 500 {object} models.StandardErrorModel

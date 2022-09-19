@@ -3027,7 +3027,8 @@ const docTemplate = `{
                         "type": "string",
                         "description": "Permission",
                         "name": "permission",
-                        "in": "query"
+                        "in": "query",
+                        "required": true
                     }
                 ],
                 "responses": {
@@ -6396,15 +6397,6 @@ const docTemplate = `{
                     "user"
                 ],
                 "summary": "UserGet",
-                "parameters": [
-                    {
-                        "type": "string",
-                        "description": "ID",
-                        "name": "id",
-                        "in": "path",
-                        "required": true
-                    }
-                ],
                 "responses": {
                     "200": {
                         "description": "OK",
