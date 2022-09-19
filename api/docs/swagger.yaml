@@ -3128,10 +3128,6 @@ paths:
       parameters:
       - description: From
         in: query
-        name: id
-        type: string
-      - description: From
-        in: query
         name: from
         type: string
       - description: To

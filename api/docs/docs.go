@@ -2499,12 +2499,6 @@ const docTemplate = `{
                     {
                         "type": "string",
                         "description": "From",
-                        "name": "id",
-                        "in": "query"
-                    },
-                    {
-                        "type": "string",
-                        "description": "From",
                         "name": "from",
                         "in": "query"
                     },
