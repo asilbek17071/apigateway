@@ -5595,8 +5595,8 @@ const docTemplate = `{
                 "parameters": [
                     {
                         "type": "string",
-                        "description": "ID",
-                        "name": "id",
+                        "description": "Permission",
+                        "name": "permission",
                         "in": "path",
                         "required": true
                     }

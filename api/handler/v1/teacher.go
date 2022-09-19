@@ -109,7 +109,7 @@ func (h *handlerV1) TeacherGet(c *gin.Context) {
 // @Tags teacher
 // @Accept  json
 // @Produce  json
-// @Param id path string true "ID"
+// @Param permission path string true "Permission"
 // @Success 200 {object} models.TeacherResp
 // @Failure 400 {object} models.StandardErrorModel
 // @Failure 500 {object} models.StandardErrorModel

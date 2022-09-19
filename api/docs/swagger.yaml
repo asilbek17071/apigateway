@@ -5159,9 +5159,9 @@ paths:
       - application/json
       description: This API for getting teacher TeacherList
       parameters:
-      - description: ID
+      - description: Permission
         in: path
-        name: id
+        name: permission
         required: true
         type: string
       produces:
