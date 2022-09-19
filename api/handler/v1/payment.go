@@ -253,7 +253,6 @@ func (h *handlerV1) PaymentDelete(c *gin.Context) {
 // @Tags payment
 // @Accept  json
 // @Produce  json
-// @Param id query string false "From"
 // @Param from query string false "From"
 // @Param to query string false "To"
 // @Success 200 {object} models.PaymentsList
