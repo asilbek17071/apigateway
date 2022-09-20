@@ -158,7 +158,6 @@ func New(option Option) *gin.Engine {
 	planner.POST("/payment/create/", handlerV1.PaymentCreate)
 	planner.GET("/payment/byid/", handlerV1.PaymentGet)
 	planner.GET("/payment/list/", handlerV1.PaymentList)
-	// planner.GET("/payment/search/", handlerV1.PaymentSearch)
 	planner.GET("/payment/searchlist/", handlerV1.PaymentSearchList)
 	planner.PUT("/payment/update/", handlerV1.PaymentUpdate)
 	planner.DELETE("/payment/delete/", handlerV1.PaymentUpdate)
@@ -185,6 +184,12 @@ func New(option Option) *gin.Engine {
 	planner.GET("/sale/list/", handlerV1.SaleList)
 	planner.PUT("/sale/update/", handlerV1.SaleUpdate)
 	planner.DELETE("/sale/delete/", handlerV1.SaleDelete)
+
+	planner.POST("/accountant/create/", handlerV1.AccountantCreate)
+	planner.GET("/accountant/byid/", handlerV1.AccountantGet)
+	planner.GET("/accountant/list/", handlerV1.AccountantList)
+	planner.PUT("/accountant/update/", handlerV1.AccountantUpdate)
+	planner.DELETE("/accountant/delete/", handlerV1.AccountantDelete)
 
 	planner.POST("/defmsg/create/", handlerV1.DefMsgCreate)
 	planner.GET("/defmsg/byid/", handlerV1.DefMsgGet)

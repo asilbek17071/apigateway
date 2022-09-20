@@ -5,7 +5,7 @@ import (
 	"net/http"
 	"time"
 
-	pb "github.com/asilbek17071/apigateway/genproto/system_service"
+	pb "github.com/asilbek17071/apigateway/genproto/user_service"
 	l "github.com/asilbek17071/apigateway/pkg/logger"
 	"github.com/asilbek17071/apigateway/pkg/utils"
 
@@ -13,20 +13,20 @@ import (
 	"google.golang.org/protobuf/encoding/protojson"
 )
 
-// PySysCreate ...
-// @Summary PySysCreate
-// @Router /payment_system/create/ [post]
-// @Description This API for creating a new payment_system
-// @Tags payment_system
+// AccountantCreate ...
+// @Summary AccountantCreate
+// @Router /accountant/create/ [post]
+// @Description This API for creating a new accountant
+// @Tags accountant
 // @Accept  json
 // @Produce  json
-// @Param PySys request body models.PySys true "payment_systemCreateRequest"
-// @Success 200 {object} models.PySysResp
+// @Param Accountant request body models.Accountant true "accountantCreateRequest"
+// @Success 200 {object} models.AccountantResp
 // @Failure 400 {object} models.StandardErrorModel
 // @Failure 500 {object} models.StandardErrorModel
-func (h *handlerV1) PySysCreate(c *gin.Context) {
+func (h *handlerV1) AccountantCreate(c *gin.Context) {
 	var (
-		body        pb.PySys
+		body        pb.Accountant
 		jspbMarshal protojson.MarshalOptions
 	)
 
@@ -45,7 +45,7 @@ func (h *handlerV1) PySysCreate(c *gin.Context) {
 	ctx, cancel := context.WithTimeout(context.Background(), time.Second*time.Duration(h.cfg.CtxTimeout))
 	defer cancel()
 
-	response, err := h.serviceManager.SystemService().PySysCreate(ctx, &body)
+	response, err := h.serviceManager.UserService().AccountantCreate(ctx, &body)
 	if err != nil {
 		c.JSON(http.StatusInternalServerError, gin.H{
 			"error": err.Error(),
@@ -57,18 +57,18 @@ func (h *handlerV1) PySysCreate(c *gin.Context) {
 	c.JSON(http.StatusCreated, response)
 }
 
-// PySysGet ...
-// @Router /payment_system/byid/{id} [get]
-// @Summary PySysGet
-// @Description This API for getting payment_system PySysList
-// @Tags payment_system
+// AccountantGet ...
+// @Router /accountant/byid/{id} [get]
+// @Summary AccountantGet
+// @Description This API for getting accountant AccountantList
+// @Tags accountant
 // @Accept  json
 // @Produce  json
 // @Param id path string true "ID"
-// @Success 200 {object} models.PySysResp
+// @Success 200 {object} models.AccountantResp
 // @Failure 400 {object} models.StandardErrorModel
 // @Failure 500 {object} models.StandardErrorModel
-func (h *handlerV1) PySysGet(c *gin.Context) {
+func (h *handlerV1) AccountantGet(c *gin.Context) {
 	queryParams := c.Request.URL.Query()
 
 	params, errStr := utils.ParseQueryParams(queryParams)
@@ -86,7 +86,7 @@ func (h *handlerV1) PySysGet(c *gin.Context) {
 	ctx, cancel := context.WithTimeout(context.Background(), time.Second*time.Duration(h.cfg.CtxTimeout))
 	defer cancel()
 
-	response, err := h.serviceManager.SystemService().PySysGet(
+	response, err := h.serviceManager.UserService().AccountantGet(
 		ctx, &pb.ByIdReq{
 			Id: params.Id,
 		})
@@ -101,19 +101,19 @@ func (h *handlerV1) PySysGet(c *gin.Context) {
 	c.JSON(http.StatusOK, response)
 }
 
-// PySysList ...
-// @Router /payment_system/list/ [get]
-// @Summary PySysList
-// @Description This API for getting list of payment_systems
-// @Tags payment_system
+// AccountantList ...
+// @Router /accountant/list/ [get]
+// @Summary AccountantList
+// @Description This API for getting list of accountants
+// @Tags accountant
 // @Accept  json
 // @Produce  json
 // @Param page query string false "Page"
 // @Param limit query string false "Limit"
-// @Success 200 {object} models.PySyssList
+// @Success 200 {object} models.AccountantsList
 // @Failure 400 {object} models.StandardErrorModel
 // @Failure 500 {object} models.StandardErrorModel
-func (h *handlerV1) PySysList(c *gin.Context) {
+func (h *handlerV1) AccountantList(c *gin.Context) {
 	queryParams := c.Request.URL.Query()
 
 	params, errStr := utils.ParseQueryParams(queryParams)
@@ -131,7 +131,7 @@ func (h *handlerV1) PySysList(c *gin.Context) {
 	ctx, cancel := context.WithTimeout(context.Background(), time.Second*time.Duration(h.cfg.CtxTimeout))
 	defer cancel()
 
-	response, err := h.serviceManager.SystemService().PySysList(
+	response, err := h.serviceManager.UserService().AccountantList(
 		ctx, &pb.ListReq{
 			Limit: params.Limit,
 			Page:  params.Page,
@@ -147,19 +147,19 @@ func (h *handlerV1) PySysList(c *gin.Context) {
 	c.JSON(http.StatusOK, response)
 }
 
-// PySysUpdate ...
-// @Router /payment_system/update/ [put]
-// @Summary PySysUpdate
-// @Description This API for updating payment_system
-// @Tags payment_system
+// AccountantUpdate ...
+// @Router /accountant/update/ [put]
+// @Summary AccountantUpdate
+// @Description This API for updating accountant
+// @Tags accountant
 // @Accept  json
 // @Produce  json
 // @Param id path string true "ID"
-// @Param PySys request body models.PySysUpdate true "payment_systemUpdateRequest"
-// @Success 200 {object} models.PySysResp
+// @Param Accountant request body models.AccountantUpdate true "accountantUpdateRequest"
+// @Success 200 {object} models.AccountantResp
 // @Failure 400 {object} models.StandardErrorModel
 // @Failure 500 {object} models.StandardErrorModel
-func (h *handlerV1) PySysUpdate(c *gin.Context) {
+func (h *handlerV1) AccountantUpdate(c *gin.Context) {
 	queryParams := c.Request.URL.Query()
 
 	params, errStr := utils.ParseQueryParams(queryParams)
@@ -171,7 +171,7 @@ func (h *handlerV1) PySysUpdate(c *gin.Context) {
 		return
 	}
 	var (
-		body        pb.PySys
+		body        pb.Accountant
 		jspbMarshal protojson.MarshalOptions
 	)
 	jspbMarshal.UseProtoNames = true
@@ -190,7 +190,7 @@ func (h *handlerV1) PySysUpdate(c *gin.Context) {
 	ctx, cancel := context.WithTimeout(context.Background(), time.Second*time.Duration(h.cfg.CtxTimeout))
 	defer cancel()
 
-	response, err := h.serviceManager.SystemService().PySysUpdate(ctx, &body)
+	response, err := h.serviceManager.UserService().AccountantUpdate(ctx, &body)
 	if err != nil {
 		c.JSON(http.StatusInternalServerError, gin.H{
 			"error": err.Error(),
@@ -202,18 +202,18 @@ func (h *handlerV1) PySysUpdate(c *gin.Context) {
 	c.JSON(http.StatusOK, response)
 }
 
-// PySysDelete ...
-// @Router /payment_system/delete/{id} [delete]
-// @Summary PySysDelete
-// @Description This API for deleting payment_system
-// @Tags payment_system
+// AccountantDelete ...
+// @Router /accountant/delete/{id} [delete]
+// @Summary AccountantDelete
+// @Description This API for deleting accountant
+// @Tags accountant
 // @Accept  json
 // @Produce  json
 // @Param id path string true "ID"
 // @Success 200 {object} models.Empty
 // @Failure 400 {object} models.StandardErrorModel
 // @Failure 500 {object} models.StandardErrorModel
-func (h *handlerV1) PySysDelete(c *gin.Context) {
+func (h *handlerV1) AccountantDelete(c *gin.Context) {
 	queryParams := c.Request.URL.Query()
 
 	params, errStr := utils.ParseQueryParams(queryParams)
@@ -231,7 +231,7 @@ func (h *handlerV1) PySysDelete(c *gin.Context) {
 	ctx, cancel := context.WithTimeout(context.Background(), time.Second*time.Duration(h.cfg.CtxTimeout))
 	defer cancel()
 
-	response, err := h.serviceManager.SystemService().PySysDelete(
+	response, err := h.serviceManager.UserService().AccountantDelete(
 		ctx, &pb.ByIdReq{
 			Id: params.Id,
 		})
