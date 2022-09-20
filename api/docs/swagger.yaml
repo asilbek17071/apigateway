@@ -1,4 +1,88 @@
 definitions:
+  models.Accountant:
+    properties:
+      address:
+        type: string
+      birthday:
+        type: string
+      email:
+        type: string
+      full_name:
+        type: string
+      gender:
+        type: string
+      password:
+        type: string
+      permission:
+        type: string
+      phone1:
+        type: string
+      phone2:
+        type: string
+      working_day:
+        type: string
+    type: object
+  models.AccountantResp:
+    properties:
+      acountant_id:
+        type: string
+      address:
+        type: string
+      birthday:
+        type: string
+      created_at:
+        type: string
+      email:
+        type: string
+      full_name:
+        type: string
+      gender:
+        type: string
+      password:
+        type: string
+      permission:
+        type: string
+      phone1:
+        type: string
+      phone2:
+        type: string
+      updated_at:
+        type: string
+      working_day:
+        type: string
+    type: object
+  models.AccountantUpdate:
+    properties:
+      address:
+        type: string
+      birthday:
+        type: string
+      email:
+        type: string
+      full_name:
+        type: string
+      gender:
+        type: string
+      password:
+        type: string
+      permission:
+        type: string
+      phone1:
+        type: string
+      phone2:
+        type: string
+      working_day:
+        type: string
+    type: object
+  models.AccountantsList:
+    properties:
+      acountants:
+        items:
+          $ref: '#/definitions/models.AccountantResp'
+        type: array
+      count:
+        type: integer
+    type: object
   models.Attendance:
     properties:
       comment:
@@ -1500,6 +1584,161 @@ definitions:
 info:
   contact: {}
 paths:
+  /accountant/byid/{id}:
+    get:
+      consumes:
+      - application/json
+      description: This API for getting accountant AccountantList
+      parameters:
+      - description: ID
+        in: path
+        name: id
+        required: true
+        type: string
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/models.AccountantResp'
+        "400":
+          description: Bad Request
+          schema:
+            $ref: '#/definitions/models.StandardErrorModel'
+        "500":
+          description: Internal Server Error
+          schema:
+            $ref: '#/definitions/models.StandardErrorModel'
+      summary: AccountantGet
+      tags:
+      - accountant
+  /accountant/create/:
+    post:
+      consumes:
+      - application/json
+      description: This API for creating a new accountant
+      parameters:
+      - description: accountantCreateRequest
+        in: body
+        name: request
+        required: true
+        schema:
+          $ref: '#/definitions/models.Accountant'
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/models.AccountantResp'
+        "400":
+          description: Bad Request
+          schema:
+            $ref: '#/definitions/models.StandardErrorModel'
+        "500":
+          description: Internal Server Error
+          schema:
+            $ref: '#/definitions/models.StandardErrorModel'
+      summary: AccountantCreate
+      tags:
+      - accountant
+  /accountant/delete/{id}:
+    delete:
+      consumes:
+      - application/json
+      description: This API for deleting accountant
+      parameters:
+      - description: ID
+        in: path
+        name: id
+        required: true
+        type: string
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/models.Empty'
+        "400":
+          description: Bad Request
+          schema:
+            $ref: '#/definitions/models.StandardErrorModel'
+        "500":
+          description: Internal Server Error
+          schema:
+            $ref: '#/definitions/models.StandardErrorModel'
+      summary: AccountantDelete
+      tags:
+      - accountant
+  /accountant/list/:
+    get:
+      consumes:
+      - application/json
+      description: This API for getting list of accountants
+      parameters:
+      - description: Page
+        in: query
+        name: page
+        type: string
+      - description: Limit
+        in: query
+        name: limit
+        type: string
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/models.AccountantsList'
+        "400":
+          description: Bad Request
+          schema:
+            $ref: '#/definitions/models.StandardErrorModel'
+        "500":
+          description: Internal Server Error
+          schema:
+            $ref: '#/definitions/models.StandardErrorModel'
+      summary: AccountantList
+      tags:
+      - accountant
+  /accountant/update/:
+    put:
+      consumes:
+      - application/json
+      description: This API for updating accountant
+      parameters:
+      - description: ID
+        in: path
+        name: id
+        required: true
+        type: string
+      - description: accountantUpdateRequest
+        in: body
+        name: request
+        required: true
+        schema:
+          $ref: '#/definitions/models.AccountantUpdate'
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/models.AccountantResp'
+        "400":
+          description: Bad Request
+          schema:
+            $ref: '#/definitions/models.StandardErrorModel'
+        "500":
+          description: Internal Server Error
+          schema:
+            $ref: '#/definitions/models.StandardErrorModel'
+      summary: AccountantUpdate
+      tags:
+      - accountant
   /attendance/create/:
     post:
       consumes:
@@ -3187,6 +3426,35 @@ paths:
       summary: PaymentUpdate
       tags:
       - payment
+  /payment_system/byid/{id}:
+    get:
+      consumes:
+      - application/json
+      description: This API for getting payment_system PySysList
+      parameters:
+      - description: ID
+        in: path
+        name: id
+        required: true
+        type: string
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/models.PySysResp'
+        "400":
+          description: Bad Request
+          schema:
+            $ref: '#/definitions/models.StandardErrorModel'
+        "500":
+          description: Internal Server Error
+          schema:
+            $ref: '#/definitions/models.StandardErrorModel'
+      summary: PySysGet
+      tags:
+      - payment_system
   /payment_system/create/:
     post:
       consumes:
@@ -3276,35 +3544,6 @@ paths:
           schema:
             $ref: '#/definitions/models.StandardErrorModel'
       summary: PySysList
-      tags:
-      - payment_system
-  /payment_system/list/{id}:
-    get:
-      consumes:
-      - application/json
-      description: This API for getting payment_system PySysList
-      parameters:
-      - description: ID
-        in: path
-        name: id
-        required: true
-        type: string
-      produces:
-      - application/json
-      responses:
-        "200":
-          description: OK
-          schema:
-            $ref: '#/definitions/models.PySysResp'
-        "400":
-          description: Bad Request
-          schema:
-            $ref: '#/definitions/models.StandardErrorModel'
-        "500":
-          description: Internal Server Error
-          schema:
-            $ref: '#/definitions/models.StandardErrorModel'
-      summary: PySysGet
       tags:
       - payment_system
   /payment_system/update/:
