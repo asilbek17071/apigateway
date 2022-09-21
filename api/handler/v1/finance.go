@@ -88,7 +88,7 @@ func (h *handlerV1) SalaryFinanceGet(c *gin.Context) {
 
 	response, err := h.serviceManager.FinanceService().SalaryFinanceGet(
 		ctx, &pb.Request{
-			Date: params.From,
+			Date: params.From + "-15",
 		})
 	if err != nil {
 		c.JSON(http.StatusInternalServerError, gin.H{
