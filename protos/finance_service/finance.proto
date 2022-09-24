@@ -222,7 +222,7 @@ message Pay{
 
 message SearchListResp{
     repeated Search search = 1;
-    string sum = 2;
+    double sum = 2;
 }
 
 message Tesh{
