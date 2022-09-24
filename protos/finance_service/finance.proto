@@ -208,12 +208,16 @@ message SearchReq {
 message Search{
     string id = 1;
     string name = 2;
-    string teacher_name = 3;
+    By teacher = 3;
     int64 countStudent = 4;
-    string amount = 5;
-    string paid = 6;
-    string debt = 7;
-    string total_amount = 8;
+    double amount = 5;
+    Pay pay = 6;
+}
+
+message Pay{
+    double paid = 1;
+    double debt = 2;
+    double total_amount = 3;
 }
 
 message SearchListResp{

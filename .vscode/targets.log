@@ -1,6 +1,4 @@
 make all --print-data-base --no-builtin-variables --no-builtin-rules --question
-make: *** No rule to make target 'all'.  Stop.
-
 # GNU Make 4.3
 # Built for x86_64-pc-linux-gnu
 # Copyright (C) 1988-2020 Free Software Foundation, Inc.
@@ -8,7 +6,7 @@ make: *** No rule to make target 'all'.  Stop.
 # This is free software: you are free to change and redistribute it.
 # There is NO WARRANTY, to the extent permitted by law.
 
-# Make data base, printed on Thu Sep 22 02:50:04 2022
+# Make data base, printed on Sat Sep 24 13:25:18 2022
 
 # Variables
 
@@ -95,13 +93,13 @@ MAKEFILE_LIST := Makefile
 # automatic
 @F = $(notdir $@)
 # environment
-VSCODE_PID = 7262
+VSCODE_PID = 18649
 # environment
 XDG_SESSION_TYPE = x11
 # automatic
 ?D = $(patsubst %/,%,$(dir $?))
 # environment
-SESSION_MANAGER = local/i:@/tmp/.ICE-unix/2689,unix/i:/tmp/.ICE-unix/2689
+SESSION_MANAGER = local/i:@/tmp/.ICE-unix/2663,unix/i:/tmp/.ICE-unix/2663
 # automatic
 *F = $(notdir $*)
 # environment
@@ -143,7 +141,7 @@ LC_MONETARY = uz_UZ.UTF-8
 # environment
 LC_TIME = uz_UZ.UTF-8
 # environment
-INVOCATION_ID = 0b8b8f210d7e4b3f83da10a738838ea2
+INVOCATION_ID = 9684a2d46cb34a618e193a7a6835e4c8
 # environment
 USERNAME = b
 # environment
@@ -169,7 +167,7 @@ GIO_LAUNCHED_DESKTOP_FILE = /usr/share/applications/code.desktop
 # makefile
 .DEFAULT_GOAL := build
 # environment
-SYSTEMD_EXEC_PID = 2709
+SYSTEMD_EXEC_PID = 2683
 # environment
 DISPLAY = :1
 # environment
@@ -179,11 +177,11 @@ GTK_MODULES = gail:atk-bridge
 # default
 MAKE_VERSION := 4.3
 # environment
-MANAGERPID = 2236
+MANAGERPID = 2216
 # environment
 LC_MEASUREMENT = uz_UZ.UTF-8
 # environment
-GIO_LAUNCHED_DESKTOP_FILE_PID = 7262
+GIO_LAUNCHED_DESKTOP_FILE_PID = 18649
 # environment
 _ = /usr/share/code/code
 # environment
@@ -193,7 +191,7 @@ XDG_RUNTIME_DIR = /run/user/1000
 # environment
 GPG_AGENT_INFO = /run/user/1000/gnupg/S.gpg-agent:0:1
 # environment
-JOURNAL_STREAM = 8:36207
+JOURNAL_STREAM = 8:32482
 # environment
 GOMODCACHE = /home/b/go/pkg/mod
 # environment
@@ -282,6 +280,8 @@ pull-submodule:
 .DEFAULT:
 #  Implicit rule search has not been done.
  
+make: *** No rule to make target 'all'.  Stop.
+
 #  Modification time never checked.
 #  File has not been updated.
 
@@ -313,6 +313,6 @@ build:
 # strcache performance: lookups = 39 / hit rate = 23%
 # hash-table stats:
 # Load=30/8192=0%, Rehash=0, Collisions=0/39=0%
-# Finished Make data base on Thu Sep 22 02:50:04 2022
+# Finished Make data base on Sat Sep 24 13:25:18 2022
 
  
