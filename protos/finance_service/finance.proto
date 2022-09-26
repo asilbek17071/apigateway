@@ -10,7 +10,7 @@ service FinanceService {
     rpc PaymentUpdate(Payment) returns (Payment);
     rpc PaymentDelete(ByIdReq) returns (EmptyRes);
     rpc Profit(EmptyRes) returns (ProfitRespList);
-    // rpc PaymentSearch(PaymentSearchReq) returns (PaymentSearchResp);
+    rpc PaymentSearch(ByIdReq) returns (PaymentSearchResp);
 
     rpc SalaryFinanceCreate (EmptyReq) returns (Empty);
     rpc SalaryFinanceGet (Request) returns (ResponseList);
@@ -151,14 +151,14 @@ message SpendingListResp {
     string count = 2;
 }
 message Searching{
-    string name = 1;
-    float amount = 2;
-    float paid = 3;
-    float debt = 4;
-    float sum = 5;
+    By student = 1;
+    string duration = 2;
+    string pysys = 3;
+    double paid = 4;
+    double debt = 5;
 }
 message PaymentSearchResp {
-    float sum = 1;
+    By group = 1;
     repeated Searching searching = 2;
 }
 message ProfitResp{
@@ -201,8 +201,8 @@ message PaymentSearchReq {
 }
 
 message SearchReq {
-    string dan = 1;
-    string gacha = 2;
+    string teacher = 1;
+    string direction = 2;
 }
 
 message Search{
@@ -236,3 +236,4 @@ message Tesh{
 message Count{
     int64 count = 1;
 }
+
