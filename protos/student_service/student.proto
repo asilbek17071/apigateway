@@ -26,9 +26,11 @@ service StudentService {
 
     rpc StudentPhoneCreate(SPhone) returns (SPhone);
     rpc StudentPhoneGet(ByIdReq) returns (SPhone);
+    rpc StudentPhoneDelete(ByIdReq) returns (EmptyRes);
 
     rpc LeadPhoneCreate(LPhone) returns (LPhone);
     rpc LeadPhoneGet(ByIdReq) returns (LPhone);
+    rpc LeadPhoneDelete(ByIdReq) returns (EmptyRes);
 }
 
 message EmptyRes{}

@@ -100,3 +100,47 @@ func (h *handlerV1) LeadPhoneGet(c *gin.Context) {
 
 	c.JSON(http.StatusOK, response)
 }
+
+// LeadPhoneDelete ...
+// @Router /lead/deletephone/{id} [delete]
+// @Summary LeadPhoneDelete
+// @Description This API for deleting lead
+// @Tags lead
+// @Accept  json
+// @Produce  json
+// @Param id path string true "ID"
+// @Success 200 {object} models.Empty
+// @Failure 400 {object} models.StandardErrorModel
+// @Failure 500 {object} models.StandardErrorModel
+func (h *handlerV1) LeadPhoneDelete(c *gin.Context) {
+	queryParams := c.Request.URL.Query()
+
+	params, errStr := utils.ParseQueryParams(queryParams)
+	if errStr != nil {
+		c.JSON(http.StatusBadRequest, gin.H{
+			"error": errStr[0],
+		})
+		h.log.Error("failed to parse query params json" + errStr[0])
+		return
+	}
+
+	var jspbMarshal protojson.MarshalOptions
+	jspbMarshal.UseProtoNames = true
+
+	ctx, cancel := context.WithTimeout(context.Background(), time.Second*time.Duration(h.cfg.CtxTimeout))
+	defer cancel()
+
+	response, err := h.serviceManager.StudentService().LeadPhoneDelete(
+		ctx, &pb.ByIdReq{
+			Id: params.Id,
+		})
+	if err != nil {
+		c.JSON(http.StatusInternalServerError, gin.H{
+			"error": err.Error(),
+		})
+		h.log.Error("failed to delete task", l.Error(err))
+		return
+	}
+
+	c.JSON(http.StatusOK, response)
+}
