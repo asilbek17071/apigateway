@@ -41,9 +41,9 @@ service SystemService {
     rpc DefMsgList(ListReq) returns (DefMsgListResp);
     rpc DefMsgDelete(ByIdReq) returns (EmptyRes);
 
-    rpc TaskCreate(Task) returns (Task);
-    rpc TaskGet(ByIdReq) returns (Task);
-    rpc TaskUpdate(Task) returns (Task);
+    rpc TaskCreate(Task) returns (TaskResp);
+    rpc TaskGet(ByIdReq) returns (TaskResp);
+    rpc TaskUpdate(Task) returns (TaskResp);
     rpc TaskList(ListReq) returns (TaskListResp);
     rpc TaskDelete(ByIdReq) returns (EmptyRes);
 
@@ -79,12 +79,24 @@ message Task{
     string title = 3;
     string comment = 4;
     string with_date = 5;
-    string created_at = 6;
-    string updated_at = 7;
+    string color = 6;
+    string created_at = 7;
+    string updated_at = 8;
+}
+
+message TaskResp{
+    string id = 1;
+    By user = 2;
+    string title = 3;
+    string comment = 4;
+    string with_date = 5;
+    string color = 6;
+    string created_at = 7;
+    string updated_at = 8;
 }
 
 message TaskListResp {
-    repeated Task tasks = 1;
+    repeated TaskResp tasks = 1;
     int64 count = 2;
 }
 
