@@ -57,3 +57,4 @@ type GroupsList struct {
 	Groups []GroupResp `json:"groups"`
 	Count  int64       `json:"count"`
 }
+

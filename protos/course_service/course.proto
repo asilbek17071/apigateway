@@ -34,6 +34,14 @@ message GetBall{
     string group_id = 2;
 }
 
+message Example{
+    string with_date = 1;
+    string comment = 2;
+    string participate = 3;
+    string student_id = 4;
+    string group_id = 5;
+}
+
 message GetParticipate{
     string group_id = 2;
 }
@@ -178,6 +186,7 @@ message ByN {
 message ByResp{
     string name = 1;
     repeated ByN student = 2;
+    repeated Example example = 3;
 }
 
 message Byt {
