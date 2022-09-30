@@ -83,6 +83,15 @@ definitions:
       count:
         type: integer
     type: object
+  models.At:
+    properties:
+      id:
+        type: string
+      name:
+        type: string
+      phone:
+        type: string
+    type: object
   models.Attendance:
     properties:
       comment:
@@ -127,6 +136,19 @@ definitions:
         type: string
       with_date:
         type: string
+    type: object
+  models.Attendancelist:
+    properties:
+      example:
+        items:
+          $ref: '#/definitions/models.ExA'
+        type: array
+      name:
+        type: string
+      student:
+        items:
+          $ref: '#/definitions/models.At'
+        type: array
     type: object
   models.AttendancesList:
     properties:
@@ -175,6 +197,19 @@ definitions:
         type: string
       with_date:
         type: string
+    type: object
+  models.Ballist:
+    properties:
+      example:
+        items:
+          $ref: '#/definitions/models.ExB'
+        type: array
+      name:
+        type: string
+      student:
+        items:
+          $ref: '#/definitions/models.At'
+        type: array
     type: object
   models.BallsList:
     properties:
@@ -315,6 +350,30 @@ definitions:
   models.Error:
     properties:
       message:
+        type: string
+    type: object
+  models.ExA:
+    properties:
+      comment:
+        type: string
+      group_id:
+        type: string
+      participate:
+        type: string
+      student_id:
+        type: string
+      with_date:
+        type: string
+    type: object
+  models.ExB:
+    properties:
+      ball:
+        type: string
+      group_id:
+        type: string
+      student_id:
+        type: string
+      with_date:
         type: string
     type: object
   models.FinResp:
@@ -2786,7 +2845,7 @@ paths:
         "200":
           description: OK
           schema:
-            $ref: '#/definitions/models.GroupsList'
+            $ref: '#/definitions/models.Attendancelist'
         "400":
           description: Bad Request
           schema:
@@ -2796,6 +2855,35 @@ paths:
           schema:
             $ref: '#/definitions/models.StandardErrorModel'
       summary: GroupAttendanceList
+      tags:
+      - group
+  /group/ballist/{id}:
+    get:
+      consumes:
+      - application/json
+      description: This API for getting list of groups
+      parameters:
+      - description: ID
+        in: path
+        name: id
+        required: true
+        type: string
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/models.Ballist'
+        "400":
+          description: Bad Request
+          schema:
+            $ref: '#/definitions/models.StandardErrorModel'
+        "500":
+          description: Internal Server Error
+          schema:
+            $ref: '#/definitions/models.StandardErrorModel'
+      summary: GroupBalList
       tags:
       - group
   /group/byid/{id}:

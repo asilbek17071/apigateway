@@ -9,6 +9,7 @@ service CourseService {
     rpc GroupWithList(ListWithReq) returns (GroupListResp);
     rpc GroupRoomList(ListIdReq) returns (GroupListsResp);
     rpc GroupAttendanceList(ByIdReq) returns (ByResp);
+    rpc GroupBalList(ByIdReq) returns (ByBalResp);
     rpc GroupUpdate(Group) returns (GroupResp);
     rpc GroupDelete(ByIdReq) returns (EmptyRes);
     rpc TeacherGroup(ListIdReq) returns (GroupListsResp);
@@ -40,6 +41,13 @@ message Example{
     string participate = 3;
     string student_id = 4;
     string group_id = 5;
+}
+
+message ExampleBal{
+    string with_date = 1;
+    string ball = 2;
+    string student_id = 3;
+    string group_id = 4;
 }
 
 message GetParticipate{
@@ -187,6 +195,12 @@ message ByResp{
     string name = 1;
     repeated ByN student = 2;
     repeated Example example = 3;
+}
+
+message ByBalResp{
+    string name = 1;
+    repeated ByN student = 2;
+    repeated ExampleBal example = 3;
 }
 
 message Byt {

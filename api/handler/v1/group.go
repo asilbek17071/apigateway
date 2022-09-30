@@ -411,7 +411,7 @@ func (h *handlerV1) GroupRoomList(c *gin.Context) {
 // @Accept  json
 // @Produce  json
 // @Param id path string true "ID"
-// @Success 200 {object} models.GroupsList
+// @Success 200 {object} models.Attendancelist
 // @Failure 400 {object} models.StandardErrorModel
 // @Failure 500 {object} models.StandardErrorModel
 func (h *handlerV1) GroupAttendanceList(c *gin.Context) {
@@ -433,6 +433,50 @@ func (h *handlerV1) GroupAttendanceList(c *gin.Context) {
 	defer cancel()
 
 	response, err := h.serviceManager.CourseService().GroupAttendanceList(
+		ctx, &pb.ByIdReq{
+			Id: params.Id,
+		})
+	if err != nil {
+		c.JSON(http.StatusInternalServerError, gin.H{
+			"error": err.Error(),
+		})
+		h.log.Error("failed to list dgroups", l.Error(err))
+		return
+	}
+
+	c.JSON(http.StatusOK, response)
+}
+
+// GroupBalList ...
+// @Router /group/ballist/{id} [get]
+// @Summary GroupBalList
+// @Description This API for getting list of groups
+// @Tags group
+// @Accept  json
+// @Produce  json
+// @Param id path string true "ID"
+// @Success 200 {object} models.Ballist
+// @Failure 400 {object} models.StandardErrorModel
+// @Failure 500 {object} models.StandardErrorModel
+func (h *handlerV1) GroupBalList(c *gin.Context) {
+	queryParams := c.Request.URL.Query()
+
+	params, errStr := utils.ParseQueryParams(queryParams)
+	if errStr != nil {
+		c.JSON(http.StatusBadRequest, gin.H{
+			"error": errStr[0],
+		})
+		h.log.Error("failed to parse query params json" + errStr[0])
+		return
+	}
+
+	var jspbMarshal protojson.MarshalOptions
+	jspbMarshal.UseProtoNames = true
+
+	ctx, cancel := context.WithTimeout(context.Background(), time.Second*time.Duration(h.cfg.CtxTimeout))
+	defer cancel()
+
+	response, err := h.serviceManager.CourseService().GroupBalList(
 		ctx, &pb.ByIdReq{
 			Id: params.Id,
 		})

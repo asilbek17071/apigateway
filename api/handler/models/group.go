@@ -58,3 +58,35 @@ type GroupsList struct {
 	Count  int64       `json:"count"`
 }
 
+type At struct {
+	Id    string `json:"id"`
+	Name  string `json:"name"`
+	Phone string `json:"phone"`
+}
+
+type ExA struct {
+	WithDate    string `json:"with_date"`
+	Comment     string `json:"comment"`
+	Participate string `json:"participate"`
+	StudentId   string `json:"student_id"`
+	GroupId     string `json:"group_id"`
+}
+
+type Attendancelist struct {
+	Name    string `json:"name"`
+	Student []At   `json:"student"`
+	Example []ExA  `json:"example"`
+}
+
+type ExB struct {
+	WithDate  string `json:"with_date"`
+	Ball      string `json:"ball"`
+	StudentId string `json:"student_id"`
+	GroupId   string `json:"group_id"`
+}
+
+type Ballist struct {
+	Name    string `json:"name"`
+	Student []At   `json:"student"`
+	Example []ExB  `json:"example"`
+}

@@ -1790,7 +1790,51 @@ const docTemplate = `{
                     "200": {
                         "description": "OK",
                         "schema": {
-                            "$ref": "#/definitions/models.GroupsList"
+                            "$ref": "#/definitions/models.Attendancelist"
+                        }
+                    },
+                    "400": {
+                        "description": "Bad Request",
+                        "schema": {
+                            "$ref": "#/definitions/models.StandardErrorModel"
+                        }
+                    },
+                    "500": {
+                        "description": "Internal Server Error",
+                        "schema": {
+                            "$ref": "#/definitions/models.StandardErrorModel"
+                        }
+                    }
+                }
+            }
+        },
+        "/group/ballist/{id}": {
+            "get": {
+                "description": "This API for getting list of groups",
+                "consumes": [
+                    "application/json"
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "tags": [
+                    "group"
+                ],
+                "summary": "GroupBalList",
+                "parameters": [
+                    {
+                        "type": "string",
+                        "description": "ID",
+                        "name": "id",
+                        "in": "path",
+                        "required": true
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "schema": {
+                            "$ref": "#/definitions/models.Ballist"
                         }
                     },
                     "400": {
@@ -7397,6 +7441,20 @@ const docTemplate = `{
                 }
             }
         },
+        "models.At": {
+            "type": "object",
+            "properties": {
+                "id": {
+                    "type": "string"
+                },
+                "name": {
+                    "type": "string"
+                },
+                "phone": {
+                    "type": "string"
+                }
+            }
+        },
         "models.Attendance": {
             "type": "object",
             "properties": {
@@ -7463,6 +7521,26 @@ const docTemplate = `{
                 },
                 "with_date": {
                     "type": "string"
+                }
+            }
+        },
+        "models.Attendancelist": {
+            "type": "object",
+            "properties": {
+                "example": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/definitions/models.ExA"
+                    }
+                },
+                "name": {
+                    "type": "string"
+                },
+                "student": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/definitions/models.At"
+                    }
                 }
             }
         },
@@ -7537,6 +7615,26 @@ const docTemplate = `{
                 },
                 "with_date": {
                     "type": "string"
+                }
+            }
+        },
+        "models.Ballist": {
+            "type": "object",
+            "properties": {
+                "example": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/definitions/models.ExB"
+                    }
+                },
+                "name": {
+                    "type": "string"
+                },
+                "student": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/definitions/models.At"
+                    }
                 }
             }
         },
@@ -7755,6 +7853,43 @@ const docTemplate = `{
             "type": "object",
             "properties": {
                 "message": {
+                    "type": "string"
+                }
+            }
+        },
+        "models.ExA": {
+            "type": "object",
+            "properties": {
+                "comment": {
+                    "type": "string"
+                },
+                "group_id": {
+                    "type": "string"
+                },
+                "participate": {
+                    "type": "string"
+                },
+                "student_id": {
+                    "type": "string"
+                },
+                "with_date": {
+                    "type": "string"
+                }
+            }
+        },
+        "models.ExB": {
+            "type": "object",
+            "properties": {
+                "ball": {
+                    "type": "string"
+                },
+                "group_id": {
+                    "type": "string"
+                },
+                "student_id": {
+                    "type": "string"
+                },
+                "with_date": {
                     "type": "string"
                 }
             }
