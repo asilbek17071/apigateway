@@ -109,8 +109,10 @@ func (h *handlerV1) GroupGet(c *gin.Context) {
 // @Tags group
 // @Accept  json
 // @Produce  json
-// @Param page query string false "Page"
-// @Param limit query string false "Limit"
+// @Param teacher query string false "teacher"
+// @Param direction query string false "direction"
+// @Param student query string false "student"
+// @Param active query string false "active"
 // @Success 200 {object} models.GroupsList
 // @Failure 400 {object} models.StandardErrorModel
 // @Failure 500 {object} models.StandardErrorModel
