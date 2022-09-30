@@ -29,6 +29,12 @@ service SystemService {
     rpc PySysUpdate(PySys) returns (PySys);
     rpc PySysDelete(ByIdReq) returns (EmptyRes);
 
+    rpc TargetCreate(Target) returns (Target);
+    rpc TargetGet(ByIdReq) returns (Target);
+    rpc TargetList(ListReq) returns (TargetListResp);
+    rpc TargetUpdate(Target) returns (Target);
+    rpc TargetDelete(ByIdReq) returns (EmptyRes);
+
     rpc SaleCreate(Sale) returns (Sale);
     rpc SaleGet(ByIdReq) returns (Sale);
     rpc SaleUpdate(Sale) returns (Sale);
@@ -158,6 +164,13 @@ message PySys{
     string updated_at = 4;
 }
 
+message Target{
+    string id = 1;
+    string name = 2;
+    string created_at = 3;
+    string updated_at = 4;
+}
+
 message DefMsg {
     string id = 1;
     string title = 2;
@@ -219,6 +232,11 @@ message RoomListResp {
 
 message PySysListResp {
     repeated PySys pySyss = 1;
+    int64 count = 2;
+}
+
+message TargetListResp {
+    repeated Target target = 1;
     int64 count = 2;
 }
 

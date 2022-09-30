@@ -4,6 +4,7 @@ type Task struct {
 	UserId   string `json:"user_id"`
 	Title    string `json:"title"`
 	Comment  string `json:"comment"`
+	Color    string `json:"color"`
 	WithDate string `json:"with_date"`
 }
 
@@ -12,6 +13,7 @@ type TaskResp struct {
 	UserId    string `json:"user_id"`
 	Title     string `json:"title"`
 	Comment   string `json:"comment"`
+	Color     string `json:"color"`
 	WithDate  string `json:"with_date"`
 	CreatedAt string `json:"created_at"`
 	UpdatedAt string `json:"updated_at"`
@@ -21,6 +23,7 @@ type TaskUpdate struct {
 	UserId   string `json:"user_id"`
 	Title    string `json:"title"`
 	Comment  string `json:"comment"`
+	Color    string `json:"color"`
 	WithDate string `json:"with_date"`
 }
 

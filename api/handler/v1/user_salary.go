@@ -108,7 +108,7 @@ func (h *handlerV1) UserSalaryGet(c *gin.Context) {
 // @Tags userSalary
 // @Accept  json
 // @Produce  json
-// @Param id query string false "ID"
+// @Param id query string false "Bo'tga adminni id si"
 // @Success 200 {object} models.UsersSalaryList
 // @Failure 400 {object} models.StandardErrorModel
 // @Failure 500 {object} models.StandardErrorModel

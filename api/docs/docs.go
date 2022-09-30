@@ -2013,14 +2013,26 @@ const docTemplate = `{
                 "parameters": [
                     {
                         "type": "string",
-                        "description": "Page",
-                        "name": "page",
+                        "description": "teacher",
+                        "name": "teacher",
                         "in": "query"
                     },
                     {
                         "type": "string",
-                        "description": "Limit",
-                        "name": "limit",
+                        "description": "direction",
+                        "name": "direction",
+                        "in": "query"
+                    },
+                    {
+                        "type": "string",
+                        "description": "student",
+                        "name": "student",
+                        "in": "query"
+                    },
+                    {
+                        "type": "string",
+                        "description": "active",
+                        "name": "active",
                         "in": "query"
                     }
                 ],
@@ -2312,6 +2324,50 @@ const docTemplate = `{
                     "lead"
                 ],
                 "summary": "LeadDelete",
+                "parameters": [
+                    {
+                        "type": "string",
+                        "description": "ID",
+                        "name": "id",
+                        "in": "path",
+                        "required": true
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "schema": {
+                            "$ref": "#/definitions/models.Empty"
+                        }
+                    },
+                    "400": {
+                        "description": "Bad Request",
+                        "schema": {
+                            "$ref": "#/definitions/models.StandardErrorModel"
+                        }
+                    },
+                    "500": {
+                        "description": "Internal Server Error",
+                        "schema": {
+                            "$ref": "#/definitions/models.StandardErrorModel"
+                        }
+                    }
+                }
+            }
+        },
+        "/lead/deletephone/{id}": {
+            "delete": {
+                "description": "This API for deleting lead",
+                "consumes": [
+                    "application/json"
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "tags": [
+                    "lead"
+                ],
+                "summary": "LeadPhoneDelete",
                 "parameters": [
                     {
                         "type": "string",
@@ -2718,6 +2774,50 @@ const docTemplate = `{
                 }
             }
         },
+        "/payment/search/{id}": {
+            "get": {
+                "description": "This API for getting list of payments",
+                "consumes": [
+                    "application/json"
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "tags": [
+                    "payment"
+                ],
+                "summary": "PaymentSearch",
+                "parameters": [
+                    {
+                        "type": "string",
+                        "description": "ID",
+                        "name": "id",
+                        "in": "query",
+                        "required": true
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "schema": {
+                            "$ref": "#/definitions/models.PaymentsList"
+                        }
+                    },
+                    "400": {
+                        "description": "Bad Request",
+                        "schema": {
+                            "$ref": "#/definitions/models.StandardErrorModel"
+                        }
+                    },
+                    "500": {
+                        "description": "Internal Server Error",
+                        "schema": {
+                            "$ref": "#/definitions/models.StandardErrorModel"
+                        }
+                    }
+                }
+            }
+        },
         "/payment/searchlist/": {
             "get": {
                 "description": "This API for getting list of payments",
@@ -2734,14 +2834,14 @@ const docTemplate = `{
                 "parameters": [
                     {
                         "type": "string",
-                        "description": "From",
-                        "name": "from",
+                        "description": "Teacher",
+                        "name": "teacher",
                         "in": "query"
                     },
                     {
                         "type": "string",
-                        "description": "To",
-                        "name": "to",
+                        "description": "Direction",
+                        "name": "direction",
                         "in": "query"
                     }
                 ],
@@ -3757,7 +3857,7 @@ const docTemplate = `{
                 "parameters": [
                     {
                         "type": "string",
-                        "description": "ID",
+                        "description": "Bo'tga adminni id si",
                         "name": "id",
                         "in": "query"
                     }
@@ -3987,7 +4087,7 @@ const docTemplate = `{
                 "parameters": [
                     {
                         "type": "string",
-                        "description": "ID",
+                        "description": "Bo'tga personlani id si",
                         "name": "id",
                         "in": "query"
                     }
@@ -4217,7 +4317,7 @@ const docTemplate = `{
                 "parameters": [
                     {
                         "type": "string",
-                        "description": "ID",
+                        "description": "Bo'tga teacher yoki assistantni id si",
                         "name": "id",
                         "in": "query"
                     }
@@ -5237,6 +5337,50 @@ const docTemplate = `{
                 }
             }
         },
+        "/student/deletephone/{id}": {
+            "delete": {
+                "description": "This API for deleting student",
+                "consumes": [
+                    "application/json"
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "tags": [
+                    "student"
+                ],
+                "summary": "StudentPhoneDelete",
+                "parameters": [
+                    {
+                        "type": "string",
+                        "description": "ID",
+                        "name": "id",
+                        "in": "path",
+                        "required": true
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "schema": {
+                            "$ref": "#/definitions/models.Empty"
+                        }
+                    },
+                    "400": {
+                        "description": "Bad Request",
+                        "schema": {
+                            "$ref": "#/definitions/models.StandardErrorModel"
+                        }
+                    },
+                    "500": {
+                        "description": "Internal Server Error",
+                        "schema": {
+                            "$ref": "#/definitions/models.StandardErrorModel"
+                        }
+                    }
+                }
+            }
+        },
         "/student/grouplist/": {
             "get": {
                 "description": "This API for getting list of students",
@@ -5513,6 +5657,242 @@ const docTemplate = `{
                         "description": "OK",
                         "schema": {
                             "$ref": "#/definitions/models.StudentResp"
+                        }
+                    },
+                    "400": {
+                        "description": "Bad Request",
+                        "schema": {
+                            "$ref": "#/definitions/models.StandardErrorModel"
+                        }
+                    },
+                    "500": {
+                        "description": "Internal Server Error",
+                        "schema": {
+                            "$ref": "#/definitions/models.StandardErrorModel"
+                        }
+                    }
+                }
+            }
+        },
+        "/target/byid/{id}": {
+            "get": {
+                "description": "This API for getting target TargetList",
+                "consumes": [
+                    "application/json"
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "tags": [
+                    "target"
+                ],
+                "summary": "TargetGet",
+                "parameters": [
+                    {
+                        "type": "string",
+                        "description": "ID",
+                        "name": "id",
+                        "in": "path",
+                        "required": true
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "schema": {
+                            "$ref": "#/definitions/models.TargetResp"
+                        }
+                    },
+                    "400": {
+                        "description": "Bad Request",
+                        "schema": {
+                            "$ref": "#/definitions/models.StandardErrorModel"
+                        }
+                    },
+                    "500": {
+                        "description": "Internal Server Error",
+                        "schema": {
+                            "$ref": "#/definitions/models.StandardErrorModel"
+                        }
+                    }
+                }
+            }
+        },
+        "/target/create/": {
+            "post": {
+                "description": "This API for creating a new target",
+                "consumes": [
+                    "application/json"
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "tags": [
+                    "target"
+                ],
+                "summary": "TargetCreate",
+                "parameters": [
+                    {
+                        "description": "targetCreateRequest",
+                        "name": "request",
+                        "in": "body",
+                        "required": true,
+                        "schema": {
+                            "$ref": "#/definitions/models.Target"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "schema": {
+                            "$ref": "#/definitions/models.TargetResp"
+                        }
+                    },
+                    "400": {
+                        "description": "Bad Request",
+                        "schema": {
+                            "$ref": "#/definitions/models.StandardErrorModel"
+                        }
+                    },
+                    "500": {
+                        "description": "Internal Server Error",
+                        "schema": {
+                            "$ref": "#/definitions/models.StandardErrorModel"
+                        }
+                    }
+                }
+            }
+        },
+        "/target/delete/{id}": {
+            "delete": {
+                "description": "This API for deleting target",
+                "consumes": [
+                    "application/json"
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "tags": [
+                    "target"
+                ],
+                "summary": "TargetDelete",
+                "parameters": [
+                    {
+                        "type": "string",
+                        "description": "ID",
+                        "name": "id",
+                        "in": "path",
+                        "required": true
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "schema": {
+                            "$ref": "#/definitions/models.Empty"
+                        }
+                    },
+                    "400": {
+                        "description": "Bad Request",
+                        "schema": {
+                            "$ref": "#/definitions/models.StandardErrorModel"
+                        }
+                    },
+                    "500": {
+                        "description": "Internal Server Error",
+                        "schema": {
+                            "$ref": "#/definitions/models.StandardErrorModel"
+                        }
+                    }
+                }
+            }
+        },
+        "/target/list/": {
+            "get": {
+                "description": "This API for getting list of targets",
+                "consumes": [
+                    "application/json"
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "tags": [
+                    "target"
+                ],
+                "summary": "TargetList",
+                "parameters": [
+                    {
+                        "type": "string",
+                        "description": "Page",
+                        "name": "page",
+                        "in": "query"
+                    },
+                    {
+                        "type": "string",
+                        "description": "Limit",
+                        "name": "limit",
+                        "in": "query"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "schema": {
+                            "$ref": "#/definitions/models.TargetsList"
+                        }
+                    },
+                    "400": {
+                        "description": "Bad Request",
+                        "schema": {
+                            "$ref": "#/definitions/models.StandardErrorModel"
+                        }
+                    },
+                    "500": {
+                        "description": "Internal Server Error",
+                        "schema": {
+                            "$ref": "#/definitions/models.StandardErrorModel"
+                        }
+                    }
+                }
+            }
+        },
+        "/target/update/": {
+            "put": {
+                "description": "This API for updating target",
+                "consumes": [
+                    "application/json"
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "tags": [
+                    "target"
+                ],
+                "summary": "TargetUpdate",
+                "parameters": [
+                    {
+                        "type": "string",
+                        "description": "ID",
+                        "name": "id",
+                        "in": "path",
+                        "required": true
+                    },
+                    {
+                        "description": "targetUpdateRequest",
+                        "name": "request",
+                        "in": "body",
+                        "required": true,
+                        "schema": {
+                            "$ref": "#/definitions/models.TargetUpdate"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "schema": {
+                            "$ref": "#/definitions/models.TargetResp"
                         }
                     },
                     "400": {
@@ -8716,9 +9096,59 @@ const docTemplate = `{
                 }
             }
         },
+        "models.Target": {
+            "type": "object",
+            "properties": {
+                "name": {
+                    "type": "string"
+                }
+            }
+        },
+        "models.TargetResp": {
+            "type": "object",
+            "properties": {
+                "created_at": {
+                    "type": "string"
+                },
+                "name": {
+                    "type": "string"
+                },
+                "target_id": {
+                    "type": "string"
+                },
+                "updated_at": {
+                    "type": "string"
+                }
+            }
+        },
+        "models.TargetUpdate": {
+            "type": "object",
+            "properties": {
+                "name": {
+                    "type": "string"
+                }
+            }
+        },
+        "models.TargetsList": {
+            "type": "object",
+            "properties": {
+                "count": {
+                    "type": "integer"
+                },
+                "target": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/definitions/models.TargetResp"
+                    }
+                }
+            }
+        },
         "models.Task": {
             "type": "object",
             "properties": {
+                "color": {
+                    "type": "string"
+                },
                 "comment": {
                     "type": "string"
                 },
@@ -8736,6 +9166,9 @@ const docTemplate = `{
         "models.TaskResp": {
             "type": "object",
             "properties": {
+                "color": {
+                    "type": "string"
+                },
                 "comment": {
                     "type": "string"
                 },
@@ -8762,6 +9195,9 @@ const docTemplate = `{
         "models.TaskUpdate": {
             "type": "object",
             "properties": {
+                "color": {
+                    "type": "string"
+                },
                 "comment": {
                     "type": "string"
                 },

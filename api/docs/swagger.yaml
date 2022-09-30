@@ -1185,8 +1185,40 @@ definitions:
           $ref: '#/definitions/models.StudentResp'
         type: array
     type: object
+  models.Target:
+    properties:
+      name:
+        type: string
+    type: object
+  models.TargetResp:
+    properties:
+      created_at:
+        type: string
+      name:
+        type: string
+      target_id:
+        type: string
+      updated_at:
+        type: string
+    type: object
+  models.TargetUpdate:
+    properties:
+      name:
+        type: string
+    type: object
+  models.TargetsList:
+    properties:
+      count:
+        type: integer
+      target:
+        items:
+          $ref: '#/definitions/models.TargetResp'
+        type: array
+    type: object
   models.Task:
     properties:
+      color:
+        type: string
       comment:
         type: string
       title:
@@ -1198,6 +1230,8 @@ definitions:
     type: object
   models.TaskResp:
     properties:
+      color:
+        type: string
       comment:
         type: string
       created_at:
@@ -1215,6 +1249,8 @@ definitions:
     type: object
   models.TaskUpdate:
     properties:
+      color:
+        type: string
       comment:
         type: string
       title:
@@ -2892,13 +2928,21 @@ paths:
       - application/json
       description: This API for getting list of groups
       parameters:
-      - description: Page
+      - description: teacher
         in: query
-        name: page
+        name: teacher
         type: string
-      - description: Limit
+      - description: direction
         in: query
-        name: limit
+        name: direction
+        type: string
+      - description: student
+        in: query
+        name: student
+        type: string
+      - description: active
+        in: query
+        name: active
         type: string
       produces:
       - application/json
@@ -3111,6 +3155,35 @@ paths:
           schema:
             $ref: '#/definitions/models.StandardErrorModel'
       summary: LeadDelete
+      tags:
+      - lead
+  /lead/deletephone/{id}:
+    delete:
+      consumes:
+      - application/json
+      description: This API for deleting lead
+      parameters:
+      - description: ID
+        in: path
+        name: id
+        required: true
+        type: string
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/models.Empty'
+        "400":
+          description: Bad Request
+          schema:
+            $ref: '#/definitions/models.StandardErrorModel'
+        "500":
+          description: Internal Server Error
+          schema:
+            $ref: '#/definitions/models.StandardErrorModel'
+      summary: LeadPhoneDelete
       tags:
       - lead
   /lead/list/:
@@ -3359,19 +3432,48 @@ paths:
       summary: PaymentList
       tags:
       - payment
+  /payment/search/{id}:
+    get:
+      consumes:
+      - application/json
+      description: This API for getting list of payments
+      parameters:
+      - description: ID
+        in: query
+        name: id
+        required: true
+        type: string
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/models.PaymentsList'
+        "400":
+          description: Bad Request
+          schema:
+            $ref: '#/definitions/models.StandardErrorModel'
+        "500":
+          description: Internal Server Error
+          schema:
+            $ref: '#/definitions/models.StandardErrorModel'
+      summary: PaymentSearch
+      tags:
+      - payment
   /payment/searchlist/:
     get:
       consumes:
       - application/json
       description: This API for getting list of payments
       parameters:
-      - description: From
+      - description: Teacher
         in: query
-        name: from
+        name: teacher
         type: string
-      - description: To
+      - description: Direction
         in: query
-        name: to
+        name: direction
         type: string
       produces:
       - application/json
@@ -4037,7 +4139,7 @@ paths:
       - application/json
       description: This API for getting list of usersSalary
       parameters:
-      - description: ID
+      - description: Bo'tga adminni id si
         in: query
         name: id
         type: string
@@ -4188,7 +4290,7 @@ paths:
       - application/json
       description: This API for getting list of personalsSalary
       parameters:
-      - description: ID
+      - description: Bo'tga personlani id si
         in: query
         name: id
         type: string
@@ -4339,7 +4441,7 @@ paths:
       - application/json
       description: This API for getting list of teacher_salarys
       parameters:
-      - description: ID
+      - description: Bo'tga teacher yoki assistantni id si
         in: query
         name: id
         type: string
@@ -5013,6 +5115,35 @@ paths:
       summary: StudentDelete
       tags:
       - student
+  /student/deletephone/{id}:
+    delete:
+      consumes:
+      - application/json
+      description: This API for deleting student
+      parameters:
+      - description: ID
+        in: path
+        name: id
+        required: true
+        type: string
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/models.Empty'
+        "400":
+          description: Bad Request
+          schema:
+            $ref: '#/definitions/models.StandardErrorModel'
+        "500":
+          description: Internal Server Error
+          schema:
+            $ref: '#/definitions/models.StandardErrorModel'
+      summary: StudentPhoneDelete
+      tags:
+      - student
   /student/grouplist/:
     get:
       consumes:
@@ -5205,6 +5336,161 @@ paths:
       summary: StudentUpdate
       tags:
       - student
+  /target/byid/{id}:
+    get:
+      consumes:
+      - application/json
+      description: This API for getting target TargetList
+      parameters:
+      - description: ID
+        in: path
+        name: id
+        required: true
+        type: string
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/models.TargetResp'
+        "400":
+          description: Bad Request
+          schema:
+            $ref: '#/definitions/models.StandardErrorModel'
+        "500":
+          description: Internal Server Error
+          schema:
+            $ref: '#/definitions/models.StandardErrorModel'
+      summary: TargetGet
+      tags:
+      - target
+  /target/create/:
+    post:
+      consumes:
+      - application/json
+      description: This API for creating a new target
+      parameters:
+      - description: targetCreateRequest
+        in: body
+        name: request
+        required: true
+        schema:
+          $ref: '#/definitions/models.Target'
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/models.TargetResp'
+        "400":
+          description: Bad Request
+          schema:
+            $ref: '#/definitions/models.StandardErrorModel'
+        "500":
+          description: Internal Server Error
+          schema:
+            $ref: '#/definitions/models.StandardErrorModel'
+      summary: TargetCreate
+      tags:
+      - target
+  /target/delete/{id}:
+    delete:
+      consumes:
+      - application/json
+      description: This API for deleting target
+      parameters:
+      - description: ID
+        in: path
+        name: id
+        required: true
+        type: string
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/models.Empty'
+        "400":
+          description: Bad Request
+          schema:
+            $ref: '#/definitions/models.StandardErrorModel'
+        "500":
+          description: Internal Server Error
+          schema:
+            $ref: '#/definitions/models.StandardErrorModel'
+      summary: TargetDelete
+      tags:
+      - target
+  /target/list/:
+    get:
+      consumes:
+      - application/json
+      description: This API for getting list of targets
+      parameters:
+      - description: Page
+        in: query
+        name: page
+        type: string
+      - description: Limit
+        in: query
+        name: limit
+        type: string
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/models.TargetsList'
+        "400":
+          description: Bad Request
+          schema:
+            $ref: '#/definitions/models.StandardErrorModel'
+        "500":
+          description: Internal Server Error
+          schema:
+            $ref: '#/definitions/models.StandardErrorModel'
+      summary: TargetList
+      tags:
+      - target
+  /target/update/:
+    put:
+      consumes:
+      - application/json
+      description: This API for updating target
+      parameters:
+      - description: ID
+        in: path
+        name: id
+        required: true
+        type: string
+      - description: targetUpdateRequest
+        in: body
+        name: request
+        required: true
+        schema:
+          $ref: '#/definitions/models.TargetUpdate'
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/models.TargetResp'
+        "400":
+          description: Bad Request
+          schema:
+            $ref: '#/definitions/models.StandardErrorModel'
+        "500":
+          description: Internal Server Error
+          schema:
+            $ref: '#/definitions/models.StandardErrorModel'
+      summary: TargetUpdate
+      tags:
+      - target
   /task/byid/{id}:
     get:
       consumes:

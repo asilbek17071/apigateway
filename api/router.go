@@ -109,6 +109,12 @@ func New(option Option) *gin.Engine {
 	planner.PUT("/salary/admin/update/", handlerV1.UserSalaryUpdate)
 	planner.DELETE("/salary/admin/delete/", handlerV1.UserSalaryDelete)
 
+	planner.POST("/salary/personal/create/", handlerV1.PersonalSalaryCreate)
+	planner.GET("/salary/personal/byid/", handlerV1.PersonalSalaryGet)
+	planner.GET("/salary/personal/list/", handlerV1.PersonalSalaryList)
+	planner.PUT("/salary/personal/update/", handlerV1.PersonalSalaryUpdate)
+	planner.DELETE("/salary/personal/delete/", handlerV1.PersonalSalaryDelete)
+
 	planner.POST("/group/create/", handlerV1.GroupCreate)
 	planner.GET("/group/byid/", handlerV1.GroupGet)
 	planner.GET("/group/list/", handlerV1.GroupList)
