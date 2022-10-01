@@ -122,6 +122,7 @@ func New(option Option) *gin.Engine {
 	planner.GET("/group/withlist/", handlerV1.GroupWithList)
 	planner.GET("/group/roomlist/", handlerV1.GroupRoomList)
 	planner.GET("/group/attendancelist/", handlerV1.GroupAttendanceList)
+	planner.GET("/group/ballist/", handlerV1.GroupBalList)
 	planner.PUT("/group/update/", handlerV1.GroupUpdate)
 	planner.DELETE("/group/delete/", handlerV1.GroupDelete)
 
@@ -137,6 +138,12 @@ func New(option Option) *gin.Engine {
 	planner.GET("/room/list/", handlerV1.RoomList)
 	planner.PUT("/room/update/", handlerV1.RoomUpdate)
 	planner.DELETE("/room/delete/", handlerV1.RoomDelete)
+
+	planner.POST("/target/create/", handlerV1.TargetCreate)
+	planner.GET("/target/byid/", handlerV1.TargetGet)
+	planner.GET("/target/list/", handlerV1.TargetList)
+	planner.PUT("/target/update/", handlerV1.TargetUpdate)
+	planner.DELETE("/target/delete/", handlerV1.TargetDelete)
 
 	planner.POST("/finance/salary/create/", handlerV1.SalaryFinanceCreate)
 	planner.GET("/finance/salary/", handlerV1.SalaryFinanceGet)
