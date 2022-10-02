@@ -1,0 +1,69 @@
+syntax = "proto3";
+
+package messanger_service;
+
+service MessengerService {
+    rpc MessageCreate(Message) returns (MessageResp);
+    rpc Notification(ByIdReq) returns (MessageListResp);
+    rpc SendList(Send) returns (MessageListResp);
+    rpc StatusUpdate(Status) returns (Empty);
+    rpc MessageDelete(Del) returns (Empty);
+}
+
+message EmptyRes{}
+
+message Empty{
+    bool status = 1;
+}
+
+message Status{
+    string id = 1;
+    string message_id = 2;
+    string permission_sender = 3;
+    string permission_receiver = 4;
+}
+
+message Del{
+    string message_id = 1;
+    string permission_sender = 2;
+    string permission_receiver = 3;
+}
+
+message ByIdReq {
+    string id = 1;
+    string persmission_receiver = 3;
+}
+
+message Send {
+    string id = 1;
+    string persmission_sender = 3;
+}
+
+message Message{
+    string id = 1;
+    string title = 2;
+    string message = 3;
+    string creted_at = 4;
+    string updated_at = 5;
+    string sender_id = 6;
+    string receiver_id = 7;
+    string permission_sender = 8;
+    string permission_receiver = 9;
+    string status = 10;
+}
+
+message MessageResp{
+    string id = 1;
+    string title = 2;
+    string message = 3;
+    string sender_id = 4;
+    string receiver_id = 5;
+    string status = 6;
+    string creted_at = 7;
+}
+
+message MessageListResp{
+    repeated MessageResp message = 1;
+    int32 count = 2;
+}
+

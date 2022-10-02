@@ -10,6 +10,7 @@ import (
 	"github.com/asilbek17071/apigateway/config"
 	pbCourse "github.com/asilbek17071/apigateway/genproto/course_service"
 	pbFinance "github.com/asilbek17071/apigateway/genproto/finance_service"
+	pbMessenger "github.com/asilbek17071/apigateway/genproto/messenger_service"
 	pbStudent "github.com/asilbek17071/apigateway/genproto/student_service"
 	pbSystem "github.com/asilbek17071/apigateway/genproto/system_service"
 	pbTeacher "github.com/asilbek17071/apigateway/genproto/teacher_service"
@@ -23,15 +24,17 @@ type IServiceManager interface {
 	SystemService() pbSystem.SystemServiceClient
 	FinanceService() pbFinance.FinanceServiceClient
 	CourseService() pbCourse.CourseServiceClient
+	MessengerService() pbMessenger.MessengerServiceClient
 }
 
 type serviceManager struct {
-	userService    pbUser.UserServiceClient
-	teacherService pbTeacher.TeacherServiceClient
-	studentService pbStudent.StudentServiceClient
-	systemService  pbSystem.SystemServiceClient
-	financeService pbFinance.FinanceServiceClient
-	courseService  pbCourse.CourseServiceClient
+	userService      pbUser.UserServiceClient
+	teacherService   pbTeacher.TeacherServiceClient
+	studentService   pbStudent.StudentServiceClient
+	systemService    pbSystem.SystemServiceClient
+	financeService   pbFinance.FinanceServiceClient
+	courseService    pbCourse.CourseServiceClient
+	messengerService pbMessenger.MessengerServiceClient
 }
 
 func (s *serviceManager) UserService() pbUser.UserServiceClient {
@@ -56,6 +59,10 @@ func (s *serviceManager) FinanceService() pbFinance.FinanceServiceClient {
 
 func (s *serviceManager) CourseService() pbCourse.CourseServiceClient {
 	return s.courseService
+}
+
+func (s *serviceManager) MessengerService() pbMessenger.MessengerServiceClient {
+	return s.messengerService
 }
 
 func NewServiceManager(conf *config.Config) (IServiceManager, error) {
@@ -103,13 +110,21 @@ func NewServiceManager(conf *config.Config) (IServiceManager, error) {
 		return nil, err
 	}
 
+	connMessenger, err := grpc.Dial(
+		fmt.Sprintf("%s:%d", conf.MessengerServiceHost, conf.MessengerServicePort),
+		grpc.WithTransportCredentials(insecure.NewCredentials()))
+	if err != nil {
+		return nil, err
+	}
+
 	serviceManager := &serviceManager{
-		userService:    pbUser.NewUserServiceClient(connUser),
-		teacherService: pbTeacher.NewTeacherServiceClient(connTeacher),
-		studentService: pbStudent.NewStudentServiceClient(connStudent),
-		systemService:  pbSystem.NewSystemServiceClient(connSystem),
-		financeService: pbFinance.NewFinanceServiceClient(connFinance),
-		courseService:  pbCourse.NewCourseServiceClient(connCourse),
+		userService:      pbUser.NewUserServiceClient(connUser),
+		teacherService:   pbTeacher.NewTeacherServiceClient(connTeacher),
+		studentService:   pbStudent.NewStudentServiceClient(connStudent),
+		systemService:    pbSystem.NewSystemServiceClient(connSystem),
+		financeService:   pbFinance.NewFinanceServiceClient(connFinance),
+		courseService:    pbCourse.NewCourseServiceClient(connCourse),
+		messengerService: pbMessenger.NewMessengerServiceClient(connMessenger),
 	}
 
 	return serviceManager, nil

@@ -648,6 +648,43 @@ definitions:
       username:
         type: string
     type: object
+  models.Message:
+    properties:
+      message:
+        type: string
+      receiver:
+        type: string
+      sender:
+        type: string
+      title:
+        type: string
+    type: object
+  models.MessageList:
+    properties:
+      count:
+        type: integer
+      message:
+        items:
+          $ref: '#/definitions/models.MessageResp'
+        type: array
+    type: object
+  models.MessageResp:
+    properties:
+      created_at:
+        type: string
+      message:
+        type: string
+      message_id:
+        type: string
+      receiver:
+        type: string
+      sender:
+        type: string
+      title:
+        type: string
+      updated_at:
+        type: string
+    type: object
   models.Participate:
     properties:
       begin_time:
@@ -3400,6 +3437,187 @@ paths:
       summary: LeadUpdate
       tags:
       - lead
+  /message/create/:
+    post:
+      consumes:
+      - application/json
+      description: This API for creating a new message
+      parameters:
+      - description: directionCreateRequest
+        in: body
+        name: request
+        required: true
+        schema:
+          $ref: '#/definitions/models.Message'
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/models.MessageResp'
+        "400":
+          description: Bad Request
+          schema:
+            $ref: '#/definitions/models.StandardErrorModel'
+        "500":
+          description: Internal Server Error
+          schema:
+            $ref: '#/definitions/models.StandardErrorModel'
+      summary: MessageCreate
+      tags:
+      - message
+  /message/delete/{id}:
+    delete:
+      consumes:
+      - application/json
+      description: This API for deleting message
+      parameters:
+      - description: ID
+        in: path
+        name: id
+        required: true
+        type: string
+      - description: PermissionSender
+        in: query
+        name: persmission_sender
+        required: true
+        type: string
+      - description: PermissionReceiver
+        in: query
+        name: persmission_receiver
+        required: true
+        type: string
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/models.FinResp'
+        "400":
+          description: Bad Request
+          schema:
+            $ref: '#/definitions/models.StandardErrorModel'
+        "500":
+          description: Internal Server Error
+          schema:
+            $ref: '#/definitions/models.StandardErrorModel'
+      summary: MessageDelete
+      tags:
+      - message
+  /message/notification/:
+    get:
+      consumes:
+      - application/json
+      description: This API for getting list of messages
+      parameters:
+      - description: Id
+        in: query
+        name: id
+        required: true
+        type: string
+      - description: PermissionReceiver
+        in: query
+        name: permission_receiver
+        required: true
+        type: string
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/models.MessageList'
+        "400":
+          description: Bad Request
+          schema:
+            $ref: '#/definitions/models.StandardErrorModel'
+        "500":
+          description: Internal Server Error
+          schema:
+            $ref: '#/definitions/models.StandardErrorModel'
+      summary: Notification
+      tags:
+      - message
+  /message/send/list:
+    get:
+      consumes:
+      - application/json
+      description: This API for getting list of messages
+      parameters:
+      - description: Id
+        in: query
+        name: id
+        required: true
+        type: string
+      - description: PermissionSender
+        in: query
+        name: persmission_sender
+        required: true
+        type: string
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/models.MessageList'
+        "400":
+          description: Bad Request
+          schema:
+            $ref: '#/definitions/models.StandardErrorModel'
+        "500":
+          description: Internal Server Error
+          schema:
+            $ref: '#/definitions/models.StandardErrorModel'
+      summary: SendList
+      tags:
+      - message
+  /message/status/update/{id}:
+    put:
+      consumes:
+      - application/json
+      description: This API for updating message
+      parameters:
+      - description: Id
+        in: query
+        name: id
+        required: true
+        type: string
+      - description: MessageId
+        in: query
+        name: message_id
+        required: true
+        type: string
+      - description: PermissionSender
+        in: query
+        name: persmission_sender
+        required: true
+        type: string
+      - description: PermissionReceiver
+        in: query
+        name: persmission_receiver
+        required: true
+        type: string
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/models.FinResp'
+        "400":
+          description: Bad Request
+          schema:
+            $ref: '#/definitions/models.StandardErrorModel'
+        "500":
+          description: Internal Server Error
+          schema:
+            $ref: '#/definitions/models.StandardErrorModel'
+      summary: StatusUpdate
+      tags:
+      - message
   /payment/byid/{id}:
     get:
       consumes:

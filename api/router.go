@@ -70,6 +70,12 @@ func New(option Option) *gin.Engine {
 	planner.PUT("/student/update/", handlerV1.StudentUpdate)
 	planner.DELETE("/student/delete/", handlerV1.StudentDelete)
 
+	planner.POST("/message/create/", handlerV1.MessageCreate)
+	planner.GET("/message/send/list", handlerV1.SendList)
+	planner.GET("/message/notification/", handlerV1.Notification)
+	planner.PUT("/message/status/update/", handlerV1.StatusUpdate)
+	planner.DELETE("/message/delete/", handlerV1.MessageDelete)
+
 	planner.POST("/direction/create/", handlerV1.DirectionCreate)
 	planner.GET("/direction/byid/", handlerV1.DirectionGet)
 	planner.GET("/direction/list/", handlerV1.DirectionList)

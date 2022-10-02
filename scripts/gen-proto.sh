@@ -8,6 +8,7 @@ mkdir $CURRENT_DIR/genproto/student_service
 mkdir $CURRENT_DIR/genproto/system_service
 mkdir $CURRENT_DIR/genproto/finance_service
 mkdir $CURRENT_DIR/genproto/course_service
+mkdir $CURRENT_DIR/genproto/messenger_service
 
 protoc -I /usr/local/include \
        -I $GOPATH/src/github.com/gogo/protobuf/gogoproto \
@@ -45,6 +46,12 @@ protoc -I /usr/local/include \
        -I $CURRENT_DIR/protos/course_service/ \
         --gofast_out=plugins=grpc:$CURRENT_DIR/genproto/course_service/ \
         $CURRENT_DIR/protos/course_service/*.proto;
+
+protoc -I /usr/local/include \
+       -I $GOPATH/src/github.com/gogo/protobuf/gogoproto \
+       -I $CURRENT_DIR/protos/messenger_service/ \
+        --gofast_out=plugins=grpc:$CURRENT_DIR/genproto/messenger_service/ \
+        $CURRENT_DIR/protos/messenger_service/*.proto;
 
 
 if [[ "$OSTYPE" == "darwin"* ]]; then

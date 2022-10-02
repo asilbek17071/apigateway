@@ -6,42 +6,48 @@ import (
 )
 
 type QueryParams struct {
-	Filters      map[string]string
-	Page         int64
-	Limit        int64
-	Day          int64
-	Ordering     []string
-	Search       string
-	Id           string
-	Permission   string
-	SpendingType string
-	From         string
-	To           string
-	Teacher      string
-	Direction    string
-	Student      string
-	Active       string
-	Token        string
+	Filters            map[string]string
+	Page               int64
+	Limit              int64
+	Day                int64
+	Ordering           []string
+	Search             string
+	Id                 string
+	MessageId          string
+	Permission         string
+	PermissionSender   string
+	PermissionReceiver string
+	SpendingType       string
+	From               string
+	To                 string
+	Teacher            string
+	Direction          string
+	Student            string
+	Active             string
+	Token              string
 }
 
 func ParseQueryParams(queryParams map[string][]string) (*QueryParams, []string) {
 	params := QueryParams{
-		Filters:      make(map[string]string),
-		Day:          1,
-		Page:         1,
-		Limit:        10,
-		Ordering:     []string{},
-		Search:       " ",
-		Id:           " ",
-		Permission:   " ",
-		From:         " ",
-		Teacher:      "",
-		Direction:    "all",
-		Student:      "all",
-		Active:       "true",
-		SpendingType: "",
-		To:           " ",
-		Token:        " ",
+		Filters:            make(map[string]string),
+		Day:                1,
+		Page:               1,
+		Limit:              10,
+		Ordering:           []string{},
+		Search:             " ",
+		Id:                 " ",
+		MessageId:          " ",
+		Permission:         " ",
+		PermissionSender:   " ",
+		PermissionReceiver: " ",
+		From:               " ",
+		Teacher:            "",
+		Direction:          "all",
+		Student:            "all",
+		Active:             "true",
+		SpendingType:       "",
+		To:                 " ",
+		Token:              " ",
 	}
 	var errStr []string
 	var err error
@@ -83,6 +89,11 @@ func ParseQueryParams(queryParams map[string][]string) (*QueryParams, []string) 
 			continue
 		}
 
+		if key == "message_id" {
+			params.MessageId = value[0]
+			continue
+		}
+
 		if key == "from" {
 			params.From = value[0]
 			continue
@@ -110,6 +121,16 @@ func ParseQueryParams(queryParams map[string][]string) (*QueryParams, []string) 
 
 		if key == "permission" {
 			params.Permission = value[0]
+			continue
+		}
+
+		if key == "permission_sender" {
+			params.PermissionSender = value[0]
+			continue
+		}
+
+		if key == "permission_receiver" {
+			params.PermissionReceiver = value[0]
 			continue
 		}
 

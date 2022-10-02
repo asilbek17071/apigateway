@@ -33,6 +33,10 @@ type Config struct {
 	CourseServiceHost string
 	CourseServicePort int
 
+	// messenger ...
+	MessengerServiceHost string
+	MessengerServicePort int
+
 	// context timeout in seconds
 	CtxTimeout int
 
@@ -73,6 +77,10 @@ func Load() Config {
 	// finance-service idfs
 	c.FinanceServiceHost = cast.ToString(getOrReturnDefault("FINANCE_SERVICE_HOST", "46.101.101.23"))
 	c.FinanceServicePort = cast.ToInt(getOrReturnDefault("FINANCE_SERVICE_PORT", 50055))
+
+	// finance-service idfs
+	c.MessengerServiceHost = cast.ToString(getOrReturnDefault("MESSENGER_SERVICE_HOST", "46.101.101.23"))
+	c.MessengerServicePort = cast.ToInt(getOrReturnDefault("MESSENGER_SERVICE_PORT", 50054))
 
 	c.CtxTimeout = cast.ToInt(getOrReturnDefault("CTX_TIMEOUT", 7))
 
