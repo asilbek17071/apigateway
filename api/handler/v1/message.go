@@ -21,6 +21,8 @@ import (
 // @Accept  json
 // @Produce  json
 // @Param Message request body models.Message true "directionCreateRequest"
+// @Param persmission_sender query string true "PermissionSender"
+// @Param persmission_receiver query string true "PermissionReceiver"
 // @Success 200 {object} models.MessageResp
 // @Failure 400 {object} models.StandardErrorModel
 // @Failure 500 {object} models.StandardErrorModel
@@ -41,6 +43,8 @@ func (h *handlerV1) MessageCreate(c *gin.Context) {
 		h.log.Error("failed to bind json", l.Error(err))
 		return
 	}
+
+	body.Status = "false"
 
 	ctx, cancel := context.WithTimeout(context.Background(), time.Second*time.Duration(h.cfg.CtxTimeout))
 	defer cancel()
