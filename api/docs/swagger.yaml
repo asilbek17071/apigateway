@@ -652,9 +652,13 @@ definitions:
     properties:
       message:
         type: string
-      receiver:
+      permission_receiver:
         type: string
-      sender:
+      permission_sender:
+        type: string
+      receiver_id:
+        type: string
+      sender_id:
         type: string
       title:
         type: string
@@ -676,9 +680,9 @@ definitions:
         type: string
       message_id:
         type: string
-      receiver:
+      receiver_id:
         type: string
-      sender:
+      sender_id:
         type: string
       title:
         type: string

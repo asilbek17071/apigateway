@@ -8587,10 +8587,16 @@ const docTemplate = `{
                 "message": {
                     "type": "string"
                 },
-                "receiver": {
+                "permission_receiver": {
                     "type": "string"
                 },
-                "sender": {
+                "permission_sender": {
+                    "type": "string"
+                },
+                "receiver_id": {
+                    "type": "string"
+                },
+                "sender_id": {
                     "type": "string"
                 },
                 "title": {
@@ -8624,10 +8630,10 @@ const docTemplate = `{
                 "message_id": {
                     "type": "string"
                 },
-                "receiver": {
+                "receiver_id": {
                     "type": "string"
                 },
-                "sender": {
+                "sender_id": {
                     "type": "string"
                 },
                 "title": {
