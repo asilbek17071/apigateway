@@ -2984,6 +2984,10 @@ paths:
         in: query
         name: limit
         type: string
+      - description: Active
+        in: query
+        name: active
+        type: string
       produces:
       - application/json
       responses:

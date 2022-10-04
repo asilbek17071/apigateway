@@ -12,7 +12,7 @@ service CourseService {
     rpc GroupBalList(ByIdReq) returns (ByBalResp);
     rpc GroupUpdate(Group) returns (GroupResp);
     rpc GroupDelete(ByIdReq) returns (EmptyRes);
-    rpc TeacherGroup(ListIdReq) returns (GroupListsResp);
+    rpc TeacherGroup(ListTeacherReq) returns (GroupListsResp);
 
     rpc AttendanceCreate(AttendanceCreates) returns (Req);
     rpc AttendanceList(GetParticipate) returns (ParticipateListResp);
@@ -239,6 +239,13 @@ message ListIdReq {
     int64 page = 1;
     int64 limit = 2;
     string id = 3;
+}
+
+message ListTeacherReq {
+    int64 page = 1;
+    int64 limit = 2;
+    string id = 3;
+    string active = 4;
 }
 
 message ListWithReq {

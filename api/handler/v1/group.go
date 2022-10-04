@@ -167,6 +167,7 @@ func (h *handlerV1) GroupList(c *gin.Context) {
 // @Param id query string false "ID"
 // @Param page query string false "Page"
 // @Param limit query string false "Limit"
+// @Param active query string false "Active"
 // @Success 200 {object} models.GroupsList
 // @Failure 400 {object} models.StandardErrorModel
 // @Failure 500 {object} models.StandardErrorModel
@@ -189,10 +190,11 @@ func (h *handlerV1) TeacherGroup(c *gin.Context) {
 	defer cancel()
 
 	response, err := h.serviceManager.CourseService().TeacherGroup(
-		ctx, &pb.ListIdReq{
-			Id:    params.Id,
-			Limit: params.Limit,
-			Page:  params.Page,
+		ctx, &pb.ListTeacherReq{
+			Page:   params.Page,
+			Limit:  params.Limit,
+			Id:     params.Id,
+			Active: params.Active,
 		})
 
 	fmt.Println(response)

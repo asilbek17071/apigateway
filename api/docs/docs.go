@@ -1927,6 +1927,12 @@ const docTemplate = `{
                         "description": "Limit",
                         "name": "limit",
                         "in": "query"
+                    },
+                    {
+                        "type": "string",
+                        "description": "Active",
+                        "name": "active",
+                        "in": "query"
                     }
                 ],
                 "responses": {
