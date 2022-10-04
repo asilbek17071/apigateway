@@ -5,6 +5,7 @@ type Lead struct {
 	Birthday    string `json:"birthday"`
 	Gender      string `json:"gender"`
 	Address     string `json:"address"`
+	Phone       string `json:"phone"`
 	Status      string `json:"status"`
 	Source      string `json:"source"`
 	Comment     string `json:"comment"`
@@ -37,6 +38,7 @@ type LeadResp struct {
 	Source      string `json:"source"`
 	Comment     string `json:"comment"`
 	UserId      string `json:"user_id"`
+	Phone       string `json:"phone"`
 	DirectionId string `json:"direction_id"`
 	CreatedAt   string `json:"created_at"`
 	UpdatedAt   string `json:"updated_at"`
@@ -50,6 +52,7 @@ type LeadUpdate struct {
 	Status      string `json:"status"`
 	Source      string `json:"source"`
 	Comment     string `json:"comment"`
+	Phone       string `json:"phone"`
 	UserId      string `json:"user_id"`
 	DirectionId string `json:"direction_id"`
 }

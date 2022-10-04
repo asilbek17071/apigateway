@@ -8461,6 +8461,9 @@ const docTemplate = `{
                 "gender": {
                     "type": "string"
                 },
+                "phone": {
+                    "type": "string"
+                },
                 "source": {
                     "type": "string"
                 },
@@ -8499,6 +8502,9 @@ const docTemplate = `{
                 "lead_id": {
                     "type": "string"
                 },
+                "phone": {
+                    "type": "string"
+                },
                 "source": {
                     "type": "string"
                 },
@@ -8532,6 +8538,9 @@ const docTemplate = `{
                     "type": "string"
                 },
                 "gender": {
+                    "type": "string"
+                },
+                "phone": {
                     "type": "string"
                 },
                 "source": {
@@ -9461,6 +9470,9 @@ const docTemplate = `{
                 "password": {
                     "type": "string"
                 },
+                "phone": {
+                    "type": "string"
+                },
                 "username": {
                     "type": "string"
                 }
@@ -9500,6 +9512,9 @@ const docTemplate = `{
                     "type": "string"
                 },
                 "password": {
+                    "type": "string"
+                },
+                "phone": {
                     "type": "string"
                 },
                 "student_id": {
@@ -9543,7 +9558,7 @@ const docTemplate = `{
                 "passport_series": {
                     "type": "string"
                 },
-                "password": {
+                "phone": {
                     "type": "string"
                 },
                 "username": {

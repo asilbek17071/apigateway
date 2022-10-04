@@ -570,6 +570,8 @@ definitions:
         type: string
       gender:
         type: string
+      phone:
+        type: string
       source:
         type: string
       status:
@@ -595,6 +597,8 @@ definitions:
         type: string
       lead_id:
         type: string
+      phone:
+        type: string
       source:
         type: string
       status:
@@ -617,6 +621,8 @@ definitions:
       full_name:
         type: string
       gender:
+        type: string
+      phone:
         type: string
       source:
         type: string
@@ -1217,6 +1223,8 @@ definitions:
         type: string
       password:
         type: string
+      phone:
+        type: string
       username:
         type: string
     type: object
@@ -1243,6 +1251,8 @@ definitions:
       passport_series:
         type: string
       password:
+        type: string
+      phone:
         type: string
       student_id:
         type: string
@@ -1271,7 +1281,7 @@ definitions:
         type: string
       passport_series:
         type: string
-      password:
+      phone:
         type: string
       username:
         type: string

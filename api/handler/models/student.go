@@ -6,6 +6,7 @@ type Student struct {
 	Password       string `json:"password"`
 	Email          string `json:"email"`
 	Birthday       string `json:"birthday"`
+	Phone       string `json:"phone"`
 	Gender         string `json:"gender"`
 	Address        string `json:"address"`
 	PassportSeries string `json:"passport_series"`
@@ -41,6 +42,7 @@ type StudentResp struct {
 	Password       string `json:"password"`
 	Email          string `json:"email"`
 	Birthday       string `json:"birthday"`
+	Phone       string `json:"phone"`
 	Gender         string `json:"gender"`
 	Address        string `json:"address"`
 	PassportSeries string `json:"passport_series"`
@@ -54,11 +56,11 @@ type StudentResp struct {
 type StudentUpdate struct {
 	FullName       string `json:"full_name"`
 	Username       string `json:"username"`
-	Password       string `json:"password"`
 	Email          string `json:"email"`
 	Birthday       string `json:"birthday"`
 	Gender         string `json:"gender"`
 	Address        string `json:"address"`
+	Phone       string `json:"phone"`
 	PassportSeries string `json:"passport_series"`
 	PassportImage1 string `json:"passport_image1"`
 	PassportImage2 string `json:"passport_image2"`

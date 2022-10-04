@@ -8449,6 +8449,9 @@
                 "gender": {
                     "type": "string"
                 },
+                "phone": {
+                    "type": "string"
+                },
                 "source": {
                     "type": "string"
                 },
@@ -8487,6 +8490,9 @@
                 "lead_id": {
                     "type": "string"
                 },
+                "phone": {
+                    "type": "string"
+                },
                 "source": {
                     "type": "string"
                 },
@@ -8520,6 +8526,9 @@
                     "type": "string"
                 },
                 "gender": {
+                    "type": "string"
+                },
+                "phone": {
                     "type": "string"
                 },
                 "source": {
@@ -9449,6 +9458,9 @@
                 "password": {
                     "type": "string"
                 },
+                "phone": {
+                    "type": "string"
+                },
                 "username": {
                     "type": "string"
                 }
@@ -9488,6 +9500,9 @@
                     "type": "string"
                 },
                 "password": {
+                    "type": "string"
+                },
+                "phone": {
                     "type": "string"
                 },
                 "student_id": {
@@ -9531,7 +9546,7 @@
                 "passport_series": {
                     "type": "string"
                 },
-                "password": {
+                "phone": {
                     "type": "string"
                 },
                 "username": {

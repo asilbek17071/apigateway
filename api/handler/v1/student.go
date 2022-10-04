@@ -225,7 +225,7 @@ func (h *handlerV1) StudentLogin(c *gin.Context) {
 	defer cancel()
 	response, err := h.serviceManager.StudentService().StudentLogin(
 		ctx, &pb.LoginStudentReq{
-			Username: body.Username,
+			Phone:    body.Phone,
 			Password: body.Password,
 		})
 	if err != nil {

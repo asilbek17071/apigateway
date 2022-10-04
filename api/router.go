@@ -61,6 +61,7 @@ func New(option Option) *gin.Engine {
 
 	planner.POST("/student/create/", handlerV1.StudentCreate)
 	planner.POST("/student/phonecreate/", handlerV1.StudentPhoneCreate)
+	planner.DELETE("/student/deletephone/", handlerV1.StudentPhoneDelete)
 	planner.POST("/student/login/", handlerV1.StudentLogin)
 	planner.GET("/student/byid/", handlerV1.StudentGet)
 	planner.GET("/signup/student/", handlerV1.StudentSignUp)
@@ -167,6 +168,7 @@ func New(option Option) *gin.Engine {
 	planner.DELETE("/attendance/delete/", handlerV1.AttendanceDelete)
 
 	planner.POST("/lead/create/", handlerV1.LeadCreate)
+	planner.DELETE("/lead/deletephone/", handlerV1.LeadPhoneDelete)
 	planner.POST("/lead/phonecreate/", handlerV1.LeadPhoneCreate)
 	planner.GET("/lead/byid/", handlerV1.LeadGet)
 	planner.GET("/lead/listphone/", handlerV1.LeadPhoneGet)
