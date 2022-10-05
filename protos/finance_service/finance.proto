@@ -248,7 +248,7 @@ message Count{
 message PayStd{
     string duration = 1;
     string with_day = 2;
-    string amount = 3;
+    double amount = 3;
     string pysys = 4;
 }
 
@@ -261,4 +261,9 @@ message PaymentStudentList{
     repeated PayStd duration = 1;
     Pays paid = 2;
     Pays debt = 3;
+}
+
+message RefundReq {
+    string student_id =1;
+    string group_id = 2;
 }
