@@ -40,16 +40,11 @@ message Student{
     string full_name = 2;
     string phone = 3;
     string password = 4;
-    string email = 5;
-    string birthday = 6;
-    string gender = 7;
-    string passport_series = 8;
-    string passport_image1 = 9;
-    string passport_image2 = 10;
-    string address = 11;
-    string group_id = 12;
-    string status = 13;
-    string comment = 14;
+    string birthday = 5;
+    string gender = 6;
+    string address = 7;
+    string group_id = 8;
+    string comment = 9;
 }
 
 message SPhone{
@@ -85,19 +80,14 @@ message StudentResp{
     string full_name = 2;
     string phone = 3;
     string password = 4;
-    string email = 5;
-    string birthday = 6;
-    string gender = 7;
-    repeated SPhone phones = 8;
-    string passport_series = 9;
-    string passport_image1 = 10;
-    string passport_image2 = 11;
-    string address = 12;
-    By group_id = 13;
-    string status = 14;
-    string comment = 15;
-    string created_at = 16;
-    string updated_at = 17;
+    string birthday = 5;
+    string gender = 6;
+    repeated SPhone phones = 7;
+    string address = 8;
+    By group_id = 9;
+    string comment = 10;
+    string created_at = 11;
+    string updated_at = 12;
 }
 
 
@@ -105,14 +95,13 @@ message Lead{
     string id = 1;
     string full_name = 2;
     string birthday = 3;
-    string status = 4;
-    string gender = 5;
-    string address = 6; 
-    string source = 7;
-    string phone = 8;
-    string comment = 9;
-    string user_id = 10;
-    string direction_id = 11;
+    string gender = 4;
+    string address = 5; 
+    string source = 6;
+    string phone = 7;
+    string comment = 8;
+    string user_id = 9;
+    string direction_id = 10;
 }
 
 message LeadResp{
@@ -120,16 +109,15 @@ message LeadResp{
     string full_name = 2;
     repeated LPhone phones = 3;
     string birthday = 4;
-    string status = 5;
-    string gender = 6;
-    string address = 7; 
-    string source = 8;
-    string phone = 9;
-    string comment = 10;
-    By user_id = 11;
-    By direction_id = 12;
-    string created_at = 13;
-    string updated_at = 14;
+    string gender = 5;
+    string address = 6; 
+    string source = 7;
+    string phone = 8;
+    string comment = 9;
+    By user_id = 10;
+    By direction_id = 11;
+    string created_at = 12;
+    string updated_at = 13;
 }
 
 message ListIdReq {

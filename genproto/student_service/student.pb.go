@@ -71,16 +71,11 @@ type Student struct {
 	FullName             string   `protobuf:"bytes,2,opt,name=full_name,json=fullName,proto3" json:"full_name"`
 	Phone                string   `protobuf:"bytes,3,opt,name=phone,proto3" json:"phone"`
 	Password             string   `protobuf:"bytes,4,opt,name=password,proto3" json:"password"`
-	Email                string   `protobuf:"bytes,5,opt,name=email,proto3" json:"email"`
-	Birthday             string   `protobuf:"bytes,6,opt,name=birthday,proto3" json:"birthday"`
-	Gender               string   `protobuf:"bytes,7,opt,name=gender,proto3" json:"gender"`
-	PassportSeries       string   `protobuf:"bytes,8,opt,name=passport_series,json=passportSeries,proto3" json:"passport_series"`
-	PassportImage1       string   `protobuf:"bytes,9,opt,name=passport_image1,json=passportImage1,proto3" json:"passport_image1"`
-	PassportImage2       string   `protobuf:"bytes,10,opt,name=passport_image2,json=passportImage2,proto3" json:"passport_image2"`
-	Address              string   `protobuf:"bytes,11,opt,name=address,proto3" json:"address"`
-	GroupId              string   `protobuf:"bytes,12,opt,name=group_id,json=groupId,proto3" json:"group_id"`
-	Status               string   `protobuf:"bytes,13,opt,name=status,proto3" json:"status"`
-	Comment              string   `protobuf:"bytes,14,opt,name=comment,proto3" json:"comment"`
+	Birthday             string   `protobuf:"bytes,5,opt,name=birthday,proto3" json:"birthday"`
+	Gender               string   `protobuf:"bytes,6,opt,name=gender,proto3" json:"gender"`
+	Address              string   `protobuf:"bytes,7,opt,name=address,proto3" json:"address"`
+	GroupId              string   `protobuf:"bytes,8,opt,name=group_id,json=groupId,proto3" json:"group_id"`
+	Comment              string   `protobuf:"bytes,9,opt,name=comment,proto3" json:"comment"`
 	XXX_NoUnkeyedLiteral struct{} `json:"-"`
 	XXX_unrecognized     []byte   `json:"-"`
 	XXX_sizecache        int32    `json:"-"`
@@ -147,13 +142,6 @@ func (m *Student) GetPassword() string {
 	return ""
 }
 
-func (m *Student) GetEmail() string {
-	if m != nil {
-		return m.Email
-	}
-	return ""
-}
-
 func (m *Student) GetBirthday() string {
 	if m != nil {
 		return m.Birthday
@@ -168,27 +156,6 @@ func (m *Student) GetGender() string {
 	return ""
 }
 
-func (m *Student) GetPassportSeries() string {
-	if m != nil {
-		return m.PassportSeries
-	}
-	return ""
-}
-
-func (m *Student) GetPassportImage1() string {
-	if m != nil {
-		return m.PassportImage1
-	}
-	return ""
-}
-
-func (m *Student) GetPassportImage2() string {
-	if m != nil {
-		return m.PassportImage2
-	}
-	return ""
-}
-
 func (m *Student) GetAddress() string {
 	if m != nil {
 		return m.Address
@@ -199,13 +166,6 @@ func (m *Student) GetAddress() string {
 func (m *Student) GetGroupId() string {
 	if m != nil {
 		return m.GroupId
-	}
-	return ""
-}
-
-func (m *Student) GetStatus() string {
-	if m != nil {
-		return m.Status
 	}
 	return ""
 }
@@ -506,19 +466,14 @@ type StudentResp struct {
 	FullName             string    `protobuf:"bytes,2,opt,name=full_name,json=fullName,proto3" json:"full_name"`
 	Phone                string    `protobuf:"bytes,3,opt,name=phone,proto3" json:"phone"`
 	Password             string    `protobuf:"bytes,4,opt,name=password,proto3" json:"password"`
-	Email                string    `protobuf:"bytes,5,opt,name=email,proto3" json:"email"`
-	Birthday             string    `protobuf:"bytes,6,opt,name=birthday,proto3" json:"birthday"`
-	Gender               string    `protobuf:"bytes,7,opt,name=gender,proto3" json:"gender"`
-	Phones               []*SPhone `protobuf:"bytes,8,rep,name=phones,proto3" json:"phones"`
-	PassportSeries       string    `protobuf:"bytes,9,opt,name=passport_series,json=passportSeries,proto3" json:"passport_series"`
-	PassportImage1       string    `protobuf:"bytes,10,opt,name=passport_image1,json=passportImage1,proto3" json:"passport_image1"`
-	PassportImage2       string    `protobuf:"bytes,11,opt,name=passport_image2,json=passportImage2,proto3" json:"passport_image2"`
-	Address              string    `protobuf:"bytes,12,opt,name=address,proto3" json:"address"`
-	GroupId              *By       `protobuf:"bytes,13,opt,name=group_id,json=groupId,proto3" json:"group_id"`
-	Status               string    `protobuf:"bytes,14,opt,name=status,proto3" json:"status"`
-	Comment              string    `protobuf:"bytes,15,opt,name=comment,proto3" json:"comment"`
-	CreatedAt            string    `protobuf:"bytes,16,opt,name=created_at,json=createdAt,proto3" json:"created_at"`
-	UpdatedAt            string    `protobuf:"bytes,17,opt,name=updated_at,json=updatedAt,proto3" json:"updated_at"`
+	Birthday             string    `protobuf:"bytes,5,opt,name=birthday,proto3" json:"birthday"`
+	Gender               string    `protobuf:"bytes,6,opt,name=gender,proto3" json:"gender"`
+	Phones               []*SPhone `protobuf:"bytes,7,rep,name=phones,proto3" json:"phones"`
+	Address              string    `protobuf:"bytes,8,opt,name=address,proto3" json:"address"`
+	GroupId              *By       `protobuf:"bytes,9,opt,name=group_id,json=groupId,proto3" json:"group_id"`
+	Comment              string    `protobuf:"bytes,10,opt,name=comment,proto3" json:"comment"`
+	CreatedAt            string    `protobuf:"bytes,11,opt,name=created_at,json=createdAt,proto3" json:"created_at"`
+	UpdatedAt            string    `protobuf:"bytes,12,opt,name=updated_at,json=updatedAt,proto3" json:"updated_at"`
 	XXX_NoUnkeyedLiteral struct{}  `json:"-"`
 	XXX_unrecognized     []byte    `json:"-"`
 	XXX_sizecache        int32     `json:"-"`
@@ -585,13 +540,6 @@ func (m *StudentResp) GetPassword() string {
 	return ""
 }
 
-func (m *StudentResp) GetEmail() string {
-	if m != nil {
-		return m.Email
-	}
-	return ""
-}
-
 func (m *StudentResp) GetBirthday() string {
 	if m != nil {
 		return m.Birthday
@@ -613,27 +561,6 @@ func (m *StudentResp) GetPhones() []*SPhone {
 	return nil
 }
 
-func (m *StudentResp) GetPassportSeries() string {
-	if m != nil {
-		return m.PassportSeries
-	}
-	return ""
-}
-
-func (m *StudentResp) GetPassportImage1() string {
-	if m != nil {
-		return m.PassportImage1
-	}
-	return ""
-}
-
-func (m *StudentResp) GetPassportImage2() string {
-	if m != nil {
-		return m.PassportImage2
-	}
-	return ""
-}
-
 func (m *StudentResp) GetAddress() string {
 	if m != nil {
 		return m.Address
@@ -646,13 +573,6 @@ func (m *StudentResp) GetGroupId() *By {
 		return m.GroupId
 	}
 	return nil
-}
-
-func (m *StudentResp) GetStatus() string {
-	if m != nil {
-		return m.Status
-	}
-	return ""
 }
 
 func (m *StudentResp) GetComment() string {
@@ -680,14 +600,13 @@ type Lead struct {
 	Id                   string   `protobuf:"bytes,1,opt,name=id,proto3" json:"id"`
 	FullName             string   `protobuf:"bytes,2,opt,name=full_name,json=fullName,proto3" json:"full_name"`
 	Birthday             string   `protobuf:"bytes,3,opt,name=birthday,proto3" json:"birthday"`
-	Status               string   `protobuf:"bytes,4,opt,name=status,proto3" json:"status"`
-	Gender               string   `protobuf:"bytes,5,opt,name=gender,proto3" json:"gender"`
-	Address              string   `protobuf:"bytes,6,opt,name=address,proto3" json:"address"`
-	Source               string   `protobuf:"bytes,7,opt,name=source,proto3" json:"source"`
-	Phone                string   `protobuf:"bytes,8,opt,name=phone,proto3" json:"phone"`
-	Comment              string   `protobuf:"bytes,9,opt,name=comment,proto3" json:"comment"`
-	UserId               string   `protobuf:"bytes,10,opt,name=user_id,json=userId,proto3" json:"user_id"`
-	DirectionId          string   `protobuf:"bytes,11,opt,name=direction_id,json=directionId,proto3" json:"direction_id"`
+	Gender               string   `protobuf:"bytes,4,opt,name=gender,proto3" json:"gender"`
+	Address              string   `protobuf:"bytes,5,opt,name=address,proto3" json:"address"`
+	Source               string   `protobuf:"bytes,6,opt,name=source,proto3" json:"source"`
+	Phone                string   `protobuf:"bytes,7,opt,name=phone,proto3" json:"phone"`
+	Comment              string   `protobuf:"bytes,8,opt,name=comment,proto3" json:"comment"`
+	UserId               string   `protobuf:"bytes,9,opt,name=user_id,json=userId,proto3" json:"user_id"`
+	DirectionId          string   `protobuf:"bytes,10,opt,name=direction_id,json=directionId,proto3" json:"direction_id"`
 	XXX_NoUnkeyedLiteral struct{} `json:"-"`
 	XXX_unrecognized     []byte   `json:"-"`
 	XXX_sizecache        int32    `json:"-"`
@@ -747,13 +666,6 @@ func (m *Lead) GetBirthday() string {
 	return ""
 }
 
-func (m *Lead) GetStatus() string {
-	if m != nil {
-		return m.Status
-	}
-	return ""
-}
-
 func (m *Lead) GetGender() string {
 	if m != nil {
 		return m.Gender
@@ -808,16 +720,15 @@ type LeadResp struct {
 	FullName             string    `protobuf:"bytes,2,opt,name=full_name,json=fullName,proto3" json:"full_name"`
 	Phones               []*LPhone `protobuf:"bytes,3,rep,name=phones,proto3" json:"phones"`
 	Birthday             string    `protobuf:"bytes,4,opt,name=birthday,proto3" json:"birthday"`
-	Status               string    `protobuf:"bytes,5,opt,name=status,proto3" json:"status"`
-	Gender               string    `protobuf:"bytes,6,opt,name=gender,proto3" json:"gender"`
-	Address              string    `protobuf:"bytes,7,opt,name=address,proto3" json:"address"`
-	Source               string    `protobuf:"bytes,8,opt,name=source,proto3" json:"source"`
-	Phone                string    `protobuf:"bytes,9,opt,name=phone,proto3" json:"phone"`
-	Comment              string    `protobuf:"bytes,10,opt,name=comment,proto3" json:"comment"`
-	UserId               *By       `protobuf:"bytes,11,opt,name=user_id,json=userId,proto3" json:"user_id"`
-	DirectionId          *By       `protobuf:"bytes,12,opt,name=direction_id,json=directionId,proto3" json:"direction_id"`
-	CreatedAt            string    `protobuf:"bytes,13,opt,name=created_at,json=createdAt,proto3" json:"created_at"`
-	UpdatedAt            string    `protobuf:"bytes,14,opt,name=updated_at,json=updatedAt,proto3" json:"updated_at"`
+	Gender               string    `protobuf:"bytes,5,opt,name=gender,proto3" json:"gender"`
+	Address              string    `protobuf:"bytes,6,opt,name=address,proto3" json:"address"`
+	Source               string    `protobuf:"bytes,7,opt,name=source,proto3" json:"source"`
+	Phone                string    `protobuf:"bytes,8,opt,name=phone,proto3" json:"phone"`
+	Comment              string    `protobuf:"bytes,9,opt,name=comment,proto3" json:"comment"`
+	UserId               *By       `protobuf:"bytes,10,opt,name=user_id,json=userId,proto3" json:"user_id"`
+	DirectionId          *By       `protobuf:"bytes,11,opt,name=direction_id,json=directionId,proto3" json:"direction_id"`
+	CreatedAt            string    `protobuf:"bytes,12,opt,name=created_at,json=createdAt,proto3" json:"created_at"`
+	UpdatedAt            string    `protobuf:"bytes,13,opt,name=updated_at,json=updatedAt,proto3" json:"updated_at"`
 	XXX_NoUnkeyedLiteral struct{}  `json:"-"`
 	XXX_unrecognized     []byte    `json:"-"`
 	XXX_sizecache        int32     `json:"-"`
@@ -880,13 +791,6 @@ func (m *LeadResp) GetPhones() []*LPhone {
 func (m *LeadResp) GetBirthday() string {
 	if m != nil {
 		return m.Birthday
-	}
-	return ""
-}
-
-func (m *LeadResp) GetStatus() string {
-	if m != nil {
-		return m.Status
 	}
 	return ""
 }
@@ -1681,84 +1585,78 @@ func init() {
 func init() { proto.RegisterFile("student.proto", fileDescriptor_94a1c1b032ad0c00) }
 
 var fileDescriptor_94a1c1b032ad0c00 = []byte{
-	// 1227 bytes of a gzipped FileDescriptorProto
-	0x1f, 0x8b, 0x08, 0x00, 0x00, 0x00, 0x00, 0x00, 0x02, 0xff, 0xd4, 0x58, 0xcd, 0x6e, 0xdb, 0x46,
-	0x10, 0x2e, 0xf5, 0x4b, 0x8e, 0x64, 0xd9, 0xd9, 0x26, 0x31, 0xad, 0xc4, 0x6e, 0xc2, 0x4b, 0x0d,
-	0xb4, 0x70, 0x50, 0x07, 0x48, 0xdb, 0x4b, 0x0a, 0xff, 0xc5, 0x15, 0x2a, 0x14, 0x06, 0x15, 0x9f,
-	0x0d, 0x46, 0xbb, 0x91, 0x09, 0x4b, 0x24, 0x43, 0x52, 0x31, 0xfc, 0x1e, 0x3d, 0x14, 0x68, 0x7b,
-	0xe8, 0x6b, 0xf4, 0xda, 0x4b, 0x8f, 0x7d, 0x84, 0xc2, 0x7d, 0x91, 0x62, 0xff, 0xf8, 0xbf, 0x52,
-	0x1c, 0x9d, 0x7a, 0xd3, 0xec, 0xee, 0x0c, 0xbf, 0x99, 0xef, 0x9b, 0xe1, 0x52, 0xb0, 0x16, 0xc5,
-	0x73, 0x4c, 0xbc, 0x78, 0x2f, 0x08, 0xfd, 0xd8, 0x47, 0xeb, 0xc2, 0xbc, 0x88, 0x48, 0xf8, 0xde,
-	0x1d, 0x13, 0x0b, 0x40, 0x3f, 0x99, 0x05, 0xf1, 0x8d, 0x4d, 0x22, 0xeb, 0xa7, 0x3a, 0xb4, 0x47,
-	0x7c, 0x1f, 0xf5, 0xa0, 0xe6, 0x62, 0x53, 0x7b, 0xa2, 0xed, 0x1a, 0x76, 0xcd, 0xc5, 0xe8, 0x11,
-	0x18, 0x6f, 0xe7, 0xd3, 0xe9, 0x85, 0xe7, 0xcc, 0x88, 0x59, 0x63, 0xcb, 0x3a, 0x5d, 0xf8, 0xd1,
-	0x99, 0x11, 0x74, 0x1f, 0x9a, 0xc1, 0xa5, 0xef, 0x11, 0xb3, 0xce, 0x36, 0xb8, 0x81, 0xfa, 0xa0,
-	0x07, 0x4e, 0x14, 0x5d, 0xfb, 0x21, 0x36, 0x1b, 0xdc, 0x43, 0xda, 0xd4, 0x83, 0xcc, 0x1c, 0x77,
-	0x6a, 0x36, 0xb9, 0x07, 0x33, 0xa8, 0xc7, 0x1b, 0x37, 0x8c, 0x2f, 0xb1, 0x73, 0x63, 0xb6, 0xb8,
-	0x87, 0xb4, 0xd1, 0x43, 0x68, 0x4d, 0x88, 0x87, 0x49, 0x68, 0xb6, 0xd9, 0x8e, 0xb0, 0xd0, 0xe7,
-	0xb0, 0x4e, 0xa3, 0x06, 0x7e, 0xc8, 0x92, 0x72, 0x49, 0x64, 0xea, 0xec, 0x40, 0x4f, 0x2e, 0x8f,
-	0xd8, 0x6a, 0xee, 0xa0, 0x3b, 0x73, 0x26, 0xe4, 0x2b, 0xd3, 0xc8, 0x1f, 0x1c, 0xb0, 0xd5, 0xf2,
-	0xc1, 0x7d, 0x13, 0x2a, 0x0e, 0xee, 0x23, 0x13, 0xda, 0x0e, 0xc6, 0x21, 0x89, 0x22, 0xb3, 0xc3,
-	0x0e, 0x48, 0x13, 0x6d, 0x81, 0x3e, 0x09, 0xfd, 0x79, 0x70, 0xe1, 0x62, 0xb3, 0xcb, 0xb7, 0x98,
-	0x3d, 0xc0, 0x34, 0x8f, 0x28, 0x76, 0xe2, 0x79, 0x64, 0xae, 0xf1, 0x3c, 0xb8, 0x45, 0x83, 0x8d,
-	0xfd, 0xd9, 0x8c, 0x78, 0xb1, 0xd9, 0xe3, 0x1e, 0xc2, 0xb4, 0x7e, 0xd7, 0xa0, 0x35, 0x3a, 0x63,
-	0x25, 0x2d, 0xb2, 0x72, 0x1f, 0x9a, 0xd7, 0x97, 0x7e, 0x24, 0x19, 0xe1, 0x86, 0x82, 0x8e, 0x6d,
-	0x00, 0x49, 0xbe, 0x2b, 0x09, 0x31, 0xc4, 0xca, 0x00, 0xd3, 0xed, 0x71, 0x48, 0x9c, 0x98, 0xe0,
-	0x0b, 0x27, 0x16, 0xb4, 0x18, 0x62, 0xe5, 0x20, 0xa6, 0xdb, 0xf3, 0x00, 0xcb, 0x6d, 0x4e, 0x8e,
-	0x21, 0x56, 0x0e, 0x62, 0xeb, 0x17, 0x0d, 0x5a, 0xc3, 0xd5, 0x31, 0x6e, 0x42, 0x7b, 0x4a, 0x1c,
-	0x9c, 0x02, 0x6c, 0x51, 0x73, 0x65, 0x74, 0xdf, 0x81, 0x31, 0x24, 0x0e, 0x3e, 0x2b, 0x3e, 0x43,
-	0xcb, 0x3d, 0x63, 0x0b, 0x74, 0x86, 0x82, 0xee, 0x70, 0xac, 0x6d, 0x66, 0x0f, 0xb0, 0xb5, 0x0b,
-	0xb5, 0xc3, 0x9b, 0x52, 0x66, 0x08, 0x1a, 0x99, 0x76, 0x60, 0xbf, 0xad, 0x5f, 0x1b, 0xd0, 0x11,
-	0x3d, 0x64, 0x93, 0x28, 0xf8, 0xff, 0xf4, 0xd1, 0x33, 0x68, 0xb1, 0xc7, 0xd1, 0xf6, 0xa9, 0xef,
-	0x76, 0xf6, 0x37, 0xf7, 0x0a, 0xa3, 0x62, 0x8f, 0x6b, 0xd0, 0x16, 0xc7, 0xaa, 0x1a, 0xcf, 0xf8,
-	0xd0, 0xc6, 0x83, 0x0f, 0x6d, 0xbc, 0xce, 0xb2, 0xc6, 0xeb, 0xe6, 0x1b, 0x6f, 0x2f, 0xd3, 0x78,
-	0xb4, 0xbf, 0x3a, 0xfb, 0x9f, 0x96, 0xf2, 0x38, 0xbc, 0xa9, 0xea, 0xc6, 0x9e, 0xaa, 0x1b, 0xd7,
-	0x73, 0xdd, 0x58, 0x50, 0xe2, 0xc6, 0x62, 0x25, 0xde, 0x2b, 0x2a, 0xf1, 0xb7, 0x1a, 0x34, 0xa8,
-	0x14, 0xef, 0xa6, 0x8b, 0x2c, 0x9f, 0xf5, 0x32, 0x9f, 0x22, 0x83, 0x46, 0x2e, 0x83, 0x94, 0xe7,
-	0x66, 0x8e, 0xe7, 0x4c, 0xed, 0x5a, 0xf9, 0xda, 0xd1, 0x48, 0xfe, 0x3c, 0x1c, 0x13, 0xa9, 0x0c,
-	0x6e, 0xa5, 0xaa, 0xd4, 0xb3, 0xaa, 0xcc, 0x54, 0xc8, 0xc8, 0x57, 0x68, 0x13, 0xda, 0xf3, 0x88,
-	0x84, 0x94, 0x02, 0xce, 0x73, 0x8b, 0x9a, 0x03, 0x8c, 0x9e, 0x42, 0x17, 0xbb, 0x21, 0x19, 0xc7,
-	0xae, 0xef, 0xd1, 0x5d, 0x4e, 0x6e, 0x27, 0x59, 0x1b, 0x60, 0xeb, 0x8f, 0x3a, 0xe8, 0xb4, 0x3e,
-	0x77, 0xef, 0x9d, 0x54, 0xbf, 0x75, 0x85, 0x7e, 0x87, 0x79, 0xfd, 0x66, 0x8b, 0xda, 0x50, 0x16,
-	0xb5, 0xa9, 0x28, 0x6a, 0x4b, 0x55, 0xd4, 0xb6, 0xaa, 0xa8, 0x7a, 0x75, 0x51, 0x0d, 0x45, 0x51,
-	0x21, 0x5f, 0xd4, 0x2f, 0xd3, 0xa2, 0x76, 0xd4, 0xba, 0x96, 0x95, 0x7e, 0x51, 0xa8, 0x74, 0x57,
-	0xed, 0x92, 0x2d, 0x7f, 0x41, 0xdc, 0x6b, 0x8b, 0xc5, 0xdd, 0x2b, 0x8a, 0xfb, 0x04, 0x8c, 0xa1,
-	0x1b, 0xc5, 0x03, 0x6c, 0x93, 0x77, 0x74, 0x38, 0x06, 0xce, 0x84, 0x30, 0xfa, 0xea, 0x36, 0xfb,
-	0x4d, 0x93, 0x9e, 0xba, 0x33, 0x37, 0x66, 0xe4, 0xd5, 0x6d, 0x6e, 0x08, 0x9a, 0xeb, 0x92, 0x66,
-	0xeb, 0x08, 0xd6, 0x87, 0xfe, 0xc4, 0xf5, 0x92, 0x31, 0xfa, 0x2e, 0xad, 0x96, 0xa6, 0x1a, 0x8c,
-	0xb5, 0xfc, 0x60, 0xb4, 0x1c, 0x58, 0x17, 0xfe, 0x14, 0x12, 0x93, 0xd3, 0x37, 0xa0, 0x8b, 0xfc,
-	0x23, 0x53, 0x63, 0x1a, 0x79, 0x5c, 0x9e, 0x71, 0xe9, 0xe8, 0xb6, 0x93, 0xd3, 0xf4, 0xf1, 0x63,
-	0x7f, 0xee, 0x25, 0xb8, 0x99, 0x61, 0x9d, 0xc1, 0x86, 0x7c, 0x04, 0x85, 0x2b, 0x25, 0xeb, 0x5f,
-	0x31, 0x94, 0xba, 0x5d, 0xf3, 0xaf, 0xa8, 0x67, 0xec, 0x5f, 0x11, 0x4f, 0xbe, 0xfc, 0x98, 0x41,
-	0x45, 0x71, 0x7d, 0xe9, 0x3b, 0x33, 0x57, 0x64, 0x2d, 0x2c, 0xeb, 0x1c, 0xba, 0x54, 0xfc, 0x09,
-	0xe2, 0x67, 0xd0, 0xa4, 0xef, 0x26, 0x09, 0x77, 0xab, 0x2c, 0x69, 0xd1, 0x2a, 0x36, 0x3f, 0xa7,
-	0x00, 0xfa, 0x1c, 0xda, 0x3c, 0xe4, 0x1d, 0x58, 0xb1, 0xb6, 0xa1, 0xf9, 0x9a, 0x81, 0x4d, 0x52,
-	0xd0, 0x32, 0x29, 0x58, 0x5b, 0xd0, 0x3e, 0xbc, 0xe1, 0x4c, 0x17, 0xda, 0xd4, 0x7a, 0x0c, 0x0d,
-	0x86, 0x3e, 0x01, 0xa3, 0x65, 0xc1, 0x7c, 0x0d, 0x3a, 0xdd, 0xa5, 0x80, 0xd0, 0x17, 0xe9, 0x09,
-	0x9a, 0xdf, 0x83, 0x52, 0x7e, 0x3c, 0x37, 0xee, 0xf8, 0x02, 0xe0, 0x2c, 0xf4, 0xdf, 0xba, 0xbc,
-	0x34, 0xf2, 0xdd, 0xab, 0xa5, 0xef, 0xde, 0x7c, 0xf6, 0x35, 0xe9, 0xe7, 0x40, 0x2f, 0xf5, 0x63,
-	0x8f, 0xcd, 0x01, 0x93, 0xe7, 0xd0, 0xb7, 0x60, 0x24, 0xad, 0x60, 0xd6, 0x18, 0xa0, 0x47, 0x25,
-	0x40, 0x69, 0x24, 0x3b, 0x3d, 0x6d, 0x7d, 0x0f, 0x5d, 0xa1, 0x84, 0xb3, 0x8a, 0xab, 0x96, 0x56,
-	0xbc, 0x6a, 0xa9, 0x2f, 0x1a, 0xfb, 0x7f, 0xae, 0x41, 0x4f, 0x84, 0x1a, 0xf1, 0x47, 0xa2, 0x53,
-	0x58, 0x13, 0x2b, 0x47, 0xac, 0x11, 0x91, 0xa9, 0x52, 0x6d, 0x7f, 0xa1, 0x9e, 0xd1, 0x31, 0x80,
-	0x30, 0x4f, 0x49, 0x5c, 0x11, 0x45, 0xf0, 0xb9, 0x24, 0xca, 0x49, 0x02, 0x67, 0xe4, 0x4e, 0xbc,
-	0xf3, 0x00, 0x3d, 0x2c, 0x1d, 0x67, 0xba, 0x59, 0x12, 0x66, 0x90, 0x5c, 0x93, 0x18, 0x25, 0x65,
-	0x34, 0x42, 0xb1, 0xfd, 0x27, 0xaa, 0x30, 0x49, 0x97, 0xa4, 0x7d, 0x78, 0x4a, 0xdf, 0xea, 0x2c,
-	0x5e, 0xbf, 0x32, 0x1e, 0xcf, 0x6f, 0x79, 0xc4, 0x51, 0xc2, 0x27, 0xeb, 0x6c, 0x54, 0xf6, 0x28,
-	0x0c, 0xa8, 0xfe, 0x53, 0x65, 0xcc, 0x64, 0x34, 0xa4, 0x3c, 0x9e, 0xb3, 0x89, 0xb9, 0x02, 0x8f,
-	0x32, 0xd0, 0x31, 0x99, 0x92, 0xca, 0x40, 0x92, 0xca, 0xf2, 0xc4, 0x90, 0x1f, 0x7b, 0xe8, 0x25,
-	0x00, 0x9d, 0x1e, 0x42, 0x53, 0x0f, 0x2a, 0x47, 0x4b, 0x5f, 0x3d, 0x71, 0xd0, 0x4b, 0x68, 0xd3,
-	0xdf, 0x8b, 0xa5, 0xb4, 0xc0, 0xff, 0x88, 0xbf, 0xe8, 0x97, 0xb0, 0xbf, 0x5d, 0x19, 0x20, 0x21,
-	0xea, 0x90, 0x27, 0x71, 0x30, 0x8e, 0xdd, 0xf7, 0x04, 0xa9, 0xb3, 0xad, 0x00, 0x92, 0x4c, 0x03,
-	0x51, 0x08, 0x41, 0xca, 0xdd, 0x0b, 0x71, 0xc0, 0xfd, 0x57, 0xe1, 0x22, 0xed, 0xa9, 0x95, 0x32,
-	0x19, 0xc0, 0xbd, 0x9c, 0x30, 0xd8, 0xe2, 0xc7, 0x85, 0x7a, 0x95, 0x8c, 0xa1, 0xd7, 0x7e, 0xb0,
-	0x42, 0x9c, 0x1f, 0x92, 0xcc, 0xf8, 0xe4, 0x5c, 0x14, 0xe6, 0xb3, 0x05, 0xd3, 0x56, 0x80, 0x42,
-	0xd9, 0x31, 0x2b, 0xa4, 0xab, 0xfa, 0x50, 0xe9, 0xab, 0x36, 0xd0, 0x71, 0x72, 0x37, 0x60, 0xf6,
-	0x62, 0x09, 0x2b, 0xa3, 0x0c, 0xf2, 0x68, 0x56, 0xe1, 0x9f, 0xde, 0x78, 0xe4, 0xf7, 0xa9, 0x32,
-	0xab, 0xa1, 0x2a, 0x2b, 0xf1, 0xdd, 0x7d, 0xc0, 0x2f, 0x0f, 0x1f, 0x95, 0x92, 0x08, 0xf1, 0x2a,
-	0x83, 0x63, 0x85, 0x7c, 0x0e, 0x37, 0xfe, 0xba, 0xdd, 0xd1, 0xfe, 0xbe, 0xdd, 0xd1, 0xfe, 0xb9,
-	0xdd, 0xd1, 0x7e, 0xfe, 0x77, 0xe7, 0x93, 0x37, 0x2d, 0xf6, 0xf7, 0xd3, 0xf3, 0xff, 0x02, 0x00,
-	0x00, 0xff, 0xff, 0x66, 0xee, 0xaa, 0xd2, 0x8f, 0x12, 0x00, 0x00,
+	// 1136 bytes of a gzipped FileDescriptorProto
+	0x1f, 0x8b, 0x08, 0x00, 0x00, 0x00, 0x00, 0x00, 0x02, 0xff, 0xcc, 0x58, 0xcb, 0x6e, 0xdb, 0x46,
+	0x14, 0x2d, 0x29, 0x89, 0x8f, 0x2b, 0x3f, 0xd2, 0x69, 0x62, 0xd3, 0x4a, 0xec, 0x26, 0x5c, 0x19,
+	0x68, 0xe1, 0x00, 0x0e, 0x90, 0xb6, 0x9b, 0x14, 0x7e, 0xc5, 0x15, 0x2a, 0x14, 0x06, 0x1d, 0xaf,
+	0x0d, 0x46, 0x33, 0x91, 0x09, 0x4b, 0x24, 0x43, 0x52, 0x31, 0xf4, 0x01, 0xfd, 0x87, 0x02, 0x5d,
+	0xb5, 0xbf, 0xd2, 0x4d, 0x97, 0xfd, 0x84, 0xc2, 0x5d, 0x76, 0xd9, 0x1f, 0x28, 0xe6, 0xc5, 0xa7,
+	0x46, 0x86, 0xa3, 0x4d, 0x76, 0xba, 0x73, 0x67, 0xee, 0x9c, 0x7b, 0xee, 0x99, 0x3b, 0x43, 0xc1,
+	0x6a, 0x9a, 0x4d, 0x31, 0x09, 0xb3, 0xbd, 0x38, 0x89, 0xb2, 0x08, 0xad, 0x0b, 0xf3, 0x32, 0x25,
+	0xc9, 0x87, 0x60, 0x48, 0x5c, 0x00, 0xeb, 0x64, 0x12, 0x67, 0x33, 0x8f, 0xa4, 0xee, 0xbf, 0x1a,
+	0x98, 0xe7, 0xdc, 0x8f, 0xd6, 0x40, 0x0f, 0xb0, 0xa3, 0x3d, 0xd5, 0x76, 0x6d, 0x4f, 0x0f, 0x30,
+	0x7a, 0x0c, 0xf6, 0xbb, 0xe9, 0x78, 0x7c, 0x19, 0xfa, 0x13, 0xe2, 0xe8, 0x6c, 0xd8, 0xa2, 0x03,
+	0x3f, 0xf9, 0x13, 0x82, 0x1e, 0x42, 0x27, 0xbe, 0x8a, 0x42, 0xe2, 0xb4, 0x98, 0x83, 0x1b, 0xa8,
+	0x07, 0x56, 0xec, 0xa7, 0xe9, 0x4d, 0x94, 0x60, 0xa7, 0xcd, 0x57, 0x48, 0x9b, 0xfa, 0xde, 0x06,
+	0x49, 0x76, 0x85, 0xfd, 0x99, 0xd3, 0xe1, 0x3e, 0x69, 0xa3, 0x0d, 0x30, 0x46, 0x24, 0xc4, 0x24,
+	0x71, 0x0c, 0xe6, 0x11, 0x16, 0x72, 0xc0, 0xf4, 0x31, 0x4e, 0x48, 0x9a, 0x3a, 0x26, 0x73, 0x48,
+	0x13, 0x6d, 0x81, 0x35, 0x4a, 0xa2, 0x69, 0x7c, 0x19, 0x60, 0xc7, 0xe2, 0x2e, 0x66, 0xf7, 0x31,
+	0x5d, 0x34, 0x8c, 0x26, 0x13, 0x12, 0x66, 0x8e, 0xcd, 0x3d, 0xc2, 0x74, 0x7f, 0xd3, 0xc0, 0x38,
+	0x3f, 0x63, 0x48, 0xeb, 0xc9, 0x3e, 0x84, 0xce, 0xcd, 0x55, 0x94, 0xca, 0x44, 0xb9, 0xa1, 0xc8,
+	0x72, 0x1b, 0x40, 0x72, 0x1a, 0xc8, 0x3c, 0x6d, 0x31, 0xd2, 0xc7, 0xd4, 0x3d, 0x4c, 0x88, 0x9f,
+	0x11, 0x7c, 0xe9, 0x67, 0x22, 0x55, 0x5b, 0x8c, 0x1c, 0x64, 0xd4, 0x3d, 0x8d, 0xb1, 0x74, 0xf3,
+	0x7c, 0x6d, 0x31, 0x72, 0x90, 0xb9, 0xbf, 0x6a, 0x60, 0x0c, 0x96, 0xc7, 0xb8, 0x09, 0xe6, 0x98,
+	0xf8, 0xb8, 0x00, 0x68, 0x50, 0x73, 0x69, 0x74, 0xdf, 0x83, 0x3d, 0x20, 0x3e, 0x3e, 0xab, 0xef,
+	0xa1, 0x55, 0xf6, 0xd8, 0x02, 0x8b, 0xa1, 0xa0, 0x1e, 0x8e, 0xd5, 0x64, 0x76, 0x1f, 0xbb, 0xbb,
+	0xa0, 0x1f, 0xce, 0x1a, 0x99, 0x21, 0x68, 0x97, 0x54, 0xc6, 0x7e, 0xbb, 0xff, 0xe9, 0xd0, 0x15,
+	0xd2, 0xf4, 0x48, 0x1a, 0x7f, 0x8a, 0xf2, 0x7c, 0x0e, 0x06, 0x0b, 0x4c, 0xd5, 0xd9, 0xda, 0xed,
+	0xee, 0x6f, 0xee, 0xd5, 0xce, 0xda, 0x1e, 0x57, 0x9b, 0x27, 0xa6, 0x95, 0xf5, 0x6c, 0x55, 0xf5,
+	0xbc, 0x57, 0xd2, 0x33, 0x55, 0x6d, 0x77, 0xff, 0x8b, 0x46, 0xb0, 0xc3, 0xd9, 0x5c, 0x91, 0x43,
+	0x45, 0xe4, 0xb5, 0x02, 0x77, 0x17, 0x17, 0x78, 0xa5, 0x5e, 0xe0, 0x9f, 0x75, 0x68, 0xd3, 0x0a,
+	0xdf, 0x8f, 0xee, 0x32, 0x79, 0x2d, 0x25, 0x79, 0x6d, 0xd5, 0xd9, 0xee, 0x54, 0xb9, 0xd8, 0x00,
+	0x23, 0x8d, 0xa6, 0xc9, 0x90, 0x48, 0xba, 0xb9, 0x55, 0x14, 0xd5, 0x2c, 0x17, 0xb5, 0xc4, 0x84,
+	0x55, 0x65, 0x62, 0x13, 0xcc, 0x69, 0x4a, 0x12, 0x49, 0xa9, 0xed, 0x19, 0xd4, 0xec, 0x63, 0xf4,
+	0x0c, 0x56, 0x70, 0x90, 0x90, 0x61, 0x16, 0x44, 0x21, 0xf5, 0x72, 0x06, 0xbb, 0xf9, 0x58, 0x1f,
+	0xbb, 0xbf, 0xb7, 0xc0, 0xa2, 0x3c, 0xdc, 0x5f, 0x7a, 0x85, 0x28, 0x5a, 0x0a, 0x51, 0x0c, 0xaa,
+	0xa2, 0x28, 0x93, 0xd7, 0x56, 0x92, 0xd7, 0x51, 0x91, 0x67, 0xa8, 0xc8, 0x33, 0xe7, 0x93, 0x67,
+	0x29, 0xc8, 0xab, 0xf6, 0x4a, 0xf4, 0x75, 0x41, 0x1e, 0xa8, 0xf5, 0x28, 0x19, 0x7d, 0x59, 0x63,
+	0xb4, 0xab, 0x5e, 0x52, 0xa6, 0xb9, 0x26, 0xd6, 0x95, 0xc5, 0x62, 0x5d, 0xad, 0x8b, 0xf5, 0x04,
+	0xec, 0x41, 0x90, 0x66, 0x7d, 0xec, 0x91, 0xf7, 0xb4, 0x87, 0xc4, 0xfe, 0x88, 0xb0, 0x32, 0xb5,
+	0x3c, 0xf6, 0x9b, 0x26, 0x3d, 0x0e, 0x26, 0x41, 0xc6, 0x8a, 0xd4, 0xf2, 0xb8, 0x21, 0xca, 0xd9,
+	0x92, 0xe5, 0x74, 0x8f, 0x60, 0x7d, 0x10, 0x8d, 0x82, 0x30, 0xef, 0x36, 0xef, 0x0b, 0xb6, 0x34,
+	0x55, 0xff, 0xd0, 0xab, 0xfd, 0xc3, 0xf5, 0x61, 0x5d, 0xac, 0xa7, 0x90, 0x98, 0x6c, 0xbe, 0x05,
+	0x4b, 0xe4, 0x9f, 0x3a, 0x1a, 0xd3, 0xc2, 0x93, 0x66, 0x83, 0x28, 0x3a, 0x9c, 0x97, 0xcf, 0xa6,
+	0xdb, 0x0f, 0xa3, 0x69, 0x98, 0xe3, 0x66, 0x86, 0x7b, 0x06, 0x0f, 0xe4, 0x16, 0x14, 0xae, 0x94,
+	0x66, 0x74, 0xcd, 0x50, 0x5a, 0x9e, 0x1e, 0x5d, 0xd3, 0x95, 0x59, 0x74, 0x4d, 0x42, 0x79, 0x47,
+	0x30, 0x83, 0x8a, 0xe2, 0xe6, 0x2a, 0xf2, 0x27, 0x81, 0xc8, 0x5a, 0x58, 0xee, 0x05, 0xac, 0x50,
+	0x91, 0xe7, 0x88, 0x9f, 0x43, 0x87, 0xb6, 0x70, 0x09, 0x77, 0xab, 0x29, 0x5d, 0x71, 0x24, 0x3c,
+	0x3e, 0x4f, 0x01, 0xf4, 0x05, 0x98, 0x3c, 0xe4, 0x3d, 0xaa, 0xe2, 0x6e, 0x43, 0xe7, 0x0d, 0x03,
+	0x9b, 0xa7, 0xa0, 0x95, 0x52, 0x70, 0xb7, 0xc0, 0x3c, 0x9c, 0xf1, 0x4a, 0xd7, 0x8e, 0xa3, 0xfb,
+	0x04, 0xda, 0x0c, 0x7d, 0x0e, 0x46, 0x2b, 0x83, 0xf9, 0x06, 0x2c, 0xea, 0xa5, 0x80, 0xd0, 0x57,
+	0xc5, 0x0c, 0x9a, 0xdf, 0xa3, 0x46, 0x7e, 0x3c, 0x37, 0xbe, 0xf0, 0x25, 0xc0, 0x59, 0x12, 0xbd,
+	0x0b, 0x38, 0x35, 0xf2, 0x8a, 0xd2, 0x8a, 0x2b, 0xaa, 0x9a, 0xbd, 0x2e, 0xd7, 0xf9, 0xb0, 0x56,
+	0xac, 0x63, 0xdb, 0x56, 0x80, 0xc9, 0x79, 0xe8, 0x3b, 0xb0, 0xf3, 0xa3, 0xe0, 0xe8, 0x0c, 0xd0,
+	0xe3, 0x06, 0xa0, 0x22, 0x92, 0x57, 0xcc, 0x76, 0x7f, 0x80, 0x15, 0xa1, 0x84, 0xb3, 0x39, 0x2f,
+	0x12, 0xad, 0xfe, 0x22, 0x51, 0xdf, 0xc7, 0xfb, 0x7f, 0xac, 0xc2, 0x9a, 0x08, 0x75, 0xce, 0xb7,
+	0x44, 0xa7, 0xb0, 0x2a, 0x46, 0x8e, 0xd8, 0x41, 0x44, 0x8e, 0x4a, 0xb5, 0xbd, 0x85, 0x7a, 0x46,
+	0xc7, 0x00, 0xc2, 0x3c, 0x25, 0xd9, 0x9c, 0x28, 0xa2, 0x9e, 0x77, 0x44, 0x39, 0xc9, 0xe1, 0x9c,
+	0x07, 0xa3, 0xf0, 0x22, 0x46, 0x1b, 0x8d, 0xe9, 0x4c, 0x37, 0x77, 0x84, 0xe9, 0xe7, 0xaf, 0x09,
+	0x56, 0x92, 0x26, 0x1a, 0xa1, 0xd8, 0xde, 0x53, 0x55, 0x98, 0xfc, 0x94, 0x14, 0xe7, 0xf0, 0x94,
+	0xde, 0xc6, 0x2c, 0x5e, 0x6f, 0x6e, 0x3c, 0x9e, 0xdf, 0xdd, 0x11, 0xcf, 0xf3, 0x7a, 0xb2, 0x93,
+	0x8d, 0x9a, 0x2b, 0x6a, 0x0d, 0xaa, 0xf7, 0x4c, 0x19, 0x33, 0x6f, 0x0d, 0x45, 0x1d, 0x2f, 0x58,
+	0xc7, 0x5c, 0xa2, 0x8e, 0x32, 0xd0, 0x31, 0x19, 0x93, 0xb9, 0x81, 0x64, 0x29, 0x9b, 0x1d, 0x43,
+	0x7e, 0x6a, 0xa0, 0x57, 0x00, 0xb4, 0x7b, 0x08, 0x4d, 0x3d, 0x9a, 0xdb, 0x5a, 0x7a, 0xea, 0x8e,
+	0x83, 0x5e, 0x81, 0x49, 0x7f, 0x2f, 0x96, 0xd2, 0x82, 0xf5, 0x47, 0xfc, 0x42, 0xbf, 0xa3, 0xfa,
+	0xdb, 0x73, 0x03, 0xe4, 0x85, 0x3a, 0xe4, 0x49, 0x1c, 0x0c, 0xb3, 0xe0, 0x03, 0x41, 0xea, 0x6c,
+	0xe7, 0x00, 0xc9, 0xbb, 0x81, 0x20, 0x42, 0x14, 0xe5, 0xfe, 0x44, 0x1c, 0xf0, 0xf5, 0xcb, 0xd4,
+	0xa2, 0x38, 0x53, 0x4b, 0x65, 0xd2, 0x87, 0xcf, 0x2b, 0xc2, 0x60, 0x83, 0x1f, 0x17, 0xea, 0x75,
+	0xde, 0x86, 0xde, 0x44, 0xf1, 0x12, 0x71, 0x7e, 0xcc, 0x33, 0xe3, 0x9d, 0x73, 0x51, 0x98, 0x2f,
+	0x17, 0x74, 0x5b, 0x01, 0x0a, 0x95, 0xdb, 0xac, 0x90, 0xae, 0xea, 0x95, 0xdf, 0x53, 0x39, 0xd0,
+	0x71, 0xfe, 0x36, 0x60, 0xf6, 0x62, 0x09, 0x2b, 0xa3, 0xf4, 0xab, 0x68, 0x96, 0xa9, 0x3f, 0x7d,
+	0xf1, 0xc8, 0xcf, 0x38, 0x65, 0x56, 0x03, 0x55, 0x56, 0xe2, 0xf3, 0xf4, 0x80, 0x3f, 0x1e, 0x3e,
+	0x2a, 0x25, 0x11, 0xe2, 0x75, 0x09, 0xc7, 0x12, 0xf9, 0x1c, 0x3e, 0xf8, 0xf3, 0x76, 0x47, 0xfb,
+	0xeb, 0x76, 0x47, 0xfb, 0xfb, 0x76, 0x47, 0xfb, 0xe5, 0x9f, 0x9d, 0xcf, 0xde, 0x1a, 0xec, 0xcf,
+	0x8f, 0x17, 0xff, 0x07, 0x00, 0x00, 0xff, 0xff, 0x6e, 0x01, 0x9b, 0x46, 0x0d, 0x11, 0x00, 0x00,
 }
 
 // Reference imports to suppress errors if they are not otherwise used.
@@ -2725,68 +2623,33 @@ func (m *Student) MarshalToSizedBuffer(dAtA []byte) (int, error) {
 		copy(dAtA[i:], m.Comment)
 		i = encodeVarintStudent(dAtA, i, uint64(len(m.Comment)))
 		i--
-		dAtA[i] = 0x72
-	}
-	if len(m.Status) > 0 {
-		i -= len(m.Status)
-		copy(dAtA[i:], m.Status)
-		i = encodeVarintStudent(dAtA, i, uint64(len(m.Status)))
-		i--
-		dAtA[i] = 0x6a
+		dAtA[i] = 0x4a
 	}
 	if len(m.GroupId) > 0 {
 		i -= len(m.GroupId)
 		copy(dAtA[i:], m.GroupId)
 		i = encodeVarintStudent(dAtA, i, uint64(len(m.GroupId)))
 		i--
-		dAtA[i] = 0x62
+		dAtA[i] = 0x42
 	}
 	if len(m.Address) > 0 {
 		i -= len(m.Address)
 		copy(dAtA[i:], m.Address)
 		i = encodeVarintStudent(dAtA, i, uint64(len(m.Address)))
 		i--
-		dAtA[i] = 0x5a
-	}
-	if len(m.PassportImage2) > 0 {
-		i -= len(m.PassportImage2)
-		copy(dAtA[i:], m.PassportImage2)
-		i = encodeVarintStudent(dAtA, i, uint64(len(m.PassportImage2)))
-		i--
-		dAtA[i] = 0x52
-	}
-	if len(m.PassportImage1) > 0 {
-		i -= len(m.PassportImage1)
-		copy(dAtA[i:], m.PassportImage1)
-		i = encodeVarintStudent(dAtA, i, uint64(len(m.PassportImage1)))
-		i--
-		dAtA[i] = 0x4a
-	}
-	if len(m.PassportSeries) > 0 {
-		i -= len(m.PassportSeries)
-		copy(dAtA[i:], m.PassportSeries)
-		i = encodeVarintStudent(dAtA, i, uint64(len(m.PassportSeries)))
-		i--
-		dAtA[i] = 0x42
+		dAtA[i] = 0x3a
 	}
 	if len(m.Gender) > 0 {
 		i -= len(m.Gender)
 		copy(dAtA[i:], m.Gender)
 		i = encodeVarintStudent(dAtA, i, uint64(len(m.Gender)))
 		i--
-		dAtA[i] = 0x3a
+		dAtA[i] = 0x32
 	}
 	if len(m.Birthday) > 0 {
 		i -= len(m.Birthday)
 		copy(dAtA[i:], m.Birthday)
 		i = encodeVarintStudent(dAtA, i, uint64(len(m.Birthday)))
-		i--
-		dAtA[i] = 0x32
-	}
-	if len(m.Email) > 0 {
-		i -= len(m.Email)
-		copy(dAtA[i:], m.Email)
-		i = encodeVarintStudent(dAtA, i, uint64(len(m.Email)))
 		i--
 		dAtA[i] = 0x2a
 	}
@@ -3070,32 +2933,21 @@ func (m *StudentResp) MarshalToSizedBuffer(dAtA []byte) (int, error) {
 		copy(dAtA[i:], m.UpdatedAt)
 		i = encodeVarintStudent(dAtA, i, uint64(len(m.UpdatedAt)))
 		i--
-		dAtA[i] = 0x1
-		i--
-		dAtA[i] = 0x8a
+		dAtA[i] = 0x62
 	}
 	if len(m.CreatedAt) > 0 {
 		i -= len(m.CreatedAt)
 		copy(dAtA[i:], m.CreatedAt)
 		i = encodeVarintStudent(dAtA, i, uint64(len(m.CreatedAt)))
 		i--
-		dAtA[i] = 0x1
-		i--
-		dAtA[i] = 0x82
+		dAtA[i] = 0x5a
 	}
 	if len(m.Comment) > 0 {
 		i -= len(m.Comment)
 		copy(dAtA[i:], m.Comment)
 		i = encodeVarintStudent(dAtA, i, uint64(len(m.Comment)))
 		i--
-		dAtA[i] = 0x7a
-	}
-	if len(m.Status) > 0 {
-		i -= len(m.Status)
-		copy(dAtA[i:], m.Status)
-		i = encodeVarintStudent(dAtA, i, uint64(len(m.Status)))
-		i--
-		dAtA[i] = 0x72
+		dAtA[i] = 0x52
 	}
 	if m.GroupId != nil {
 		{
@@ -3107,35 +2959,14 @@ func (m *StudentResp) MarshalToSizedBuffer(dAtA []byte) (int, error) {
 			i = encodeVarintStudent(dAtA, i, uint64(size))
 		}
 		i--
-		dAtA[i] = 0x6a
+		dAtA[i] = 0x4a
 	}
 	if len(m.Address) > 0 {
 		i -= len(m.Address)
 		copy(dAtA[i:], m.Address)
 		i = encodeVarintStudent(dAtA, i, uint64(len(m.Address)))
 		i--
-		dAtA[i] = 0x62
-	}
-	if len(m.PassportImage2) > 0 {
-		i -= len(m.PassportImage2)
-		copy(dAtA[i:], m.PassportImage2)
-		i = encodeVarintStudent(dAtA, i, uint64(len(m.PassportImage2)))
-		i--
-		dAtA[i] = 0x5a
-	}
-	if len(m.PassportImage1) > 0 {
-		i -= len(m.PassportImage1)
-		copy(dAtA[i:], m.PassportImage1)
-		i = encodeVarintStudent(dAtA, i, uint64(len(m.PassportImage1)))
-		i--
-		dAtA[i] = 0x52
-	}
-	if len(m.PassportSeries) > 0 {
-		i -= len(m.PassportSeries)
-		copy(dAtA[i:], m.PassportSeries)
-		i = encodeVarintStudent(dAtA, i, uint64(len(m.PassportSeries)))
-		i--
-		dAtA[i] = 0x4a
+		dAtA[i] = 0x42
 	}
 	if len(m.Phones) > 0 {
 		for iNdEx := len(m.Phones) - 1; iNdEx >= 0; iNdEx-- {
@@ -3148,7 +2979,7 @@ func (m *StudentResp) MarshalToSizedBuffer(dAtA []byte) (int, error) {
 				i = encodeVarintStudent(dAtA, i, uint64(size))
 			}
 			i--
-			dAtA[i] = 0x42
+			dAtA[i] = 0x3a
 		}
 	}
 	if len(m.Gender) > 0 {
@@ -3156,19 +2987,12 @@ func (m *StudentResp) MarshalToSizedBuffer(dAtA []byte) (int, error) {
 		copy(dAtA[i:], m.Gender)
 		i = encodeVarintStudent(dAtA, i, uint64(len(m.Gender)))
 		i--
-		dAtA[i] = 0x3a
+		dAtA[i] = 0x32
 	}
 	if len(m.Birthday) > 0 {
 		i -= len(m.Birthday)
 		copy(dAtA[i:], m.Birthday)
 		i = encodeVarintStudent(dAtA, i, uint64(len(m.Birthday)))
-		i--
-		dAtA[i] = 0x32
-	}
-	if len(m.Email) > 0 {
-		i -= len(m.Email)
-		copy(dAtA[i:], m.Email)
-		i = encodeVarintStudent(dAtA, i, uint64(len(m.Email)))
 		i--
 		dAtA[i] = 0x2a
 	}
@@ -3232,54 +3056,47 @@ func (m *Lead) MarshalToSizedBuffer(dAtA []byte) (int, error) {
 		copy(dAtA[i:], m.DirectionId)
 		i = encodeVarintStudent(dAtA, i, uint64(len(m.DirectionId)))
 		i--
-		dAtA[i] = 0x5a
+		dAtA[i] = 0x52
 	}
 	if len(m.UserId) > 0 {
 		i -= len(m.UserId)
 		copy(dAtA[i:], m.UserId)
 		i = encodeVarintStudent(dAtA, i, uint64(len(m.UserId)))
 		i--
-		dAtA[i] = 0x52
+		dAtA[i] = 0x4a
 	}
 	if len(m.Comment) > 0 {
 		i -= len(m.Comment)
 		copy(dAtA[i:], m.Comment)
 		i = encodeVarintStudent(dAtA, i, uint64(len(m.Comment)))
 		i--
-		dAtA[i] = 0x4a
+		dAtA[i] = 0x42
 	}
 	if len(m.Phone) > 0 {
 		i -= len(m.Phone)
 		copy(dAtA[i:], m.Phone)
 		i = encodeVarintStudent(dAtA, i, uint64(len(m.Phone)))
 		i--
-		dAtA[i] = 0x42
+		dAtA[i] = 0x3a
 	}
 	if len(m.Source) > 0 {
 		i -= len(m.Source)
 		copy(dAtA[i:], m.Source)
 		i = encodeVarintStudent(dAtA, i, uint64(len(m.Source)))
 		i--
-		dAtA[i] = 0x3a
+		dAtA[i] = 0x32
 	}
 	if len(m.Address) > 0 {
 		i -= len(m.Address)
 		copy(dAtA[i:], m.Address)
 		i = encodeVarintStudent(dAtA, i, uint64(len(m.Address)))
 		i--
-		dAtA[i] = 0x32
+		dAtA[i] = 0x2a
 	}
 	if len(m.Gender) > 0 {
 		i -= len(m.Gender)
 		copy(dAtA[i:], m.Gender)
 		i = encodeVarintStudent(dAtA, i, uint64(len(m.Gender)))
-		i--
-		dAtA[i] = 0x2a
-	}
-	if len(m.Status) > 0 {
-		i -= len(m.Status)
-		copy(dAtA[i:], m.Status)
-		i = encodeVarintStudent(dAtA, i, uint64(len(m.Status)))
 		i--
 		dAtA[i] = 0x22
 	}
@@ -3336,14 +3153,14 @@ func (m *LeadResp) MarshalToSizedBuffer(dAtA []byte) (int, error) {
 		copy(dAtA[i:], m.UpdatedAt)
 		i = encodeVarintStudent(dAtA, i, uint64(len(m.UpdatedAt)))
 		i--
-		dAtA[i] = 0x72
+		dAtA[i] = 0x6a
 	}
 	if len(m.CreatedAt) > 0 {
 		i -= len(m.CreatedAt)
 		copy(dAtA[i:], m.CreatedAt)
 		i = encodeVarintStudent(dAtA, i, uint64(len(m.CreatedAt)))
 		i--
-		dAtA[i] = 0x6a
+		dAtA[i] = 0x62
 	}
 	if m.DirectionId != nil {
 		{
@@ -3355,7 +3172,7 @@ func (m *LeadResp) MarshalToSizedBuffer(dAtA []byte) (int, error) {
 			i = encodeVarintStudent(dAtA, i, uint64(size))
 		}
 		i--
-		dAtA[i] = 0x62
+		dAtA[i] = 0x5a
 	}
 	if m.UserId != nil {
 		{
@@ -3367,47 +3184,40 @@ func (m *LeadResp) MarshalToSizedBuffer(dAtA []byte) (int, error) {
 			i = encodeVarintStudent(dAtA, i, uint64(size))
 		}
 		i--
-		dAtA[i] = 0x5a
+		dAtA[i] = 0x52
 	}
 	if len(m.Comment) > 0 {
 		i -= len(m.Comment)
 		copy(dAtA[i:], m.Comment)
 		i = encodeVarintStudent(dAtA, i, uint64(len(m.Comment)))
 		i--
-		dAtA[i] = 0x52
+		dAtA[i] = 0x4a
 	}
 	if len(m.Phone) > 0 {
 		i -= len(m.Phone)
 		copy(dAtA[i:], m.Phone)
 		i = encodeVarintStudent(dAtA, i, uint64(len(m.Phone)))
 		i--
-		dAtA[i] = 0x4a
+		dAtA[i] = 0x42
 	}
 	if len(m.Source) > 0 {
 		i -= len(m.Source)
 		copy(dAtA[i:], m.Source)
 		i = encodeVarintStudent(dAtA, i, uint64(len(m.Source)))
 		i--
-		dAtA[i] = 0x42
+		dAtA[i] = 0x3a
 	}
 	if len(m.Address) > 0 {
 		i -= len(m.Address)
 		copy(dAtA[i:], m.Address)
 		i = encodeVarintStudent(dAtA, i, uint64(len(m.Address)))
 		i--
-		dAtA[i] = 0x3a
+		dAtA[i] = 0x32
 	}
 	if len(m.Gender) > 0 {
 		i -= len(m.Gender)
 		copy(dAtA[i:], m.Gender)
 		i = encodeVarintStudent(dAtA, i, uint64(len(m.Gender)))
-		i--
-		dAtA[i] = 0x32
-	}
-	if len(m.Status) > 0 {
-		i -= len(m.Status)
-		copy(dAtA[i:], m.Status)
-		i = encodeVarintStudent(dAtA, i, uint64(len(m.Status)))
 		i--
 		dAtA[i] = 0x2a
 	}
@@ -4028,10 +3838,6 @@ func (m *Student) Size() (n int) {
 	if l > 0 {
 		n += 1 + l + sovStudent(uint64(l))
 	}
-	l = len(m.Email)
-	if l > 0 {
-		n += 1 + l + sovStudent(uint64(l))
-	}
 	l = len(m.Birthday)
 	if l > 0 {
 		n += 1 + l + sovStudent(uint64(l))
@@ -4040,27 +3846,11 @@ func (m *Student) Size() (n int) {
 	if l > 0 {
 		n += 1 + l + sovStudent(uint64(l))
 	}
-	l = len(m.PassportSeries)
-	if l > 0 {
-		n += 1 + l + sovStudent(uint64(l))
-	}
-	l = len(m.PassportImage1)
-	if l > 0 {
-		n += 1 + l + sovStudent(uint64(l))
-	}
-	l = len(m.PassportImage2)
-	if l > 0 {
-		n += 1 + l + sovStudent(uint64(l))
-	}
 	l = len(m.Address)
 	if l > 0 {
 		n += 1 + l + sovStudent(uint64(l))
 	}
 	l = len(m.GroupId)
-	if l > 0 {
-		n += 1 + l + sovStudent(uint64(l))
-	}
-	l = len(m.Status)
 	if l > 0 {
 		n += 1 + l + sovStudent(uint64(l))
 	}
@@ -4208,10 +3998,6 @@ func (m *StudentResp) Size() (n int) {
 	if l > 0 {
 		n += 1 + l + sovStudent(uint64(l))
 	}
-	l = len(m.Email)
-	if l > 0 {
-		n += 1 + l + sovStudent(uint64(l))
-	}
 	l = len(m.Birthday)
 	if l > 0 {
 		n += 1 + l + sovStudent(uint64(l))
@@ -4226,18 +4012,6 @@ func (m *StudentResp) Size() (n int) {
 			n += 1 + l + sovStudent(uint64(l))
 		}
 	}
-	l = len(m.PassportSeries)
-	if l > 0 {
-		n += 1 + l + sovStudent(uint64(l))
-	}
-	l = len(m.PassportImage1)
-	if l > 0 {
-		n += 1 + l + sovStudent(uint64(l))
-	}
-	l = len(m.PassportImage2)
-	if l > 0 {
-		n += 1 + l + sovStudent(uint64(l))
-	}
 	l = len(m.Address)
 	if l > 0 {
 		n += 1 + l + sovStudent(uint64(l))
@@ -4246,21 +4020,17 @@ func (m *StudentResp) Size() (n int) {
 		l = m.GroupId.Size()
 		n += 1 + l + sovStudent(uint64(l))
 	}
-	l = len(m.Status)
-	if l > 0 {
-		n += 1 + l + sovStudent(uint64(l))
-	}
 	l = len(m.Comment)
 	if l > 0 {
 		n += 1 + l + sovStudent(uint64(l))
 	}
 	l = len(m.CreatedAt)
 	if l > 0 {
-		n += 2 + l + sovStudent(uint64(l))
+		n += 1 + l + sovStudent(uint64(l))
 	}
 	l = len(m.UpdatedAt)
 	if l > 0 {
-		n += 2 + l + sovStudent(uint64(l))
+		n += 1 + l + sovStudent(uint64(l))
 	}
 	if m.XXX_unrecognized != nil {
 		n += len(m.XXX_unrecognized)
@@ -4283,10 +4053,6 @@ func (m *Lead) Size() (n int) {
 		n += 1 + l + sovStudent(uint64(l))
 	}
 	l = len(m.Birthday)
-	if l > 0 {
-		n += 1 + l + sovStudent(uint64(l))
-	}
-	l = len(m.Status)
 	if l > 0 {
 		n += 1 + l + sovStudent(uint64(l))
 	}
@@ -4345,10 +4111,6 @@ func (m *LeadResp) Size() (n int) {
 		}
 	}
 	l = len(m.Birthday)
-	if l > 0 {
-		n += 1 + l + sovStudent(uint64(l))
-	}
-	l = len(m.Status)
 	if l > 0 {
 		n += 1 + l + sovStudent(uint64(l))
 	}
@@ -4860,38 +4622,6 @@ func (m *Student) Unmarshal(dAtA []byte) error {
 			iNdEx = postIndex
 		case 5:
 			if wireType != 2 {
-				return fmt.Errorf("proto: wrong wireType = %d for field Email", wireType)
-			}
-			var stringLen uint64
-			for shift := uint(0); ; shift += 7 {
-				if shift >= 64 {
-					return ErrIntOverflowStudent
-				}
-				if iNdEx >= l {
-					return io.ErrUnexpectedEOF
-				}
-				b := dAtA[iNdEx]
-				iNdEx++
-				stringLen |= uint64(b&0x7F) << shift
-				if b < 0x80 {
-					break
-				}
-			}
-			intStringLen := int(stringLen)
-			if intStringLen < 0 {
-				return ErrInvalidLengthStudent
-			}
-			postIndex := iNdEx + intStringLen
-			if postIndex < 0 {
-				return ErrInvalidLengthStudent
-			}
-			if postIndex > l {
-				return io.ErrUnexpectedEOF
-			}
-			m.Email = string(dAtA[iNdEx:postIndex])
-			iNdEx = postIndex
-		case 6:
-			if wireType != 2 {
 				return fmt.Errorf("proto: wrong wireType = %d for field Birthday", wireType)
 			}
 			var stringLen uint64
@@ -4922,7 +4652,7 @@ func (m *Student) Unmarshal(dAtA []byte) error {
 			}
 			m.Birthday = string(dAtA[iNdEx:postIndex])
 			iNdEx = postIndex
-		case 7:
+		case 6:
 			if wireType != 2 {
 				return fmt.Errorf("proto: wrong wireType = %d for field Gender", wireType)
 			}
@@ -4954,103 +4684,7 @@ func (m *Student) Unmarshal(dAtA []byte) error {
 			}
 			m.Gender = string(dAtA[iNdEx:postIndex])
 			iNdEx = postIndex
-		case 8:
-			if wireType != 2 {
-				return fmt.Errorf("proto: wrong wireType = %d for field PassportSeries", wireType)
-			}
-			var stringLen uint64
-			for shift := uint(0); ; shift += 7 {
-				if shift >= 64 {
-					return ErrIntOverflowStudent
-				}
-				if iNdEx >= l {
-					return io.ErrUnexpectedEOF
-				}
-				b := dAtA[iNdEx]
-				iNdEx++
-				stringLen |= uint64(b&0x7F) << shift
-				if b < 0x80 {
-					break
-				}
-			}
-			intStringLen := int(stringLen)
-			if intStringLen < 0 {
-				return ErrInvalidLengthStudent
-			}
-			postIndex := iNdEx + intStringLen
-			if postIndex < 0 {
-				return ErrInvalidLengthStudent
-			}
-			if postIndex > l {
-				return io.ErrUnexpectedEOF
-			}
-			m.PassportSeries = string(dAtA[iNdEx:postIndex])
-			iNdEx = postIndex
-		case 9:
-			if wireType != 2 {
-				return fmt.Errorf("proto: wrong wireType = %d for field PassportImage1", wireType)
-			}
-			var stringLen uint64
-			for shift := uint(0); ; shift += 7 {
-				if shift >= 64 {
-					return ErrIntOverflowStudent
-				}
-				if iNdEx >= l {
-					return io.ErrUnexpectedEOF
-				}
-				b := dAtA[iNdEx]
-				iNdEx++
-				stringLen |= uint64(b&0x7F) << shift
-				if b < 0x80 {
-					break
-				}
-			}
-			intStringLen := int(stringLen)
-			if intStringLen < 0 {
-				return ErrInvalidLengthStudent
-			}
-			postIndex := iNdEx + intStringLen
-			if postIndex < 0 {
-				return ErrInvalidLengthStudent
-			}
-			if postIndex > l {
-				return io.ErrUnexpectedEOF
-			}
-			m.PassportImage1 = string(dAtA[iNdEx:postIndex])
-			iNdEx = postIndex
-		case 10:
-			if wireType != 2 {
-				return fmt.Errorf("proto: wrong wireType = %d for field PassportImage2", wireType)
-			}
-			var stringLen uint64
-			for shift := uint(0); ; shift += 7 {
-				if shift >= 64 {
-					return ErrIntOverflowStudent
-				}
-				if iNdEx >= l {
-					return io.ErrUnexpectedEOF
-				}
-				b := dAtA[iNdEx]
-				iNdEx++
-				stringLen |= uint64(b&0x7F) << shift
-				if b < 0x80 {
-					break
-				}
-			}
-			intStringLen := int(stringLen)
-			if intStringLen < 0 {
-				return ErrInvalidLengthStudent
-			}
-			postIndex := iNdEx + intStringLen
-			if postIndex < 0 {
-				return ErrInvalidLengthStudent
-			}
-			if postIndex > l {
-				return io.ErrUnexpectedEOF
-			}
-			m.PassportImage2 = string(dAtA[iNdEx:postIndex])
-			iNdEx = postIndex
-		case 11:
+		case 7:
 			if wireType != 2 {
 				return fmt.Errorf("proto: wrong wireType = %d for field Address", wireType)
 			}
@@ -5082,7 +4716,7 @@ func (m *Student) Unmarshal(dAtA []byte) error {
 			}
 			m.Address = string(dAtA[iNdEx:postIndex])
 			iNdEx = postIndex
-		case 12:
+		case 8:
 			if wireType != 2 {
 				return fmt.Errorf("proto: wrong wireType = %d for field GroupId", wireType)
 			}
@@ -5114,39 +4748,7 @@ func (m *Student) Unmarshal(dAtA []byte) error {
 			}
 			m.GroupId = string(dAtA[iNdEx:postIndex])
 			iNdEx = postIndex
-		case 13:
-			if wireType != 2 {
-				return fmt.Errorf("proto: wrong wireType = %d for field Status", wireType)
-			}
-			var stringLen uint64
-			for shift := uint(0); ; shift += 7 {
-				if shift >= 64 {
-					return ErrIntOverflowStudent
-				}
-				if iNdEx >= l {
-					return io.ErrUnexpectedEOF
-				}
-				b := dAtA[iNdEx]
-				iNdEx++
-				stringLen |= uint64(b&0x7F) << shift
-				if b < 0x80 {
-					break
-				}
-			}
-			intStringLen := int(stringLen)
-			if intStringLen < 0 {
-				return ErrInvalidLengthStudent
-			}
-			postIndex := iNdEx + intStringLen
-			if postIndex < 0 {
-				return ErrInvalidLengthStudent
-			}
-			if postIndex > l {
-				return io.ErrUnexpectedEOF
-			}
-			m.Status = string(dAtA[iNdEx:postIndex])
-			iNdEx = postIndex
-		case 14:
+		case 9:
 			if wireType != 2 {
 				return fmt.Errorf("proto: wrong wireType = %d for field Comment", wireType)
 			}
@@ -6075,38 +5677,6 @@ func (m *StudentResp) Unmarshal(dAtA []byte) error {
 			iNdEx = postIndex
 		case 5:
 			if wireType != 2 {
-				return fmt.Errorf("proto: wrong wireType = %d for field Email", wireType)
-			}
-			var stringLen uint64
-			for shift := uint(0); ; shift += 7 {
-				if shift >= 64 {
-					return ErrIntOverflowStudent
-				}
-				if iNdEx >= l {
-					return io.ErrUnexpectedEOF
-				}
-				b := dAtA[iNdEx]
-				iNdEx++
-				stringLen |= uint64(b&0x7F) << shift
-				if b < 0x80 {
-					break
-				}
-			}
-			intStringLen := int(stringLen)
-			if intStringLen < 0 {
-				return ErrInvalidLengthStudent
-			}
-			postIndex := iNdEx + intStringLen
-			if postIndex < 0 {
-				return ErrInvalidLengthStudent
-			}
-			if postIndex > l {
-				return io.ErrUnexpectedEOF
-			}
-			m.Email = string(dAtA[iNdEx:postIndex])
-			iNdEx = postIndex
-		case 6:
-			if wireType != 2 {
 				return fmt.Errorf("proto: wrong wireType = %d for field Birthday", wireType)
 			}
 			var stringLen uint64
@@ -6137,7 +5707,7 @@ func (m *StudentResp) Unmarshal(dAtA []byte) error {
 			}
 			m.Birthday = string(dAtA[iNdEx:postIndex])
 			iNdEx = postIndex
-		case 7:
+		case 6:
 			if wireType != 2 {
 				return fmt.Errorf("proto: wrong wireType = %d for field Gender", wireType)
 			}
@@ -6169,7 +5739,7 @@ func (m *StudentResp) Unmarshal(dAtA []byte) error {
 			}
 			m.Gender = string(dAtA[iNdEx:postIndex])
 			iNdEx = postIndex
-		case 8:
+		case 7:
 			if wireType != 2 {
 				return fmt.Errorf("proto: wrong wireType = %d for field Phones", wireType)
 			}
@@ -6203,103 +5773,7 @@ func (m *StudentResp) Unmarshal(dAtA []byte) error {
 				return err
 			}
 			iNdEx = postIndex
-		case 9:
-			if wireType != 2 {
-				return fmt.Errorf("proto: wrong wireType = %d for field PassportSeries", wireType)
-			}
-			var stringLen uint64
-			for shift := uint(0); ; shift += 7 {
-				if shift >= 64 {
-					return ErrIntOverflowStudent
-				}
-				if iNdEx >= l {
-					return io.ErrUnexpectedEOF
-				}
-				b := dAtA[iNdEx]
-				iNdEx++
-				stringLen |= uint64(b&0x7F) << shift
-				if b < 0x80 {
-					break
-				}
-			}
-			intStringLen := int(stringLen)
-			if intStringLen < 0 {
-				return ErrInvalidLengthStudent
-			}
-			postIndex := iNdEx + intStringLen
-			if postIndex < 0 {
-				return ErrInvalidLengthStudent
-			}
-			if postIndex > l {
-				return io.ErrUnexpectedEOF
-			}
-			m.PassportSeries = string(dAtA[iNdEx:postIndex])
-			iNdEx = postIndex
-		case 10:
-			if wireType != 2 {
-				return fmt.Errorf("proto: wrong wireType = %d for field PassportImage1", wireType)
-			}
-			var stringLen uint64
-			for shift := uint(0); ; shift += 7 {
-				if shift >= 64 {
-					return ErrIntOverflowStudent
-				}
-				if iNdEx >= l {
-					return io.ErrUnexpectedEOF
-				}
-				b := dAtA[iNdEx]
-				iNdEx++
-				stringLen |= uint64(b&0x7F) << shift
-				if b < 0x80 {
-					break
-				}
-			}
-			intStringLen := int(stringLen)
-			if intStringLen < 0 {
-				return ErrInvalidLengthStudent
-			}
-			postIndex := iNdEx + intStringLen
-			if postIndex < 0 {
-				return ErrInvalidLengthStudent
-			}
-			if postIndex > l {
-				return io.ErrUnexpectedEOF
-			}
-			m.PassportImage1 = string(dAtA[iNdEx:postIndex])
-			iNdEx = postIndex
-		case 11:
-			if wireType != 2 {
-				return fmt.Errorf("proto: wrong wireType = %d for field PassportImage2", wireType)
-			}
-			var stringLen uint64
-			for shift := uint(0); ; shift += 7 {
-				if shift >= 64 {
-					return ErrIntOverflowStudent
-				}
-				if iNdEx >= l {
-					return io.ErrUnexpectedEOF
-				}
-				b := dAtA[iNdEx]
-				iNdEx++
-				stringLen |= uint64(b&0x7F) << shift
-				if b < 0x80 {
-					break
-				}
-			}
-			intStringLen := int(stringLen)
-			if intStringLen < 0 {
-				return ErrInvalidLengthStudent
-			}
-			postIndex := iNdEx + intStringLen
-			if postIndex < 0 {
-				return ErrInvalidLengthStudent
-			}
-			if postIndex > l {
-				return io.ErrUnexpectedEOF
-			}
-			m.PassportImage2 = string(dAtA[iNdEx:postIndex])
-			iNdEx = postIndex
-		case 12:
+		case 8:
 			if wireType != 2 {
 				return fmt.Errorf("proto: wrong wireType = %d for field Address", wireType)
 			}
@@ -6331,7 +5805,7 @@ func (m *StudentResp) Unmarshal(dAtA []byte) error {
 			}
 			m.Address = string(dAtA[iNdEx:postIndex])
 			iNdEx = postIndex
-		case 13:
+		case 9:
 			if wireType != 2 {
 				return fmt.Errorf("proto: wrong wireType = %d for field GroupId", wireType)
 			}
@@ -6367,39 +5841,7 @@ func (m *StudentResp) Unmarshal(dAtA []byte) error {
 				return err
 			}
 			iNdEx = postIndex
-		case 14:
-			if wireType != 2 {
-				return fmt.Errorf("proto: wrong wireType = %d for field Status", wireType)
-			}
-			var stringLen uint64
-			for shift := uint(0); ; shift += 7 {
-				if shift >= 64 {
-					return ErrIntOverflowStudent
-				}
-				if iNdEx >= l {
-					return io.ErrUnexpectedEOF
-				}
-				b := dAtA[iNdEx]
-				iNdEx++
-				stringLen |= uint64(b&0x7F) << shift
-				if b < 0x80 {
-					break
-				}
-			}
-			intStringLen := int(stringLen)
-			if intStringLen < 0 {
-				return ErrInvalidLengthStudent
-			}
-			postIndex := iNdEx + intStringLen
-			if postIndex < 0 {
-				return ErrInvalidLengthStudent
-			}
-			if postIndex > l {
-				return io.ErrUnexpectedEOF
-			}
-			m.Status = string(dAtA[iNdEx:postIndex])
-			iNdEx = postIndex
-		case 15:
+		case 10:
 			if wireType != 2 {
 				return fmt.Errorf("proto: wrong wireType = %d for field Comment", wireType)
 			}
@@ -6431,7 +5873,7 @@ func (m *StudentResp) Unmarshal(dAtA []byte) error {
 			}
 			m.Comment = string(dAtA[iNdEx:postIndex])
 			iNdEx = postIndex
-		case 16:
+		case 11:
 			if wireType != 2 {
 				return fmt.Errorf("proto: wrong wireType = %d for field CreatedAt", wireType)
 			}
@@ -6463,7 +5905,7 @@ func (m *StudentResp) Unmarshal(dAtA []byte) error {
 			}
 			m.CreatedAt = string(dAtA[iNdEx:postIndex])
 			iNdEx = postIndex
-		case 17:
+		case 12:
 			if wireType != 2 {
 				return fmt.Errorf("proto: wrong wireType = %d for field UpdatedAt", wireType)
 			}
@@ -6644,38 +6086,6 @@ func (m *Lead) Unmarshal(dAtA []byte) error {
 			iNdEx = postIndex
 		case 4:
 			if wireType != 2 {
-				return fmt.Errorf("proto: wrong wireType = %d for field Status", wireType)
-			}
-			var stringLen uint64
-			for shift := uint(0); ; shift += 7 {
-				if shift >= 64 {
-					return ErrIntOverflowStudent
-				}
-				if iNdEx >= l {
-					return io.ErrUnexpectedEOF
-				}
-				b := dAtA[iNdEx]
-				iNdEx++
-				stringLen |= uint64(b&0x7F) << shift
-				if b < 0x80 {
-					break
-				}
-			}
-			intStringLen := int(stringLen)
-			if intStringLen < 0 {
-				return ErrInvalidLengthStudent
-			}
-			postIndex := iNdEx + intStringLen
-			if postIndex < 0 {
-				return ErrInvalidLengthStudent
-			}
-			if postIndex > l {
-				return io.ErrUnexpectedEOF
-			}
-			m.Status = string(dAtA[iNdEx:postIndex])
-			iNdEx = postIndex
-		case 5:
-			if wireType != 2 {
 				return fmt.Errorf("proto: wrong wireType = %d for field Gender", wireType)
 			}
 			var stringLen uint64
@@ -6706,7 +6116,7 @@ func (m *Lead) Unmarshal(dAtA []byte) error {
 			}
 			m.Gender = string(dAtA[iNdEx:postIndex])
 			iNdEx = postIndex
-		case 6:
+		case 5:
 			if wireType != 2 {
 				return fmt.Errorf("proto: wrong wireType = %d for field Address", wireType)
 			}
@@ -6738,7 +6148,7 @@ func (m *Lead) Unmarshal(dAtA []byte) error {
 			}
 			m.Address = string(dAtA[iNdEx:postIndex])
 			iNdEx = postIndex
-		case 7:
+		case 6:
 			if wireType != 2 {
 				return fmt.Errorf("proto: wrong wireType = %d for field Source", wireType)
 			}
@@ -6770,7 +6180,7 @@ func (m *Lead) Unmarshal(dAtA []byte) error {
 			}
 			m.Source = string(dAtA[iNdEx:postIndex])
 			iNdEx = postIndex
-		case 8:
+		case 7:
 			if wireType != 2 {
 				return fmt.Errorf("proto: wrong wireType = %d for field Phone", wireType)
 			}
@@ -6802,7 +6212,7 @@ func (m *Lead) Unmarshal(dAtA []byte) error {
 			}
 			m.Phone = string(dAtA[iNdEx:postIndex])
 			iNdEx = postIndex
-		case 9:
+		case 8:
 			if wireType != 2 {
 				return fmt.Errorf("proto: wrong wireType = %d for field Comment", wireType)
 			}
@@ -6834,7 +6244,7 @@ func (m *Lead) Unmarshal(dAtA []byte) error {
 			}
 			m.Comment = string(dAtA[iNdEx:postIndex])
 			iNdEx = postIndex
-		case 10:
+		case 9:
 			if wireType != 2 {
 				return fmt.Errorf("proto: wrong wireType = %d for field UserId", wireType)
 			}
@@ -6866,7 +6276,7 @@ func (m *Lead) Unmarshal(dAtA []byte) error {
 			}
 			m.UserId = string(dAtA[iNdEx:postIndex])
 			iNdEx = postIndex
-		case 11:
+		case 10:
 			if wireType != 2 {
 				return fmt.Errorf("proto: wrong wireType = %d for field DirectionId", wireType)
 			}
@@ -7081,38 +6491,6 @@ func (m *LeadResp) Unmarshal(dAtA []byte) error {
 			iNdEx = postIndex
 		case 5:
 			if wireType != 2 {
-				return fmt.Errorf("proto: wrong wireType = %d for field Status", wireType)
-			}
-			var stringLen uint64
-			for shift := uint(0); ; shift += 7 {
-				if shift >= 64 {
-					return ErrIntOverflowStudent
-				}
-				if iNdEx >= l {
-					return io.ErrUnexpectedEOF
-				}
-				b := dAtA[iNdEx]
-				iNdEx++
-				stringLen |= uint64(b&0x7F) << shift
-				if b < 0x80 {
-					break
-				}
-			}
-			intStringLen := int(stringLen)
-			if intStringLen < 0 {
-				return ErrInvalidLengthStudent
-			}
-			postIndex := iNdEx + intStringLen
-			if postIndex < 0 {
-				return ErrInvalidLengthStudent
-			}
-			if postIndex > l {
-				return io.ErrUnexpectedEOF
-			}
-			m.Status = string(dAtA[iNdEx:postIndex])
-			iNdEx = postIndex
-		case 6:
-			if wireType != 2 {
 				return fmt.Errorf("proto: wrong wireType = %d for field Gender", wireType)
 			}
 			var stringLen uint64
@@ -7143,7 +6521,7 @@ func (m *LeadResp) Unmarshal(dAtA []byte) error {
 			}
 			m.Gender = string(dAtA[iNdEx:postIndex])
 			iNdEx = postIndex
-		case 7:
+		case 6:
 			if wireType != 2 {
 				return fmt.Errorf("proto: wrong wireType = %d for field Address", wireType)
 			}
@@ -7175,7 +6553,7 @@ func (m *LeadResp) Unmarshal(dAtA []byte) error {
 			}
 			m.Address = string(dAtA[iNdEx:postIndex])
 			iNdEx = postIndex
-		case 8:
+		case 7:
 			if wireType != 2 {
 				return fmt.Errorf("proto: wrong wireType = %d for field Source", wireType)
 			}
@@ -7207,7 +6585,7 @@ func (m *LeadResp) Unmarshal(dAtA []byte) error {
 			}
 			m.Source = string(dAtA[iNdEx:postIndex])
 			iNdEx = postIndex
-		case 9:
+		case 8:
 			if wireType != 2 {
 				return fmt.Errorf("proto: wrong wireType = %d for field Phone", wireType)
 			}
@@ -7239,7 +6617,7 @@ func (m *LeadResp) Unmarshal(dAtA []byte) error {
 			}
 			m.Phone = string(dAtA[iNdEx:postIndex])
 			iNdEx = postIndex
-		case 10:
+		case 9:
 			if wireType != 2 {
 				return fmt.Errorf("proto: wrong wireType = %d for field Comment", wireType)
 			}
@@ -7271,7 +6649,7 @@ func (m *LeadResp) Unmarshal(dAtA []byte) error {
 			}
 			m.Comment = string(dAtA[iNdEx:postIndex])
 			iNdEx = postIndex
-		case 11:
+		case 10:
 			if wireType != 2 {
 				return fmt.Errorf("proto: wrong wireType = %d for field UserId", wireType)
 			}
@@ -7307,7 +6685,7 @@ func (m *LeadResp) Unmarshal(dAtA []byte) error {
 				return err
 			}
 			iNdEx = postIndex
-		case 12:
+		case 11:
 			if wireType != 2 {
 				return fmt.Errorf("proto: wrong wireType = %d for field DirectionId", wireType)
 			}
@@ -7343,7 +6721,7 @@ func (m *LeadResp) Unmarshal(dAtA []byte) error {
 				return err
 			}
 			iNdEx = postIndex
-		case 13:
+		case 12:
 			if wireType != 2 {
 				return fmt.Errorf("proto: wrong wireType = %d for field CreatedAt", wireType)
 			}
@@ -7375,7 +6753,7 @@ func (m *LeadResp) Unmarshal(dAtA []byte) error {
 			}
 			m.CreatedAt = string(dAtA[iNdEx:postIndex])
 			iNdEx = postIndex
-		case 14:
+		case 13:
 			if wireType != 2 {
 				return fmt.Errorf("proto: wrong wireType = %d for field UpdatedAt", wireType)
 			}
