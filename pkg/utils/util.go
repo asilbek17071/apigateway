@@ -13,6 +13,8 @@ type QueryParams struct {
 	Ordering           []string
 	Search             string
 	Id                 string
+	StudentId          string
+	GroupId            string
 	MessageId          string
 	Permission         string
 	PermissionSender   string
@@ -36,6 +38,8 @@ func ParseQueryParams(queryParams map[string][]string) (*QueryParams, []string) 
 		Ordering:           []string{},
 		Search:             " ",
 		Id:                 " ",
+		StudentId:          " ",
+		GroupId:            " ",
 		MessageId:          " ",
 		Permission:         " ",
 		PermissionSender:   " ",
@@ -86,6 +90,16 @@ func ParseQueryParams(queryParams map[string][]string) (*QueryParams, []string) 
 
 		if key == "id" {
 			params.Id = value[0]
+			continue
+		}
+
+		if key == "student_id" {
+			params.StudentId = value[0]
+			continue
+		}
+
+		if key == "group_id" {
+			params.GroupId = value[0]
 			continue
 		}
 

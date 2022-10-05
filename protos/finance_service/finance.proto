@@ -11,6 +11,7 @@ service FinanceService {
     rpc PaymentDelete(ByIdReq) returns (EmptyRes);
     rpc Profit(EmptyRes) returns (ProfitRespList);
     rpc PaymentSearch(ByIdReq) returns (PaymentSearchResp);
+    rpc PaymentStudent(PySt) returns (PaymentStudentList);
 
     rpc SalaryFinanceCreate (EmptyReq) returns (Empty);
     rpc SalaryFinanceGet (Request) returns (ResponseList);
@@ -46,6 +47,11 @@ message Status{
 
 message StatusReq{
     repeated Status status = 1;
+}
+
+message PySt{
+    string student_id = 1;
+    string group_id = 2;
 }
 
 message StatusSpending{
@@ -237,3 +243,22 @@ message Count{
     int64 count = 1;
 }
 
+
+
+message PayStd{
+    string duration = 1;
+    string with_day = 2;
+    string amount = 3;
+    string pysys = 4;
+}
+
+message Pays{
+    string with_date = 1;
+    double amount = 2;
+}
+
+message PaymentStudentList{
+    repeated PayStd duration = 1;
+    Pays paid = 2;
+    Pays debt = 3;
+}

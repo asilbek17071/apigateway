@@ -3817,6 +3817,38 @@ paths:
       summary: PaymentSearchList
       tags:
       - payment
+  /payment/studentlist/:
+    get:
+      consumes:
+      - application/json
+      description: This API for getting list of payments
+      parameters:
+      - description: StudentId
+        in: query
+        name: student_id
+        type: string
+      - description: GroupId
+        in: query
+        name: group_id
+        type: string
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/models.Empty'
+        "400":
+          description: Bad Request
+          schema:
+            $ref: '#/definitions/models.StandardErrorModel'
+        "500":
+          description: Internal Server Error
+          schema:
+            $ref: '#/definitions/models.StandardErrorModel'
+      summary: PaymentStudent
+      tags:
+      - payment
   /payment/update/{id}:
     put:
       consumes:

@@ -8,7 +8,7 @@ make: *** No rule to make target 'all'.  Stop.
 # This is free software: you are free to change and redistribute it.
 # There is NO WARRANTY, to the extent permitted by law.
 
-# Make data base, printed on Tue Oct  4 17:21:48 2022
+# Make data base, printed on Wed Oct  5 14:00:47 2022
 
 # Variables
 
@@ -93,13 +93,13 @@ MAKEFILE_LIST := Makefile
 # automatic
 @F = $(notdir $@)
 # environment
-VSCODE_PID = 5660
+VSCODE_PID = 4256
 # environment
 XDG_SESSION_TYPE = x11
 # automatic
 ?D = $(patsubst %/,%,$(dir $?))
 # environment
-SESSION_MANAGER = local/i:@/tmp/.ICE-unix/2670,unix/i:/tmp/.ICE-unix/2670
+SESSION_MANAGER = local/i:@/tmp/.ICE-unix/2656,unix/i:/tmp/.ICE-unix/2656
 # automatic
 *F = $(notdir $*)
 # environment
@@ -141,7 +141,7 @@ LC_MONETARY = uz_UZ.UTF-8
 # environment
 LC_TIME = uz_UZ.UTF-8
 # environment
-INVOCATION_ID = 8cc2453b77e04ff2a5648fff7f43d0eb
+INVOCATION_ID = 910eb78233194608b273ace5b8749450
 # environment
 USERNAME = b
 # environment
@@ -167,7 +167,7 @@ GIO_LAUNCHED_DESKTOP_FILE = /usr/share/applications/code.desktop
 # makefile
 .DEFAULT_GOAL := build
 # environment
-SYSTEMD_EXEC_PID = 2689
+SYSTEMD_EXEC_PID = 2675
 # environment
 DISPLAY = :1
 # environment
@@ -177,11 +177,11 @@ GTK_MODULES = gail:atk-bridge
 # default
 MAKE_VERSION := 4.3
 # environment
-MANAGERPID = 2219
+MANAGERPID = 2221
 # environment
 LC_MEASUREMENT = uz_UZ.UTF-8
 # environment
-GIO_LAUNCHED_DESKTOP_FILE_PID = 5660
+GIO_LAUNCHED_DESKTOP_FILE_PID = 4256
 # environment
 _ = /usr/share/code/code
 # environment
@@ -191,7 +191,7 @@ XDG_RUNTIME_DIR = /run/user/1000
 # environment
 GPG_AGENT_INFO = /run/user/1000/gnupg/S.gpg-agent:0:1
 # environment
-JOURNAL_STREAM = 8:35424
+JOURNAL_STREAM = 8:33653
 # environment
 GOMODCACHE = /home/b/go/pkg/mod
 # environment
@@ -311,6 +311,6 @@ build:
 # strcache performance: lookups = 39 / hit rate = 23%
 # hash-table stats:
 # Load=30/8192=0%, Rehash=0, Collisions=0/39=0%
-# Finished Make data base on Tue Oct  4 17:21:48 2022
+# Finished Make data base on Wed Oct  5 14:00:47 2022
 
  
