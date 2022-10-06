@@ -6334,6 +6334,41 @@ paths:
       summary: TeacherLogin
       tags:
       - teacher
+  /teacher/password/update/{id}:
+    put:
+      consumes:
+      - application/json
+      description: This API for updating teacher
+      parameters:
+      - description: ID
+        in: path
+        name: id
+        required: true
+        type: string
+      - description: teacherUpdateRequest
+        in: body
+        name: request
+        required: true
+        schema:
+          $ref: '#/definitions/models.PasswordUpdate'
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/models.FinResp'
+        "400":
+          description: Bad Request
+          schema:
+            $ref: '#/definitions/models.StandardErrorModel'
+        "500":
+          description: Internal Server Error
+          schema:
+            $ref: '#/definitions/models.StandardErrorModel'
+      summary: TeacherPasswordUpdate
+      tags:
+      - teacher
   /teacher/update/{id}:
     put:
       consumes:
