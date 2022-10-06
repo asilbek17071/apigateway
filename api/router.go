@@ -176,6 +176,10 @@ func New(option Option) *gin.Engine {
 	planner.PUT("/lead/update/", handlerV1.LeadUpdate)
 	planner.DELETE("/lead/delete/", handlerV1.LeadDelete)
 
+	planner.POST("/refund/create/", handlerV1.RefundCreate)
+	planner.GET("/refund/calc/", handlerV1.RefundCalculator)
+	planner.GET("/refund/list/", handlerV1.RefundList)
+
 	planner.POST("/payment/create/", handlerV1.PaymentCreate)
 	planner.GET("/payment/byid/", handlerV1.PaymentGet)
 	planner.GET("/payment/list/", handlerV1.PaymentList)

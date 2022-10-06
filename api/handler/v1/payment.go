@@ -57,6 +57,50 @@ func (h *handlerV1) PaymentCreate(c *gin.Context) {
 	c.JSON(http.StatusCreated, response)
 }
 
+// RefundCreate ...
+// @Summary RefundCreate
+// @Router /refund/create/ [post]
+// @Description This API for creating a new refund
+// @Tags refund
+// @Accept  json
+// @Produce  json
+// @Param Refund request body models.Refund true "refundCreateRequest"
+// @Success 200 {object} models.Refund
+// @Failure 400 {object} models.StandardErrorModel
+// @Failure 500 {object} models.StandardErrorModel
+func (h *handlerV1) RefundCreate(c *gin.Context) {
+	var (
+		body        pb.Refund
+		jspbMarshal protojson.MarshalOptions
+	)
+
+	jspbMarshal.UseProtoNames = true
+
+	err := c.ShouldBindJSON(&body)
+
+	if err != nil {
+		c.JSON(http.StatusBadRequest, gin.H{
+			"error": err.Error(),
+		})
+		h.log.Error("failed to bind json", l.Error(err))
+		return
+	}
+
+	ctx, cancel := context.WithTimeout(context.Background(), time.Second*time.Duration(h.cfg.CtxTimeout))
+	defer cancel()
+
+	response, err := h.serviceManager.FinanceService().RefundCreate(ctx, &body)
+	if err != nil {
+		c.JSON(http.StatusInternalServerError, gin.H{
+			"error": err.Error(),
+		})
+		h.log.Error("failed to create refund", l.Error(err))
+		return
+	}
+
+	c.JSON(http.StatusCreated, response)
+}
+
 // PaymentGet ...
 // @Router /payment/byid/{id} [get]
 // @Summary PaymentGet
@@ -141,6 +185,98 @@ func (h *handlerV1) PaymentList(c *gin.Context) {
 			"error": err.Error(),
 		})
 		h.log.Error("failed to list payments", l.Error(err))
+		return
+	}
+
+	c.JSON(http.StatusOK, response)
+}
+
+// RefundList ...
+// @Router /refund/list/ [get]
+// @Summary RefundList
+// @Description This API for getting list of refunds
+// @Tags refund
+// @Accept  json
+// @Produce  json
+// @Param student_id query string false "StudentId"
+// @Param group_id query string false "GroupId"
+// @Success 200 {object} models.Refund
+// @Failure 400 {object} models.StandardErrorModel
+// @Failure 500 {object} models.StandardErrorModel
+func (h *handlerV1) RefundList(c *gin.Context) {
+	queryParams := c.Request.URL.Query()
+
+	params, errStr := utils.ParseQueryParams(queryParams)
+	if errStr != nil {
+		c.JSON(http.StatusBadRequest, gin.H{
+			"error": errStr[0],
+		})
+		h.log.Error("failed to parse query params json" + errStr[0])
+		return
+	}
+
+	var jspbMarshal protojson.MarshalOptions
+	jspbMarshal.UseProtoNames = true
+
+	ctx, cancel := context.WithTimeout(context.Background(), time.Second*time.Duration(h.cfg.CtxTimeout))
+	defer cancel()
+
+	response, err := h.serviceManager.FinanceService().RefundList(
+		ctx, &pb.PySt{
+			StudentId: params.StudentId,
+			GroupId:   params.GroupId,
+		})
+	if err != nil {
+		c.JSON(http.StatusInternalServerError, gin.H{
+			"error": err.Error(),
+		})
+		h.log.Error("failed to list refund", l.Error(err))
+		return
+	}
+
+	c.JSON(http.StatusOK, response)
+}
+
+// RefundCalculator ...
+// @Router /refund/calc/ [get]
+// @Summary RefundCalculator
+// @Description This API for getting list of refunds
+// @Tags refund
+// @Accept  json
+// @Produce  json
+// @Param student_id query string false "StudentId"
+// @Param group_id query string false "GroupId"
+// @Success 200 {object} models.Refund
+// @Failure 400 {object} models.StandardErrorModel
+// @Failure 500 {object} models.StandardErrorModel
+func (h *handlerV1) RefundCalculator(c *gin.Context) {
+	queryParams := c.Request.URL.Query()
+
+	params, errStr := utils.ParseQueryParams(queryParams)
+	if errStr != nil {
+		c.JSON(http.StatusBadRequest, gin.H{
+			"error": errStr[0],
+		})
+		h.log.Error("failed to parse query params json" + errStr[0])
+		return
+	}
+
+	var jspbMarshal protojson.MarshalOptions
+	jspbMarshal.UseProtoNames = true
+
+	ctx, cancel := context.WithTimeout(context.Background(), time.Second*time.Duration(h.cfg.CtxTimeout))
+	defer cancel()
+
+	response, err := h.serviceManager.FinanceService().RefundCalculator(
+		ctx, &pb.PySt{
+			StudentId: params.StudentId,
+			GroupId:   params.GroupId,
+		})
+	if err != nil {
+		c.JSON(http.StatusInternalServerError, gin.H{
+			"error": err.Error(),
+		})
+		h.log.Error("failed to list refund", l.Error(err))
 		return
 	}
 

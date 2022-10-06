@@ -9,6 +9,15 @@ type Payment struct {
 	GroupId     string `json:"group_id"`
 }
 
+type Refund struct {
+	Amount    string `json:"amount"`
+	Duration  string `json:"duration"`
+	Comment   string `json:"comment"`
+	PysysId   string `json:"pysys_id"`
+	StudentId string `json:"student_id"`
+	GroupId   string `json:"group_id"`
+}
+
 type PaymentResp struct {
 	PaymentId   string `json:"payment_id"`
 	Amount      string `json:"amount"`

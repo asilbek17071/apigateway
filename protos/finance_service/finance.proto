@@ -12,6 +12,9 @@ service FinanceService {
     rpc Profit(EmptyRes) returns (ProfitRespList);
     rpc PaymentSearch(ByIdReq) returns (PaymentSearchResp);
     rpc PaymentStudent(PySt) returns (PaymentStudentList);
+    rpc RefundCreate(Refund) returns (Empty);
+    rpc RefundList(PySt) returns (RefundReqList);
+    rpc RefundCalculator(PySt) returns (RefundCalcResp);
 
     rpc SalaryFinanceCreate (EmptyReq) returns (Empty);
     rpc SalaryFinanceGet (Request) returns (ResponseList);
@@ -43,6 +46,16 @@ message Status{
     string id = 1;
     string personal_id = 2;
     string status = 3;
+}
+
+message StatusRefund{
+    string refund_id = 1;
+    string student_id = 2;
+    string status = 3;
+}
+
+message StatusRefundReq{
+    repeated StatusRefund status = 1;
 }
 
 message StatusReq{
@@ -263,7 +276,28 @@ message PaymentStudentList{
     Pays debt = 3;
 }
 
-message RefundReq {
-    string student_id =1;
-    string group_id = 2;
+message Refund {
+    string id = 1;
+    string student_id = 2;
+    string group_id = 3;
+    string amount = 4;
+    string duration = 5;
+    string pysys_id = 6;
+    string comment = 7;
+    string created_at = 8;
+}
+
+message RefundReqList{
+    repeated Refund refund = 1;
+}
+
+message RefundCalc{
+    double duration = 1;
+    double amount = 2;
+    string type = 3;
+}
+
+message RefundCalcResp {
+    repeated RefundCalc refund_calc = 1;
+    repeated Refund refund = 2;
 }
