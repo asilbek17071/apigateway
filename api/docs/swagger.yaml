@@ -721,6 +721,11 @@ definitions:
       count:
         type: string
     type: object
+  models.PasswordUpdate:
+    properties:
+      password:
+        type: string
+    type: object
   models.Payment:
     properties:
       amount:
@@ -929,6 +934,21 @@ definitions:
         items:
           $ref: '#/definitions/models.PySysResp'
         type: array
+    type: object
+  models.Refund:
+    properties:
+      amount:
+        type: string
+      comment:
+        type: string
+      duration:
+        type: string
+      group_id:
+        type: string
+      pysys_id:
+        type: string
+      student_id:
+        type: string
     type: object
   models.Resp:
     properties:
@@ -1848,6 +1868,41 @@ paths:
           schema:
             $ref: '#/definitions/models.StandardErrorModel'
       summary: AccountantList
+      tags:
+      - accountant
+  /accountant/password/update/:
+    put:
+      consumes:
+      - application/json
+      description: This API for updating accountant
+      parameters:
+      - description: ID
+        in: path
+        name: id
+        required: true
+        type: string
+      - description: accountantUpdateRequest
+        in: body
+        name: request
+        required: true
+        schema:
+          $ref: '#/definitions/models.PasswordUpdate'
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/models.FinResp'
+        "400":
+          description: Bad Request
+          schema:
+            $ref: '#/definitions/models.StandardErrorModel'
+        "500":
+          description: Internal Server Error
+          schema:
+            $ref: '#/definitions/models.StandardErrorModel'
+      summary: AccountantPasswordUpdate
       tags:
       - accountant
   /accountant/update/:
@@ -4246,6 +4301,100 @@ paths:
       summary: Personals
       tags:
       - personals
+  /refund/calc/:
+    get:
+      consumes:
+      - application/json
+      description: This API for getting list of refunds
+      parameters:
+      - description: StudentId
+        in: query
+        name: student_id
+        type: string
+      - description: GroupId
+        in: query
+        name: group_id
+        type: string
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/models.Refund'
+        "400":
+          description: Bad Request
+          schema:
+            $ref: '#/definitions/models.StandardErrorModel'
+        "500":
+          description: Internal Server Error
+          schema:
+            $ref: '#/definitions/models.StandardErrorModel'
+      summary: RefundCalculator
+      tags:
+      - refund
+  /refund/create/:
+    post:
+      consumes:
+      - application/json
+      description: This API for creating a new refund
+      parameters:
+      - description: refundCreateRequest
+        in: body
+        name: request
+        required: true
+        schema:
+          $ref: '#/definitions/models.Refund'
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/models.Refund'
+        "400":
+          description: Bad Request
+          schema:
+            $ref: '#/definitions/models.StandardErrorModel'
+        "500":
+          description: Internal Server Error
+          schema:
+            $ref: '#/definitions/models.StandardErrorModel'
+      summary: RefundCreate
+      tags:
+      - refund
+  /refund/list/:
+    get:
+      consumes:
+      - application/json
+      description: This API for getting list of refunds
+      parameters:
+      - description: StudentId
+        in: query
+        name: student_id
+        type: string
+      - description: GroupId
+        in: query
+        name: group_id
+        type: string
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/models.Refund'
+        "400":
+          description: Bad Request
+          schema:
+            $ref: '#/definitions/models.StandardErrorModel'
+        "500":
+          description: Internal Server Error
+          schema:
+            $ref: '#/definitions/models.StandardErrorModel'
+      summary: RefundList
+      tags:
+      - refund
   /room/byid/{id}:
     get:
       consumes:
@@ -6701,6 +6850,41 @@ paths:
           schema:
             $ref: '#/definitions/models.StandardErrorModel'
       summary: UserLogin
+      tags:
+      - user
+  /user/password/update/{id}:
+    put:
+      consumes:
+      - application/json
+      description: This API for updating user
+      parameters:
+      - description: ID
+        in: path
+        name: id
+        required: true
+        type: string
+      - description: userUpdateRequest
+        in: body
+        name: request
+        required: true
+        schema:
+          $ref: '#/definitions/models.PasswordUpdate'
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/models.FinResp'
+        "400":
+          description: Bad Request
+          schema:
+            $ref: '#/definitions/models.StandardErrorModel'
+        "500":
+          description: Internal Server Error
+          schema:
+            $ref: '#/definitions/models.StandardErrorModel'
+      summary: UserPasswordUpdate
       tags:
       - user
   /user/update/{id}:

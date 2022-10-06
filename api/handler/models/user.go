@@ -44,6 +44,10 @@ type Login struct {
 	Password string `json:"password"`
 }
 
+type PasswordUpdate struct {
+	Password string `json:"password"`
+}
+
 type UserUpdate struct {
 	FullName       string `json:"full_name"`
 	Email          string `json:"email"`

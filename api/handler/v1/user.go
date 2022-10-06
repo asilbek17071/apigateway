@@ -27,7 +27,7 @@ import (
 // @Failure 500 {object} models.StandardErrorModel
 func (h *handlerV1) UserCreate(c *gin.Context) {
 	var (
-		body        pb.User
+		body        pb.UserCreat
 		jspbMarshal protojson.MarshalOptions
 	)
 
@@ -316,6 +316,62 @@ func (h *handlerV1) UserUpdate(c *gin.Context) {
 	defer cancel()
 
 	response, err := h.serviceManager.UserService().UserUpdate(ctx, &body)
+	if err != nil {
+		c.JSON(http.StatusInternalServerError, gin.H{
+			"error": err.Error(),
+		})
+		h.log.Error("failed to update user", l.Error(err))
+		return
+	}
+
+	c.JSON(http.StatusOK, response)
+}
+
+// UserPasswordUpdate ...
+// @Router /user/password/update/{id} [put]
+// @Summary UserPasswordUpdate
+// @Description This API for updating user
+// @Tags user
+// @Accept  json
+// @Produce  json
+// @Param id path string true "ID"
+// @Param User request body models.PasswordUpdate true "userUpdateRequest"
+// @Success 200 {object} models.FinResp
+// @Failure 400 {object} models.StandardErrorModel
+// @Failure 500 {object} models.StandardErrorModel
+func (h *handlerV1) UserPasswordUpdate(c *gin.Context) {
+	queryParams := c.Request.URL.Query()
+
+	params, errStr := utils.ParseQueryParams(queryParams)
+	if errStr != nil {
+		c.JSON(http.StatusBadRequest, gin.H{
+			"error": errStr[0],
+		})
+		h.log.Error("failed to parse query params json" + errStr[0])
+		return
+	}
+
+	var (
+		body        pb.PasswordUpdate
+		jspbMarshal protojson.MarshalOptions
+	)
+	jspbMarshal.UseProtoNames = true
+
+	err := c.ShouldBindJSON(&body)
+	if err != nil {
+		c.JSON(http.StatusBadRequest, gin.H{
+			"error": err.Error(),
+		})
+		h.log.Error("failed to bind json", l.Error(err))
+		return
+	}
+
+	body.Id = params.Id
+
+	ctx, cancel := context.WithTimeout(context.Background(), time.Second*time.Duration(h.cfg.CtxTimeout))
+	defer cancel()
+
+	response, err := h.serviceManager.UserService().UserPasswordUpdate(ctx, &body)
 	if err != nil {
 		c.JSON(http.StatusInternalServerError, gin.H{
 			"error": err.Error(),

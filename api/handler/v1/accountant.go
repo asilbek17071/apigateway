@@ -26,7 +26,7 @@ import (
 // @Failure 500 {object} models.StandardErrorModel
 func (h *handlerV1) AccountantCreate(c *gin.Context) {
 	var (
-		body        pb.Accountant
+		body        pb.AccountantCreat
 		jspbMarshal protojson.MarshalOptions
 	)
 
@@ -240,6 +240,61 @@ func (h *handlerV1) AccountantDelete(c *gin.Context) {
 			"error": err.Error(),
 		})
 		h.log.Error("failed to delete payment_system", l.Error(err))
+		return
+	}
+
+	c.JSON(http.StatusOK, response)
+}
+
+// AccountantPasswordUpdate ...
+// @Router /accountant/password/update/ [put]
+// @Summary AccountantPasswordUpdate
+// @Description This API for updating accountant
+// @Tags accountant
+// @Accept  json
+// @Produce  json
+// @Param id path string true "ID"
+// @Param Accountant request body models.PasswordUpdate true "accountantUpdateRequest"
+// @Success 200 {object} models.FinResp
+// @Failure 400 {object} models.StandardErrorModel
+// @Failure 500 {object} models.StandardErrorModel
+func (h *handlerV1) AccountantPasswordUpdate(c *gin.Context) {
+	queryParams := c.Request.URL.Query()
+
+	params, errStr := utils.ParseQueryParams(queryParams)
+	if errStr != nil {
+		c.JSON(http.StatusBadRequest, gin.H{
+			"error": errStr[0],
+		})
+		h.log.Error("failed to parse query params json" + errStr[0])
+		return
+	}
+	var (
+		body        pb.PasswordUpdate
+		jspbMarshal protojson.MarshalOptions
+	)
+	jspbMarshal.UseProtoNames = true
+
+	err := c.ShouldBindJSON(&body)
+	if err != nil {
+		c.JSON(http.StatusBadRequest, gin.H{
+			"error": err.Error(),
+		})
+		h.log.Error("failed to bind json", l.Error(err))
+		return
+	}
+
+	body.Id = params.Id
+
+	ctx, cancel := context.WithTimeout(context.Background(), time.Second*time.Duration(h.cfg.CtxTimeout))
+	defer cancel()
+
+	response, err := h.serviceManager.UserService().AccountantPasswordUpdate(ctx, &body)
+	if err != nil {
+		c.JSON(http.StatusInternalServerError, gin.H{
+			"error": err.Error(),
+		})
+		h.log.Error("failed to update payment_system", l.Error(err))
 		return
 	}
 

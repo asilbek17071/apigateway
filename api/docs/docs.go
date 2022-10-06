@@ -199,6 +199,59 @@ const docTemplate = `{
                 }
             }
         },
+        "/accountant/password/update/": {
+            "put": {
+                "description": "This API for updating accountant",
+                "consumes": [
+                    "application/json"
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "tags": [
+                    "accountant"
+                ],
+                "summary": "AccountantPasswordUpdate",
+                "parameters": [
+                    {
+                        "type": "string",
+                        "description": "ID",
+                        "name": "id",
+                        "in": "path",
+                        "required": true
+                    },
+                    {
+                        "description": "accountantUpdateRequest",
+                        "name": "request",
+                        "in": "body",
+                        "required": true,
+                        "schema": {
+                            "$ref": "#/definitions/models.PasswordUpdate"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "schema": {
+                            "$ref": "#/definitions/models.FinResp"
+                        }
+                    },
+                    "400": {
+                        "description": "Bad Request",
+                        "schema": {
+                            "$ref": "#/definitions/models.StandardErrorModel"
+                        }
+                    },
+                    "500": {
+                        "description": "Internal Server Error",
+                        "schema": {
+                            "$ref": "#/definitions/models.StandardErrorModel"
+                        }
+                    }
+                }
+            }
+        },
         "/accountant/update/": {
             "put": {
                 "description": "This API for updating accountant",
@@ -3824,6 +3877,150 @@ const docTemplate = `{
                         "description": "OK",
                         "schema": {
                             "$ref": "#/definitions/models.Personals"
+                        }
+                    },
+                    "400": {
+                        "description": "Bad Request",
+                        "schema": {
+                            "$ref": "#/definitions/models.StandardErrorModel"
+                        }
+                    },
+                    "500": {
+                        "description": "Internal Server Error",
+                        "schema": {
+                            "$ref": "#/definitions/models.StandardErrorModel"
+                        }
+                    }
+                }
+            }
+        },
+        "/refund/calc/": {
+            "get": {
+                "description": "This API for getting list of refunds",
+                "consumes": [
+                    "application/json"
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "tags": [
+                    "refund"
+                ],
+                "summary": "RefundCalculator",
+                "parameters": [
+                    {
+                        "type": "string",
+                        "description": "StudentId",
+                        "name": "student_id",
+                        "in": "query"
+                    },
+                    {
+                        "type": "string",
+                        "description": "GroupId",
+                        "name": "group_id",
+                        "in": "query"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "schema": {
+                            "$ref": "#/definitions/models.Refund"
+                        }
+                    },
+                    "400": {
+                        "description": "Bad Request",
+                        "schema": {
+                            "$ref": "#/definitions/models.StandardErrorModel"
+                        }
+                    },
+                    "500": {
+                        "description": "Internal Server Error",
+                        "schema": {
+                            "$ref": "#/definitions/models.StandardErrorModel"
+                        }
+                    }
+                }
+            }
+        },
+        "/refund/create/": {
+            "post": {
+                "description": "This API for creating a new refund",
+                "consumes": [
+                    "application/json"
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "tags": [
+                    "refund"
+                ],
+                "summary": "RefundCreate",
+                "parameters": [
+                    {
+                        "description": "refundCreateRequest",
+                        "name": "request",
+                        "in": "body",
+                        "required": true,
+                        "schema": {
+                            "$ref": "#/definitions/models.Refund"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "schema": {
+                            "$ref": "#/definitions/models.Refund"
+                        }
+                    },
+                    "400": {
+                        "description": "Bad Request",
+                        "schema": {
+                            "$ref": "#/definitions/models.StandardErrorModel"
+                        }
+                    },
+                    "500": {
+                        "description": "Internal Server Error",
+                        "schema": {
+                            "$ref": "#/definitions/models.StandardErrorModel"
+                        }
+                    }
+                }
+            }
+        },
+        "/refund/list/": {
+            "get": {
+                "description": "This API for getting list of refunds",
+                "consumes": [
+                    "application/json"
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "tags": [
+                    "refund"
+                ],
+                "summary": "RefundList",
+                "parameters": [
+                    {
+                        "type": "string",
+                        "description": "StudentId",
+                        "name": "student_id",
+                        "in": "query"
+                    },
+                    {
+                        "type": "string",
+                        "description": "GroupId",
+                        "name": "group_id",
+                        "in": "query"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "schema": {
+                            "$ref": "#/definitions/models.Refund"
                         }
                     },
                     "400": {
@@ -7584,6 +7781,59 @@ const docTemplate = `{
                 }
             }
         },
+        "/user/password/update/{id}": {
+            "put": {
+                "description": "This API for updating user",
+                "consumes": [
+                    "application/json"
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "tags": [
+                    "user"
+                ],
+                "summary": "UserPasswordUpdate",
+                "parameters": [
+                    {
+                        "type": "string",
+                        "description": "ID",
+                        "name": "id",
+                        "in": "path",
+                        "required": true
+                    },
+                    {
+                        "description": "userUpdateRequest",
+                        "name": "request",
+                        "in": "body",
+                        "required": true,
+                        "schema": {
+                            "$ref": "#/definitions/models.PasswordUpdate"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "schema": {
+                            "$ref": "#/definitions/models.FinResp"
+                        }
+                    },
+                    "400": {
+                        "description": "Bad Request",
+                        "schema": {
+                            "$ref": "#/definitions/models.StandardErrorModel"
+                        }
+                    },
+                    "500": {
+                        "description": "Internal Server Error",
+                        "schema": {
+                            "$ref": "#/definitions/models.StandardErrorModel"
+                        }
+                    }
+                }
+            }
+        },
         "/user/update/{id}": {
             "put": {
                 "description": "This API for updating user",
@@ -8748,6 +8998,14 @@ const docTemplate = `{
                 }
             }
         },
+        "models.PasswordUpdate": {
+            "type": "object",
+            "properties": {
+                "password": {
+                    "type": "string"
+                }
+            }
+        },
         "models.Payment": {
             "type": "object",
             "properties": {
@@ -9068,6 +9326,29 @@ const docTemplate = `{
                     "items": {
                         "$ref": "#/definitions/models.PySysResp"
                     }
+                }
+            }
+        },
+        "models.Refund": {
+            "type": "object",
+            "properties": {
+                "amount": {
+                    "type": "string"
+                },
+                "comment": {
+                    "type": "string"
+                },
+                "duration": {
+                    "type": "string"
+                },
+                "group_id": {
+                    "type": "string"
+                },
+                "pysys_id": {
+                    "type": "string"
+                },
+                "student_id": {
+                    "type": "string"
                 }
             }
         },
