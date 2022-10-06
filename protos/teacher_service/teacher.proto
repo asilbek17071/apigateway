@@ -4,6 +4,7 @@ package teacher_service;
 
 service TeacherService {
     rpc TeacherCreate(Teacher) returns (TeacherResp);
+    rpc TeacherPasswordUpdate(PasswordUpdate) returns (PasswordResp);
     rpc TeacherGet(ByIdReq) returns (TeacherResp);
     rpc TeacherSignUp(Token) returns (TeacherResp);
     rpc TeacherList(ListReq) returns (TeacherListResp);
@@ -35,6 +36,15 @@ message NameResp{
     repeated Name teacher = 1;
 }
 
+message PasswordUpdate{
+    string id = 1;
+    string password = 2;
+}
+
+message PasswordResp{
+    bool status = 1;
+}
+
 message Teacher{
     string id = 1;
     string full_name = 2;
@@ -53,30 +63,27 @@ message Teacher{
     string image = 15;
     string branch_id = 16;
     string direction_id = 17;
-    string created_at = 18;
-    string updated_at = 19;
 }
 
 message TeacherResp{
     string id = 1;
     string full_name = 2;
-    string password = 3;
-    string email = 4;
-    string birthday = 5;
-    string gender = 6;
-    string phone1 = 7;
-    string phone2 = 8;
-    string permission = 9;
-    string working_day = 10;
-    string address = 11;
-    string passport_series = 12;
-    string passport_image1 = 13;
-    string passport_image2 = 14;
-    string image = 15;
-    Name branch_id = 16;
-    Name direction_id = 17;
-    string created_at = 18;
-    string updated_at = 19;
+    string email = 3;
+    string birthday = 4;
+    string gender = 5;
+    string phone1 = 6;
+    string phone2 = 7;
+    string permission = 8;
+    string working_day = 9;
+    string address = 10;
+    string passport_series = 11;
+    string passport_image1 = 12;
+    string passport_image2 = 13;
+    string image = 14;
+    Name branch_id = 15;
+    Name direction_id = 16;
+    string created_at = 17;
+    string updated_at = 18;
 }
 
 message TeacherSalary {

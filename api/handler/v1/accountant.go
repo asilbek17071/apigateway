@@ -50,7 +50,7 @@ func (h *handlerV1) AccountantCreate(c *gin.Context) {
 		c.JSON(http.StatusInternalServerError, gin.H{
 			"error": err.Error(),
 		})
-		h.log.Error("failed to create payment_system", l.Error(err))
+		h.log.Error("failed to create accountant", l.Error(err))
 		return
 	}
 
@@ -94,7 +94,7 @@ func (h *handlerV1) AccountantGet(c *gin.Context) {
 		c.JSON(http.StatusInternalServerError, gin.H{
 			"error": err.Error(),
 		})
-		h.log.Error("failed to get payment_system", l.Error(err))
+		h.log.Error("failed to get accountant", l.Error(err))
 		return
 	}
 
@@ -140,7 +140,7 @@ func (h *handlerV1) AccountantList(c *gin.Context) {
 		c.JSON(http.StatusInternalServerError, gin.H{
 			"error": err.Error(),
 		})
-		h.log.Error("failed to list payment_systems", l.Error(err))
+		h.log.Error("failed to list accountant", l.Error(err))
 		return
 	}
 
@@ -195,7 +195,7 @@ func (h *handlerV1) AccountantUpdate(c *gin.Context) {
 		c.JSON(http.StatusInternalServerError, gin.H{
 			"error": err.Error(),
 		})
-		h.log.Error("failed to update payment_system", l.Error(err))
+		h.log.Error("failed to update accountant", l.Error(err))
 		return
 	}
 
@@ -239,7 +239,7 @@ func (h *handlerV1) AccountantDelete(c *gin.Context) {
 		c.JSON(http.StatusInternalServerError, gin.H{
 			"error": err.Error(),
 		})
-		h.log.Error("failed to delete payment_system", l.Error(err))
+		h.log.Error("failed to delete accountant", l.Error(err))
 		return
 	}
 
@@ -294,7 +294,7 @@ func (h *handlerV1) AccountantPasswordUpdate(c *gin.Context) {
 		c.JSON(http.StatusInternalServerError, gin.H{
 			"error": err.Error(),
 		})
-		h.log.Error("failed to update payment_system", l.Error(err))
+		h.log.Error("failed to update password accountant", l.Error(err))
 		return
 	}
 

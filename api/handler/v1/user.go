@@ -376,7 +376,7 @@ func (h *handlerV1) UserPasswordUpdate(c *gin.Context) {
 		c.JSON(http.StatusInternalServerError, gin.H{
 			"error": err.Error(),
 		})
-		h.log.Error("failed to update user", l.Error(err))
+		h.log.Error("failed to update password user", l.Error(err))
 		return
 	}
 

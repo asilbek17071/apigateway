@@ -40,6 +40,7 @@ func New(option Option) *gin.Engine {
 	planner.GET("/user/byname/", handlerV1.UserByName)
 	planner.GET("/user/list/", handlerV1.UserList)
 	planner.PUT("/user/update/", handlerV1.UserUpdate)
+	planner.PUT("/user/password/update/", handlerV1.UserPasswordUpdate)
 	planner.DELETE("/user/delete/", handlerV1.UserDelete)
 	planner.GET("/signup/user/", handlerV1.UserSignUp)
 
@@ -57,6 +58,7 @@ func New(option Option) *gin.Engine {
 	planner.GET("/signup/teacher/", handlerV1.TeacherSignUp)
 	planner.GET("/teacher/list/", handlerV1.TeacherList)
 	planner.PUT("/teacher/update/", handlerV1.TeacherUpdate)
+	planner.PUT("/teacher/password/update/", handlerV1.TeacherPasswordUpdate)
 	planner.DELETE("/teacher/delete/", handlerV1.TeacherDelete)
 
 	planner.POST("/student/create/", handlerV1.StudentCreate)
@@ -216,6 +218,7 @@ func New(option Option) *gin.Engine {
 	planner.GET("/accountant/byid/", handlerV1.AccountantGet)
 	planner.GET("/accountant/list/", handlerV1.AccountantList)
 	planner.PUT("/accountant/update/", handlerV1.AccountantUpdate)
+	planner.PUT("/accountant/password/update/", handlerV1.AccountantPasswordUpdate)
 	planner.DELETE("/accountant/delete/", handlerV1.AccountantDelete)
 
 	planner.POST("/defmsg/create/", handlerV1.DefMsgCreate)
