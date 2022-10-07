@@ -133,8 +133,8 @@ func (h *handlerV1) TaskList(c *gin.Context) {
 
 	response, err := h.serviceManager.SystemService().TaskList(
 		ctx, &pb.ListReq{
-			Limit: params.Limit,
 			Page:  params.Page,
+			Limit: params.Limit,
 		})
 	if err != nil {
 		c.JSON(http.StatusInternalServerError, gin.H{

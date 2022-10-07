@@ -97,7 +97,8 @@ message Participate{
     string with_date = 5;
     string begin_time = 6;
     string close_time = 7;
-    repeated Resp participate_count = 8;
+    int32 participate_count = 8;
+    int32 full_student_count = 9;
 }
 
 message Participates {
