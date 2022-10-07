@@ -166,6 +166,7 @@ func New(option Option) *gin.Engine {
 	planner.POST("/attendance/create/", handlerV1.AttendanceCreate)
 	planner.GET("/attendance/list/", handlerV1.AttendanceList)
 	planner.GET("/attendance/list/participate/", handlerV1.ParticipateResp)
+	planner.GET("/attendance/list/participate/r/", handlerV1.ParticipateRespR)
 	planner.PUT("/attendance/update/", handlerV1.AttendanceUpdate)
 	planner.DELETE("/attendance/delete/", handlerV1.AttendanceDelete)
 

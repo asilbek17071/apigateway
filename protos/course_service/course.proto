@@ -17,6 +17,7 @@ service CourseService {
     rpc AttendanceCreate(AttendanceCreates) returns (Req);
     rpc AttendanceList(GetParticipate) returns (ParticipateListResp);
     rpc ParticipateResp(EmptyRes) returns (Participates);
+    rpc ParticipateRespR(EmptyRes) returns (ParticipatesR);
     rpc AttendanceUpdate(Attendance) returns (Req);
     rpc AttendanceDelete(ByIdReq) returns (EmptyRes);
     
@@ -103,6 +104,19 @@ message Participate{
 
 message Participates {
     repeated Participate participate = 1;
+}
+
+message ParticipateR{
+    string group_id = 1;
+    string group_name = 2;
+    string teacher_id = 3;
+    string teacher_name = 4;
+    string with_date = 5;
+    string begin_time = 6;
+    string close_time = 7;
+}
+message ParticipatesR {
+    repeated ParticipateR participate = 1;
 }
 
 message BalListResp{

@@ -2051,6 +2051,29 @@ paths:
       summary: ParticipateResp
       tags:
       - attendance
+  /attendance/list/participate/r/:
+    get:
+      consumes:
+      - application/json
+      description: Bugungi kundagi yo'qlama qilinmaganlarini ko'rish
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/models.Participate'
+        "400":
+          description: Bad Request
+          schema:
+            $ref: '#/definitions/models.StandardErrorModel'
+        "500":
+          description: Internal Server Error
+          schema:
+            $ref: '#/definitions/models.StandardErrorModel'
+      summary: ParticipateRespR
+      tags:
+      - attendance
   /attendance/update/{id}:
     put:
       consumes:
